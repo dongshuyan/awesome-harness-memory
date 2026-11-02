@@ -1,36 +1,49 @@
-# Agent Memory Landscape
+# Awesome Harness Memory
 
-[English](README.md) | 简体中文
+> 面向科研与应用开发者的 Agent Harness Memory 精选导航：梳理上下文管理、跨 Session 连续性、长期记忆、系统、Benchmark、论文，以及文学影视中的记忆设定。
 
-面向科研与应用开发者的 Agent Memory 精选导航：查找可用系统、阅读研究论文、选择评估方法，也从文学影视中的记忆设定获得启发。
+[English](README.md) · [简体中文](README.zh-CN.md)
 
-每个条目简要介绍它的功能、值得关注的特点，以及进一步阅读的入口。
+如果你正在构建、研究或评估 AI Agent，这里帮助你快速找到合适的记忆相关入口，并保留不同项目术语之间的差异。
+
+在本仓库中，Harness 指围绕 Agent 的运行时与控制边界。只要有助于理解或评估 Agent Memory，我们也会收录独立记忆系统、托管服务、论文、Benchmark 和文学影视作品。
 
 ## 按需求查找
 
 | 我想要…… | 从这里开始 |
 | --- | --- |
-| 管理对话中的状态和上下文 | [LangGraph](resources/systems.md#langgraph)、[Deep Agents](resources/systems.md#deep-agents) |
-| 在多个 Session 之间保留有用信息 | [LangGraph stores](resources/systems.md#langgraph)、[Mem0](resources/systems.md#mem0)、[Memory Bank](resources/systems.md#google-agent-platform-memory-bank) |
+| 理解上下文和对话状态 | [LangGraph](resources/systems.md#langgraph) · [Deep Agents](resources/systems.md#deep-agents) |
+| 在多个 Session 之间承接信息 | [Mem0](resources/systems.md#mem0) · [Google Agent Platform Memory Bank](resources/systems.md#google-agent-platform-memory-bank) |
 | 追踪事实变化及其历史 | [Graphiti](resources/systems.md#graphiti) |
-| 从已有任务中学习并组织经验 | [ReasoningBank](resources/papers.md#reasoningbank)、[A-Mem](resources/papers.md#a-mem)、[Generative Agents](resources/papers.md#generative-agents) |
-| 评估对话记忆的召回、更新与不确定性处理 | [LoCoMo](resources/benchmarks.md#locomo)、[LongMemEval](resources/benchmarks.md#longmemeval)、[MemoryAgentBench](resources/benchmarks.md#memoryagentbench) |
-| 评估记忆能否帮助 Agent 执行动作 | [Mem2ActBench](resources/benchmarks.md#mem2actbench) |
-| 从文学影视理解记忆约束 | [文学与影视](resources/fiction.md) |
+| 让 Agent 从已有任务中学习 | [ReasoningBank](resources/papers.md#reasoningbank) · [A-Mem](resources/papers.md#a-mem) |
+| 评估召回、更新、冲突和不确定性 | [LongMemEval](resources/benchmarks.md#longmemeval) · [LoCoMo](resources/benchmarks.md#locomo) · [MemoryAgentBench](resources/benchmarks.md#memoryagentbench) |
+| 检查记忆是否改变工具调用 | [Mem2ActBench](resources/benchmarks.md#mem2actbench) |
+| 从故事中理解记忆约束 | [The Housekeeper and the Professor](resources/fiction.md#the-housekeeper-and-the-professor) · [Severance](resources/fiction.md#severance) |
 
-这些入口可以重叠。一个系统可能满足多种需求，不同项目中的同名术语也可能含义不同。正式分类和架构图将在比较实际机制之后设计；目前需要回答的问题见[调研问题](docs/research-questions.md)。
+顺序仅用于导航，不代表排名。
 
-## 按对象浏览
+## 按资源类型浏览
 
-- [系统与产品](resources/systems.md)：Agent 框架、Harness、记忆库和托管服务。
-- [论文与研究报告](resources/papers.md)：按时间排列，并注明发表状态和原始来源。
-- [Benchmark 与评估](resources/benchmarks.md)：测什么、适合了解什么，以及结果的适用边界。
-- [文学与影视](resources/fiction.md)：记忆设定，以及明确标注为编辑解读的设计类比。
+- [系统与产品](resources/systems.md)：Agent 框架、Harness、独立记忆层和托管服务。
+- [论文与研究报告](resources/papers.md)：按时间排列，并链接原始来源。
+- [Benchmark 与评估](resources/benchmarks.md)：测什么，以及结论适用到哪里。
+- [文学与影视](resources/fiction.md)：用于提出设计问题的记忆设定，并明确标注为类比。
+
+这些分组是当前用于导航的暂定安排，后续可能随着调研发展而调整。
+
+## 本仓库收录什么
+
+第一版只提供少量代表性入口，不是完整目录或排名。正式分类、条目格式、架构图和内部选择流程仍保持开放，会在比较实际系统和评估方法的过程中继续确定。
 
 ## 关于这一版
 
-第一版的来源核对日期为 **2026-11-02**。各类先放少量完整样例，后续按调研轮次持续补充。仓库名称和导航结构均为暂定。
+来源核对日期：**2026-11-02**
 
-简介依据所链接的论文、项目文档，以及产品或出版方官方资料。这一版尚未安装运行系统、复现 Benchmark 或开展安全审计；产品文档代表厂商公开描述，文学影视类比属于编辑解读。
+- 条目链接到论文、官方文档、项目仓库或出版方/制作方资料。
+- 产品行为依据项目或厂商公开文档概括，不推断内部实现。
+- 不代表已经安装系统、复现 Benchmark、完成生产验证或安全审计。
+- 文学影视条目属于编辑类比，不是模型认知或工程效果证据。
 
-正文以英文为主，README 提供中文版。后续安排见[迭代计划](ROADMAP.md)、[待调研问题](docs/research-questions.md)和[贡献指南](CONTRIBUTING.md)。
+资源条目目前以英文为主；中文 README 提供导航和范围说明。继续阅读：[研究路线图](ROADMAP.md)、[待调研问题](docs/research-questions.md)、[仓库结构](docs/repository-structure.md)和[贡献指南](CONTRIBUTING.md)。
+
+问题和建议会帮助我们决定下一轮优先调研什么；如果这个导航帮你节省了时间，也欢迎点 Star，帮助更多人找到它。
