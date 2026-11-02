@@ -34,4 +34,22 @@ A framework for building temporal context graphs from incoming information. It c
 
 A managed service that, according to Google's documentation, extracts and consolidates information from interactions and retrieves memories within a configured scope. Useful for comparing a provider-managed memory service with application-owned implementations. This entry covers documented behavior; service internals and deployment behavior were not independently examined.
 
+## Google ADK
+
+[Repository](https://github.com/google/adk-python) · [Memory service guide](https://github.com/google/adk-python/blob/3655990f6ce1e55c40c5710351f6cf06cde0669b/docs/guides/memory/memory_service/index.md)
+
+Separates session state from retrieval over explicitly ingested interactions. An agent can request memories with `load_memory`, or the runtime can retrieve them before requests with `preload_memory`. Useful for comparing model-directed retrieval with automatic context preparation. Persistence, retrieval, and deletion support depend on the selected backend; deleting a session does not automatically remove information already imported into memory.
+
+## OpenAI Agents SDK
+
+[Repository](https://github.com/openai/openai-agents-python) · [Sessions](https://openai.github.io/openai-agents-python/sessions/) · [Sandbox agent memory](https://openai.github.io/openai-agents-python/sandbox/memory/)
+
+Provides two distinct mechanisms: Sessions maintain conversation history, while sandbox agent memory uses models to distill recorded conversations into files that later runs can consult. Useful for separating conversation continuity from reusable task experience. File memory requires preserving the relevant workspace or snapshot; a fresh empty sandbox starts without those memories. Layouts and conversation identifiers determine how these memory artifacts are shared.
+
+## CrewAI
+
+[Repository](https://github.com/crewAIInc/crewAI) · [Memory guide, v1.15.34](https://docs.crewai.com/v1.15.34/en/concepts/memory)
+
+The documented unified `Memory` interface organizes records into scopes, recalls across selected scopes, and uses model-assisted analysis and consolidation when saving information. Useful for exploring how agents can work with their own and shared information through one interface. It replaces separate short-term, long-term, entity, and external memory types. Analysis sends content to the configured model; scope organization alone should not be treated as a verified security boundary.
+
 The [research questions](../docs/research-questions.md) include scope, write control, retention, and the division of work between an agent and its harness.

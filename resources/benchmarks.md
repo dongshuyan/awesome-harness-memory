@@ -28,6 +28,12 @@ Studies memory through incremental information ingestion. The current README nam
 
 Evaluates whether an agent uses earlier interactions to select tools and ground their arguments. Useful when a product needs remembered preferences or task state to affect actions. Its histories and tasks are constructed through a synthesis pipeline; the results concern that protocol, rather than an observed deployment with real users.
 
+## MemBench
+
+[Findings of ACL 2025 paper](https://aclanthology.org/2025.findings-acl.989/) · [Repository and data instructions](https://github.com/import-myself/Membench)
+
+Evaluates factual and reflective memory when an agent participates in conversations or observes messages. Its protocol measures multiple-choice answering, evidence retrieval, capacity under added noise, and memory read/write time. Useful when accuracy alone hides storage or retrieval overhead. The constructed profiles and conversations, sampled test subsets, and multiple-choice format limit what the results establish about unconstrained tasks.
+
 ## Reading a reported result
 
 Before comparing results, check whether the dataset version, task subset, model, available history, retrieval budget, and judge are comparable. Also check which costs are counted, including memory writing and consolidation. These are questions for interpreting the original experiments; this repository does not provide a combined leaderboard.

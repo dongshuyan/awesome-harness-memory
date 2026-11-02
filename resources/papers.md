@@ -16,6 +16,12 @@ A small reading timeline, newest first by the **first arXiv submission date** ch
 
 *ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory.* Distills reusable strategies from experiences the agent judges successful or unsuccessful, then retrieves them for later tasks. Useful for studying memory of problem-solving experience. The authors and Google Research identify it as an ICLR 2026 paper. Self-judged outcomes and additional test-time computation are important conditions when interpreting the reported benefits.
 
+## MemBench
+
+**2025-06-20** · [First preprint](https://arxiv.org/abs/2506.21605) · [Findings of ACL 2025](https://aclanthology.org/2025.findings-acl.989/)
+
+*MemBench: Towards More Comprehensive Evaluation on the Memory of LLM-based Agents.* Compares factual and reflective memory in participation and observation scenarios, including retrieval, answering, capacity, and read/write time. See the [benchmark entry](benchmarks.md#membench) for the protocol and its limits.
+
 ## A-Mem
 
 **2025-02-17** · [First preprint](https://arxiv.org/abs/2502.12110) · [NeurIPS 2025 proceedings](https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html)
@@ -33,6 +39,12 @@ A small reading timeline, newest first by the **first arXiv submission date** ch
 **2024-02-27** · [First preprint](https://arxiv.org/abs/2402.17753) · [ACL 2024 proceedings](https://aclanthology.org/2024.acl-long.747/)
 
 *Evaluating Very Long-Term Conversational Memory of LLM Agents.* Introduces long conversations and tasks covering questions, event summaries, and multimodal dialogue. See the [benchmark entry](benchmarks.md#locomo); a QA-only adaptation covers only part of the original work.
+
+## MemoryBank
+
+**2023-05-17** · [First preprint](https://arxiv.org/abs/2305.10250) · [AAAI 2024 publication](https://doi.org/10.1609/aaai.v38i17.29946) · [Author repository](https://github.com/zhongwanjun/MemoryBank-SiliconFriend)
+
+*MemoryBank: Enhancing Large Language Models with Long-Term Memory.* Combines conversation records, event summaries, user information, and retrieval with an exploratory decay-and-reinforcement mechanism. Useful as an early reference for personalized memory and selective retention. Its companion-agent study includes simulated conversations; the forgetting analogy does not establish biological fidelity or reliability in other applications.
 
 ## Generative Agents
 

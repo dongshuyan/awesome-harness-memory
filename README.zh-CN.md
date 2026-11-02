@@ -12,13 +12,15 @@
 
 | 我想要…… | 从这里开始 |
 | --- | --- |
-| 理解上下文和对话状态 | [LangGraph](resources/systems.md#langgraph) · [Deep Agents](resources/systems.md#deep-agents) |
-| 在多个 Session 之间承接信息 | [Mem0](resources/systems.md#mem0) · [Google Agent Platform Memory Bank](resources/systems.md#google-agent-platform-memory-bank) |
+| 理解上下文和对话状态 | [LangGraph](resources/systems.md#langgraph) · [Deep Agents](resources/systems.md#deep-agents) · [OpenAI Agents SDK](resources/systems.md#openai-agents-sdk) |
+| 在多个 Session 之间承接信息 | [Google ADK](resources/systems.md#google-adk) · [Mem0](resources/systems.md#mem0) · [Google Agent Platform Memory Bank](resources/systems.md#google-agent-platform-memory-bank) |
+| 为多个 Agent 组织信息 | [CrewAI](resources/systems.md#crewai) |
 | 追踪事实变化及其历史 | [Graphiti](resources/systems.md#graphiti) |
-| 让 Agent 从已有任务中学习 | [ReasoningBank](resources/papers.md#reasoningbank) · [A-Mem](resources/papers.md#a-mem) |
+| 让 Agent 从已有任务中学习 | [ReasoningBank](resources/papers.md#reasoningbank) · [A-Mem](resources/papers.md#a-mem) · [OpenAI Agents SDK](resources/systems.md#openai-agents-sdk) |
 | 评估召回、更新、冲突和不确定性 | [LongMemEval](resources/benchmarks.md#longmemeval) · [LoCoMo](resources/benchmarks.md#locomo) · [MemoryAgentBench](resources/benchmarks.md#memoryagentbench) |
 | 检查记忆是否改变工具调用 | [Mem2ActBench](resources/benchmarks.md#mem2actbench) |
-| 从故事中理解记忆约束 | [The Housekeeper and the Professor](resources/fiction.md#the-housekeeper-and-the-professor) · [Severance](resources/fiction.md#severance) |
+| 考察记忆容量与读写耗时 | [MemBench](resources/benchmarks.md#membench) |
+| 从故事中理解记忆约束 | [The Housekeeper and the Professor](resources/fiction.md#the-housekeeper-and-the-professor) · [Severance](resources/fiction.md#severance) · [Memento](resources/fiction.md#memento) |
 
 顺序仅用于导航，不代表排名。
 
@@ -33,7 +35,7 @@
 
 ## 本仓库收录什么
 
-第一版只提供少量代表性入口，不是完整目录或排名。正式分类、条目格式、架构图和内部选择流程仍保持开放，会在比较实际系统和评估方法的过程中继续确定。
+仓库通过小批量调研持续更新，提供代表性入口，不声称是完整目录或排名。正式分类、条目格式和架构图仍保持开放，会在比较实际系统和评估方法的过程中继续确定。
 
 ## 关于这一版
 
