@@ -2,7 +2,7 @@
 
 [Home](../README.md) · [Research questions](research-questions.md) · [Roadmap](../ROADMAP.md)
 
-This first edition uses a small set of Markdown pages so that the navigation can change after the mechanism research. The directory is intentionally easy to reorganize.
+The guide uses a small set of Markdown pages so that navigation can change as the mechanism research develops. The directory is intentionally easy to reorganize.
 
 ```text
 .
@@ -12,7 +12,8 @@ This first edition uses a small set of Markdown pages so that the navigation can
 ├── CONTRIBUTING.md           # Public sourcing and contribution guidance
 ├── docs/
 │   ├── repository-structure.md
-│   └── research-questions.md # Questions kept open until comparison
+│   ├── research-questions.md # Open questions and sourced comparisons
+│   └── evaluation-guide.md  # Choose evaluations by the behavior needed
 └── resources/
     ├── systems.md            # Systems, harnesses, libraries, products
     ├── papers.md             # Chronological reading timeline

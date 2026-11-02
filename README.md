@@ -13,16 +13,21 @@ In this guide, *harness* means the runtime and control boundary around an agent.
 | I want to… | Start here |
 | --- | --- |
 | Understand context and conversation state | [LangGraph](resources/systems.md#langgraph) · [Deep Agents](resources/systems.md#deep-agents) · [OpenAI Agents SDK](resources/systems.md#openai-agents-sdk) |
-| Carry information across sessions | [Google ADK](resources/systems.md#google-adk) · [Mem0](resources/systems.md#mem0) · [Google Agent Platform Memory Bank](resources/systems.md#google-agent-platform-memory-bank) |
+| Carry information across sessions | [Google ADK](resources/systems.md#google-adk) · [Mem0](resources/systems.md#mem0) · [Letta](resources/systems.md#letta--letta-code) |
+| Compare managed memory services | [Google Agent Platform Memory Bank](resources/systems.md#google-agent-platform-memory-bank) · [Amazon Bedrock AgentCore Memory](resources/systems.md#amazon-bedrock-agentcore-memory) |
 | Organize information for several agents | [CrewAI](resources/systems.md#crewai) |
 | Track changing facts and their history | [Graphiti](resources/systems.md#graphiti) |
-| Help an agent learn from earlier tasks | [ReasoningBank](resources/papers.md#reasoningbank) · [A-Mem](resources/papers.md#a-mem) · [OpenAI Agents SDK](resources/systems.md#openai-agents-sdk) |
+| Reuse experience from earlier attempts and tasks | [Reflexion](resources/papers.md#reflexion) · [ReasoningBank](resources/papers.md#reasoningbank) · [OpenAI Agents SDK](resources/systems.md#openai-agents-sdk) |
 | Evaluate recall, updates, conflicts, or uncertainty | [LongMemEval](resources/benchmarks.md#longmemeval) · [LoCoMo](resources/benchmarks.md#locomo) · [MemoryAgentBench](resources/benchmarks.md#memoryagentbench) |
 | Check whether memory changes tool use | [Mem2ActBench](resources/benchmarks.md#mem2actbench) |
 | Examine memory capacity and read/write time | [MemBench](resources/benchmarks.md#membench) |
-| Explore memory constraints through stories | [The Housekeeper and the Professor](resources/fiction.md#the-housekeeper-and-the-professor) · [Severance](resources/fiction.md#severance) · [Memento](resources/fiction.md#memento) |
+| Evaluate forgetting, visual memory, or role-based sharing | [Memora](resources/benchmarks.md#memora) · [Mem-Gallery](resources/benchmarks.md#mem-gallery) · [COLLABMEM](resources/benchmarks.md#collabmem) (protocol reference) |
+| Examine cost controls and memory poisoning | [Token-budget study](resources/papers.md#online-memory-under-token-budgets) · [AgentPoison](resources/papers.md#agentpoison) |
+| Explore memory constraints through stories | [Fiction and screen](resources/fiction.md) — bounded recall, external records, separated access, excessive recall, and collective forgetting |
 
 Order is for navigation, not ranking.
+
+Choosing a benchmark? Start with the [evaluation guide](docs/evaluation-guide.md). Comparing terminology? See the [mechanism examples and open questions](docs/research-questions.md).
 
 ## Browse by resource type
 

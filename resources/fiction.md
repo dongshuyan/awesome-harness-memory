@@ -2,7 +2,7 @@
 
 [Home](../README.md) · [Research questions](../docs/research-questions.md)
 
-Memory settings can suggest concrete questions for system design. The descriptions below use official publisher, studio, or distributor material checked **2026-11-02**. Each connection to AI is an editorial analogy, not a technical or neurological claim. Plot detail is limited to the cited synopsis or excerpt.
+Memory settings can suggest concrete questions for system design. The descriptions below use publisher, studio, or distributor material, including explicitly attributed story excerpts, checked **2026-11-02**. Each connection to AI is an editorial analogy, not a technical or neurological claim. Plot detail is limited to the cited synopsis or excerpt.
 
 ## The Housekeeper and the Professor
 
@@ -28,4 +28,26 @@ Leonard relies on photographs, written notes, and tattoos to preserve clues whil
 
 **Design analogy:** an external record can carry information into a later decision, but the decision still depends on the record's origin and interpretation. This suggests preserving provenance and a way to correct stored conclusions. It is an interpretation of the film's premise, not a claim that recording more information guarantees reliable action.
 
-Further reading will look beyond science fiction, including unreliable recollection, collective memory, deliberate forgetting, and the burden of retaining every detail. New entries will identify the source passage before drawing a system analogy.
+## Funes the Memorious
+
+Jorge Luis Borges · Short story · [English excerpts discussed by Rodrigo Quian Quiroga (MIT Press)](https://thereader.mitpress.mit.edu/borges-memory-funes-the-memorious/)
+
+The quoted passages describe extraordinary recall of detail while the narrator doubts Funes's ability to think. This entry relies on those excerpts; the linked page does not identify the story translation.
+
+**Design analogy:** retaining detail and forming useful abstractions are separate goals. The story prompts a comparison between an exhaustive archive and a selective working summary, including what each makes easier to retrieve or reason about.
+
+## The Memory Police
+
+Yoko Ogawa · Novel · [Publisher synopsis](https://www.penguinrandomhouse.com/books/252774/the-memory-police-by-yoko-ogawa/)
+
+Objects disappear from an island while most inhabitants remain oblivious to the changes. Those who recall the lost objects fear the Memory Police. A writer hides her editor, and they turn to writing to preserve the past.
+
+**Design analogy:** memory has an owner and a governing authority. This setting prompts questions about who can suppress or preserve a shared record, and how an individual account survives changes to collective knowledge. The analogy concerns control over information, not a model of technical deletion.
+
+## 50 First Dates
+
+Film · [Sony Pictures synopsis](https://www.sonypictures.com/movies/50firstdates)
+
+In the film's premise, Lucy loses the memories of each day overnight, so a relationship must be re-established repeatedly.
+
+**Design analogy:** a new session may need enough orientation to act meaningfully even when earlier interaction is unavailable. This suggests testing the quality of a handoff or reintroduction, not only how much history was saved. The premise is fictional and is not a clinical description of memory loss.
