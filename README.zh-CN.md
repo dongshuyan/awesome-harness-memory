@@ -31,9 +31,11 @@
 
 ## 用图理解组合
 
-[![立体切片：虚构系统设计示意](assets/memory-layers.svg)](https://dongshuyan.github.io/awesome-harness-memory/)
+[![真实 Harness 与 Agent 的记忆切片](assets/memory-layers.svg)](https://dongshuyan.github.io/awesome-harness-memory/)
 
-立体图用六个虚构系统说明“系统 × 属性 × 视角”，不是实际产品的能力排名。交互版可多选层、调整角度与间距；真实系统的已核说明见 [系统目录](resources/systems.zh-CN.md)，交互页另可同时展开多个视角比较。
+交互图覆盖当前目录中已定位的 Harness / Agent，尚非全行业穷尽清单。已收录 **21 个真实 Harness / Agent 对象**（含 3 个标记为历史的项目），支持多选对象、多选层、跨层高亮和逐格查看来源。上图是其中 6 个对象、3 个视角的静态预览。✓ 表示文档明确说明，△ 表示需配置或特定条件，? 表示尚未核实，× 只用于来源明确排除的范围；不按色块数量排名。
+
+图中不把独立记忆服务、插件或纯框架当作 Harness；这些资料继续保留在 [系统目录](resources/systems.zh-CN.md)。逐项依据及核对日期见 [图表数据](assets/harness-map.json)。
 
 ## 打开交互导航
 

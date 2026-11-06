@@ -1,0 +1,1122 @@
+{
+  "checked": "2026-11-07",
+  "scope": "当前目录中已定位的 Harness 与 Agent；具体组件单独注明，历史对象仍可查看。不是整个行业的穷尽清单。",
+  "dimensions": [
+    {
+      "id": "owner",
+      "name": "谁管理",
+      "options": [
+        {
+          "id": "owner.human",
+          "name": "用户设定",
+          "definition": "人编写规则、选择记忆内容或控制记忆开关。"
+        },
+        {
+          "id": "owner.agent",
+          "name": "Agent 主动",
+          "definition": "执行任务的 Agent 决定写入、修改或调用记忆工具；后台模型提炼不自动算作 Agent 主动。"
+        },
+        {
+          "id": "owner.runtime",
+          "name": "Harness 管理",
+          "definition": "运行环境负责保存、压缩、加载或后台整理。"
+        },
+        {
+          "id": "owner.external",
+          "name": "外部记忆服务",
+          "definition": "借助独立插件或服务管理记忆，需看具体集成条件。"
+        }
+      ]
+    },
+    {
+      "id": "content",
+      "name": "记什么",
+      "options": [
+        {
+          "id": "content.context",
+          "name": "工作上下文",
+          "definition": "当前任务要继续完成所需的信息，例如未完成步骤；不等同于全部历史。"
+        },
+        {
+          "id": "content.events",
+          "name": "经历与事件",
+          "definition": "对话、工具活动或任务经历的记录。"
+        },
+        {
+          "id": "content.facts",
+          "name": "事实与偏好",
+          "definition": "可在之后复用的事实、用户信息、偏好。"
+        },
+        {
+          "id": "content.experience",
+          "name": "经验与技能",
+          "definition": "做事方法、反馈、已确认的经验或可复用技能；保存不保证实际学会。"
+        },
+        {
+          "id": "content.rules",
+          "name": "规则与约定",
+          "definition": "人工编写的指令、项目规范或行为约定。"
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "name": "给谁用",
+      "options": [
+        {
+          "id": "scope.session",
+          "name": "会话/任务",
+          "definition": "同一会话或任务的状态，可包括恢复这一会话。"
+        },
+        {
+          "id": "scope.project",
+          "name": "项目/工作区",
+          "definition": "围绕同一项目、仓库或工作目录组织。"
+        },
+        {
+          "id": "scope.user",
+          "name": "用户",
+          "definition": "面向用户的配置或信息范围；不自动意味着安全隔离。"
+        },
+        {
+          "id": "scope.agent",
+          "name": "持续 Agent",
+          "definition": "围绕持续的 Agent 身份组织，可跨会话。"
+        }
+      ]
+    },
+    {
+      "id": "form",
+      "name": "怎么存",
+      "options": [
+        {
+          "id": "form.files",
+          "name": "文件",
+          "definition": "以文件、Markdown 笔记等形式承载。"
+        },
+        {
+          "id": "form.records",
+          "name": "结构化记录",
+          "definition": "消息、事件、检查点或数据库记录；可与文件存储重叠。"
+        },
+        {
+          "id": "form.vector",
+          "name": "向量索引",
+          "definition": "用语义向量为记忆建立检索索引，通常仍有原始内容。"
+        },
+        {
+          "id": "form.graph",
+          "name": "关系图谱",
+          "definition": "显式组织实体和关系；目录树本身不算知识图谱。"
+        }
+      ]
+    },
+    {
+      "id": "operation",
+      "name": "怎么维护",
+      "options": [
+        {
+          "id": "operation.extract",
+          "name": "提炼",
+          "definition": "从对话或经历中提取值得以后保留的信息。"
+        },
+        {
+          "id": "operation.compact",
+          "name": "上下文压缩",
+          "definition": "为当前模型输入缩短或替换旧上下文；不等于删除原始存档。"
+        },
+        {
+          "id": "operation.update",
+          "name": "修订",
+          "definition": "编辑、替换或整合已有记忆。"
+        },
+        {
+          "id": "operation.forget",
+          "name": "删除/清理",
+          "definition": "删除保存的记录或清理过时内容；具体删除范围需查依据。"
+        }
+      ]
+    },
+    {
+      "id": "use",
+      "name": "怎样读入",
+      "options": [
+        {
+          "id": "use.fixed",
+          "name": "启动/固定载入",
+          "definition": "启动或组装上下文时放入固定文件、索引或历史；不保证全文每轮都在。"
+        },
+        {
+          "id": "use.demand",
+          "name": "按需读取",
+          "definition": "Agent 或用户需要时读取/搜索相关记忆。"
+        },
+        {
+          "id": "use.auto",
+          "name": "自动检索注入",
+          "definition": "运行时按当前请求检索相关片段并加入上下文。"
+        }
+      ]
+    },
+    {
+      "id": "governance",
+      "name": "如何治理",
+      "options": [
+        {
+          "id": "governance.trace",
+          "name": "来源/修改记录",
+          "definition": "记录来源、修改时间或版本；具体是哪种见依据。"
+        },
+        {
+          "id": "governance.access",
+          "name": "作用域/权限",
+          "definition": "具有记忆相关的访问范围或只读边界；不等于完整安全认证。"
+        },
+        {
+          "id": "governance.control",
+          "name": "记忆使用控制",
+          "definition": "用户可禁用记忆、选择读写范围或控制删除；不等于完全阻止泄露。"
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "pi": {
+      "url": "https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/sessions.md",
+      "label": "Pi · 原始资料",
+      "kind": "官方文档",
+      "checked": "2026-11-07"
+    },
+    "codex": {
+      "url": "https://learn.chatgpt.com/docs/customization/memories",
+      "label": "OpenAI Codex · 原始资料",
+      "kind": "官方文档",
+      "checked": "2026-11-07"
+    },
+    "claude-code": {
+      "url": "https://code.claude.com/docs/en/memory",
+      "label": "Claude Code · 原始资料",
+      "kind": "官方文档",
+      "checked": "2026-11-07"
+    },
+    "openclaw": {
+      "url": "https://docs.openclaw.ai/concepts/memory",
+      "label": "OpenClaw · 原始资料",
+      "kind": "官方文档",
+      "checked": "2026-11-07"
+    },
+    "hermes": {
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "label": "Hermes Agent · 原始资料",
+      "kind": "项目 README",
+      "checked": "2026-11-07"
+    },
+    "gemini-cli": {
+      "url": "https://www.geminicli.com/docs/cli/gemini-md",
+      "label": "Gemini CLI · 原始资料",
+      "kind": "官方文档",
+      "checked": "2026-11-07"
+    },
+    "opencode": {
+      "url": "https://github.com/anomalyco/opencode/blob/dev/specs/v2/session.md",
+      "label": "OpenCode · 原始资料",
+      "kind": "版本规范",
+      "checked": "2026-11-07"
+    },
+    "aider": {
+      "url": "https://aider.chat/docs/config/options.html",
+      "label": "Aider · 原始资料",
+      "kind": "官方文档",
+      "checked": "2026-11-07"
+    },
+    "cline": {
+      "url": "https://docs.cline.bot/prompting/cline-memory-bank",
+      "label": "Cline Memory Bank · 原始资料",
+      "kind": "官方文档",
+      "checked": "2026-11-07"
+    },
+    "deepseek-harness": {
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/user/guide/mcp-memory.md",
+      "label": "DeepSeek Harness · 原始资料",
+      "kind": "官方文档",
+      "checked": "2026-11-07"
+    },
+    "letta-code": {
+      "url": "https://github.com/letta-ai/letta-code",
+      "label": "Letta Code · 原始资料",
+      "kind": "项目 README",
+      "checked": "2026-11-07"
+    },
+    "pydantic-ai": {
+      "url": "https://pydantic.dev/docs/ai/harness/memory/",
+      "label": "Pydantic AI Harness · 原始资料",
+      "kind": "官方文档",
+      "checked": "2026-11-07"
+    },
+    "deep-agents": {
+      "url": "https://docs.langchain.com/oss/python/deepagents/memory",
+      "label": "Deep Agents · Memory",
+      "kind": "官方文档",
+      "checked": "2026-11-07"
+    },
+    "deep-agents-identity": {
+      "url": "https://github.com/langchain-ai/deepagents",
+      "label": "Deep Agents · README",
+      "kind": "项目 README",
+      "checked": "2026-11-07"
+    },
+    "qwen-code": {
+      "url": "https://github.com/QwenLM/qwen-code/blob/main/docs/users/features/memory.md",
+      "label": "Qwen Code · Memory",
+      "kind": "仓库文档",
+      "checked": "2026-11-07"
+    },
+    "cursor": {
+      "url": "https://cursor.com/docs/rules",
+      "label": "Cursor · Rules",
+      "kind": "官方文档",
+      "checked": "2026-11-07"
+    },
+    "cursor-agent": {
+      "url": "https://cursor.com/docs/agent/overview",
+      "label": "Cursor · Agent overview",
+      "kind": "官方文档",
+      "checked": "2026-11-07"
+    },
+    "microsoft-agent-framework": {
+      "url": "https://learn.microsoft.com/en-us/agent-framework/concepts/harness",
+      "label": "Microsoft · Agent Harness",
+      "kind": "官方文档",
+      "checked": "2026-11-07"
+    },
+    "strands": {
+      "url": "https://strandsagents.com/docs/user-guide/harness/",
+      "label": "Strands · 完整 Harness",
+      "kind": "官方文档",
+      "checked": "2026-11-07"
+    },
+    "strands-memory": {
+      "url": "https://strandsagents.com/docs/user-guide/harness/configure/memory/",
+      "label": "Strands · Long-term memory",
+      "kind": "官方文档",
+      "checked": "2026-11-07"
+    },
+    "strands-state": {
+      "url": "https://strandsagents.com/docs/user-guide/harness/configure/checkpoints-and-memory/",
+      "label": "Strands · Checkpoints vs memory",
+      "kind": "官方文档",
+      "checked": "2026-11-07"
+    },
+    "openhands": {
+      "url": "https://github.com/OpenHands/software-agent-sdk",
+      "label": "OpenHands · 内置 Agent 与 Conversation",
+      "kind": "项目 README",
+      "checked": "2026-11-07"
+    },
+    "openhands-cli": {
+      "url": "https://github.com/OpenHands/OpenHands-CLI",
+      "label": "OpenHands CLI · README",
+      "kind": "项目 README",
+      "checked": "2026-11-07"
+    },
+    "continue": {
+      "url": "https://github.com/continuedev/continue",
+      "label": "Continue · 项目状态",
+      "kind": "项目 README",
+      "checked": "2026-11-07"
+    },
+    "roo-code": {
+      "url": "https://github.com/RooCodeInc/Roo-Code",
+      "label": "Roo Code · 仓库与归档状态",
+      "kind": "仓库与 README",
+      "checked": "2026-11-07"
+    }
+  },
+  "systems": [
+    {
+      "id": "pi",
+      "resourceId": "pi",
+      "kind": "harness",
+      "identitySource": "pi",
+      "note": "原生会话与压缩；未据此推断有用户画像或外部长期记忆。",
+      "historical": false,
+      "claims": [
+        {
+          "status": "yes",
+          "features": [
+            "owner.runtime",
+            "content.context",
+            "content.events",
+            "scope.session",
+            "scope.project",
+            "form.files",
+            "form.records",
+            "use.fixed"
+          ],
+          "note": "会话自动保存；活动分支和发现的上下文组成下一次模型输入，按工作目录恢复。",
+          "section": "Continue or switch sessions / Manage conversation context",
+          "source": "pi"
+        },
+        {
+          "status": "yes",
+          "features": [
+            "operation.compact"
+          ],
+          "note": "旧历史可自动或手动摘要，保留近期消息；原始会话条目不会因此删除。",
+          "section": "Manage conversation context",
+          "source": "pi"
+        },
+        {
+          "status": "yes",
+          "features": [
+            "owner.human",
+            "operation.forget",
+            "governance.control"
+          ],
+          "note": "用户可选择恢复、分支或删除会话；--no-session 可关闭持久化。",
+          "section": "Choose how to branch / Control session storage",
+          "source": "pi"
+        }
+      ]
+    },
+    {
+      "id": "codex",
+      "resourceId": "codex",
+      "kind": "harness",
+      "identitySource": "codex",
+      "note": "图中自动记忆指本地主机的可选记忆功能，默认关闭；与 ChatGPT 网页记忆分开。",
+      "historical": false,
+      "claims": [
+        {
+          "status": "config",
+          "features": [
+            "owner.runtime",
+            "content.context",
+            "form.files",
+            "operation.extract",
+            "operation.update",
+            "use.fixed"
+          ],
+          "note": "启用本地 memories 后，后台从合格历史聊天提炼并整合，后续会话可注入；不是每个聊天结束立即写入。",
+          "section": "How local Codex memories work / Configure local memories",
+          "source": "codex"
+        },
+        {
+          "status": "yes",
+          "features": [
+            "owner.human",
+            "content.rules"
+          ],
+          "note": "必需规则建议放在 AGENTS.md 或项目文档；自动记忆不能取代必需指令。",
+          "section": "Memories 开头说明",
+          "source": "codex"
+        },
+        {
+          "status": "yes",
+          "features": [
+            "governance.control",
+            "operation.forget"
+          ],
+          "note": "可设置全局开关、逐聊天读写控制，并删除选定机器上的本地记忆。",
+          "section": "Control local memories per chat / app controls",
+          "source": "codex"
+        }
+      ]
+    },
+    {
+      "id": "claude-code",
+      "resourceId": "claude-code",
+      "kind": "harness",
+      "identitySource": "claude-code",
+      "note": "自动记忆以本地项目为主；自托管、后台或嵌套启动会话的默认设置有例外。",
+      "historical": false,
+      "claims": [
+        {
+          "status": "yes",
+          "features": [
+            "owner.human",
+            "content.rules",
+            "scope.user"
+          ],
+          "note": "人工指令可按项目、用户或组织设置，作为上下文加载，不是强制工具权限。",
+          "section": "CLAUDE.md vs auto memory",
+          "source": "claude-code"
+        },
+        {
+          "status": "yes",
+          "features": [
+            "owner.agent",
+            "owner.runtime",
+            "content.context",
+            "content.facts",
+            "content.experience",
+            "scope.project",
+            "form.files",
+            "operation.extract",
+            "operation.update",
+            "use.fixed",
+            "use.demand"
+          ],
+          "note": "普通本地会话默认开启（自托管、后台或嵌套会话有例外）。Agent 写自动笔记；Harness 启动加载有长度上限的索引，详情文件按需读。笔记涵盖偏好、反馈、项目与引用。",
+          "section": "Auto memory / How it works",
+          "source": "claude-code"
+        },
+        {
+          "status": "yes",
+          "features": [
+            "operation.forget",
+            "governance.control"
+          ],
+          "note": "用户可编辑或删除笔记，也可关闭自动记忆。",
+          "section": "Audit and edit your memory / How it works",
+          "source": "claude-code"
+        },
+        {
+          "status": "config",
+          "features": [
+            "governance.trace"
+          ],
+          "note": "对带 YAML frontmatter 的记忆文件，写入时记录 modified 时间；这是修改时间，不是事实出处。",
+          "section": "Auto memory / How it works",
+          "source": "claude-code"
+        }
+      ]
+    },
+    {
+      "id": "openclaw",
+      "resourceId": "openclaw",
+      "kind": "agent",
+      "identitySource": "openclaw",
+      "note": "Markdown 是持久记忆主体；检索后端与个人/共享场景应按配置核对。",
+      "historical": false,
+      "claims": [
+        {
+          "status": "yes",
+          "features": [
+            "owner.agent",
+            "owner.runtime",
+            "content.context",
+            "content.events",
+            "content.facts",
+            "scope.project",
+            "form.files",
+            "operation.extract",
+            "operation.update",
+            "use.fixed",
+            "use.demand"
+          ],
+          "note": "工作区保存 USER.md、MEMORY.md 和每日笔记；会话加载部分文件，并可按需搜索和读取。整理会从日记提炼持久信息。",
+          "section": "Memory files / Agent tools / dreaming",
+          "source": "openclaw"
+        },
+        {
+          "status": "config",
+          "features": [
+            "form.vector"
+          ],
+          "note": "检索可以用向量与文本索引；向量提供方和数据库能力需配置，也可只用文本检索。",
+          "section": "PostgreSQL memory search",
+          "source": "openclaw"
+        },
+        {
+          "status": "yes",
+          "features": [
+            "governance.trace",
+            "governance.access"
+          ],
+          "note": "工作区来源记录用于阻止不可信或缺少有效来源身份的文件自动进入记忆上下文；不是完整安全保证。",
+          "section": "Memory provenance overview",
+          "source": "openclaw"
+        }
+      ]
+    },
+    {
+      "id": "hermes",
+      "resourceId": "hermes",
+      "kind": "agent",
+      "identitySource": "hermes",
+      "note": "记忆和技能机制按项目 README 记录；学习效果与用户建模质量未经独立测试。",
+      "historical": false,
+      "claims": [
+        {
+          "status": "yes",
+          "features": [
+            "owner.agent",
+            "owner.runtime",
+            "content.events",
+            "content.experience",
+            "form.files",
+            "form.records",
+            "operation.extract",
+            "operation.update",
+            "operation.compact",
+            "use.demand"
+          ],
+          "note": "Agent 维护笔记和技能；FTS5 搜索旧会话并摘要，可用 /compress 压缩上下文。",
+          "section": "A closed learning loop / Commands",
+          "source": "hermes"
+        },
+        {
+          "status": "yes",
+          "features": [
+            "content.facts",
+            "scope.user"
+          ],
+          "note": "README 列明 MEMORY.md 与 USER.md；用户画像的更深推断另有 Honcho 集成。",
+          "section": "Migrating / Memories",
+          "source": "hermes"
+        },
+        {
+          "status": "config",
+          "features": [
+            "owner.external"
+          ],
+          "note": "Honcho 是可选用户建模集成；不能把外部服务的全部能力算作 Hermes 原生能力。",
+          "section": "A closed learning loop",
+          "source": "hermes"
+        }
+      ]
+    },
+    {
+      "id": "gemini-cli",
+      "resourceId": "gemini-cli",
+      "kind": "harness",
+      "identitySource": "gemini-cli",
+      "note": "此行核对 GEMINI.md 指令上下文；其他自动记忆机制及不同客户端不由此推断。",
+      "historical": false,
+      "claims": [
+        {
+          "status": "yes",
+          "features": [
+            "owner.human",
+            "owner.runtime",
+            "content.rules",
+            "scope.project",
+            "scope.user",
+            "form.files",
+            "use.fixed"
+          ],
+          "note": "用户/工作区的 GEMINI.md 分层加载并组合进提示，可 /memory show 或 reload。",
+          "section": "Understand the context hierarchy / Manage context",
+          "source": "gemini-cli"
+        },
+        {
+          "status": "yes",
+          "features": [
+            "use.demand"
+          ],
+          "note": "访问相关路径时发现更局部的 JIT 上下文文件。",
+          "section": "Just-in-time context files",
+          "source": "gemini-cli"
+        }
+      ]
+    },
+    {
+      "id": "opencode",
+      "resourceId": "opencode",
+      "kind": "harness",
+      "identitySource": "opencode",
+      "note": "当前映射来源为 V2 会话规范，未核实具体发行版；问号保留规范提示，不等于没有功能。",
+      "historical": false,
+      "claims": [
+        {
+          "status": "unknown",
+          "features": [
+            "owner.runtime",
+            "content.context",
+            "content.events",
+            "scope.session",
+            "form.records",
+            "operation.compact",
+            "use.fixed"
+          ],
+          "note": "V2 规范描述持久事件、历史重载和上下文压缩；具体发布版本对应关系尚未确认。",
+          "section": "Execution / Compaction rebuilds active history",
+          "source": "opencode"
+        }
+      ]
+    },
+    {
+      "id": "aider",
+      "resourceId": "aider",
+      "kind": "harness",
+      "identitySource": "aider",
+      "note": "聊天历史与摘要机制；恢复旧历史默认关闭。",
+      "historical": false,
+      "claims": [
+        {
+          "status": "yes",
+          "features": [
+            "owner.runtime",
+            "content.events",
+            "scope.session",
+            "form.files"
+          ],
+          "note": "默认保存 .aider.chat.history.md，可指定历史文件。",
+          "section": "History Files / --chat-history-file",
+          "source": "aider"
+        },
+        {
+          "status": "yes",
+          "features": [
+            "content.context",
+            "operation.compact"
+          ],
+          "note": "历史达到 token 软限额后开始摘要；阈值依模型或参数。",
+          "section": "--max-chat-history-tokens",
+          "source": "aider"
+        },
+        {
+          "status": "config",
+          "features": [
+            "use.fixed"
+          ],
+          "note": "--restore-chat-history 才恢复旧历史，默认 False。",
+          "section": "--restore-chat-history",
+          "source": "aider"
+        }
+      ]
+    },
+    {
+      "id": "cline",
+      "resourceId": "cline",
+      "kind": "harness",
+      "identitySource": "cline",
+      "note": "下面的记忆能力来自 Memory Bank 文档配置方法，需添加规则并初始化；不表示默认内置。",
+      "historical": false,
+      "claims": [
+        {
+          "status": "config",
+          "features": [
+            "owner.human",
+            "owner.agent",
+            "content.context",
+            "content.events",
+            "content.rules",
+            "scope.project",
+            "form.files",
+            "operation.update",
+            "use.fixed"
+          ],
+          "note": "将 Memory Bank 自定义指令写入 Cline Rules 并初始化；Agent 按约定维护项目背景、当前状态和进度文档。",
+          "section": "Quick Setup / How It Works / Custom Instructions",
+          "source": "cline"
+        }
+      ],
+      "displayName": "Cline"
+    },
+    {
+      "id": "deepseek-harness",
+      "resourceId": "deepseek-harness",
+      "kind": "harness",
+      "identitySource": "deepseek-harness",
+      "note": "仅列已核的 MCP 记忆接入；三种参考配置默认关闭，具体内容与存储取决于外部服务器。",
+      "historical": false,
+      "claims": [
+        {
+          "status": "config",
+          "features": [
+            "owner.external",
+            "owner.agent",
+            "use.demand"
+          ],
+          "note": "启用参考配置后，Agent 调用第三方记忆服务器工具；DSH 不负责安装服务器或初始化数据库。",
+          "section": "What DSH does / Enable one",
+          "source": "deepseek-harness"
+        },
+        {
+          "status": "config",
+          "features": [
+            "form.graph",
+            "form.records"
+          ],
+          "note": "只有选择 MCP Reference Memory 配置时，才有实体/关系/观察构成的 JSONL 知识图；不是所有配置都有图谱。",
+          "section": "Provider setup / MCP Reference Memory",
+          "source": "deepseek-harness"
+        }
+      ]
+    },
+    {
+      "id": "qwen-code",
+      "resourceId": "qwen-code",
+      "kind": "harness",
+      "identitySource": "qwen-code",
+      "note": "以当前仓库 Memory 文档为准；结构化召回和团队记忆是可选项，不与默认功能混算。",
+      "historical": false,
+      "claims": [
+        {
+          "status": "yes",
+          "features": [
+            "owner.human",
+            "content.rules",
+            "scope.user",
+            "scope.project",
+            "form.files",
+            "use.fixed"
+          ],
+          "note": "QWEN.md 按用户/项目加载；自动记忆为 Markdown 与有预算的索引。",
+          "section": "QWEN.md / Where it is stored",
+          "source": "qwen-code"
+        },
+        {
+          "status": "yes",
+          "features": [
+            "owner.runtime",
+            "content.context",
+            "content.facts",
+            "content.experience",
+            "operation.extract",
+            "operation.update",
+            "operation.forget",
+            "governance.control"
+          ],
+          "note": "后台保存偏好、反馈和项目线索，定期清理过时内容；可编辑、删除或关闭。",
+          "section": "Auto-memory / Periodic cleanup / Turning it on or off",
+          "source": "qwen-code"
+        },
+        {
+          "status": "config",
+          "features": [
+            "use.demand",
+            "use.auto"
+          ],
+          "note": "结构化召回需显式启用；按请求注入相关子树，提供 search_memory 按需读取。",
+          "section": "Structured recall (opt-in)",
+          "source": "qwen-code"
+        }
+      ]
+    },
+    {
+      "id": "cursor",
+      "resourceId": "cursor",
+      "kind": "agent",
+      "identitySource": "cursor-agent",
+      "note": "已核当前 Rules 机制；旧自动 Memories 的现行可用性仍未确认。",
+      "historical": false,
+      "claims": [
+        {
+          "status": "yes",
+          "features": [
+            "owner.human",
+            "owner.runtime",
+            "content.rules",
+            "scope.project",
+            "scope.user",
+            "form.files"
+          ],
+          "note": "用户/项目规则形成持久指令上下文；项目规则存放 .cursor/rules 或 AGENTS.md。",
+          "section": "Rules / Project rules",
+          "source": "cursor"
+        },
+        {
+          "status": "config",
+          "features": [
+            "use.fixed",
+            "use.demand"
+          ],
+          "note": "规则可设置始终应用、按文件匹配、由 Agent 判断相关或手动引用；不同规则选择不同载入方式。",
+          "section": "Rule types",
+          "source": "cursor"
+        }
+      ],
+      "displayName": "Cursor Agent"
+    },
+    {
+      "id": "letta-code",
+      "resourceId": "letta-code",
+      "kind": "harness",
+      "identitySource": "letta-code",
+      "note": "图指 Letta Code Harness，不代表整个 Letta 平台；本地、Cloud 和 Windows 后台整理默认值有差异。",
+      "historical": false,
+      "claims": [
+        {
+          "status": "yes",
+          "features": [
+            "owner.agent",
+            "owner.runtime",
+            "content.context",
+            "content.experience",
+            "scope.agent",
+            "form.files",
+            "operation.update",
+            "use.fixed",
+            "use.demand"
+          ],
+          "note": "Agent 可改写记忆块和技能，维持持续身份；支持消息搜索，记忆块进入上下文。",
+          "section": "Feature Overview",
+          "source": "letta-code"
+        },
+        {
+          "status": "yes",
+          "features": [
+            "content.events",
+            "form.records",
+            "governance.trace"
+          ],
+          "note": "可搜索消息；MemFS 用 Git 跟踪上下文与记忆版本。版本记录不等于原始事实来源。",
+          "section": "Message search / MemFS",
+          "source": "letta-code"
+        },
+        {
+          "status": "config",
+          "features": [
+            "operation.extract",
+            "owner.external"
+          ],
+          "note": "定期 dreaming 需配置；云端可保存 Agent 记忆与会话，本地路径另有选择。",
+          "section": "Self-improvement / Letta Cloud",
+          "source": "letta-code"
+        }
+      ]
+    },
+    {
+      "id": "deep-agents",
+      "resourceId": "deep-agents",
+      "kind": "harness",
+      "identitySource": "deep-agents-identity",
+      "note": "图指可直接运行的 Deep Agents Harness；持久后端、memory 路径和权限按应用配置。",
+      "historical": false,
+      "claims": [
+        {
+          "status": "yes",
+          "features": [
+            "owner.runtime",
+            "content.context",
+            "content.events",
+            "scope.session"
+          ],
+          "note": "短期历史与临时文件作为 Agent 状态自动管理；此格不代表已配置跨会话持久记忆。",
+          "section": "Memory / Short-term memory",
+          "source": "deep-agents"
+        },
+        {
+          "status": "config",
+          "features": [
+            "owner.agent",
+            "content.facts",
+            "content.experience",
+            "content.rules",
+            "scope.user",
+            "scope.agent",
+            "form.files",
+            "operation.update",
+            "use.fixed",
+            "use.demand",
+            "governance.access"
+          ],
+          "note": "配置 memory/skills、可写文件与后端后，Agent 可读写记忆；启动载入或按需读，namespace 区分用户/Agent，部分文件只读。",
+          "section": "How memory works / Scoped memory / Read-only vs writable",
+          "source": "deep-agents"
+        },
+        {
+          "status": "config",
+          "features": [
+            "operation.extract"
+          ],
+          "note": "可配置会话之间的后台 consolidation；不能视为所有部署都启用。",
+          "section": "Background consolidation",
+          "source": "deep-agents"
+        }
+      ]
+    },
+    {
+      "id": "microsoft-agent-framework",
+      "resourceId": "microsoft-agent-framework",
+      "kind": "harness",
+      "identitySource": "microsoft-agent-framework",
+      "note": "只比较 Agent Framework 的 Python create_harness_agent 组合；不将 .NET、Go 的不同默认值混用。",
+      "historical": false,
+      "claims": [
+        {
+          "status": "yes",
+          "features": [
+            "owner.runtime",
+            "content.context",
+            "content.events",
+            "scope.session",
+            "form.records",
+            "form.files"
+          ],
+          "note": "Python Harness 默认组合会话历史、文件记忆及上下文提供器；上下文压缩另有 token 限额或策略前提。",
+          "section": "Python / Create a harness agent / Customize the composition",
+          "source": "microsoft-agent-framework"
+        },
+        {
+          "status": "config",
+          "features": [
+            "owner.agent",
+            "use.demand",
+            "governance.access"
+          ],
+          "note": "共享文件访问是 opt-in；可按会话或显式 scope 隔离。文件访问等功能仍标实验性。",
+          "section": "Python / File access",
+          "source": "microsoft-agent-framework"
+        },
+        {
+          "status": "config",
+          "features": [
+            "operation.compact"
+          ],
+          "note": "为 Python Harness 提供 token 限额或自定义策略后启用上下文压缩。",
+          "section": "Harness capability matrix / Python",
+          "source": "microsoft-agent-framework"
+        }
+      ],
+      "displayName": "Microsoft Harness (Python)"
+    },
+    {
+      "id": "pydantic-ai",
+      "resourceId": "pydantic-ai",
+      "kind": "harness",
+      "identitySource": "pydantic-ai",
+      "note": "可选 Memory capability；图中带△的属性要求应用添加并配置该能力。0.x API 仍可能变化。",
+      "historical": false,
+      "claims": [
+        {
+          "status": "config",
+          "features": [
+            "owner.agent",
+            "owner.runtime",
+            "form.files",
+            "operation.update",
+            "operation.forget",
+            "use.fixed",
+            "use.demand",
+            "governance.access"
+          ],
+          "note": "添加 Memory(FileStore) 后，主笔记限量载入，其余文件按需读/搜；模型可修改或删其他文件，主笔记受保护，namespace 由应用决定。",
+          "section": "Notebook model / tools / namespace",
+          "source": "pydantic-ai"
+        }
+      ],
+      "displayName": "Pydantic AI Harness"
+    },
+    {
+      "id": "strands",
+      "resourceId": "strands",
+      "kind": "harness",
+      "identitySource": "strands",
+      "note": "这里是完整 Strands Harness 组合，不是其底层 Harness SDK。配置和读取默认值以所列文档为准。",
+      "historical": false,
+      "claims": [
+        {
+          "status": "yes",
+          "features": [
+            "owner.runtime",
+            "content.facts",
+            "form.files",
+            "operation.extract",
+            "use.auto",
+            "use.demand"
+          ],
+          "note": "后台提炼持久事实；每次用户发言前检索注入，也提供按需搜索。",
+          "section": "What memory does by default",
+          "source": "strands-memory"
+        },
+        {
+          "status": "yes",
+          "features": [
+            "owner.agent"
+          ],
+          "note": "Agent 可主动调用 search_memory 检索；默认没有记忆写工具，写入由后台 memory manager 负责。",
+          "section": "What memory does by default / Swap the memory backend",
+          "source": "strands-memory"
+        },
+        {
+          "status": "yes",
+          "features": [
+            "content.context",
+            "content.events",
+            "scope.session",
+            "form.records"
+          ],
+          "note": "检查点保存一个会话及工具输出，供相同 session id 恢复；长期事实与会话存储分开。",
+          "section": "Checkpoints",
+          "source": "strands-state"
+        },
+        {
+          "status": "config",
+          "features": [
+            "scope.project",
+            "governance.access"
+          ],
+          "note": "默认使用工作目录中的 .agent；隔离多租户需 scoped store 和文件权限，不能仅靠默认目录。",
+          "section": "Long-term memory / Concurrency, isolation, and deletion",
+          "source": "strands-state"
+        },
+        {
+          "status": "yes",
+          "features": [
+            "governance.control",
+            "operation.forget"
+          ],
+          "note": "可禁用记忆；删除会话目录与删除长期记忆目录是不同操作。",
+          "section": "Deletion / Turn memory off",
+          "source": "strands-state"
+        }
+      ],
+      "displayName": "Strands Harness"
+    },
+    {
+      "id": "openhands-agent",
+      "resourceId": "openhands",
+      "kind": "agent",
+      "identitySource": "openhands",
+      "note": "指 Software Agent SDK 中可运行的 Agent＋Conversation；不把整个 SDK 或 Agent Canvas UI 当作同一对象。长期记忆边界仍待核。",
+      "historical": false,
+      "claims": [
+        {
+          "status": "yes",
+          "features": [
+            "content.context",
+            "scope.session"
+          ],
+          "note": "官方示例以 Agent、Conversation 和 workspace 执行任务；此处只确认会话任务上下文。",
+          "section": "Quick Start / Repository boundaries",
+          "source": "openhands"
+        }
+      ],
+      "displayName": "OpenHands Agent"
+    },
+    {
+      "id": "openhands-cli",
+      "resourceId": "openhands",
+      "kind": "harness",
+      "identitySource": "openhands-cli",
+      "note": "原 CLI 已停止积极维护，官方推荐 Agent Canvas；保留历史对照，不作为维护中的推荐。",
+      "historical": true,
+      "claims": [
+        {
+          "status": "yes",
+          "features": [
+            "owner.runtime",
+            "scope.session",
+            "use.fixed"
+          ],
+          "note": "CLI 提供 --resume 按 ID 或最近会话恢复；持久长期记忆的具体机制待核。",
+          "section": "Resume Conversations",
+          "source": "openhands-cli"
+        }
+      ],
+      "displayName": "OpenHands CLI"
+    },
+    {
+      "id": "continue",
+      "resourceId": "continue",
+      "kind": "agent",
+      "identitySource": "continue",
+      "note": "README 明确仓库不再积极维护、对用户只读；记忆属性未完成核实。",
+      "historical": true,
+      "claims": []
+    },
+    {
+      "id": "roo-code",
+      "resourceId": "roo-code",
+      "kind": "agent",
+      "identitySource": "roo-code",
+      "note": "仓库已归档，仅作历史 Agent 对照；未用旧版功能推断当前能力。",
+      "historical": true,
+      "claims": []
+    }
+  ]
+}

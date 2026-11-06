@@ -38,7 +38,7 @@ The expanded guide and detailed catalogue are currently **in Chinese**; source t
 
 The [interactive guide](https://dongshuyan.github.io/awesome-harness-memory/) provides search, filters, explanations, and views for comparing documented system properties. Open **图解探索** for the layered diagram: select several perspectives, adjust the view, and highlight one system across layers.
 
-The [static layered illustration](assets/memory-layers.svg) uses six **fictional systems** to explain the display. It is separate from real system descriptions and is not a product ranking.
+The diagram covers the Harness / Agent entries identified in this catalogue, not an exhaustive industry list. It includes **21 real Harness / Agent profiles**, with three historical projects clearly labeled. Select objects and perspectives, then open any cell for its definition, conditions, and source. The [static preview](assets/memory-layers.svg) shows six of these objects across three perspectives. Unknown properties stay unknown; colors are not a quality ranking. Standalone memory services, plugins, and general frameworks remain in the resource directory.
 
 README links and static images work directly on GitHub. For a local preview, run `python3 -m http.server 8000 --bind 127.0.0.1` from the repository root and open `http://127.0.0.1:8000/`.
 
