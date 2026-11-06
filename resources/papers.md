@@ -1,5 +1,7 @@
 # Papers and research reports
 
+> Earlier English reference edition (sources checked 2026-11-02). See the [expanded current catalogue in Chinese](papers.zh-CN.md) or the [interactive guide](https://dongshuyan.github.io/awesome-harness-memory/) for the latest coverage.
+
 [Home](../README.md) · [Systems](systems.md) · [Benchmarks](benchmarks.md)
 
 A reading timeline, newest first by the verified **first arXiv submission date**. Entries whose preprint dates remain unverified appear after the timeline. Venue or later publication is stated separately. Sources checked **2026-11-02**; these summaries introduce the research questions and mechanisms, without independently reproducing reported results.

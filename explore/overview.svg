@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Memory Atlas: three perspectives, shared concepts</title>
+  <desc id="desc">Continuity asks what carries forward. Construction asks how information becomes usable memory. Change and control asks what happens when facts, sessions, or access change. Select a concept in the interactive map to read distinctions, connections, and resources. The perspectives overlap and remain provisional.</desc>
+  <rect width="1200" height="420" rx="18" fill="#f5f4ee"/>
+  <g font-family="Avenir Next, Segoe UI, sans-serif" fill="#243c37">
+    <text x="36" y="42" font-size="11" letter-spacing="2" fill="#626f68">AWESOME HARNESS MEMORY</text>
+    <text x="36" y="88" font-family="Georgia, serif" font-size="39">Memory Atlas.</text>
+    <text x="1164" y="79" text-anchor="end" font-size="14" fill="#626f68">Three perspectives. Shared concepts.</text>
+    <rect x="36" y="116" width="360" height="212" rx="12" fill="#e5eee7" stroke="#c3d4c8"/>
+    <rect x="420" y="116" width="360" height="212" rx="12" fill="#f1ead7" stroke="#ded2b3"/>
+    <rect x="804" y="116" width="360" height="212" rx="12" fill="#e6edf0" stroke="#cbd9e1"/>
+    <g font-size="12" letter-spacing="1.5">
+      <text x="58" y="146" fill="#21594e">01 / CONTINUITY</text>
+      <text x="442" y="146" fill="#806022">02 / CONSTRUCTION</text>
+      <text x="826" y="146" fill="#3e657c">03 / CHANGE &amp; CONTROL</text>
+    </g>
+    <g font-family="Georgia, serif" font-size="23">
+      <text x="58" y="184">What carries forward?</text>
+      <text x="442" y="184">How is memory made useful?</text>
+      <text x="826" y="184">What happens when it changes?</text>
+    </g>
+    <g font-size="14" fill="#465b52">
+      <text x="58" y="220">Active context · Resumable state</text>
+      <text x="58" y="247">User information · Records &amp; derivation</text>
+      <text x="58" y="274">Reusable experience</text>
+      <text x="442" y="220">Records &amp; derivation · Reusable experience</text>
+      <text x="442" y="247">Retrieval &amp; use · Active context</text>
+      <text x="442" y="274">Scope &amp; provenance</text>
+      <text x="826" y="220">Revision &amp; forgetting · User information</text>
+      <text x="826" y="247">Resumable state · Scope &amp; provenance</text>
+      <text x="826" y="274">Retrieval &amp; use</text>
+    </g>
+    <path d="M216 328v22h768v-22M600 328v22" fill="none" stroke="#a3b3a8"/>
+    <text x="600" y="378" text-anchor="middle" font-size="15">Select a concept → Read distinctions → Follow connections &amp; resources</text>
+    <text x="600" y="403" text-anchor="middle" font-size="11" fill="#626f68">An evolving reading aid with documented examples and editorial connections.</text>
+  </g>
+</svg>

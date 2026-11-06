@@ -12,4 +12,4 @@ Each round should leave a readable repository. A round may add a few resources, 
 | Synthesis | Test alternative navigation and diagram designs against the collected evidence | A proposed map and concise entry format, revised where examples do not fit |
 | Continued curation | Discover new work; revisit source changes, maintenance, corrections, and reader needs | Small reviewed updates and removal or revision of stale entries |
 
-The next rounds can overlap where evidence is independent. Taxonomy, diagrams, entry fields, and an update schedule remain open. A website, automated ingestion, and a shared benchmark leaderboard are outside this initial delivery.
+The current edition adds a [published knowledge navigator](https://dongshuyan.github.io/awesome-harness-memory/), expanded Chinese reference pages, and a layered design illustration. The next rounds can overlap where evidence is independent. Taxonomy, diagrams, entry fields, and the update schedule remain open; automated ingestion and a shared benchmark leaderboard remain future possibilities rather than current features.

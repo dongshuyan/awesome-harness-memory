@@ -1,56 +1,54 @@
 # Awesome Harness Memory
 
-> 面向科研与应用开发者的 Agent Harness Memory 精选导航：梳理上下文管理、跨 Session 连续性、长期记忆、系统、Benchmark、论文，以及文学影视中的记忆设定。
+[English](README.md) · [简体中文](README.zh-CN.md) · **[打开交互导航](https://dongshuyan.github.io/awesome-harness-memory/)**
 
-[English](README.md) · [简体中文](README.zh-CN.md)
+理解 Agent 如何记住、更新和使用信息，找到值得继续读的论文、方法、系统与评测。
 
-如果你正在构建、研究或评估 AI Agent，这里帮助你快速找到合适的记忆相关入口，并保留不同项目术语之间的差异。
+[知识全景](docs/landscape.zh-CN.md) · [按需求找资料](docs/needs.zh-CN.md) · [系统与产品](resources/systems.zh-CN.md) · [论文与方法](resources/papers.zh-CN.md) · [评测](resources/benchmarks.zh-CN.md)
 
-在本仓库中，Harness 指围绕 Agent 的运行时与控制边界。只要有助于理解或评估 Agent Memory，我们也会收录独立记忆系统、托管服务、论文、Benchmark 和文学影视作品。
+[![从七个问题理解 Memory](assets/memory-landscape.svg)](https://dongshuyan.github.io/awesome-harness-memory/)
 
-## 按需求查找
+## 先建立全景
 
-| 我想要…… | 从这里开始 |
+| 你想理解的问题 | 从这里开始 |
 | --- | --- |
-| 理解上下文和对话状态 | [LangGraph](resources/systems.md#langgraph) · [Deep Agents](resources/systems.md#deep-agents) · [OpenAI Agents SDK](resources/systems.md#openai-agents-sdk) |
-| 在多个 Session 之间承接信息 | [Google ADK](resources/systems.md#google-adk) · [Mem0](resources/systems.md#mem0) · [Letta](resources/systems.md#letta--letta-code) |
-| 比较托管记忆服务 | [Google Agent Platform Memory Bank](resources/systems.md#google-agent-platform-memory-bank) · [Amazon Bedrock AgentCore Memory](resources/systems.md#amazon-bedrock-agentcore-memory) |
-| 为多个 Agent 组织信息 | [CrewAI](resources/systems.md#crewai) |
-| 追踪事实变化及其历史 | [Graphiti](resources/systems.md#graphiti) |
-| 复用已有尝试和任务的经验 | [Reflexion](resources/papers.md#reflexion) · [ReasoningBank](resources/papers.md#reasoningbank) · [OpenAI Agents SDK](resources/systems.md#openai-agents-sdk) |
-| 评估召回、更新、冲突和不确定性 | [LongMemEval](resources/benchmarks.md#longmemeval) · [LoCoMo](resources/benchmarks.md#locomo) · [MemoryAgentBench](resources/benchmarks.md#memoryagentbench) |
-| 检查记忆是否改变工具调用 | [Mem2ActBench](resources/benchmarks.md#mem2actbench) |
-| 考察记忆容量与读写耗时 | [MemBench](resources/benchmarks.md#membench) |
-| 评估遗忘、视觉记忆和角色间共享 | [Memora](resources/benchmarks.md#memora) · [Mem-Gallery](resources/benchmarks.md#mem-gallery) · [COLLABMEM](resources/benchmarks.md#collabmem)（协议参考） |
-| 考察成本对照与记忆投毒 | [Token-budget study](resources/papers.md#online-memory-under-token-budgets) · [AgentPoison](resources/papers.md#agentpoison) |
-| 从故事中理解记忆约束 | [文学与影视](resources/fiction.md) — 有限回忆、外部记录、访问分隔、过度记忆和集体遗忘 |
+| [谁在管理记忆？](docs/landscape.zh-CN.md#owner) | Agent · Harness · 记忆服务 · 应用 |
+| [记住什么？](docs/landscape.zh-CN.md#content) | 事件 · 事实 · 流程 · 经验 · 关系 |
+| [为谁保存，保留多久？](docs/landscape.zh-CN.md#scope) | 会话 · 项目 · 用户 · 团队 · 保留期 |
+| [用什么保存和查找？](docs/landscape.zh-CN.md#form) | 文件 · 结构化记录 · 检查点 · 索引 · 图 |
+| [怎样形成和维护记忆？](docs/landscape.zh-CN.md#operation) | 记录 · 提取 · 整理 · 检索 · 修订 · 遗忘 |
+| [记忆怎样进入下一次行动？](docs/landscape.zh-CN.md#use) | 自动预载 · 主动查询 · 常驻 · 按需 · 行动 |
+| [怎样让记忆可追溯、可控制？](docs/landscape.zh-CN.md#governance) | 权限 · 来源 · 冲突 · 撤销 · 投毒 |
 
-顺序仅用于导航，不代表排名。
+七问可以交叉组合，也会随研究修订；它们不是七种互斥记忆。每个专题先解释问题和路线，再给功能、亮点、限制与原始资料。
 
-选择 benchmark 可先看[评测选择指南](docs/evaluation-guide.md)；比较不同项目的术语，可看[机制实例与开放问题](docs/research-questions.md)。
+## 从具体对象开始
 
-## 按资源类型浏览
+- **[Harness、Agent、独立记忆层与服务](resources/systems.zh-CN.md)**：包括 Pi、Codex、Claude Code、Claude-Mem、OpenClaw、Hermes、Letta Code、LangGraph、Mem0、Hindsight、MemOS、Graphiti / Zep 等。另以 ChatGPT Memory 作为个人助手产品对照，和开发框架分组阅读。
+- **[论文与方法](resources/papers.zh-CN.md)**、**[综述](resources/surveys.zh-CN.md)**：从研究问题进入原始工作，区分论文结论与当前实现。
+- **[Benchmark 与评测工具](resources/benchmarks.zh-CN.md)**：分别看召回、实际使用、行动、更新、共享、安全和成本。
+- **[人类记忆](resources/human.zh-CN.md)**：认知规律与关键脑机制；**[文学影视](resources/fiction.zh-CN.md)**：作为设定与类比阅读。
 
-- [系统与产品](resources/systems.md)：Agent 框架、Harness、独立记忆层和托管服务。
-- [论文与研究报告](resources/papers.md)：按时间排列，并链接原始来源。
-- [Benchmark 与评估](resources/benchmarks.md)：测什么，以及结论适用到哪里。
-- [文学与影视](resources/fiction.md)：用于提出设计问题的记忆设定，并明确标注为类比。
+## 用图理解组合
 
-这些分组是当前用于导航的暂定安排，后续可能随着调研发展而调整。
+[![立体切片：虚构系统设计示意](assets/memory-layers.svg)](https://dongshuyan.github.io/awesome-harness-memory/)
 
-## 本仓库收录什么
+立体图用六个虚构系统说明“系统 × 属性 × 视角”，不是实际产品的能力排名。交互版可多选层、调整角度与间距；真实系统的已核说明见 [系统目录](resources/systems.zh-CN.md)，交互页另可同时展开多个视角比较。
 
-仓库通过小批量调研持续更新，提供代表性入口，不声称是完整目录或排名。正式分类、条目格式和架构图仍保持开放，会在比较实际系统和评估方法的过程中继续确定。
+## 打开交互导航
 
-## 关于这一版
+**[进入在线知识导航](https://dongshuyan.github.io/awesome-harness-memory/)**，从“知识全景”开始，或直接打开“资源目录”“图解探索”。
 
-来源核对日期：**2026-11-02**
+README 的 Markdown 导航和静态图在 GitHub 上可以独立阅读；交互页支持搜索、筛选、多视角比较和立体切片。较早的 [Memory Atlas 双语概念地图](explore/README.zh-CN.md) 也保留，使用 32 项资源说明概念关系，不代表最新完整目录。
 
-- 条目链接到论文、官方文档、项目仓库或出版方/制作方资料。
-- 产品行为依据项目或厂商公开文档概括，不推断内部实现。
-- 不代表已经安装系统、复现 Benchmark、完成生产验证或安全审计。
-- 文学影视条目属于编辑类比，不是模型认知或工程效果证据。
+本地预览：在仓库根目录运行 `python3 -m http.server 8000 --bind 127.0.0.1`，然后打开 `http://127.0.0.1:8000/`。
 
-资源条目目前以英文为主；中文 README 提供导航和范围说明。继续阅读：[研究路线图](ROADMAP.md)、[待调研问题](docs/research-questions.md)、[仓库结构](docs/repository-structure.md)和[贡献指南](CONTRIBUTING.md)。
+## 资料范围
 
-问题和建议会帮助我们决定下一轮优先调研什么；如果这个导航帮你节省了时间，也欢迎点 Star，帮助更多人找到它。
+核对至 **2026-11-06 UTC**。当前目录 137 项：55 项基础资料已核、47 项研究阅读入口、32 项待核线索、3 项历史资料。其中 **48 个系统**的基础功能有原始资料支持。
+
+条目、来源与状态可在 [结构化目录](catalogue.json) 中核对；它与交互页使用相同数据。
+
+“已核”指支持所写简介的文档核对，不能等同于完整源码审计、实际运行、效果复现或安全认证。CloudMEM、API Harness、Cortex AI 等名称仍保留待核说明。条目数不能用于推导行业占比，当前也不是全领域穷尽清单。
+
+如果这个导航帮助你理解问题或找到资料，欢迎点 Star，帮助更多人发现它。补充与纠错见 [贡献指南](CONTRIBUTING.md)。

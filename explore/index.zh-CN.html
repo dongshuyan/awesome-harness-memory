@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Agent 记忆交互式阅读地图：连续性、记忆构建、变化与控制。">
+  <title>记忆地图 · Awesome Harness Memory</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%231b5148'/%3E%3Cpath d='M10 28V12l10 10 10-10v16' fill='none' stroke='%23fffaf0' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="model.js"></script>
+  <script defer src="content.js"></script>
+  <script defer src="catalog.js"></script>
+  <script defer src="locale.js"></script>
+  <script defer src="locale.zh-CN.js"></script>
+  <script defer src="atlas.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳到记忆地图</a>
+  <header class="site-header">
+    <a class="brand" href="https://github.com/dongshuyan/awesome-harness-memory" target="_blank" rel="noopener noreferrer">
+      <svg aria-hidden="true" viewBox="0 0 40 40"><rect width="40" height="40" rx="10"/><path d="M10 28V12l10 10 10-10v16"/></svg>
+      <span>Awesome Harness Memory<span class="brand-sub">持续更新的领域指南</span></span>
+    </a>
+    <nav aria-label="指南链接">
+      <a id="language-link" data-page="index.html" href="index.html" lang="en" hreflang="en">English map</a>
+      <a href="https://github.com/dongshuyan/awesome-harness-memory/blob/master/README.zh-CN.md" target="_blank" rel="noopener noreferrer" lang="zh-CN">中文导读 ↗</a>
+      <a href="https://github.com/dongshuyan/awesome-harness-memory" target="_blank" rel="noopener noreferrer">项目仓库 ↗</a>
+    </nav>
+  </header>
+  <main id="main" tabindex="-1">
+    <div class="intro">
+      <div><p class="eyebrow">帮助理解记忆的地图</p><h1>记忆地图<span class="title-dot">.</span></h1><p class="intro-copy">探索哪些信息会延续、如何使用，以及信息变化时会发生什么。</p></div>
+      <button class="library-button" id="library-button" type="button"><span class="library-icon" aria-hidden="true">▤</span><span>资源库<small id="library-count">32 项精选资源</small></span><span aria-hidden="true">↗</span></button>
+    </div>
+    <div class="workspace">
+      <section class="map-area" aria-label="概念地图">
+        <div class="lenses" id="lenses" role="tablist" aria-label="阅读视角"></div>
+        <section id="lens-panel" role="tabpanel" aria-labelledby="lens-continuity">
+          <div class="lens-heading"><div><p class="eyebrow" id="lens-number"></p><h2 id="lens-question"></h2><p id="lens-description"></p></div><span class="map-instruction">选择一个概念<br><span aria-hidden="true">↙</span> 查看它的关联</span></div>
+          <div class="map-stage" id="map-stage">
+            <svg id="connections" viewBox="0 0 1000 500" preserveAspectRatio="none" aria-hidden="true"></svg>
+            <div id="edge-labels" aria-hidden="true"></div>
+            <div id="nodes"></div>
+          </div>
+          <div class="map-key"><span><i class="key-line documented"></i>文档记载的实例</span><span><i class="key-line synthesis"></i>编者关联</span><span class="key-focus"><i></i>此视角的重点</span></div>
+          <p class="map-caption">这些视角相互重叠，用于辅助阅读，并非完整或已定型的分类体系。</p>
+        </section>
+        <div class="reading-note"><span class="note-mark" aria-hidden="true">i</span><p><strong>按问题探索，不按排名选择。</strong> 每个概念都会引向代表性的系统、研究和评估方法。缺少一条连线，并不代表缺少相应能力。</p></div>
+      </section>
+      <aside class="inspector" aria-label="当前选择的概念"><div id="inspector"></div></aside>
+    </div>
+    <footer class="page-footer"><span id="coverage-count"></span><a href="https://github.com/dongshuyan/awesome-harness-memory/blob/master/docs/evaluation-guide.md" target="_blank" rel="noopener noreferrer">选择评测方法 ↗</a><span id="checked-date"></span></footer>
+    <noscript><section class="no-script"><h2>阅读指南</h2><p>交互地图需要 JavaScript。你仍可阅读完整的资源指南：</p><a href="https://github.com/dongshuyan/awesome-harness-memory">打开可访问的 Markdown 指南 ↗</a></section></noscript>
+  </main>
+  <p id="announcement" class="sr-only" role="status" aria-live="polite"></p>
+  <dialog id="resource-dialog" aria-labelledby="dialog-title"><button id="close-dialog" class="close-dialog" type="button" aria-label="关闭资源详情">×</button><div id="dialog-body"></div></dialog>
+</body>
+</html>

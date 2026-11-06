@@ -1,5 +1,7 @@
 # Fiction and screen
 
+> Earlier English reference edition (sources checked 2026-11-02). See the [expanded current catalogue in Chinese](fiction.zh-CN.md) or the [interactive guide](https://dongshuyan.github.io/awesome-harness-memory/) for the latest coverage.
+
 [Home](../README.md) · [Research questions](../docs/research-questions.md)
 
 Memory settings can suggest concrete questions for system design. The descriptions below use publisher, studio, or distributor material, including explicitly attributed story excerpts, checked **2026-11-02**. Each connection to AI is an editorial analogy, not a technical or neurological claim. Plot detail is limited to the cited synopsis or excerpt.

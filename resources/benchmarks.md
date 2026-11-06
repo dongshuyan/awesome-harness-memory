@@ -1,5 +1,7 @@
 # Benchmarks and evaluation
 
+> Earlier English reference edition (sources checked 2026-11-02). See the [expanded current catalogue in Chinese](benchmarks.zh-CN.md) or the [interactive guide](https://dongshuyan.github.io/awesome-harness-memory/) for the latest coverage.
+
 [Home](../README.md) · [Choose an evaluation](../docs/evaluation-guide.md) · [Paper timeline](papers.md)
 
 Start with the behavior you need to measure. These are introductions to existing evaluations, with sources checked **2026-11-02**. No benchmark was run for this edition.

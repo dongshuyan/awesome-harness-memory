@@ -1,5 +1,7 @@
 # Systems and products
 
+> Earlier English reference edition (sources checked 2026-11-02). See the [expanded current catalogue in Chinese](systems.zh-CN.md) or the [interactive guide](https://dongshuyan.github.io/awesome-harness-memory/) for the latest coverage.
+
 [Home](../README.md) · [Papers](papers.md) · [Evaluation](benchmarks.md)
 
 Introductory examples, with sources checked on **2026-11-02**. Project descriptions retain the source's terminology; their placement here does not define a memory taxonomy. No system was installed or benchmarked for this edition.
