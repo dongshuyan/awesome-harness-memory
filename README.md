@@ -40,13 +40,13 @@ The expanded guide and detailed catalogue are currently **in Chinese**; source t
 
 The [interactive guide](https://dongshuyan.github.io/awesome-harness-memory/) provides search, filters, explanations, and views for comparing documented system properties. Open **图解探索** for the layered diagram: select several perspectives, adjust the view, and highlight one system across layers.
 
-The diagram covers the Harness / Agent entries identified in this catalogue, not an exhaustive industry list. It includes **21 real Harness / Agent profiles**, with three historical projects clearly labeled. Select objects and perspectives, then open any cell for its definition, conditions, and source. The [static preview](assets/memory-layers.svg) shows six of these objects across three perspectives. Unknown properties stay unknown; colors are not a quality ranking. Standalone memory services, plugins, and general frameworks remain in the resource directory.
+The diagram covers the Harness / Agent entries identified in this catalogue, not an exhaustive industry list. It includes **22 real Harness / Agent profiles**, with three historical projects clearly labeled. Select objects and perspectives, then open any cell for its definition, conditions, and source. The [static preview](assets/memory-layers.svg) shows six of these objects across three perspectives. Unknown properties stay unknown; colors are not a quality ranking. Standalone memory services, plugins, and general frameworks remain in the resource directory.
 
 README links and static images work directly on GitHub. For a local preview, run `python3 -m http.server 8000 --bind 127.0.0.1` from the repository root and open `http://127.0.0.1:8000/`.
 
 ## Coverage and evidence
 
-Sources checked through **2026-11-06 UTC**. The catalogue contains **137 resources**: 55 with documented basic information, 47 research reading entries, 32 unresolved leads, and 3 historical entries. Within that total, **48 systems** have primary sources supporting their basic functional descriptions. Inspect the [structured catalogue](catalogue.json) for entries, sources, and status.
+Sources checked through **2026-11-07 UTC**. The catalogue contains **138 resources**: 56 with documented basic information, 47 research reading entries, 32 unresolved leads, and 3 historical entries. Within that total, **49 systems** have primary sources supporting their basic functional descriptions. Inspect the [structured catalogue](catalogue.json) for entries, sources, and status.
 
 Document checks do not establish implementation completeness, reproduced performance, deployment maturity, or security certification. No system installation or benchmark execution is implied. Unresolved names and properties remain labeled; the catalogue is not exhaustive, and its counts are not market shares. Fiction illustrates design questions rather than supplying evidence about model cognition.
 
