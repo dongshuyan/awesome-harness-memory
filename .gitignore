@@ -4,3 +4,5 @@
 private/
 research-private/
 *.private.*
+
+__pycache__/

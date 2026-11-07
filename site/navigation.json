@@ -1,0 +1,771 @@
+{
+  "legacyAxes": [
+    {
+      "id": "owner",
+      "name": "记忆控制相关主体",
+      "sub": "归属与控制边界",
+      "preview": "Agent · Harness · 记忆服务 · 应用",
+      "intro": "先看谁决定写入、读取和更新。一个系统可以把这些工作分给不同部分；产品名里有没有 Memory，并不能说明全部职责。",
+      "boundary": "Agent 是执行任务并作出选择的主体；Harness 是组织模型调用、工具和状态的运行环境。两者可以共同管理记忆。",
+      "example": "小组成员决定记下什么，秘书保存会议进度，档案室负责存放。一个小组可以同时采用三种做法。",
+      "methods": [
+        [
+          "控制位置",
+          "Agent 主动调用",
+          "让 Agent 通过工具选择何时写入、读取或整理信息。",
+          "适合需要灵活决策的任务；仍要检查工具权限、误写和遗漏。",
+          [
+            "letta-code",
+            "google-adk",
+            "claude-code"
+          ]
+        ],
+        [
+          "控制位置",
+          "Harness 自动维护",
+          "运行环境保存对话或执行状态，并在后续运行时恢复、准备输入。",
+          "适合重复出现的保存与恢复流程；保存内容和后端配置仍需明确。",
+          [
+            "langgraph",
+            "openai-agents-sdk",
+            "pi",
+            "codex",
+            "microsoft-agent-framework"
+          ]
+        ],
+        [
+          "控制位置",
+          "独立或托管记忆服务",
+          "把存储、提取和检索封装成接口，接入现有 Agent 或应用。",
+          "服务负责哪些工作、调用方还要负责什么，需要分别核对。",
+          [
+            "mem0",
+            "amazon-bedrock-agentcore-memory",
+            "google-agent-platform-memory-bank",
+            "hindsight",
+            "memobase",
+            "honcho",
+            "memos"
+          ]
+        ],
+        [
+          "组合方式",
+          "应用决定组合与边界",
+          "应用将多个组件接起来，确定用户、项目、存储后端和权限。",
+          "框架提供能力，不表示每个应用都已配置全部能力。",
+          [
+            "langgraph",
+            "deep-agents"
+          ]
+        ]
+      ],
+      "eval": [
+        "collabmem"
+      ],
+      "related": [
+        "scope",
+        "governance"
+      ]
+    },
+    {
+      "id": "content",
+      "name": "记忆内容与作用",
+      "sub": "内容、功能与当前工作集",
+      "preview": "事件 · 事实 · 流程 · 经验 · 关系",
+      "intro": "先区分保存的内容，再看它在任务里起什么作用。同一段信息可以从事件记录中提炼成事实、流程或经验。",
+      "boundary": "“工作集”描述当前选来使用的材料。模型本轮实际收到的 Context（上下文）包含其中一部分；外部保存的历史还没有读入时，不等于已在上下文中。",
+      "example": "“上周五开过会”是事件；“小林喜欢上午开会”是偏好；“会前先发议程”是流程；“上次议程太晚导致返工”可以提炼成经验。",
+      "methods": [
+        [
+          "内容",
+          "经历与事件",
+          "记录某次对话、任务、观察、工具调用及结果。",
+          "保留细节有助于追溯，但不能假设所有历史都能放进一次模型输入。",
+          [
+            "generative-agents",
+            "graphiti",
+            "openai-agents-sdk",
+            "claude-mem",
+            "pi",
+            "mastra"
+          ]
+        ],
+        [
+          "内容",
+          "事实与用户偏好",
+          "提取可供后续交互使用的事实、属性与偏好。",
+          "事实可能改变；用户画像本身也不是使用这些信息的授权。",
+          [
+            "mem0",
+            "memorybank",
+            "google-agent-platform-memory-bank",
+            "codex",
+            "memobase",
+            "honcho"
+          ]
+        ],
+        [
+          "内容",
+          "步骤与流程",
+          "保存“这件事怎么做”的步骤、操作说明和可执行流程。",
+          "流程是否适用取决于环境和条件；保存流程不保证执行正确。",
+          [
+            "deep-agents",
+            "online-memory-under-token-budgets",
+            "hermes",
+            "openviking"
+          ]
+        ],
+        [
+          "内容",
+          "可复用经验与策略",
+          "从尝试结果中归纳以后可以参考的做法和适用条件。",
+          "反馈质量、额外尝试和迁移条件会影响收益。",
+          [
+            "reflexion",
+            "reasoningbank",
+            "hindsight",
+            "letta-code"
+          ]
+        ],
+        [
+          "内容",
+          "关系与时间事实",
+          "记录谁与什么有关，以及一个事实在什么时候成立。",
+          "用图表示是一种实现选择；关系存在不证明因果。",
+          [
+            "graphiti"
+          ]
+        ],
+        [
+          "内容",
+          "规则与约束",
+          "保存用户约定、任务限制或组织规则，供后续工作参考。",
+          "保存了规则，不代表已经强制执行；权限与审计另见治理专题。",
+          [
+            "letta-code",
+            "collabmem",
+            "claude-code",
+            "gemini-cli",
+            "cline"
+          ]
+        ],
+        [
+          "使用状态",
+          "当前工作集与上下文",
+          "为当前问题选择历史、摘要、目标或检索结果，再把需要的内容送入模型。",
+          "为了以后而保存的信息属于外部记忆；读入当前请求后，才成为当前上下文的一部分。",
+          [
+            "langgraph",
+            "memoryos",
+            "letta-code"
+          ]
+        ]
+      ],
+      "eval": [
+        "longmemeval",
+        "locomo",
+        "mem-gallery"
+      ],
+      "related": [
+        "form",
+        "use"
+      ]
+    },
+    {
+      "id": "scope",
+      "name": "记忆范围与保留",
+      "sub": "主体范围与持续时间",
+      "preview": "会话 · 项目 · 用户 · 团队 · 保留期",
+      "intro": "范围回答信息围绕谁或什么任务组织；持续时间回答什么时候还保留。它们相关，但不能互相替代。",
+      "boundary": "跨会话不一定是用户画像，项目文件也可以跨会话保留。按用户标识分组，不自动证明权限隔离正确。",
+      "example": "同一个社团既有每场会议的记录，也有全年项目档案。档案属于谁，与它会保存几个月，是两个问题。",
+      "methods": [
+        [
+          "范围",
+          "同一次会话或执行线程",
+          "围绕一段对话保存消息、状态和检查点。",
+          "线程是否能在重启后恢复，取决于持久化配置。",
+          [
+            "langgraph",
+            "openai-agents-sdk",
+            "google-adk",
+            "pi"
+          ]
+        ],
+        [
+          "范围",
+          "任务、项目与工作区",
+          "把进度、文件和相关知识放在同一个任务或项目边界内。",
+          "恢复状态与重新检索事实是不同需求，不能只靠一个“长期”标签判断。",
+          [
+            "deep-agents",
+            "letta-code"
+          ]
+        ],
+        [
+          "范围",
+          "用户、Agent 与团队",
+          "围绕身份组织记忆，支持个人偏好、Agent 自有信息或协作共享。",
+          "组织范围和访问控制需分别检查，团队标签不等于安全边界。",
+          [
+            "mem0",
+            "crewai",
+            "collabmem"
+          ]
+        ],
+        [
+          "持续时间",
+          "跨会话保留与可恢复",
+          "让上一次交互留下的信息能进入后续工作。",
+          "保留原始事件、检查点和提炼后的事实，是三种不同的延续方式。",
+          [
+            "langgraph",
+            "amazon-bedrock-agentcore-memory",
+            "codex",
+            "claude-mem",
+            "chatgpt-memory"
+          ]
+        ],
+        [
+          "持续时间",
+          "更新、失效与保留策略",
+          "区分旧信息不再适用、仍保留历史，以及真正删除。",
+          "当前目录未逐一核验所有产品的保留期或删除语义。",
+          [
+            "graphiti",
+            "memora"
+          ]
+        ]
+      ],
+      "eval": [
+        "longmemeval",
+        "collabmem"
+      ],
+      "related": [
+        "content",
+        "governance"
+      ]
+    },
+    {
+      "id": "form",
+      "name": "记忆表示、存储与索引",
+      "sub": "承载、表示与索引",
+      "preview": "文件 · 结构化记录 · 检查点 · 索引 · 图",
+      "intro": "这部分关注信息如何被表示和保存，以及怎样找到它。同一个事实可以同时有文本、字段、向量索引和图关系。",
+      "boundary": "向量索引是按相似含义查找的手段；图是表示关系的方式。它们不等于“事实记忆”或“经验记忆”这样的内容类别。",
+      "example": "图书馆里有书的正文、按栏目填写的目录、关键词索引，也有作者和作品的关系。它们帮助你以不同方式找到同一本书。",
+      "methods": [
+        [
+          "承载",
+          "文件与版本仓库",
+          "用可阅读、修改和保留版本的文件保存信息。",
+          "容易人工检查；同步、冲突、权限和持久化仍要配置。",
+          [
+            "letta-code",
+            "deep-agents",
+            "basic-memory",
+            "cline",
+            "reme"
+          ]
+        ],
+        [
+          "表示",
+          "原始记录、摘要与结构化字段",
+          "保留原文，或把信息整理成简短摘要与明确字段。",
+          "摘要会丢失细节，抽取也可能出错；来源应能被找回。",
+          [
+            "amazon-bedrock-agentcore-memory",
+            "memoryos",
+            "mem0"
+          ]
+        ],
+        [
+          "运行状态",
+          "检查点与命名空间存储",
+          "检查点保留执行进度；分组存储把不同用户或任务的记录组织开来。",
+          "检查点不是自动可检索的事实库；分组也不等于授权。",
+          [
+            "langgraph"
+          ]
+        ],
+        [
+          "索引",
+          "相似度与混合检索",
+          "按含义、关键词或多个信号寻找相关材料。",
+          "相似不等于最新、正确或被允许访问。",
+          [
+            "mem0",
+            "graphiti"
+          ]
+        ],
+        [
+          "表示",
+          "关系图与时序图",
+          "把实体、事实、来源和有效时间组织成可查询关系。",
+          "构图和更新需要成本；关系存在不证明因果。",
+          [
+            "graphiti",
+            "a-mem"
+          ]
+        ]
+      ],
+      "eval": [
+        "membench",
+        "mem-gallery"
+      ],
+      "related": [
+        "operation",
+        "use"
+      ]
+    },
+    {
+      "id": "operation",
+      "name": "记忆操作",
+      "sub": "生命周期操作",
+      "preview": "记录 · 提取 · 整理 · 检索 · 修订 · 遗忘",
+      "intro": "把记忆看成会变化的资料：写进去只是开始，之后还要整理、查找、纠正和决定保留什么。",
+      "boundary": "反思和压缩是操作；反思文本和摘要是操作后的产物。“不再在答案里使用”与“从存储中删除”也要分开。",
+      "example": "先留下课堂录音，再写笔记，考前提炼要点，发现错误后修订。找不到笔记、忘记某条内容和把笔记销毁，并不是同一件事。",
+      "methods": [
+        [
+          "写入",
+          "记录与提取",
+          "保存事件，或从原始交互中抽取事实、偏好和任务信息。",
+          "应区分实际原话、模型推断和后来确认的结论。",
+          [
+            "amazon-bedrock-agentcore-memory",
+            "mem0"
+          ]
+        ],
+        [
+          "加工",
+          "整理、巩固与反思",
+          "合并重复信息，形成总结，或从经历中归纳经验。",
+          "归纳会增加解释，也可能引入错误，不能丢掉原始依据。",
+          [
+            "generative-agents",
+            "reflexion",
+            "reasoningbank"
+          ]
+        ],
+        [
+          "读取",
+          "检索与筛选",
+          "从已保存的信息中取回当前需要的部分。",
+          "检索命中还不等于被正确使用，后续读入与行动需另看。",
+          [
+            "graphiti",
+            "mem0"
+          ]
+        ],
+        [
+          "修订",
+          "更新与历史失效",
+          "新事实出现时修改记录，或让旧事实不再作为当前状态使用。",
+          "保留旧版本和标注事实有效期是两件事。",
+          [
+            "graphiti",
+            "a-mem"
+          ]
+        ],
+        [
+          "容量管理",
+          "压缩与分层整理",
+          "把有限输入空间留给更有用的信息，其他内容放到外部，按需再读。",
+          "节省上下文可能牺牲细节；需要核对任务质量与成本。",
+          [
+            "memoryos",
+            "online-memory-under-token-budgets",
+            "pi",
+            "aider",
+            "mastra"
+          ]
+        ],
+        [
+          "保留管理",
+          "选择性遗忘与删除",
+          "研究何时不再使用旧信息，以及何时清除保存的记录。",
+          "答案不引用旧事实，不能作为物理删除成功的证据。",
+          [
+            "memora",
+            "memoryagentbench"
+          ]
+        ]
+      ],
+      "eval": [
+        "memoryagentbench",
+        "memora",
+        "membench"
+      ],
+      "related": [
+        "form",
+        "governance"
+      ]
+    },
+    {
+      "id": "use",
+      "name": "记忆读取与应用",
+      "sub": "运行时读取与作用",
+      "preview": "自动预载 · 主动查询 · 常驻 · 按需 · 行动",
+      "intro": "保存的信息只有被正确选择、读入和使用，才可能帮助下一次回答或行动。这一页关注从存储到使用之间的步骤。",
+      "boundary": "常驻或按需，描述读取方式；执行中或后台，描述处理时机。它们不是新的记忆内容类型。",
+      "example": "常驻像每次开会都摆在桌上的目标卡；按需像讨论预算时再取出的账本。账本被拿出来后，还要检查决策有没有真正参考它。",
+      "methods": [
+        [
+          "读取方式",
+          "常驻上下文",
+          "每次模型调用都放入指定信息。",
+          "便于持续提供约束和背景，但占用输入容量。",
+          [
+            "letta-code"
+          ]
+        ],
+        [
+          "读取方式",
+          "按需检索或读文件",
+          "需要时再请求相关材料。",
+          "是否读、读多少和选哪些内容，会影响任务效果。",
+          [
+            "google-adk",
+            "deep-agents",
+            "mem0",
+            "openclaw",
+            "memorix",
+            "deepseek-harness"
+          ]
+        ],
+        [
+          "触发位置",
+          "Agent 请求或运行时预载",
+          "由 Agent 决定查询，或由程序在调用前准备相关信息。",
+          "触发位置与存储后端是不同选择，可以组合。",
+          [
+            "google-adk",
+            "langgraph"
+          ]
+        ],
+        [
+          "处理时机",
+          "执行中写入或后台整理",
+          "在当前步骤保存信息，或把部分整理放到交互之外。",
+          "后台处理可能有延迟；后续请求应考虑信息尚未完成处理的状态。",
+          [
+            "langgraph",
+            "amazon-bedrock-agentcore-memory"
+          ]
+        ],
+        [
+          "实际作用",
+          "回答、规划与工具行动",
+          "检查记忆是否改变回答、计划、工具选择或参数。",
+          "会回忆事实，并不自动意味着任务行动更成功。",
+          [
+            "mem2actbench",
+            "reasoningbank",
+            "online-memory-under-token-budgets"
+          ]
+        ]
+      ],
+      "eval": [
+        "mem2actbench",
+        "longmemeval"
+      ],
+      "related": [
+        "content",
+        "operation"
+      ]
+    },
+    {
+      "id": "governance",
+      "name": "记忆权限与可信性",
+      "sub": "权限、修订与安全边界",
+      "preview": "权限 · 来源 · 冲突 · 撤销 · 投毒",
+      "intro": "记住的信息也可能过时、未经授权，甚至被恶意写入。治理关心谁能使用它、依据在哪里，以及出错后如何纠正。",
+      "boundary": "这里的资料包含诊断协议和攻击研究，不表示列出的系统都已经完成安全认证。",
+      "example": "小组资料需要记录出处、限制借阅；某条通知被撤回后，后来的成员也不能继续把旧通知当成有效指令。",
+      "methods": [
+        [
+          "可控性",
+          "权限与共享边界",
+          "检查谁能写入、读取、传播某段信息，以及共享是否符合角色约定。",
+          "同一个用户或团队标签本身不证明权限实现正确。",
+          [
+            "collabmem"
+          ]
+        ],
+        [
+          "可追溯性",
+          "原始来源与版本",
+          "保留记录的出处和变化，支持核对与纠正。",
+          "文件修改时间不等于事实有效期，二者需要分别解释。",
+          [
+            "graphiti",
+            "letta-code"
+          ]
+        ],
+        [
+          "信息变化",
+          "冲突、撤销与遗忘",
+          "检查新旧信息冲突时采用什么，撤回的内容如何停止影响后续行为。",
+          "要区分答案层、检索层与存储层的处理。",
+          [
+            "memoryagentbench",
+            "memora",
+            "collabmem"
+          ]
+        ],
+        [
+          "安全研究",
+          "记忆投毒与不可信输入",
+          "研究恶意记录被检索后如何影响回答或工具动作。",
+          "攻击研究只支持其威胁模型下的结论，不能据此给所有系统统一打分。",
+          [
+            "agentpoison"
+          ]
+        ]
+      ],
+      "eval": [
+        "collabmem",
+        "memoryagentbench"
+      ],
+      "related": [
+        "scope",
+        "operation"
+      ]
+    }
+  ],
+  "needs": [
+    {
+      "title": "换一次会话，继续之前的工作",
+      "text": "先区分对话记录、执行进度与跨会话知识，再检查下一次如何读入。",
+      "axes": [
+        "scope",
+        "form",
+        "use"
+      ],
+      "refs": [
+        "langgraph",
+        "deep-agents",
+        "openai-agents-sdk",
+        "pi",
+        "codex",
+        "claude-code",
+        "claude-mem",
+        "cline"
+      ],
+      "bench": [
+        "longmemeval"
+      ]
+    },
+    {
+      "title": "长期记住用户的偏好与变化",
+      "text": "关注事实提取、身份范围、更新与撤销。",
+      "axes": [
+        "content",
+        "scope",
+        "governance"
+      ],
+      "refs": [
+        "mem0",
+        "google-agent-platform-memory-bank",
+        "memorybank",
+        "memobase",
+        "honcho",
+        "openclaw",
+        "chatgpt-memory"
+      ],
+      "bench": [
+        "memora",
+        "longmemeval"
+      ]
+    },
+    {
+      "title": "从做过的任务里积累经验",
+      "text": "区分保留经历、归纳经验和真正帮助后续任务。",
+      "axes": [
+        "content",
+        "operation",
+        "use"
+      ],
+      "refs": [
+        "reflexion",
+        "reasoningbank",
+        "generative-agents",
+        "hermes",
+        "hindsight",
+        "letta-code"
+      ],
+      "bench": [
+        "mem2actbench"
+      ]
+    },
+    {
+      "title": "多个 Agent 能共享，也能保留边界",
+      "text": "关注共享范围、来源、角色权限和冲突处理。",
+      "axes": [
+        "scope",
+        "governance"
+      ],
+      "refs": [
+        "crewai",
+        "langgraph"
+      ],
+      "bench": [
+        "collabmem"
+      ]
+    },
+    {
+      "title": "让旧信息失效，但保留变化历史",
+      "text": "区分事实有效期、文件版本和物理删除。",
+      "axes": [
+        "operation",
+        "form",
+        "governance"
+      ],
+      "refs": [
+        "graphiti",
+        "a-mem"
+      ],
+      "bench": [
+        "memora",
+        "memoryagentbench"
+      ]
+    },
+    {
+      "title": "减少输入成本，同时保留有用信息",
+      "text": "查看摘要、工作集选择和按需检索，也检查额外处理开销。",
+      "axes": [
+        "form",
+        "operation",
+        "use"
+      ],
+      "refs": [
+        "memoryos",
+        "online-memory-under-token-budgets"
+      ],
+      "bench": [
+        "membench"
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "title": "记住了什么，能否找回来",
+      "text": "事实、事件、跨会话和时间推理。LongMemEval 也考察证据不足时的拒答。",
+      "refs": [
+        "longmemeval",
+        "locomo"
+      ],
+      "axis": "content"
+    },
+    {
+      "title": "信息更新后，还会不会用旧版本",
+      "text": "新旧冲突、知识更新与遗忘；不同基准各有侧重。",
+      "refs": [
+        "memora",
+        "memoryagentbench",
+        "longmemeval"
+      ],
+      "axis": "operation"
+    },
+    {
+      "title": "记忆有没有影响实际行动",
+      "text": "关注工具选择与参数，区分回答正确和行动正确。",
+      "refs": [
+        "mem2actbench"
+      ],
+      "axis": "use"
+    },
+    {
+      "title": "共享有没有越过角色边界",
+      "text": "角色间共享、不予共享、来源归属与留存。",
+      "refs": [
+        "collabmem"
+      ],
+      "axis": "governance"
+    },
+    {
+      "title": "容量、开销与多模态",
+      "text": "读写时间、噪声容量，以及图像与文本记忆。",
+      "refs": [
+        "membench",
+        "mem-gallery"
+      ],
+      "axis": "form"
+    },
+    {
+      "title": "会不会被不可信记忆误导",
+      "text": "阅读攻击设置、攻击者能力和适用边界。",
+      "refs": [
+        "agentpoison"
+      ],
+      "axis": "governance"
+    },
+    {
+      "title": "怎样统一评测协议与成本记录",
+      "text": "MemEval 是评测运行框架；MemTool 则是工具记忆方法，不能仅因名称像 Benchmark 就混为评测集。",
+      "refs": [
+        "memeval",
+        "memtool",
+        "task-memory-utility"
+      ],
+      "axis": "use"
+    }
+  ],
+  "projectionTopics": {
+    "owner": [
+      "control"
+    ],
+    "content": [
+      "types"
+    ],
+    "scope": [
+      "scope",
+      "retention"
+    ],
+    "form": [
+      "representation",
+      "storage",
+      "read"
+    ],
+    "operation": [
+      "write",
+      "read"
+    ],
+    "use": [
+      "control",
+      "read",
+      "write"
+    ],
+    "governance": [
+      "trust"
+    ]
+  },
+  "graphTopics": {
+    "owner": [
+      "control"
+    ],
+    "content": [
+      "types"
+    ],
+    "scope": [
+      "scope"
+    ],
+    "form": [
+      "representation",
+      "storage",
+      "read"
+    ],
+    "operation": [
+      "write"
+    ],
+    "use": [
+      "read"
+    ],
+    "governance": [
+      "trust",
+      "control"
+    ]
+  }
+}
