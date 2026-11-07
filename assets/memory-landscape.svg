@@ -1,1 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="760" viewBox="0 0 1000 760" role="img" aria-labelledby="title desc"><title id="title">从七个问题理解 Agent Memory</title><desc id="desc">七个可交叉的导航视角，引向方法、系统、论文和评测。</desc><rect width="1000" height="760" fill="#f8f9f6"/><g font-family="system-ui,PingFang SC,Microsoft YaHei,sans-serif" fill="#23332e"><text x="46" y="58" font-size="28" font-weight="600">从七个问题理解 Memory</text><text x="46" y="92" font-size="17" fill="#586861">先看全景与方法，再进入原始资料、系统和评测。</text><text x="46" y="143" font-size="17" fill="#176c55">01</text><text x="94" y="143" font-size="20">谁在管理记忆？</text><text x="94" y="170" font-size="16" fill="#586861">Agent · Harness · 记忆服务 · 应用</text><line x1="46" x2="950" y1="187" y2="187" stroke="#dce3dc"/><text x="46" y="219" font-size="17" fill="#176c55">02</text><text x="94" y="219" font-size="20">记住什么？</text><text x="94" y="246" font-size="16" fill="#586861">事件 · 事实 · 流程 · 经验 · 关系</text><line x1="46" x2="950" y1="263" y2="263" stroke="#dce3dc"/><text x="46" y="295" font-size="17" fill="#176c55">03</text><text x="94" y="295" font-size="20">为谁保存，保留多久？</text><text x="94" y="322" font-size="16" fill="#586861">会话 · 项目 · 用户 · 团队 · 保留期</text><line x1="46" x2="950" y1="339" y2="339" stroke="#dce3dc"/><text x="46" y="371" font-size="17" fill="#176c55">04</text><text x="94" y="371" font-size="20">用什么保存和查找？</text><text x="94" y="398" font-size="16" fill="#586861">文件 · 结构化记录 · 检查点 · 索引 · 图</text><line x1="46" x2="950" y1="415" y2="415" stroke="#dce3dc"/><text x="46" y="447" font-size="17" fill="#176c55">05</text><text x="94" y="447" font-size="20">怎样形成和维护记忆？</text><text x="94" y="474" font-size="16" fill="#586861">记录 · 提取 · 整理 · 检索 · 修订 · 遗忘</text><line x1="46" x2="950" y1="491" y2="491" stroke="#dce3dc"/><text x="46" y="523" font-size="17" fill="#176c55">06</text><text x="94" y="523" font-size="20">记忆怎样进入下一次行动？</text><text x="94" y="550" font-size="16" fill="#586861">自动预载 · 主动查询 · 常驻 · 按需 · 行动</text><line x1="46" x2="950" y1="567" y2="567" stroke="#dce3dc"/><text x="46" y="599" font-size="17" fill="#176c55">07</text><text x="94" y="599" font-size="20">怎样让记忆可追溯、可控制？</text><text x="94" y="626" font-size="16" fill="#586861">权限 · 来源 · 冲突 · 撤销 · 投毒</text><line x1="46" x2="950" y1="643" y2="643" stroke="#dce3dc"/><text x="46" y="714" font-size="16" fill="#586861">可交叉的导航视角 · 非唯一分类 · 非七个必备模块</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="690" viewBox="0 0 1120 690" role="img" aria-labelledby="title desc">
+<title id="title">从九个问题理解记忆系统</title><desc id="desc">从有来源的记忆分类，走向方法、实现与评测。</desc>
+<rect width="1120" height="690" rx="12" fill="#f8f9f6"/><style>text{font-family:system-ui,PingFang SC,Microsoft YaHei,sans-serif;fill:#23332e}.h{font-size:29px;font-weight:650}.n{font-size:15px;fill:#176c55}.t{font-size:18px;font-weight:600}.s{font-size:13px;fill:#586861}</style>
+<text x="32" y="48" class="h">先理解记忆，再找到适合的方法。</text>
+<text x="32" y="80" class="s">记忆分类 → 方法与做法 → 实际系统 → 评测与证据</text>
+<rect x="32" y="110" width="350" height="150" rx="6" fill="white" stroke="#dce3dc"/><text x="50" y="138" class="n">01</text><text x="50" y="171" class="t">记忆分类</text>
+<text x="50" y="201" class="s">工作、长期；情景、语义、程序性；另一套功能分类</text>
+<rect x="397" y="110" width="350" height="150" rx="6" fill="white" stroke="#dce3dc"/><text x="415" y="138" class="n">02</text><text x="415" y="171" class="t">记忆的控制方式</text>
+<text x="415" y="201" class="s">Agent 主动决定 · Harness 自动</text>
+<text x="415" y="220" class="s">触发 · 组件分工</text>
+<rect x="762" y="110" width="350" height="150" rx="6" fill="white" stroke="#dce3dc"/><text x="780" y="138" class="n">03</text><text x="780" y="171" class="t">记忆的组织范围</text>
+<text x="780" y="201" class="s">会话 · 任务 · 项目 · 用户 · Age</text>
+<text x="780" y="220" class="s">nt · 团队</text>
+<rect x="32" y="277" width="350" height="150" rx="6" fill="white" stroke="#dce3dc"/><text x="50" y="305" class="n">04</text><text x="50" y="338" class="t">记忆的保留期限</text>
+<text x="50" y="368" class="s">临时保存 · 跨会话保留 · TTL · 保留</text>
+<text x="50" y="387" class="s">政策</text>
+<rect x="397" y="277" width="350" height="150" rx="6" fill="white" stroke="#dce3dc"/><text x="415" y="305" class="n">05</text><text x="415" y="338" class="t">记忆的表示形式</text>
+<text x="415" y="368" class="s">原文 · 摘要 · 字段 · 图 · 参数 ·</text>
+<text x="415" y="387" class="s"> 潜在表示</text>
+<rect x="762" y="277" width="350" height="150" rx="6" fill="white" stroke="#dce3dc"/><text x="780" y="305" class="n">06</text><text x="780" y="338" class="t">记忆的存储载体</text>
+<text x="780" y="368" class="s">运行状态 · 文件 · 数据库 · 检查点</text>
+<rect x="32" y="444" width="350" height="150" rx="6" fill="white" stroke="#dce3dc"/><text x="50" y="472" class="n">07</text><text x="50" y="505" class="t">记忆的写入与维护</text>
+<text x="50" y="535" class="s">记录 · 提取 · 巩固 · 修订 · 压缩 </text>
+<text x="50" y="554" class="s">· 删除</text>
+<rect x="397" y="444" width="350" height="150" rx="6" fill="white" stroke="#dce3dc"/><text x="415" y="472" class="n">08</text><text x="415" y="505" class="t">记忆的检索与使用</text>
+<text x="415" y="535" class="s">检索 · 筛选 · 固定读入 · 按需查询 ·</text>
+<text x="415" y="554" class="s"> 行动</text>
+<rect x="762" y="444" width="350" height="150" rx="6" fill="white" stroke="#dce3dc"/><text x="780" y="472" class="n">09</text><text x="780" y="505" class="t">记忆的权限与可信性</text>
+<text x="780" y="535" class="s">权限 · 共享 · 来源 · 撤销 · 投毒</text>
+<text x="32" y="657" class="s">九问是编者阅读导航；分类采用具名研究框架，允许交叉与修订，不是完整性承诺。</text></svg>

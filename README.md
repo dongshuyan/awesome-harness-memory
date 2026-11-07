@@ -8,21 +8,23 @@ For researchers, engineers, and curious learners: start with the memory landscap
 
 Here, *harness* means the runtime and control boundary around an agent. The guide also includes standalone memory layers, managed services, personal assistants, human memory research, and literary analogies.
 
-[![Seven questions about agent memory](assets/memory-landscape.en.svg)](https://dongshuyan.github.io/awesome-harness-memory/)
+[![Nine questions about agent memory](assets/memory-landscape.en.svg)](https://dongshuyan.github.io/awesome-harness-memory/)
 
 ## Understand the landscape
 
 | Question | What to look for |
 | --- | --- |
-| [Who manages memory?](docs/landscape.zh-CN.md#owner) | Agent, harness, memory service, application |
-| [What is remembered?](docs/landscape.zh-CN.md#content) | Events, facts, procedures, experience, relations |
-| [Who is it for, and how long does it last?](docs/landscape.zh-CN.md#scope) | Session, project, user, team, retention |
-| [How is it stored and found?](docs/landscape.zh-CN.md#form) | Files, records, checkpoints, indexes, graphs |
-| [How is it formed and maintained?](docs/landscape.zh-CN.md#operation) | Recording, extraction, consolidation, retrieval, revision, forgetting |
-| [How does it inform the next action?](docs/landscape.zh-CN.md#use) | Preloading, active queries, persistent context, on-demand retrieval |
-| [How is it traced and controlled?](docs/landscape.zh-CN.md#governance) | Permissions, provenance, conflicts, revocation, poisoning |
+| [Memory Types](docs/landscape.zh-CN.md#types) | Working and long-term; episodic, semantic, procedural; an alternative functional view |
+| [Memory Control](docs/landscape.zh-CN.md#control) | Agent decisions, harness triggers, component responsibilities |
+| [Memory Scope](docs/landscape.zh-CN.md#scope) | Thread, task, project, user, agent, team |
+| [Memory Retention](docs/landscape.zh-CN.md#retention) | Temporary or persistent retention, TTL, retention policies |
+| [Memory Representation](docs/landscape.zh-CN.md#representation) | Raw records, summaries, fields, graphs, parameters, latent representations |
+| [Memory Storage](docs/landscape.zh-CN.md#storage) | Runtime state, files, databases, checkpoints |
+| [Memory Formation & Update](docs/landscape.zh-CN.md#write) | Recording, extraction, consolidation, revision, compaction, deletion |
+| [Memory Retrieval & Use](docs/landscape.zh-CN.md#read) | Retrieval, selection, pinned context, on-demand reading, action |
+| [Memory Access & Trust](docs/landscape.zh-CN.md#trust) | Permissions, sharing, provenance, revocation, poisoning |
 
-These are overlapping perspectives, not seven mutually exclusive memory types or seven required modules. Each topic introduces the problem and approaches before linking to implementations and evidence.
+These nine questions organize the learning guide. Memory Types uses a source-labelled CoALA tree, with an alternative functional taxonomy from a separate survey. Context, Workspace, and Long-term Memory have a separate terminology guide that explains overlap. Topics include Chinese explanations, English terms, uses, examples, and original sources.
 
 The expanded guide and detailed catalogue are currently **in Chinese**; source titles and original links retain their original languages. The earlier [English reference pages](resources/systems.md) and [bilingual concept map](explore/README.md) remain available with their narrower coverage marked.
 

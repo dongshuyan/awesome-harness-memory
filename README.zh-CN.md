@@ -6,21 +6,23 @@
 
 [知识全景](docs/landscape.zh-CN.md) · [按需求找资料](docs/needs.zh-CN.md) · [系统与产品](resources/systems.zh-CN.md) · [论文与方法](resources/papers.zh-CN.md) · [评测](resources/benchmarks.zh-CN.md)
 
-[![从七个问题理解 Memory](assets/memory-landscape.svg)](https://dongshuyan.github.io/awesome-harness-memory/)
+[![从记忆分类理解 Memory](assets/memory-landscape.svg)](https://dongshuyan.github.io/awesome-harness-memory/)
 
 ## 先建立全景
 
 | 你想理解的问题 | 从这里开始 |
 | --- | --- |
-| [谁在管理记忆？](docs/landscape.zh-CN.md#owner) | Agent · Harness · 记忆服务 · 应用 |
-| [记住什么？](docs/landscape.zh-CN.md#content) | 事件 · 事实 · 流程 · 经验 · 关系 |
-| [为谁保存，保留多久？](docs/landscape.zh-CN.md#scope) | 会话 · 项目 · 用户 · 团队 · 保留期 |
-| [用什么保存和查找？](docs/landscape.zh-CN.md#form) | 文件 · 结构化记录 · 检查点 · 索引 · 图 |
-| [怎样形成和维护记忆？](docs/landscape.zh-CN.md#operation) | 记录 · 提取 · 整理 · 检索 · 修订 · 遗忘 |
-| [记忆怎样进入下一次行动？](docs/landscape.zh-CN.md#use) | 自动预载 · 主动查询 · 常驻 · 按需 · 行动 |
-| [怎样让记忆可追溯、可控制？](docs/landscape.zh-CN.md#governance) | 权限 · 来源 · 冲突 · 撤销 · 投毒 |
+| [记忆分类](docs/landscape.zh-CN.md#types) | 工作、长期；情景、语义、程序性；另一套功能分类 |
+| [记忆的控制方式](docs/landscape.zh-CN.md#control) | Agent 主动决定 · Harness 自动触发 · 组件分工 |
+| [记忆的组织范围](docs/landscape.zh-CN.md#scope) | 会话 · 任务 · 项目 · 用户 · Agent · 团队 |
+| [记忆的保留期限](docs/landscape.zh-CN.md#retention) | 临时保存 · 跨会话保留 · TTL · 保留政策 |
+| [记忆的表示形式](docs/landscape.zh-CN.md#representation) | 原文 · 摘要 · 字段 · 图 · 参数 · 潜在表示 |
+| [记忆的存储载体](docs/landscape.zh-CN.md#storage) | 运行状态 · 文件 · 数据库 · 检查点 |
+| [记忆的写入与维护](docs/landscape.zh-CN.md#write) | 记录 · 提取 · 巩固 · 修订 · 压缩 · 删除 |
+| [记忆的检索与使用](docs/landscape.zh-CN.md#read) | 检索 · 筛选 · 固定读入 · 按需查询 · 行动 |
+| [记忆的权限与可信性](docs/landscape.zh-CN.md#trust) | 权限 · 共享 · 来源 · 撤销 · 投毒 |
 
-七问可以交叉组合，也会随研究修订；它们不是七种互斥记忆。每个专题先解释问题和路线，再给功能、亮点、限制与原始资料。
+九问是阅读导航。记忆分类默认采用有来源的 CoALA 分类树，也可切换另一篇综述的功能分类。Context / Workspace / Long-term 提供单独的叫法对照，允许重叠。每项有中英文术语、解释、用途、例子和来源。
 
 ## 从具体对象开始
 
@@ -35,11 +37,13 @@
 
 交互图覆盖当前目录中已定位的 Harness / Agent，尚非全行业穷尽清单。已收录 **21 个真实 Harness / Agent 对象**（含 3 个标记为历史的项目），支持多选对象、多选层、跨层高亮和逐格查看来源。上图是其中 6 个对象、3 个视角的静态预览。✓ 表示文档明确说明，△ 表示需配置或特定条件，? 表示尚未核实，× 只用于来源明确排除的范围；不按色块数量排名。
 
+七层是已核属性的选定投影，并非九个学习专题的完整能力测量。
+
 图中不把独立记忆服务、插件或纯框架当作 Harness；这些资料继续保留在 [系统目录](resources/systems.zh-CN.md)。逐项依据及核对日期见 [图表数据](assets/harness-map.json)。
 
 ## 打开交互导航
 
-**[进入在线知识导航](https://dongshuyan.github.io/awesome-harness-memory/)**，从“知识全景”开始，或直接打开“资源目录”“图解探索”。
+**[进入在线知识导航](https://dongshuyan.github.io/awesome-harness-memory/)**，从“知识全景”建立认识，进入“分类与方法”直接选择专题，或打开“资源目录”“图解探索”。全部导航统一在顶部。
 
 README 的 Markdown 导航和静态图在 GitHub 上可以独立阅读；交互页支持搜索、筛选、多视角比较和立体切片。较早的 [Memory Atlas 双语概念地图](explore/README.zh-CN.md) 也保留，使用 32 项资源说明概念关系，不代表最新完整目录。
 

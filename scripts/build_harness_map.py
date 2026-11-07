@@ -112,8 +112,9 @@ VIEWPORT_BRIDGE = '''<script id="harness-viewport-bridge">
 </script>'''
 
 
-def page(root, data):
-    outer = (root / 'index.html').read_text()
+def page(root, data, outer=None):
+    if outer is None:
+        outer = (root / 'index.html').read_text()
     parser = PageParser()
     parser.feed(outer)
     inner = parser.inner

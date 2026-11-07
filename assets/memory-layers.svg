@@ -4,7 +4,7 @@
 <rect x="288" y="88" width="23" height="23" rx="3" fill="#edd19a"/><text x="299.5" y="105" text-anchor="middle">△</text><text x="319" y="105">需配置 / 特定条件</text>
 <rect x="548" y="88" width="23" height="23" rx="3" fill="#e4e7e4"/><text x="559.5" y="105" text-anchor="middle">?</text><text x="579" y="105">尚未核实</text>
 <rect x="808" y="88" width="23" height="23" rx="3" fill="#e6bbb5"/><text x="819.5" y="105" text-anchor="middle">×</text><text x="839" y="105">该范围明确不提供</text>
-<text x="28" y="166" class="label">1 谁管理</text>
+<text x="28" y="166" class="label">1 记忆控制相关主体</text>
 <text x="153" y="216" text-anchor="end">用户设定</text>
 <polygon points="168,202 306,197 309,223 171,228" fill="#a8d0c0"/><text x="238" y="219" text-anchor="middle">✓</text>
 <polygon points="313,197 451,192 454,218 316,223" fill="#a8d0c0"/><text x="383" y="214" text-anchor="middle">✓</text>
@@ -39,7 +39,7 @@
 <text x="672" y="175" text-anchor="middle">OpenClaw</text>
 <text x="817" y="170" text-anchor="middle">Hermes Agent</text>
 <text x="962" y="165" text-anchor="middle">Deep Agents</text>
-<text x="28" y="401" class="label">2 记什么</text>
+<text x="28" y="401" class="label">2 记忆内容与作用</text>
 <text x="153" y="451" text-anchor="end">工作上下文</text>
 <polygon points="168,437 306,432 309,458 171,463" fill="#a8d0c0"/><text x="238" y="454" text-anchor="middle">✓</text>
 <polygon points="313,432 451,427 454,453 316,458" fill="#edd19a"/><text x="383" y="449" text-anchor="middle">△</text>
@@ -81,7 +81,7 @@
 <text x="672" y="410" text-anchor="middle">OpenClaw</text>
 <text x="817" y="405" text-anchor="middle">Hermes Agent</text>
 <text x="962" y="400" text-anchor="middle">Deep Agents</text>
-<text x="28" y="636" class="label">3 给谁用</text>
+<text x="28" y="636" class="label">3 记忆组织范围</text>
 <text x="153" y="686" text-anchor="end">会话/任务</text>
 <polygon points="168,672 306,667 309,693 171,698" fill="#a8d0c0"/><text x="238" y="689" text-anchor="middle">✓</text>
 <polygon points="313,667 451,662 454,688 316,693" fill="#e4e7e4"/><text x="383" y="684" text-anchor="middle">?</text>

@@ -4,7 +4,7 @@
   "dimensions": [
     {
       "id": "owner",
-      "name": "谁管理",
+      "name": "记忆控制相关主体",
       "options": [
         {
           "id": "owner.human",
@@ -30,7 +30,7 @@
     },
     {
       "id": "content",
-      "name": "记什么",
+      "name": "记忆内容与作用",
       "options": [
         {
           "id": "content.context",
@@ -61,7 +61,7 @@
     },
     {
       "id": "scope",
-      "name": "给谁用",
+      "name": "记忆组织范围",
       "options": [
         {
           "id": "scope.session",
@@ -87,7 +87,7 @@
     },
     {
       "id": "form",
-      "name": "怎么存",
+      "name": "记忆表示与存储",
       "options": [
         {
           "id": "form.files",
@@ -113,7 +113,7 @@
     },
     {
       "id": "operation",
-      "name": "怎么维护",
+      "name": "记忆写入与维护",
       "options": [
         {
           "id": "operation.extract",
@@ -139,7 +139,7 @@
     },
     {
       "id": "use",
-      "name": "怎样读入",
+      "name": "记忆检索与使用",
       "options": [
         {
           "id": "use.fixed",
@@ -160,7 +160,7 @@
     },
     {
       "id": "governance",
-      "name": "如何治理",
+      "name": "记忆权限与可信性",
       "options": [
         {
           "id": "governance.trace",
