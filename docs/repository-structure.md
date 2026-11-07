@@ -32,11 +32,11 @@ The main reading path is landscape → methods → resources. Needs and object t
 
 ## Reading editions
 
-The latest navigator, expanded Chinese Markdown pages, and root `catalogue.json` share the same 137-resource edition, including 48 systems with documented basic functions. A resource status does not certify performance or safety.
+The latest navigator, expanded Chinese Markdown pages, and root `catalogue.json` share the same 138-resource edition, including 49 systems with documented basic functions. A resource status does not certify performance or safety.
 
 `explore/` preserves the earlier concept-and-relationship map and its 32-resource English/Chinese catalogue. Its `build_catalog.py` reads the earlier English resource pages and writes only `explore/catalog.js`; it does not update the root catalogue or latest navigator. Follow [its maintenance notes](../explore/README.md#maintain-the-content) when changing that edition.
 
-The seven-layer diagram uses 21 real Harness / Agent profiles (including three labeled historical projects). `assets/harness-map.json` owns the property claims, configuration conditions, and source references. Profiles link to root catalogue IDs; a documented component may have a more specific display name. Missing claims remain unknown. The broader resource directory retains memory services, plugins, and general frameworks.
+The seven-layer diagram uses 22 real Harness / Agent profiles (including three labeled historical projects). `assets/harness-map.json` owns the property claims, configuration conditions, and source references. Profiles link to root catalogue IDs; a documented component may have a more specific display name. Missing claims remain unknown. The broader resource directory retains memory services, plugins, and general frameworks.
 
 After editing graph data or `assets/harness-layers.js` / `.css`, run `python3 scripts/build_harness_map.py`. It embeds the graph into `index.html` and generates `assets/memory-layers.svg` from the same claims. Run with `--check` to detect stale generated files, and run `python3 -m unittest discover -s tests -v` for the data contract. The static preview deliberately shows six objects and three perspectives; the interactive graph contains all profiles.
 

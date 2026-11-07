@@ -6,6 +6,41 @@
 
 ## Harness 与编码 / 个人 Agent
 
+<a id="agent-qa"></a>
+
+### agent-qa / memidex
+
+**基础资料已核 · QA Agent / Harness**
+
+自然语言 Web、Android 与 iOS 测试 Agent。memidex 将运行证据沉淀为持久应用知识，经检查后供后续测试复用。
+
+**值得看**：判定完成后才学习；候选事实与警示须有已验证步骤的完整证据才可晋升。可研究测试证据、记忆信任与后续行动之间的闭环。
+
+**边界**：CI 只提出候选，不自动晋升。文档标注的 v0.2 默认使用关键词与锚点检索；新工作区的索引与本地证据条件会影响知识供给。未运行验证。
+
+**提供方式**：原生 memidex 文件记录、派生本地索引与证据检查
+
+<details>
+<summary>七个视角下的已核描述</summary>
+
+| 视角 | 描述 |
+| --- | --- |
+| [谁在管理记忆](../docs/landscape.zh-CN.md#owner) | 运行环境管理学习与供给；人可确认、拒绝、遗忘及回滚 |
+| [记住什么](../docs/landscape.zh-CN.md#content) | 应用事实、失败警示、可复用流程及人工 QA 规则 |
+| [为谁保存，保留多久](../docs/landscape.zh-CN.md#scope) | 项目知识目录内按被测产品组织；跨工作区供给有本地索引和证据限制 |
+| [如何承载与表示](../docs/landscape.zh-CN.md#form) | Markdown / JSON / JSONL 记录包；派生 SQLite 搜索索引与记录关系 |
+| [怎样形成和维护](../docs/landscape.zh-CN.md#operation) | 判定后提炼候选，检查、确认、晋升或替换；CI 保留提案 |
+| [怎样进入下一次行动](../docs/landscape.zh-CN.md#use) | 每个测试的分层简报、按条件提供的记忆工具及流程匹配 |
+| [怎样追溯与控制](../docs/landscape.zh-CN.md#governance) | 记录运行与步骤来源、结果日志和完整性哈希；支持人工纠正与回滚 |
+
+</details>
+
+**原始资料**：[产品官网](https://vostride.com) · [memidex](https://vostride.com/docs/agent-qa/memory) · [记录结构](https://vostride.com/docs/agent-qa/memory/records) · [架构与索引](https://vostride.com/docs/agent-qa/memory/architecture) · [学习与晋升](https://vostride.com/docs/agent-qa/memory/learning) · [知识供给](https://vostride.com/docs/agent-qa/memory/serving) · [检查与纠正](https://vostride.com/docs/agent-qa/memory/inspect)
+
+核对：2026-11-07 UTC。已读官方文档相关段落；未运行 agent-qa，也未复现评测。
+
+核对 2026-11-07 的在线官方文档；部分搜索、作用域及跨工作区限制标为 v0.2，未审计所有发行版与文档的对应关系。
+
 <a id="aider"></a>
 
 ### Aider

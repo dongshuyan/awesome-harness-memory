@@ -330,6 +330,48 @@
       "label": "Roo Code · 仓库与归档状态",
       "kind": "仓库与 README",
       "checked": "2026-11-07"
+    },
+    "agent-qa": {
+      "url": "https://vostride.com",
+      "label": "agent-qa · 产品官网",
+      "kind": "官方产品页",
+      "checked": "2026-11-07"
+    },
+    "agent-qa-memory": {
+      "url": "https://vostride.com/docs/agent-qa/memory",
+      "label": "agent-qa · memidex",
+      "kind": "官方文档",
+      "checked": "2026-11-07"
+    },
+    "agent-qa-records": {
+      "url": "https://vostride.com/docs/agent-qa/memory/records",
+      "label": "agent-qa · 记录结构",
+      "kind": "官方文档",
+      "checked": "2026-11-07"
+    },
+    "agent-qa-architecture": {
+      "url": "https://vostride.com/docs/agent-qa/memory/architecture",
+      "label": "agent-qa · 架构与索引",
+      "kind": "官方文档",
+      "checked": "2026-11-07"
+    },
+    "agent-qa-learning": {
+      "url": "https://vostride.com/docs/agent-qa/memory/learning",
+      "label": "agent-qa · 学习与晋升",
+      "kind": "官方文档",
+      "checked": "2026-11-07"
+    },
+    "agent-qa-serving": {
+      "url": "https://vostride.com/docs/agent-qa/memory/serving",
+      "label": "agent-qa · 知识供给",
+      "kind": "官方文档",
+      "checked": "2026-11-07"
+    },
+    "agent-qa-inspect": {
+      "url": "https://vostride.com/docs/agent-qa/memory/inspect",
+      "label": "agent-qa · 检查与纠正",
+      "kind": "官方文档",
+      "checked": "2026-11-07"
     }
   },
   "systems": [
@@ -1117,6 +1159,98 @@
       "note": "仓库已归档，仅作历史 Agent 对照；未用旧版功能推断当前能力。",
       "historical": true,
       "claims": []
+    },
+    {
+      "id": "agent-qa",
+      "resourceId": "agent-qa",
+      "kind": "agent",
+      "identitySource": "agent-qa",
+      "note": "QA Agent 的证据驱动应用记忆；本地晋升与 CI 提案分开。依据在线文档，未运行验证；部分限制在文档中标为 v0.2。",
+      "historical": false,
+      "claims": [
+        {
+          "status": "yes",
+          "features": [
+            "owner.runtime",
+            "content.facts",
+            "content.experience",
+            "content.rules",
+            "scope.project",
+            "form.files"
+          ],
+          "note": "运行环境把应用事实、警示与流程保存为项目知识目录中的文件，按产品组织；另有人工编写的 QA 规则。跨工作区供给仍依赖本地索引和证据。",
+          "section": "What it remembers / Where it lives / Limits in v0.2",
+          "source": "agent-qa-memory"
+        },
+        {
+          "status": "yes",
+          "features": [
+            "form.records",
+            "form.graph"
+          ],
+          "note": "文本记录是事实来源；本地 SQLite 索引保存全文检索、锚点、记录关系与运行结果。索引不提交到 git。",
+          "section": "Three layers",
+          "source": "agent-qa-architecture"
+        },
+        {
+          "status": "config",
+          "features": [
+            "form.vector"
+          ],
+          "note": "语义向量检索取决于本地模型是否可用；文档标注 v0.2 默认 lexical-only，不自动下载完整嵌入模型。每个测试的简报不使用向量排序。",
+          "section": "Search levels",
+          "source": "agent-qa-architecture"
+        },
+        {
+          "status": "yes",
+          "features": [
+            "operation.extract",
+            "operation.update"
+          ],
+          "note": "判定结束后从证据生成候选，由检查与晋升门控决定是否供后续测试使用；旧记录可被替换。CI 不自动晋升，人工纠正另行处理。",
+          "section": "What becomes a candidate / The curator / The promotion gate / Local runs and CI",
+          "source": "agent-qa-learning"
+        },
+        {
+          "status": "yes",
+          "features": [
+            "use.fixed",
+            "use.auto"
+          ],
+          "note": "每个测试开始前装配固定简报：人工规则优先，相关警示与事实按作用域、信任和锚点匹配排序；索引缺失时仅供给规则。",
+          "section": "The brief / What gets in, and in what order / The index comes first",
+          "source": "agent-qa-serving"
+        },
+        {
+          "status": "config",
+          "features": [
+            "use.demand"
+          ],
+          "note": "步骤内的 memory.search / memory.read 要求模型支持工具、图像以及至少 16,384 token 的上下文窗口。",
+          "section": "Memory tools",
+          "source": "agent-qa-serving"
+        },
+        {
+          "status": "yes",
+          "features": [
+            "governance.trace"
+          ],
+          "note": "记录包保存运行和步骤来源、追加式结果日志、检查结果以及文件完整性哈希；信任和状态由日志推导。",
+          "section": "Files in a record / Status / Trust",
+          "source": "agent-qa-records"
+        },
+        {
+          "status": "yes",
+          "features": [
+            "owner.human",
+            "operation.forget",
+            "governance.control"
+          ],
+          "note": "人可确认、拒绝、遗忘记录或回滚学习批次；遗忘会退出搜索，purge 可删除本机记录，但不会改写 git 历史。",
+          "section": "Correct / Roll back a batch / Purge a record",
+          "source": "agent-qa-inspect"
+        }
+      ]
     }
   ]
 }
