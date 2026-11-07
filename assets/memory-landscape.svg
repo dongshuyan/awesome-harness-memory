@@ -9,21 +9,21 @@
 <text x="415" y="201" class="s">Agent 主动决定 · Harness 自动</text>
 <text x="415" y="220" class="s">触发 · 组件分工</text>
 <rect x="762" y="110" width="350" height="150" rx="6" fill="white" stroke="#dce3dc"/><text x="780" y="138" class="n">03</text><text x="780" y="171" class="t">记忆的组织范围</text>
-<text x="780" y="201" class="s">会话 · 任务 · 项目 · 用户 · Age</text>
-<text x="780" y="220" class="s">nt · 团队</text>
+<text x="780" y="201" class="s">会话 · 任务 · 项目 · 用户</text>
+<text x="780" y="220" class="s">Agent · 团队</text>
 <rect x="32" y="277" width="350" height="150" rx="6" fill="white" stroke="#dce3dc"/><text x="50" y="305" class="n">04</text><text x="50" y="338" class="t">记忆的保留期限</text>
-<text x="50" y="368" class="s">临时保存 · 跨会话保留 · TTL · 保留</text>
-<text x="50" y="387" class="s">政策</text>
+<text x="50" y="368" class="s">临时 · 跨会话 · TTL</text>
+<text x="50" y="387" class="s">保留政策</text>
 <rect x="397" y="277" width="350" height="150" rx="6" fill="white" stroke="#dce3dc"/><text x="415" y="305" class="n">05</text><text x="415" y="338" class="t">记忆的表示形式</text>
-<text x="415" y="368" class="s">原文 · 摘要 · 字段 · 图 · 参数 ·</text>
+<text x="415" y="368" class="s">原文 · 摘要 · 字段 · 图</text>
 <text x="415" y="387" class="s"> 潜在表示</text>
 <rect x="762" y="277" width="350" height="150" rx="6" fill="white" stroke="#dce3dc"/><text x="780" y="305" class="n">06</text><text x="780" y="338" class="t">记忆的存储载体</text>
 <text x="780" y="368" class="s">运行状态 · 文件 · 数据库 · 检查点</text>
 <rect x="32" y="444" width="350" height="150" rx="6" fill="white" stroke="#dce3dc"/><text x="50" y="472" class="n">07</text><text x="50" y="505" class="t">记忆的写入与维护</text>
-<text x="50" y="535" class="s">记录 · 提取 · 巩固 · 修订 · 压缩 </text>
-<text x="50" y="554" class="s">· 删除</text>
+<text x="50" y="535" class="s">记录 · 提取 · 巩固 · 修订 </text>
+<text x="50" y="554" class="s">压缩 · 删除</text>
 <rect x="397" y="444" width="350" height="150" rx="6" fill="white" stroke="#dce3dc"/><text x="415" y="472" class="n">08</text><text x="415" y="505" class="t">记忆的检索与使用</text>
-<text x="415" y="535" class="s">检索 · 筛选 · 固定读入 · 按需查询 ·</text>
+<text x="415" y="535" class="s">检索 · 筛选 · 固定读入</text>
 <text x="415" y="554" class="s"> 行动</text>
 <rect x="762" y="444" width="350" height="150" rx="6" fill="white" stroke="#dce3dc"/><text x="780" y="472" class="n">09</text><text x="780" y="505" class="t">记忆的权限与可信性</text>
 <text x="780" y="535" class="s">权限 · 共享 · 来源 · 撤销 · 投毒</text>
