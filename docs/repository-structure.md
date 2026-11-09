@@ -13,6 +13,9 @@ The main reading path is landscape → methods → resources. Needs and object t
 ├── scripts/build_site.py    # Generate HTML, guide and graph preview without dependencies
 ├── catalogue.json           # Current public records, sources, and status
 ├── .nojekyll                # Serve static files without Jekyll processing
+├── report/
+│   ├── index.html           # Published research × engineering report (byte-copied from the reviewed file)
+│   └── MANIFEST.json        # Version, source hash, counts, and evidence boundary for report/
 ├── assets/                  # README images and real Harness graph data/UI
 ├── scripts/build_harness_map.py # Embed graph data/UI and generate static preview
 ├── tests/test_harness_map.py # Graph coverage, provenance and generation checks

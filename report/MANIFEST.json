@@ -1,0 +1,39 @@
+{
+  "name": "Research × engineering report",
+  "file": "report/index.html",
+  "version": "2026-11-09",
+  "source_sha256": "82de2528e409332d73df89793ea251145fe2347836cd8985cb4ce6bf56adba99",
+  "prepared_on": "2026-11-10",
+  "reviewed_on": "2026-11-09",
+  "counts": {
+    "research_perspectives": 10,
+    "engineering_entries": 54,
+    "pairs": 540,
+    "pair_status": {
+      "deep_comparison": 120,
+      "catalogue_level_pending_deep_comparison": 420
+    },
+    "deep_comparison_relations": {
+      "partial_correspondence": 78,
+      "different_observation_axes": 30,
+      "direct_concept_correspondence": 10,
+      "insufficient_evidence": 2
+    },
+    "engineering_evidence_status": {
+      "deep_comparison": 12,
+      "catalogue_level": 37,
+      "catalogue_level_identity_tentative": 1,
+      "pending_evidence": 4
+    },
+    "sources_registered": 205,
+    "sources_referenced_in_page": 80
+  },
+  "relation_to_public_catalogue": "This working set is separate from the 137-resource public catalogue in catalogue.json. Its counts must not be added to or substituted for that catalogue's counts.",
+  "evidence_boundary": [
+    "Document-based comparison only. It does not establish implementation completeness, reproduced performance, deployment maturity, or security certification.",
+    "No system was installed and no benchmark was run for this report.",
+    "Evidence labels describe what was checked at the review date.",
+    "Pair-level status shows evidence depth and observation status. It is not a ranking, performance measure, quality measure, or similarity score.",
+    "Engineering entries that are not one-to-one with catalogue entries are labelled as such; identity-tentative and pending items are marked explicitly."
+  ]
+}
