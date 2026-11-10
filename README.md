@@ -48,7 +48,7 @@ The expanded guide and detailed catalogue are currently **in Chinese**; source t
 
 The [interactive guide](https://dongshuyan.github.io/awesome-harness-memory/) provides search, filters, explanations, and views for comparing documented system properties. Open **图解探索** for the layered diagram: select several perspectives, adjust the view, and highlight one system across layers.
 
-The diagram covers the Harness / Agent entries identified in this catalogue, not an exhaustive industry list. It includes **21 real Harness / Agent profiles**, with three historical projects clearly labeled. Select objects and perspectives, then open any cell for its definition, conditions, and source. The [static preview](assets/memory-layers.svg) shows six of these objects across three perspectives. Unknown properties stay unknown; colors are not a quality ranking. Standalone memory services, plugins, and general frameworks remain in the resource directory.
+The diagram covers the Harness / Agent entries identified in this catalogue, not an exhaustive industry list. It includes **22 real Harness / Agent profiles**, with three historical projects clearly labeled. Select objects and perspectives, then open any cell for its definition, conditions, and source. The [static preview](assets/memory-layers.svg) shows six of these objects across three perspectives. Unknown properties stay unknown; colors are not a quality ranking. Standalone memory services, plugins, and general frameworks remain in the resource directory.
 
 The [research × engineering report](https://dongshuyan.github.io/awesome-harness-memory/report/index.html) has two views. The **Research perspective map** shows how different research lenses observe memory. The **engineering × Research coverage matrix** shows each pair's current evidence depth. Both views show observation entries and evidence status only. They do not show rankings, performance, quality, or similarity. Open a matrix cell to read the pair-level comparison.
 
@@ -56,9 +56,9 @@ README links and static images work directly on GitHub. For a local preview, run
 
 ## Coverage and evidence
 
-Sources checked through **2026-11-06 UTC**. The catalogue contains **137 resources**: 55 with documented basic information, 47 research reading entries, 32 unresolved leads, and 3 historical entries. Within that total, **48 systems** have primary sources supporting their basic functional descriptions. Inspect the [structured catalogue](catalogue.json) for entries, sources, and status.
+Sources checked through **2026-11-07 UTC**. The catalogue contains **138 resources**: 56 with documented basic information, 47 research reading entries, 32 unresolved leads, and 3 historical entries. Within that total, **49 systems** have primary sources supporting their basic functional descriptions. Inspect the [structured catalogue](catalogue.json) for entries, sources, and status.
 
-The research × engineering report uses a separate working set of **10 Research perspectives, 54 engineering entries, and 540 pairs**, as reviewed on 2026-11-09. These counts are not part of the 137-resource catalogue and should not be added to it. Most pairs remain at catalogue level pending deeper comparison. Its evidence labels describe what was checked at that review date.
+The research × engineering report uses a separate working set of **10 Research perspectives, 54 engineering entries, and 540 pairs**, as reviewed on 2026-11-09. These counts are not part of the 138-resource catalogue and should not be added to it. Most pairs remain at catalogue level pending deeper comparison. Its evidence labels describe what was checked at that review date.
 
 Document checks do not establish implementation completeness, reproduced performance, deployment maturity, or security certification. No system installation or benchmark execution is implied. Unresolved names and properties remain labeled; the catalogue is not exhaustive, and its counts are not market shares. Fiction illustrates design questions rather than supplying evidence about model cognition.
 
