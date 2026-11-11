@@ -100,6 +100,56 @@ def validate(data, catalogue):
             raise ValueError(f'Unresolved update source: {update.get("id")}')
 
 
+def validate_tutorial(tutorial):
+    if tutorial.get('version') != 1:
+        raise ValueError('Unsupported tutorial data version')
+    questions = tutorial.get('questions', [])
+    expected_questions = ['content', 'substrate', 'scope', 'lifecycle', 'exposure', 'governance']
+    if [q.get('id') for q in questions] != expected_questions:
+        raise ValueError('Tutorial questions must keep the six-question order')
+    if tutorial.get('comparisonCategories') != ['research', 'engineering', 'benchmarks', 'culture']:
+        raise ValueError('Tutorial comparison categories must match the comparison view')
+    sources = tutorial.get('sources', {})
+    for source_id, source in sources.items():
+        parsed = urlsplit(source.get('url', ''))
+        if parsed.scheme != 'https' or not parsed.hostname:
+            raise ValueError(f'Invalid tutorial source URL: {source_id}')
+    entries = tutorial.get('entries', {})
+    for category in ('research', 'engineering', 'benchmarks', 'culture'):
+        rows = entries.get(category, [])
+        if len(rows) < 1:
+            raise ValueError(f'Tutorial category is empty: {category}')
+        if category in ('research', 'engineering', 'benchmarks') and sum(row.get('status') == 'complete' for row in rows) < 1:
+            raise ValueError(f'Tutorial category needs at least one complete sample: {category}')
+        ids = set()
+        for row in rows:
+            if row.get('id') in ids:
+                raise ValueError(f'Duplicate tutorial entry: {row.get("id")}')
+            ids.add(row.get('id'))
+            if not row.get('checkedAt') or not set(row.get('sources', [])) <= set(sources):
+                raise ValueError(f'Incomplete tutorial entry provenance: {row.get("id")}')
+            if row.get('status') == 'complete':
+                if len(row.get('questions', [])) != 6:
+                    raise ValueError(f'Complete tutorial entry must answer six questions: {row.get("id")}')
+                if not row.get('selectionEvidence') or not row.get('limitations') or not row.get('next'):
+                    raise ValueError(f'Complete tutorial entry is missing evidence fields: {row.get("id")}')
+                profile = row.get('profile', {})
+                if not profile.get('kind') or not profile.get('artifact'):
+                    raise ValueError(f'Complete tutorial entry is missing identity fields: {row.get("id")}')
+                if category == 'benchmarks':
+                    evaluation = row.get('evaluation', {})
+                    required_evaluation = {'abilities', 'taskProtocol', 'metrics', 'designMapping', 'limitations'}
+                    if not required_evaluation <= set(evaluation) or any(not str(evaluation[field]).strip() for field in required_evaluation):
+                        raise ValueError(f'Complete benchmark is missing evaluation fields: {row.get("id")}')
+                for answer in row['questions']:
+                    if not answer.get('answer') or not answer.get('trace'):
+                        raise ValueError(f'Incomplete tutorial answer: {row.get("id")}')
+            if category == 'culture' and not row.get('realityNote'):
+                raise ValueError(f'Culture entry needs a reality note: {row.get("id")}')
+    if len(tutorial.get('visualizations', [])) < 3:
+        raise ValueError('Tutorial needs at least three visualization descriptions')
+
+
 def markdown(data, catalogue):
     records = {r['id']: r for r in catalogue['resources']}
 
@@ -218,13 +268,15 @@ def markdown(data, catalogue):
 
 def generated_files(root=ROOT):
     data = json.loads((root / 'site/knowledge.json').read_text())
+    tutorial = json.loads((root / 'site/tutorial.json').read_text())
     catalogue = json.loads((root / 'catalogue.json').read_text())
     navigation = json.loads((root / 'site/navigation.json').read_text())
     graph = harness.compiled_data(root)
     navigation['graphDimensions'] = [{'id': dimension['id'], 'name': dimension['name']} for dimension in graph['dimensions']]
     validate(data, catalogue)
-    app = (root / 'site/app.js').read_text().replace('/*__KNOWLEDGE_RENDERERS__*/', (root / 'site/knowledge.js').read_text())
-    scripts = '\n'.join(f'<script type="application/json" id="{name}-data">{harness.script_json(value)}</script>' for name, value in [('catalogue', catalogue), ('knowledge', data), ('navigation', navigation)])
+    validate_tutorial(tutorial)
+    app = (root / 'site/app.js').read_text().replace('/*__KNOWLEDGE_RENDERERS__*/', (root / 'site/knowledge.js').read_text()).replace('/*__TUTORIAL_RENDERERS__*/', (root / 'site/tutorial.js').read_text())
+    scripts = '\n'.join(f'<script type="application/json" id="{name}-data">{harness.script_json(value)}</script>' for name, value in [('catalogue', catalogue), ('knowledge', data), ('tutorial', tutorial), ('navigation', navigation)])
     scripts += '\n<script id="navigator-app">\n' + app + '\n</script>'
     inner = (root / 'site/frame.html').read_text().replace('__APP_SCRIPTS__', scripts).replace('__KNOWLEDGE_CSS__', (root / 'site/knowledge.css').read_text())
     outer = (root / 'site/shell.html').read_text().replace('__FRAME__', html.escape(inner, quote=True))

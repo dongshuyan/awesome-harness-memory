@@ -1,65 +1,57 @@
 # Awesome Harness Memory
 
-> Understand how agents remember, update, and use information. Find useful methods, systems, papers, and evaluations.
+> An Agent Memory tutorial: learn how to understand a memory system, then read carefully selected research, engineering systems, benchmarks, and cultural thought experiments.
 
-[English](README.md) · [简体中文](README.zh-CN.md) · **[Explore the interactive guide (中文) →](https://dongshuyan.github.io/awesome-harness-memory/)** · **[Research × engineering report (中文) →](https://dongshuyan.github.io/awesome-harness-memory/report/index.html)**
+[简体中文教程](README.zh-CN.md) · **[Open the interactive tutorial (Chinese)](https://dongshuyan.github.io/awesome-harness-memory/)** · [Legacy catalogue](resources/systems.md) · [Repository structure](docs/repository-structure.md)
 
-For researchers, engineers, and curious learners: start with the memory landscape, understand the available approaches, then follow their features, highlights, limitations, and original sources.
+The public site is a course rather than a leaderboard. It starts with six questions that can be asked of any Memory system, then applies the same questions to named research methods, agents, harnesses, independent memory systems, and benchmarks. Literature and film are kept as clearly labelled analogies, not as evidence about model capability or engineering safety.
 
-Memory is the only core topic here. Research perspectives and named engineering objects are organized side by side: named agents, harnesses, frameworks, standalone memory systems or services, and product memory. Research explains how memory can be observed and divided. Engineering entries show how a named system stores, updates, and uses memory. Their terms are not assumed to be equivalent.
+## Course path
 
-Here, *harness* means the runtime and control boundary around an agent. The guide also includes standalone memory layers, managed services, personal assistants, human memory research, and literary analogies.
+1. **First lesson: the six questions.** What is stored? What form and substrate carries it? Who owns it and who can share it? How does it form, change, expire, or get forgotten? How does a later call obtain and use it? Who may read, write, change, or delete it, and what responsibility follows?
+2. **Concept bridge.** Context, session history, RAG, checkpoints, parameters/KV state, and generic storage can participate in Memory without being the same concept.
+3. **Research.** Selected research frameworks and methods. Each entry starts with identity, inclusion evidence, source boundaries, and then answers the six questions.
+4. **Engineering.** Named agents, harnesses, frameworks, standalone memory systems, and managed memory services. A documented mechanism is kept separate from an assumption about hidden implementation.
+5. **Benchmarks.** Each benchmark is described by its target abilities, task protocol, metrics, and relation to the six questions. The site does not turn different benchmark scores into a single ranking.
+6. **Literature and screen.** Real novels, stories, films, and series used as analogy or thought experiment. They are not research, product, or evaluation evidence.
 
-[![Nine questions about agent memory](assets/memory-landscape.en.svg)](https://dongshuyan.github.io/awesome-harness-memory/)
+The final comparison page is optional. It places selected entries side by side after the reader has studied their individual pages.
 
-## Understand the landscape
+## Current tutorial edition
 
-| Question | What to look for |
-| --- | --- |
-| [Memory Types](docs/landscape.zh-CN.md#types) | Working and long-term; episodic, semantic, procedural; an alternative functional view |
-| [Memory Control](docs/landscape.zh-CN.md#control) | Agent decisions, harness triggers, component responsibilities |
-| [Memory Scope](docs/landscape.zh-CN.md#scope) | Thread, task, project, user, agent, team |
-| [Memory Retention](docs/landscape.zh-CN.md#retention) | Temporary or persistent retention, TTL, retention policies |
-| [Memory Representation](docs/landscape.zh-CN.md#representation) | Raw records, summaries, fields, graphs, parameters, latent representations |
-| [Memory Storage](docs/landscape.zh-CN.md#storage) | Runtime state, files, databases, checkpoints |
-| [Memory Formation & Update](docs/landscape.zh-CN.md#write) | Recording, extraction, consolidation, revision, compaction, deletion |
-| [Memory Retrieval & Use](docs/landscape.zh-CN.md#read) | Retrieval, selection, pinned context, on-demand reading, action |
-| [Memory Access & Trust](docs/landscape.zh-CN.md#trust) | Permissions, sharing, provenance, revocation, poisoning |
+The snapshot checked on **2026-11-11** contains:
 
-These nine questions organize the learning guide. Memory Types uses a source-labelled CoALA tree, with an alternative functional taxonomy from a separate survey. Context, Workspace, and Long-term Memory have a separate terminology guide that explains overlap. Topics include Chinese explanations, English terms, uses, examples, and original sources.
+- **10 selected Research entries**, with CoALA as the first complete six-question exemplar; four additional review leads remain visible as screened candidates;
+- **17 engineering entries**, with Claude Code as the first complete exemplar;
+- **10 benchmarks**, with LongMemEval as the first complete exemplar;
+- **6 literature and screen entries**, with *Memento* and “Funes the Memorious” as complete cultural examples;
+- **2 human-memory background entries**, plus topic and tool pages.
 
-The expanded guide and detailed catalogue are currently **in Chinese**; source titles and original links retain their original languages. The earlier [English reference pages](resources/systems.md) and [early bilingual concept map](explore/README.md) remain available with their narrower coverage marked.
+The other entries are deliberately marked **待完善 / pending**. A pending entry is a useful lead with a source and a boundary statement; it is not presented as if its six answers had already been verified. CloudMEM and HiSIGHT are retained as named leads because they were part of the research conversation, while their canonical identity is still unresolved.
 
-## Research and engineering side by side
+Research and engineering are selected for source quality, identifiable authors or maintainers, recency, and verifiability. Peer-reviewed or proceedings sources are preferred; arXiv-only work is kept only with an explicit evidence boundary. The lists are ordered by known public year, with entries whose public date is not stated placed after dated entries. The order is not a quality ranking.
 
-- **Research** covers perspectives on memory, such as CoALA, Forms / Functions / Dynamics, Foundation Agent Memory, Storage → Reflection → Experience, the LLM Memory tuple, and method views from papers such as Generative Agents, MemGPT, Reflexion, Voyager, and A-MEM. These perspectives ask different questions and do not form one unified taxonomy tree.
-- **Engineering** covers named agents, harnesses, frameworks, standalone memory systems or services, and product memory. Each entry keeps its own name, purpose, write and read behavior, scope, and evidence boundary.
-- **Research × engineering** compares each engineering entry with each Research perspective, one pair at a time. The detailed page separates source facts, engineering state, editorial analysis, reasons for difference, and design assumptions still to be verified.
+## Public data and preserved material
 
-## Find a useful starting point
+- [`site/tutorial.json`](site/tutorial.json) is the authoritative tutorial data: the six questions, sources, entries, status, sample answers, benchmark coverage, and visualization descriptions.
+- [`site/tutorial.js`](site/tutorial.js) renders the tutorial routes, detail pages, six-question comparison, and coverage views.
+- [`site/frame.html`](site/frame.html) and [`site/app.js`](site/app.js) provide the UI shell and routing. [`index.html`](index.html) is generated for GitHub Pages.
+- The earlier catalogue, topic pages, seven-layer Harness projection, and [research × engineering report](https://dongshuyan.github.io/awesome-harness-memory/report/index.html) remain available under the reference and tools links. They are preserved editions with their own evidence scope; the tutorial is the default learning path.
 
-- **[Browse systems and products](resources/systems.zh-CN.md)** — Pi, Codex, Claude Code, Claude-Mem, OpenClaw, Hermes, Letta Code, LangGraph, Mem0, Hindsight, MemOS, Graphiti, Zep, and more. ChatGPT Memory is a separate personal-assistant comparison.
-- **[Start from your needs](docs/needs.zh-CN.md)** — continue across sessions, remember preferences, reuse experience, track changing facts, or coordinate several agents.
-- **[Read papers and methods](resources/papers.zh-CN.md)** or **[start with surveys](resources/surveys.zh-CN.md)** — distinguish research claims from current product behavior.
-- **[Choose evaluations](resources/benchmarks.zh-CN.md)** — examine recall, useful actions, updates, sharing, safety, and cost. The [English evaluation guide](docs/evaluation-guide.md) explains comparison conditions.
-- **[Explore human memory](resources/human.zh-CN.md)** and **[fiction and screen](resources/fiction.zh-CN.md)** — cognitive and neural evidence, alongside clearly labeled analogies.
+The root catalogue still contains **137 public resources** in its 2026-11-06 edition. That count is separate from the tutorial workset above. Neither count is an industry total, market share, performance result, or completeness claim.
 
-## Explore combinations visually
+## Local preview and checks
 
-The [interactive guide](https://dongshuyan.github.io/awesome-harness-memory/) provides search, filters, explanations, and views for comparing documented system properties. Open **图解探索** for the layered diagram: select several perspectives, adjust the view, and highlight one system across layers.
+From the repository root:
 
-The diagram covers the Harness / Agent entries identified in this catalogue, not an exhaustive industry list. It includes **21 real Harness / Agent profiles**, with three historical projects clearly labeled. Select objects and perspectives, then open any cell for its definition, conditions, and source. The [static preview](assets/memory-layers.svg) shows six of these objects across three perspectives. Unknown properties stay unknown; colors are not a quality ranking. Standalone memory services, plugins, and general frameworks remain in the resource directory.
+```sh
+python3 scripts/build_site.py
+python3 -m unittest discover -s tests -v
+python3 -m http.server 8000 --bind 127.0.0.1
+```
 
-The [research × engineering report](https://dongshuyan.github.io/awesome-harness-memory/report/index.html) has two views. The **Research perspective map** shows how different research lenses observe memory. The **engineering × Research coverage matrix** shows each pair's current evidence depth. Both views show observation entries and evidence status only. They do not show rankings, performance, quality, or similarity. Open a matrix cell to read the pair-level comparison.
+Open `http://127.0.0.1:8000/`. The build embeds the catalogue and tutorial data into the static page; no server-side rewrite or package installation is required. `python3 scripts/build_site.py --check` verifies that generated files are current.
 
-README links and static images work directly on GitHub. For a local preview, run `python3 -m http.server 8000 --bind 127.0.0.1` from the repository root and open `http://127.0.0.1:8000/`. For the local report page, open `http://127.0.0.1:8000/report/index.html`.
+Public pages report documented facts and source boundaries. They do not claim that a system was installed, that a benchmark was run, or that a missing public detail means a capability is absent. Private research plans and review records stay outside this repository.
 
-## Coverage and evidence
-
-Sources checked through **2026-11-06 UTC**. The catalogue contains **137 resources**: 55 with documented basic information, 47 research reading entries, 32 unresolved leads, and 3 historical entries. Within that total, **48 systems** have primary sources supporting their basic functional descriptions. Inspect the [structured catalogue](catalogue.json) for entries, sources, and status.
-
-The research × engineering report uses a separate working set of **10 Research perspectives, 54 engineering entries, and 540 pairs**, as reviewed on 2026-11-09. These counts are not part of the 137-resource catalogue and should not be added to it. Most pairs remain at catalogue level pending deeper comparison. Its evidence labels describe what was checked at that review date.
-
-Document checks do not establish implementation completeness, reproduced performance, deployment maturity, or security certification. No system installation or benchmark execution is implied. Unresolved names and properties remain labeled; the catalogue is not exhaustive, and its counts are not market shares. Fiction illustrates design questions rather than supplying evidence about model cognition.
-
-See the [contribution guide](CONTRIBUTING.md), [roadmap](ROADMAP.md), or [repository structure and publishing notes](docs/repository-structure.md). If the guide helps you learn or find useful work, a star helps others discover it.
+See the [contribution guide](CONTRIBUTING.md), [roadmap](ROADMAP.md), or [repository structure and publishing notes](docs/repository-structure.md).

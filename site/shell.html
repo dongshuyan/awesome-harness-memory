@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com https://persistent.oaistatic.com/plugins/visualize/; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com https://persistent.oaistatic.com/plugins/visualize/charts/; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<title>Awesome Harness Memory 中文知识导航</title>
-<meta name="description" content="从记忆分类与九个研究问题理解 Agent 与 Harness Memory，探索论文、方法、记忆系统和评测。">
+<title>Agent Memory 教程 · Awesome Harness Memory</title>
+<meta name="description" content="从六个核心问题学习 Agent Memory，再阅读 Research、工程、Benchmark 和真实文学影视类比。">
 <style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
 
 </head>
 <body>
-<iframe id="codex-visualization" sandbox="allow-scripts" referrerpolicy="no-referrer" title="Awesome Harness Memory 中文知识导航" data-srcdoc="__FRAME__"></iframe>
+<iframe id="codex-visualization" sandbox="allow-scripts" referrerpolicy="no-referrer" title="Agent Memory 教程" data-srcdoc="__FRAME__"></iframe>
 
 <script>(() => {
   const frame = document.getElementById("codex-visualization");
@@ -105,6 +105,7 @@
   const initialGlobals = {
     widgetState: state,
     statePersistence: storage == null ? "none" : "local",
+    routeHash: globalThis.location.hash,
   };
 
   const channel = new MessageChannel();
@@ -228,6 +229,22 @@
     }
   });
   channel.port1.start();
+  // The shell owns browser history; the sandboxed course can only request a
+  // fragment URL, never a cross-origin navigation or a script URL.
+  const validRouteHash = (hash) =>
+    typeof hash === "string" && hash.length <= 4096 &&
+    (hash === "" || /^#[A-Za-z0-9_/%?=,.-]*$/.test(hash));
+  const sendRoute = () => channel.port1.postMessage({
+    type: "route-change", hash: globalThis.location.hash,
+  });
+  globalThis.addEventListener("message", (event) => {
+    if (event.source !== frame.contentWindow || event.data?.type !== "codex-route-write") return;
+    const hash = event.data.hash;
+    if (!validRouteHash(hash) || hash === globalThis.location.hash) return;
+    globalThis.history.pushState(null, "", `${globalThis.location.pathname}${globalThis.location.search}${hash}`);
+  });
+  globalThis.addEventListener("popstate", sendRoute);
+  globalThis.addEventListener("hashchange", sendRoute);
   const srcdoc = frame.dataset.srcdoc;
   if (srcdoc == null) {
     return;
@@ -248,6 +265,7 @@
         "*",
         [channel.port2],
       );
+      sendRoute();
     },
     { once: true },
   );

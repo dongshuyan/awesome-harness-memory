@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com https://persistent.oaistatic.com/plugins/visualize/; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com https://persistent.oaistatic.com/plugins/visualize/charts/; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<title>Awesome Harness Memory 中文知识导航</title>
+<title>Agent Memory 教程 · Awesome Harness Memory</title>
 <style>:root {
   color-scheme: light dark;
   background-color: var(
@@ -1529,6 +1529,7 @@ html>body{padding:0}</style>
     "codex-visualization-widget-state",
   );
   const initialGlobals = parse(initialStateElement?.textContent ?? "{}");
+  globalThis.__tutorialInitialRoute = typeof initialGlobals.routeHash === "string" ? initialGlobals.routeHash : "";
   initialStateElement?.remove();
   /** @type {Record<string, unknown> | null} */
   let state = initialGlobals.widgetState ?? null;
@@ -1754,6 +1755,8 @@ html>body{padding:0}</style>
             const data = apply(getMessageData, event, []);
             if (typeof data === "object" && data?.type === "measure") {
               sendHeight();
+            } else if (typeof data === "object" && data?.type === "route-change" && typeof data.hash === "string") {
+              globalThis.dispatchEvent(new CustomEvent("codex-route-change", { detail: { hash: data.hash } }));
             } else if (
               typeof data === "object" &&
               data?.type === "widget-state-result"
@@ -1835,21 +1838,32 @@ html>body{padding:0}</style>
 <div id="memory-navigator" lang="zh-CN">
   <div class="kn-shell">
     <header class="kn-header">
-      <button class="kn-brand" type="button" data-go="home" aria-label="Awesome Harness Memory，回到知识全景"><span class="kn-mark" aria-hidden="true">m</span><span>Awesome Harness Memory<small>理解记忆 · 找到方法与实现</small></span></button>
+      <button class="kn-brand" type="button" data-go="home" aria-label="Agent Memory 教程，回到课程首页"><span class="kn-mark" aria-hidden="true">m</span><span>Agent Memory 教程<small>从六个问题学会读懂 Memory</small></span></button>
       <a class="kn-repo-link" href="https://github.com/dongshuyan/awesome-harness-memory" target="_blank" rel="noopener noreferrer" aria-label="GitHub 仓库，查看源码或 Star">GitHub ↗ <span>Star</span></a>
     </header>
-    <nav class="kn-nav" aria-label="主导航">
-      <button type="button" data-go="home" aria-current="page">知识全景</button>
-      <button type="button" data-go="topic">分类与方法</button>
-      <button type="button" data-go="needs">按需查找</button>
+    <nav class="kn-nav" aria-label="课程主导航">
+      <button type="button" data-go="home" aria-current="page">课程首页</button>
+      <button type="button" data-go="tutorial-lesson">第一课 · 六问</button>
+      <button type="button" data-go="tutorial-concepts">概念辨析</button>
+      <button type="button" data-go="tutorial-research">Research</button>
+      <button type="button" data-go="tutorial-engineering">工程</button>
+      <button type="button" data-go="tutorial-benchmarks">Benchmark</button>
+      <button type="button" data-go="tutorial-culture">文学与影视</button>
+      <button type="button" data-go="tutorial-topics">专题与工具</button>
+      <button type="button" data-go="tutorial-compare">比较</button>
+    </nav>
+    <nav class="kn-nav kn-nav-secondary" aria-label="参考与工具">
+      <span class="kn-nav-label">参考与工具</span>
+      <button type="button" data-go="topic">旧版分类与方法</button>
       <button type="button" data-go="library">资源目录</button>
-      <button type="button" data-go="evaluation">评测与证据</button>
-      <button type="button" data-go="extensions">人类记忆与文艺</button>
-      <button type="button" data-go="layers">图解探索</button>
+      <button type="button" data-go="evaluation">旧版评测页</button>
+      <button type="button" data-go="extensions">人类记忆与文艺资料</button>
+      <button type="button" data-go="layers">旧版图解探索</button>
+      <button type="button" data-go="legacy-home">旧版知识全景</button>
     </nav>
     <main id="kn-main" tabindex="-1"></main>
     <section id="kn-layers-host" hidden></section>
-    <footer class="kn-footer"><span>精选入口，持续修订。分类是观察视角，不是完整性承诺。</span><button type="button" data-go="about">来源与收录说明</button><a href="https://github.com/dongshuyan/awesome-harness-memory" target="_blank" rel="noopener noreferrer">GitHub · Star ↗</a></footer>
+    <footer class="kn-footer"><span>教程工作集按公开日期维护；待完善不等于不支持，文化条目只作类比。</span><button type="button" data-go="about">来源与收录说明</button><button type="button" data-go="legacy-home">旧版知识导航</button><a href="https://github.com/dongshuyan/awesome-harness-memory" target="_blank" rel="noopener noreferrer">GitHub · Star ↗</a></footer>
     <p class="kn-sr" id="kn-live" aria-live="polite"></p>
   </div>
 </div>
@@ -1970,6 +1984,125 @@ html>body{padding:0}</style>
 #memory-navigator td,#memory-navigator th{min-width:170px;max-width:300px}
 #memory-navigator th small{display:block;font-size:11px;font-weight:400;color:var(--kn-muted)}
 #memory-navigator #kn-layers-host{padding:0 var(--kn-pad) 30px;--background:var(--kn-bg);--foreground:var(--kn-text);--font-size-base:14px;--viz-series-1:light-dark(#3f9680,#68bea7);--viz-series-2:light-dark(#e3ae3a,#dbb45b);--red:light-dark(#d36d67,#d88479)}
+#memory-navigator .kn-nav-secondary{background:var(--kn-bg);border-bottom:1px dashed var(--kn-line);align-items:center}
+#memory-navigator .kn-nav-secondary .kn-nav-label{padding:10px 6px 10px 0;color:var(--kn-muted);font-size:12px;font-weight:600}
+#memory-navigator .kn-nav-secondary button{padding:9px 10px;font-size:12px;border-bottom-width:2px}
+#memory-navigator .kn-tutorial-hero{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(240px,.8fr);gap:32px;align-items:end;padding:18px 0 32px}
+#memory-navigator .kn-tutorial-hero h1{font-size:clamp(30px,5vw,52px);max-width:14ch;line-height:1.18}
+#memory-navigator .kn-kicker{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--kn-accent);margin-bottom:10px}
+#memory-navigator .kn-tutorial-callout{border-left:3px solid var(--kn-gold);padding:14px 16px;background:var(--kn-soft);border-radius:0 8px 8px 0}
+#memory-navigator .kn-tutorial-callout strong{display:block;color:var(--kn-text);margin-bottom:4px}
+#memory-navigator .kn-tutorial-callout p{font-size:14px;color:var(--kn-muted);line-height:1.7}
+#memory-navigator .kn-tutorial-primary{background:var(--kn-accent);color:var(--kn-paper);border-color:var(--kn-accent)}
+#memory-navigator .kn-tutorial-primary:hover{filter:brightness(.93)}
+#memory-navigator .kn-tutorial-section{margin-top:28px;padding-top:22px;border-top:1px solid var(--kn-line)}
+#memory-navigator .kn-course-path{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-top:14px}
+#memory-navigator .kn-course-path button{position:relative;min-height:120px;padding:14px;border:1px solid var(--kn-line);border-radius:8px;background:var(--kn-paper);display:flex;flex-direction:column;gap:5px}
+#memory-navigator .kn-course-path button:hover{border-color:var(--kn-accent);background:var(--kn-soft)}
+#memory-navigator .kn-course-path b{font-size:11px;color:var(--kn-accent)}
+#memory-navigator .kn-course-path strong{font-size:15px}
+#memory-navigator .kn-course-path span{font-size:12px;line-height:1.5;color:var(--kn-muted)}
+#memory-navigator .kn-tutorial-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:14px}
+#memory-navigator .kn-tutorial-stat{display:flex;flex-direction:column;gap:2px;padding:14px;border:1px solid var(--kn-line);border-radius:8px;background:var(--kn-paper)}
+#memory-navigator .kn-tutorial-stat:hover{border-color:var(--kn-accent);background:var(--kn-soft)}
+#memory-navigator .kn-tutorial-stat strong{font-size:28px;line-height:1;color:var(--kn-accent)}
+#memory-navigator .kn-tutorial-stat span{font-weight:600;margin-top:4px}
+#memory-navigator .kn-tutorial-stat small{color:var(--kn-muted);font-size:11px}
+#memory-navigator .kn-tutorial-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+#memory-navigator .kn-tutorial-links button{padding:10px 12px;border:1px solid var(--kn-line);border-radius:6px;color:var(--kn-accent);background:var(--kn-paper)}
+#memory-navigator .kn-tutorial-viz-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:14px}
+#memory-navigator .kn-tutorial-viz-card{padding:14px;border:1px solid var(--kn-line);border-radius:8px;background:var(--kn-paper)}
+#memory-navigator .kn-tutorial-viz-card h3{font-size:15px;margin-top:8px}
+#memory-navigator .kn-tutorial-viz-card p{font-size:12px;line-height:1.6;color:var(--kn-muted);margin-top:6px}
+#memory-navigator .kn-tutorial-viz-graphic{margin:10px 0 8px;padding:7px;border:1px solid var(--kn-line);border-radius:6px;background:var(--kn-soft);overflow:auto;max-height:320px}
+#memory-navigator .kn-tutorial-viz-graphic svg{display:block;width:100%;height:auto;min-height:96px}
+#memory-navigator .kn-tutorial-viz-card small{display:block;color:var(--kn-muted);font-size:11px;line-height:1.5;margin-top:8px}
+#memory-navigator .kn-tutorial-viz-card .kn-text-btn{display:block;margin-top:10px;color:var(--kn-accent);font-size:12px}
+#memory-navigator .kn-viz-mark{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;color:var(--kn-accent);background:var(--kn-soft)}
+#memory-navigator .kn-tutorial-lesson-layout{display:grid;grid-template-columns:190px minmax(0,1fr);gap:28px;align-items:start}
+#memory-navigator .kn-tutorial-toc{position:sticky;top:16px;border-right:1px solid var(--kn-line);padding-right:14px;display:flex;flex-direction:column;gap:2px}
+#memory-navigator .kn-tutorial-toc strong{font-size:13px;margin-bottom:5px}
+#memory-navigator .kn-tutorial-toc a{padding:5px 7px;color:var(--kn-muted);text-decoration:none;border-radius:5px;font-size:12px}
+#memory-navigator .kn-tutorial-toc a:hover{color:var(--kn-accent);background:var(--kn-soft)}
+#memory-navigator .kn-tutorial-lesson h1{font-size:clamp(28px,4vw,44px);line-height:1.2}
+#memory-navigator .kn-tutorial-lesson>.kn-lead{max-width:760px}
+#memory-navigator .kn-tutorial-kicker{font-size:11px;letter-spacing:.1em;color:var(--kn-accent);text-transform:uppercase;margin-bottom:6px}
+#memory-navigator .kn-tutorial-lesson .kn-tutorial-section:first-of-type{border-top:0;margin-top:18px}
+#memory-navigator .kn-tutorial-section h2{margin-bottom:9px}
+#memory-navigator .kn-tutorial-section p{font-size:14px;line-height:1.75}
+#memory-navigator .kn-tutorial-two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
+#memory-navigator .kn-tutorial-two-col>div{padding:13px;background:var(--kn-paper);border:1px solid var(--kn-line);border-radius:7px}
+#memory-navigator .kn-tutorial-two-col h3{font-size:14px;color:var(--kn-accent);margin-bottom:4px}
+#memory-navigator .kn-tutorial-example{margin-top:13px;padding:12px 14px;border-left:3px solid var(--kn-gold);background:color-mix(in srgb,var(--kn-soft) 70%,var(--kn-paper));border-radius:0 7px 7px 0}
+#memory-navigator .kn-tutorial-example strong{display:block;color:var(--kn-gold);font-size:12px;margin-bottom:4px}
+#memory-navigator .kn-tutorial-evidence{margin-top:13px;border:1px solid var(--kn-line);border-radius:7px;background:var(--kn-paper)}
+#memory-navigator .kn-tutorial-evidence summary{padding:10px 12px;color:var(--kn-accent);cursor:pointer;font-size:13px}
+#memory-navigator .kn-tutorial-evidence p{padding:0 12px 12px;color:var(--kn-muted);font-size:13px}
+#memory-navigator .kn-tutorial-proof{background:var(--kn-soft);padding:22px 18px;border-radius:8px;border-top:0}
+#memory-navigator .kn-tutorial-proof-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
+#memory-navigator .kn-tutorial-proof-grid article{padding:13px;background:var(--kn-paper);border:1px solid var(--kn-line);border-radius:7px}
+#memory-navigator .kn-tutorial-proof-grid h3{font-size:14px;color:var(--kn-accent);margin-bottom:4px}
+#memory-navigator .kn-tutorial-concept-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
+#memory-navigator .kn-tutorial-concept{padding:15px;border:1px solid var(--kn-line);border-radius:8px;background:var(--kn-paper)}
+#memory-navigator .kn-tutorial-concept h2{font-size:17px;margin-bottom:10px}
+#memory-navigator .kn-tutorial-concept strong{font-size:12px;color:var(--kn-accent)}
+#memory-navigator .kn-tutorial-concept p{font-size:13px;color:var(--kn-muted);margin-top:3px}
+#memory-navigator .kn-tutorial-caution{margin-top:10px;padding-top:9px;border-top:1px dashed var(--kn-line)}
+#memory-navigator .kn-tutorial-caution strong{color:var(--kn-gold)}
+#memory-navigator .kn-tutorial-index-hero{padding:10px 0 18px}
+#memory-navigator .kn-tutorial-index-hero h1{font-size:clamp(28px,4vw,42px);line-height:1.2}
+#memory-navigator .kn-tutorial-entry-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#memory-navigator .kn-tutorial-entry-card{padding:16px;border:1px solid var(--kn-line);border-radius:8px;background:var(--kn-paper);display:flex;flex-direction:column;align-items:flex-start}
+#memory-navigator .kn-tutorial-entry-card h2{font-size:18px;margin-top:7px}
+#memory-navigator .kn-tutorial-entry-card p{font-size:13px;color:var(--kn-muted);margin-top:7px}
+#memory-navigator .kn-tutorial-entry-card .kn-btn{margin-top:auto;padding-top:14px}
+#memory-navigator .kn-tutorial-entry-meta{display:flex;gap:7px;align-items:center;color:var(--kn-muted);font-size:11px}
+#memory-navigator .kn-tutorial-complete{color:var(--kn-accent);background:var(--kn-soft)}
+#memory-navigator .kn-tutorial-pending{color:var(--kn-gold);background:color-mix(in srgb,var(--kn-gold) 13%,transparent)}
+#memory-navigator .kn-tutorial-detail-head{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(240px,.75fr);gap:20px;padding:12px 0 22px;border-bottom:1px solid var(--kn-line)}
+#memory-navigator .kn-tutorial-detail-head h1{font-size:clamp(28px,4vw,42px);line-height:1.2}
+#memory-navigator .kn-tutorial-detail-head .kn-tags{margin-top:10px}
+#memory-navigator .kn-tutorial-evidence-card{padding:14px;border:1px solid var(--kn-line);border-left:3px solid var(--kn-gold);border-radius:0 8px 8px 0;background:var(--kn-soft)}
+#memory-navigator .kn-tutorial-evidence-card h3{font-size:15px;margin-bottom:6px}
+#memory-navigator .kn-tutorial-evidence-card p{font-size:13px;color:var(--kn-muted);margin-top:6px}
+#memory-navigator .kn-tutorial-detail-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(230px,.75fr);gap:14px;margin-top:16px}
+#memory-navigator .kn-tutorial-panel{padding:16px;border:1px solid var(--kn-line);border-radius:8px;background:var(--kn-paper);margin-bottom:14px}
+#memory-navigator .kn-tutorial-panel h2{font-size:19px;margin-bottom:10px}
+#memory-navigator .kn-tutorial-meta{display:grid;grid-template-columns:120px minmax(0,1fr);gap:6px 12px;font-size:13px}
+#memory-navigator .kn-tutorial-meta dt{color:var(--kn-muted);font-weight:600}
+#memory-navigator .kn-tutorial-meta dd{margin:0;overflow-wrap:anywhere}
+#memory-navigator .kn-tutorial-sources{list-style:none;padding:0;margin:14px 0 0}
+#memory-navigator .kn-tutorial-sources li{border-top:1px solid var(--kn-line);padding:9px 0}
+#memory-navigator .kn-tutorial-sources small{display:block;color:var(--kn-muted);font-size:11px;line-height:1.5;margin-top:3px}
+#memory-navigator .kn-tutorial-answers{display:grid;gap:8px}
+#memory-navigator .kn-tutorial-answers article{padding:11px;border:1px solid var(--kn-line);border-radius:6px}
+#memory-navigator .kn-tutorial-answer-key{font-size:11px;color:var(--kn-accent);font-weight:600;margin-bottom:4px}
+#memory-navigator .kn-tutorial-answers p{font-size:13px;line-height:1.7}
+#memory-navigator .kn-tutorial-answers details{margin-top:6px}
+#memory-navigator .kn-tutorial-answers summary{font-size:11px;color:var(--kn-muted);cursor:pointer}
+#memory-navigator .kn-tutorial-answers details p{font-size:12px;color:var(--kn-muted);margin-top:5px}
+#memory-navigator .kn-tutorial-pending-panel{border-left:3px solid var(--kn-gold)}
+#memory-navigator .kn-tutorial-pending-panel li{font-size:13px;line-height:1.7;color:var(--kn-muted);margin-top:5px}
+#memory-navigator .kn-tutorial-culture-note{border-left:3px solid var(--kn-accent)}
+#memory-navigator .kn-tutorial-reading-guide{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:12px}
+#memory-navigator .kn-tutorial-reading-guide p{padding:12px;border:1px solid var(--kn-line);border-radius:7px;background:var(--kn-paper);font-size:13px}
+#memory-navigator .kn-tutorial-compare-picker{border:1px solid var(--kn-line);border-radius:8px;padding:12px;margin-top:18px}
+#memory-navigator .kn-tutorial-compare-picker legend{font-size:13px;font-weight:600;padding:0 5px}
+#memory-navigator .kn-tutorial-compare-picker>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+#memory-navigator .kn-tutorial-compare-picker label{padding:7px;border-radius:5px;background:var(--kn-soft);font-size:12px;line-height:1.45}
+#memory-navigator .kn-tutorial-compare-picker small{display:block;color:var(--kn-muted);margin-left:20px}
+#memory-navigator .kn-tutorial-compare-table table{min-width:780px}
+#memory-navigator .kn-tutorial-compare-table th small{display:block;color:var(--kn-muted);font-weight:400;text-transform:none;letter-spacing:0;margin-top:3px}
+#memory-navigator .kn-tutorial-matrix table{min-width:720px}
+#memory-navigator .kn-tutorial-matrix td{text-align:center;font-size:18px;font-weight:700;color:var(--kn-muted)}
+#memory-navigator .kn-tutorial-matrix .kn-viz-hit{color:var(--kn-accent);background:var(--kn-soft)}
+#memory-navigator .kn-tutorial-matrix .kn-viz-empty{color:var(--kn-line)}
+#memory-navigator .kn-tutorial-topic-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:12px}
+#memory-navigator .kn-tutorial-topic-grid article{padding:13px;border:1px solid var(--kn-line);border-radius:7px;background:var(--kn-paper)}
+#memory-navigator .kn-tutorial-topic-grid h3{font-size:15px;margin-bottom:5px}
+#memory-navigator .kn-tutorial-topic-grid p{font-size:12px;color:var(--kn-muted)}
+@media(max-width:900px){#memory-navigator .kn-course-path{grid-template-columns:repeat(3,minmax(0,1fr))}#memory-navigator .kn-tutorial-viz-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#memory-navigator .kn-tutorial-concept-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#memory-navigator .kn-tutorial-entry-list{grid-template-columns:1fr}#memory-navigator .kn-tutorial-detail-head,#memory-navigator .kn-tutorial-detail-grid{grid-template-columns:1fr}#memory-navigator .kn-tutorial-topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){#memory-navigator .kn-nav-secondary .kn-nav-label{display:none}#memory-navigator .kn-tutorial-hero{grid-template-columns:1fr;gap:18px}#memory-navigator .kn-course-path{grid-template-columns:repeat(2,minmax(0,1fr))}#memory-navigator .kn-tutorial-stats{grid-template-columns:repeat(2,minmax(0,1fr))}#memory-navigator .kn-tutorial-viz-grid,#memory-navigator .kn-tutorial-concept-grid,#memory-navigator .kn-tutorial-proof-grid,#memory-navigator .kn-tutorial-two-col,#memory-navigator .kn-tutorial-reading-guide{grid-template-columns:1fr}#memory-navigator .kn-tutorial-lesson-layout{grid-template-columns:1fr;gap:12px}#memory-navigator .kn-tutorial-toc{position:static;border-right:0;border-bottom:1px solid var(--kn-line);padding:0 0 8px;display:flex;flex-direction:row;overflow-x:auto;gap:3px}#memory-navigator .kn-tutorial-toc strong{display:none}#memory-navigator .kn-tutorial-toc a{white-space:nowrap}#memory-navigator .kn-tutorial-compare-picker>div{grid-template-columns:1fr}#memory-navigator .kn-tutorial-topic-grid{grid-template-columns:1fr}}
 #memory-navigator #memory-colored-layers .form-check{display:flex;gap:6px;align-items:center;font-size:13px}
 #memory-navigator #memory-colored-layers .text-small{font-size:12px}
 #memory-navigator #memory-colored-layers .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
