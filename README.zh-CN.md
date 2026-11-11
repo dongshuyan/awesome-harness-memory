@@ -1,74 +1,57 @@
 # Awesome Harness Memory
 
-[English](README.md) · [简体中文](README.zh-CN.md) · **[打开交互导航](https://dongshuyan.github.io/awesome-harness-memory/)** · **[研究 × 工程对照报告](https://dongshuyan.github.io/awesome-harness-memory/report/index.html)**
+> Agent Memory 教程：先学会怎样认识一个 Memory 系统，再阅读精选的研究、工程、Benchmark，以及真实文学影视作品里的记忆思想实验。
 
-理解 Agent 如何记住、更新和使用信息，找到值得继续读的论文、方法、系统与评测。
+[English](README.md) · **[打开交互教程](https://dongshuyan.github.io/awesome-harness-memory/)** · [旧版资源目录](resources/systems.zh-CN.md) · [仓库结构](docs/repository-structure.md)
 
-[知识全景](docs/landscape.zh-CN.md) · [按需求找资料](docs/needs.zh-CN.md) · [系统与产品](resources/systems.zh-CN.md) · [论文与方法](resources/papers.zh-CN.md) · [评测](resources/benchmarks.zh-CN.md)
+这个仓库现在以“教程”为主，不是排行榜，也不是把所有资料堆在一起的百科目录。课程先用六个问题建立共同的观察方法，再把这六个问题带入 Research、Agent/Harness、独立 Memory 系统、Benchmark 和文化类比。文学与影视只用于类比和思想实验，不作为模型能力或工程安全的证据。
 
-这里的核心主题只有 Memory。Research 视角与具名工程对象并列组织：具名 Agent、Harness、Framework、独立 Memory 系统或服务，以及产品 Memory。Research 回答“如何观察和划分 Memory”，工程条目回答“某个具体系统怎样保存、更新和使用 Memory”。两者的术语不默认等价。
+## 课程主路径
 
-这里的 Harness 指包围 Agent 的运行时与控制边界。指南也包括独立记忆层、托管服务、个人助手、人类记忆研究和文学影视类比。
+1. **第一课：六个核心问题。** 保存的是什么？它以什么形式、放在哪里？这份 Memory 归谁、服务谁、谁可以共享？它如何形成、更新、失效和遗忘？后续调用如何获得并使用它？谁能读、写、改、删，并承担什么责任？
+2. **相关概念辨析。** Context、session history、RAG、checkpoint、参数/KV 状态和 generic storage 可能参与 Memory，但它们不是同一个概念。
+3. **Research。** 先看身份、纳入依据和证据边界，再逐条按六问阅读研究框架和方法。
+4. **工程。** 阅读具名 Agent、Harness、Framework、独立 Memory 系统和托管服务，区分官方文档、公开代码、观察结果与未说明项。
+5. **Benchmark。** 说明目标能力、任务协议、指标，以及它们和六问的交集。不同 Benchmark 的分数不会被合成为一个排名。
+6. **文学与影视。** 阅读真实的小说、短篇、电影和剧集，把它们作为直观的类比或思想实验。
 
-[![从记忆分类理解 Memory](assets/memory-landscape.svg)](https://dongshuyan.github.io/awesome-harness-memory/)
+读完具体条目后，可以进入最后的比较页，选择多个对象并排查看已有的六问答案。比较是辅助工具，不替代每个条目的独立阅读。
 
-## 先建立全景
+## 当前教程工作集
 
-| 你想理解的问题 | 从这里开始 |
-| --- | --- |
-| [记忆分类](docs/landscape.zh-CN.md#types) | 工作、长期；情景、语义、程序性；另一套功能分类 |
-| [记忆的控制方式](docs/landscape.zh-CN.md#control) | Agent 主动决定 · Harness 自动触发 · 组件分工 |
-| [记忆的组织范围](docs/landscape.zh-CN.md#scope) | 会话 · 任务 · 项目 · 用户 · Agent · 团队 |
-| [记忆的保留期限](docs/landscape.zh-CN.md#retention) | 临时保存 · 跨会话保留 · TTL · 保留政策 |
-| [记忆的表示形式](docs/landscape.zh-CN.md#representation) | 原文 · 摘要 · 字段 · 图 · 参数 · 潜在表示 |
-| [记忆的存储载体](docs/landscape.zh-CN.md#storage) | 运行状态 · 文件 · 数据库 · 检查点 |
-| [记忆的写入与维护](docs/landscape.zh-CN.md#write) | 记录 · 提取 · 巩固 · 修订 · 压缩 · 删除 |
-| [记忆的检索与使用](docs/landscape.zh-CN.md#read) | 检索 · 筛选 · 固定读入 · 按需查询 · 行动 |
-| [记忆的权限与可信性](docs/landscape.zh-CN.md#trust) | 权限 · 共享 · 来源 · 撤销 · 投毒 |
+截至 **2026-11-11** 的教程快照包含：
 
-九问是阅读导航。记忆分类默认采用有来源的 CoALA 分类树，也可切换另一篇综述的功能分类。Context / Workspace / Long-term 提供单独的叫法对照，允许重叠。每项有中英文术语、解释、用途、例子和来源。
+- **10 个精选 Research**，CoALA 是第一个完整的六问样板；另有 4 个研究候选作为待筛线索保留在 Research 页面；
+- **17 个工程系统**，Claude Code 是第一个完整样板；
+- **10 个 Benchmark**，LongMemEval 是第一个完整样板；
+- **6 个文学与影视条目**，*Memento* 和 Borges 的短篇 “Funes the Memorious” 已完成文化类样板；
+- **2 个人类记忆背景条目**，以及专题和工具页面。
 
-## 研究与工程并列
+其余条目会明确标记为 **待完善**。待完善表示它已经有来源入口、收录理由和证据边界，但六问答案还没有逐项核实；页面不会把摘要扩写成事实。CloudMEM 和 HiSIGHT 作为此前讨论过的名字保留，但它们的 canonical identity 仍待确认。
 
-- **Research**：从论文与方法观察 Memory，例如 CoALA、Forms / Functions / Dynamics、Foundation Agent Memory、Storage → Reflection → Experience、LLM Memory 四元组，以及 Generative Agents、MemGPT、Reflexion、Voyager、A-MEM 等方法视角。它们回答的问题不同，不组成一棵统一的分类树。
-- **工程**：具名 Agent、Harness、Framework、独立 Memory 系统或服务，以及产品 Memory。每个条目保留自己的名称、用途、写入与读取方式、范围和证据边界。
-- **研究 × 工程**：把每个工程逐一与每套 Research 视角对照。页面区分原文事实、工程侧现状、编者分析、差异原因和待验证的设计假设。
+Research 和工程条目按来源质量、作者或维护团队可识别性、时效性和可复核性筛选。优先采用同行评议论文、会议论文集、官方文档和原作者仓库；只有预印本的条目会单独标明证据边界。列表按已知公开年份倒序，公开日期未说明的条目置后；顺序不是质量排名。
 
-## 从具体对象开始
+## 公共数据与保留内容
 
-- **[Harness、Agent、独立记忆层与服务](resources/systems.zh-CN.md)**：包括 Pi、Codex、Claude Code、Claude-Mem、OpenClaw、Hermes、Letta Code、LangGraph、Mem0、Hindsight、MemOS、Graphiti / Zep 等。另以 ChatGPT Memory 作为个人助手产品对照，和开发框架分组阅读。
-- **[论文与方法](resources/papers.zh-CN.md)**、**[综述](resources/surveys.zh-CN.md)**：从研究问题进入原始工作，区分论文结论与当前实现。
-- **[Benchmark 与评测工具](resources/benchmarks.zh-CN.md)**：分别看召回、实际使用、行动、更新、共享、安全和成本。
-- **[人类记忆](resources/human.zh-CN.md)**：认知规律与关键脑机制；**[文学影视](resources/fiction.zh-CN.md)**：作为设定与类比阅读。
+- [`site/tutorial.json`](site/tutorial.json) 是教程权威数据，保存六问、来源、条目、状态、样板答案、Benchmark 覆盖关系和可视化说明。
+- [`site/tutorial.js`](site/tutorial.js) 负责教程路由、详情页、六问比较和覆盖矩阵。
+- [`site/frame.html`](site/frame.html) 与 [`site/app.js`](site/app.js) 提供页面外壳和路由；[`index.html`](index.html) 是 GitHub Pages 的生成入口。
+- 旧版分类与方法、资源目录、七层 Harness 图解和[研究 × 工程对照报告](https://dongshuyan.github.io/awesome-harness-memory/report/index.html)仍然保留在“参考与工具”入口。它们各自有独立的证据范围；默认学习路径改为本教程。
 
-## 用图理解组合
+根目录的旧版结构化目录在 2026-11-06 版本中仍有 **137 项公共资源**。这个数字与上面的教程工作集分开统计，不表示行业总量、市场占比、性能结果或完整性承诺。
 
-[![真实 Harness 与 Agent 的记忆切片](assets/memory-layers.svg)](https://dongshuyan.github.io/awesome-harness-memory/)
+## 本地预览与检查
 
-交互图覆盖当前目录中已定位的 Harness / Agent，尚非全行业穷尽清单。已收录 **22 个真实 Harness / Agent 对象**（含 3 个标记为历史的项目），支持多选对象、多选层、跨层高亮和逐格查看来源。上图是其中 6 个对象、3 个视角的静态预览。✓ 表示文档明确说明，△ 表示需配置或特定条件，? 表示尚未核实，× 只用于来源明确排除的范围；不按色块数量排名。
+在仓库根目录运行：
 
-七层是已核属性的选定投影，并非九个学习专题的完整能力测量。
+```sh
+python3 scripts/build_site.py
+python3 -m unittest discover -s tests -v
+python3 -m http.server 8000 --bind 127.0.0.1
+```
 
-图中不把独立记忆服务、插件或纯框架当作 Harness；这些资料继续保留在 [系统目录](resources/systems.zh-CN.md)。逐项依据及核对日期见 [图表数据](assets/harness-map.json)。
+打开 `http://127.0.0.1:8000/`。构建脚本会把目录和教程数据嵌入静态页面，不需要安装依赖，也不依赖服务端重写。`python3 scripts/build_site.py --check` 会检查生成文件是否与权威源同步。
 
-**[研究 × 工程对照报告](https://dongshuyan.github.io/awesome-harness-memory/report/index.html)** 包含两张图：**Research 视角地图**展示不同研究视角如何观察同一个 Memory 主题；**工程 × Research 覆盖矩阵**展示每个组合当前的证据深度。两张图只表示观察入口和证据状态，不表示排名、性能、质量或相似度。点击矩阵单元格，可以进入对应的逐项对照。
+公共页面只陈述已记录的事实和证据边界，不声称已经安装系统、运行 Benchmark 或完成效果复现。资料未说明某项机制时，页面保留为未知，不把它解释成“不支持”。私有检索计划和审阅记录不放入公共仓库。
 
-## 打开交互导航
-
-**[进入在线知识导航](https://dongshuyan.github.io/awesome-harness-memory/)**，从“知识全景”建立认识，进入“分类与方法”直接选择专题，或打开“资源目录”“图解探索”。全部导航统一在顶部。
-
-README 的 Markdown 导航和静态图在 GitHub 上可以独立阅读；交互页支持搜索、筛选、多视角比较和立体切片。较早的 [早期双语概念地图](explore/README.zh-CN.md) 也保留，使用 32 项资源说明概念关系，不代表最新完整目录。
-
-本地预览：在仓库根目录运行 `python3 -m http.server 8000 --bind 127.0.0.1`，然后打开 `http://127.0.0.1:8000/`。 本地报告页地址是 `http://127.0.0.1:8000/report/index.html`。
-
-## 资料范围
-
-核对至 **2026-11-07 UTC**。当前目录 138 项：56 项基础资料已核、47 项研究阅读入口、32 项待核线索、3 项历史资料。其中 **49 个系统**的基础功能有原始资料支持。
-
-条目、来源与状态可在 [结构化目录](catalogue.json) 中核对；它与交互页使用相同数据。
-
-研究 × 工程对照报告使用独立工作集：**10 个 Research 视角、54 个工程条目、540 组对照**（2026-11-09 审阅版本）。这些数字不属于上面的 138 项公共目录，也不能与其相加。多数组合仍处于目录级或待深度对照状态。报告中的证据标签只说明该审阅日期所核对的内容。
-
-“已核”指支持所写简介的文档核对，不能等同于完整源码审计、实际运行、效果复现或安全认证。CloudMem、API Harness、Cortex AI 等名称仍保留待核说明。条目数不能用于推导行业占比，当前也不是全领域穷尽清单。
-
-如果这个导航帮助你理解问题或找到资料，欢迎点 Star，帮助更多人发现它。补充与纠错见 [贡献指南](CONTRIBUTING.md)。
+参见[贡献指南](CONTRIBUTING.md)、[路线图](ROADMAP.md)和[仓库结构与发布说明](docs/repository-structure.md)。

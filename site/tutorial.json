@@ -1,0 +1,3158 @@
+{
+  "version": 1,
+  "checkedAt": "2026-11-11",
+  "title": "Agent Memory 教程",
+  "intro": "从六个问题建立共同观察方法，再读 Research、工程、Benchmark 和文化类比。",
+  "comparisonCategories": ["research", "engineering", "benchmarks", "culture"],
+  "questions": [
+    {
+      "id": "content",
+      "short": "内容角色",
+      "title": "Q1 · 保存的是什么？",
+      "en": "Content role",
+      "what": "识别 Memory 里保存的内容和它承担的认知或任务角色：事件、事实、偏好、流程、经验、关系、规则，或当前任务的派生材料。",
+      "why": "同一段对话既可以留下原始事件，也可以被提炼成事实或流程。若不先分清内容角色，读者很容易把“保存了什么”和“放在哪里”混成一个问题。",
+      "how": "面对新系统，先找写入对象的 schema、示例记录和作者对用途的描述；记录内容粒度、来源、是否会被提炼，以及它是否会改变后续决策。",
+      "example": "“上周五开过会”是事件；“用户偏好上午开会”是事实/偏好；“会前先发议程”是流程。三者可以来自同一条消息，却有不同的更新和失效方式。",
+      "evidence": "CoALA 将工作记忆与 episodic、semantic、procedural memory 放进认知架构；Foundation Agent Memory 摘要同时列出感觉、工作、情景、语义、程序性机制；工程文档也分别描述消息、用户事实、经验或规则。这里把它们抽象成跨系统的内容问题，是综合推断。",
+      "check": "能否举例说明一个事件怎样被提炼成事实或流程？",
+      "sources": [
+        "coala",
+        "foundation-agent-taxonomy-arxiv",
+        "storage-experience"
+      ],
+      "confidence": "medium — 这是跨研究、工程与评测资料归纳出的描述性工作集，不是来源规定的唯一 taxonomy。"
+    },
+    {
+      "id": "substrate",
+      "short": "载体与表示",
+      "title": "Q2 · 它以什么形式、放在哪里？",
+      "en": "Substrate and representation",
+      "what": "区分内容语义与承载方式：文本、结构化字段、向量索引、图、文件、数据库、检查点、参数或模型内部状态。",
+      "why": "同一事实可以同时存在于原始日志、摘要字段、向量索引和关系图中。把表示方式误当成记忆类型，会把“图”误解成一种内容，把“数据库”误解成一种认知功能。",
+      "how": "分别记录原始载体、派生表示、索引方式和物理/逻辑位置；再确认哪些是权威记录，哪些只是为了检索或恢复而生成的副本。",
+      "example": "“项目使用 Python 3.12”可以写在 MEMORY.md，也可以抽成 JSON 字段并建立向量索引；索引帮助找到它，却不自动保证它是最新或有权被使用。",
+      "evidence": "Forms–Functions–Dynamics 与多篇 Agent Memory survey 都把形式/承载与功能、动态分开讨论；LangGraph 将 state/checkpoint/store 分开；Graphiti 以时序知识图组织实体、事实和来源。由此可见载体是独立观察角度，但不等于内容分类。",
+      "check": "能否指出一个系统的权威记录和检索索引分别是什么？",
+      "sources": [
+        "survey",
+        "foundation-agent-taxonomy-arxiv",
+        "langgraph",
+        "graphiti"
+      ],
+      "confidence": "medium — 这是跨研究、工程与评测资料归纳出的描述性工作集，不是来源规定的唯一 taxonomy。"
+    },
+    {
+      "id": "scope",
+      "short": "主体与范围",
+      "title": "Q3 · 这份 Memory 归谁、服务谁、谁可以共享？",
+      "en": "Subjects, scope, and sharing topology",
+      "what": "确定 Memory 围绕哪个主体或边界组织：一次线程、任务、项目、用户、Agent、团队、租户或环境；同时记录共享和隔离关系。",
+      "why": "“跨会话”只说明时间上持续，不说明它属于谁；按用户分组也不自动等于权限隔离。主体、范围和共享拓扑决定了同一条记忆会被哪些后续任务看到。",
+      "how": "从 namespace、thread/user/project ID、tenant 配置、共享接口和权限文档中核对范围；把归属、可见性和授权分开记录。",
+      "example": "项目团队的会议摘要可以属于项目空间、供多个 Agent 读取；用户的饮食偏好只应在用户授权的范围内使用。两者都可能跨会话保留，但共享拓扑不同。",
+      "evidence": "CoALA 以单个语言 Agent 的认知架构为主要主体；工程系统的官方文档普遍用 thread、user、namespace、tenant 或 team 组织数据；COLLABMEM 等评测把协作共享作为单独问题。它们共同支持把主体与范围列为独立问题。",
+      "check": "能否区分“属于谁”“谁看得到”“谁有权使用”三个句子？",
+      "sources": [
+        "coala",
+        "foundation-agent-taxonomy-arxiv",
+        "collabmem"
+      ],
+      "confidence": "medium — 这是跨研究、工程与评测资料归纳出的描述性工作集，不是来源规定的唯一 taxonomy。"
+    },
+    {
+      "id": "lifecycle",
+      "short": "生命周期",
+      "title": "Q4 · 它如何形成、更新、失效和遗忘？",
+      "en": "Lifecycle and dynamics",
+      "what": "追踪写入、提取、反思、合并、修订、冲突解决、过期、删除和遗忘的全过程。",
+      "why": "Memory 不是只写一次的静态仓库。旧事实会失效，摘要会丢失细节，经验可能被反思更新；“不再检索”与“已经删除”也不是同一件事。",
+      "how": "画出从事件到长期记录的状态变化，标出触发主体、版本、冲突策略、TTL/删除语义和失败后的回滚或保留。",
+      "example": "用户把会议时间从上午改为下午：系统可能追加新事实、覆盖旧字段、保留带时间戳的历史，或在冲突时让 Agent 决定。只有查看更新和删除语义，才能知道下一次会读到什么。",
+      "evidence": "Storage→Reflection→Experience 把记忆演化描述为存储、反思和经验形成；多项 benchmark 测试新增信息、时间变化、冲突解决或长期交互；官方服务文档也把写入策略、更新和保留作为配置。",
+      "check": "能否说明一条错误记忆从发现到停止影响答案的完整路径？",
+      "sources": [
+        "storage-experience",
+        "longmemeval",
+        "memoryagentbench",
+        "google-agent-platform-memory-bank"
+      ],
+      "confidence": "medium — 这是跨研究、工程与评测资料归纳出的描述性工作集，不是来源规定的唯一 taxonomy。"
+    },
+    {
+      "id": "exposure",
+      "short": "暴露方式",
+      "title": "Q5 · 后续调用如何获得并使用它？",
+      "en": "Exposure and use path",
+      "what": "拆开“已经保存”“被检索/选择”“进入当前输入”“改变了行动”四个阶段，描述后续调用实际能看到什么。",
+      "why": "外部存储里有记录，不代表当前模型已经看到；检索到也不代表被采用。很多 benchmark 测最终回答，却不能仅凭结果证明内部检索或注入路径。",
+      "how": "沿着一次调用记录读取触发、查询、排序/过滤、上下文拼接、工具返回和最终决策，标出自动注入与 Agent 主动读取的差异。",
+      "example": "文件中有“使用 Python 3.12”的记录；调用前检索没有命中，模型仍会忘记；命中并注入后，模型知道它，但若来源过期仍可能误用。",
+      "evidence": "CoALA 的长期记忆通过 retrieval 进入 working memory；LongMemEval、LoCoMo 和 MemoryAgentBench 主要观察取回后的任务结果；LangGraph/OpenAI/Google 文档展示状态或服务如何进入后续运行。",
+      "check": "能否把一条“保存了但没有被使用”的失败例子说清楚？",
+      "sources": [
+        "coala",
+        "longmemeval",
+        "locomo",
+        "langgraph"
+      ],
+      "confidence": "medium — 这是跨研究、工程与评测资料归纳出的描述性工作集，不是来源规定的唯一 taxonomy。"
+    },
+    {
+      "id": "governance",
+      "short": "控制与治理",
+      "title": "Q6 · 谁能读、写、改、删，并承担什么责任？",
+      "en": "Control and governance",
+      "what": "核对控制主体、权限、同意、来源追溯、审计、投毒防护、删除请求和成本/延迟约束。",
+      "why": "同一个 Memory 功能可以由 Agent 主动调用、Harness 自动维护或托管服务完成；权限和审计决定它是否能在真实环境安全工作。",
+      "how": "分别检查读/写/改/删权限、批准流程、来源和版本、审计记录、数据隔离、失败处理及资源预算；没有证据就写“未说明”。",
+      "example": "用户允许系统记住语言偏好，但不允许把工作项目内容共享给其他 Agent。系统需要记录谁写入、谁读取、如何撤回和如何证明删除已传播。",
+      "evidence": "安全、隐私和协作评测把访问控制、共享和投毒作为独立风险；工程文档通常把身份、权限、保留和审计放在服务配置里；研究框架较少完整覆盖这些治理细节，因此教程把它们保留为必答问题并标注证据边界。",
+      "check": "能否判断一个“支持 Memory”的声明是否同时说明了权限和删除？",
+      "sources": [
+        "collabmem",
+        "agentpoison",
+        "google-agent-platform-memory-bank"
+      ],
+      "confidence": "medium — 这是跨研究、工程与评测资料归纳出的描述性工作集，不是来源规定的唯一 taxonomy。"
+    }
+  ],
+  "sources": {
+    "coala": {
+      "label": "CoALA · §4.1",
+      "url": "https://arxiv.org/html/2309.02427v3#S4.SS1",
+      "year": "2023 arXiv / 2024 TMLR",
+      "evidence": "研究框架论文；arXiv v3（2024-03）为 TMLR camera-ready；架构分类章节已核"
+    },
+    "survey": {
+      "label": "Memory in the Age of AI Agents · §4",
+      "url": "https://arxiv.org/html/2512.13564v2#S4",
+      "year": "2025/2026",
+      "evidence": "arXiv 综述；v1/v2 元数据与分类章节已核"
+    },
+    "langchain": {
+      "label": "LangChain · Memory overview",
+      "url": "https://docs.langchain.com/oss/python/concepts/memory",
+      "year": "2026",
+      "evidence": "官方概念文档；短期/长期记忆边界已核"
+    },
+    "context": {
+      "label": "Anthropic · Context engineering",
+      "url": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents",
+      "year": "2025",
+      "evidence": "Anthropic 官方研究文章；上下文工程说明已核"
+    },
+    "cline": {
+      "label": "功能原始来源",
+      "url": "https://docs.cline.bot/prompting/cline-memory-bank",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "langgraph:0": {
+      "label": "LangGraph · 项目仓库",
+      "url": "https://github.com/langchain-ai/langgraph",
+      "year": "",
+      "evidence": ""
+    },
+    "langgraph:1": {
+      "label": "LangGraph · 记忆概念",
+      "url": "https://docs.langchain.com/oss/python/concepts/memory",
+      "year": "",
+      "evidence": ""
+    },
+    "deep-agents:0": {
+      "label": "Deep Agents · 项目仓库",
+      "url": "https://github.com/langchain-ai/deepagents",
+      "year": "",
+      "evidence": ""
+    },
+    "deep-agents:1": {
+      "label": "Deep Agents · 记忆文档",
+      "url": "https://docs.langchain.com/oss/python/deepagents/memory",
+      "year": "",
+      "evidence": ""
+    },
+    "deep-agents:2": {
+      "label": "Deep Agents · 后端文档",
+      "url": "https://docs.langchain.com/oss/python/deepagents/backends",
+      "year": "",
+      "evidence": ""
+    },
+    "mem0:0": {
+      "label": "Mem0 · 仓库与文档",
+      "url": "https://github.com/mem0ai/mem0",
+      "year": "",
+      "evidence": ""
+    },
+    "graphiti:0": {
+      "label": "Graphiti · 仓库与文档",
+      "url": "https://github.com/getzep/graphiti",
+      "year": "",
+      "evidence": ""
+    },
+    "google-agent-platform-memory-bank:0": {
+      "label": "Google Agent Platform Memory Bank · 官方概览",
+      "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/scale/memory-bank",
+      "year": "",
+      "evidence": ""
+    },
+    "google-agent-platform-memory-bank:1": {
+      "label": "Google Agent Platform Memory Bank · 记忆生成",
+      "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/scale/memory-bank/generate-memories",
+      "year": "",
+      "evidence": ""
+    },
+    "google-adk:0": {
+      "label": "Google ADK · 项目仓库",
+      "url": "https://github.com/google/adk-python",
+      "year": "",
+      "evidence": ""
+    },
+    "google-adk:1": {
+      "label": "Google ADK · 记忆服务指南",
+      "url": "https://github.com/google/adk-python/blob/3655990f6ce1e55c40c5710351f6cf06cde0669b/docs/guides/memory/memory_service/index.md",
+      "year": "",
+      "evidence": ""
+    },
+    "openai-agents-sdk:0": {
+      "label": "OpenAI Agents SDK · 项目仓库",
+      "url": "https://github.com/openai/openai-agents-python",
+      "year": "",
+      "evidence": ""
+    },
+    "openai-agents-sdk:1": {
+      "label": "OpenAI Agents SDK · 会话文档",
+      "url": "https://openai.github.io/openai-agents-python/sessions/",
+      "year": "",
+      "evidence": ""
+    },
+    "openai-agents-sdk:2": {
+      "label": "OpenAI Agents SDK · 沙箱 Agent 记忆",
+      "url": "https://openai.github.io/openai-agents-python/sandbox/memory/",
+      "year": "",
+      "evidence": ""
+    },
+    "crewai:0": {
+      "label": "CrewAI · 项目仓库",
+      "url": "https://github.com/crewAIInc/crewAI",
+      "year": "",
+      "evidence": ""
+    },
+    "crewai:1": {
+      "label": "CrewAI · 记忆指南（v1.15.34）",
+      "url": "https://docs.crewai.com/v1.15.34/en/concepts/memory",
+      "year": "",
+      "evidence": ""
+    },
+    "amazon-bedrock-agentcore-memory:0": {
+      "label": "Amazon Bedrock AgentCore Memory · 记忆类型",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/memory-types.html",
+      "year": "",
+      "evidence": ""
+    },
+    "amazon-bedrock-agentcore-memory:1": {
+      "label": "Amazon Bedrock AgentCore Memory · 记忆策略",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/memory-strategies.html",
+      "year": "",
+      "evidence": ""
+    },
+    "online-memory-under-token-budgets:0": {
+      "label": "Online memory under token budgets · 首版预印本",
+      "url": "https://arxiv.org/abs/2606.15017",
+      "year": "",
+      "evidence": ""
+    },
+    "online-memory-under-token-budgets:1": {
+      "label": "Online memory under token budgets · EMNLP 2026 论文",
+      "url": "https://aclanthology.org/2026.emnlp-main.1657/",
+      "year": "",
+      "evidence": ""
+    },
+    "memora:0": {
+      "label": "Memora · 首版预印本",
+      "url": "https://arxiv.org/abs/2604.20006",
+      "year": "",
+      "evidence": ""
+    },
+    "memora:1": {
+      "label": "Memora · Findings of ACL 2026 论文",
+      "url": "https://aclanthology.org/2026.findings-acl.1337/",
+      "year": "",
+      "evidence": ""
+    },
+    "mem2actbench:0": {
+      "label": "Mem2ActBench · 首版预印本",
+      "url": "https://arxiv.org/abs/2601.19935",
+      "year": "",
+      "evidence": ""
+    },
+    "mem2actbench:1": {
+      "label": "Mem2ActBench · ACL 2026 七月论文集",
+      "url": "https://aclanthology.org/2026.acl-long.370/",
+      "year": "",
+      "evidence": ""
+    },
+    "mem2actbench:2": {
+      "label": "Mem2ActBench · 项目仓库",
+      "url": "https://github.com/Cantaloupe-M/Mem2ActBench",
+      "year": "",
+      "evidence": ""
+    },
+    "mem-gallery:0": {
+      "label": "Mem-Gallery · 首版预印本",
+      "url": "https://arxiv.org/abs/2601.03515",
+      "year": "",
+      "evidence": ""
+    },
+    "mem-gallery:1": {
+      "label": "Mem-Gallery · ACL 2026 论文",
+      "url": "https://aclanthology.org/2026.acl-long.1892/",
+      "year": "",
+      "evidence": ""
+    },
+    "mem-gallery:2": {
+      "label": "Mem-Gallery · 仓库与数据集链接",
+      "url": "https://github.com/YuanchenBei/Mem-Gallery",
+      "year": "",
+      "evidence": ""
+    },
+    "reasoningbank:0": {
+      "label": "ReasoningBank · 论文",
+      "url": "https://arxiv.org/abs/2509.25140",
+      "year": "",
+      "evidence": ""
+    },
+    "reasoningbank:1": {
+      "label": "ReasoningBank · Google Research 介绍",
+      "url": "https://research.google/blog/reasoningbank-enabling-agents-to-learn-from-experience/",
+      "year": "",
+      "evidence": ""
+    },
+    "membench:0": {
+      "label": "MemBench · 首版预印本",
+      "url": "https://arxiv.org/abs/2506.21605",
+      "year": "",
+      "evidence": ""
+    },
+    "membench:1": {
+      "label": "MemBench · Findings of ACL 2025 论文",
+      "url": "https://aclanthology.org/2025.findings-acl.989/",
+      "year": "",
+      "evidence": ""
+    },
+    "membench:2": {
+      "label": "MemBench · 仓库与数据说明",
+      "url": "https://github.com/import-myself/Membench",
+      "year": "",
+      "evidence": ""
+    },
+    "memoryos:0": {
+      "label": "MemoryOS · 首版预印本",
+      "url": "https://arxiv.org/abs/2506.06326",
+      "year": "",
+      "evidence": ""
+    },
+    "memoryos:1": {
+      "label": "MemoryOS · EMNLP 2025 论文",
+      "url": "https://aclanthology.org/2025.emnlp-main.1318/",
+      "year": "",
+      "evidence": ""
+    },
+    "memoryos:2": {
+      "label": "MemoryOS · 作者仓库",
+      "url": "https://github.com/BAI-LAB/MemoryOS",
+      "year": "",
+      "evidence": ""
+    },
+    "a-mem:0": {
+      "label": "A-Mem · 首版预印本",
+      "url": "https://arxiv.org/abs/2502.12110",
+      "year": "",
+      "evidence": ""
+    },
+    "a-mem:1": {
+      "label": "A-Mem · NeurIPS 2025 论文集",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html",
+      "year": "",
+      "evidence": ""
+    },
+    "longmemeval:0": {
+      "label": "LongMemEval · 首版预印本与论文记录",
+      "url": "https://arxiv.org/abs/2410.10813",
+      "year": "",
+      "evidence": ""
+    },
+    "agentpoison:0": {
+      "label": "AgentPoison · 首版预印本",
+      "url": "https://arxiv.org/abs/2407.12784",
+      "year": "",
+      "evidence": ""
+    },
+    "agentpoison:1": {
+      "label": "AgentPoison · NeurIPS 2024 论文",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/eb113910e9c3f6242541c1652e30dfd6-Abstract-Conference.html",
+      "year": "",
+      "evidence": ""
+    },
+    "locomo:0": {
+      "label": "LoCoMo · 首版预印本",
+      "url": "https://arxiv.org/abs/2402.17753",
+      "year": "",
+      "evidence": ""
+    },
+    "locomo:1": {
+      "label": "LoCoMo · ACL 2024 论文集",
+      "url": "https://aclanthology.org/2024.acl-long.747/",
+      "year": "",
+      "evidence": ""
+    },
+    "locomo:2": {
+      "label": "LoCoMo · 项目仓库",
+      "url": "https://github.com/snap-research/locomo",
+      "year": "",
+      "evidence": ""
+    },
+    "memorybank:0": {
+      "label": "MemoryBank · 首版预印本",
+      "url": "https://arxiv.org/abs/2305.10250",
+      "year": "",
+      "evidence": ""
+    },
+    "memorybank:1": {
+      "label": "MemoryBank · AAAI 2024 发表记录",
+      "url": "https://doi.org/10.1609/aaai.v38i17.29946",
+      "year": "",
+      "evidence": ""
+    },
+    "memorybank:2": {
+      "label": "MemoryBank · 作者仓库",
+      "url": "https://github.com/zhongwanjun/MemoryBank-SiliconFriend",
+      "year": "",
+      "evidence": ""
+    },
+    "generative-agents:0": {
+      "label": "Generative Agents · 首版预印本",
+      "url": "https://arxiv.org/abs/2304.03442",
+      "year": "",
+      "evidence": ""
+    },
+    "generative-agents:1": {
+      "label": "Generative Agents · 斯坦福发表记录：UIST 2023",
+      "url": "https://hci.stanford.edu/publications/paper.php?id=482",
+      "year": "",
+      "evidence": ""
+    },
+    "reflexion:0": {
+      "label": "Reflexion · 首版预印本",
+      "url": "https://arxiv.org/abs/2303.11366",
+      "year": "",
+      "evidence": ""
+    },
+    "reflexion:1": {
+      "label": "Reflexion · NeurIPS 2023 论文",
+      "url": "https://papers.nips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html",
+      "year": "",
+      "evidence": ""
+    },
+    "collabmem:0": {
+      "label": "COLLABMEM · EMNLP 2026 论文",
+      "url": "https://aclanthology.org/2026.emnlp-main.1194/",
+      "year": "",
+      "evidence": ""
+    },
+    "collabmem:1": {
+      "label": "COLLABMEM · 论文链接的仓库",
+      "url": "https://github.com/NLPerWS/COLLABMEM",
+      "year": "",
+      "evidence": ""
+    },
+    "memoryagentbench:0": {
+      "label": "MemoryAgentBench · 仓库与评测说明",
+      "url": "https://github.com/HUST-AI-HYZ/MemoryAgentBench",
+      "year": "",
+      "evidence": ""
+    },
+    "memoryagentbench:1": {
+      "label": "MemoryAgentBench · 论文",
+      "url": "https://arxiv.org/abs/2507.05257",
+      "year": "",
+      "evidence": ""
+    },
+    "the-housekeeper-and-the-professor:0": {
+      "label": "The Housekeeper and the Professor · 出版方页面与节选",
+      "url": "https://us.macmillan.com/books/9781250375971/thehousekeeperandtheprofessor/",
+      "year": "",
+      "evidence": ""
+    },
+    "severance:0": {
+      "label": "Severance · Apple 官方剧情简介",
+      "url": "https://www.apple.com/tv-pr/originals/severance/",
+      "year": "",
+      "evidence": ""
+    },
+    "memento:0": {
+      "label": "Memento · 发行方剧情简介（法语）",
+      "url": "https://metrofilms.com/film/memento/",
+      "year": "",
+      "evidence": ""
+    },
+    "funes-the-memorious:0": {
+      "label": "Funes the Memorious · Rodrigo Quian Quiroga 讨论的英文节选（MIT Press）",
+      "url": "https://thereader.mitpress.mit.edu/borges-memory-funes-the-memorious/",
+      "year": "",
+      "evidence": ""
+    },
+    "the-memory-police:0": {
+      "label": "The Memory Police · 出版方内容简介",
+      "url": "https://www.penguinrandomhouse.com/books/252774/the-memory-police-by-yoko-ogawa/",
+      "year": "",
+      "evidence": ""
+    },
+    "50-first-dates:0": {
+      "label": "50 First Dates · Sony Pictures 剧情简介",
+      "url": "https://www.sonypictures.com/movies/50firstdates",
+      "year": "",
+      "evidence": ""
+    },
+    "pi:0": {
+      "label": "Pi · 功能原始来源",
+      "url": "https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/sessions.md",
+      "year": "",
+      "evidence": ""
+    },
+    "pi:1": {
+      "label": "Pi · 项目仓库",
+      "url": "https://github.com/earendil-works/pi",
+      "year": "",
+      "evidence": ""
+    },
+    "codex:0": {
+      "label": "OpenAI Codex · 功能原始来源",
+      "url": "https://learn.chatgpt.com/docs/customization/memories",
+      "year": "",
+      "evidence": ""
+    },
+    "codex:1": {
+      "label": "OpenAI Codex · 项目仓库",
+      "url": "https://github.com/openai/codex",
+      "year": "",
+      "evidence": ""
+    },
+    "claude-code:0": {
+      "label": "Claude Code · 功能原始来源",
+      "url": "https://code.claude.com/docs/en/memory",
+      "year": "",
+      "evidence": ""
+    },
+    "claude-code:1": {
+      "label": "Claude Code · 项目仓库",
+      "url": "https://github.com/anthropics/claude-code",
+      "year": "",
+      "evidence": ""
+    },
+    "claude-mem:0": {
+      "label": "Claude-Mem · 功能原始来源",
+      "url": "https://github.com/thedotmack/claude-mem",
+      "year": "",
+      "evidence": ""
+    },
+    "openclaw:0": {
+      "label": "OpenClaw · 功能原始来源",
+      "url": "https://docs.openclaw.ai/concepts/memory",
+      "year": "",
+      "evidence": ""
+    },
+    "openclaw:1": {
+      "label": "OpenClaw · 项目仓库",
+      "url": "https://github.com/openclaw/openclaw",
+      "year": "",
+      "evidence": ""
+    },
+    "hermes:0": {
+      "label": "Hermes Agent · 功能原始来源",
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "year": "",
+      "evidence": ""
+    },
+    "gemini-cli:0": {
+      "label": "Gemini CLI · 功能原始来源",
+      "url": "https://www.geminicli.com/docs/cli/gemini-md",
+      "year": "",
+      "evidence": ""
+    },
+    "gemini-cli:1": {
+      "label": "Gemini CLI · 项目仓库",
+      "url": "https://github.com/google-gemini/gemini-cli",
+      "year": "",
+      "evidence": ""
+    },
+    "opencode:0": {
+      "label": "OpenCode · 功能原始来源",
+      "url": "https://github.com/anomalyco/opencode/blob/dev/specs/v2/session.md",
+      "year": "",
+      "evidence": ""
+    },
+    "opencode:1": {
+      "label": "OpenCode · 项目仓库",
+      "url": "https://github.com/anomalyco/opencode",
+      "year": "",
+      "evidence": ""
+    },
+    "aider:0": {
+      "label": "Aider · 功能原始来源",
+      "url": "https://aider.chat/docs/config/options.html",
+      "year": "",
+      "evidence": ""
+    },
+    "aider:1": {
+      "label": "Aider · 项目仓库",
+      "url": "https://github.com/Aider-AI/aider",
+      "year": "",
+      "evidence": ""
+    },
+    "cline:0": {
+      "label": "Cline Memory Bank · 功能原始来源",
+      "url": "https://docs.cline.bot/prompting/cline-memory-bank",
+      "year": "",
+      "evidence": ""
+    },
+    "cline:1": {
+      "label": "Cline Memory Bank · 项目仓库",
+      "url": "https://github.com/cline/cline",
+      "year": "",
+      "evidence": ""
+    },
+    "deepseek-harness:0": {
+      "label": "DeepSeek Harness · 功能原始来源",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/user/guide/mcp-memory.md",
+      "year": "",
+      "evidence": ""
+    },
+    "deepseek-harness:1": {
+      "label": "DeepSeek Harness · 项目仓库",
+      "url": "https://github.com/deepseek-ai/deepseek-harness",
+      "year": "",
+      "evidence": ""
+    },
+    "qwen-code:0": {
+      "label": "Qwen Code · 功能原始来源",
+      "url": "https://github.com/QwenLM/qwen-code",
+      "year": "",
+      "evidence": ""
+    },
+    "cursor:0": {
+      "label": "Cursor Rules / Memories · 功能原始来源",
+      "url": "https://cursor.com/docs/rules",
+      "year": "",
+      "evidence": ""
+    },
+    "letta:0": {
+      "label": "Letta · 功能原始来源",
+      "url": "https://github.com/letta-ai/letta",
+      "year": "",
+      "evidence": ""
+    },
+    "letta-code:0": {
+      "label": "Letta Code · 功能原始来源",
+      "url": "https://github.com/letta-ai/letta-code",
+      "year": "",
+      "evidence": ""
+    },
+    "microsoft-agent-framework:0": {
+      "label": "Microsoft Agent Framework · 功能原始来源",
+      "url": "https://learn.microsoft.com/en-us/agent-framework/concepts/harness",
+      "year": "",
+      "evidence": ""
+    },
+    "microsoft-agent-framework:1": {
+      "label": "Microsoft Agent Framework · 项目仓库",
+      "url": "https://github.com/microsoft/agent-framework",
+      "year": "",
+      "evidence": ""
+    },
+    "agno:0": {
+      "label": "Agno Memory · 功能原始来源",
+      "url": "https://docs.agno.com/memory/overview",
+      "year": "",
+      "evidence": ""
+    },
+    "agno:1": {
+      "label": "Agno Memory · 项目仓库",
+      "url": "https://github.com/agno-agi/agno",
+      "year": "",
+      "evidence": ""
+    },
+    "pydantic-ai:0": {
+      "label": "Pydantic AI Harness · 功能原始来源",
+      "url": "https://pydantic.dev/docs/ai/harness/memory/",
+      "year": "",
+      "evidence": ""
+    },
+    "pydantic-ai:1": {
+      "label": "Pydantic AI Harness · 项目仓库",
+      "url": "https://github.com/pydantic/pydantic-ai",
+      "year": "",
+      "evidence": ""
+    },
+    "llamaindex:0": {
+      "label": "LlamaIndex Memory · 功能原始来源",
+      "url": "https://developers.llamaindex.ai/python/framework/module_guides/deploying/agents/memory/",
+      "year": "",
+      "evidence": ""
+    },
+    "llamaindex:1": {
+      "label": "LlamaIndex Memory · 项目仓库",
+      "url": "https://github.com/run-llama/llama_index",
+      "year": "",
+      "evidence": ""
+    },
+    "camel:0": {
+      "label": "CAMEL Memory · 功能原始来源",
+      "url": "https://docs.camel-ai.org/key_modules/memory",
+      "year": "",
+      "evidence": ""
+    },
+    "camel:1": {
+      "label": "CAMEL Memory · 项目仓库",
+      "url": "https://github.com/camel-ai/camel",
+      "year": "",
+      "evidence": ""
+    },
+    "mastra:0": {
+      "label": "Mastra Memory · 功能原始来源",
+      "url": "https://mastra.ai/docs/memory/overview",
+      "year": "",
+      "evidence": ""
+    },
+    "mastra:1": {
+      "label": "Mastra Memory · 项目仓库",
+      "url": "https://github.com/mastra-ai/mastra",
+      "year": "",
+      "evidence": ""
+    },
+    "strands:0": {
+      "label": "Strands Agents / Harness SDK · 功能原始来源",
+      "url": "https://github.com/strands-agents/harness-sdk",
+      "year": "",
+      "evidence": ""
+    },
+    "anthropic-managed-memory:0": {
+      "label": "Anthropic Managed Agents Memory · 功能原始来源",
+      "url": "https://platform.claude.com/docs/en/managed-agents/memory",
+      "year": "",
+      "evidence": ""
+    },
+    "zep:0": {
+      "label": "Zep · 功能原始来源",
+      "url": "https://github.com/getzep/graphiti#graphiti-and-zep",
+      "year": "",
+      "evidence": ""
+    },
+    "hindsight:0": {
+      "label": "Hindsight · 功能原始来源",
+      "url": "https://github.com/vectorize-io/hindsight",
+      "year": "",
+      "evidence": ""
+    },
+    "hindsight:1": {
+      "label": "Hindsight · 保留设置修复 PR（已合并，发行覆盖未核）",
+      "url": "https://github.com/vectorize-io/hindsight/pull/6270",
+      "year": "",
+      "evidence": ""
+    },
+    "langmem:0": {
+      "label": "LangMem · 功能原始来源",
+      "url": "https://github.com/langchain-ai/langmem",
+      "year": "",
+      "evidence": ""
+    },
+    "langmem:1": {
+      "label": "LangMem · 同步写入异常 PR（核对时仍 Open）",
+      "url": "https://github.com/langchain-ai/langmem/pull/212",
+      "year": "",
+      "evidence": ""
+    },
+    "memos:0": {
+      "label": "MemOS · 功能原始来源",
+      "url": "https://github.com/MemTensor/MemOS",
+      "year": "",
+      "evidence": ""
+    },
+    "evermemos:0": {
+      "label": "EverOS（原 EverMemOS 仓库入口） · 功能原始来源",
+      "url": "https://github.com/EverMind-AI/EverOS",
+      "year": "",
+      "evidence": ""
+    },
+    "cognee:0": {
+      "label": "Cognee · 功能原始来源",
+      "url": "https://github.com/topoteretes/cognee",
+      "year": "",
+      "evidence": ""
+    },
+    "memobase:0": {
+      "label": "Memobase · 功能原始来源",
+      "url": "https://github.com/memodb-io/memobase",
+      "year": "",
+      "evidence": ""
+    },
+    "memori:0": {
+      "label": "Memori · 功能原始来源",
+      "url": "https://github.com/MemoriLabs/Memori",
+      "year": "",
+      "evidence": ""
+    },
+    "supermemory:0": {
+      "label": "Supermemory · 功能原始来源",
+      "url": "https://github.com/supermemoryai/supermemory",
+      "year": "",
+      "evidence": ""
+    },
+    "memu:0": {
+      "label": "memU · 功能原始来源",
+      "url": "https://github.com/NevaMind-AI/memU",
+      "year": "",
+      "evidence": ""
+    },
+    "openviking:0": {
+      "label": "OpenViking · 功能原始来源",
+      "url": "https://github.com/volcengine/OpenViking",
+      "year": "",
+      "evidence": ""
+    },
+    "engram:0": {
+      "label": "Engram（Gentleman-Programming） · 功能原始来源",
+      "url": "https://github.com/Gentleman-Programming/engram",
+      "year": "",
+      "evidence": ""
+    },
+    "memsearch:0": {
+      "label": "MemSearch · 功能原始来源",
+      "url": "https://github.com/zilliztech/memsearch",
+      "year": "",
+      "evidence": ""
+    },
+    "redis-memory:0": {
+      "label": "Redis Agent Memory · 功能原始来源",
+      "url": "https://github.com/redis/agent-memory-server",
+      "year": "",
+      "evidence": ""
+    },
+    "reme:0": {
+      "label": "ReMe · 功能原始来源",
+      "url": "https://github.com/agentscope-ai/ReMe",
+      "year": "",
+      "evidence": ""
+    },
+    "basic-memory:0": {
+      "label": "Basic Memory · 功能原始来源",
+      "url": "https://github.com/basicmachines-co/basic-memory",
+      "year": "",
+      "evidence": ""
+    },
+    "honcho:0": {
+      "label": "Honcho · 功能原始来源",
+      "url": "https://github.com/plastic-labs/honcho",
+      "year": "",
+      "evidence": ""
+    },
+    "memorix:0": {
+      "label": "Memorix · 功能原始来源",
+      "url": "https://github.com/AVIDS2/memorix",
+      "year": "",
+      "evidence": ""
+    },
+    "serena:0": {
+      "label": "Serena Memory · 功能原始来源",
+      "url": "https://github.com/oraios/serena",
+      "year": "",
+      "evidence": ""
+    },
+    "mcp-reference-memory:0": {
+      "label": "MCP Reference Memory Server · 功能原始来源",
+      "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/memory",
+      "year": "",
+      "evidence": ""
+    },
+    "chatgpt-memory:0": {
+      "label": "ChatGPT Memory · 功能原始来源",
+      "url": "https://help.openai.com/en/articles/8590148-memory-in-chatgpt",
+      "year": "",
+      "evidence": ""
+    },
+    "s001:0": {
+      "label": "Memory in the Age of AI Agents · 原始论文 / 出版页面",
+      "url": "https://arxiv.org/abs/2512.13564",
+      "year": "",
+      "evidence": ""
+    },
+    "s002:0": {
+      "label": "A Survey of Agent Memory in the Second Half · 原始论文 / 出版页面",
+      "url": "https://arxiv.org/abs/2602.06052",
+      "year": "",
+      "evidence": ""
+    },
+    "s003:0": {
+      "label": "Memory for Autonomous LLM Agents · 原始论文 / 出版页面",
+      "url": "https://arxiv.org/abs/2603.07670",
+      "year": "",
+      "evidence": ""
+    },
+    "s004:0": {
+      "label": "Anatomy of Agentic Memory · 原始论文 / 出版页面",
+      "url": "https://arxiv.org/abs/2602.19320",
+      "year": "",
+      "evidence": ""
+    },
+    "s005:0": {
+      "label": "Agent Memory: Characterization and System Implications · 原始论文 / 出版页面",
+      "url": "https://arxiv.org/abs/2606.06448",
+      "year": "",
+      "evidence": ""
+    },
+    "s006:0": {
+      "label": "Graph-based Agent Memory · 原始论文 / 出版页面",
+      "url": "https://arxiv.org/abs/2602.05665",
+      "year": "",
+      "evidence": ""
+    },
+    "s011:0": {
+      "label": "LoCoMo-Plus · 原始论文 / 出版页面",
+      "url": "https://aclanthology.org/2026.acl-long.1150/",
+      "year": "",
+      "evidence": ""
+    },
+    "s012:0": {
+      "label": "TimlMemBench · 原始论文 / 出版页面",
+      "url": "https://aclanthology.org/2026.findings-emnlp.507/",
+      "year": "",
+      "evidence": ""
+    },
+    "s013:0": {
+      "label": "MemoryCD · 原始论文 / 出版页面",
+      "url": "https://aclanthology.org/2026.findings-emnlp.1804/",
+      "year": "",
+      "evidence": ""
+    },
+    "s014:0": {
+      "label": "UTILMEM · 原始论文 / 出版页面",
+      "url": "https://aclanthology.org/2026.emnlp-main.1639/",
+      "year": "",
+      "evidence": ""
+    },
+    "s017:0": {
+      "label": "LOCOMO-CONV · 原始论文 / 出版页面",
+      "url": "https://aclanthology.org/2026.findings-emnlp.1289/",
+      "year": "",
+      "evidence": ""
+    },
+    "s018:0": {
+      "label": "RealMem · 原始论文 / 出版页面",
+      "url": "https://aclanthology.org/2026.findings-acl.703/",
+      "year": "",
+      "evidence": ""
+    },
+    "s020:0": {
+      "label": "LightMem · 原始论文 / 出版页面",
+      "url": "https://aclanthology.org/2026.acl-long.588/",
+      "year": "",
+      "evidence": ""
+    },
+    "s025:0": {
+      "label": "Anthropic effective harnesses · 原始论文 / 出版页面",
+      "url": "https://www.anthropic.com/research/effective-harnesses-for-long-running-agents",
+      "year": "",
+      "evidence": ""
+    },
+    "s028:0": {
+      "label": "Zep: A Temporal Knowledge Graph Architecture for Agent Memory · 原始论文 / 出版页面",
+      "url": "https://arxiv.org/abs/2501.13956",
+      "year": "",
+      "evidence": ""
+    },
+    "s029:0": {
+      "label": "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory · 原始论文 / 出版页面",
+      "url": "https://arxiv.org/abs/2504.19413",
+      "year": "",
+      "evidence": ""
+    },
+    "s030:0": {
+      "label": "Hindsight is 20/20 · 原始论文 / 出版页面",
+      "url": "https://arxiv.org/abs/2512.12818",
+      "year": "",
+      "evidence": ""
+    },
+    "s034:0": {
+      "label": "Long-Term Memory Engrams From Development to Adulthood · 原始论文 / 出版页面",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40767385/",
+      "year": "",
+      "evidence": ""
+    },
+    "s035:0": {
+      "label": "Memory engram stability and flexibility · 原始论文 / 出版页面",
+      "url": "https://www.nature.com/articles/s41386-024-01979-z",
+      "year": "",
+      "evidence": ""
+    },
+    "s036:0": {
+      "label": "Responsible remembering · 原始论文 / 出版页面",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39138722/",
+      "year": "",
+      "evidence": ""
+    },
+    "s037:0": {
+      "label": "Neurobiological mechanisms of forgetting across timescales · 原始论文 / 出版页面",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39892316/",
+      "year": "",
+      "evidence": ""
+    },
+    "s038:0": {
+      "label": "Molecular Underpinnings of Memory Persistence and Forgetting · 原始论文 / 出版页面",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40411122/",
+      "year": "",
+      "evidence": ""
+    },
+    "s039:0": {
+      "label": "Human retrograde amnesia and memory consolidation · 原始论文 / 出版页面",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39230835/",
+      "year": "",
+      "evidence": ""
+    },
+    "s040:0": {
+      "label": "Coupled sleep rhythms for memory consolidation · 原始论文 / 出版页面",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1364661324000299",
+      "year": "",
+      "evidence": ""
+    },
+    "s042:0": {
+      "label": "From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms · 原始论文 / 出版页面",
+      "url": "https://aclanthology.org/2026.findings-acl.2069/",
+      "year": "",
+      "evidence": ""
+    },
+    "s043:0": {
+      "label": "Seeing, Maintaining, and Learning: The Evolution of Multimodal Agent Memory · 原始论文 / 出版页面",
+      "url": "https://arxiv.org/abs/2610.19366",
+      "year": "",
+      "evidence": ""
+    },
+    "s044:0": {
+      "label": "Learning to Remember: Advances in Memory Mechanisms for Large Language Models · 原始论文 / 出版页面",
+      "url": "https://arxiv.org/abs/2610.35089",
+      "year": "",
+      "evidence": ""
+    },
+    "s045:0": {
+      "label": "Titans: Learning to Memorize at Test Time · 原始论文 / 出版页面",
+      "url": "https://research.google/pubs/titans-learning-to-memorize-at-test-time/",
+      "year": "",
+      "evidence": ""
+    },
+    "s046:0": {
+      "label": "Memory systems of the brain: a brief history and current perspective · 原始论文 / 出版页面",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15464402/",
+      "year": "",
+      "evidence": ""
+    },
+    "s047:0": {
+      "label": "How do we remember the future? A systematic review of ERP components in focal and nonfocal prospective memory tasks · 原始论文 / 出版页面",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42364798/",
+      "year": "",
+      "evidence": ""
+    },
+    "s048:0": {
+      "label": "Expanded taxonomies of human memory · 原始论文 / 出版页面",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42339427/",
+      "year": "",
+      "evidence": ""
+    },
+    "s049:0": {
+      "label": "Episodic Memory: Dynamic Modes for Constructing Episodes · 原始论文 / 出版页面",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42905992/",
+      "year": "",
+      "evidence": ""
+    },
+    "s050:0": {
+      "label": "Adaptive compression as a unifying framework for episodic and semantic memory · 原始论文 / 出版页面",
+      "url": "https://www.nature.com/articles/s44159-025-00458-6",
+      "year": "",
+      "evidence": ""
+    },
+    "s051:0": {
+      "label": "A Survey on the Memory Mechanism of Large Language Model-based Agents · 原始论文 / 出版页面",
+      "url": "https://doi.org/10.1145/3748302",
+      "year": "",
+      "evidence": ""
+    },
+    "memstrata:0": {
+      "label": "MemStrata · 原始资料",
+      "url": "https://arxiv.org/abs/2610.05343",
+      "year": "",
+      "evidence": ""
+    },
+    "longinus:0": {
+      "label": "LONGINUS · 原始资料",
+      "url": "https://arxiv.org/abs/2611.03826",
+      "year": "",
+      "evidence": ""
+    },
+    "memgpt:0": {
+      "label": "MemGPT · 原始资料",
+      "url": "https://arxiv.org/abs/2310.08560",
+      "year": "",
+      "evidence": ""
+    },
+    "voyager:0": {
+      "label": "Voyager · 原始资料",
+      "url": "https://arxiv.org/abs/2305.16291",
+      "year": "",
+      "evidence": ""
+    },
+    "longmemeval-v2:0": {
+      "label": "LongMemEval-V2 · 原始资料",
+      "url": "https://arxiv.org/abs/2605.12493",
+      "year": "",
+      "evidence": ""
+    },
+    "4dmemory:0": {
+      "label": "4DMemory · 原始资料",
+      "url": "https://arxiv.org/abs/2610.32332",
+      "year": "",
+      "evidence": ""
+    },
+    "longsearcheval:0": {
+      "label": "LongSearchEval · 原始资料",
+      "url": "https://arxiv.org/abs/2610.35150",
+      "year": "",
+      "evidence": ""
+    },
+    "task-memory-utility:0": {
+      "label": "What Is This Memory Useful For? · 原始资料",
+      "url": "https://arxiv.org/abs/2611.03930",
+      "year": "",
+      "evidence": ""
+    },
+    "agent-workflow-memory:0": {
+      "label": "Agent Workflow Memory · 原始资料",
+      "url": "https://proceedings.mlr.press/v267/wang25bx.html",
+      "year": "",
+      "evidence": ""
+    },
+    "memtool:0": {
+      "label": "MemTool · 原始资料",
+      "url": "https://arxiv.org/abs/2507.21428",
+      "year": "",
+      "evidence": ""
+    },
+    "memeval:0": {
+      "label": "MemEval · 原始资料",
+      "url": "https://github.com/ProsusAI/MemEval",
+      "year": "",
+      "evidence": ""
+    },
+    "cortex-ai:0": {
+      "label": "Cortex AI · 候选原始入口（未确认等同用户所指）",
+      "url": "https://github.com/Cortex-AI-IDE/Cortex-Desktop",
+      "year": "",
+      "evidence": ""
+    },
+    "cortex-ai:1": {
+      "label": "Cortex AI · 候选原始入口（未确认等同用户所指）",
+      "url": "https://github.com/jdomian/cortex-ai",
+      "year": "",
+      "evidence": ""
+    },
+    "ai-memory:0": {
+      "label": "ai-memory · 项目入口",
+      "url": "https://github.com/akitaonrails/ai-memory",
+      "year": "",
+      "evidence": ""
+    },
+    "tencent-memory:0": {
+      "label": "TencentDB-Agent-Memory · 项目入口",
+      "url": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
+      "year": "",
+      "evidence": ""
+    },
+    "openhands:0": {
+      "label": "OpenHands Software Agent SDK · 项目入口",
+      "url": "https://github.com/OpenHands/software-agent-sdk",
+      "year": "",
+      "evidence": ""
+    },
+    "continue:0": {
+      "label": "Continue · 项目入口",
+      "url": "https://github.com/continuedev/continue",
+      "year": "",
+      "evidence": ""
+    },
+    "autogen:0": {
+      "label": "AutoGen · 项目仓库",
+      "url": "https://github.com/microsoft/autogen",
+      "year": "",
+      "evidence": ""
+    },
+    "roo-code:0": {
+      "label": "Roo Code · 项目仓库",
+      "url": "https://github.com/RooCodeInc/Roo-Code",
+      "year": "",
+      "evidence": ""
+    },
+    "earlier-30:0": {
+      "label": "A Survey of Agent Memory in the Second Half · 待核来源线索（身份未核）",
+      "url": "https://openreview.net/pdf/98c3fad1f896d4e66146ed72688c024989748b71.pdf",
+      "year": "",
+      "evidence": ""
+    },
+    "earlier-33:0": {
+      "label": "MemGate · 待核来源线索",
+      "url": "https://arxiv.org/abs/2606.06054",
+      "year": "",
+      "evidence": ""
+    },
+    "earlier-41:0": {
+      "label": "ImplicitMemBench · 待核来源线索",
+      "url": "https://aclanthology.org/2026.acl-long.1301.pdf",
+      "year": "",
+      "evidence": ""
+    },
+    "earlier-48:0": {
+      "label": "The Truth of Fact, the Truth of Feeling · 待核来源线索",
+      "url": "https://subterraneanpress.com/exhalation/",
+      "year": "",
+      "evidence": ""
+    },
+    "earlier-59:0": {
+      "label": "Anthropic context engineering article · 待核来源线索",
+      "url": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents",
+      "year": "",
+      "evidence": ""
+    },
+    "earlier-64:0": {
+      "label": "MINJA · 待核来源线索",
+      "url": "https://arxiv.org/abs/2503.03704",
+      "year": "",
+      "evidence": ""
+    },
+    "survey-form": {
+      "label": "Memory in the Age of AI Agents · 表示形式 §3",
+      "url": "https://arxiv.org/html/2512.13564v2#S3",
+      "year": "",
+      "evidence": ""
+    },
+    "microsoft-memory": {
+      "label": "Microsoft Multi-Agent Reference Architecture · Memory.md（2026-08）",
+      "url": "https://github.com/microsoft/multi-agent-reference-architecture/blob/main/docs/memory/Memory.md",
+      "year": "2026",
+      "evidence": "官方参考架构文档；STM/LTM/Working Memory 与非知识库边界已核"
+    },
+    "aws-agent-memory": {
+      "label": "AWS Agent memory systems · 官方学习模块",
+      "url": "https://aws.amazon.com/marketplace/build-learn/ai-agent-learning-series/agent-memory-systems?sc_channel=em",
+      "year": "2026",
+      "evidence": "AWS 官方工程材料；duration/scope、working/session/long-term/shared 章节已核"
+    },
+    "agentscope-harness": {
+      "label": "AgentScope Java · Harness memory overview",
+      "url": "https://github.com/agentscope-ai/agentscope-java/blob/main/docs/v1/en/docs/harness/overview.md",
+      "year": "2026",
+      "evidence": "官方项目文档；workspace context、session persistence 与两层持久记忆入口已核"
+    },
+    "foundation-agent-taxonomy": {
+      "label": "A Survey of Agent Memory in the Second Half · OpenReview PDF（待核身份）",
+      "url": "https://openreview.net/pdf/98c3fad1f896d4e66146ed72688c024989748b71.pdf",
+      "year": "2026",
+      "evidence": "OpenReview PDF 当前返回 403；论文身份与正文未独立核验，不作为本页独立证据。"
+    },
+    "anatomy-agentic-memory": {
+      "label": "Anatomy of Agentic Memory · arXiv",
+      "url": "https://arxiv.org/abs/2602.19320",
+      "year": "2026",
+      "evidence": "arXiv 论文正文与摘要级核对；四种 MAG 结构和评测限制章节已核"
+    },
+    "agent-memory-characterization": {
+      "label": "Agent Memory: Characterization and System Implications · arXiv",
+      "url": "https://arxiv.org/abs/2606.06448",
+      "year": "2026",
+      "evidence": "arXiv 摘要与元数据核对；系统型四轴与构建/检索/生成成本分析已确认，四轴细目待全文核查"
+    },
+    "graph-agent-memory": {
+      "label": "Graph-based Agent Memory: Taxonomy, Techniques, and Applications · arXiv",
+      "url": "https://arxiv.org/abs/2602.05665",
+      "year": "2026",
+      "evidence": "arXiv 摘要级核对；短/长期、知识/经验、非结构/结构与图实现视角已确认"
+    },
+    "storage-experience": {
+      "label": "From Storage to Experience · ACL 2026 Findings",
+      "url": "https://aclanthology.org/2026.findings-acl.2069/",
+      "year": "2026",
+      "evidence": "ACL Findings 出版页面与论文摘要级核对；Storage/Reflection/Experience 三阶段已确认"
+    },
+    "foundation-agent-taxonomy-arxiv": {
+      "label": "A Survey of Agent Memory in the Second Half: Towards Self-Evolving and Long-Horizon Agents · arXiv:2602.06052",
+      "url": "https://arxiv.org/abs/2602.06052",
+      "year": "2026",
+      "evidence": "arXiv 元数据与摘要已核；摘要明确列出承载形式、感觉/工作/情景/语义/程序性认知机制、Agent/User 主体与 218 篇样本范围；页面注明 accepted at TMLR with Survey Certification，具体出版信息待补"
+    },
+    "langgraph": {
+      "label": "项目仓库",
+      "url": "https://github.com/langchain-ai/langgraph",
+      "year": "2026-11-02",
+      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+    },
+    "deep-agents": {
+      "label": "项目仓库",
+      "url": "https://github.com/langchain-ai/deepagents",
+      "year": "2026-11-06 UTC",
+      "evidence": "当前官方后端文档及 README 已读；默认 StateBackend 与 StoreBackend 范围分开，未运行"
+    },
+    "mem0": {
+      "label": "仓库与文档",
+      "url": "https://github.com/mem0ai/mem0",
+      "year": "2026-11-06 UTC",
+      "evidence": "当前官方 README 相关段落已读；历史论文与当前实现分开"
+    },
+    "graphiti": {
+      "label": "仓库与文档",
+      "url": "https://github.com/getzep/graphiti",
+      "year": "2026-11-06 UTC",
+      "evidence": "当前 README 的 context graph、Graphiti/Zep 边界已读"
+    },
+    "google-agent-platform-memory-bank": {
+      "label": "官方概览",
+      "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/scale/memory-bank",
+      "year": "2026-11-02",
+      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+    },
+    "google-adk": {
+      "label": "项目仓库",
+      "url": "https://github.com/google/adk-python",
+      "year": "2026-11-06 UTC",
+      "evidence": "原始 README 与固定提交 3655990 的记忆服务指南已读；不推断所有发行版本一致"
+    },
+    "openai-agents-sdk": {
+      "label": "项目仓库",
+      "url": "https://github.com/openai/openai-agents-python",
+      "year": "2026-11-02",
+      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+    },
+    "crewai": {
+      "label": "项目仓库",
+      "url": "https://github.com/crewAIInc/crewAI",
+      "year": "2026-11-02",
+      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+    },
+    "amazon-bedrock-agentcore-memory": {
+      "label": "记忆类型",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/memory-types.html",
+      "year": "2026-11-02",
+      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+    },
+    "online-memory-under-token-budgets": {
+      "label": "首版预印本",
+      "url": "https://arxiv.org/abs/2606.15017",
+      "year": "2026-11-02",
+      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+    },
+    "memora": {
+      "label": "首版预印本",
+      "url": "https://arxiv.org/abs/2604.20006",
+      "year": "2026-11-02",
+      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+    },
+    "mem2actbench": {
+      "label": "首版预印本",
+      "url": "https://arxiv.org/abs/2601.19935",
+      "year": "2026-11-02",
+      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+    },
+    "mem-gallery": {
+      "label": "首版预印本",
+      "url": "https://arxiv.org/abs/2601.03515",
+      "year": "2026-11-02",
+      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+    },
+    "reasoningbank": {
+      "label": "论文",
+      "url": "https://arxiv.org/abs/2509.25140",
+      "year": "2026-11-02",
+      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+    },
+    "membench": {
+      "label": "首版预印本",
+      "url": "https://arxiv.org/abs/2506.21605",
+      "year": "2026-11-02",
+      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+    },
+    "memoryos": {
+      "label": "首版预印本",
+      "url": "https://arxiv.org/abs/2506.06326",
+      "year": "2026-11-02",
+      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+    },
+    "a-mem": {
+      "label": "首版预印本",
+      "url": "https://arxiv.org/abs/2502.12110",
+      "year": "2026-11-02",
+      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+    },
+    "longmemeval": {
+      "label": "LongMemEval paper / arXiv",
+      "url": "https://arxiv.org/abs/2410.10813",
+      "year": "arXiv v1 2024-10-14; ICLR 2025",
+      "evidence": "paper metadata, abstract, task abilities and public artifact statement"
+    },
+    "agentpoison": {
+      "label": "首版预印本",
+      "url": "https://arxiv.org/abs/2407.12784",
+      "year": "2026-11-02",
+      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+    },
+    "locomo": {
+      "label": "首版预印本",
+      "url": "https://arxiv.org/abs/2402.17753",
+      "year": "2026-11-02",
+      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+    },
+    "memorybank": {
+      "label": "首版预印本",
+      "url": "https://arxiv.org/abs/2305.10250",
+      "year": "2026-11-02",
+      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+    },
+    "generative-agents": {
+      "label": "首版预印本",
+      "url": "https://arxiv.org/abs/2304.03442",
+      "year": "2026-11-02",
+      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+    },
+    "reflexion": {
+      "label": "首版预印本",
+      "url": "https://arxiv.org/abs/2303.11366",
+      "year": "2026-11-02",
+      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+    },
+    "collabmem": {
+      "label": "EMNLP 2026 论文",
+      "url": "https://aclanthology.org/2026.emnlp-main.1194/",
+      "year": "2026-11-02",
+      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+    },
+    "memoryagentbench": {
+      "label": "MemoryAgentBench paper / arXiv",
+      "url": "https://arxiv.org/abs/2507.05257",
+      "year": "arXiv 2025-07-07; ICLR 2026",
+      "evidence": "paper metadata and benchmark scope; code repository linked by the paper"
+    },
+    "the-housekeeper-and-the-professor": {
+      "label": "出版方页面与节选",
+      "url": "https://us.macmillan.com/books/9781250375971/thehousekeeperandtheprofessor/",
+      "year": "2026-11-02",
+      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+    },
+    "severance": {
+      "label": "Apple 官方剧情简介",
+      "url": "https://www.apple.com/tv-pr/originals/severance/",
+      "year": "2026-11-02",
+      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+    },
+    "memento": {
+      "label": "BFI film record",
+      "url": "https://www.bfi.org.uk/film/6e9da010-7145-59ea-98f9-3c6fcb142b1f/memento",
+      "year": "2000",
+      "evidence": "film record with director, cast and production year"
+    },
+    "funes-the-memorious": {
+      "label": "Rodrigo Quian Quiroga 讨论的英文节选（MIT Press）",
+      "url": "https://thereader.mitpress.mit.edu/borges-memory-funes-the-memorious/",
+      "year": "1942 original publication; 1944 Ficciones",
+      "evidence": "MIT Press Reader discussion identifies the story and its publication context"
+    },
+    "the-memory-police": {
+      "label": "出版方内容简介",
+      "url": "https://www.penguinrandomhouse.com/books/252774/the-memory-police-by-yoko-ogawa/",
+      "year": "2026-11-02",
+      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+    },
+    "50-first-dates": {
+      "label": "Sony Pictures 剧情简介",
+      "url": "https://www.sonypictures.com/movies/50firstdates",
+      "year": "2026-11-02",
+      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+    },
+    "pi": {
+      "label": "功能原始来源",
+      "url": "https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/sessions.md",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "codex": {
+      "label": "功能原始来源",
+      "url": "https://learn.chatgpt.com/docs/customization/memories",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "claude-code": {
+      "label": "功能原始来源",
+      "url": "https://code.claude.com/docs/en/memory",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "claude-mem": {
+      "label": "功能原始来源",
+      "url": "https://github.com/thedotmack/claude-mem",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "openclaw": {
+      "label": "功能原始来源",
+      "url": "https://docs.openclaw.ai/concepts/memory",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "hermes": {
+      "label": "功能原始来源",
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "gemini-cli": {
+      "label": "功能原始来源",
+      "url": "https://www.geminicli.com/docs/cli/gemini-md",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "opencode": {
+      "label": "功能原始来源",
+      "url": "https://github.com/anomalyco/opencode/blob/dev/specs/v2/session.md",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "aider": {
+      "label": "功能原始来源",
+      "url": "https://aider.chat/docs/config/options.html",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "deepseek-harness": {
+      "label": "功能原始来源",
+      "url": "https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/user/guide/mcp-memory.md",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "qwen-code": {
+      "label": "功能原始来源",
+      "url": "https://github.com/QwenLM/qwen-code",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "cursor": {
+      "label": "功能原始来源",
+      "url": "https://cursor.com/docs/rules",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "letta": {
+      "label": "功能原始来源",
+      "url": "https://github.com/letta-ai/letta",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "letta-code": {
+      "label": "功能原始来源",
+      "url": "https://github.com/letta-ai/letta-code",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "microsoft-agent-framework": {
+      "label": "功能原始来源",
+      "url": "https://learn.microsoft.com/en-us/agent-framework/concepts/harness",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "agno": {
+      "label": "功能原始来源",
+      "url": "https://docs.agno.com/memory/overview",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "pydantic-ai": {
+      "label": "功能原始来源",
+      "url": "https://pydantic.dev/docs/ai/harness/memory/",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "llamaindex": {
+      "label": "功能原始来源",
+      "url": "https://developers.llamaindex.ai/python/framework/module_guides/deploying/agents/memory/",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "camel": {
+      "label": "功能原始来源",
+      "url": "https://docs.camel-ai.org/key_modules/memory",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "mastra": {
+      "label": "功能原始来源",
+      "url": "https://mastra.ai/docs/memory/overview",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "strands": {
+      "label": "功能原始来源",
+      "url": "https://github.com/strands-agents/harness-sdk",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "anthropic-managed-memory": {
+      "label": "功能原始来源",
+      "url": "https://platform.claude.com/docs/en/managed-agents/memory",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "zep": {
+      "label": "功能原始来源",
+      "url": "https://github.com/getzep/graphiti#graphiti-and-zep",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "hindsight": {
+      "label": "功能原始来源",
+      "url": "https://github.com/vectorize-io/hindsight",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "langmem": {
+      "label": "功能原始来源",
+      "url": "https://github.com/langchain-ai/langmem",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "memos": {
+      "label": "功能原始来源",
+      "url": "https://github.com/MemTensor/MemOS",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "evermemos": {
+      "label": "功能原始来源",
+      "url": "https://github.com/EverMind-AI/EverOS",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "cognee": {
+      "label": "功能原始来源",
+      "url": "https://github.com/topoteretes/cognee",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "memobase": {
+      "label": "功能原始来源",
+      "url": "https://github.com/memodb-io/memobase",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "memori": {
+      "label": "功能原始来源",
+      "url": "https://github.com/MemoriLabs/Memori",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "supermemory": {
+      "label": "功能原始来源",
+      "url": "https://github.com/supermemoryai/supermemory",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "memu": {
+      "label": "功能原始来源",
+      "url": "https://github.com/NevaMind-AI/memU",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "openviking": {
+      "label": "功能原始来源",
+      "url": "https://github.com/volcengine/OpenViking",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "engram": {
+      "label": "功能原始来源",
+      "url": "https://github.com/Gentleman-Programming/engram",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "memsearch": {
+      "label": "功能原始来源",
+      "url": "https://github.com/zilliztech/memsearch",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "redis-memory": {
+      "label": "功能原始来源",
+      "url": "https://github.com/redis/agent-memory-server",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "reme": {
+      "label": "功能原始来源",
+      "url": "https://github.com/agentscope-ai/ReMe",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "basic-memory": {
+      "label": "功能原始来源",
+      "url": "https://github.com/basicmachines-co/basic-memory",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "honcho": {
+      "label": "功能原始来源",
+      "url": "https://github.com/plastic-labs/honcho",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "memorix": {
+      "label": "功能原始来源",
+      "url": "https://github.com/AVIDS2/memorix",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "serena": {
+      "label": "功能原始来源",
+      "url": "https://github.com/oraios/serena",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "mcp-reference-memory": {
+      "label": "功能原始来源",
+      "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/memory",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "chatgpt-memory": {
+      "label": "功能原始来源",
+      "url": "https://help.openai.com/en/articles/8590148-memory-in-chatgpt",
+      "year": "2026-11-06 UTC",
+      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+    },
+    "s001": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://arxiv.org/abs/2512.13564",
+      "year": "arXiv survey; v1 2025-12-15, v2 2026-01-13",
+      "evidence": "abstract-and-metadata"
+    },
+    "s002": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://arxiv.org/abs/2602.06052",
+      "year": "arXiv survey; v4 2026-08-04; v1 page/API show 2026-01-14 despite 2602 identifier",
+      "evidence": "abstract-and-metadata"
+    },
+    "s003": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://arxiv.org/abs/2603.07670",
+      "year": "arXiv survey; 2026-03-08",
+      "evidence": "abstract-and-metadata"
+    },
+    "s004": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://arxiv.org/abs/2602.19320",
+      "year": "arXiv survey; v1 2026-02-22, v2 2026-05-20",
+      "evidence": "abstract-and-metadata"
+    },
+    "s005": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://arxiv.org/abs/2606.06448",
+      "year": "arXiv systems paper; v1 2026-06-04, v2 2026-09-22",
+      "evidence": "abstract-and-metadata"
+    },
+    "s006": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://arxiv.org/abs/2602.05665",
+      "year": "arXiv survey; 2026-02-05",
+      "evidence": "abstract-and-metadata"
+    },
+    "s011": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://aclanthology.org/2026.acl-long.1150/",
+      "year": "ACL long paper; 2026-07",
+      "evidence": "proceedings-abstract-and-metadata"
+    },
+    "s012": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://aclanthology.org/2026.findings-emnlp.507/",
+      "year": "Findings of EMNLP 2026; 2026-10",
+      "evidence": "proceedings-abstract-and-metadata"
+    },
+    "s013": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://aclanthology.org/2026.findings-emnlp.1804/",
+      "year": "Findings of EMNLP 2026; 2026-10",
+      "evidence": "proceedings-abstract-and-metadata"
+    },
+    "s014": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://aclanthology.org/2026.emnlp-main.1639/",
+      "year": "EMNLP main paper; 2026",
+      "evidence": "proceedings-abstract-and-metadata"
+    },
+    "s017": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://aclanthology.org/2026.findings-emnlp.1289/",
+      "year": "Findings of EMNLP 2026; 2026",
+      "evidence": "proceedings-abstract-and-metadata"
+    },
+    "s018": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://aclanthology.org/2026.findings-acl.703/",
+      "year": "Findings of ACL 2026; 2026",
+      "evidence": "proceedings-abstract-and-metadata"
+    },
+    "s020": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://aclanthology.org/2026.acl-long.588/",
+      "year": "ACL long paper; 2026",
+      "evidence": "proceedings-abstract-and-metadata"
+    },
+    "s025": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://www.anthropic.com/research/effective-harnesses-for-long-running-agents",
+      "year": "official engineering article; 2025-11-26",
+      "evidence": "engineering-article"
+    },
+    "s028": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://arxiv.org/abs/2501.13956",
+      "year": "arXiv system paper; 2025-01-20",
+      "evidence": "abstract-and-metadata"
+    },
+    "s029": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://arxiv.org/abs/2504.19413",
+      "year": "arXiv system paper; 2025-04-28",
+      "evidence": "abstract-and-metadata"
+    },
+    "s030": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://arxiv.org/abs/2512.12818",
+      "year": "arXiv system paper; 2025-12-14",
+      "evidence": "abstract-and-metadata"
+    },
+    "s034": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40767385/",
+      "year": "review, Hippocampus; 2025-09",
+      "evidence": "abstract-and-metadata"
+    },
+    "s035": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://www.nature.com/articles/s41386-024-01979-z",
+      "year": "Neuropsychopharmacology review; online 2024-09-18, issue 2025-01",
+      "evidence": "crossref-metadata; publisher-body-unavailable"
+    },
+    "s036": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39138722/",
+      "year": "Psychonomic Bulletin & Review; online 2024-08-13, issue 2025-02",
+      "evidence": "abstract-and-metadata"
+    },
+    "s037": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39892316/",
+      "year": "Current Opinion in Neurobiology; online 2025-01-31, issue 2025-02",
+      "evidence": "abstract-and-metadata"
+    },
+    "s038": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40411122/",
+      "year": "review, Journal of Neurochemistry; 2025-05",
+      "evidence": "abstract-and-metadata"
+    },
+    "s039": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39230835/",
+      "year": "Psychonomic Bulletin & Review; online 2024-09-04, issue 2025-02",
+      "evidence": "abstract-and-metadata"
+    },
+    "s040": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1364661324000299",
+      "year": "review, Trends in Cognitive Sciences; 2024-04",
+      "evidence": "search-lead; publisher access blocked"
+    },
+    "s042": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://aclanthology.org/2026.findings-acl.2069/",
+      "year": "Findings of ACL 2026; 2026-07",
+      "evidence": "proceedings-abstract-and-metadata"
+    },
+    "s043": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://arxiv.org/abs/2610.19366",
+      "year": "arXiv preprint; v1 2026-10-14",
+      "evidence": "abstract-and-metadata"
+    },
+    "s044": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://arxiv.org/abs/2610.35089",
+      "year": "arXiv preprint; v1 2026-10-26",
+      "evidence": "abstract-and-metadata"
+    },
+    "s045": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://research.google/pubs/titans-learning-to-memorize-at-test-time/",
+      "year": "Google Research publication page; 2025",
+      "evidence": "official-publication-abstract"
+    },
+    "s046": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15464402/",
+      "year": "Neurobiology of Learning and Memory; 2004-11",
+      "evidence": "abstract-and-metadata"
+    },
+    "s047": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42364798/",
+      "year": "Biological Psychology; online 2026-06-27, issue 2026-09",
+      "evidence": "abstract-and-metadata"
+    },
+    "s048": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42339427/",
+      "year": "Frontiers in Cognition; PubMed issue year 2024, electronic 2025-01-15",
+      "evidence": "abstract-and-metadata"
+    },
+    "s049": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42905992/",
+      "year": "Annual Review of Psychology; online 2026-10-21",
+      "evidence": "abstract-and-metadata"
+    },
+    "s050": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://www.nature.com/articles/s44159-025-00458-6",
+      "year": "Nature Reviews Psychology; online 2025-06-05",
+      "evidence": "crossref-metadata; publisher-body-unavailable"
+    },
+    "s051": {
+      "label": "原始论文 / 出版页面",
+      "url": "https://doi.org/10.1145/3748302",
+      "year": "ACM Transactions on Information Systems; online 2025-09-10, print 2025-11-30",
+      "evidence": "crossref-metadata"
+    },
+    "memstrata": {
+      "label": "原始资料",
+      "url": "https://arxiv.org/abs/2610.05343",
+      "year": "2026-11-06 UTC",
+      "evidence": "论文身份与摘要已核；完整方法、实验及工件未完成审查，未复现"
+    },
+    "longinus": {
+      "label": "原始资料",
+      "url": "https://arxiv.org/abs/2611.03826",
+      "year": "2026-11-06 UTC",
+      "evidence": "论文身份与摘要已核；完整方法、实验及工件未完成审查，未复现"
+    },
+    "memgpt": {
+      "label": "原始资料",
+      "url": "https://arxiv.org/abs/2310.08560",
+      "year": "2026-11-06 UTC",
+      "evidence": "论文身份与摘要已核；完整方法、实验及工件未完成审查，未复现"
+    },
+    "voyager": {
+      "label": "原始资料",
+      "url": "https://arxiv.org/abs/2305.16291",
+      "year": "2026-11-06 UTC",
+      "evidence": "论文身份与摘要已核；完整方法、实验及工件未完成审查，未复现"
+    },
+    "longmemeval-v2": {
+      "label": "原始资料",
+      "url": "https://arxiv.org/abs/2605.12493",
+      "year": "2026-11-06 UTC",
+      "evidence": "论文身份与摘要已核；完整方法、实验及工件未完成审查，未复现"
+    },
+    "4dmemory": {
+      "label": "原始资料",
+      "url": "https://arxiv.org/abs/2610.32332",
+      "year": "2026-11-06 UTC",
+      "evidence": "论文身份与摘要已核；完整方法、实验及工件未完成审查，未复现"
+    },
+    "longsearcheval": {
+      "label": "原始资料",
+      "url": "https://arxiv.org/abs/2610.35150",
+      "year": "2026-11-06 UTC",
+      "evidence": "论文身份与摘要已核；完整方法、实验及工件未完成审查，未复现"
+    },
+    "task-memory-utility": {
+      "label": "原始资料",
+      "url": "https://arxiv.org/abs/2611.03930",
+      "year": "2026-11-06 UTC",
+      "evidence": "论文身份与摘要已核；完整方法、实验及工件未完成审查，未复现"
+    },
+    "agent-workflow-memory": {
+      "label": "原始资料",
+      "url": "https://proceedings.mlr.press/v267/wang25bx.html",
+      "year": "2026-11-06 UTC",
+      "evidence": "论文身份与摘要已核；完整方法、实验及工件未完成审查，未复现"
+    },
+    "memtool": {
+      "label": "原始资料",
+      "url": "https://arxiv.org/abs/2507.21428",
+      "year": "2026-11-06 UTC",
+      "evidence": "论文身份与摘要已核；完整方法、实验及工件未完成审查，未复现"
+    },
+    "memeval": {
+      "label": "原始资料",
+      "url": "https://github.com/ProsusAI/MemEval",
+      "year": "2026-11-06 UTC",
+      "evidence": "原始页面身份与摘要 / README 相关段落；未复现"
+    },
+    "cortex-ai": {
+      "label": "候选原始入口（未确认等同用户所指）",
+      "url": "https://github.com/Cortex-AI-IDE/Cortex-Desktop",
+      "year": "2026-11-06 UTC",
+      "evidence": "身份/机制未完成核对；不纳入已核系统计数"
+    },
+    "ai-memory": {
+      "label": "项目入口",
+      "url": "https://github.com/akitaonrails/ai-memory",
+      "year": "2026-11-06 UTC",
+      "evidence": "身份/机制未完成核对；不纳入已核系统计数"
+    },
+    "tencent-memory": {
+      "label": "项目入口",
+      "url": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
+      "year": "2026-11-06 UTC",
+      "evidence": "身份/机制未完成核对；不纳入已核系统计数"
+    },
+    "openhands": {
+      "label": "项目入口",
+      "url": "https://github.com/OpenHands/software-agent-sdk",
+      "year": "2026-11-06 UTC",
+      "evidence": "身份/机制未完成核对；不纳入已核系统计数"
+    },
+    "continue": {
+      "label": "项目入口",
+      "url": "https://github.com/continuedev/continue",
+      "year": "2026-11-06 UTC",
+      "evidence": "身份/机制未完成核对；不纳入已核系统计数"
+    },
+    "autogen": {
+      "label": "项目仓库",
+      "url": "https://github.com/microsoft/autogen",
+      "year": "2026-11-06 UTC",
+      "evidence": "官方 README 与仓库元数据"
+    },
+    "roo-code": {
+      "label": "项目仓库",
+      "url": "https://github.com/RooCodeInc/Roo-Code",
+      "year": "2026-11-06 UTC",
+      "evidence": "官方 README 与仓库元数据"
+    },
+    "earlier-30": {
+      "label": "待核来源线索",
+      "url": "https://openreview.net/pdf/98c3fad1f896d4e66146ed72688c024989748b71.pdf",
+      "year": "2026-11-02 UTC",
+      "evidence": "早期候选，未升级为已核资料"
+    },
+    "earlier-33": {
+      "label": "待核来源线索",
+      "url": "https://arxiv.org/abs/2606.06054",
+      "year": "2026-11-02 UTC",
+      "evidence": "早期候选，未升级为已核资料"
+    },
+    "earlier-41": {
+      "label": "待核来源线索",
+      "url": "https://aclanthology.org/2026.acl-long.1301.pdf",
+      "year": "2026-11-02 UTC",
+      "evidence": "早期候选，未升级为已核资料"
+    },
+    "earlier-48": {
+      "label": "待核来源线索",
+      "url": "https://subterraneanpress.com/exhalation/",
+      "year": "2026-11-02 UTC",
+      "evidence": "早期候选，未升级为已核资料"
+    },
+    "earlier-59": {
+      "label": "待核来源线索",
+      "url": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents",
+      "year": "2026-11-02 UTC",
+      "evidence": "早期候选，未升级为已核资料"
+    },
+    "earlier-64": {
+      "label": "待核来源线索",
+      "url": "https://arxiv.org/abs/2503.03704",
+      "year": "2026-11-02 UTC",
+      "evidence": "早期候选，未升级为已核资料"
+    },
+    "the-entire-history-of-you": {
+      "label": "The Entire History of You · BBFC release record",
+      "url": "https://www.bbfc.co.uk/release/black-mirror-q29sbgvjdglvbjpwwc00mdi0njc",
+      "year": "2011",
+      "evidence": "BBFC release record identifies the Black Mirror episode; this tutorial uses it only as a cultural thought experiment."
+    },
+    "the-entire-history-of-you-plot": {
+      "label": "The Entire History of You · British Comedy Guide episode page",
+      "url": "https://www.comedy.co.uk/tv/black_mirror/episodes/1/3/",
+      "year": "2011",
+      "evidence": "Episode page identifies the series/episode, creators, broadcast date, and the fictional recording/replay premise used here as a cultural thought experiment."
+    }
+  },
+  "concepts": [
+    {
+      "id": "context",
+      "title": "Context / working set",
+      "what": "当前一次调用实际收到的材料。",
+      "confusion": "它可能来自 Memory，但不能推出跨调用持久化。",
+      "not": "不要把当前上下文当成长期 Memory。"
+    },
+    {
+      "id": "session",
+      "title": "Session history / transcript",
+      "what": "可保存的原始对话或执行记录。",
+      "confusion": "有历史不等于被选择、检索或有效使用。",
+      "not": "不要把完整日志当成已经形成的语义记忆。"
+    },
+    {
+      "id": "rag",
+      "title": "RAG / external knowledge",
+      "what": "从外部资料检索并注入当前调用的机制。",
+      "confusion": "可检索资料不一定由 Agent 交互形成，也不自动有更新/删除语义。",
+      "not": "不要由“用了 RAG”推出它拥有长期个人 Memory。"
+    },
+    {
+      "id": "checkpoint",
+      "title": "Checkpoint / state",
+      "what": "恢复一次运行所需的状态、游标或检查点。",
+      "confusion": "可恢复状态不一定有语义抽取、检索或遗忘机制。",
+      "not": "不要把 checkpoint 自动当成事实库。"
+    },
+    {
+      "id": "latent",
+      "title": "Parameter / latent / KV",
+      "what": "模型参数、隐状态或推理缓存中的保留信息。",
+      "confusion": "它们的写入、控制、审计和删除方式与外部 Memory 不同。",
+      "not": "不要用外部文件的治理结论替代模型内部记忆的讨论。"
+    },
+    {
+      "id": "storage",
+      "title": "Generic storage / log / cache",
+      "what": "保存数据的通用设施。",
+      "confusion": "存储机制本身不保证有内容角色、更新、授权或检索语义。",
+      "not": "不要把“有数据库”当成完整 Memory 设计。"
+    }
+  ],
+  "entries": {
+    "research": [
+      {
+        "id": "foundation-agent-memory",
+        "title": "A Survey of Agent Memory in the Second Half",
+        "date": "2026",
+        "summary": "综述 Agent Memory 的承载形式、认知机制、主体和长期 Agent 问题。",
+        "why": "它覆盖面广，可用来观察研究圈如何把 substrate、memory mechanisms 与 Agent/User 角色放在同一讨论中。",
+        "boundary": "arXiv/综述证据；具体分类与出版信息仍需按版本核对。",
+        "status": "pending",
+        "sources": [
+          "foundation-agent-taxonomy-arxiv"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://arxiv.org/abs/2602.06052",
+        "researchKind": "survey"
+      },
+      {
+        "id": "agent-memory-characterization",
+        "title": "Agent Memory: Characterization and System Implications",
+        "date": "2026",
+        "summary": "从系统特征与构建、检索、生成成本讨论 Agent Memory。",
+        "why": "它把系统构建和使用成本带入 Memory 讨论，补充纯内容 taxonomy。",
+        "boundary": "arXiv 版本的轴与工程含义仍需逐节核实。",
+        "status": "pending",
+        "sources": [
+          "agent-memory-characterization"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://arxiv.org/abs/2606.06448",
+        "researchKind": "method"
+      },
+      {
+        "id": "a-mem",
+        "title": "A-Mem",
+        "date": "2025",
+        "summary": "以动态链接和组织方式构建可演化的 Agent Memory。",
+        "why": "它展示记忆条目、关联和更新机制如何联合设计。",
+        "boundary": "NeurIPS 论文与预印本的实现细节需按版本核对。",
+        "status": "pending",
+        "sources": [
+          "a-mem:1"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html",
+        "researchKind": "method"
+      },
+      {
+        "id": "forms-functions-dynamics",
+        "title": "Memory in the Age of AI Agents · Forms / Functions / Dynamics",
+        "date": "2025",
+        "summary": "以形式、功能和动态组织 Agent Memory 的综述框架。",
+        "why": "它直接示范同一系统可以从多个观察角度描述，适合和六问做结构对照。",
+        "boundary": "框架术语与教程六问不是一一等价，映射属于编者解释。",
+        "status": "pending",
+        "sources": [
+          "survey",
+          "survey-form"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://arxiv.org/html/2512.13564v2#S4",
+        "researchKind": "survey"
+      },
+      {
+        "id": "coala",
+        "title": "CoALA",
+        "date": "2024",
+        "summary": "Cognitive Architectures for Language Agents，提出语言 Agent 的认知架构视角。",
+        "why": "它明确展示 working memory 与长期 episodic/semantic/procedural memory 的层级关系，是理解“分类来自观察视角”的经典入口。",
+        "boundary": "架构提案不等于产品实现或安全规范。",
+        "status": "complete",
+        "sources": [
+          "coala"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "selectionEvidence": "2023 arXiv、2024 TMLR camera-ready 的原始论文与章节已核；作者提出的是架构视角，不是行业统一标准。",
+        "limitations": "没有完整规定工程权限、删除、租户隔离或 benchmark 协议；四类不能被画成同层并列。",
+        "next": "engineering",
+        "questions": [
+          {
+            "answer": "CoALA 把 Memory 作为语言 Agent 的信息存储模块。Working memory 是当前决策循环直接操作的短期工作区；long-term memory 再分为 episodic（经历）、semantic（事实或知识）和 procedural（做事方式或规则）三类。因此四个名称不是四个同层并列槽位，而是“working memory + long-term memory 下三类”的层级。论文还描述长期记忆经 retrieval 进入工作记忆，学习动作可以把新内容写回长期记忆。",
+            "trace": "CoALA §4.1 的 Memory 图和文字；论文明确把 working memory 与 long-term memory 分开，并在长期记忆下列出 episodic、semantic、procedural。retrieval 与 learning 的桥接关系见同节后续描述。"
+          },
+          {
+            "answer": "CoALA 更关心认知角色和信息存储层，没有把每类记忆绑定到一种物理数据库。工作记忆可以由当前输入、内部状态或上下文承载；长期记忆可以由外部模块承载，程序性记忆还可能体现在模型参数、Agent 代码或工具能力中。这里的分类不能被误读成“文件、向量库、图数据库”三选一，具体载体必须回到实现或方法论文核对。",
+            "trace": "论文的 Memory 模块以及对 external memory、model parameters、programs/tools 的讨论。论文给出的是架构层含义，未规定某个具体数据库或部署拓扑。"
+          },
+          {
+            "answer": "主要主体是单个语言 Agent 的认知架构：它描述该 Agent 如何在一个决策循环里读写自己的 Memory。论文的目标不是团队资料库或多租户服务，所以没有给出项目、用户、团队共享的完整拓扑，也没有定义谁拥有一条记忆。把这些缺口写出来，是理解 CoALA 边界的一部分。",
+            "trace": "论文摘要和 §4 将 CoALA 定义为 language agent 的 conceptual framework；共享主体、租户隔离和删除权并非该框架的完整目标。"
+          },
+          {
+            "answer": "长期记忆通过 retrieval action 进入 working memory，learning action 则可以把交互中的新信息、反馈或技能写回长期记忆。论文给出的是操作关系和架构位置，不是通用的 TTL、版本、冲突覆盖或删除传播协议。因此“能学习、能检索”不能直接推出“有完整生命周期管理”。",
+            "trace": "CoALA §4.1 及 Memory operations 的 retrieval/learning 描述；TTL、版本、冲突和删除协议在论文中未被定义，故标为未说明。"
+          },
+          {
+            "answer": "在 CoALA 的循环里，后续决策先选择 retrieval action，从长期记忆取回相关内容，再把它放入 working memory，供 reasoning 和 decision 使用。论文用这个 bridge 解释 Memory 怎样影响行动，但没有规定 embedding、排序、上下文预算或检索失败回退。回答这一问时要把架构路径和工程实现分开。",
+            "trace": "论文 §4.1 的 retrieval bridge 与 §4.3 Retrieval actions；具体索引、排序和注入策略不属于 CoALA taxonomy 的规定。"
+          },
+          {
+            "answer": "CoALA 是概念框架和研究组织方式，不是访问控制或合规规范。它没有完整规定谁能读写、怎样审计来源、怎样抵抗投毒，以及用户要求删除后如何证明传播停止。这里的结论是“论文未规定这些治理机制”，不是“采用 CoALA 的系统一定没有这些能力”。",
+            "trace": "论文的研究范围、架构章节和讨论部分没有给出权限、审计、删除证明或投毒防护协议；工程治理需要另看系统文档和安全评测。"
+          }
+        ],
+        "canonicalUrl": "https://arxiv.org/html/2309.02427v3#S4.SS1",
+        "profile": {
+          "kind": "研究框架论文",
+          "authors": "Theodore R. Sumers, Shunyu Yao, Karthik Narasimhan, Thomas L. Griffiths",
+          "team": "Princeton University",
+          "venue": "arXiv v3（2024）与 TMLR camera-ready（2024）",
+          "artifact": "原始论文与 HTML §4.1 Memory；本教程没有复现实验"
+        },
+        "researchKind": "method"
+      },
+      {
+        "id": "generative-agents",
+        "title": "Generative Agents",
+        "date": "2023",
+        "summary": "以模拟小镇 Agent 展示记忆流、反思和规划的组合。",
+        "why": "它是“事件记录如何变成高层反思并影响行动”的代表性研究方法。",
+        "boundary": "研究环境与真实 Harness 约束不同，结果不能直接转成生产结论。",
+        "status": "pending",
+        "sources": [
+          "generative-agents"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://arxiv.org/abs/2304.03442",
+        "researchKind": "method"
+      },
+      {
+        "id": "reflexion",
+        "title": "Reflexion",
+        "date": "2023",
+        "summary": "通过语言反思把失败经验写入可复用的 verbal memory。",
+        "why": "它清楚展示经验记忆如何通过反馈改变后续尝试。",
+        "boundary": "论文方法聚焦任务反馈和语言反思，不覆盖完整权限/删除治理。",
+        "status": "pending",
+        "sources": [
+          "reflexion"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://arxiv.org/abs/2303.11366",
+        "researchKind": "method"
+      },
+      {
+        "id": "memgpt",
+        "title": "MemGPT",
+        "date": "2023",
+        "researchKind": "method",
+        "summary": "把有限上下文与更大的外部存储组织成分层记忆，用 Agent 自主的读写操作管理信息。",
+        "why": "它把操作系统式的内存管理引入 LLM Agent，适合观察载体、生命周期与下一次调用的暴露路径如何配合。",
+        "boundary": "原始论文身份和摘要已核；本教程未复现实验，完整六问与实现版本待逐节补齐。",
+        "status": "pending",
+        "sources": [
+          "memgpt"
+        ],
+        "checkedAt": "2026-11-11",
+        "canonicalUrl": "https://arxiv.org/abs/2310.08560"
+      },
+      {
+        "id": "voyager",
+        "title": "Voyager",
+        "date": "2023",
+        "researchKind": "method",
+        "summary": "在 Minecraft 环境中累积可检索的代码技能库，并在后续探索中组合、调用已有技能。",
+        "why": "它展示程序性经验如何变成可复用的技能工件，补充对话事实之外的 Memory 形态。",
+        "boundary": "研究环境是 Minecraft；技能复用结果不能直接推广到所有 Agent，完整六问和实验条件待补。",
+        "status": "pending",
+        "sources": [
+          "voyager"
+        ],
+        "checkedAt": "2026-11-11",
+        "canonicalUrl": "https://arxiv.org/abs/2305.16291"
+      },
+      {
+        "id": "memorybank",
+        "title": "MemoryBank",
+        "date": "2024",
+        "researchKind": "method",
+        "summary": "把对话记录、事件摘要和用户信息组织成可检索的长期记忆，并探索衰减与强化。",
+        "why": "它是较早把个性化、选择性保留和时间变化放进 Agent Memory 方法的代表性工作。",
+        "boundary": "AAAI 2024 发表记录和作者仓库可定位；本教程未复现实验，完整六问待补。",
+        "status": "pending",
+        "sources": [
+          "memorybank:1",
+          "memorybank:2"
+        ],
+        "checkedAt": "2026-11-11",
+        "canonicalUrl": "https://doi.org/10.1609/aaai.v38i17.29946"
+      }
+    ],
+    "engineering": [
+      {
+        "id": "agentcore-memory",
+        "title": "Amazon Bedrock AgentCore Memory",
+        "date": "公开日期未说明",
+        "summary": "AWS 托管 Agent Memory，文档区分短期和长期策略。",
+        "why": "它展示云服务如何把 Memory 类型、策略和运行配置分开。",
+        "boundary": "云服务行为受区域、版本和权限配置影响。",
+        "status": "pending",
+        "sources": [
+          "amazon-bedrock-agentcore-memory"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/memory-types.html"
+      },
+      {
+        "id": "claude-code",
+        "title": "Claude Code",
+        "date": "公开日期未说明",
+        "summary": "Anthropic 的 coding agent，官方文档公开了 CLAUDE.md 与自动记忆机制。",
+        "why": "官方产品文档和仓库提供可定位的 Memory 说明，且直接面向真实 coding workflow。",
+        "boundary": "记录的是文档声明和公开文件边界；未运行当前版本。",
+        "status": "complete",
+        "sources": [
+          "claude-code"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "selectionEvidence": "官方 Memory 文档与仓库在 2026-11-11 可定位；纳入依据是公开机制清晰，不推断用户规模或效果。",
+        "limitations": "内部检索、缓存、审计、删除传播和团队隔离细节未完全公开；版本行为可能变化。",
+        "next": "benchmarks",
+        "questions": [
+          {
+            "answer": "官方文档把两种机制分开：CLAUDE.md 或 AGENTS.md 是人写的持久指令与规则，auto memory 是 Claude 根据纠正、偏好和项目上下文写下的 learnings 与 patterns。它们都可能影响后续 coding calls，但内容角色不同：前者主要规定“应该怎么做”，后者主要保存“已经学到什么”。原始会话历史不等于这两类持久 Memory。",
+            "trace": "Claude Code 官方 Memory 文档的 “CLAUDE.md vs auto memory” 表格与开头说明，明确列出写入主体、内容和使用场景。"
+          },
+          {
+            "answer": "可观察的承载包括项目、用户或组织级 Markdown 指令文件，以及按仓库维护的 auto memory 文件或目录。调用时，规则文件和自动记忆会作为上下文准备的一部分被读取；文档没有公开所有内部索引、缓存和选择实现。一个文件可以是权威记录，也可能只是给模型加载的文本，不能仅凭文件扩展名判断它的认知角色。",
+            "trace": "官方文档的文件层级、auto memory storage location 和加载说明；内部索引、缓存和完整注入策略没有在该页公开。"
+          },
+          {
+            "answer": "范围至少分为用户级、项目级和组织级规则；auto memory 按仓库维护，并可跨 worktree 共享。项目约定可以进入版本控制并被团队共享，个人偏好通常留在用户环境；但文件可见性和团队权限还取决于实际文件系统、仓库和部署配置。跨会话持续不等于自动获得跨用户授权。",
+            "trace": "官方文档的 scope 表格和 auto memory scope 说明；权限、租户隔离和组织治理不能从目录层级单独推出。"
+          },
+          {
+            "answer": "规则文件由人维护，也可以通过常规编辑流程更新；auto memory 会根据交互中的纠正、偏好和项目上下文积累学习。文档提供查看、审计和编辑入口，但没有把所有冲突合并、旧事实撤回、删除传播和保留期定义成公开协议。因此分析时要分别记录“谁写入”和“怎样停止继续影响”。",
+            "trace": "官方文档的 “When to add to CLAUDE.md”、auto memory audit/edit 与 troubleshooting 小节；未公开的冲突和删除语义保持为 not_specified。"
+          },
+          {
+            "answer": "下一次调用通过启动时加载规则和自动记忆获得相关信息，也可以由 Agent 通过文件或工具主动查看。文档说明 auto memory 会加载一部分内容，不能据此说每个文件都会完整进入上下文；具体选择、截断、上下文预算和失败回退属于实现细节。写入文件、被读取、进入模型输入和改变行动是四个不同阶段。",
+            "trace": "官方文档的 session start、loading、first 200 lines or 25KB 等说明；这些事实支持“存在加载路径”，不支持对内部排序策略的推断。"
+          },
+          {
+            "answer": "控制主体是 Claude Code 运行环境、用户和项目文件权限的组合。用户可以编辑或删除规则和自动记忆文件，但公开文档没有完整说明审计日志、跨租户共享、投毒防护、删除证明或组织级保留政策。这里应把“用户能改文件”与“系统能证明所有派生副本已停止影响”分开。",
+            "trace": "官方文档的文件编辑/审计入口与 scope 说明；未说明项不作支持或不支持判断。"
+          }
+        ],
+        "canonicalUrl": "https://code.claude.com/docs/en/memory",
+        "profile": {
+          "kind": "官方 coding agent / harness",
+          "maintainer": "Anthropic",
+          "artifact": "官方 Memory 文档、CLAUDE.md/AGENTS.md 规则文件说明与 auto memory 说明；本教程没有运行当前版本",
+          "version": "文档版本未固定；页面按 2026-11-11 核对日期记录"
+        }
+      },
+      {
+        "id": "claude-mem",
+        "title": "Claude-Mem",
+        "date": "公开日期未说明",
+        "summary": "面向 Claude Code 的外部记忆插件，公开仓库提供实现入口。",
+        "why": "它展示插件如何把会话观察、摘要和检索接到 coding agent。",
+        "boundary": "第三方插件的安全、版本和数据保留需单独核验。",
+        "status": "pending",
+        "sources": [
+          "claude-mem"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://github.com/thedotmack/claude-mem"
+      },
+      {
+        "id": "cloudmem",
+        "title": "CloudMEM",
+        "date": "公开日期未说明",
+        "summary": "用户提名的独立 Memory 系统线索。",
+        "why": "保留该名字，避免遗漏此前研究中提到的独立框架。",
+        "boundary": "当前 canonical identity、维护者、版本和原始来源尚未核实；发布前不能把它当作已验证系统。",
+        "status": "pending",
+        "sources": [],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": null
+      },
+      {
+        "id": "crewai",
+        "title": "CrewAI",
+        "date": "公开日期未说明",
+        "summary": "多 Agent framework，公开 Memory 与协作相关配置。",
+        "why": "它可用于观察团队范围、角色和共享记忆的工程取舍。",
+        "boundary": "不同存储后端与版本配置会改变行为。",
+        "status": "pending",
+        "sources": [
+          "crewai"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://github.com/crewAIInc/crewAI"
+      },
+      {
+        "id": "deep-agents",
+        "title": "Deep Agents",
+        "date": "公开日期未说明",
+        "summary": "LangChain 的高层 Agent harness，文档提供规划、文件系统和 Memory 机制。",
+        "why": "它展示工程系统如何把长期任务、文件和摘要组合为可用 Memory。",
+        "boundary": "文档级条目，版本和运行时行为需锁定。",
+        "status": "pending",
+        "sources": [
+          "deep-agents"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://github.com/langchain-ai/deepagents"
+      },
+      {
+        "id": "google-adk",
+        "title": "Google ADK",
+        "date": "公开日期未说明",
+        "summary": "Google Agent Development Kit，提供会话和 Memory service 相关能力。",
+        "why": "它补充 Agent framework 端的状态和长期 Memory 组合。",
+        "boundary": "框架能力与具体部署配置需要分开。",
+        "status": "pending",
+        "sources": [
+          "google-adk"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://github.com/google/adk-python"
+      },
+      {
+        "id": "google-memory-bank",
+        "title": "Google Agent Platform Memory Bank",
+        "date": "公开日期未说明",
+        "summary": "Google Cloud 托管的 Agent Memory 服务。",
+        "why": "它把写入、检索、范围和云资源配置暴露为工程接口。",
+        "boundary": "版本、区域、配额和安全配置需按云文档继续核对。",
+        "status": "pending",
+        "sources": [
+          "google-agent-platform-memory-bank"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/scale/memory-bank"
+      },
+      {
+        "id": "graphiti",
+        "title": "Graphiti",
+        "date": "公开日期未说明",
+        "summary": "面向 Agent 的时序知识图系统，强调实体、关系、时间和混合检索。",
+        "why": "它是关系/时间事实与图载体的工程代表。",
+        "boundary": "图结构与事实正确性、因果性需要分别验证。",
+        "status": "pending",
+        "sources": [
+          "graphiti"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://github.com/getzep/graphiti"
+      },
+      {
+        "id": "hisight",
+        "title": "HiSIGHT",
+        "date": "公开日期未说明",
+        "summary": "用户提名的 Agent/Harness Memory 线索。",
+        "why": "保留为待定位条目，后续补充真实项目身份和来源。",
+        "boundary": "名称可能存在同名项目；当前不作机制或质量判断。",
+        "status": "pending",
+        "sources": [],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": null
+      },
+      {
+        "id": "hindsight",
+        "title": "Hindsight",
+        "date": "公开日期未说明",
+        "summary": "独立 Memory 系统，强调 retain、recall、reflect 等操作。",
+        "why": "它把记忆写入、检索和反思作为一套可调用 API。",
+        "boundary": "论文/仓库与当前服务行为需分别核对。",
+        "status": "pending",
+        "sources": [
+          "hindsight"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://github.com/vectorize-io/hindsight"
+      },
+      {
+        "id": "langgraph",
+        "title": "LangGraph",
+        "date": "公开日期未说明",
+        "summary": "面向有状态 Agent 的编排框架，官方文档区分 thread state、persistence、checkpoints 和 memory。",
+        "why": "它是理解 Harness 如何把运行状态与跨会话 Memory 接在一起的代表性工程样本。",
+        "boundary": "官方文档已核；没有在本教程中运行或验证所有配置。",
+        "status": "pending",
+        "sources": [
+          "langgraph"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://github.com/langchain-ai/langgraph"
+      },
+      {
+        "id": "letta",
+        "title": "Letta",
+        "date": "公开日期未说明",
+        "summary": "提供有状态 Agent 与长期 Memory 的平台。",
+        "why": "它将可编辑的核心记忆和外部档案作为产品机制呈现。",
+        "boundary": "不同版本和部署方式可能有不同实现。",
+        "status": "pending",
+        "sources": [
+          "letta"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://github.com/letta-ai/letta"
+      },
+      {
+        "id": "mem0",
+        "title": "Mem0",
+        "date": "公开日期未说明",
+        "summary": "独立 Memory 层，提供记忆抽取、存储、检索与更新接口。",
+        "why": "它让读者看到 Memory 能作为独立服务接入不同 Agent。",
+        "boundary": "公开资料不足以覆盖所有部署、安全和删除语义。",
+        "status": "pending",
+        "sources": [
+          "mem0"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://github.com/mem0ai/mem0"
+      },
+      {
+        "id": "openai-agents-sdk",
+        "title": "OpenAI Agents SDK",
+        "date": "公开日期未说明",
+        "summary": "OpenAI Agents SDK 的 Session/运行状态与上下文集成。",
+        "why": "它展示调用历史如何进入后续 Agent run。",
+        "boundary": "本条目只收录公开 Session/Memory 文档证据，不推断隐藏实现。",
+        "status": "pending",
+        "sources": [
+          "openai-agents-sdk"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://github.com/openai/openai-agents-python"
+      },
+      {
+        "id": "openclaw",
+        "title": "OpenClaw",
+        "date": "公开日期未说明",
+        "summary": "个人 Agent 系统，官方文档公开 memory search 与文件化记忆路径。",
+        "why": "它是个人助手/长期记忆和 Harness 组合的工程样本。",
+        "boundary": "文档描述不等于所有运行配置或数据安全结论。",
+        "status": "pending",
+        "sources": [
+          "openclaw"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://docs.openclaw.ai/concepts/memory"
+      },
+      {
+        "id": "pi",
+        "title": "Pi",
+        "date": "公开日期未说明",
+        "summary": "Pi coding agent/harness，公开仓库与 session 文档展示文件、上下文和工具路径。",
+        "why": "它补充独立服务之外的 Harness 端 Memory 组合。",
+        "boundary": "必须按 commit 核对，不能从仓库存在推出用户规模或性能。",
+        "status": "pending",
+        "sources": [
+          "pi"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/sessions.md"
+      }
+    ],
+    "benchmarks": [
+      {
+        "id": "collabmem",
+        "title": "COLLABMEM",
+        "date": "2026",
+        "summary": "面向协作 Agent Memory 的评测与数据。",
+        "why": "它补充共享、协作和主体范围这组六问关注点。",
+        "boundary": "任务协议与可复现条件需继续核对。",
+        "status": "pending",
+        "sources": [
+          "collabmem"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://aclanthology.org/2026.emnlp-main.1194/",
+        "coverage": [
+          "scope",
+          "governance",
+          "exposure"
+        ]
+      },
+      {
+        "id": "mem-gallery",
+        "title": "Mem-Gallery",
+        "date": "2026",
+        "summary": "面向 Memory 机制比较的 benchmark/评测集合。",
+        "why": "可用来观察多种 Memory 结构和使用方式的覆盖。",
+        "boundary": "需要继续核对任务、指标和数据许可。",
+        "status": "pending",
+        "sources": [
+          "mem-gallery"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://arxiv.org/abs/2601.03515",
+        "coverage": [
+          "substrate",
+          "exposure"
+        ]
+      },
+      {
+        "id": "mem2actbench",
+        "title": "Mem2ActBench",
+        "date": "2026",
+        "summary": "评测 Memory 如何支持后续行动与工具使用。",
+        "why": "它把“取回信息”与“据此行动”连接起来，补充 Q5。",
+        "boundary": "任务结果不能推出内部存储或控制机制。",
+        "status": "pending",
+        "sources": [
+          "mem2actbench"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://arxiv.org/abs/2601.19935",
+        "coverage": [
+          "content",
+          "exposure"
+        ]
+      },
+      {
+        "id": "memora",
+        "title": "Memora",
+        "date": "2026",
+        "summary": "长期 Memory 机制与评测工作。",
+        "why": "它提供较新的长期记忆任务样本。",
+        "boundary": "论文与代码版本待进一步核实。",
+        "status": "pending",
+        "sources": [
+          "memora"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://arxiv.org/abs/2604.20006",
+        "coverage": [
+          "content",
+          "lifecycle",
+          "exposure"
+        ]
+      },
+      {
+        "id": "memoryagentbench",
+        "title": "MemoryAgentBench",
+        "date": "2026",
+        "summary": "诊断 retrieval、test-time learning、long-range understanding 和 conflict resolution 的 Memory benchmark。",
+        "why": "它把多种长期 Memory 能力拆成诊断任务，适合和六问逐轴对照。",
+        "boundary": "当前 canonical URL 与版本仍需发布前补齐，不能把此条目当作已完成证据。",
+        "status": "pending",
+        "sources": [
+          "memoryagentbench"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://github.com/HUST-AI-HYZ/MemoryAgentBench",
+        "coverage": [
+          "content",
+          "lifecycle",
+          "exposure"
+        ]
+      },
+      {
+        "id": "timl-membench",
+        "title": "TimlMemBench",
+        "date": "2026",
+        "summary": "近期的长程/时间变化 Memory benchmark 线索。",
+        "why": "提供时间和动态维度的候选评测。",
+        "boundary": "当前条目依赖资源目录线索，详细协议待补。",
+        "status": "pending",
+        "sources": [
+          "s012"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://aclanthology.org/2026.findings-emnlp.507/",
+        "coverage": [
+          "lifecycle",
+          "exposure"
+        ]
+      },
+      {
+        "id": "utilmem",
+        "title": "UTILMEM",
+        "date": "2026",
+        "summary": "近期 Memory utility 评测线索。",
+        "why": "可用于讨论有用性指标与六问设计层的差异。",
+        "boundary": "当前只保留论文入口和候选状态。",
+        "status": "pending",
+        "sources": [
+          "s014"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://aclanthology.org/2026.emnlp-main.1639/",
+        "coverage": [
+          "content",
+          "exposure"
+        ]
+      },
+      {
+        "id": "longmemeval",
+        "title": "LongMemEval",
+        "date": "2025",
+        "summary": "评估聊天助手长期交互中的信息提取、推理、时间变化、知识更新和 abstention。",
+        "why": "任务定义清晰，是分析“结果能力”和“Memory 设计”差异的核心样板。",
+        "boundary": "结果依赖模型、历史长度、任务子集、预算和评审协议；不做跨 benchmark 排名。",
+        "status": "complete",
+        "sources": [
+          "longmemeval"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "selectionEvidence": "论文身份、任务说明和公开入口可定位；纳入依据是长期交互与多类任务覆盖，不把得分当成系统完整性证明。",
+        "limitations": "不直接测权限、审计、物理删除、成本和内部检索路径；需要与其他 benchmark 组合。",
+        "next": "culture",
+        "questions": [
+          {
+            "answer": "LongMemEval 的任务围绕长期对话中的事实、偏好、事件和知识变化，测五类结果能力：信息提取、多会话推理、时间推理、知识更新和 abstention。它测的是系统能否在新问题中给出正确回答或承认不知道，不规定某一种 Memory taxonomy。",
+            "trace": "论文摘要和任务章节列出的五类能力、500 个问题与长期 user-assistant history 设置；内容类别是任务设计，不是系统内部 schema。"
+          },
+          {
+            "answer": "Benchmark 的输入协议提供对话历史与查询，论文还把设计拆为 indexing、retrieval、reading 三阶段，但不把文件、向量库、图或参数记忆作为必须的控制变量。因此一个分数只能说明在给定协议下得到的结果，不能证明某种载体本身更好，也不能判断系统是否保留了可审计的权威记录。",
+            "trace": "论文摘要对三阶段设计的概括、数据输入和 baseline 设置；内部存储形式属于被测系统实现。"
+          },
+          {
+            "answer": "评测范围由对话历史、用户/助手交互和任务实例定义，主要面向单个助手的长期交互。题目可以包含用户偏好和时间变化，但没有把团队共享、租户隔离、不同主体的可见性或权限错误作为核心指标。",
+            "trace": "论文的数据构造和任务分类；协作共享与租户治理不在 LongMemEval 的核心协议中，故标为 not_assessed。"
+          },
+          {
+            "answer": "新信息、时间变化和知识更新任务让我们能观察部分生命周期结果，例如旧事实被新事实替换后是否回答正确；abstention 还可以观察系统是否避免无依据作答。它仍不直接验证写入日志、版本迁移、物理删除、删除传播或错误记忆的回滚路径。",
+            "trace": "论文对 temporal reasoning、knowledge updates 和 abstention 的任务说明；缺失的是实现层生命周期协议。"
+          },
+          {
+            "answer": "它观察系统在给定历史与查询下能否取回并使用相关信息，最终以回答或判断结果计分。论文的 indexing/retrieval/reading 分解帮助我们分析路径，但黑盒结果仍不能单独证明触发条件、排序、上下文注入位置或模型是否绕过 Memory 直接利用了其他输入。",
+            "trace": "论文摘要和评测协议对三阶段设计与任务输出的描述；内部调用链未被结果分数固定。"
+          },
+          {
+            "answer": "权限、同意、来源追溯、审计、投毒、物理删除、成本和延迟不是 LongMemEval 的主要测量维度。因此它是长期 Memory 结果能力的切片，不能作为完整系统验收；要回答 Q6，需要额外的安全、隐私和治理测试。",
+            "trace": "论文任务和指标范围；这里明确记录未评估项，而不是把“没有测”解释成“系统没有”。"
+          }
+        ],
+        "canonicalUrl": "https://arxiv.org/abs/2410.10813",
+        "coverage": [
+          "content",
+          "lifecycle",
+          "exposure"
+        ],
+        "profile": {
+          "kind": "长期交互 Memory benchmark",
+          "authors": "Di Wu, Hongwei Wang, Wenhao Yu, Yuwei Zhang, Kai-Wei Chang, Dong Yu",
+          "venue": "ICLR 2025；arXiv v1 2024-10-14、v2 2025-03-04",
+          "artifact": "论文声明公开 benchmark 与代码；本教程没有运行评测或复现得分"
+        },
+        "evaluation": {
+          "abilities": "information extraction、multi-session reasoning、temporal reasoning、knowledge updates、abstention 五类能力",
+          "taskProtocol": "500 个问题嵌入可扩展的 user-assistant 长期对话历史；系统根据历史和查询回答或选择 abstain",
+          "metrics": "论文报告问答/准确率结果，并讨论 indexing、retrieval、reading 三阶段；本教程不把论文分数转成跨系统排名",
+          "designMapping": "主要关联 Q1 内容、Q4 生命周期、Q5 暴露与使用；Q2 载体、Q3 共享拓扑、Q6 治理不由该 benchmark 直接测量",
+          "limitations": "任务结果依赖模型、历史长度、任务子集、检索预算、回答/评审协议和实现；分数不能反推出内部存储、权限或删除语义"
+        }
+      },
+      {
+        "id": "membench",
+        "title": "MemBench",
+        "date": "2025",
+        "summary": "研究 Memory 更新、检索和交互任务的 benchmark。",
+        "why": "可用于观察内容和生命周期结果如何被测量。",
+        "boundary": "公开材料仍需拆分具体指标与 baseline。",
+        "status": "pending",
+        "sources": [
+          "membench"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://arxiv.org/abs/2506.21605",
+        "coverage": [
+          "content",
+          "lifecycle",
+          "exposure"
+        ]
+      },
+      {
+        "id": "locomo",
+        "title": "LoCoMo",
+        "date": "2024",
+        "summary": "长程对话记忆评测，关注多会话、多跳和时间相关问答。",
+        "why": "它是长期对话记忆评测的早期代表，可与 LongMemEval 对照。",
+        "boundary": "主要观察问答结果，治理与载体未被完整覆盖。",
+        "status": "pending",
+        "sources": [
+          "locomo"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "",
+        "canonicalUrl": "https://arxiv.org/abs/2402.17753",
+        "coverage": [
+          "content",
+          "lifecycle",
+          "exposure"
+        ]
+      }
+    ],
+    "culture": [
+      {
+        "id": "severance",
+        "title": "Severance",
+        "date": "2022",
+        "summary": "影视作品以记忆隔离设定讨论同一主体在不同工作/生活空间的记忆边界。",
+        "why": "它帮助读者思考范围、主体和隔离拓扑。",
+        "boundary": "此条目暂作文化线索，正式页面需补权威作品来源和剧情范围。",
+        "status": "pending",
+        "sources": [
+          "severance"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "真实作品条目；页面只作类比/思想实验，不作为 Research、工程或评测证据。",
+        "canonicalUrl": "https://www.apple.com/tv-pr/originals/severance/"
+      },
+      {
+        "id": "the-entire-history-of-you",
+        "title": "The Entire History of You",
+        "date": "2011",
+        "summary": "Black Mirror 单集设定可回放全部人生影像，放大记忆可见性与隐私冲突。",
+        "why": "它把无限可回放、审计和遗忘权变成易理解的思想实验。",
+        "boundary": "BBFC 与 British Comedy Guide 支持作品身份和设定摘要；影视设定不等于真实可行技术或安全结论。",
+        "status": "pending",
+        "sources": [
+          "the-entire-history-of-you",
+          "the-entire-history-of-you-plot"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "真实作品条目；页面只作类比/思想实验，不作为 Research、工程或评测证据。",
+        "canonicalUrl": "https://www.bbfc.co.uk/release/black-mirror-q29sbgvjdglvbjpwwc00mdi0njc",
+        "profile": {
+          "kind": "电视剧集（Black Mirror S1E3，2011）",
+          "creator": "Jesse Armstrong（编剧）；Brian Welsh（导演）",
+          "artifact": "BBFC release record；本页只做文化类比"
+        }
+      },
+      {
+        "id": "the-housekeeper-and-the-professor",
+        "title": "The Housekeeper and the Professor",
+        "date": "2003",
+        "summary": "小说中的数学教授只能保留约 80 分钟的新记忆，依靠便签和关系维持生活。",
+        "why": "它提供“固定上下文 + 外部 Memory + 人际关系”的温和思想实验。",
+        "boundary": "作品设定只作类比；具体书目信息和版权安全引用需继续补。",
+        "status": "pending",
+        "sources": [
+          "the-housekeeper-and-the-professor"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "真实作品条目；页面只作类比/思想实验，不作为 Research、工程或评测证据。",
+        "canonicalUrl": "https://us.macmillan.com/books/9781250375971/thehousekeeperandtheprofessor/"
+      },
+      {
+        "id": "memento",
+        "title": "Memento",
+        "date": "2000",
+        "summary": "电影中的主人公无法稳定形成新的长期记忆，依靠外部笔记、照片和线索继续行动。",
+        "why": "它把“外部记录、上下文限制、信任和篡改”变成直观的思想实验。",
+        "boundary": "虚构设定不证明人类认知机制、模型能力或工程安全性。",
+        "status": "complete",
+        "sources": [
+          "memento"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "真实作品条目；页面只作类比/思想实验，不作为 Research、工程或评测证据。",
+        "selectionEvidence": "作品身份和官方/影片资料入口可定位；此处只作为文化类比。",
+        "limitations": "不提供科学或工程性能证据；剧情设定不能直接转成架构结论。",
+        "next": "human-memory",
+        "questions": [
+          {
+            "answer": "外部笔记、照片和纹身承载事件线索与身份事实。",
+            "trace": "影片设定的剧情梗概；类比问题而非实验事实。"
+          },
+          {
+            "answer": "纸条、照片和纹身是外部载体；它们不是模型内部记忆。",
+            "trace": "作品设定；仅用于说明 substrate 直觉。"
+          },
+          {
+            "answer": "记忆服务于主人公的行动，谁能写入或篡改线索决定了信任范围。",
+            "trace": "剧情冲突；不等于真实权限模型。"
+          },
+          {
+            "answer": "无法形成新长期记忆使遗忘成为持续约束，线索需要被重复维护。",
+            "trace": "故事设定；不外推到人类或 Agent 的生理/算法事实。"
+          },
+          {
+            "answer": "每次行动都依赖何时读取、如何排列和解释外部线索。",
+            "trace": "影片叙事结构；思想实验。"
+          },
+          {
+            "answer": "谁写下记录、谁篡改记录、主人公如何审计来源，构成治理类比。",
+            "trace": "剧情设定；不提供安全结论。"
+          }
+        ],
+        "canonicalUrl": "https://metrofilms.com/film/memento/",
+        "profile": {
+          "kind": "电影（2000）",
+          "creator": "Christopher Nolan（导演/编剧）",
+          "artifact": "BFI film record；本页只做文化类比"
+        }
+      },
+      {
+        "id": "the-memory-police",
+        "title": "The Memory Police",
+        "date": "1994",
+        "summary": "小说描写记忆与物品被系统性抹除、禁谈和遗忘的社会。",
+        "why": "它适合提出删除、治理、集体记忆和权力边界问题。",
+        "boundary": "文学设定不提供工程或政治事实证明。",
+        "status": "pending",
+        "sources": [
+          "the-memory-police"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "真实作品条目；页面只作类比/思想实验，不作为 Research、工程或评测证据。",
+        "canonicalUrl": "https://www.penguinrandomhouse.com/books/252774/the-memory-police-by-yoko-ogawa/"
+      },
+      {
+        "id": "funes-the-memorious",
+        "title": "Funes the Memorious",
+        "date": "1942",
+        "summary": "博尔赫斯短篇小说中的 Funes 几乎无法遗忘，细节的无限保留反而妨碍抽象和概念化。",
+        "why": "它把容量、遗忘、压缩、抽象和优先级这些工程问题变成极端思想实验。",
+        "boundary": "文学设定不等于人类记忆科学结果，也不直接给出 Agent 设计答案。",
+        "status": "complete",
+        "sources": [
+          "funes-the-memorious"
+        ],
+        "checkedAt": "2026-11-11",
+        "realityNote": "真实作品条目；页面只作类比/思想实验，不作为 Research、工程或评测证据。",
+        "selectionEvidence": "Jorge Luis Borges 作品身份和可靠作品介绍入口可定位；页面只做类比。",
+        "limitations": "当前使用二手作品介绍；后续可补充更权威书目资料和版权安全的短摘述。",
+        "next": "human-memory",
+        "questions": [
+          {
+            "answer": "几乎所有细节都被保留，故事由此提出“哪些内容值得成为可复用经验”的问题。",
+            "trace": "作品设定的概述；不是认知实验。"
+          },
+          {
+            "answer": "无限细节是设定层面的表示与容量问题，不等于真实存储能无限扩张。",
+            "trace": "小说设定；用于说明 representation/capacity 张力。"
+          },
+          {
+            "answer": "主体难以把细节压缩成共享概念，提示范围和抽象层级之间的张力。",
+            "trace": "作品主题的类比解释。"
+          },
+          {
+            "answer": "缺少遗忘和压缩会让检索和容量成本持续增长。",
+            "trace": "思想实验推论，不是实测成本。"
+          },
+          {
+            "answer": "如果每个细节都可被暴露，后续调用如何选择相关信息成为核心问题。",
+            "trace": "从设定推导出的教学问题。"
+          },
+          {
+            "answer": "谁决定保留、删除和抽象，类比治理与控制。",
+            "trace": "从设定推导出的教学问题，不是工程规范。"
+          }
+        ],
+        "canonicalUrl": "https://thereader.mitpress.mit.edu/borges-memory-funes-the-memorious/",
+        "profile": {
+          "kind": "短篇小说（1942）",
+          "creator": "Jorge Luis Borges",
+          "artifact": "MIT Press Reader discussion；本页只做文化类比"
+        }
+      }
+    ],
+    "humanMemory": [
+      {
+        "id": "forgetting-and-consolidation",
+        "title": "Forgetting and consolidation",
+        "date": "2025",
+        "status": "pending",
+        "summary": "遗忘、巩固和长期保持的研究背景。",
+        "why": "帮助理解生命周期和更新问题。",
+        "boundary": "背景资料不等于工程策略。",
+        "sources": [
+          "s037",
+          "s040"
+        ],
+        "checkedAt": "2026-11-11"
+      },
+      {
+        "id": "human-memory-systems",
+        "title": "Human memory systems overview",
+        "date": "2004",
+        "status": "pending",
+        "summary": "人类记忆系统、工作记忆、情景/语义/程序性术语的背景入口。",
+        "why": "为教程里的术语提供认知科学背景。",
+        "boundary": "人类认知分类不能直接证明 Agent 架构。",
+        "sources": [
+          "s046"
+        ],
+        "checkedAt": "2026-11-11"
+      }
+    ]
+  },
+  "visualizations": [
+    {
+      "id": "course-path",
+      "title": "课程主路径",
+      "purpose": "展示读者为什么从六问进入概念辨析、Research、工程、Benchmark，再到文化与专题。",
+      "note": "它是学习顺序图，不是对象排名或研究成熟度图。"
+    },
+    {
+      "id": "six-question-coverage",
+      "title": "六问覆盖矩阵",
+      "purpose": "按条目类别展示每个对象是否已完成六问，以及哪些条目仍待补。",
+      "note": "完成度只表示本教程内容状态，不表示对象质量或系统能力。"
+    },
+    {
+      "id": "benchmark-coverage",
+      "title": "Benchmark × 六问覆盖",
+      "purpose": "展示各 Benchmark 测量的是哪些六问相关结果，哪些设计维度尚未测量。",
+      "note": "映射是分析视图；空白表示当前资料未说明或未评估。"
+    },
+    {
+      "id": "evidence-status",
+      "title": "条目证据状态",
+      "purpose": "按 Research、工程、Benchmark、文化分类展示 complete 与待完善数量。",
+      "note": "状态统计不构成排名，也不能代表行业分布。"
+    }
+  ],
+  "selectionPolicy": "按来源可定位性、研究/工程质量、时效性和可复核性精选；条目按公开日期倒序，不做跨类排名。arXiv 条目需结合作者/团队、关注度与后续证据，待核项明确标注。",
+  "researchCandidates": [
+    {
+      "id": "anatomy-agentic-memory",
+      "title": "Anatomy of Agentic Memory",
+      "date": "2026",
+      "summary": "讨论 Agentic Memory 的结构、机制与评测问题。",
+      "why": "它补充研究圈对多种 Memory 结构和操作路径的分析。",
+      "boundary": "当前主要依赖论文和摘要级证据，细目需继续阅读。",
+      "status": "pending",
+      "sources": [
+        "anatomy-agentic-memory"
+      ],
+      "checkedAt": "2026-11-11",
+      "realityNote": "",
+      "canonicalUrl": "https://arxiv.org/abs/2602.19320"
+    },
+    {
+      "id": "graph-agent-memory",
+      "title": "Graph-based Agent Memory",
+      "date": "2026",
+      "summary": "综述图结构在 Agent Memory 中的表示和应用。",
+      "why": "它适合回答关系、时间事实和结构化检索为什么需要单独观察。",
+      "boundary": "图表示不自动等于更好的事实或因果记忆。",
+      "status": "pending",
+      "sources": [
+        "graph-agent-memory"
+      ],
+      "checkedAt": "2026-11-11",
+      "realityNote": "",
+      "canonicalUrl": "https://arxiv.org/abs/2602.05665"
+    },
+    {
+      "id": "memory-autonomous-agents",
+      "title": "Memory for Autonomous LLM Agents",
+      "date": "2026",
+      "summary": "面向自主 LLM Agent 的 Memory 综述。",
+      "why": "它把自主任务、长期交互和 Memory 机制放在同一研究语境中。",
+      "boundary": "当前条目以论文身份和摘要为主，六问展开待补。",
+      "status": "pending",
+      "sources": [
+        "s003:0"
+      ],
+      "checkedAt": "2026-11-11",
+      "realityNote": "",
+      "canonicalUrl": "https://arxiv.org/abs/2603.07670"
+    },
+    {
+      "id": "storage-experience",
+      "title": "From Storage to Experience",
+      "date": "2026",
+      "summary": "从 Storage、Reflection 到 Experience 讨论 LLM Agent Memory 的演化。",
+      "why": "它把“存了什么”与“如何反思并形成可复用经验”区分开来。",
+      "boundary": "ACL Findings 论文；不等于某个工程产品的完整协议。",
+      "status": "pending",
+      "sources": [
+        "storage-experience"
+      ],
+      "checkedAt": "2026-11-11",
+      "realityNote": "",
+      "canonicalUrl": "https://aclanthology.org/2026.findings-acl.2069/",
+      "researchKind": "survey"
+    }
+  ]
+}
