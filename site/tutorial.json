@@ -2942,6 +2942,138 @@
       "url": "https://github.com/YuanchenBei/Mem-Gallery/blob/a93959e1e978a6a7d77798ae92c2ffe41c538c62/benchmark/memengine/evaluate/llm_judge.txt",
       "year": "2026-01-31 · 固定commit；2026-11-12核查",
       "evidence": "固定公开代码/文档；静态检查，高置信于所指代码行为，不声称与七月正式实验完全一致。"
+    },
+    "ac-types-current": {
+      "label": "AgentCore · 原始事件与长期记录",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/memory-types.html",
+      "year": "2026-11-12 · 持续更新文档核查",
+      "evidence": "Memory types：事件读写、元数据、异步extraction/consolidation、IngestData、长期语义检索；官方文档事实，高置信，不代表本教程实测。"
+    },
+    "ac-strategies-current": {
+      "label": "AgentCore · 策略与控制方式",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/memory-strategies.html",
+      "year": "2026-11-12 · 持续更新文档核查",
+      "evidence": "built-in、built-in overrides、self-managed三种管理方式；未配置策略不自动提取长期记忆。高置信。"
+    },
+    "ac-builtins-current": {
+      "label": "AgentCore · 四种内建策略",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/built-in-strategies.html",
+      "year": "2026-11-12 · 持续更新文档核查",
+      "evidence": "semantic/user preference/summary/episodic；不同策略的schema不同，可组合；高置信。"
+    },
+    "ac-episodic-current": {
+      "label": "AgentCore · Episode与Reflection",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/episodic-memory-strategy.html",
+      "year": "2026-11-12 · 持续更新文档核查",
+      "evidence": "Steps/Namespaces/How to retrieve：单session的episode、跨episode的reflection、跨actor隐私提醒、按intent/use case索引；高置信。"
+    },
+    "ac-create-current": {
+      "label": "AgentCore · 创建与保留策略",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/memory-create-a-memory-store.html",
+      "year": "2026-11-12 · 持续更新文档核查",
+      "evidence": "Event retention写入时定期限；Long-term retention可选recordExpiryDurationDays，未配置不失效；服务托管KMS或客户KMS；高置信。"
+    },
+    "ac-namespaces-current": {
+      "label": "AgentCore · Namespace组织",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/specify-long-term-memory-organization.html",
+      "year": "2026-11-12 · 持续更新文档核查",
+      "evidence": "分层路径、actor/session范围、IAM规范化路径、namespace变量缺失时事件写成功但对应策略不提取；高置信。"
+    },
+    "ac-delete-event-current": {
+      "label": "AgentCore · 删除原始事件",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteEvent.html",
+      "year": "2026-11-12 · 持续更新文档核查",
+      "evidence": "DeleteEvent永久删除指定事件，需对应IAM权限；不据此推断派生记录或外部副本级联删除。高置信。"
+    },
+    "ac-delete-record-current": {
+      "label": "AgentCore · 删除记忆记录",
+      "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/APIReference/API_DeleteMemoryRecord.html",
+      "year": "2026-11-12 · 持续更新文档核查",
+      "evidence": "DeleteMemoryRecord永久删除指定record；namespace用于IAM条件授权。高置信。"
+    },
+    "ac-iam-current": {
+      "label": "AgentCore · IAM动作与条件",
+      "url": "https://docs.aws.amazon.com/service-authorization/latest/reference/list_bedrock-agentcore.html",
+      "year": "2026-11-12 · 持续更新文档核查",
+      "evidence": "IAM官方动作表中Create/Get/DeleteEvent、RetrieveMemoryRecords等不同条件键；范围与授权应分别配置。高置信。"
+    },
+    "adk-memory-current": {
+      "label": "ADK · Memory服务概念",
+      "url": "https://github.com/google/adk-docs/blob/47192a63dcf44e0151f5cebd0e628a69e865319c/docs/sessions/memory.md",
+      "year": "2026-11-12 · 核查快照",
+      "evidence": "Memory vs Session、服务使用、写入及读取例子；文档与当前代码分开核实。高置信。"
+    },
+    "adk-session-current": {
+      "label": "ADK · Session与SessionService",
+      "url": "https://github.com/google/adk-docs/blob/47192a63dcf44e0151f5cebd0e628a69e865319c/docs/sessions/session/index.md",
+      "year": "2026-11-12 · 核查快照",
+      "evidence": "Session对话/事件/状态、SessionService职责；高置信。"
+    },
+    "adk-state-current": {
+      "label": "ADK · State范围与注入",
+      "url": "https://github.com/google/adk-docs/blob/47192a63dcf44e0151f5cebd0e628a69e865319c/docs/sessions/state.md",
+      "year": "2026-11-12 · 核查快照",
+      "evidence": "无前缀/user:/app:/temp:范围、持久性依服务、指令模板和事件更新；高置信。"
+    },
+    "adk-base-current": {
+      "label": "ADK · Memory接口",
+      "url": "https://github.com/google/adk-python/blob/59b0dd63c32cc5dbf8475f1e0e555770aabaa6f0/src/google/adk/memory/base_memory_service.py",
+      "year": "2026-11-12 · 核查快照",
+      "evidence": "BaseMemoryService：add_session_to_memory、search_memory；add_events_to_memory/add_memory/delete_memory可选实现，默认抛NotImplementedError。高置信。"
+    },
+    "adk-inmemory-current": {
+      "label": "ADK · 进程内Memory实现",
+      "url": "https://github.com/google/adk-python/blob/59b0dd63c32cc5dbf8475f1e0e555770aabaa6f0/src/google/adk/memory/in_memory_memory_service.py",
+      "year": "2026-11-12 · 核查快照",
+      "evidence": "固定代码：按(app_name,user_id)分区、关键词匹配最多10条、重摄入/删除tombstone、过滤thought；高置信，未运行。"
+    },
+    "adk-load-current": {
+      "label": "ADK · 主动加载工具",
+      "url": "https://github.com/google/adk-python/blob/59b0dd63c32cc5dbf8475f1e0e555770aabaa6f0/src/google/adk/tools/load_memory_tool.py",
+      "year": "2026-11-12 · 核查快照",
+      "evidence": "LoadMemoryTool注册函数并提示模型按query调用；高置信。"
+    },
+    "adk-preload-current": {
+      "label": "ADK · 自动预加载工具",
+      "url": "https://github.com/google/adk-python/blob/59b0dd63c32cc5dbf8475f1e0e555770aabaa6f0/src/google/adk/tools/preload_memory_tool.py",
+      "year": "2026-11-12 · 核查快照",
+      "evidence": "每个llm_request从用户内容提取文本query，搜索失败警告后跳过，结果以临时user content注入；高置信。"
+    },
+    "adk-exports-current": {
+      "label": "ADK · 当前公开Memory后端",
+      "url": "https://github.com/google/adk-python/blob/59b0dd63c32cc5dbf8475f1e0e555770aabaa6f0/src/google/adk/memory/__init__.py",
+      "year": "2026-11-12 · 核查快照",
+      "evidence": "__all__包括InMemory、Sqlite、VertexAiMemoryBank、VertexAiRag；不沿用旧文档只有三种后端的穷尽说法。高置信。"
+    },
+    "oas-sessions-current": {
+      "label": "OpenAI SDK · Sessions指南",
+      "url": "https://github.com/openai/openai-agents-python/blob/64fbde5d02b42ae5f9db668eb0184cdb3fc9d775/docs/sessions/index.md",
+      "year": "2026-11-12 · 核查快照",
+      "evidence": "运行前加载/后保存、SessionSettings、输入callback、后端、与run-level continuation互斥；固定官方仓库文档，高置信。"
+    },
+    "oas-sqlite-current": {
+      "label": "OpenAI SDK · SQLiteSession源码",
+      "url": "https://github.com/openai/openai-agents-python/blob/64fbde5d02b42ae5f9db668eb0184cdb3fc9d775/src/agents/memory/sqlite_session.py",
+      "year": "2026-11-12 · 核查快照",
+      "evidence": "默认db_path=:memory:，文件路径可持久化；按session_id组织items。固定代码高置信，未运行。"
+    },
+    "oas-memory-current": {
+      "label": "OpenAI SDK · 文件经验记忆",
+      "url": "https://github.com/openai/openai-agents-python/blob/64fbde5d02b42ae5f9db668eb0184cdb3fc9d775/docs/sandbox/memory.md",
+      "year": "2026-11-12 · 核查快照",
+      "evidence": "Memory capability两阶段生成、渐进读取、布局、conversation ID、保留目录、live update；高置信。"
+    },
+    "oas-capability-current": {
+      "label": "OpenAI SDK · Memory能力配置",
+      "url": "https://github.com/openai/openai-agents-python/blob/64fbde5d02b42ae5f9db668eb0184cdb3fc9d775/src/agents/sandbox/capabilities/memory.py",
+      "year": "2026-11-12 · 核查快照",
+      "evidence": "read/generate可独立禁用；读取需Shell，live_update需Filesystem；固定代码高置信。"
+    },
+    "oas-encryption-current": {
+      "label": "OpenAI SDK · EncryptedSession",
+      "url": "https://github.com/openai/openai-agents-python/blob/64fbde5d02b42ae5f9db668eb0184cdb3fc9d775/docs/sessions/encrypted_session.md",
+      "year": "2026-11-12 · 核查快照",
+      "evidence": "可选Fernet封装、每session派生key、TTL过期跳过、持久密钥要求；不当默认加密或物理删除保证。高置信。"
     }
   },
   "concepts": [
@@ -3652,16 +3784,72 @@
         "id": "agentcore-memory",
         "title": "Amazon Bedrock AgentCore Memory",
         "date": "公开日期未说明",
-        "summary": "AWS 托管 Agent Memory，文档区分短期和长期策略。",
-        "why": "它展示云服务如何把 Memory 类型、策略和运行配置分开。",
-        "boundary": "云服务行为受区域、版本和权限配置影响。",
-        "status": "pending",
+        "summary": "AWS托管的记忆服务：先保存原始交互，再按策略提取事实、偏好、摘要或任务经历，供后续会话检索。原始事件、长期记录与模型当前上下文分别管理。",
+        "why": "适合学习工程服务如何把写入、后台整理、检索、保留期限和权限分开。它还提供episode到reflection的明确流程，能看到“记下经历”和“归纳经验”之间的差别。",
+        "boundary": "只讨论AgentCore的Memory组件，不分析整个云端Agent运行环境。依据当前官方文档；未创建AWS资源或复测延迟、效果与隔离能力。 AWS页面持续更新，没有固定的发布commit；本页标注的是核查日期。",
+        "status": "complete",
         "sources": [
-          "amazon-bedrock-agentcore-memory"
+          "ac-types-current",
+          "ac-strategies-current",
+          "ac-builtins-current",
+          "ac-episodic-current",
+          "ac-create-current",
+          "ac-namespaces-current",
+          "ac-delete-event-current",
+          "ac-delete-record-current",
+          "ac-iam-current"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
-        "canonicalUrl": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/memory-types.html"
+        "canonicalUrl": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/memory.html",
+        "selectionEvidence": "AWS官方提供开发指南、API与IAM条件表，机制和控制边界可逐项核查。收录依据是托管服务的教学代表性；官方身份不作为效果领先或无故障的证据。",
+        "limitations": "长期提取异步，写入事件成功不等于记录已可检索。策略与namespace配置会改变范围；服务文档不是本教程的安全认证。删除源事件、派生记忆和外部副本需要分别核查。",
+        "next": "benchmarks",
+        "profile": {
+          "kind": "托管Agent记忆服务",
+          "authors": "Amazon Web Services",
+          "venue": "AWS官方开发指南与API",
+          "artifact": "事件存储、长期提取/合并、语义检索、保留与IAM控制",
+          "version": "2026-11-12官方文档快照；页面持续更新"
+        },
+        "questions": [
+          {
+            "answer": "原始事件保留交互内容，例如问题、回答、工具结果与结构化信息。长期记录由策略提炼：semantic记录事实，user preference记录偏好，summary压缩对话，episodic整理任务经历并可跨经历归纳reflection。这四种是内建提取策略，能组合使用，并不要求每条信息只能属于一种。",
+            "why": "这些产物解决不同读取需要：核对某句话要找原事件，快速恢复背景可读摘要，处理相似任务可能需要失败经历及其教训。知道“保留了什么”才能选对检索目标，也能检查提炼过程是否丢掉条件。",
+            "example": "教学例子：售后助手记录“顾客说鞋太窄”的原话，从中提取宽楦偏好；退换货的工具操作可形成episode，多次失败可能归纳出操作提醒。是否真的生成这些记录取决于配置，不能只因保存了聊天就假定全部具备。",
+            "trace": "《AgentCore · 原始事件与长期记录》Short-term/Long-term memory（事实、偏好、摘要的描述）；《AgentCore · 四种内建策略》；《AgentCore · Episode与Reflection》Steps与Strategy output。"
+          },
+          {
+            "answer": "事件与长期record都放在AgentCore Memory资源中，但有不同ID、API与生命周期。长期记录包含策略特定的结构化内容，服务负责检索；episodic输出采用XML结构，包含情境、意图、评估、理由和反思。模型下一次请求中的内容则由应用取回记录后组织，不是云端一存储就自动进入模型权重。",
+            "why": "分清保存层与请求层，能定位常见失败：记录没生成、查询没命中、命中后没传给模型，是三个环节。托管服务隐藏了部分底层实现，不能凭语义检索就补写它未公开的数据库或索引算法。",
+            "example": "教学排查：应用日志显示CreateEvent成功，但回答没利用顾客偏好。先确认长期record是否生成，再查看检索结果与最终prompt；仅查看写入日志无法判定是模型忽略了记忆。",
+            "trace": "《AgentCore · 原始事件与长期记录》事件与record API；《AgentCore · Episode与Reflection》XML output；排查顺序为教程推论。"
+          },
+          {
+            "answer": "actor标识用户或Agent/用户组合，session把一次交互的事件放在一起；长期namespace可细到session，也可跨同一actor的会话。episode始终由单一session产生，reflection可跨多个episode，甚至在策略级namespace下跨actor。范围组织与IAM授权是不同配置，路径名称本身不是访问凭证。",
+            "why": "共享越广，复用机会越多，也越容易把私有背景混入通用经验。因此要同时回答“从哪些经历归纳”和“谁可以取到”。尤其不能把单session的episode限制误套到reflection上。",
+            "example": "教学例子：/actors/alice/下汇总Alice的偏好；如果把reflection放在策略根路径，它可能吸收其他actor的经历。准备做团队经验时，应检查是否含个人信息，并单独设置读取权限。",
+            "trace": "《AgentCore · Namespace组织》granularity与IAM policies；《AgentCore · Episode与Reflection》Namespaces及跨actor提醒；《AgentCore · IAM动作与条件》。"
+          },
+          {
+            "answer": "CreateEvent保存事件；配置策略后，后台异步提取并与既有记录合并，也支持IngestData直接提交提取材料。episode要等系统识别任务片段结束才生成。原事件期限在写入时确定，修改配置只影响之后的事件；长期record可按策略配置TTL，未设置则该策略生成的record不自动过期。DeleteEvent与DeleteMemoryRecord分别删除各自对象。",
+            "why": "写入、可检索、过期与删除的时间点不同，决定系统何时真正“记住”或“忘掉”。异步流程需要检查生成状态；更改保留配置也不能当作把既有事件的期限全部重算。",
+            "example": "教学例子：将原事件保留期改短后，旧事件仍按写入时期限处理。若用户撤回一条偏好，应核查源事件与已提取record，而不能只删除聊天后宣称派生信息也消失；当前引用未提供这种级联保证。",
+            "trace": "《AgentCore · 原始事件与长期记录》asynchronous generation；《AgentCore · Episode与Reflection》completion；《AgentCore · 创建与保留策略》两类retention；两份删除API。"
+          },
+          {
+            "answer": "原始历史可经ListSessions定位会话、ListEvents读取事件、GetEvent查单条；长期记忆可按ID获取、列表查看或用RetrieveMemoryRecords做语义检索。episode主要按intent建立检索线索，reflection按use case。调用方还需选择namespace、查询与组织方式，把结果作为本次Agent输入；服务不替所有Harness决定注入位置。",
+            "why": "原事件适合精确追溯，语义检索适合找相关经验。选错读取对象，可能拿到概括却丢掉关键原话；查得过宽也会引入不相关用户的信息。读取路径必须与当前问题相配。",
+            "example": "教学例子：问“我上次说的鞋码是多少”可查用户偏好并回溯原事件；执行一次部署前可按当前意图找相似episode，再读关联reflection。两种查询都要限制在允许访问的范围，取回后仍应核对是否过时。",
+            "trace": "《AgentCore · 原始事件与长期记录》读取API；《AgentCore · Episode与Reflection》How to best retrieve。注入安排为应用设计责任的推论。"
+          },
+          {
+            "answer": "开发者选择策略、namespace、保留期限和IAM政策；内建策略由服务执行，overrides可改提示，自管理策略由应用掌握处理流程。服务支持托管密钥或客户KMS密钥，但事件metadata不使用客户管理密钥加密，官方提醒不要放敏感内容。namespace还须与IAM条件使用一致的规范化路径。",
+            "why": "LLM决定提炼什么与系统允许谁读写是两种控制。自定义提示不能替代权限检查，官方明确事件metadata不使用客户管理KMS密钥加密，不能从启用该密钥推断此字段也在其覆盖下；理解具体边界比笼统写“支持安全治理”更有用。",
+            "example": "教学检查：把个人详情写入事件内容，而不是为了检索方便塞入metadata；用IAM限制用户namespace。若自定义namespace变量缺失，CreateEvent仍可成功但对应策略不提取，应检查NamespaceResolutionFailure，而非把空检索当无历史。",
+            "trace": "《AgentCore · 策略与控制方式》；《AgentCore · 创建与保留策略》Security；《AgentCore · 原始事件与长期记录》Event metadata；《AgentCore · Namespace组织》变量缺失与规范化；《AgentCore · IAM动作与条件》。"
+          }
+        ]
       },
       {
         "id": "claude-code",
@@ -3815,18 +4003,73 @@
       },
       {
         "id": "google-adk",
-        "title": "Google ADK",
+        "title": "Google ADK · 会话、状态与记忆服务",
         "date": "公开日期未说明",
-        "summary": "Google Agent Development Kit，提供会话和 Memory service 相关能力。",
-        "why": "它补充 Agent framework 端的状态和长期 Memory 组合。",
-        "boundary": "框架能力与具体部署配置需要分开。",
-        "status": "pending",
+        "summary": "ADK分别管理当前会话、结构化状态和可检索的跨会话记忆。MemoryService是接口，实际持久化、检索和删除能力由接入的后端决定。",
+        "why": "适合把“框架提供接口”与“某个服务实现机制”区分开。同一个Agent可以同时使用会话历史、用户状态和检索结果，它们的范围与寿命并不相同。",
+        "boundary": "以Python版本为准；不把Python源码外推到其他语言SDK。Google Memory Bank另有独立条目，本页只解释ADK如何接入与使用。未运行云端实验。",
+        "status": "complete",
         "sources": [
-          "google-adk"
+          "adk-memory-current",
+          "adk-session-current",
+          "adk-state-current",
+          "adk-base-current",
+          "adk-inmemory-current",
+          "adk-load-current",
+          "adk-preload-current",
+          "adk-exports-current"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
-        "canonicalUrl": "https://github.com/google/adk-python"
+        "canonicalUrl": "https://google.github.io/adk-docs/sessions/memory/",
+        "selectionEvidence": "Google官方文档与Python源码公开，可追踪状态前缀、Memory接口及两个读取工具的不同路径。收录重在框架层教学价值，不以品牌替代对具体后端的验证。",
+        "limitations": "服务接口不保证每个后端都有相同增量写入、直接写入、删除或安全能力。InMemory实现只适合开发测试；scope参数与状态前缀不能代替身份认证。",
+        "next": "benchmarks",
+        "profile": {
+          "kind": "Agent框架中的状态与Memory接口",
+          "authors": "Google ADK团队与开源贡献者",
+          "venue": "官方文档与adk-python仓库",
+          "artifact": "SessionService、State、MemoryService、load/preload工具",
+          "version": "Python 59b0dd63c32cc5dbf8475f1e0e555770aabaa6f0；文档47192a63dcf44e0151f5cebd0e628a69e865319c；2026-11-12核查"
+        },
+        "questions": [
+          {
+            "answer": "Session保留当前对话的事件与状态；state存放任务进度、偏好或标记等键值；MemoryService提供从以往会话检索信息的接口。进程内实现保存事件副本并按关键词找文本，不会因调用add_session_to_memory就自动把它们归纳成事实库；换成Memory Bank等后端才可能采用另一套提炼机制。",
+            "why": "这能解释为什么同样写着“Memory”，一个例子只是重用旧消息，另一个却会抽出偏好。框架把入口统一，不意味着所有后端都使用相同的认知分类或整理算法。",
+            "example": "教学例子：订票助手把当前步骤写在booking_step，把偏好写在user:seat，把上次对话交给MemoryService。下次知道靠窗座位可能来自状态模板，也可能来自检索结果，应该明确是哪条路径。",
+            "trace": "《ADK · Memory服务概念》Memory vs Session；《ADK · State范围与注入》What is state；《ADK · 进程内Memory实现》add_session_to_memory/search_memory。"
+          },
+          {
+            "answer": "state是可序列化键值，事件由SessionService管理；跨会话记忆由独立MemoryService承载。InMemoryMemoryService把事件放在进程内字典，重启后不保留。当前Python公开导出还包括SqliteMemoryService、VertexAiMemoryBankService和VertexAiRagMemoryService；选择后端时要另查其保存位置与运行要求。",
+            "why": "“跨会话”说明查询范围，不等于“跨进程持久”。在同一进程中两个session可共用内存，但进程退出就失去它；也不能因为SessionService持久，就推断另一个InMemory MemoryService同时持久。",
+            "example": "教学检查：使用数据库SessionService加InMemoryMemoryService时，重启后原对话或许仍在数据库，检索库却空了。应选择持久Memory后端或明确重建流程，而不是把对话没丢当作全部记忆都保存成功。",
+            "trace": "《ADK · State范围与注入》Persistence；《ADK · Session与SessionService》服务实现；《ADK · 进程内Memory实现》类与字典；《ADK · 当前公开Memory后端》__all__。"
+          },
+          {
+            "answer": "状态无前缀时属于当前session；user:在同一app的同一用户多session间共享；app:跨该app的用户共享；temp:只在一次invocation内有效，可覆盖其中多次模型与子Agent调用。Memory查询显式使用app_name、user_id；进程内实现按这对值隔开用户，再存不同session的事件。",
+            "why": "范围由标识与服务实现共同决定，不是自然语言里写“私有”就能完成。尤其app:有跨用户含义，temp:也不等同于一次LLM调用，理解这点才能避免误共享和意外丢失。",
+            "example": "教学例子：主题颜色可写user:theme；全站模板可写app:template；用户的银行卡信息不能因为多Agent共用就放app:。这些前缀提供组织规则，应用仍须验证传入user_id确实属于当前用户。",
+            "trace": "《ADK · State范围与注入》Organizing State with Prefixes、Sub-Agents and Invocation Context；《ADK · Memory接口》search_memory；《ADK · 进程内Memory实现》_session_events键。"
+          },
+          {
+            "answer": "应用调用add_session_to_memory摄入会话；接口还提供可选的增量事件写入、直接记忆写入和按ID删除，但默认可抛NotImplementedError，须看实现。当前InMemory支持增量去重；整会话重摄入会处理rewind。删除已存事件时保留tombstone，避免随后摄入同一ID重新出现。state则随事件更新，其持久性依SessionService。",
+            "why": "写入何时发生、重试是否重复、撤回后会不会再摄入，决定记忆是否与真实历史一致。接口中出现delete_memory并不能证明所有后端都已实现，更不能证明原Session也被删除。",
+            "example": "教学例子：某事件ID为e7，InMemory检索库删除它后再次摄入同一会话，tombstone可阻止e7重入；但原Session或导出中仍可能有这段话。这说明去掉检索副本与全面数据撤回是不同操作。",
+            "trace": "《ADK · Memory接口》可选方法默认实现；《ADK · 进程内Memory实现》add_session_to_memory/add_events_to_memory/delete_memory；《ADK · State范围与注入》更新机制。"
+          },
+          {
+            "answer": "load_memory是模型主动使用的查询工具；preload_memory在每个llm_request前自动运行，用本次用户内容的文本查询记忆。固定源码把预加载结果作为临时user内容加入请求，只取文本；空查询或无结果跳过，搜索异常记录warning后继续。另一路径是把state变量用{key}模板填入Agent指令。",
+            "why": "保存同一条信息，可通过工具返回、预加载上下文或指令模板进入模型，触发时机与消息角色不同。区分这些入口才能判断“不记得”是未调用工具、预加载失败，还是状态根本未被引用。",
+            "example": "教学例子：用户问“我上次选的数据库是什么”。load_memory需要模型发查询；preload会尝试用当前问题检索。InMemory按匹配词排序最多返回10条，换一种说法可能检索不到；这不能直接归因为模型没有长期记忆能力。",
+            "trace": "《ADK · 主动加载工具》LoadMemoryTool；《ADK · 自动预加载工具》process_llm_request及_insert_transient_user_content；《ADK · 进程内Memory实现》_MAX_SEARCH_RESULTS/search_memory；《ADK · State范围与注入》模板。"
+          },
+          {
+            "answer": "开发者选择后端、写入时机、用户标识、工具和指令模板；模型只在被提供load_memory时决定是否主动检索。InMemory不返回thought部分，预加载失败会降级为空上下文，但这些局部行为不构成完整隐私或可靠性保证。认证、存储权限、敏感内容过滤和删除核查需要应用与所选后端共同实现。",
+            "why": "可用性降级与事实状态要分开：一次查询失败后继续回答，并不证明历史为空。类似地，不返回thought不代表所有用户内容都已脱敏；应追踪具体数据路径而非靠框架名称判断安全。",
+            "example": "教学验收：模拟检索服务不可用，确认日志有warning且产品能区分“暂时取不到”和“没有记录”；再用另一用户身份验证不能任意替换user_id读取他人数据。这里是从接口责任推出的建议，未声称本教程已执行此安全测试。",
+            "trace": "《ADK · Memory接口》app_name/user_id；《ADK · 自动预加载工具》异常处理；《ADK · 进程内Memory实现》visible_parts；《ADK · 主动加载工具》。安全验收为部署推论。"
+          }
+        ]
       },
       {
         "id": "google-memory-bank",
@@ -4239,18 +4482,70 @@
       },
       {
         "id": "openai-agents-sdk",
-        "title": "OpenAI Agents SDK",
+        "title": "OpenAI Agents SDK · 会话与经验记忆",
         "date": "公开日期未说明",
-        "summary": "OpenAI Agents SDK 的 Session/运行状态与上下文集成。",
-        "why": "它展示调用历史如何进入后续 Agent run。",
-        "boundary": "本条目只收录公开 Session/Memory 文档证据，不推断隐藏实现。",
-        "status": "pending",
+        "summary": "SDK的Session自动保存与重放对话；SandboxAgent的Memory能力则把先前任务提炼为文件经验。两者可以配合，但保存内容、触发时机和复用范围不同。",
+        "why": "适合学习“续接对话”和“提炼经验”为什么需要不同机制，也能具体看到完整历史、输入裁剪、分层读取与持久化之间的关系。",
+        "boundary": "分析官方Python openai-agents SDK固定源码。Sandbox只作为文件经验机制的运行载体，不将其扩展为Harness全栈介绍；新Agents API是另一产品，不混入本条结论。",
+        "status": "complete",
         "sources": [
-          "openai-agents-sdk"
+          "oas-sessions-current",
+          "oas-sqlite-current",
+          "oas-memory-current",
+          "oas-capability-current",
+          "oas-encryption-current"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
-        "canonicalUrl": "https://github.com/openai/openai-agents-python"
+        "canonicalUrl": "https://github.com/openai/openai-agents-python/blob/64fbde5d02b42ae5f9db668eb0184cdb3fc9d775/docs/sessions/index.md",
+        "selectionEvidence": "官方文档和源码可逐项核对Session协议与Memory文件流程，并有多轮和多Agent布局示例。收录依据是两类机制的清晰区别，没有引用未经复测的性能优势。",
+        "limitations": "选择Session后端和保存路径影响持久性；Memory依赖保留整个文件目录或snapshot。生成摘要可能遗漏或过时，功能开关不是OS访问隔离；本教程未调用模型、重跑示例或测试成本收益。",
+        "next": "benchmarks",
+        "profile": {
+          "kind": "SDK的会话历史与跨运行经验能力",
+          "authors": "OpenAI Agents SDK维护团队与贡献者",
+          "venue": "官方openai-agents-python仓库",
+          "artifact": "Session后端、输入控制、Memory文件与两阶段整理",
+          "version": "64fbde5d02b42ae5f9db668eb0184cdb3fc9d775（2026-11-11）；2026-11-12核查"
+        },
+        "questions": [
+          {
+            "answer": "Session记录对话items，包括用户输入、回答、工具调用及结果，便于延续当前讨论。Memory()则从已完成工作中提炼用户反馈、偏好、有效步骤与教训，存成summary、索引和rollout摘要。前者保存发生过什么，后者选择哪些信息值得后续任务复用；并非启用Session就自动得到后者。",
+            "why": "原始历史保留细节，但可能很长；提炼经验更短，却引入选择与概括误差。先区分两者，才能解释一个Agent为何记得上轮问题，却不一定把上次失败变成长期策略。",
+            "example": "官方Session例子先问金门大桥在哪座城市，再问它属于哪个州，展示指代续接。教学延伸：把一次修bug时用户纠正的测试命令提炼到文件，才属于Memory经验复用；两种机制的成功标准不同。",
+            "trace": "《OpenAI SDK · Sessions指南》Quick start/Core session behavior；《OpenAI SDK · 文件经验记忆》开篇与Generate memory。"
+          },
+          {
+            "answer": "Session可采用SQLite、Redis、SQLAlchemy、服务端Conversation等不同后端。SQLiteSession只传session_id时默认使用:memory:，要跨进程保存需提供文件等持久后端。Memory的文件位于配置的工作目录，包含memory_summary.md、MEMORY.md、原始提取和rollout_summaries；新空sandbox不会自动获得旧目录。",
+            "why": "后端名字和“memory enabled”都不能替代持久化说明。还要问文件或数据库在哪里、进程退出后是否保留、下一次是否装载同一份资料，否则演示中的多轮成功可能被误读成跨重启保证。",
+            "example": "教学例子：SQLiteSession(\"case-1\")在进程内续聊可行；换成有持久文件的同一session后才有跨进程恢复基础。文件经验则需保存并恢复整个memories目录或snapshot，只拷贝一个摘要可能丢失可按需读取的细节。",
+            "trace": "《OpenAI SDK · SQLiteSession源码》__init__默认db_path；《OpenAI SDK · Sessions指南》后端表；《OpenAI SDK · 文件经验记忆》Enable memory与workspace layout。"
+          },
+          {
+            "answer": "Session由session_id及实际后端定位会话。文件经验由MemoryLayoutConfig组织，不按Agent名字自动隔离：同布局、同记忆conversation ID会累积到同一对话，布局之间可共享或分开整理资料。conversation ID依次取run-level conversation_id、SDK session.session_id、group_id，否则每run生成；但同一run不能同时使用SDK Session与run-level continuation。",
+            "why": "“同一个Agent”不一定是记忆范围，路径与ID才决定实际复用。还需区分对话分组和文件布局：不同对话可在同一布局中被归纳，改Agent名称并不能阻止这种共享。",
+            "example": "教学例子：销售与工程Agent共用工作区时，分别配置memories/gtm、memories/engineering及对应sessions目录，可避免默认混合整理；若都有广泛Shell权限，目录分离本身仍不能证明彼此无法读文件。",
+            "trace": "《OpenAI SDK · 文件经验记忆》Multi-turn conversations、Use different layouts；《OpenAI SDK · Sessions指南》开篇互斥规则。权限结论为布局与执行权限的区分。"
+          },
+          {
+            "answer": "Session在运行前读历史、之后保存新items，提供pop_item和clear_session。文件经验在每次run结束后追加轨迹片段，等sandbox session关闭时处理：第一阶段从累积对话提取摘要与raw memory，省略system/developer/reasoning；过长时保留开头结尾。第二阶段按layout整合成索引与总摘要；原始记忆超过上限时优先保留最近更新的对话。",
+            "why": "续接消息与提炼经验的完成时间不同。模型结束一次回答不代表经验已整理完；截断或淘汰也可能丢掉中间条件。因此复用失败要检查会话是否关闭、目录是否保存与整理是否遗漏。",
+            "example": "教学例子：连续两次Runner.run共用SDK Session和工作区时，生成器可在关闭后从整段交换提炼教训。若第二轮已纠正第一轮的错误，不能只检查第一段摘要；教学推论：两者分开保存，因此清空Session不应被理解为自动清除了另外生成的经验文件。",
+            "trace": "《OpenAI SDK · Sessions指南》Memory operations；《OpenAI SDK · 文件经验记忆》Generate memory、Multi-turn conversations、max_raw_memories_for_consolidation。"
+          },
+          {
+            "answer": "Session默认将取出的历史放在新输入之前；SessionSettings可限制读取量，session_input_callback可裁剪或重排本轮视图，这不重写旧存储。文件经验采用渐进读取：开始时把memory_summary.md注入developer prompt，相关时再用Shell查MEMORY.md，必要时打开rollout摘要。存储内容与当次暴露内容因此不同。",
+            "why": "直接重放适合对话连贯，先给摘要再按需查细节适合控制上下文用量。减少输入不等于删除记忆；反过来，保存再多经验而读取路径没触发，也不会直接帮助这次回答。",
+            "example": "教学例子：callback只保留最近10个items后，旧数据库仍有更早消息。文件摘要提示某类构建问题曾处理过，Agent再查对应rollout而非一次注入所有日志；找到后还应验证命令适合当前环境。",
+            "trace": "《OpenAI SDK · Sessions指南》Control how history and new input merge、Limiting retrieved history；《OpenAI SDK · 文件经验记忆》Read memory。"
+          },
+          {
+            "answer": "开发者控制后端、输入裁剪、read/generate开关和布局。Memory读取要求Shell，默认live_update还要求Filesystem；generate=None只关闭后台生成，不自动关闭运行中的文件更新。可选EncryptedSession对Session内容加密并按TTL跳过过期items，但不是默认启用；“跳过”描述读取行为，不能据此推出底层密文已物理擦除。文档还明确更换encryption_key不会重加密旧记录，旧数据仍需要原密钥；文件经验还需独立检查权限、清理和传输。",
+            "why": "控制生成、控制读取与限制写权限是不同操作。仅把配置叫“只读”可能误导：Agent仍有文件工具时，功能开关不能代替文件系统授权。同样，加密了Session不代表另存的摘要也得到相同保护。",
+            "example": "教学检查：需要经验只读的运行可同时停用generation和live_update，再验证实际文件权限；需要撤回内容则核查Session、原轨迹、提取摘要与snapshot副本。此处是由多份副本推出的验收建议，没有声称SDK自动完成级联删除。",
+            "trace": "《OpenAI SDK · 文件经验记忆》Enable/Read memory；《OpenAI SDK · Memory能力配置》required_capability_types；《OpenAI SDK · EncryptedSession》TTL和密钥说明。"
+          }
+        ]
       },
       {
         "id": "openclaw",
