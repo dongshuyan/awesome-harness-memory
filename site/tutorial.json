@@ -2488,6 +2488,139 @@
       "year": "2026-01-13 · v1",
       "evidence": "核查§3构造、§4.1实验/指标、§5.4工具候选、附录A至C。TA/EM/TSA口径及12/13轮存在未解释处；匿名代码入口2026-11-12返回401，未读评分实现。",
       "checkedAt": "2026-11-12"
+    },
+    "reflexion-final": {
+      "label": "Reflexion · NeurIPS 2023正式论文",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1b44b878bb782e6954cd888628510e90-Paper-Conference.pdf",
+      "year": "NeurIPS 2023正式版",
+      "evidence": "§3框架与记忆、§4.1/4.3实验协议、§5局限、§6影响；正式版作者列表与arXiv不同，以所读版本为准。",
+      "checkedAt": "2026-11-12"
+    },
+    "reflexion-venue": {
+      "label": "Reflexion · 正式发表记录",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html",
+      "year": "2023 · NeurIPS",
+      "evidence": "正式标题、五名作者、会议归属；论文结果为作者报告，未重跑。",
+      "checkedAt": "2026-11-12"
+    },
+    "reflexion-meta": {
+      "label": "Reflexion · arXiv版本记录",
+      "url": "https://arxiv.org/abs/2303.11366",
+      "year": "v1 2023-03-20；v4 2023-10-10",
+      "evidence": "用于首发时间，不把arXiv作者名单混入正式会议版。",
+      "checkedAt": "2026-11-12"
+    },
+    "reflexion-hotpot": {
+      "label": "Reflexion · HotPotQA记忆与提示词",
+      "url": "https://github.com/noahshinn/reflexion/blob/218cf0ef1df84b05ce379dd4a8e47f17766733a0/hotpotqa_runs/agents.py",
+      "year": "固定提交 218cf0ef · 2025-01-14后期快照",
+      "evidence": "reflect/reset/_build_agent_prompt：旧轨迹、反思列表和后续prompt；静态观察，不推广到所有任务实现。",
+      "checkedAt": "2026-11-12"
+    },
+    "reflexion-alf": {
+      "label": "Reflexion · ALFWorld反思写入",
+      "url": "https://github.com/noahshinn/reflexion/blob/218cf0ef1df84b05ce379dd4a8e47f17766733a0/alfworld_runs/generate_reflections.py",
+      "year": "固定提交 218cf0ef · 2025-01-14后期快照",
+      "evidence": "update_memory按env保存失败反思，给反思模型最近三条；不等于从持久列表物理删除旧记录。",
+      "checkedAt": "2026-11-12"
+    },
+    "hindsight-retain-current": {
+      "label": "Hindsight · 写入与提取",
+      "url": "https://github.com/vectorize-io/hindsight/blob/7cec128b8fdb0a696366d888e63be71fe1d52338/hindsight-docs/docs/developer/retain.md",
+      "year": "固定提交 7cec128b · 2026-11-11",
+      "evidence": "world/experience、时间、提取模式、异步observations、Memory Defense响应边界。官方文档核查，未部署实测。",
+      "checkedAt": "2026-11-12"
+    },
+    "hindsight-observations-current": {
+      "label": "Hindsight · 经验整合",
+      "url": "https://github.com/vectorize-io/hindsight/blob/7cec128b8fdb0a696366d888e63be71fe1d52338/hindsight-docs/docs/developer/observations.mdx",
+      "year": "固定提交 7cec128b · 2026-11-11",
+      "evidence": "默认后台整合、证据引用、矛盾修订、关闭自动整合的配置。官方文档核查，未部署实测。",
+      "checkedAt": "2026-11-12"
+    },
+    "hindsight-recall-current": {
+      "label": "Hindsight · 检索API",
+      "url": "https://github.com/vectorize-io/hindsight/blob/7cec128b8fdb0a696366d888e63be71fe1d52338/hindsight-docs/docs/developer/api/recall.mdx",
+      "year": "固定提交 7cec128b · 2026-11-11",
+      "evidence": "四路检索、类型、token预算、过滤；结果不等于模型已读到。官方文档核查，未部署实测。",
+      "checkedAt": "2026-11-12"
+    },
+    "hindsight-reflect-current": {
+      "label": "Hindsight · 证据推理",
+      "url": "https://github.com/vectorize-io/hindsight/blob/7cec128b8fdb0a696366d888e63be71fe1d52338/hindsight-docs/docs/developer/reflect.mdx",
+      "year": "固定提交 7cec128b · 2026-11-11",
+      "evidence": "分层检索、可选decision-model并行路径、引用、mission与directives。官方文档核查，未部署实测。",
+      "checkedAt": "2026-11-12"
+    },
+    "hindsight-banks-current": {
+      "label": "Hindsight · Bank与声明范围",
+      "url": "https://github.com/vectorize-io/hindsight/blob/7cec128b8fdb0a696366d888e63be71fe1d52338/hindsight-docs/docs/developer/api/memory-banks.mdx",
+      "year": "固定提交 7cec128b · 2026-11-11",
+      "evidence": "bank的数据归属、alias和directives；逻辑隔离不作为授权保证。官方文档核查，未部署实测。",
+      "checkedAt": "2026-11-12"
+    },
+    "hindsight-config-current": {
+      "label": "Hindsight · 数据库配置",
+      "url": "https://github.com/vectorize-io/hindsight/blob/7cec128b8fdb0a696366d888e63be71fe1d52338/hindsight-docs/docs/developer/configuration.mdx",
+      "year": "固定提交 7cec128b · 2026-11-11",
+      "evidence": "PostgreSQL默认、pg0和Oracle选项；访问快照对应固定提交。官方文档核查，未部署实测。",
+      "checkedAt": "2026-11-12"
+    },
+    "hindsight-extensions-current": {
+      "label": "Hindsight · 身份与租户扩展",
+      "url": "https://github.com/vectorize-io/hindsight/blob/7cec128b8fdb0a696366d888e63be71fe1d52338/hindsight-docs/docs/developer/extensions.md",
+      "year": "固定提交 7cec128b · 2026-11-11",
+      "evidence": "TenantExtension、ApiKeyTenantExtension同public schema、外部多租户扩展与operation hooks。官方文档核查，未部署实测。",
+      "checkedAt": "2026-11-12"
+    },
+    "hindsight-documents-current": {
+      "label": "Hindsight · 文档更新与删除",
+      "url": "https://github.com/vectorize-io/hindsight/blob/7cec128b8fdb0a696366d888e63be71fe1d52338/hindsight-docs/docs/developer/api/documents.mdx",
+      "year": "固定提交 7cec128b · 2026-11-11",
+      "evidence": "同document_id更新、删除、操作历史及其覆盖限制。官方文档核查，未部署实测。",
+      "checkedAt": "2026-11-12"
+    },
+    "memora-final": {
+      "label": "Memora · Findings of ACL 2026正式论文",
+      "url": "https://aclanthology.org/2026.findings-acl.1337.pdf",
+      "year": "2026-07 · Findings of ACL",
+      "evidence": "§3构造、Table2规模、§4协议/FAMA、Limitations；正式论文及结果为作者证据，非本教程复现。",
+      "checkedAt": "2026-11-12"
+    },
+    "memora-venue": {
+      "label": "Memora · 正式发表记录",
+      "url": "https://aclanthology.org/2026.findings-acl.1337/",
+      "year": "2026-07 · DOI 10.18653/v1/2026.findings-acl.1337",
+      "evidence": "正式题名、五名作者、Findings而非ACL主会；26814–26841。",
+      "checkedAt": "2026-11-12"
+    },
+    "memora-meta": {
+      "label": "Memora · arXiv首发",
+      "url": "https://arxiv.org/abs/2604.20006",
+      "year": "2026-04-21 · v1",
+      "evidence": "首发日期与版本记录；机制以正式版为主。",
+      "checkedAt": "2026-11-12"
+    },
+    "memora-data-current": {
+      "label": "Memora · 发布数据格式",
+      "url": "https://github.com/geniesinc/Memora/blob/a6493188efc836d6511ed5e4163fe3ba87da30ff/data/README.md",
+      "year": "固定提交 a6493188 · 2026-06-03",
+      "evidence": "persona、period、session、题目与presence/absence判据格式。",
+      "checkedAt": "2026-11-12"
+    },
+    "memora-scoring-current": {
+      "label": "Memora · FAMA与裁判实现",
+      "url": "https://github.com/geniesinc/Memora/blob/a6493188efc836d6511ed5e4163fe3ba87da30ff/evals/model_eval/model_based_evaluator.py",
+      "year": "固定提交 a6493188 · 2026-06-03",
+      "evidence": "fama_score和多裁判投票逻辑；不声称运行了上游模型。",
+      "checkedAt": "2026-11-12"
+    },
+    "memora-eval-current": {
+      "label": "Memora · 两类评测协议",
+      "url": "https://github.com/geniesinc/Memora/blob/a6493188efc836d6511ed5e4163fe3ba87da30ff/evals/README.md",
+      "year": "固定提交 a6493188 · 2026-06-03",
+      "evidence": "LLM全历史与Agent增量摄入、按task/period聚合FAMA。",
+      "checkedAt": "2026-11-12"
     }
   },
   "concepts": [
@@ -2825,18 +2958,70 @@
       {
         "id": "reflexion",
         "title": "Reflexion",
-        "date": "2023",
-        "summary": "通过语言反思把失败经验写入可复用的 verbal memory。",
-        "why": "它清楚展示经验记忆如何通过反馈改变后续尝试。",
-        "boundary": "论文方法聚焦任务反馈和语言反思，不覆盖完整权限/删除治理。",
-        "status": "pending",
+        "date": "2023-03-20 · 预印本首发；2023 · NeurIPS",
+        "summary": "把一次失败的轨迹和反馈转成自然语言改进建议，保留下来指导同一任务的下一次尝试。改变的是模型收到的经验上下文，论文方法不更新模型权重。",
+        "why": "它让“从错误中学习”成为可以逐步检查的过程：失败信号如何变成经验、经验如何保留、下一次动作是否利用它。适合与Voyager的可执行技能记忆对照阅读。",
+        "boundary": "采用NeurIPS 2023正式论文与固定作者代码。论文中的长期记忆主要跨同一任务的多次尝试，不应直接等同跨用户、跨任意任务的长期知识库；本教程未重跑实验。",
+        "status": "complete",
         "sources": [
-          "reflexion"
+          "reflexion-venue",
+          "reflexion-meta",
+          "reflexion-final",
+          "reflexion-hotpot",
+          "reflexion-alf"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
-        "canonicalUrl": "https://arxiv.org/abs/2303.11366",
-        "researchKind": "method"
+        "canonicalUrl": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html",
+        "researchKind": "method",
+        "selectionEvidence": "NeurIPS 2023正式发表，作者来自Northeastern、MIT和Princeton；公开框架、实验与任务代码。收录依据是可追溯的语言反馈学习机制和消融，而不是把历史基准成绩当作当前产品排名。",
+        "limitations": "效果依赖评价信号是否可靠，以及模型能否正确解释失败。有限反思窗口会丢失较早经验，也可能在错误解释上反复打转。论文§5将向量/SQL扩展列为未来方向；不能据此说本方法已经实现了通用检索数据库。",
+        "next": "engineering",
+        "profile": {
+          "kind": "用语言反馈改进后续尝试的Agent研究",
+          "authors": "正式版：Noah Shinn、Federico Cassano、Ashwin Gopinath、Karthik Narasimhan、Shunyu Yao",
+          "venue": "NeurIPS 2023",
+          "artifact": "正式论文、作者仓库与任务级代码",
+          "version": "正式会议版；作者仓库218cf0ef1df84b05ce379dd4a8e47f17766733a0；2026-11-12静态核查；代码为2025-01-14后期快照，不视为2023论文实验配置"
+        },
+        "questions": [
+          {
+            "answer": "短期内容是本次尝试的动作、观察和结果；跨尝试保留的是Self-Reflection模型生成的文字经验，描述哪里出错、下一次应怎样改变。Evaluator提供成功/失败、分数或反馈，反思模型把它转成可执行的建议。作者称这部分为episodic memory；它不是自动确认正确的世界事实，也不是训练进权重的技能。",
+            "why": "只有“失败了”很难指导下一次行为。保留具体原因和替代策略，才能让失败信息在环境重置后继续发挥作用；同时必须警惕模型把猜测的失败原因写成确定结论。",
+            "example": "教学例子，依据§4.1报告的常见错误：Agent以为已拿到物品，实际没有，却继续执行后续步骤。反思可写成“拿取后先核对观察，再移动或加工”，比记录“任务失败”更能指导下一次。",
+            "trace": "《Reflexion · NeurIPS 2023正式论文》§3 Actor/Evaluator/Self-reflection/Memory，§4.1 Analysis。例句为教程改写，不是作者原始轨迹。"
+          },
+          {
+            "answer": "记忆是模型外部的文本缓冲区，通过后续prompt重新进入模型。论文用有容量上限的滑动窗口，通常保留1至3条经验；各任务实现不同。HotPotQA代码把反思放在reflections列表和格式化字符串中，reset清空本次scratchpad而不一并清空反思。这里不需要向量库，也没有参数微调。 该HotPotQA快照的反思追加与格式化路径未见窗口截断；论文的容量设置不能自动套到这个后期实现。",
+            "why": "“长期”描述经验跨越尝试的作用范围，不必意味着复杂数据库。分开文本载体、窗口容量和注入方式，能看清最小版本是怎样运行的，也能辨认加数据库属于后续扩展。",
+            "example": "教学示意：第一次的轨迹很长，下一轮prompt只携带一条反思和新的scratchpad。程序重启后是否还能找回它，取决于运行脚本是否保存/恢复状态；不能仅凭Python列表就断言可跨进程持久化。",
+            "trace": "《Reflexion · NeurIPS 2023正式论文》§3 Memory与容量Ω、§5；《Reflexion · HotPotQA记忆与提示词》reflect、reset、_build_agent_prompt。"
+          },
+          {
+            "answer": "核心组织单位是正在重试的任务或环境实例。ALFWorld代码把memory放在各自env配置里，并只为尚未成功、未跳过的环境生成反思；提示明确要求为同一个任务提出下一次计划。这能跨多次尝试积累线索，但不自动建立跨用户共享或跨任意任务的经验检索。",
+            "why": "如果把某个房间的搜索经验用到另一个布局，原来有帮助的线索可能误导行动。先确定记忆属于哪道题或哪个环境，才能判断复用范围和何时应重置。",
+            "example": "教学例子：在环境A发现某容器已搜索无果，下一轮可改查别处；新环境B的同名容器未必相同。论文机制支持前者，后者需要额外的迁移判断，不能把“跨尝试”写成“跨任务已验证通用”。",
+            "trace": "《Reflexion · ALFWorld反思写入》_generate_reflection_query与update_memory；《Reflexion · NeurIPS 2023正式论文》§3、§4.1。权限与多租户不在该实验范围。"
+          },
+          {
+            "answer": "流程是执行一次任务、得到评价、生成反思、追加到经验记忆，再以这些经验开始下一次尝试。论文限制可见经验数量；ALFWorld代码的列表仍会追加旧记录，只把最近三条交给本次反思。因此“窗口里看不到”与“存储中已删除”不同，结束条件和保留数量也应按具体实验确认。",
+            "why": "写入时机决定存的是已验证结果还是对失败的解释。容量限制节省上下文，却可能让早期重要教训消失；重试带来的提升还伴随额外模型与环境调用。",
+            "example": "教学时间线：搜索失败 → 得到失败反馈 → 反思指出漏查抽屉 → 环境重置 → 携带教训重新搜索。编程实验最多保留一条经验，不应直接套用ALFWorld的三条窗口。",
+            "trace": "《Reflexion · NeurIPS 2023正式论文》§3、§4.1、§4.3；《Reflexion · ALFWorld反思写入》env_configs[i][memory]追加与[-3:]切片。"
+          },
+          {
+            "answer": "Actor把反思文本与任务、本轮轨迹等一起读入prompt，再生成下一步动作或代码。HotPotQA的_build_agent_prompt明确填入reflections和scratchpad；没有一条独立的“检索后必定采纳”保证。论文的编程版本先用自生成测试反馈多轮修正，再报告基准测试结果，不能把报告的pass@1理解为只调用模型一次。",
+            "why": "记忆只改变可见上下文，实际行为仍由模型生成。将“读到建议”与“执行了建议”分开，才能解释为什么写入成功仍可能没有改善结果；比较成绩时也要比较重试预算。",
+            "example": "教学检查：两次生成使用相同题目，第二次增加“空输入应返回空列表”的反思，再观察生成的边界处理是否改变。仅检查prompt能证明建议被暴露，正确性还需独立测试。",
+            "trace": "《Reflexion · HotPotQA记忆与提示词》_build_agent_prompt；《Reflexion · NeurIPS 2023正式论文》§4.3自生成测试和学习循环、Table1。示例不是复现实验。"
+          },
+          {
+            "answer": "研究者选择评价器、反思提示、重试预算和记忆窗口；模型提出具体反思。真实环境反馈、自生成测试和LLM评价的可靠性不同，错误反馈可能诱导错误记忆。论文讨论局部最优、测试困难和潜在滥用，但没有给出完整的用户授权、敏感信息删除或恶意记忆防护系统。",
+            "why": "有一个Evaluator不等于有人确认了经验正确，更不等于权限已经受控。行为质量、工具安全和记忆内容的治理需要分别验证，尤其当经验会跨多次调用重复出现时。",
+            "example": "教学反例：自生成测试漏掉负数输入，Agent可能把错误程序视为成功并停止改进。加入独立边界测试能发现这类问题，但这是部署建议；原论文不提供对任意代码或真实工具的安全保证。",
+            "trace": "《Reflexion · NeurIPS 2023正式论文》§4.3错误测试分析、§5 Limitations、§6 Broader impact。控制边界与反例为基于机制的教程分析。"
+          }
+        ]
       },
       {
         "id": "memgpt",
@@ -3255,16 +3440,71 @@
         "id": "hindsight",
         "title": "Hindsight",
         "date": "公开日期未说明",
-        "summary": "独立 Memory 系统，强调 retain、recall、reflect 等操作。",
-        "why": "它把记忆写入、检索和反思作为一套可调用 API。",
-        "boundary": "论文/仓库与当前服务行为需分别核对。",
-        "status": "pending",
+        "summary": "提供retain、recall、reflect三种接口：把输入整理为记忆，按查询取回证据，再按需由服务内的模型综合回答。当前版本还区分原始事实、后台整合的observations和保存的mental models。",
+        "why": "它适合学习独立Memory服务如何把存储、整合、检索和基于证据的推理分开，也能显示“记忆类型”与“记忆操作”不能混为同一套分类。",
+        "boundary": "以vectorize-io/hindsight固定提交的当前文档为准，不将旧论文类别、Cloud功能和开源部署混写。数据库/权限行为是官方文档陈述，本轮未启动服务或复现宣传成绩。",
+        "status": "complete",
         "sources": [
-          "hindsight"
+          "hindsight-retain-current",
+          "hindsight-observations-current",
+          "hindsight-recall-current",
+          "hindsight-reflect-current",
+          "hindsight-banks-current",
+          "hindsight-config-current",
+          "hindsight-extensions-current",
+          "hindsight-documents-current"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
-        "canonicalUrl": "https://github.com/vectorize-io/hindsight"
+        "canonicalUrl": "https://github.com/vectorize-io/hindsight",
+        "selectionEvidence": "Vectorize官方仓库提供可固定版本的接口、配置和运行文档，能追踪完整写入至读取链。收录基于机制与可审计资料，不采用README的“最佳效果”或生产客户宣传作为独立质量证明。",
+        "limitations": "事实提取、实体合并和反思仍可能出错；observations后台处理有延迟。bank和tags只是组织/过滤手段，实际权限取决于认证与租户配置；直接删除一份文档也不证明备份和所有外部副本都已擦除。",
+        "next": "benchmarks",
+        "profile": {
+          "kind": "独立记忆服务与开源实现",
+          "authors": "Vectorize · vectorize-io/hindsight维护团队",
+          "venue": "官方GitHub仓库及对应开发文档；首次公开日期未在本轮核实",
+          "artifact": "retain/recall/reflect API、数据库与租户扩展配置",
+          "version": "7cec128b8fdb0a696366d888e63be71fe1d52338；2026-11-12核查固定文档"
+        },
+        "questions": [
+          {
+            "answer": "默认提取路径区分world与experience：前者是外部人物、事件和事实，后者是该bank所属Agent自己的行动/观察。后台observations将多个事实综合成带来源的认识；mental models则保存针对常见问题预先整理的反思结果。它们分别处于输入事实、综合认识和可重用答案的位置，并非四个互斥且同层的记忆桶。",
+            "why": "先区分谁经历了事情，再区分原记录和推断结果，才能知道一句话是直接证据还是系统归纳。自动归纳有用，但不能因带有引用就把推断当作原始事实。",
+            "example": "官方Retain例子：用户说“我买了一辆Tesla”，属于world，因为讲的是用户；Agent自己的日志说“我修复了认证错误”，才属于experience。教学延伸：多次提到喜欢Python可形成偏好observation，仍应能追到支持它的记录。",
+            "trace": "《Hindsight · 写入与提取》Two Types of Facts；《Hindsight · 经验整合》What Are Observations；《Hindsight · 证据推理》Hierarchical Retrieval Strategy。"
+          },
+          {
+            "answer": "记忆保存在模型外部数据库。当前配置默认PostgreSQL，支持嵌入式pg0，也提供Oracle后端选项。配置文档分别说明原始文档文本、块文本与提取记忆的存储控制。默认concise会提取事实；verbatim保留块文本并抽元数据，chunks直接保存块而不调用提取模型，所以不能一概说Hindsight不存原文。 HINDSIGHT_API_STORE_DOCUMENT_TEXT=false可关闭原文持久保存；实际保留内容须结合配置判断。",
+            "why": "文本内容、实体/时间结构、向量或全文检索是不同层次。同一段资料可以保留原文又产生提取事实；选择提取模式会影响可追溯细节、调用成本和搜索对象。",
+            "example": "教学例子：合同中的精确编号不能只靠自由摘要保留。可以考虑保留原始块并检查相关元数据；这只是模式选择建议，不能由“verbatim”这个名称推定系统已通过合同准确性测试。",
+            "trace": "《Hindsight · 数据库配置》Database；《Hindsight · 写入与提取》extraction modes、无事实文档仍保存的说明；《Hindsight · Bank与声明范围》存储对象。"
+          },
+          {
+            "answer": "bank是应用选择的记忆容器，内部有自己的文档、实体、关系与配置；可以按用户、项目或Agent组织，但bank_id本身不替你判断授权。tags可进一步限制recall/reflect范围。租户扩展负责验证请求并选择数据库schema，是不同于bank/tag的隔离层。",
+            "why": "“记住Alice的信息”说明内容主体，“放在项目bank”说明组织方式，“哪个身份能读”才是权限。把这三件事分开，才能避免误以为按用户命名bank就完成了多租户安全。",
+            "example": "教学例子：两个Agent可由应用安排读取同一项目bank；用户私有偏好另放个人bank。即使检索时用了user标签，应用仍要验证调用者能否指定该标签和bank，不能让任意请求自选另一个人的范围。",
+            "trace": "《Hindsight · Bank与声明范围》What is a Memory Bank；《Hindsight · 写入与提取》Tagging；《Hindsight · 身份与租户扩展》TenantExtension。共享安排是应用设计示例。"
+          },
+          {
+            "answer": "retain提取并保存事实后，默认触发后台consolidation，把新证据与已有observations结合；可配置关闭自动处理。重用同document_id可更新来源文档，删除API移除其提取记忆。observations能够记录偏好变化和历史依据，处理完成时间可能晚于retain返回，不能把写入成功等同所有综合认识已同步。",
+            "why": "更新一条事实和更新依赖它的结论是两步。若新偏好已经写入、旧observation尚未重建，读取策略需要识别新旧状态；这解释了为何记忆系统会出现短暂的不一致。",
+            "example": "官方示例是用户从React转向Vue，observation应体现偏好变化，而非继续当作只喜欢React。教学检查：写入后分别查看原事实、整合状态和实际返回证据，再判断更新是否传播；不以一次200响应代替检查。",
+            "trace": "《Hindsight · 经验整合》Automatic Background Processing、Disabling Auto-Consolidation、Handling Contradictory Evidence；《Hindsight · 文档更新与删除》Update与Delete Document。"
+          },
+          {
+            "answer": "recall按语义、关键词BM25、图和时间四路搜索，再融合/重排，按预算返回记忆，调用方决定如何交给自己的Agent。reflect则在服务内收集证据并生成带来源的回答，文档描述优先mental models、再observations和原事实的Agent路径；配置decision model时可改为多层并行检索。两者都不是把全库永久放进模型上下文。",
+            "why": "需要自行控制推理时，取回证据与生成最终答案应分开；希望服务综合已有认识时可调用reflect。若不区分返回内容，应用可能把一段已归纳的回答误当作未经加工的原始记录。",
+            "example": "教学例子：问“有哪些关于Alice的记录”可先recall并检查出处；问“基于这些经历，哪些任务适合她”可用reflect综合。但推荐是模型推断，引用记录只支持推断的前提，不保证结论正确。",
+            "trace": "《Hindsight · 检索API》开头、types、budget/max_tokens；《Hindsight · 证据推理》Agentic Loop、Decision-Model Orchestration及What You Get。"
+          },
+          {
+            "answer": "开发者设定提取/整合/反思mission、工具调用接口、租户认证和操作验证扩展。directives约束reflect的回答行为，与数据库访问授权不同。内置ApiKeyTenantExtension验证密钥后共用public schema；若要独立租户schema，须配置相应扩展。文档还描述可选Memory Defense，但启用检测不等于对所有注入攻击有保证。",
+            "why": "记忆的内容控制、服务认证和用户隔离分别解决不同问题。一个模型遵守了“不要泄露”的文字指令，仍不足以证明其底层检索从未读到不应访问的数据。",
+            "example": "教学部署检查：用两个身份交叉请求对方bank，检查拒绝发生在读取前；再检查被删除文档、整合结论与备份范围。以上是建议验收，不是本教程已做的安全实测；不要把默认API key方案当成每用户独立隔离。",
+            "trace": "《Hindsight · 身份与租户扩展》TenantExtension/OperationValidatorExtension；《Hindsight · 证据推理》Directives；《Hindsight · 写入与提取》Memory Defense。"
+          }
+        ]
       },
       {
         "id": "langgraph",
@@ -3690,23 +3930,83 @@
       },
       {
         "id": "memora",
-        "title": "Memora",
-        "date": "2026",
-        "summary": "长期 Memory 机制与评测工作。",
-        "why": "它提供较新的长期记忆任务样本。",
-        "boundary": "论文与代码版本待进一步核实。",
-        "status": "pending",
+        "title": "Memora · From Recall to Forgetting",
+        "date": "2026-04-21 · 预印本首发；2026-07 · Findings of ACL",
+        "summary": "用持续变化的个人偏好、活动和目标构造长时段对话，检查系统是否既能使用当前有效记忆，又能避免引用已更新或撤回的信息。评测任务包括记忆、推理和推荐。",
+        "why": "它把“记住了什么”与“是否还在用失效记忆”放在同一次评分里，适合学习生命周期与行为结果之间的关系，也提醒读者不要把回答层面的遗忘等同存储擦除。",
+        "boundary": "正式发表于Findings of ACL 2026。数据是模拟对话而非真实用户长期跟踪；FAMA是回答层指标，不能证明数据库删除、权限隔离或生产延迟。未运行参评系统和裁判模型。",
+        "status": "complete",
         "sources": [
-          "memora"
+          "memora-venue",
+          "memora-meta",
+          "memora-final",
+          "memora-data-current",
+          "memora-scoring-current",
+          "memora-eval-current"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
-        "canonicalUrl": "https://arxiv.org/abs/2604.20006",
+        "canonicalUrl": "https://aclanthology.org/2026.findings-acl.1337/",
         "coverage": [
           "content",
           "lifecycle",
           "exposure"
-        ]
+        ],
+        "selectionEvidence": "有正式ACL Anthology论文、公开数据格式和可核查评分代码，作者来自Arizona State、Genies和University of Arizona。收录依据是明确的记忆更新/撤回协议及判据，不以团队声誉代替实验适用性检查。",
+        "limitations": "十种职业persona与三类记忆不能代表所有用户和任务；未覆盖多用户协作和更丰富的社会关系。LLM裁判可能共享偏差。论文不报告运行时间、延迟或效率；长上下文和记忆Agent的底模/推理条件不同，不能把整张表当作存储架构的单变量实验。",
+        "next": "culture",
+        "profile": {
+          "kind": "面向个性化Agent的长期记忆与遗忘评测",
+          "authors": "Md Nayem Uddin、Kumar Shubham、Eduardo Blanco、Chitta Baral、Gengyu Wang",
+          "venue": "Findings of the Association for Computational Linguistics: ACL 2026",
+          "artifact": "正式论文、模拟多会话数据、两种评测轨道和FAMA实现",
+          "version": "正式版2026-07；仓库a6493188efc836d6511ed5e4163fe3ba87da30ff；2026-11-12核查"
+        },
+        "questions": [
+          {
+            "answer": "基准主要覆盖个人偏好、活动和长期目标。任务分别要求记住有效事实、跨记录推理以及按当前偏好推荐；遗忘判据主要见于记忆和推荐题；数据说明指出多数推理题只有有效信息判据，此时λ=0、FAMA退化为MPA。所谓“该忘记的内容”既包括明确撤回，也包括已被新值替代的内容，它是判分对象，不要求被测系统采用同名记忆类别。",
+            "why": "只奖励提及正确事实，会放过把新旧信息一起输出的答案。增加失效信息判据，才能识别“知道新答案但仍沿用旧状态”的错误。",
+            "example": "教学例子，依据论文的偏好变化情境：用户过去喜欢某导演，后来表示厌倦。推荐时既要利用当前喜好，也不能把旧偏好继续当作当前理由；这比背出用户曾经喜欢谁多了时间有效性要求。",
+            "trace": "《Memora · Findings of ACL 2026正式论文》§3.1、§3.5、§4.2；例子为偏好漂移机制的教学改写。 《Memora · 发布数据格式》Reasoning-task caveat。"
+          },
+          {
+            "answer": "发布数据以JSON表示会话、persona、日期和操作信息；题目另有有效记忆依据、遗忘依据及逐条评分条件。模拟器的结构化状态用于构造标准答案和核验对话，被测Agent的内部存储可自行选择。LLM轨道使用历史上下文，Agent轨道使用自己的记忆模块，不能从数据格式反推出参评系统一定用JSON存储。",
+            "why": "基准的标准状态帮助评测方知道什么信息有效，系统内部表示则是实验自变量之一。若把用于评分的隐藏依据也交给被测模型，会把检索和更新难题提前替它解决。",
+            "example": "发布格式示例询问本周待办事项，同时附带memory_evidence和forgetting_evidence供审计。教学检查：给系统会话与问题，保留判据供裁判；不要把“已删除待办列表”作为额外答案提示混入普通实验。",
+            "trace": "《Memora · 发布数据格式》Session/Evaluation file；《Memora · Findings of ACL 2026正式论文》§3.2、§3.5；审计与输入分离为教程复现建议。"
+          },
+          {
+            "answer": "资料按persona和weekly/monthly/quarterly组织，同一组十种persona在不同时间跨度下有不同长度历史。基准关注单个用户的跨会话积累，没有把多租户越权或多Agent协作作为独立任务。日期用于判断记忆在提问时是否有效，不代表系统可以访问所有persona的历史。",
+            "why": "用户归属与时间范围共同决定一条记忆是否适用。答出了正确数字，如果来自另一用户或未来会话，仍不能说明系统具备合格的记忆能力；评测输入必须保持分组和时间边界。",
+            "example": "教学例子：软件工程师persona的待办和研究者persona的待办分别摄入，按各自提问日期回答。测试实现应防止缓存跨persona串用；本基准没有提供由跨租户攻击构成的专门分数。",
+            "trace": "《Memora · 发布数据格式》Layout与persona清单；《Memora · Findings of ACL 2026正式论文》Table2、Limitations。串用检查是部署/评测建议。"
+          },
+          {
+            "answer": "模拟器逐会话加入、更新或删除记忆，并保存变化前后的状态；对话生成把这些操作转成自然语言。还混入不改变记忆的普通交流。题目要求跨较远会话综合，按当前状态保留有效内容、排除失效内容。所谓weekly/monthly/quarterly是模拟时间跨度，不是实地跟踪用户数月的证据。",
+            "why": "生命周期困难来自多次修订和信息分散：不能只把最后一句视为全部记忆，也不能让最早写入的偏好永久有效。显式状态轨迹让这类错误可以被定位，而不只是看一个总正确率。",
+            "example": "教学序列：周一设定目标，周三修改目标值，周五撤回其中一项。周末回答应合并仍有效的部分，并排除撤回项。这个序列由本教程构造，用来说明add/update/delete如何共同影响答案。",
+            "trace": "《Memora · Findings of ACL 2026正式论文》§3.2至§3.5；《Memora · 发布数据格式》operation与date。"
+          },
+          {
+            "answer": "两条评测轨道通过不同路径把历史暴露给模型：LLM轨道直接提供对话历史并比较是否开启推理；Agent轨道按时间逐步摄入对话，在提问时检索后生成答案。论文对Agent答案生成采用共同GPT-4o-mini后端，但LLM轨道使用其他模型。因此应分别分析摄入、检索、生成条件，不能把跨轨道差异全部归因于存储。 LLM轨道提示词明确要求只用更新后的信息；已知模型的默认上下文构造路径取有效模型额度与200,000 token的较小值，生成前还会复查硬上限；超限会丢弃较早会话。因此较高的遗忘分也可能受提示或未看到旧信息影响，不能直接当作原生记忆维护的证据。",
+            "why": "同一最终回答可能因为没取到证据、取到了旧值，或生成时忽略了更新而出错。历史进入模型的路径决定怎样定位问题；一个FAMA数值不能单独告诉我们是哪一步失败。",
+            "example": "教学诊断：系统漏掉某项有效待办时，先查它是否已摄入，再看检索结果是否包含它，最后看生成是否遗漏。论文评分观察最终回答；要证实具体故障环节，需额外保留系统调用与检索日志。",
+            "trace": "《Memora · Findings of ACL 2026正式论文》§4.1；《Memora · 两类评测协议》Track1/Track2。诊断步骤是教程分析，未声称原基准记录了全部中间状态。 《Memora · FAMA与裁判实现》build_conversation_context、系统提示第6条。"
+          },
+          {
+            "answer": "评测方控制模拟状态、对话校验和题目判据。正式论文说明生成对话需三位LLM校验者一致通过，并抽取每个persona的5%对话人工核验；评分阶段则对每条二元判据采用三位LLM裁判多数票，这两个环节不要混淆。基准通过答案是否排除旧信息检验行为遗忘，未验证存储层擦除或用户授权。 固定代码允许部分裁判初始化或调用失败后用剩余有效结果评分；复跑时应检查num_valid_judges，不能仅凭配置就宣称所有题都经过三裁判多数票。",
+            "why": "数据质量控制支持题目可信度，不能自动推导参评系统的安全性。三模型多数票也可能共享判断偏差，需要保留分歧、失败和人类抽检结果。",
+            "example": "教学反例：系统把敏感旧信息藏在数据库中，只是不在这次回答提及，仍可能获得较高遗忘分；这不证明删除完成。若测试删除，应另外检查索引、派生摘要、备份和撤回后的探测请求。",
+            "trace": "《Memora · Findings of ACL 2026正式论文》§3.3、§4.2、Limitations；《Memora · FAMA与裁判实现》的多数票与失败结果处理。删除建议不是原基准已覆盖能力。"
+          }
+        ],
+        "evaluation": {
+          "abilities": "Remembering检查当前有效信息是否被记住；Reasoning检查跨会话信息整合；Recommending检查当前偏好是否影响建议。更新与撤回横跨三类任务，不是单独的存储擦除测验。",
+          "taskProtocol": "十种模拟persona，按周/月/季度生成含普通交流和add/update/delete的会话；Table2分别给150、150、300道题，总计600题。LLM轨道直接读取历史；Agent轨道增量摄入并检索，按任务和时间跨度报告结果。数据构造校验与答案评分采用不同投票规则。",
+          "metrics": "每题MPA是有效信息判据通过比例，FAA是失效信息排除判据通过比例，λ=Nforget/(Npresence+Nforget)。FAMA=max(0, MPA−λ×(1−FAA))；按任务和时段求题目平均后乘100，聚合写法依据公开代码与evals/README；论文正文表述为求和后归一化。无遗忘判据时λ=0、FAMA=MPA。教学算例：4项有效信息满足3项、2项应排除旧信息只排除1项，则MPA=0.75、FAA=0.5、λ=1/3，FAMA约0.583；这是公式演示，不是论文实测成绩。",
+          "designMapping": "Q1对应偏好/活动/目标，Q4对应增删改和有效期，Q5对应历史暴露与答案使用；Q2是被测实现的表示选择，Q3规定persona/时段却不测试越权，Q6包含数据质量控制与行为遗忘但不证明物理删除。这是协议关联，不能解释为六个独立性能分。",
+          "limitations": "开放回答依赖LLM裁判，分数受判据和任务组合影响；没有效率/延迟指标。建议同时看MPA、FAA、各任务与时段的FAMA，避免只看合并分数而掩盖“会记不会忘”或“过度遗漏”。该建议不宣称已构建新的完整Benchmark。"
+        }
       },
       {
         "id": "memoryagentbench",
