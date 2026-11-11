@@ -2621,6 +2621,132 @@
       "year": "固定提交 a6493188 · 2026-06-03",
       "evidence": "LLM全历史与Agent增量摄入、按task/period聚合FAMA。",
       "checkedAt": "2026-11-12"
+    },
+    "memorybank-v3": {
+      "label": "MemoryBank · 可读作者版本",
+      "url": "https://arxiv.org/html/2305.10250v3",
+      "year": "2023-05-21 · v3",
+      "evidence": "§2存储/检索/遗忘，§3与SiliconFriend的区别，§4实验。AAAI正文直达不可读，因此机制依据此预印本，不假称逐字核过正式版。",
+      "checkedAt": "2026-11-12"
+    },
+    "memorybank-pub": {
+      "label": "MemoryBank · 出版元数据",
+      "url": "https://api.crossref.org/works/10.1609/aaai.v38i17.29946",
+      "year": "2024-03-24 · AAAI 38(17)",
+      "evidence": "Crossref登记题名、作者与出版信息；只支持身份，不支持正文机制。",
+      "checkedAt": "2026-11-12"
+    },
+    "memorybank-dates": {
+      "label": "MemoryBank · 版本记录",
+      "url": "https://arxiv.org/abs/2305.10250",
+      "year": "v1 2023-05-17；v3 2023-05-21",
+      "evidence": "首发与版本日期。",
+      "checkedAt": "2026-11-12"
+    },
+    "memorybank-forget-code": {
+      "label": "MemoryBank · 遗忘实现",
+      "url": "https://github.com/zhongwanjun/MemoryBank-SiliconFriend/blob/cf61c4196e4cfdb0f2b7a0316249fa40312dc3a9/memory_bank/memory_retrieval/forget_memory.py",
+      "year": "cf61c4196e4cfdb0f2b7a0316249fa40312dc3a9 · 2023-05-24",
+      "evidence": "forgetting_curve与initial_load_forget_and_save；固定代码公式与论文存在差异。",
+      "checkedAt": "2026-11-12"
+    },
+    "memorybank-index-code": {
+      "label": "MemoryBank · 索引实现",
+      "url": "https://github.com/zhongwanjun/MemoryBank-SiliconFriend/blob/cf61c4196e4cfdb0f2b7a0316249fa40312dc3a9/memory_bank/build_memory_index.py",
+      "year": "cf61c4196e4cfdb0f2b7a0316249fa40312dc3a9 · 2023-05-24",
+      "evidence": "按用户构建记忆索引，FAISS与不同模型路径。",
+      "checkedAt": "2026-11-12"
+    },
+    "memorybank-summary-code": {
+      "label": "MemoryBank · 摘要与画像实现",
+      "url": "https://github.com/zhongwanjun/MemoryBank-SiliconFriend/blob/cf61c4196e4cfdb0f2b7a0316249fa40312dc3a9/memory_bank/summarize_memory.py",
+      "year": "cf61c4196e4cfdb0f2b7a0316249fa40312dc3a9 · 2023-05-24",
+      "evidence": "每日summary/personality与overall_history/overall_personality；画像是模型推断。",
+      "checkedAt": "2026-11-12"
+    },
+    "memorybank-prompt-code": {
+      "label": "MemoryBank · 提示词拼接",
+      "url": "https://github.com/zhongwanjun/MemoryBank-SiliconFriend/blob/cf61c4196e4cfdb0f2b7a0316249fa40312dc3a9/utils/prompt_utils.py",
+      "year": "cf61c4196e4cfdb0f2b7a0316249fa40312dc3a9 · 2023-05-24",
+      "evidence": "检索内容、人物描述、当前聊天进入生成提示词。",
+      "checkedAt": "2026-11-12"
+    },
+    "openclaw-memory-current": {
+      "label": "OpenClaw · 记忆总览",
+      "url": "https://github.com/openclaw/openclaw/blob/e24d94b81111dbdd78327538c339d58a1b8058d4/docs/concepts/memory.md",
+      "year": "e24d94b81111dbdd78327538c339d58a1b8058d4 · 2026-11-11",
+      "evidence": "文件职责、/new与/reset的特殊加载、预压缩flush及权限条件。",
+      "checkedAt": "2026-11-12"
+    },
+    "openclaw-architecture-current": {
+      "label": "OpenClaw · 记忆架构",
+      "url": "https://github.com/openclaw/openclaw/blob/e24d94b81111dbdd78327538c339d58a1b8058d4/docs/concepts/memory-architecture.md",
+      "year": "e24d94b81111dbdd78327538c339d58a1b8058d4 · 2026-11-11",
+      "evidence": "分层、来源分类、整合、召回路径和项目范围。",
+      "checkedAt": "2026-11-12"
+    },
+    "openclaw-provenance-current": {
+      "label": "OpenClaw · 来源与删除",
+      "url": "https://github.com/openclaw/openclaw/blob/e24d94b81111dbdd78327538c339d58a1b8058d4/docs/concepts/memory-provenance.md",
+      "year": "e24d94b81111dbdd78327538c339d58a1b8058d4 · 2026-11-11",
+      "evidence": "来源资格、admission、memory forget与未覆盖副本边界。",
+      "checkedAt": "2026-11-12"
+    },
+    "openclaw-search-current": {
+      "label": "OpenClaw · 召回接口",
+      "url": "https://github.com/openclaw/openclaw/blob/e24d94b81111dbdd78327538c339d58a1b8058d4/docs/concepts/memory-search.md",
+      "year": "e24d94b81111dbdd78327538c339d58a1b8058d4 · 2026-11-11",
+      "evidence": "memory_search/memory_get、触发召回、Active Memory。",
+      "checkedAt": "2026-11-12"
+    },
+    "openclaw-builtin-current": {
+      "label": "OpenClaw · 默认存储后端",
+      "url": "https://github.com/openclaw/openclaw/blob/e24d94b81111dbdd78327538c339d58a1b8058d4/docs/concepts/memory-builtin.md",
+      "year": "e24d94b81111dbdd78327538c339d58a1b8058d4 · 2026-11-11",
+      "evidence": "SQLite/PostgreSQL、向量/关键词检索与provider:none。",
+      "checkedAt": "2026-11-12"
+    },
+    "timl-final-current": {
+      "label": "TimlMemBench · 正式论文",
+      "url": "https://aclanthology.org/2026.findings-emnlp.507.pdf",
+      "year": "2026 · Findings of EMNLP",
+      "evidence": "§3/4数据与治理义务，§5协议，Table1/4/5，§8与Limitations；作者结果未复现。",
+      "checkedAt": "2026-11-12"
+    },
+    "timl-venue-current": {
+      "label": "TimlMemBench · 正式发表记录",
+      "url": "https://aclanthology.org/2026.findings-emnlp.507/",
+      "year": "2026 · Findings of EMNLP",
+      "evidence": "正式标题、作者、发表渠道；不是EMNLP主会。",
+      "checkedAt": "2026-11-12"
+    },
+    "timl-protocol-current": {
+      "label": "TimlMemBench · 评测协议",
+      "url": "https://github.com/lyirs/TimlMemBench/blob/447b195344a2feaf995176446379e60632831f94/docs/evaluation.md",
+      "year": "447b195344a2feaf995176446379e60632831f94 · 2026-08-31",
+      "evidence": "两轨输入边界、九指标、归因限制、无aggregate榜单。",
+      "checkedAt": "2026-11-12"
+    },
+    "timl-card-current": {
+      "label": "TimlMemBench · 数据卡",
+      "url": "https://github.com/lyirs/TimlMemBench/blob/447b195344a2feaf995176446379e60632831f94/docs/data_card.md",
+      "year": "447b195344a2feaf995176446379e60632831f94 · 2026-08-31",
+      "evidence": "208样本/1566会话/1715题/1821案例，独立中英创作及合成边界。",
+      "checkedAt": "2026-11-12"
+    },
+    "timl-schema-current": {
+      "label": "TimlMemBench · 数据结构",
+      "url": "https://github.com/lyirs/TimlMemBench/blob/447b195344a2feaf995176446379e60632831f94/docs/schema.md",
+      "year": "447b195344a2feaf995176446379e60632831f94 · 2026-08-31",
+      "evidence": "raw sessions、memory events、state ledgers与问答/治理案例字段。",
+      "checkedAt": "2026-11-12"
+    },
+    "timl-scorer-current": {
+      "label": "TimlMemBench · 评分实现",
+      "url": "https://github.com/lyirs/TimlMemBench/blob/447b195344a2feaf995176446379e60632831f94/code/score_baseline_predictions.py",
+      "year": "447b195344a2feaf995176446379e60632831f94 · 2026-08-31",
+      "evidence": "语义judge提示词与offline lexical模式；模式不能混作原论文实验。",
+      "checkedAt": "2026-11-12"
     }
   },
   "concepts": [
@@ -3159,18 +3285,71 @@
       {
         "id": "memorybank",
         "title": "MemoryBank",
-        "date": "2024",
+        "date": "2023-05-17 · 预印本首发；2024 · AAAI",
         "researchKind": "method",
-        "summary": "把对话记录、事件摘要和用户信息组织成可检索的长期记忆，并探索衰减与强化。",
-        "why": "它是较早把个性化、选择性保留和时间变化放进 Agent Memory 方法的代表性工作。",
-        "boundary": "AAAI 2024 发表记录和作者仓库可定位；本教程未复现实验，完整六问待补。",
-        "status": "pending",
+        "summary": "把持续对话、事件摘要和用户画像保存在模型外，检索相关内容辅助后续回答；另用简化遗忘曲线探索记忆随时间衰减、随回忆增强的过程。",
+        "why": "它把个性化记忆的原始记录、摘要、画像和遗忘机制放进一个可检查的系统，适合学习“保留哪些信息”与“何时继续保留”的联系。",
+        "boundary": "出版身份由AAAI DOI元数据核实；机制读取arXiv v3与固定作者代码。论文遗忘公式与代码表达式不一致，下面分别解释。未复现实验，心理陪伴展示不构成临床有效性证据。",
+        "status": "complete",
         "sources": [
-          "memorybank:1",
-          "memorybank:2"
+          "memorybank-v3",
+          "memorybank-pub",
+          "memorybank-dates",
+          "memorybank-forget-code",
+          "memorybank-index-code",
+          "memorybank-summary-code",
+          "memorybank-prompt-code"
         ],
-        "checkedAt": "2026-11-11",
-        "canonicalUrl": "https://doi.org/10.1609/aaai.v38i17.29946"
+        "checkedAt": "2026-11-12",
+        "canonicalUrl": "https://arxiv.org/html/2305.10250v3",
+        "selectionEvidence": "AAAI正式发表、有作者公开代码和可读方法描述。教程收录它是为了展示早期个性化记忆与遗忘设计；不以年代或会议替代对公式和实验的核查。",
+        "limitations": "画像与摘要都可能误判用户。作者定量设置是15个虚拟用户、10天模拟对话、194个问题，不能代表真实用户的长期使用效果。固定代码的遗忘表达式不应直接当作论文设计的忠实复现；也未提供完整多租户权限或全副本删除证明。",
+        "next": "engineering",
+        "profile": {
+          "kind": "面向长期个性化对话的记忆方法",
+          "authors": "Wanjun Zhong、Lianghong Guo、Qiqi Gao、He Ye、Yanlin Wang",
+          "venue": "AAAI 2024；机制阅读版本为arXiv v3",
+          "artifact": "论文、MemoryBank模块与SiliconFriend示例",
+          "version": "arXiv v3；作者仓库cf61c4196e4cfdb0f2b7a0316249fa40312dc3a9；2026-11-12核查"
+        },
+        "questions": [
+          {
+            "answer": "主要内容是带时间的对话、每日和全局事件摘要、每日和全局用户画像。对话记录保留发生过什么，事件摘要压缩主题和关键信息，画像则推测性格、情绪和合适的回应方式。三者的证据地位不同：用户原话可以作为观察，模型归纳的画像仍是解释。",
+            "why": "个性化回答既需要具体细节，也需要跨多次交流的概括。将两者分开，读者才能判断一段推荐依据来自用户明确陈述，还是模型自己的推断。",
+            "example": "教学例子：用户说“今天演讲前很紧张”是一次事件；把它概括成“用户总是社交焦虑”就过度外推。系统可以保留当天情绪和日期，使用画像时仍应允许用户纠正。",
+            "trace": "《MemoryBank · 可读作者版本》§2.1三个子节；《MemoryBank · 摘要与画像实现》summarize_person_prompt和summarize_memory。例子为教学构造。"
+          },
+          {
+            "answer": "记忆模块在模型外部保存文本与结构化字段，并为对话轮和事件摘要构建向量索引；论文§2.2采用编码器加FAISS进行相关性检索。作者示例存在不同后端路径，不能把某个演示依赖当作方法定义。SiliconFriend另做的心理对话LoRA训练属于基础聊天能力适配，不等于把每个用户的新记忆在线训练进权重。",
+            "why": "存储内容、检索索引和模型参数解决不同问题。分清它们，才能解释为什么可在不重训模型的情况下补入昨天的对话，以及为什么检索模块能配合不同底模。",
+            "example": "教学例子：用户改了工作地点，应更新外部记录及相关摘要/索引；通常无需重新做心理对话微调。能否马上检索新地点还取决于实际更新步骤，不能只看文件已经保存。",
+            "trace": "《MemoryBank · 可读作者版本》§2.2和§3；《MemoryBank · 索引实现》。例子为机制推演。"
+          },
+          {
+            "answer": "论文面向单个用户的持续交流，日期组织历史，画像跨多天合并。固定代码的摘要与部分索引构建函数按name选择用户，但forget_memory.py的加载路径注释了用户过滤，后续search_memory也未见按用户过滤。因此隔离取决于调用方是否提供单用户文件/索引；多用户共用文件时存在混入风险，不能由name参数或字典键推定隔离。",
+            "why": "同一个日期下可能有多个用户的对话；时间组织不能替代主体归属。读取正确用户的数据是个性化的前提，读取权限还需要应用另外约束。",
+            "example": "教学检查：两个用户都说过“我换工作了”，查询Alice时必须只用Alice的历史。即使目录以姓名命名，也应验证调用者不能把name参数改成Bob；这是部署建议，非论文已经完成的隔离测验。",
+            "trace": "《MemoryBank · 可读作者版本》§2.1、§4.2；《MemoryBank · 摘要与画像实现》summarize_memory(name)；《MemoryBank · 索引实现》。 《MemoryBank · 遗忘实现》initial_load_forget_and_save的用户过滤被注释；search_memory未见按用户过滤。"
+          },
+          {
+            "answer": "新对话进入记录后可被摘要、形成画像并参与检索。论文的可选遗忘设计为R=exp(−t/S)：时间t增加会降低保留率，回忆后S加1并重置t，使记忆更耐久。但固定代码写成math.exp(-t / 5*S)，按Python优先级等于exp(−t×S/5)，在相同t下增大S反而降低该值。该代码在加载记忆文件时按随机数删除部分历史并保存，不能把这段实现无条件解释成论文的强化机制。",
+            "why": "这一问决定旧信息是否仍会影响未来。仅描述“用了遗忘曲线”会隐藏公式、随机策略和更新实现的差别；论文意图与可执行表达式必须分别核对。",
+            "example": "公式算例：固定t=5，S由1变2时，论文值约0.0067→0.0821，固定代码约0.3679→0.1353。这里只用标准库计算表达式，未运行上游记忆系统，也未修作者仓库；实际对话效果还取决于回忆时重置t等流程。",
+            "trace": "《MemoryBank · 可读作者版本》§2.3；《MemoryBank · 遗忘实现》forgetting_curve、update_memory_when_searched、initial_load_forget_and_save。算例是本教程可复算检查。"
+          },
+          {
+            "answer": "当前对话被编码成查询，检索器从历史对话/事件摘要中选取相关记忆，再与用户描述、近期聊天和指令一起组成回答提示词。后续调用看到的是选入上下文的文字，向量是查找这些文字的索引。记忆存在库里并不意味着每次都会被取出，也不保证模型一定正确使用。",
+            "why": "把检索与生成拆开，才能解释“记住了却没答对”：可能是没写入、未检索到，或者已经呈现但被生成模型忽略。检索窗口和提示词预算也会决定哪些细节可见。",
+            "example": "教学例子：问“上次让我担心的面试怎么样了”，系统应找相关面试记录和后来结果。只返回用户画像“容易紧张”不能替代事件证据；读者可检查返回片段，再检查回答有没有据此更新。",
+            "trace": "《MemoryBank · 可读作者版本》§2.2、§3 Integration with MemoryBank；《MemoryBank · 提示词拼接》。"
+          },
+          {
+            "answer": "开发者决定摘要提示词、检索参数与是否启用遗忘，模型负责语言归纳。论文将遗忘曲线明确称为探索性简化，不能把它当作人类记忆的完整模型。所检查代码包含记录删除，但没有由此证明摘要、索引、备份和外部服务中的信息全部擦除；也没有证明心理画像必然正确。",
+            "why": "“自然遗忘”“用户要求删除”和“敏感信息不应被使用”是不同要求。一个按时间随机丢弃记录的机制，不能替代确定的删除流程、访问控制或用户纠错。",
+            "example": "教学验收：若用户要求忘掉工作地点，应同时检查原对话、事件摘要、画像、检索索引及后续回答。不能仅等遗忘概率升高，也不能只观察一次回答没有提到它就判断已删除。",
+            "trace": "《MemoryBank · 可读作者版本》§2.3对简化模型的限定；《MemoryBank · 遗忘实现》《MemoryBank · 摘要与画像实现》。完整删除检查是教程建议。"
+          }
+        ]
       }
     ],
     "engineering": [
@@ -3727,16 +3906,68 @@
         "id": "openclaw",
         "title": "OpenClaw",
         "date": "公开日期未说明",
-        "summary": "个人 Agent 系统，官方文档公开 memory search 与文件化记忆路径。",
-        "why": "它是个人助手/长期记忆和 Harness 组合的工程样本。",
-        "boundary": "文档描述不等于所有运行配置或数据安全结论。",
-        "status": "pending",
+        "summary": "默认Memory Core用可检查的文件保存记忆，再通过索引、背景整合与有条件的召回将相关内容带回对话。当前实现还区分用户画像、来源可信度、项目范围和删除谱系，不能只概括成两份Markdown文件。",
+        "why": "它展示了文件记忆如何逐渐需要写入规则、来源记录和召回控制，适合把六问连成一条从对话到后续回答的工程路径。",
+        "boundary": "本页只分析固定提交的Memory Core及其宿主记忆接口。其他记忆插件可自行管理存储，不套用默认文件/索引结论；官方文档的设计目标不视为实测可靠性或安全保证。",
+        "status": "complete",
         "sources": [
-          "openclaw"
+          "openclaw-memory-current",
+          "openclaw-architecture-current",
+          "openclaw-provenance-current",
+          "openclaw-search-current",
+          "openclaw-builtin-current"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
-        "canonicalUrl": "https://docs.openclaw.ai/concepts/memory"
+        "canonicalUrl": "https://docs.openclaw.ai/concepts/memory",
+        "selectionEvidence": "官方仓库公开完整记忆文档、配置和行为边界，可以区分默认实现与扩展契约。收录理由是工程机制可追溯；未以下载量、用户量或官方自述效果作为独立质量证明。",
+        "limitations": "自动抽取和整合可能误判，文件存在不保证内容全部进入上下文。项目标签影响排序/注入而非独立安全隔离；删除可识别派生项也不覆盖所有手工编辑、原始会话和外部副本。当前文档快速演进，本页固定版本，未运行部署或攻击测试。",
+        "next": "benchmarks",
+        "profile": {
+          "kind": "Agent Harness中的默认记忆插件",
+          "authors": "OpenClaw官方开源维护团队",
+          "venue": "官方开源仓库及文档；本轮未核首次公开日期",
+          "artifact": "Memory Core文件、索引、来源与召回接口",
+          "version": "e24d94b81111dbdd78327538c339d58a1b8058d4；2026-11-12静态核查"
+        },
+        "questions": [
+          {
+            "answer": "USER.md保存稳定偏好、沟通风格等用户模型；MEMORY.md保存耐久的非画像事实和决策；memory/日期.md保留日常观察、工作背景和会话摘要；DREAMS.md供人阅读整合记录。架构还描述触发后才使用的standing intents。这些名称按用途、处理阶段和暴露方式划分，并非一套心理学上的互斥记忆分类。",
+            "why": "用户偏好适合简洁且当前有效的表述，事件历史则需要日期和细节。将两者都无限追加到常驻文件会增加上下文负担，也容易让新旧偏好并存。",
+            "example": "官方示例“记住我偏好TypeScript”可形成用户偏好。教学延伸：某项目今天的构建失败先保留在日记，确认可复用的修复办法再整理成长期项目经验，不能把一次故障直接推广到所有项目。",
+            "trace": "《OpenClaw · 记忆总览》How it works / What goes where；《OpenClaw · 记忆架构》The tier model。"
+          },
+          {
+            "answer": "默认Memory Core将可读记忆放在工作区文件，另建检索索引。内置后端默认SQLite，也有满足运行条件时的PostgreSQL路径；配置embedding可进行向量与关键词混合检索，provider:none可走关键词模式。文件内容与索引表示是两层；选用其他记忆插件时，实际存储可由插件负责。",
+            "why": "可读文本让人能核对和修改，索引负责查找。换一种搜索后端不等于换掉记忆语义；反过来，文件变更后索引是否更新会影响能否搜到新内容。",
+            "example": "教学例子：保存“项目X用pnpm”后，provider:none可按关键词查询；未设provider或auto/local在嵌入设置或请求失败时可降级到关键词；真正的模型/索引配置不匹配仍会暂停搜索。若显式指定openai、ollama等provider且请求失败，文档要求报告记忆不可用，不能假设会自动降级。实际能否找到还取决于索引状态。",
+            "trace": "《OpenClaw · 默认存储后端》存储/embedding配置；《OpenClaw · 记忆架构》开头对Memory Core与其他插件的范围限定。 《OpenClaw · 召回接口》FTS-only mode / Explicit provider unavailable。"
+          },
+          {
+            "answer": "记忆围绕Agent工作区组织，跨会话使用还受来源和会话可见性限制。仓库工作可给条目添加基于规范化origin的project标注；当前文档用最多四个近期项目影响排序与自动注入，未把文件物理分库。USER.md仍是用户层信息。项目相关性与用户授权是不同边界，不能把project注释当访问控制。",
+            "why": "同一句“用发布助手构建”可能只适用于一个仓库。把范围带进记忆能减少跨项目误用，哪些私人会话可被看见，仍需要独立的可见性规则。",
+            "example": "教学例子：A仓库的构建诀窍不应默认指导B仓库。项目标记会影响自动召回资格，但会话曾访问多个项目时可能同时保留多个活跃项目；不能将“切换目录”解释成旧项目记忆马上彻底不可见。",
+            "trace": "《OpenClaw · 记忆架构》Project-scoped memory、tier model的跨会话条件；《OpenClaw · 来源与删除》会话资格。"
+          },
+          {
+            "answer": "Agent工作时写日记，默认dreaming流程后台整理有用材料；预压缩memory flush给Agent一次保存尚未落盘信息的机会。普通heartbeat本身不独立维护记忆。flush是否执行受写入权限、记忆插件和可用工具等条件影响，跳过或失败不会阻止压缩。用户画像偏好变化时应更新当前指令，带日期的旧历史另留在日记。",
+            "why": "保存、整理和压缩是不同步骤。仅看到上下文压缩成功，不足以证明关键信息已经持久化；后台整合也可能晚于写日记完成。",
+            "example": "教学检查：长任务压缩后，先查看应保存的事实是否出现在持久记忆，再问后续调用能否取回。若只看会话继续运行，就可能漏掉flush跳过造成的信息缺口；这是验收建议，未在本教程运行。",
+            "trace": "《OpenClaw · 记忆总览》What goes where、Automatic memory flush；《OpenClaw · 记忆架构》后台整合流程。"
+          },
+          {
+            "answer": "合格的USER.md/MEMORY.md按预算加载；超限时截断的是注入副本，磁盘文件仍保留。日记通常按需检索，但总览明确裸/new或/reset会加载当天和前一天日记，不能写成“日记从不启动加载”。memory_search找片段，memory_get读取文件/行段；另有精选触发召回和Active Memory按意图补充证据，Active Memory可配置always/off。会话命中仍须用受可见性控制的会话工具读取，不能把memory_get当原始会话的万能读取器。",
+            "why": "不同内容进入模型的时机不同：存在磁盘、被检索、被注入都不是同一件事。读者据此能解释为什么一个事实昨天能找到、今天却没出现在自动上下文里。",
+            "example": "教学例子：MEMORY.md过大时，新写在末尾的细节可能不在注入副本中。可检查/context输出和检索结果，再决定精简核心摘要或按需检索；不能因文件在磁盘上就断言模型已看过它。",
+            "trace": "《OpenClaw · 记忆总览》加载与截断说明；《OpenClaw · 召回接口》工具边界；《OpenClaw · 记忆架构》recall lanes。"
+          },
+          {
+            "answer": "来源元数据区分owner、agent、untrusted和system，结合会话类型控制哪些内容可晋升为长期核心。记忆可保存审批语义，但硬性权限仍由宿主工具策略执行。memory forget按来源会话谱系处理可识别派生记忆并阻止再次摄入；它不自动删除原始transcript、所有手工内容或外部副本。admission影响后续整合/回填，不能代替删除，也不覆盖所有直接写入和原始索引。",
+            "why": "长期记忆会放大错误输入的持续影响，因此要同时追问“谁说的”“谁允许保存”和“如何撤回”。文字里出现“已批准”不等于调用工具已有真实授权。",
+            "example": "教学演练可先用memory forget的dry-run查看受影响项，再分别核查派生记忆、原始会话和人工编辑内容。这里只描述检查方式，不执行删除；只有核清各副本范围后才能判断请求是否完成。",
+            "trace": "《OpenClaw · 来源与删除》forget/admission/freeform edits；《OpenClaw · 记忆总览》Action-sensitive memories；《OpenClaw · 记忆架构》Provenance。"
+          }
+        ]
       },
       {
         "id": "pi",
@@ -4086,22 +4317,84 @@
       },
       {
         "id": "timl-membench",
-        "title": "TimlMemBench",
+        "title": "TimlMemBench · Governed Use of Long-Term Memory",
         "date": "2026",
-        "summary": "近期的长程/时间变化 Memory benchmark 线索。",
-        "why": "提供时间和动态维度的候选评测。",
-        "boundary": "当前条目依赖资源目录线索，详细协议待补。",
-        "status": "pending",
+        "summary": "从多会话对话构造更新、撤回、范围和来源约束，测量Agent能否在该用记忆时使用、在不该使用时克制。重点是长期记忆的受控使用，不能仅凭名称把它当作时间问答基准。",
+        "why": "它为“记忆检索正确之后还需满足什么”提供具体案例，尤其适合学习Q3范围、Q4生命周期、Q5暴露和Q6治理与实际答题行为的联系。",
+        "boundary": "Findings of EMNLP 2026正式论文；采用合成并审核的双语对话。九类指标是诊断任务族，不是六问的替代，也不证明统计独立或完整安全覆盖。未运行参评系统。",
+        "status": "complete",
         "sources": [
-          "s012"
+          "timl-final-current",
+          "timl-venue-current",
+          "timl-protocol-current",
+          "timl-card-current",
+          "timl-schema-current",
+          "timl-scorer-current"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
         "canonicalUrl": "https://aclanthology.org/2026.findings-emnlp.507/",
         "coverage": [
+          "scope",
           "lifecycle",
-          "exposure"
-        ]
+          "exposure",
+          "governance"
+        ],
+        "selectionEvidence": "有正式论文、公开数据卡、输入协议和评分实现，能够核查准备好记忆池与原始会话摄入的区别，并明确限制效果归因。",
+        "limitations": "中英样本独立创作但规模有限，不能代表所有自然对话；语义judge可能偏置。同一案例可参与多个指标，所以分数相关，不能当九个独立实验。raw-native结果无法单独归因到提取、更新、检索或生成某一环节，也不是隐私/安全认证。",
+        "next": "culture",
+        "profile": {
+          "kind": "对话Agent的记忆治理与使用诊断",
+          "authors": "Fangxing Zhou、Yifei Sun、Jiachen Li、Jinyu Xu、Yuhan Wang、Ruixin Li、Qing Xie",
+          "venue": "Findings of the Association for Computational Linguistics: EMNLP 2026",
+          "artifact": "双语合成数据、两种轨道、九类诊断指标及scorer",
+          "version": "正式论文；数据卡1.0.0；仓库447b195344a2feaf995176446379e60632831f94；2026-11-12核查"
+        },
+        "questions": [
+          {
+            "answer": "数据围绕带来源的记忆事件和使用约束组织：事件操作包括ADD、UPDATE、SUPERSEDE、PRESERVE、REVOKE、SKIP，状态、scope与boundary记录当前有效性和允许用途。对话世界中的governed commitments表示应遵守的约定。题目要求利用当前可用证据，解释来源或在需要时不提起；它不要求系统采用统一的episodic/semantic分类。",
+            "why": "一条信息即使内容真实，也可能已过期、已撤回或不允许在当前场景公开。因此“答对事实”与“正确使用记忆”需要分别检查。",
+            "example": "论文Table1情境：读书会地点从Room302改为418；另有只在私下告知的生病原因。回答地点应使用418，别人询问缺席原因时却不能把私密病情一起透露。例子来自论文中的虚构情境。",
+            "trace": "《TimlMemBench · 正式论文》Table1、§3/4；《TimlMemBench · 数据卡》敏感内容说明。"
+          },
+          {
+            "answer": "发布结构连接raw sessions、带来源的memory events、表示时间和范围状态的gold ledgers，以及问答/治理案例。canonical-pool轨道预先提供样本内记忆池；raw-native轨道让系统从原始对话构建自己的存储。评测方的标准状态是评分依据，不等于系统应存成同样结构。",
+            "why": "若把标准事件和当前状态直接交给原始摄入实验，关键的提取与更新问题已经被替系统解决。两种表示条件应分别报告，不能混合解释。",
+            "example": "教学对照：同一个地点更改情境，一次提供整理好的候选记忆，另一次只给连续对话。前者出错主要反映证据选择/回答，后者还可能受写入和维护影响；不能把两轨分数当同一工作量。",
+            "trace": "《TimlMemBench · 数据结构》《TimlMemBench · 评测协议》Canonical-pool与Raw-native；《TimlMemBench · 正式论文》§4–5。"
+          },
+          {
+            "answer": "每个样本是独立的对话世界，raw-native runner先重置系统，再按时间摄入该样本会话。案例包含私人/群体等情境、人物归属与允许使用范围；Scope和Boundary指标检查回答是否遵守这些条件。这里测的是可观察的范围行为，不能仅凭答题通过推定数据库已实行租户隔离。",
+            "why": "范围约束使同一记忆在不同提问里有不同合法用途。只有单用户事实问答，会遗漏“知道但不应在这里说”的问题。",
+            "example": "教学变式：给私人助理的联系方式可以在本人要求时查回，却不应自动在公共群聊复述。可分别设计允许和拒绝案例，防止系统靠一律拒答获得表面上的安全。",
+            "trace": "《TimlMemBench · 评测协议》重置与摄入；《TimlMemBench · 正式论文》Scope/Boundary任务与Table1。变式为教学构造。"
+          },
+          {
+            "answer": "Write、Revoke、Supersede、Preserve分别检查应保留的信息是否被使用、撤回是否生效、新状态是否替代旧状态，以及未受修订影响的信息是否仍可用。来源会话与状态账本为判分提供依据。raw-native观察最终答案，所以一次失败能指出违反哪种义务，却未必定位到内部具体写入或更新步骤。",
+            "why": "只测试“新值回答对了”会漏掉两个问题：旧值还在别的回答里出现，以及更新误删了无关但仍有效的信息。保留与撤回需要配套测量。",
+            "example": "教学序列：地点改为418，但时间仍是周五19点。系统既要停止沿用302，也要保留原时间；若把整条旧活动都丢掉而答不出时间，就暴露了Preserve方面的问题。",
+            "trace": "《TimlMemBench · 正式论文》四类governed-memory obligations；《TimlMemBench · 评测协议》Diagnostic axes与Attribution boundary。"
+          },
+          {
+            "answer": "canonical-pool要求系统从同一样本候选池选择记忆并回答；raw-native用各系统自身记忆处理案例。后者允许看到query、case type和metric labels，但不能看到标准答案、expected behavior、forbidden spans或来源证据标注。Activation和Proactive还检查是否只在恰当时机调用记忆，避免无关或过度主动使用。",
+            "why": "允许模型看到什么，是理解评测难度的关键。治理任务标签可提示正在考什么，仍不能泄露正确答案；而“能检索”不等于“此时应该说出来”。",
+            "example": "教学例子：用户只是问天气，Agent却主动提起旧的私密健康记录，即使事实没错也属于不恰当激活。另一个需要该记录的问题则应能用上；两类案例共同衡量使用与克制。",
+            "trace": "《TimlMemBench · 评测协议》两轨输入边界；《TimlMemBench · 正式论文》Activation/Proactive与Table6。天气例子为教学构造。"
+          },
+          {
+            "answer": "评测方从审核过的合成对话生成标准状态和判据，语义judge判断回答是否满足预期行为且不违反禁用内容。论文使用gpt-5.4-mini；公开scorer另含离线lexical smoke模式，不能拿字符串检查结果冒充论文语义评分。Provenance检查证据解释，Boundary等检查回答约束；这些仍不是对底层删除、权限或攻击面的完整审计。",
+            "why": "判据与裁判决定什么算成功。若只匹配关键词，会把“不能透露地址X”和实际泄露混淆；因此还需考虑语境，同时保留LLM裁判误判的可能。",
+            "example": "教学检查：系统解释当前规则时，应能指向真正支持它的会话，不能编造时间和来源。评分代码允许不改变结论的少量相邻语境，但不允许用已撤回或不相关证据替代关键依据。",
+            "trace": "《TimlMemBench · 评分实现》build_case_judge_prompt；《TimlMemBench · 评测协议》LLM judge；《TimlMemBench · 正式论文》Limitations。"
+          }
+        ],
+        "evaluation": {
+          "abilities": "九类指标分属生命周期维护（Write/Revoke/Supersede/Preserve）、情境治理（Scope/Boundary）、证据责任（Provenance）和回答时使用控制（Activation/Proactive）。这些是任务族，不保证彼此统计独立。",
+          "taskProtocol": "数据卡包含208个审核过的合成样本、1566个会话、1715道canonical-pool问答和1821个治理/激活案例。中英分别创作而非逐句翻译。canonical-pool控制证据池；raw-native重置系统后按顺序摄入会话，再用其原生记忆答题。",
+          "metrics": "canonical-pool报告Judge Accuracy、Answerable Judge、Abstention、Retrieval Accuracy与Combined Accuracy：检索须包含全部expected IDs且无forbidden ID；Combined还要求语义回答正确。raw-native将每个案例的正确性计入其所有metric标签，分别报告九项；不定义一个aggregate排行榜总分。论文另报告token与包含裁判环节的端到端耗时，不能直接当产品在线响应延迟。",
+          "designMapping": "Q3关联Scope/Boundary，Q4关联增删改及保留，Q5关联候选池/原生检索与Activation/Proactive，Q6关联来源、撤回和限制。Q1说明任务内容，Q2说明标准表示与被测存储。六问用于解释协议，九指标用于诊断行为，二者不一一对应。",
+          "limitations": "同一案例可参与多个分项；语言和任务分布也影响分数。论文讨论分项相关性并要求更多数据验证统计可分性。答案层面成功不能证明物理删除或安全隔离，失败也不独立定位内部管线故障。"
+        }
       },
       {
         "id": "utilmem",
