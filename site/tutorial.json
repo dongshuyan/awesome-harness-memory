@@ -2376,6 +2376,118 @@
       "year": "固定提交 2025-11-27",
       "evidence": "response保存user/agent、调用store/recall、计时、生成选择与retri的顺序已核；读写耗时不等于完整用户请求时间。",
       "checkedAt": "2026-11-12"
+    },
+    "voyager-paper": {
+      "label": "Voyager · arXiv v2方法与实验",
+      "url": "https://arxiv.org/html/2305.16291v2",
+      "year": "2023-10-19 · v2",
+      "evidence": "核查§2技能构建/检索/验证、§3实验与§4局限；不把历史底模实验视为当前产品效果。",
+      "checkedAt": "2026-11-12"
+    },
+    "voyager-venue": {
+      "label": "Voyager · TMLR官方发表目录",
+      "url": "https://www.jmlr.org/tmlr/papers/",
+      "year": "2024-03 · TMLR",
+      "evidence": "官方目录列出标题、八名作者、March 2024及ICLR 2025 Journal Track展示；不是ICLR主会原始论文。",
+      "checkedAt": "2026-11-12"
+    },
+    "voyager-meta": {
+      "label": "Voyager · arXiv版本记录",
+      "url": "https://arxiv.org/abs/2305.16291",
+      "year": "v1 2023-05-25；v2 2023-10-19",
+      "evidence": "首发和修订日期、作者身份；OpenReview正式PDF本轮遇访问验证，机制采用可读arXiv v2。",
+      "checkedAt": "2026-11-12"
+    },
+    "voyager-skills": {
+      "label": "Voyager · 技能存储与检索源码",
+      "url": "https://github.com/MineDojo/Voyager/blob/55e45a880755d0c8c66ca7fb5fe7962ac8974f89/voyager/agents/skill.py",
+      "year": "固定提交 2023-07-27",
+      "evidence": "SkillManager的add_new_skill、retrieve_skills和programs；代码/描述/向量索引分工、同名更新与旧文件留存。静态核查。",
+      "checkedAt": "2026-11-12"
+    },
+    "voyager-runtime": {
+      "label": "Voyager · 技能进入模型与执行器",
+      "url": "https://github.com/MineDojo/Voyager/blob/55e45a880755d0c8c66ca7fb5fe7962ac8974f89/voyager/voyager.py",
+      "year": "固定提交 2023-07-27",
+      "evidence": "reset/step/learn中检索进prompt、程序库进入env.step、success后写入的完整调用链；未运行Minecraft。",
+      "checkedAt": "2026-11-12"
+    },
+    "letta-current": {
+      "label": "Letta · 当前源码与V1历史边界",
+      "url": "https://github.com/letta-ai/letta/blob/8816d3a8516893bfdc0fa14bfb1235226012e295/README.md",
+      "year": "固定提交 2026-10-18",
+      "evidence": "README将当前源码指向letta-code，archive保存已退役V1 API server；不能把旧版memory blocks当成当前全部架构。",
+      "checkedAt": "2026-11-12"
+    },
+    "letta-memfs": {
+      "label": "Letta · MemFS结构与同步",
+      "url": "https://docs.letta.com/concepts/memfs",
+      "year": "2026-11-12访问快照",
+      "evidence": "核心根目录、索引子目录、Git同步、单Agent归属、无默认向量索引与对话搜索差异；官方文档声明，未部署验证。",
+      "checkedAt": "2026-11-12"
+    },
+    "letta-shared-current": {
+      "label": "Letta · 当前共享记忆",
+      "url": "https://docs.letta.com/concepts/shared-memory",
+      "year": "2026-11-12访问快照",
+      "evidence": "组织拥有的共享仓库、attach/detach、commit/push/pull和Cloud范围；与V1共享blocks区分。",
+      "checkedAt": "2026-11-12"
+    },
+    "letta-dreaming": {
+      "label": "Letta · 记忆形成与Dreaming",
+      "url": "https://docs.letta.com/configuration/memory",
+      "year": "2026-11-12访问快照",
+      "evidence": "/init、/remember、/doctor及后台反思配置；Agent reviews before applying是Agent复核而非用户审批。",
+      "checkedAt": "2026-11-12"
+    },
+    "letta-sdk-memory": {
+      "label": "Letta · Agent SDK Memory与版本差异",
+      "url": "https://docs.letta.com/agent-sdk/memory",
+      "year": "2026-11-12访问快照",
+      "evidence": "创建memory与dreaming配置；该页仍用system/，与新MemFS根目录格式有版本差异，结合固定源码解释，不作为已运行SDK示例。",
+      "checkedAt": "2026-11-12"
+    },
+    "letta-format": {
+      "label": "Letta · MemFS格式判定源码",
+      "url": "https://github.com/letta-ai/letta-code/blob/f0179eafb09308476e1b332259c65962294662f8/src/agent/memory-format.ts",
+      "year": "固定提交 2026-11-11",
+      "evidence": "detectMemoryFormat、isCoreMemoryPath、isProjectedMemoryPath区分v1/v2；这里是MemFS格式版本，不是V1/V2 SDK的同义词。",
+      "checkedAt": "2026-11-12"
+    },
+    "letta-root-prompt": {
+      "label": "Letta · 根目录Memory运行提示",
+      "url": "https://github.com/letta-ai/letta-code/blob/f0179eafb09308476e1b332259c65962294662f8/src/agent/prompts/letta_root_memfs.md",
+      "year": "固定提交 2026-11-11",
+      "evidence": "Context Architecture中的消息历史、核心/外部记忆、共享与recompile时机；是运行提示中声明的协议，非正确性实测。",
+      "checkedAt": "2026-11-12"
+    },
+    "letta-permissions": {
+      "label": "Letta · SDK工具权限",
+      "url": "https://docs.letta.com/agent-sdk/permissions",
+      "year": "2026-11-12访问快照",
+      "evidence": "permissionMode、canUseTool和allowedTools的不同作用；配置开关不等于完整安全认证。",
+      "checkedAt": "2026-11-12"
+    },
+    "letta-migration": {
+      "label": "Letta · V1 SDK迁移说明",
+      "url": "https://docs.letta.com/v1-sdk",
+      "year": "2026-11-12访问快照",
+      "evidence": "V1为legacy并正迁移到Agent SDK；当前建议、MemFS与旧memory blocks的产品代际边界。",
+      "checkedAt": "2026-11-12"
+    },
+    "mem2actbench-meta": {
+      "label": "Mem2ActBench · arXiv身份与版本",
+      "url": "https://arxiv.org/abs/2601.19935",
+      "year": "2026-01-13 · v1",
+      "evidence": "Yiting Shen等作者及唯一列出的v1；未核得正式同行评议发表，不按会议论文介绍。",
+      "checkedAt": "2026-11-12"
+    },
+    "mem2actbench-paper": {
+      "label": "Mem2ActBench · v1任务与指标",
+      "url": "https://arxiv.org/html/2601.19935v1",
+      "year": "2026-01-13 · v1",
+      "evidence": "核查§3构造、§4.1实验/指标、§5.4工具候选、附录A至C。TA/EM/TSA口径及12/13轮存在未解释处；匿名代码入口2026-11-12返回401，未读评分实现。",
+      "checkedAt": "2026-11-12"
     }
   },
   "concepts": [
@@ -2795,17 +2907,69 @@
       {
         "id": "voyager",
         "title": "Voyager",
-        "date": "2023",
+        "date": "2023-05-25 · 预印本首发；2024-03 · TMLR",
         "researchKind": "method",
-        "summary": "在 Minecraft 环境中累积可检索的代码技能库，并在后续探索中组合、调用已有技能。",
-        "why": "它展示程序性经验如何变成可复用的技能工件，补充对话事实之外的 Memory 形态。",
-        "boundary": "研究环境是 Minecraft；技能复用结果不能直接推广到所有 Agent，完整六问和实验条件待补。",
-        "status": "pending",
+        "summary": "在Minecraft中把成功完成任务的行动程序积累为技能库。后续任务先检索相关代码，再由模型组合和修正，最后交给环境执行；学习发生在外部程序库，不需要微调底模。",
+        "why": "它把“记住怎么做”落实为可执行代码，适合观察程序性经验如何跨任务复用，也能看清保存技能与真正完成新任务之间还隔着检索、组合和验证。",
+        "boundary": "TMLR发表身份由期刊官方目录确认；机制采用arXiv v2与作者仓库固定提交。实验环境是Minecraft和历史GPT-4/GPT-3.5配置，本教程没有重跑，也不将游戏内成绩推广到现实系统。",
+        "status": "complete",
         "sources": [
-          "voyager"
+          "voyager-meta",
+          "voyager-venue",
+          "voyager-paper",
+          "voyager-skills",
+          "voyager-runtime"
         ],
-        "checkedAt": "2026-11-11",
-        "canonicalUrl": "https://arxiv.org/abs/2305.16291"
+        "checkedAt": "2026-11-12",
+        "canonicalUrl": "https://arxiv.org/html/2305.16291v2",
+        "selectionEvidence": "TMLR 2024年3月正式发表；作者来自NVIDIA、Caltech、UT Austin、Stanford和UW Madison等机构。公开论文、提示词和代码，论文包含移除技能库的消融及新世界任务实验。收录理由是其可核对的技能积累机制；论文与作者代码为同源证据。",
+        "limitations": "成功验证依赖模型对环境状态的判断，可能误判；程序正确性、跨环境泛化和执行安全都不是一次成功即可保证。论文§4报告模型调用开销、幻觉和验证误判等限制。可复用程序不等于通用知识库，也不是对模型参数的持续训练。",
+        "next": "engineering",
+        "profile": {
+          "kind": "以可执行技能库为长期记忆的具身Agent研究",
+          "authors": "Guanzhi Wang、Yuqi Xie、Yunfan Jiang、Ajay Mandlekar、Chaowei Xiao、Yuke Zhu、Linxi Fan、Anima Anandkumar",
+          "venue": "Transactions on Machine Learning Research，2024年3月；ICLR 2025 Journal Track为后续展示",
+          "artifact": "arXiv v2全文、作者项目与技能管理/执行代码",
+          "version": "arXiv:2305.16291v2；MineDojo/Voyager提交55e45a880755d0c8c66ca7fb5fe7962ac8974f89；2026-11-12核查"
+        },
+        "questions": [
+          {
+            "answer": "最核心的长期内容是成功执行过的技能程序，以及描述该程序用途的文本。当前物品、位置、环境反馈、错误和critic意见用于本次决策与修正；自动课程还跟踪完成和失败的任务。这里的“技能记忆”保存的是一段能组织连续动作的方法，不是只记录“曾经做成了什么”的事件句子。",
+            "why": "以后需要相同行为时，保留可调用程序能免去从零重建每一步；描述文本让系统知道何时值得找出它。若只保存结果，模型仍需重新发明操作方法；若只保存代码，又缺少便于语义检索的用途说明。",
+            "example": "论文引言举出craftStoneShovel()、combatZombieWithSword()这类技能名。教学推演：以后要挖掘某种材料时，可利用已掌握的造工具方法；具体新任务仍要检查材料是否齐备，不能因为库里有函数就认定它一定能成功。",
+            "trace": "《Voyager · arXiv v2方法与实验》引言、§2.1至§2.3；《Voyager · 技能存储与检索源码》skills中的code/description。技能角色是方法事实；复用情境为教学推演。"
+          },
+          {
+            "answer": "技能存在模型参数之外。论文用向量数据库组织技能：描述的embedding作为检索线索，返回对应程序。固定代码另把JavaScript程序、描述文本和skills.json落盘，并持久化Chroma索引；skills.json维护当前技能名到代码/描述的对应关系。代码是可执行载体，embedding是查找线索，两者不能互相替代。",
+            "why": "这个结构解释了它如何跨模型调用保留能力，也解释了为什么没有参数微调仍能积累经验。文件与索引还必须保持一致，否则查到的名称可能指向缺失或错误的程序。",
+            "example": "教学示意：描述“制作石铲”被编码进索引，命中后取回具体JavaScript函数。下一次模型看到的是程序文本，执行器运行的也是程序；它不会把向量本身当作Minecraft动作。",
+            "trace": "《Voyager · arXiv v2方法与实验》§2.2；《Voyager · 技能存储与检索源码》__init__、add_new_skill、retrieve_skills及同步assert。数据库名是该固定实现的选择，不是所有程序性记忆的要求。"
+          },
+          {
+            "answer": "论文主体是一个探索Minecraft的Agent，其技能库可以跨任务使用，并在新世界任务实验中带入之前学到的技能。代码通过ckpt_dir或skill_library_dir指定这份库；实验还尝试将已学库交给AutoGPT使用。这说明程序工件可以迁移，但没有定义面向多个用户、组织或租户的通用授权协议。",
+            "why": "“换任务仍然能用”与“谁都可以读”是不同问题。研究中的迁移实验有意复用技能，部署中的共享则还需要明确归属、可见范围和对执行环境的假设。",
+            "example": "论文§3.3的新世界实验清空物品栏、换新世界，再使用既有技能完成未见任务。教学延伸：若两个机器人接口不同，不能只复制技能库就推定兼容；需要检查API与前置条件。",
+            "trace": "《Voyager · arXiv v2方法与实验》§3.3新世界任务及AutoGPT+技能库对照；《Voyager · 技能进入模型与执行器》初始化skill_library_dir。机器人对照是边界例子，未做实验。"
+          },
+          {
+            "answer": "任务开始后先生成行动代码，执行并收集环境反馈、运行错误和critic意见，再迭代修正。论文设置单任务最多四轮代码生成；critic判定成功后才将新技能加入库。固定代码对同名技能更新当前映射与索引，同时以V2等后缀保存新的程序文件；它不是简单无条件追加所有尝试，也没有在该路径中实现完整的技能淘汰策略。",
+            "why": "写入门槛决定哪些行为成为未来经验。若失败程序也直接进入技能库，之后可能反复重用错误；但critic本身会误判，所以“经过验证”仍不等于形式化证明。",
+            "example": "教学流程：造工具失败 → 错误指出材料不够 → 修正程序并再次执行 → critic确认任务完成 → 保存技能。若同名函数后来被改进，当前映射可指向新版；旧文件留在磁盘不代表检索会自动遍历所有历史版本。",
+            "trace": "《Voyager · arXiv v2方法与实验》§2.3及§4；《Voyager · 技能存储与检索源码》add_new_skill；《Voyager · 技能进入模型与执行器》learn中的success条件。旧文件与当前映射的区别由代码直接支持。"
+          },
+          {
+            "answer": "面临任务时，以任务建议和环境信息构成查询，从描述索引中取出相关技能，论文/默认实现最多取五个，库较小时相应减少。检索到的代码进入行动模型的提示词，帮助它生成或组合新程序；执行时env.step还获得已有程序库与控制原语，供程序调用。因此“模型看到哪些技能”和“执行器能调用哪些函数”是两个相连但不同的环节。",
+            "why": "只说RAG检索会漏掉最关键的行动接口：文字代码需要被模型正确组合，并交给运行环境执行。也不能把最多五个检索结果误写成执行器只加载五个函数。",
+            "example": "教学推演：为采矿检索造工具技能，把相关函数交给模型生成采矿流程；执行器接收完整可用程序集合。模型可能仍选错工具或忽略材料约束，最终是否成功要回到环境反馈判断。",
+            "trace": "《Voyager · arXiv v2方法与实验》§2.2；《Voyager · 技能存储与检索源码》retrieve_skills与programs；《Voyager · 技能进入模型与执行器》reset构造system_message、step的env.step(programs=...)。"
+          },
+          {
+            "answer": "研究者设置环境、API、模型和提示词，自动课程提出任务，行动模型编写代码，critic决定是否成功并影响写入。公开方法主要控制任务与技能质量，未提供生产环境中的身份授权、恶意代码验证或敏感记忆删除保证。论文§4还提醒调用成本和幻觉；§7指出，把它用于物理机器人等场景时，需要人类增加安全约束。",
+            "why": "一段记忆如果可以直接执行，错误的影响就可能从“回答不准”扩大为错误操作。成功判定、代码权限和数据权限应分别检查，不能用游戏任务通过来代替安全审查。",
+            "example": "教学检查：将类似技能库用于真实文件操作前，先限制可调用接口和写入目录，再检查函数的副作用。这个要求是迁移到现实环境的设计推论，Voyager的Minecraft实验没有验证该部署方案。",
+            "trace": "《Voyager · arXiv v2方法与实验》§2.3、§4、§7；《Voyager · 技能进入模型与执行器》的代码执行与成功门槛。控制者分工是事实，现实部署要求为教程推论。"
+          }
+        ]
       },
       {
         "id": "memorybank",
@@ -3167,18 +3331,74 @@
       },
       {
         "id": "letta",
-        "title": "Letta",
+        "title": "Letta · MemFS与Agent SDK",
         "date": "公开日期未说明",
-        "summary": "提供有状态 Agent 与长期 Memory 的平台。",
-        "why": "它将可编辑的核心记忆和外部档案作为产品机制呈现。",
-        "boundary": "不同版本和部署方式可能有不同实现。",
-        "status": "pending",
+        "summary": "Letta把长期记忆组织成Agent拥有的Git仓库，通过MemFS投影到运行机器。少量核心Markdown进入提示词，较深资料按需读，后台Dreaming可以从对话中整理经验。旧V1的memory blocks需与当前机制分开理解。",
+        "why": "它把记忆归属、文件表示、版本同步和提示词装配放到同一条可检查的链路上。适合学习“写下了”为什么还不等于“所有设备都拿到了”，以及“拿到了”为什么还不等于本轮模型已看到。",
+        "boundary": "主体为2026-11-12官方当前MemFS/Agent SDK说明与letta-code固定提交。旧V1 API server已经归档；V1 memory blocks、MemFS v1格式与Agent SDK代际不能混为同一版本号。文档能力未在本教程部署实测。",
+        "status": "complete",
         "sources": [
-          "letta"
+          "letta-current",
+          "letta-memfs",
+          "letta-shared-current",
+          "letta-dreaming",
+          "letta-sdk-memory",
+          "letta-format",
+          "letta-root-prompt",
+          "letta-permissions",
+          "letta-migration"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
-        "canonicalUrl": "https://github.com/letta-ai/letta"
+        "canonicalUrl": "https://github.com/letta-ai/letta",
+        "selectionEvidence": "由Letta官方团队维护，有可读的当前文档、Git实现和运行提示。仓库明确公布旧V1到当前代码的迁移关系，能直接核对核心/外部记忆与同步机制；这支持机制分析，不证明其效果优于其他系统。",
+        "limitations": "官方文档仍存在格式过渡：Agent SDK Memory页把创建时设置的memory放到system/，MemFS页与固定代码已区分新根目录格式和旧system/格式。部署时应检查根MEMORY.md与实际格式，不能仅凭SDK代际判断。Git版本可追溯不等于内容真实；共享需要同步，删除工作区文件也不等于清除Git历史、远端和备份。Dreaming可能写入错误归纳。",
+        "next": "benchmarks",
+        "profile": {
+          "kind": "具备持久身份、可编辑记忆与后台反思的Agent平台",
+          "authors": "Letta官方团队与开源贡献者",
+          "venue": "官方文档与letta-ai/letta-code；V1旧服务器留在archive分支",
+          "artifact": "MemFS、Agent SDK、共享仓库与工具权限接口",
+          "version": "letta-code提交f0179eafb09308476e1b332259c65962294662f8；官方文档2026-11-12访问快照；初次公开日期未据该commit推定"
+        },
+        "questions": [
+          {
+            "answer": "当前记忆包括Agent的身份/行为规则、用户偏好、持久项目事实、参考资料和技能文件。对话历史另外保存经历，MemFS保存从经历中选择、整理出来的可编辑内容。persona与human是常用标签，不是穷尽Memory种类的二分法；旧V1以memory_blocks设定记忆（见V1 SDK迁移说明），不能把旧接口名直接套到新SDK。",
+            "why": "原始经历和归纳经验承担不同作用。前者能帮助追溯当时说过什么，后者让后续调用少读大量旧消息；但归纳可能丢条件，因此不能用摘要替代所有原始证据。",
+            "example": "官方Memory & dreaming给出“这个仓库始终用pnpm”的/remember例子。教学展开：规则可进入核心记忆，具体安装报错留在对话记录，长篇依赖说明放到参考目录。三者都可能有用，但没有必要全塞进每轮提示词。",
+            "trace": "《Letta · 记忆形成与Dreaming》Teach your agent；《Letta · MemFS结构与同步》Memory structure与Skills；《Letta · 根目录Memory运行提示》Message history及Memory files。分配目录的例子是教学建议。《Letta · V1 SDK迁移说明》的对照表与快速开始支撑旧接口描述。"
+          },
+          {
+            "answer": "MemFS以Git仓库为持久载体，在运行机器上提供真实checkout，Agent通过普通文件工具读写。新格式以根目录MEMORY.md识别，根Markdown作为核心记忆；带索引的子目录保存按需资料，skills单独组织。旧格式以system/承载核心记忆。默认MemFS没有语义/向量索引；文档另提供可选搜索扩展，对话历史搜索也属于另一条路径。",
+            "why": "载体、索引和上下文位置必须分开看：用Git保存不代表自动向量检索，文件存在也不代表被完整放进prompt。确认格式后，才知道把文件写在哪里会影响每轮上下文开销。",
+            "example": "教学示意：新格式根目录human.md存简短偏好，根MEMORY.md列出reference/；子目录reference/MEMORY.md再指向project-notes.md。模型每轮看到human.md与根MEMORY.md，子目录索引和项目正文按需读取。如果实际Agent仍是旧格式，应检查system/，不能照搬新目录假设。",
+            "trace": "《Letta · MemFS结构与同步》Memory structure与Semantic and vector search；《Letta · MemFS格式判定源码》detectMemoryFormat/isCoreMemoryPath/isProjectedMemoryPath；《Letta · Agent SDK Memory与版本差异》仍写system/，已显式保留差异。"
+          },
+          {
+            "answer": "私有MemFS属于一个agent_id，并可跨该Agent的多次对话使用；共享仓库则属于组织，可以附加给多个Cloud Agent。当前共享方式是各Agent拿到仓库checkout，通过提交、推送和拉取同步，不能理解成所有运行中的模型会瞬时看到相同值。本地Agent有自己的MemFS与项目文件，官方托管的共享仓库是Cloud功能。",
+            "why": "Agent、对话、机器和组织是不同的归属范围。一个Agent跨对话记住用户，并不自动意味着同组织所有Agent都能读取；同一共享文件也不等于每个并发对话已经重新编译了上下文。",
+            "example": "教学例子：客服Agent和文档Agent各保留自己的偏好与技能，同时附加团队产品说明仓库。文档Agent推送修改后，客服侧要同步相关checkout；是否已在当前回答使用，应检查实际读取或提示词编译，不能凭“已共享”就推定。",
+            "trace": "《Letta · 当前共享记忆》Ownership表、How agents access shared memory、Cloud限制；《Letta · 根目录Memory运行提示》agent_id/conversation_id及Shared memory。示例分工为教学构造。"
+          },
+          {
+            "answer": "记忆可由初始化、显式/remember、工作中的文件编辑，以及配置后的Dreaming形成。Dreaming按完成步数或上下文压缩事件触发，后台子代理整理近期对话；它使用worktree隔离编辑。修改先是本地文件变化，提交成为版本，Cloud同步还需要推送并由其他checkout获得。核心内容在后续重编译时影响模型，当前已经生成的提示词不会被倒改。",
+            "why": "这条链把“想起一条经验”“保存版本”“同步到其他机器”“下一次调用读到”分开。任何一步失败，都可能表现成忘记；Git历史帮助定位修改，却不能证明归纳正确。",
+            "example": "教学时间线：用户纠正构建命令 → Agent改human.md或项目记忆 → 提交 → Cloud推送 → 后续上下文重编译。若只编辑未提交，不能据此断言另一台机器已记住。删除文件的提交通常仍留下旧Git历史，彻底擦除需另核范围。",
+            "trace": "《Letta · 记忆形成与Dreaming》Dreaming；《Letta · MemFS结构与同步》Versioning and synchronization；《Letta · 根目录Memory运行提示》Syncing memory, state, and context。删除历史的限定来自Git版本载体的推论，未做删除实验。"
+          },
+          {
+            "answer": "新格式核心根Markdown在编译时进入系统提示词；更深资料主要通过目录索引、文件搜索和读取工具进入后续调用。共享仓库附加时提供路径和文件线索，正文并非全量常驻。对话历史搜索与MemFS分开：官方文档称Cloud消息搜索支持全文、向量和混合模式，本地目前是全文匹配。保存的经验能否影响回答，还取决于是否被读到、是否与当前任务相关。",
+            "why": "常驻方式降低找不到关键信息的风险，却占用上下文；按需读取保留较大资料集，但依赖模型发现正确入口。把两种路径讲清楚，才知道该缩短核心文件，还是改善索引与检索。",
+            "example": "沿用pnpm例子：短规则可以常驻，过往某次报错则用消息搜索或读取参考记录找到。如果只有目录索引出现在prompt里，就不能声称对应长文也已被模型读取。这个区分可用于检查真实调用记录。",
+            "trace": "《Letta · MemFS结构与同步》Memory structure与Conversation-history search；《Letta · Agent SDK Memory与版本差异》共享仓库只展示文件树；《Letta · 根目录Memory运行提示》后续recompile约定。常驻/按需的教学比较不是效果实验。"
+          },
+          {
+            "answer": "开发者配置记忆初值、共享关系、Dreaming和工具可用范围，Agent通过获准工具修改内容。Agent SDK以permissionMode决定审批模式，以canUseTool处理需要批准的调用，allowedTools控制工具是否暴露。Dreaming的“Agent reviews before applying”是额外Agent复核，官方明确它不请求用户批准。工具权限、组织访问控制和记忆事实正确性仍是不同问题。",
+            "why": "允许模型改长期记忆，意味着一次错误可能影响以后的行为；允许背景整理又增加了另一个写入者。必须知道谁会审核变化，以及该审核究竟是人还是模型，才能设定合适的控制。",
+            "example": "教学配置思路：在需要审批的standard模式中，应用可用canUseTool审核相关工具请求；acceptEdits会自动允许文件编辑，不能仅添加回调就假定所有编辑都需批准。具体MemFS写入是否经过目标工具路径，还须部署核查。可另检查Git差异；Agent复核不等于用户同意，撤回时也要检查共享仓库、历史和备份。",
+            "trace": "《Letta · SDK工具权限》Permission modes与Approve, deny, or edit tool calls；《Letta · 记忆形成与Dreaming》的Agent reviews说明；《Letta · 根目录Memory运行提示》的敏感信息规则。配置建议不是已通过的安全测试。"
+          }
+        ]
       },
       {
         "id": "mem0",
@@ -3395,20 +3615,77 @@
       {
         "id": "mem2actbench",
         "title": "Mem2ActBench",
-        "date": "2026",
-        "summary": "评测 Memory 如何支持后续行动与工具使用。",
-        "why": "它把“取回信息”与“据此行动”连接起来，补充 Q5。",
-        "boundary": "任务结果不能推出内部存储或控制机制。",
-        "status": "pending",
+        "date": "2026-01-13 · arXiv v1",
+        "summary": "把分散在历史里的偏好和约束转成工具参数：用户不再重复目的地、预算等信息，Agent需要从记忆补齐一次工具调用。它提供任务设计上的补充，但v1的部分指标口径仍待澄清。",
+        "why": "很多真实请求只说“按之前的要求办”。这个Benchmark围绕省略参数的请求构造任务，有助于分清找到历史事实、推导参数和真正执行行动。收录是为了学习该任务设计，不把其成绩作为系统质量认证。",
+        "boundary": "按arXiv v1解释，未核得正式会议身份。主实验提供正确工具，不能称为完整的自主工具选择或真实执行成功测试。正文指标解释存在不一致；作者给出的匿名代码入口本轮返回401，未核评分代码和发布数据。",
+        "status": "complete",
         "sources": [
-          "mem2actbench"
+          "mem2actbench-meta",
+          "mem2actbench-paper"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
-        "canonicalUrl": "https://arxiv.org/abs/2601.19935",
+        "canonicalUrl": "https://arxiv.org/html/2601.19935v1",
         "coverage": [
           "content",
+          "lifecycle",
           "exposure"
+        ],
+        "selectionEvidence": "作者Yiting Shen、Kun Li、Wei Zhou、Songlin Hu，单位包括中科院信息工程研究所和中国科学院大学。原文公开事实演化链、反向提问、泄漏筛查及人工核验方法，能为本教程补充行动参数这一主题。团队和预印本身份不代替同行评议，原文问题与访问缺口已单列。",
+        "limitations": "构造数据来自ToolACE、BFCL和OASST1的整合与生成，不等于连续采集的真实用户历史。§4.1将TA定义为工具及全部参数精确匹配，§4.2却据TA的集中分布判断剩余错误主要属于语义而非结构，§5.4另用EM、Table4使用TSA，未给足够说明统一口径；本页不引用TA数字作效果结论。摘要平均12轮而正文写13轮；人工抽查91.3%只按作者报告，不自行反推样本数。代码/data入口不可读，未做复现。",
+        "next": "culture",
+        "profile": {
+          "kind": "从长期历史推导工具调用参数的Memory评测",
+          "authors": "Yiting Shen、Kun Li、Wei Zhou、Songlin Hu",
+          "venue": "arXiv:2601.19935v1，预印本",
+          "artifact": "可读论文与构造/过滤示例；论文声明有代码与数据，但本次匿名入口访问为401",
+          "version": "v1（2026-01-13）；2026-11-12核查，未读取评分实现或运行系统"
+        },
+        "evaluation": {
+          "abilities": "从省略关键参数的用户请求推断应该查什么记忆；从历史偏好、约束和状态中恢复参数；在更新与噪声之后使用相关证据。工具候选选择另见§5.4，主表已提供正确工具。",
+          "taskProtocol": "先整合工具对话与闲聊，抽取attribute/fact/source ID，再局部消解冲突并整合事实演化顺序；从有依据的正确工具调用反向生成省略参数的请求，过滤直接泄漏和无记忆也能猜出的题。作者构造2029个sessions和400题，§4.1实际实验选取含全部必要证据的429个sessions，两个数字属于不同阶段。",
+          "metrics": "按§4.1声明：参数F1衡量precision/recall，BLEU-1看与参考的词项重合，TA要求工具正确且所有参数精确匹配。主实验给出gold tool，§5.4在候选工具集合上另报告TSA与EM；原文未说明TSA与§4.1的TA是否同一口径。原文TA的后续解释、TSA命名和主表数值关系未说明清楚，代码又不可读，因此这里只介绍声明定义，不认证实际计算公式、作跨系统数值比较或把TA等同真实任务成功率。",
+          "designMapping": "Q1由偏好/约束等内容、Q4由事实更新与历史位置、Q5由检索后参数生成直接关联。Q2主要是参评实现的表示选择；Q3涉及内容主题和来源组织，却没有多租户授权任务；Q6涉及评测数据筛查，但不检验被测系统的访问权限或删除传播。这是教程对协议的分析，不是六项独立能力分。",
+          "limitations": "自动过滤器失败只说明该过滤器未解出，不能证明任意模型都必须依赖记忆。人工核验仅为作者的抽样结果。F1/词项重合不足以确认工具执行效果；若要测真实行动，应另设执行环境、状态变化成功条件、错误副作用与成本指标。"
+        },
+        "questions": [
+          {
+            "answer": "任务要求记住用户的偏好、约束、实体信息和随对话变化的状态，用它们补齐当前请求没有明说的工具参数。事实抽取采用attribute、fact和source ID三部分；attribute尽量绑定具体实体，避免把不同平台的“账户修改”混在一起。这是构造任务需要的信息，不要求参评系统采用同样的内部字段或分类。",
+            "why": "“预算是多少”直接指出需要哪条事实；“按之前预算订票”还要求识别缺失参数并主动利用历史。两者都与记忆有关，但后者多了把内容映射到行动接口的步骤。",
+            "example": "附录B Table8的有效例子：历史Turn1给出预算500美元，当前请求只说“找符合之前预算的航班”，目标参数price=500。这里复述作者构造示例；并不表示已调用真实订票工具或完成交易。",
+            "trace": "《Mem2ActBench · v1任务与指标》§3.3.1、§3.4、附录B Table8。字段与price例子是论文事实；直接问答与隐含参数的解释为教程归纳。"
+          },
+          {
+            "answer": "基准构造阶段把源对话抽成(attribute, fact, source ID)三元组，局部消解冲突后形成全局事实演化序列，用来追踪题目及参数的依据。交付材料包含历史对话、当前请求、工具定义和参考调用；被测系统仍可自行选择文本、向量库或图等内部表示。基准的标准记录服务于出题和核验，并不要求所有参评系统采用它的存储结构。",
+            "why": "如果把评测者知道的正确证据和答案直接交给系统，会把“自己找到并使用历史”变成“照着答案填空”。区分评分端材料与模型端记忆，也是理解oracle检索对照的前提。",
+            "example": "教学对照：给两个系统相同对话历史，一个保存文本片段，一个形成结构化事实；让它们补price参数。若另把正确支持事实直接提供给模型，应标为oracle条件，不能混入正常检索成绩。",
+            "trace": "《Mem2ActBench · v1任务与指标》§3.2至§3.5、§4.1与§5.1的no/passive/oracle retrieval。如何隔离gold信息是依据协议提出的实验检查，未运行该对照。"
+          },
+          {
+            "answer": "构造时按实体绑定的属性组织历史，并为事实保留来源ID；它模拟持续使用助手时被闲聊打断的任务历史。论文没有把不同用户身份、组织权限或多个自主Agent的共享协议设为主要变量。内容提到不同账户或实体，不等于已测试这些主体之间的访问隔离。",
+            "why": "把两个平台的账户混成一个主题，会填错工具参数；把两名用户的资料混进同一可检索集合，则可能越权。前一个问题在构造流程里被处理，后一个需要独立的权限场景和判据。",
+            "example": "论文§3.3.1以“account modification (YouTube)”说明属性应绑定实体。教学扩展：如果为用户A和B都生成相似账户任务，必须额外携带授权身份并检查串读；这不是原Benchmark已完成的测试。",
+            "trace": "《Mem2ActBench · v1任务与指标》§3.2、§3.3.1及附录A的数据组织。多租户覆盖不足是对所列任务协议的范围判断，不推断某个参评系统没有权限功能。"
+          },
+          {
+            "answer": "事实链构造先对同主题事实排序，保留合理更新和细化，丢弃被判定为矛盾或冗余的项，再用带破环规则的拓扑排序形成全局顺序。实验使用按原顺序筛出的历史，另按最早支持证据的位置分析性能。这里的冲突清理主要发生在数据构造端，不能等同于每个参评Memory都实时执行同样的更新算法。",
+            "why": "历史不只是不断加长，也可能改变当前有效约束。需要区分保留旧状态作历史、更新当前状态，以及数据生成器删除不一致材料这三件事；它们对“记住多久”和“用哪个值”提出不同要求。",
+            "example": "附录A Table7用饮食偏好演化示例说明：作者把当前纯素要求与蔬菜、高蛋白偏好组合，保留较早素食阶段的背景，删除被判矛盾的鱼类偏好。这个示例说明构造规则，不证明真实人的偏好一定符合该条时间线。",
+            "trace": "《Mem2ActBench · v1任务与指标》§3.3.2、§4.1历史筛选、§5.2及附录A Table7/Algorithm1。它未建立完整TTL、删除请求或副本擦除协议。"
+          },
+          {
+            "answer": "§5.1比较三种证据暴露条件：不检索；用BM25、Dense或Hybrid检索，分别取k=1/5/10；oracle条件直接提供标准记忆。系统再把得到的历史证据用于生成工具调用与参数，§5.2另按最早证据在历史中的位置分组。主实验已提供正确工具，主要考察参数依据；§5.4才增加干扰工具。指标声明与后文命名存在未解释处，评分代码本轮不可读，不能把主表TA当真实行动成功率。",
+            "why": "答错可能是没找对历史，也可能是找到后组合错参数；工具选对还可能参数错，调用格式正确也不保证外部执行成功。把这些阶段分开，才能知道该改进检索还是推理/行动接口。",
+            "example": "教学例子：系统选对航班工具却填入旧预算，应算参数使用问题；填对price=500仍不能说明航班真的订成功。作者§5.1用oracle检索分析给对证据后的表现，本页不重算或推广其数值。",
+            "trace": "《Mem2ActBench · v1任务与指标》§4.1 Evaluation Metrics、§4.2、§5.1、§5.4及Table4。TA仅按原文定义介绍；数值与实际实现待澄清，访问限制已记录。"
+          },
+          {
+            "answer": "评测方控制合成、冲突消解、参数溯源和请求过滤，并安排人工抽查；这属于数据质量控制。自动过滤会移除直接暴露答案或被无记忆判别器解出的请求，但不能逻辑保证所有模型都无法猜中。公开协议没有把用户同意、恶意记忆注入、身份越权和彻底删除作为独立成功条件。",
+            "why": "数据构造可信度与被测系统治理能力是两条证据链。一个题目确实需要历史，仍不能证明系统只使用了获准历史；一个高准确率也不能证明长期记忆可安全撤回。",
+            "example": "附录B拒绝“订去Seattle的航班”这种直接泄漏目的地的请求，也拒绝可从“意面和披萨”推断意大利菜的题。教学扩展：治理测试还应加入“未获授权的另一用户目的地”，并按违规使用率单列评分；原有指标不能代替它。",
+            "trace": "《Mem2ActBench · v1任务与指标》§3.4.2、§3.6与附录B/C。五名专家和抽样比例为作者报告，非独立核验；对治理的缺口与扩展建议是教程分析。"
+          }
         ]
       },
       {
