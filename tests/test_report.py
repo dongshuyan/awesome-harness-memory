@@ -46,7 +46,7 @@ class ReportContract(unittest.TestCase):
             coverage[item["coverage"]] = coverage.get(item["coverage"], 0) + 1
         self.assertEqual(coverage.get("深度对照"), manifest["counts"]["engineering_evidence_status"]["deep_comparison"])
         self.assertEqual(coverage.get("目录级对照"), manifest["counts"]["engineering_evidence_status"]["catalogue_level"])
-        self.assertEqual(coverage.get("目录级对照（身份暂定）"), manifest["counts"]["engineering_evidence_status"]["catalogue_level_identity_tentative"])
+        self.assertEqual(coverage.get("目录级对照（身份暂定）", 0), manifest["counts"]["engineering_evidence_status"]["catalogue_level_identity_tentative"])
         self.assertEqual(coverage.get("待补证"), manifest["counts"]["engineering_evidence_status"]["pending_evidence"])
 
     @staticmethod

@@ -16,7 +16,7 @@ The main reading path is the Agent Memory tutorial: six questions → concept br
 ├── catalogue.json           # Current public records, sources, and status
 ├── .nojekyll                # Serve static files without Jekyll processing
 ├── report/
-│   ├── index.html           # Published research × engineering report (byte-copied from the reviewed file)
+│   ├── index.html           # Published research × engineering report (preserved reference report with documented identity corrections)
 │   └── MANIFEST.json        # Version, source hash, counts, and evidence boundary for report/
 ├── assets/                  # README images and real Harness graph data/UI
 ├── scripts/build_harness_map.py # Embed graph data/UI and generate static preview
@@ -39,7 +39,7 @@ The main reading path is the Agent Memory tutorial: six questions → concept br
 
 ## Reading editions
 
-The tutorial is the default learning edition. Its 2026-11-11 workset contains 10 selected Research entries, 17 engineering entries, 10 benchmarks, 6 literature/screen entries, and 2 human-memory background entries; four additional research leads remain visible as screened candidates. CoALA, Claude Code, and LongMemEval are the complete technical exemplars; other entries are explicitly pending until their six answers are sourced. The older navigator, expanded Chinese Markdown pages, and root `catalogue.json` share a separate 137-resource edition, including 48 systems with documented basic functions. A resource status does not certify performance or safety.
+The tutorial is the default learning edition. Its 2026-11-12 workset contains 10 selected Research entries, 15 engineering entries, 10 benchmarks, 6 literature/screen entries, and 2 human-memory background entries; four additional research leads remain visible as screened candidates. Each technical category now has four complete entries. Research covers CoALA, Forms–Functions–Dynamics, MemGPT, and Generative Agents; engineering covers Claude Code, LangGraph, Google Agent Platform Memory Bank, and Mem0; benchmarks cover LongMemEval, MemoryAgentBench, COLLABMEM, and LoCoMo. Other entries are explicitly pending until their six answers are sourced. The older navigator, expanded Chinese Markdown pages, and root `catalogue.json` share a separate 136-resource edition (identity-corrected on 2026-11-12), including 48 systems with documented basic functions. A resource status does not certify performance or safety.
 
 `explore/` preserves the earlier concept-and-relationship map and its 32-resource English/Chinese catalogue. Its `build_catalog.py` reads the earlier English resource pages and writes only `explore/catalog.js`; it does not update the root catalogue or latest navigator. Follow [its maintenance notes](../explore/README.md#maintain-the-content) when changing that edition.
 

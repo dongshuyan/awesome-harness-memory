@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "checkedAt": "2026-11-11",
+  "checkedAt": "2026-11-12",
   "title": "Agent Memory 教程",
   "intro": "从六个问题建立共同观察方法，再读 Research、工程、Benchmark 和文化类比。",
   "comparisonCategories": [
@@ -1312,10 +1312,11 @@
       "evidence": "当前官方后端文档及 README 已读；默认 StateBackend 与 StoreBackend 范围分开，未运行"
     },
     "mem0": {
-      "label": "仓库与文档",
-      "url": "https://github.com/mem0ai/mem0",
-      "year": "2026-11-06 UTC",
-      "evidence": "当前官方 README 相关段落已读；历史论文与当前实现分开"
+      "label": "Mem0 · 官方README与部署方式",
+      "url": "https://github.com/mem0ai/mem0/blob/f1791daa86d469249c9b002f62644d58a1eb96a0/README.md",
+      "year": "固定提交 2026-11-06",
+      "evidence": "官方库/自托管服务/平台三种形态及认证边界；不把README性能宣传视为本教程复现。",
+      "checkedAt": "2026-11-12"
     },
     "graphiti": {
       "label": "仓库与文档",
@@ -1426,10 +1427,11 @@
       "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
     },
     "generative-agents": {
-      "label": "首版预印本",
-      "url": "https://arxiv.org/abs/2304.03442",
-      "year": "2026-11-02",
-      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+      "label": "Generative Agents · 论文 v2 §3–8",
+      "url": "https://arxiv.org/html/2304.03442v2",
+      "year": "2023-04-07 v1；2023-08-06 v2",
+      "evidence": "一手论文；§4 Memory/Retrieval/Reflection/Planning，§6–8评估与局限。文档事实置信度高，性能仅为作者报告。",
+      "checkedAt": "2026-11-12"
     },
     "reflexion": {
       "label": "首版预印本",
@@ -2168,6 +2170,111 @@
       "url": "https://aclanthology.org/2026.emnlp-main.1194.pdf",
       "year": "EMNLP 2026",
       "evidence": "作者元数据、正文 §§3.1–3.4、Table 1 competency rows、附录 Table 10、五类事件 FACT/CONTRADICTION/SENSITIVE/ROLE_SPECIFIC/DEPRECATION、matched memory-only harness、core/scaled/adversarial/compositional splits、gold audit 与 204-probe human verification 已核；摘要/PDF 报告 69.6% 仅属于论文协议；本教程未复现"
+    },
+    "ga-proceedings": {
+      "label": "Generative Agents · UIST 2023 正式目录",
+      "url": "https://uist.acm.org/2023/proceedings/",
+      "year": "2023 UIST",
+      "evidence": "官方会议目录核对题名、作者和机构；不以会议身份代替实验有效性判断。",
+      "checkedAt": "2026-11-12"
+    },
+    "ga-code": {
+      "label": "Generative Agents · ConceptNode / AssociativeMemory",
+      "url": "https://github.com/joonspk-research/generative_agents/blob/fe05a71d3e4ed7d10bf68aa4eda6dd995ec070f4/reverie/backend_server/persona/memory_structures/associative_memory.py",
+      "year": "代码快照 2023-08-11",
+      "evidence": "读取固定提交；ConceptNode、__init__、save、add_event/add_thought/add_chat；只读核查，未运行。",
+      "checkedAt": "2026-11-12"
+    },
+    "ga-readme": {
+      "label": "Generative Agents · 作者仓库与回放说明",
+      "url": "https://github.com/joonspk-research/generative_agents/blob/fe05a71d3e4ed7d10bf68aa4eda6dd995ec070f4/README.md",
+      "year": "代码快照 2023-08-11",
+      "evidence": "作者提供模拟、加载角色历史及回放入口；公开演示不能证明生产部署能力。",
+      "checkedAt": "2026-11-12"
+    },
+    "ga-retrieve": {
+      "label": "Generative Agents · new_retrieve",
+      "url": "https://github.com/joonspk-research/generative_agents/blob/fe05a71d3e4ed7d10bf68aa4eda6dd995ec070f4/reverie/backend_server/persona/cognitive_modules/retrieve.py",
+      "year": "代码快照 2023-08-11",
+      "evidence": "extract_recency / extract_importance / extract_relevance / new_retrieve；实现与论文参数不混写。",
+      "checkedAt": "2026-11-12"
+    },
+    "mem0-core": {
+      "label": "Mem0 · Python Memory 核心源码",
+      "url": "https://github.com/mem0ai/mem0/blob/f1791daa86d469249c9b002f62644d58a1eb96a0/mem0/memory/main.py",
+      "year": "固定提交 2026-11-06",
+      "evidence": "只读核查实际 add/search/update/delete/history 函数。add旧docstring仍描述自动update/delete，当前实现与Add Memory文档为追加流程，以实现和现行文档为准。",
+      "checkedAt": "2026-11-12"
+    },
+    "mem0-version": {
+      "label": "Mem0 · 版本与依赖声明",
+      "url": "https://github.com/mem0ai/mem0/blob/f1791daa86d469249c9b002f62644d58a1eb96a0/pyproject.toml",
+      "year": "pyproject 字段 2.2.1",
+      "evidence": "固定提交中的version字段；不代表在本教程安装或运行了该版本。",
+      "checkedAt": "2026-11-12"
+    },
+    "mem0-quickstart": {
+      "label": "Mem0 · OSS Python Quickstart",
+      "url": "https://docs.mem0.ai/open-source/python-quickstart",
+      "year": "2026-11-12 文档快照",
+      "evidence": "官方 add/search 示例和默认组件；文档动态更新，使用时对照版本。",
+      "checkedAt": "2026-11-12"
+    },
+    "mem0-add": {
+      "label": "Mem0 · Add Memory / additive pipeline",
+      "url": "https://docs.mem0.ai/core-concepts/memory-operations/add",
+      "year": "2026-11-12 文档快照",
+      "evidence": "官方追加写入、infer开关、expiration_date及按ID仍可读取的说明；OSS行为另与固定源码核对。",
+      "checkedAt": "2026-11-12"
+    },
+    "mem0-history": {
+      "label": "Mem0 · SQLite 历史与消息存储",
+      "url": "https://github.com/mem0ai/mem0/blob/f1791daa86d469249c9b002f62644d58a1eb96a0/mem0/memory/storage.py",
+      "year": "固定提交 2026-11-06",
+      "evidence": "SQLiteManager 的 history / message 记录；删除向量记录不等于抹除历史旧文本。",
+      "checkedAt": "2026-11-12"
+    },
+    "mem0-oss-overview": {
+      "label": "Mem0 · OSS / Library / Server 边界",
+      "url": "https://docs.mem0.ai/open-source/overview",
+      "year": "2026-11-12 文档快照",
+      "evidence": "官方区分Python库、自托管服务与托管平台；服务身份能力不自动归入Python库。",
+      "checkedAt": "2026-11-12"
+    },
+    "locomo-paper": {
+      "label": "LoCoMo · ACL 2024 正式论文 §3–8 / Appendix B–C",
+      "url": "https://aclanthology.org/2024.acl-long.747.pdf",
+      "year": "2024-08 · ACL Long Papers",
+      "evidence": "正式论文全文已核；Table5与发布JSON统计一致。论文结果未在本教程复现。",
+      "checkedAt": "2026-11-12"
+    },
+    "locomo-metadata": {
+      "label": "LoCoMo · ACL Anthology 作者与发表信息",
+      "url": "https://aclanthology.org/2024.acl-long.747/",
+      "year": "2024-08 · ACL Long Papers",
+      "evidence": "正式会议记录；作者、题名、页码13851–13870。",
+      "checkedAt": "2026-11-12"
+    },
+    "locomo-readme": {
+      "label": "LoCoMo · 发布数据说明 / 版本差异",
+      "url": "https://github.com/snap-research/locomo/blob/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/README.MD",
+      "year": "代码快照 2024-08-13",
+      "evidence": "README Data/Note1–3说明10对话子集、字段、图片仅提供URL；事件总结和多模态脚本仍标Coming soon。",
+      "checkedAt": "2026-11-12"
+    },
+    "locomo-data": {
+      "label": "LoCoMo · locomo10.json",
+      "url": "https://github.com/snap-research/locomo/blob/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/data/locomo10.json",
+      "year": "代码快照 2024-08-13",
+      "evidence": "只解析数据核对10对话/1986 QA及类别计数；不是模型或检索实验。",
+      "checkedAt": "2026-11-12"
+    },
+    "locomo-eval": {
+      "label": "LoCoMo · QA 评分实现",
+      "url": "https://github.com/snap-research/locomo/blob/3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376/task_eval/evaluation.py",
+      "year": "代码快照 2024-08-13",
+      "evidence": "f1_score / f1 / eval_question_answering；category5为拒答字符串判定。无context时recall默认1，不能解读为真实检索命中。",
+      "checkedAt": "2026-11-12"
     }
   },
   "concepts": [
@@ -2385,18 +2492,70 @@
       {
         "id": "generative-agents",
         "title": "Generative Agents",
-        "date": "2023",
-        "summary": "以模拟小镇 Agent 展示记忆流、反思和规划的组合。",
-        "why": "它是“事件记录如何变成高层反思并影响行动”的代表性研究方法。",
-        "boundary": "研究环境与真实 Harness 约束不同，结果不能直接转成生产结论。",
-        "status": "pending",
+        "date": "2023-04-07 预印本；2023 UIST",
+        "summary": "让模拟小镇中的 Agent 把经历保存为记忆，形成反思，再据此规划和行动。它适合用来理解“记住发生过什么”如何进一步变成“从经历中得出看法”。",
+        "why": "它把观察、检索、反思和行动连接成可解释的循环，论文与作者代码能互相定位。虽然发表于2023年，这个基础案例仍适合讲清经历怎样成为高层判断，再影响后续决策。",
+        "boundary": "主讲论文v2的Memory架构，并用作者固定提交解释数据结构。模拟中的行为可信度不等于事实准确性、生产可靠性或人类心智；论文和开源实现也不保证每个参数完全一致。",
+        "status": "complete",
         "sources": [
-          "generative-agents"
+          "generative-agents",
+          "ga-proceedings",
+          "ga-code",
+          "ga-retrieve",
+          "ga-readme"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
-        "canonicalUrl": "https://arxiv.org/abs/2304.03442",
-        "researchKind": "method"
+        "canonicalUrl": "https://arxiv.org/html/2304.03442v2",
+        "researchKind": "method",
+        "selectionEvidence": "UIST 2023正式论文，论文v2列出的作者机构包括Stanford、Google Research和Google DeepMind；§4公开检索与反思机制，§6对记忆、规划、反思作消融，§7观察25个Agent在两天模拟时间中的行为。收录依据是可核对的方法、实验和源码，不把演示效果作为真实社会模拟的充分证明。",
+        "limitations": "作者报告过漏取重要记忆、给记忆添造细节和语言风格过度正式等问题。原研究规模与运行时长有限，且没有给出生产级授权、隐私删除和投毒防御的完整验证。本教程只读论文与代码，未复现实验；各问例子若未注明原文，均为教学推演。",
+        "next": "engineering",
+        "profile": {
+          "kind": "研究方法 / 具身社会模拟中的Memory架构",
+          "authors": "Joon Sung Park、Joseph C. O’Brien、Carrie J. Cai、Meredith Ringel Morris、Percy Liang、Michael S. Bernstein",
+          "venue": "UIST 2023；DOI 10.1145/3586183.3606763",
+          "artifact": "论文v2、作者开源代码、可回放模拟",
+          "version": "论文v2（2023-08-06）；代码 fe05a71d3e4ed7d10bf68aa4eda6dd995ec070f4"
+        },
+        "questions": [
+          {
+            "answer": "核心是memory stream：把Agent经历的事情记录下来，同时保存由这些经历推得的反思和后续计划。观察描述发生过什么，反思表达Agent从多条记录中形成的判断，计划描述它准备做什么。三者都能影响后续行动，但证据身份不同：一条“我认为某人喜欢研究”的反思不是已经核实的客观事实。作者代码另以event、thought、chat组织节点，不能把这些代码标签直接当成论文的认知分类。",
+            "why": "只有事件流水，Agent可能记得许多细节却不能归纳；只有总结，又会丢掉支撑总结的经历。把原始经历、推断与意图区分开，才能解释它为什么作出一个选择，也能追查推断是否可靠。",
+            "example": "论文§4.2中，Klaus从自己与Maria的研究活动中推得共同兴趣，因而选择与Maria相处。教学时可把链条写成“多条活动记录 → 共同兴趣的判断 → 社交选择”；不能把中间判断视为作者证实的真实人物性格。",
+            "trace": "论文v2 §4、§4.1–4.3（来源Generative Agents）；代码ConceptNode.type与三个seq_*列表（来源《Generative Agents · ConceptNode / AssociativeMemory》）。机制与代码字段置信度高；例子的因果用途按论文叙述归纳。"
+          },
+          {
+            "answer": "这些记忆主要存在模型外部，以自然语言描述加时间、重要性等字段组织。论文把memory stream描述为记忆对象列表；向量表示用来计算相关性。作者代码中的ConceptNode还保存节点类型、主谓宾、关键词和关联信息，AssociativeMemory把节点与embeddings写入JSON文件。读入prompt只是取用阶段：保存的全集和本轮模型看见的子集是两个位置。",
+            "why": "这里的长期保留靠外部状态，而不是让每次模型调用都重新学习权重。文本让模型能理解内容，字段和向量让程序能筛选它；理解两者分工，才能知道换数据库或换embedding改变了哪一环。",
+            "example": "教学例子：一条“Maria参加了研究讨论”可保存为文本节点，并带创建时间与embedding。磁盘里即使保存了一千条经历，本轮回答也只需收到选出的几条；一千条已保存不等于一千条都进入上下文。",
+            "trace": "论文v2 §4.1的memory object与embedding定义；《Generative Agents · ConceptNode / AssociativeMemory》中的ConceptNode、AssociativeMemory.__init__和save。JSON是所核代码的保存方式，不归纳为所有实现必须采用的后端。"
+          },
+          {
+            "answer": "记忆以单个Agent的经历为中心。各角色从自己的身份种子开始，积累自己观察到的事件和对话；信息通过交流传播后，才可能成为另一个角色的记忆。模拟世界由共同引擎维护，不意味着每个Agent能直接读到所有人的记忆。论文还描述了每个角色对已见空间的局部认识，这与全局世界状态要分开。",
+            "why": "如果把共同环境误当成共同记忆，就解释不了为什么某人尚不知道一场活动，或为什么传话会改变信息。主体范围决定谁经历、谁得知、谁能据此行动；这一设计问题与安全授权仍是不同问题。",
+            "example": "论文§3.4.1中，Sam竞选的消息通过交谈传播。教学解释：Tom听到消息后可以再告诉别人；另一个尚未接触消息的Agent不应仅因同在小镇就自动拥有该记忆。",
+            "trace": "论文v2 §3.1种子记忆、§3.4.1信息传播、§5环境与角色感知；《Generative Agents · ConceptNode / AssociativeMemory》按persona加载存档。单Agent范围有直接依据；没有把它写成经过验证的访问控制机制。"
+          },
+          {
+            "answer": "观察不断进入记忆流；系统会根据累计事件的重要性触发反思，用近期记录提出问题、检索支撑材料，再生成带证据指向的高层判断并写回。论文实现使用150的触发阈值和最近100条记录来生成反思问题，这些是该实验参数，不是普遍规则。计划也会写回并随新情况调整；检索的时间衰减降低旧记录被取用的机会，不能据此推断旧记录已经被删除。",
+            "why": "这个生命周期把“记录”变为“归纳”，再使归纳参与未来决策。也正因为生成的反思会再次成为检索材料，早期错误可能继续影响后续判断；所以需要保留它来自哪些记录的线索。",
+            "example": "教学例子：今天多次讨论研究，可以形成一条“最近关心研究合作”的反思；明天规划会面时再检索它。若反思理解错了原话，追到原始记录才能纠正；简单降低旧记忆得分不能替代纠错或删除。",
+            "trace": "论文v2 §4.2给出触发、100条记录、生成问题和引用证据的流程；§4.3给出计划写回与修订；§4.1给出recency。阈值属于论文版本；生命周期解释为据此作出的教学归纳。"
+          },
+          {
+            "answer": "检索根据当前情境寻找值得放进prompt的记忆。论文把近期访问程度、重要性和与问题的语义相关性分别归一化后加权，选择上下文容得下的高分记录；随后模型用这些记录回答、反思或制定计划。重要性由模型评分，相关性用embedding相似度，近期程度依据访问时间衰减。检索成功只表示候选被送入模型，最终是否正确使用仍需检查输出和行为。",
+            "why": "单靠“语义相似”可能漏掉重要但措辞不同的往事；只看最近又可能忽略久远的重要关系。三个分量体现这篇方法怎样分配有限注意力，而不是三种独立Memory。",
+            "example": "论文图6中，询问Isabella最近期待什么时，派对准备比冰箱状态更应进入回答。教学上可以逐条检查“是否被召回、是否进了prompt、回答是否引用正确”，把存储、取用和效果拆开验证。",
+            "trace": "论文v2 §4.1与图6给出三项分数、等权设置和prompt选择；《Generative Agents · new_retrieve》提供对应函数。正文数值说明以论文为准，不声称开源代码权重逐项相同。"
+          },
+          {
+            "answer": "控制首先来自研究者设定的角色种子、环境规则、prompt和反思触发条件，运行时再由架构与模型决定记录、检索和推断。用户可以扮演角色的inner voice施加指示，作者仓库也提供回放与演示入口。反思引用支撑记录有助于追溯，但论文没有因此建立完整的授权、用户同意、敏感信息隔离或删除证明。§8.3讨论伦理风险，讨论风险与实现防护应分别阅读。",
+            "why": "谁能改变记忆，会影响Agent以后相信什么。研究演示中的可控角色与真实用户数据服务承担不同责任；能查看记录也不等于记录真实、访问合规或删除彻底。",
+            "example": "教学推演：若把一段错误传言写进角色记忆，系统可能据此形成反思。检查来源能帮助定位问题；如要改造成真实助理，还需另外定义谁可写入、如何纠错和哪些记录不得跨用户读取。这个改造建议不是论文已验证的安全能力。",
+            "trace": "论文v2 §3.1.2 User Controls、§4.2证据引用、§8.3 Ethics；《Generative Agents · 作者仓库与回放说明》的replay/demo说明。公开机制置信度高；生产治理结论仅限“所核材料未建立完整证明”。"
+          }
+        ]
       },
       {
         "id": "reflexion",
@@ -2594,19 +2753,6 @@
         "canonicalUrl": "https://github.com/thedotmack/claude-mem"
       },
       {
-        "id": "cloudmem",
-        "title": "CloudMEM",
-        "date": "公开日期未说明",
-        "summary": "用户提名的独立 Memory 系统线索。",
-        "why": "保留该名字，避免遗漏此前研究中提到的独立框架。",
-        "boundary": "当前 canonical identity、维护者、版本和原始来源尚未核实；发布前不能把它当作已验证系统。",
-        "status": "pending",
-        "sources": [],
-        "checkedAt": "2026-11-11",
-        "realityNote": "",
-        "canonicalUrl": null
-      },
-      {
         "id": "crewai",
         "title": "CrewAI",
         "date": "公开日期未说明",
@@ -2654,7 +2800,7 @@
       {
         "id": "google-memory-bank",
         "title": "Google Agent Platform Memory Bank",
-        "date": "核对快照 2026-11-11 UTC",
+        "date": "公开日期未说明",
         "summary": "Google Gemini Enterprise Agent Platform 的托管 Memory 服务：从 Sessions 或 Agent 事件提取、合并并保存长期记忆，再按 identity scope 做全量或相似度检索。",
         "why": "它是工程端很完整的托管样本：官方文档同时写出记忆内容、identity scope、自动提取与合并、异步写入、检索、TTL、revision、IAM 和数据驻留边界，能把研究里的六问落到可配置 API 和治理责任上。",
         "boundary": "本文只根据 Google Cloud 官方文档描述公开 API/配置语义；没有创建实例、调用服务或验证某个区域/版本的实际行为。治理建议不等于部署合规证明。",
@@ -2736,19 +2882,6 @@
         "canonicalUrl": "https://github.com/getzep/graphiti"
       },
       {
-        "id": "hisight",
-        "title": "HiSIGHT",
-        "date": "公开日期未说明",
-        "summary": "用户提名的 Agent/Harness Memory 线索。",
-        "why": "保留为待定位条目，后续补充真实项目身份和来源。",
-        "boundary": "名称可能存在同名项目；当前不作机制或质量判断。",
-        "status": "pending",
-        "sources": [],
-        "checkedAt": "2026-11-11",
-        "realityNote": "",
-        "canonicalUrl": null
-      },
-      {
         "id": "hindsight",
         "title": "Hindsight",
         "date": "公开日期未说明",
@@ -2766,7 +2899,7 @@
       {
         "id": "langgraph",
         "title": "LangGraph",
-        "date": "公开日期未说明；2026-11-11 文档与仓库快照",
+        "date": "公开日期未说明",
         "summary": "LangChain 的低层 Agent 编排框架，官方 Memory 文档把 thread-scoped state/checkpoint 与跨会话 namespace/store 分开。",
         "why": "它提供了一个清晰的工程样本：短期工作状态与长期记忆的边界、持久化接口、写入时机和节点内读取路径都在官方文档中给出，可用来观察“研究概念如何落成工程 API”。",
         "boundary": "本条目只描述官方公开文档和仓库，不等于本教程已经运行了所有配置；具体后端、部署权限、版本行为和应用 schema 需要按目标项目单独核对。",
@@ -2845,16 +2978,69 @@
         "id": "mem0",
         "title": "Mem0",
         "date": "公开日期未说明",
-        "summary": "独立 Memory 层，提供记忆抽取、存储、检索与更新接口。",
-        "why": "它让读者看到 Memory 能作为独立服务接入不同 Agent。",
-        "boundary": "公开资料不足以覆盖所有部署、安全和删除语义。",
-        "status": "pending",
+        "summary": "可嵌入应用的独立Memory层：把输入加工成可检索的记忆，再由应用决定怎样送回模型。本页以开源Python Memory库为主，区分自托管服务和托管平台。",
+        "why": "它把抽取、存储、范围过滤、检索和显式编辑公开成API，适合与完整Agent框架区分。读者能沿接口追踪Memory如何作为独立组件接入不同应用，并看到存储层与应用控制各自负责什么。",
+        "boundary": "以固定提交f1791daa86d469249c9b002f62644d58a1eb96a0及2026-11-12官方文档描述行为；pyproject字段为2.2.1，源码另含V3 pipeline注释，不能据此认定某个发行包行为相同。Python库、自托管服务器和托管平台能力不能互换。",
+        "status": "complete",
         "sources": [
-          "mem0"
+          "mem0",
+          "mem0-version",
+          "mem0-core",
+          "mem0-history",
+          "mem0-quickstart",
+          "mem0-add",
+          "mem0-oss-overview"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
-        "canonicalUrl": "https://github.com/mem0ai/mem0"
+        "canonicalUrl": "https://github.com/mem0ai/mem0",
+        "selectionEvidence": "mem0ai官方仓库公开Python实现、配置和CRUD接口，官方快速入门能定位add→search路径。固定提交pyproject版本为2.2.1。本教程据此解释可见机制，不采用README的性能宣传作为自测结果。",
+        "limitations": "未安装Mem0或运行服务，也未复现任何LoCoMo分数。抽取质量、检索质量、延迟、成本、权限隔离和删除传播均需在实际配置中验证；库的范围ID不代替登录鉴权，历史记录可能保留已删除记忆的旧文本。",
+        "next": "benchmarks",
+        "profile": {
+          "kind": "独立Memory库 / 可自托管服务",
+          "maintainer": "mem0ai",
+          "artifact": "开源Python Memory、官方文档与固定提交源码；托管MemoryClient仅作边界说明",
+          "version": "提交f1791daa86d469249c9b002f62644d58a1eb96a0；pyproject字段2.2.1，含V3 pipeline注释与v2→v3迁移说明；以此提交行为为准，未核验发行包或运行系统"
+        },
+        "questions": [
+          {
+            "answer": "输入可以是文本或有role的消息；infer=True时，当前写入流程用LLM抽取值得保存的事实、偏好或决定，形成独立文本记录。infer=False路径直接保存消息内容，二者不是同一种压缩方式。源码另有显式procedural_memory分支，但它不意味着所有输入都会自动被分成一套完整认知分类。应先看实际保存的内容，再讨论它在应用中的用途。",
+            "why": "聊天全文包含寒暄、重复和临时信息，抽取可以缩小后续检索材料，却也可能漏掉细节或错误归因。绕过抽取则保留更多原文，但需要承担冗余和噪声；这是一项可选择的内容加工策略。",
+            "example": "教学例子：输入“我以后希望用中文收会议纪要”。应用希望保存的是语言偏好，而不是整段寒暄。它可以让add抽取，也可以用infer=False存确定的文本；具体抽取结果由模型决定，本例不冒充一次实测输出。",
+            "trace": "《Mem0 · Python Memory 核心源码》的Memory.add、_add_to_vector_store、_create_procedural_memory；《Mem0 · Add Memory / additive pipeline》的Infer和Information extraction。当前普通分支是追加式抽取；旧docstring中的自动update/delete表述不作为行为依据。"
+          },
+          {
+            "answer": "库把记忆文本、ID、主体范围和时间等元数据与embedding保存在可配置的vector store中；SQLite history另外保存变更记录和部分消息上下文。它还维护供实体关联使用的存储。官方快速入门默认使用本地Qdrant与SQLite，LLM、embedding、向量后端和reranker可配置。这里的向量负责查找相似内容，返回给应用的记忆仍是可读文本。",
+            "why": "同一条记忆常同时有文本、向量、索引和历史记录。理解这些副本能解释为什么换embedding会影响查找，为什么删除当前记录不一定消除历史，以及为什么“本地库”不等于所有计算都在本机完成。",
+            "example": "教学例子：偏好文本保存在向量记录payload中，embedding帮助匹配“纪要该用什么语言”。若LLM和embedding选了云服务，处理请求仍会发送给所选提供方；若要求本地处理，就需要逐个配置并验证这些组件。",
+            "trace": "《Mem0 · Python Memory 核心源码》的Memory.__init__、_add_to_vector_store、entity_store；《Mem0 · SQLite 历史与消息存储》；《Mem0 · OSS Python Quickstart》默认组件和《Mem0 · OSS / Library / Server 边界》配置说明。数据路径由调用代码推导，未做网络抓包验证。"
+          },
+          {
+            "answer": "写入由user_id、agent_id、run_id中的至少一个确定范围；读取search/get_all时通过filters传入范围。组合这些ID，可以表达某个用户跨会话的记忆，或某个Agent、某次运行的局部材料。范围是由应用提供的标识规则，并不会自动知道当前登录者是谁；按ID读取、修改或删除也需要外层服务核对所有权。",
+            "why": "同一个人可能参加多个项目，同一个Agent也可能服务不同用户。没有范围约束，即使相似度很高也可能取到不该使用的记忆；但仅填一个user_id，还不足以证明调用者有权使用这个ID。",
+            "example": "API写法示例（未运行）：m.add(\"会议纪要用中文\", user_id=\"alice\")；之后用m.search(\"纪要语言\", filters={\"user_id\":\"alice\"})读取。若需要项目隔离，可由应用补元数据和过滤约定；不能把客户端提交的alice直接视为可信身份。",
+            "trace": "《Mem0 · Python Memory 核心源码》的_build_filters_and_metadata、Memory.add、search、get_all；《Mem0 · OSS Python Quickstart》的filters示例。该固定提交的search拒绝顶层user_id等参数，不能复制旧版调用签名。授权要求是基于API边界作出的工程推论。"
+          },
+          {
+            "answer": "当前add把新抽取的记忆追加进去，实际实现会做部分重复检测，并记录写入历史；它不自动承诺覆盖或删除相互矛盾的旧事实。要修改或移除已知记录，应用可显式调用update、delete或带范围的delete_all。expiration_date让过期记录在默认search/get_all中隐藏，但按ID仍可读取。过期、删除当前向量记录、清除历史与备份是不同动作。",
+            "why": "“旧值和新值都存在”与“新值替换旧值”会造成不同回答。只有知道当前写入协议，才能决定是否保留时间线、怎样处理偏好改变，以及用户要求忘记时还需要清理哪些副本。",
+            "example": "教学例子：先说“常驻上海”，后来改为“已搬到杭州”。两次add不能被假设为原地替换；应用应明确想保留迁居历史，还是更新一个当前地址字段。若用过期日期隐藏上海记录，也不能宣称它已从所有存储中抹除。",
+            "trace": "《Mem0 · Add Memory / additive pipeline》明确Additive storage；《Mem0 · Python Memory 核心源码》的_add_to_vector_store、update、delete、_delete_memory、_payload_is_expired及get；《Mem0 · SQLite 历史与消息存储》保存历史。现行文档与实现交叉支持；未运行冲突或删除测试。"
+          },
+          {
+            "answer": "应用显式调用search，库在给定范围内先取得语义候选，再结合后端可用的关键词信息和实体线索评分；已配置reranker且search调用传入rerank=True时才执行重排。返回值是字典，results键下是结果列表，各项包含ID、记忆文本、分数等字段及相关元数据。Mem0库不会仅因存好了偏好就自动改写任意Agent的prompt，应用仍要选择哪些结果、多少条、放在哪个位置，并将其传入下一次模型调用。",
+            "why": "从“有记忆”到“能用记忆”之间至少隔着检索、输入装配和模型理解。按这条路径排查，才能区别数据没有存入、范围选错、召回失败和模型忽略内容，而不把所有错误归给一个向量数据库。",
+            "example": "教学流程：用户问“帮我写会议纪要” → 应用按用户范围搜索 → 取到语言偏好 → 将其作为附带背景传给生成模型。应记录实际返回与实际prompt，才能验证偏好有没有被送到模型；最终语言是否正确还要检查输出。",
+            "trace": "《Mem0 · Python Memory 核心源码》的search、_search_vector_store、_compute_entity_boosts及reranker分支；《Mem0 · OSS Python Quickstart》演示返回结构。关键词能力依赖后端；prompt装配示例是应用集成推演，不是库自动执行的完整Agent。"
+          },
+          {
+            "answer": "库允许调用方选择提供者、写入内容、抽取prompt、范围以及更新和删除动作；更外层的自托管服务与托管平台承担各自的身份控制。公开README区分library没有独立服务认证层、server有认证与API key。源码还表明delete会向history记录被删除的旧文本，因此“返回删除成功”不能等同于所有副本永久擦除。来源、同意、保留策略和权限仍需具体部署说明。",
+            "why": "控制权分布在应用、SDK、模型提供方和数据库之间。把这些边界写清，才能判断错误记忆谁能改、跨用户请求由谁拒绝，以及“忘记我”需要覆盖哪些存储位置。",
+            "example": "教学检查：服务收到删除请求后先验证身份和记录归属，再删除当前记录；若承诺彻底清除，还要检查history、消息、实体关联和备份策略。这里描述的是需要制定和测试的流程，不宣称Mem0已自动提供同等级删除保证。",
+            "trace": "《Mem0 · OSS / Library / Server 边界》与固定提交README的Library/Server/Platform对照；《Mem0 · Python Memory 核心源码》的_delete_memory和history；《Mem0 · SQLite 历史与消息存储》的SQLiteManager。旧文本留在history是静态源码可见事实；未验证某部署的安全与合规。"
+          }
+        ]
       },
       {
         "id": "openai-agents-sdk",
@@ -3238,21 +3424,79 @@
       {
         "id": "locomo",
         "title": "LoCoMo",
-        "date": "2024",
-        "summary": "长程对话记忆评测，关注多会话、多跳和时间相关问答。",
-        "why": "它是长期对话记忆评测的早期代表，可与 LongMemEval 对照。",
-        "boundary": "主要观察问答结果，治理与载体未被完整覆盖。",
-        "status": "pending",
+        "date": "2024-08 · ACL Long Papers",
+        "summary": "用持续数月的多会话对话，检查模型能否找回细节、连接事件并维持对话一致性。正式版包含问答、事件总结和多模态对话生成三类任务，本页区分论文协议与公开评分代码。",
+        "why": "它把长期记忆的作用落实到有时间线、有说话人、有证据位置的任务，适合接在记忆机制之后学习。它提供可检查的任务和评分协议，同时让读者看到长对话能力与权限、删除等要求的区别。",
+        "boundary": "按ACL 2024正式论文与作者10对话发布集解释。README Note1所述早期50段对话不混入正式版10段统计；能力测量与六问的设计描述不是一一对应，分数也不能说明数据库、权限或删除是否合格。",
+        "status": "complete",
         "sources": [
-          "locomo"
+          "locomo-metadata",
+          "locomo-paper",
+          "locomo-readme",
+          "locomo-data",
+          "locomo-eval"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
-        "canonicalUrl": "https://arxiv.org/abs/2402.17753",
+        "canonicalUrl": "https://aclanthology.org/2024.acl-long.747/",
         "coverage": [
           "content",
-          "lifecycle",
           "exposure"
+        ],
+        "selectionEvidence": "ACL 2024长文，作者来自UNC Chapel Hill、USC和Snap；有正式论文、任务数据、证据dialog ID和QA评分实现。Table5与本地解析发布JSON均为10段对话、1,986个QA；这里只核对数据结构与计数，未运行任何参评模型。",
+        "limitations": "对话主要由模型生成、再由人工编辑；10段长对话不能代表所有真实用户和专业场景。QA自动评分受措辞与拒答规则影响，图片只发布链接/描述；固定提交README的事件总结、多模态评估代码仍写Coming soon。无完整权限、物理删除、在线成本或生产可靠性评估。",
+        "next": "culture",
+        "profile": {
+          "kind": "长程对话Memory数据集与评测协议",
+          "authors": "Adyasha Maharana、Dong-Ho Lee、Sergey Tulyakov、Mohit Bansal、Francesco Barbieri、Yuwei Fang",
+          "venue": "ACL 2024 Long Papers；13851–13870",
+          "artifact": "ACL论文、locomo10.json、QA/RAG评估代码",
+          "version": "ACL正式版；仓库 3eb6f2c585f5e1699204e3c3bdf7adc5c28cb376；数据只读统计"
+        },
+        "evaluation": {
+          "abilities": "问答分单跳841、多跳282、时间推理321、开放域知识96、对抗/不可回答446，共1,986题；此外还有事件总结与多模态对话生成。类别数量是数据分布，不是六问数量。",
+          "taskProtocol": "生成带人格与时间事件图的长对话，再由人工修订并添加答案与证据。QA比较截断上下文、长上下文及RAG；RAG可用原对话、observation或session summary。事件总结对照人物事件标注；多模态生成比较预测的多模态后续对话与数据集真实多模态对话的对齐程度，用MMRelevance及文本生成指标评价。",
+          "metrics": "QA论文报告answer F1与RAG evidence recall@k；发布代码对单跳/时间/开放域使用词归一化与词干化F1，多跳按子答案计算，对抗题按拒答字符串给0/1。事件总结在论文Table4同时报告ROUGE和改造后的FactScore precision/recall/F1；§4.2说明词面相似度不足以判断事实性，因此还需后者；多模态任务用MMRelevance及文本生成指标。不同指标不能混为统一Memory总分。",
+          "designMapping": "本页矩阵标出Q1与Q5的直接任务关联：Q1关注是否保留支持任务的内容，Q5在RAG协议中可检查证据是否召回。Q4通过跨会话时间与事件连接间接施压，但不等于测试了写入、更新、过期和删除的全过程。Q2是被比较系统采用的表示条件，Q3是对话/说话人的组织边界；Q6仅触及不知道时拒答，未检验授权、同意和物理删除。",
+          "limitations": "论文能力与公开脚本完备度分开。不能把无检索context时评分代码默认填的recall=1当成实际命中；也不能把后来改用LLM judge、不同类别子集或不同底模的“LoCoMo分数”直接等同于原论文指标。"
+        },
+        "questions": [
+          {
+            "answer": "LoCoMo要求系统保留能支撑回答和连贯对话的信息：人物、偏好、经历、时间关系，以及对话中的视觉内容。QA五类分别检查单会话事实、跨会话组合、时间推理、对话事实与外部常识结合、以及信息不足时拒答。事件总结进一步要求还原重要事件，不能只记住零散关键词。这里描述的是任务需求，并未强制参评系统采用同一种Memory分类。",
+            "why": "只测能否复述一句话，会漏掉跨会话连接和不知道时拒答。反过来，开放域题还依赖底模常识，因此答对多少并不是一个纯粹的“存了多少事实”指标，需要按任务类别阅读。",
+            "example": "发布数据里有“Melanie何时画了一幅日出”的时间题，标注答案是2022，证据指向D1:12。读者可以沿证据核对时间线；这是实际数据示例。若把问题改成原对话没有提到的地点，则是另一个教学反例，不能拿原答案猜。",
+            "trace": "《LoCoMo · ACL 2024 正式论文 §3–8 / Appendix B–C》 §4.1–4.3；《LoCoMo · locomo10.json》首个sample的qa与evidence字段。Table5及本地解析核对类别计数；实际题与教学反例已分开。"
+          },
+          {
+            "answer": "数据集以JSON组织原对话、生成的observations、会话摘要、事件总结标注和QA。对参评Memory的物理载体没有唯一要求：论文比较截断上下文、长上下文和检索增强，并在RAG中分别用原对话、observation或session summary作检索材料。重要区别是event_summary属于评测金标准，不能混作正常系统已经知道的记忆输入。",
+            "why": "用同一批对话更换记忆表示，才能观察信息加工怎样影响检索与回答。但如果把标准答案或金标准事件图直接塞给模型，测到的是答案泄漏后的表现，不能说明Memory设计有效。",
+            "example": "教学对照：一次把原始多轮对话建索引，另一次只索引每轮抽出的observations，保持问答模型和问题不变，再看证据召回与答案变化。评测用的qa.answer、qa.evidence和event_summary保留给评分端；若使用oracle条件必须单独标明。",
+            "trace": "《LoCoMo · 发布数据说明 / 版本差异》 Data字段和Note3；《LoCoMo · ACL 2024 正式论文 §3–8 / Appendix B–C》 §5的三类RAG材料及§4.2金标准。此处控制变量和防泄漏要求是教程的评测推导，未声称本教程运行了该对照。"
+          },
+          {
+            "answer": "基本单位是两个虚拟说话人的一段长期对话，内部由带时间戳的多个session和turn组成。正式发布集有10段对话；每条turn带speaker和dia_id，问答证据指回这些位置。因而它能检查系统是否分清人物与会话，但不是多租户、多组织或多个Agent各自拥有权限记忆的完整测试。",
+            "why": "同一事实属于谁、发生在哪次会话，会影响答案是否正确。把所有对话无标识地混在一起，即使找到了相似句子也可能张冠李戴；这类归属问题仍不能替代访问授权测试。",
+            "example": "教学例子：Alice和Bob都谈到搬家，答题时既要保留说话人，又要找到对应时间。正式实验接入独立Memory服务时，应按sample隔离数据并保留speaker信息，避免从另一段对话取到同名事实；这是一条实验配置建议。",
+            "trace": "《LoCoMo · 发布数据说明 / 版本差异》的conversation/session_<num>/speaker/dia_id；《LoCoMo · ACL 2024 正式论文 §3–8 / Appendix B–C》 Appendix B Table5；《LoCoMo · locomo10.json》只读检查。人物归属与租户安全的差异是基于协议范围的推论。"
+          },
+          {
+            "answer": "对话跨越多个带日期的session，任务要求把早期事件和后来谈话联系起来，识别时间与因果关系。正式版平均约600轮、16K tokens，最长32个session；Table5更精确地给出平均27.2个session和16,618.1 tokens。它主要衡量已有长历史被保留和利用后的效果，没有为通用Memory规定何时写入、如何纠正冲突、何时过期或怎样物理删除的统一测试协议。",
+            "why": "长时间跨度会暴露遗忘旧事件和连接错误，但看到一份完整历史后答题，与在实时交互中逐步更新记忆不同。必须说明自己是离线一次导入，还是按session顺序写入，否则同名benchmark下的系统负担并不相同。",
+            "example": "教学例子：早期说受伤，后期说正在康复，正确理解需要把两个session连起来。若另外测试“删除受伤记录后应不再透露”，那是新增删除任务，不能把原来的时间推理得分解释为已经验证了删除能力。",
+            "trace": "《LoCoMo · ACL 2024 正式论文 §3–8 / Appendix B–C》摘要、§3–4与Appendix B Table5；《LoCoMo · 发布数据说明 / 版本差异》 Note1说明从早期50段中筛出10段。README Note1记录初始50段筛成10段；本页明确使用ACL正式版。在线更新与删除缺口为协议审计判断。"
+          },
+          {
+            "answer": "QA系统可直接读有限或较长上下文，也可先检索相关材料再回答。论文为QA标注了证据turn ID，因此在有检索上下文记录的RAG条件下，能把“证据是否召回”和“答案是否正确”分开看。发布代码按类别评分：多数题用词级F1，多跳按子答案处理，对抗题检查特定拒答表达。高词重合分不自动证明模型推理过程可靠。",
+            "why": "检索失败和读到后仍答错需要不同修复。两种指标有助于定位问题；评分实现又决定了能识别哪些正确回答，所以报告分数时必须说明类别范围、底模、prompt、输入预算和评分器。",
+            "example": "教学诊断：答案错误且证据没进检索结果，先检查索引和召回；证据已进入prompt仍答错，再检查时间理解或生成。另一个陷阱是代码在没有_context字段或没有evidence标注时把recall填成1，这只是实现默认值，不能报告成100%真实检索命中。",
+            "trace": "《LoCoMo · ACL 2024 正式论文 §3–8 / Appendix B–C》 §4.1、§5、Table2–3；《LoCoMo · QA 评分实现》的f1_score、f1与eval_question_answering，尤其category5和_context分支。本教程只做静态核查，未产生模型得分。"
+          },
+          {
+            "answer": "评测方控制对话生成、人工编辑、问答标注及评分协议；参评系统控制自己的记忆读写实现。对抗题检查信息不足时能否拒答，与治理有有限交集，但没有模拟多用户权限、恶意记忆写入、同意撤回和删除传播。数据许可与图片来源也属于使用边界：论文Appendix B.2声明拟以CC BY-NC 4.0发布数据；这是论文的许可声明，本页未另行核验发布包许可，仓库仅给图片URL、描述和检索词，不提供图片本体。",
+            "why": "能拒答未知问题有助于减少编造，却不能说明系统会拒绝未授权读取。把这两种保证混在一起，会错误扩大benchmark的安全覆盖；评测材料可下载也不等于所有图片权利都已获得。",
+            "example": "教学反例：系统能回答“资料未提及”，仍可能把用户A的真实记忆泄露给用户B。若要检验这点，需要额外构造身份、访问策略和跨用户探针，并单独报告违规率；原LoCoMo的adversarial题不能代替这个实验。",
+            "trace": "《LoCoMo · ACL 2024 正式论文 §3–8 / Appendix B–C》 §4.1 Adversarial、§8 Limitations、印刷页13865 Appendix B.2许可声明；《LoCoMo · 发布数据说明 / 版本差异》 Note2及代码发布状态。权限与删除的未覆盖项根据公开协议判断，不宣称参评系统本身不支持这些能力。"
+          }
         ]
       }
     ],

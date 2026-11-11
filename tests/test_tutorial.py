@@ -85,7 +85,8 @@ class TutorialContract(unittest.TestCase):
         for viz in self.data['visualizations']:
             for field in ('id', 'title', 'purpose', 'note'):
                 self.assertTrue(viz.get(field), (viz.get('id'), field))
-        self.assertNotIn('rank', json.dumps(self.data).lower())
+        # Retrieval rerankers are mechanisms, not cross-system rankings.
+        self.assertNotRegex(json.dumps(self.data).lower(), r'\b(?:rank|ranking|rankings|leaderboard)\b')
 
     def test_every_detail_comparison_button_has_a_visible_picker_entry(self):
         source = (ROOT / 'site/tutorial.js').read_text()
@@ -105,6 +106,39 @@ class TutorialContract(unittest.TestCase):
         for entry in self.data['entries']['engineering']:
             self.assertTrue(entry['date'])
             self.assertIsInstance(entry['date'], str)
+
+    def test_engineering_publication_dates_are_not_snapshot_dates(self):
+        for entry in self.data['entries']['engineering']:
+            self.assertNotRegex(entry['date'], r'快照|核对', entry['id'])
+
+    def test_engineering_identities_have_sources_without_duplicate_misnamings(self):
+        entries = {entry['id']: entry for entry in self.data['entries']['engineering']}
+        for entry in entries.values():
+            self.assertTrue(entry.get('canonicalUrl'), entry['id'])
+            self.assertTrue(entry['sources'], entry['id'])
+        for mistaken_id in ('cloudmem', 'hisight'):
+            self.assertNotIn(mistaken_id, entries)
+        for entry_id, repository in (
+            ('claude-mem', 'https://github.com/thedotmack/claude-mem'),
+            ('hindsight', 'https://github.com/vectorize-io/hindsight'),
+        ):
+            self.assertEqual(entries[entry_id]['canonicalUrl'], repository)
+        catalogue = json.loads((ROOT / 'catalogue.json').read_text())
+        self.assertNotIn('cloudmem', {entry['id'] for entry in catalogue['resources']})
+        self.assertNotIn('cloudmem', (ROOT / 'report/index.html').read_text().lower())
+
+    def test_third_batch_has_six_sourced_explanations(self):
+        for category, entry_id in (
+            ('research', 'generative-agents'),
+            ('engineering', 'mem0'),
+            ('benchmarks', 'locomo'),
+        ):
+            entry = next(e for e in self.data['entries'][category] if e['id'] == entry_id)
+            self.assertEqual(entry['status'], 'complete')
+            self.assertEqual(len(entry['questions']), 6)
+            for answer in entry['questions']:
+                for field in ('answer', 'why', 'example', 'trace'):
+                    self.assertTrue(answer.get(field), (entry_id, field))
 
     def test_question_evidence_has_sources_and_culture_entries_have_provenance(self):
         source_ids = set(self.data['sources'])

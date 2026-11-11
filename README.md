@@ -19,15 +19,15 @@ The final comparison page is optional. It places selected entries side by side a
 
 ## Current tutorial edition
 
-The snapshot checked on **2026-11-11** contains:
+The snapshot checked on **2026-11-12** contains:
 
-- **10 selected Research entries**, with CoALA, Forms–Functions–Dynamics, and MemGPT as complete six-question exemplars; four additional review leads remain visible as screened candidates;
-- **17 engineering entries**, with Claude Code, LangGraph, and Google Agent Platform Memory Bank as complete exemplars;
-- **10 benchmarks**, with LongMemEval, MemoryAgentBench, and COLLABMEM as complete exemplars;
+- **10 selected Research entries**, with CoALA, Forms–Functions–Dynamics, MemGPT, and Generative Agents as complete six-question exemplars; four additional review leads remain visible as screened candidates;
+- **15 engineering entries**, with Claude Code, LangGraph, Google Agent Platform Memory Bank, and Mem0 as complete exemplars;
+- **10 benchmarks**, with LongMemEval, MemoryAgentBench, COLLABMEM, and LoCoMo as complete exemplars;
 - **6 literature and screen entries**, with *Memento* and “Funes the Memorious” as complete cultural examples;
 - **2 human-memory background entries**, plus topic and tool pages.
 
-The other entries are deliberately marked **待完善 / pending**. A pending entry is a useful lead with a source and a boundary statement; it is not presented as if its six answers had already been verified. CloudMEM and HiSIGHT are retained as named leads because they were part of the research conversation, while their canonical identity is still unresolved.
+The other entries are deliberately marked **待完善 / pending**. A pending entry is a useful lead with a source and a boundary statement; it is not presented as if its six answers had already been verified.
 
 Research and engineering are selected for source quality, identifiable authors or maintainers, recency, and verifiability. Peer-reviewed or proceedings sources are preferred; arXiv-only work is kept only with an explicit evidence boundary. The lists are ordered by known public year, with entries whose public date is not stated placed after dated entries. The order is not a quality ranking.
 
@@ -38,7 +38,7 @@ Research and engineering are selected for source quality, identifiable authors o
 - [`site/frame.html`](site/frame.html) and [`site/app.js`](site/app.js) provide the UI shell and routing. [`index.html`](index.html) is generated for GitHub Pages.
 - The earlier catalogue, topic pages, seven-layer Harness projection, and [research × engineering report](https://dongshuyan.github.io/awesome-harness-memory/report/index.html) remain available under the reference and tools links. They are preserved editions with their own evidence scope; the tutorial is the default learning path.
 
-The root catalogue still contains **137 public resources** in its 2026-11-06 edition. That count is separate from the tutorial workset above. Neither count is an industry total, market share, performance result, or completeness claim.
+The root catalogue contains **136 public resources** after the 2026-11-12 identity correction to its 2026-11-06 edition. That count is separate from the tutorial workset above. Neither count is an industry total, market share, performance result, or completeness claim.
 
 ## Local preview and checks
 

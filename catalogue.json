@@ -1,11 +1,11 @@
 {
   "checked_utc": "2026-11-06",
   "counts": {
-    "all": 137,
+    "all": 136,
     "statuses": {
       "documented": 55,
       "reading": 47,
-      "pending": 32,
+      "pending": 31,
       "historical": 3
     },
     "systems_documented": 48
@@ -4071,27 +4071,6 @@
       "support": "研究资料",
       "highlight": "从原始来源继续阅读，并结合对应研究问题比较。",
       "facts": {}
-    },
-    {
-      "id": "cloudmem",
-      "title": "CloudMEM",
-      "summary": "用户原称尚不能唯一定位到项目；不擅自替换成 Claude-Mem。",
-      "types": [
-        "systems"
-      ],
-      "status": "pending",
-      "group": "unresolved",
-      "kind": "待核对象",
-      "sources": [],
-      "checked": "2026-11-06 UTC",
-      "verification": "身份/机制未完成核对；不纳入已核系统计数",
-      "limit": "用户原称尚不能唯一定位到项目；不擅自替换成 Claude-Mem。",
-      "aliases": [],
-      "axes": [],
-      "facts": {},
-      "support": "需按来源确认",
-      "highlight": "从原始来源继续阅读，并结合对应研究问题比较。",
-      "versionNote": "来源页面核对日期见条目；具体部署版本需另核。"
     },
     {
       "id": "cortex-ai",

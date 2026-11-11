@@ -2,16 +2,16 @@
   "name": "Research × engineering report",
   "file": "report/index.html",
   "version": "2026-11-09",
-  "source_sha256": "82de2528e409332d73df89793ea251145fe2347836cd8985cb4ce6bf56adba99",
+  "source_sha256": "2e94f45b2bd578bae45d60ebd956aa245f48bbeb583982bf04104dddd422896c",
   "prepared_on": "2026-11-10",
   "reviewed_on": "2026-11-09",
   "counts": {
     "research_perspectives": 10,
-    "engineering_entries": 54,
-    "pairs": 540,
+    "engineering_entries": 53,
+    "pairs": 530,
     "pair_status": {
       "deep_comparison": 120,
-      "catalogue_level_pending_deep_comparison": 420
+      "catalogue_level_pending_deep_comparison": 410
     },
     "deep_comparison_relations": {
       "partial_correspondence": 78,
@@ -22,18 +22,20 @@
     "engineering_evidence_status": {
       "deep_comparison": 12,
       "catalogue_level": 37,
-      "catalogue_level_identity_tentative": 1,
+      "catalogue_level_identity_tentative": 0,
       "pending_evidence": 4
     },
-    "sources_registered": 205,
-    "sources_referenced_in_page": 80
+    "sources_registered": 204,
+    "sources_referenced_in_page": 79
   },
-  "relation_to_public_catalogue": "This working set is separate from the 137-resource public catalogue in catalogue.json. Its counts must not be added to or substituted for that catalogue's counts.",
+  "relation_to_public_catalogue": "This working set is separate from the 136-resource public catalogue in catalogue.json. Its counts must not be added to or substituted for that catalogue's counts.",
   "evidence_boundary": [
     "Document-based comparison only. It does not establish implementation completeness, reproduced performance, deployment maturity, or security certification.",
     "No system was installed and no benchmark was run for this report.",
     "Evidence labels describe what was checked at the review date.",
     "Pair-level status shows evidence depth and observation status. It is not a ranking, performance measure, quality measure, or similarity score.",
     "Engineering entries that are not one-to-one with catalogue entries are labelled as such; identity-tentative and pending items are marked explicitly."
-  ]
+  ],
+  "last_maintenance_on": "2026-11-12",
+  "maintenance_note": "Removed one misidentified entry whose evidence status was identity-tentative, plus its ten comparisons; retained the established Claude-Mem entry. Other report content retains its original evidence date."
 }

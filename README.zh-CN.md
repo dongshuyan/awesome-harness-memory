@@ -19,15 +19,15 @@
 
 ## 当前教程工作集
 
-截至 **2026-11-11** 的教程快照包含：
+截至 **2026-11-12** 的教程快照包含：
 
-- **10 个精选 Research**，CoALA、Forms–Functions–Dynamics 和 MemGPT 已有完整的六问样板；另有 4 个研究候选作为待筛线索保留在 Research 页面；
-- **17 个工程系统**，Claude Code、LangGraph 和 Google Agent Platform Memory Bank 已有完整样板；
-- **10 个 Benchmark**，LongMemEval、MemoryAgentBench 和 COLLABMEM 已有完整样板；
+- **10 个精选 Research**，CoALA、Forms–Functions–Dynamics、MemGPT 和 Generative Agents 已有完整的六问样板；另有 4 个研究候选作为待筛线索保留在 Research 页面；
+- **15 个工程系统**，Claude Code、LangGraph、Google Agent Platform Memory Bank 和 Mem0 已有完整样板；
+- **10 个 Benchmark**，LongMemEval、MemoryAgentBench、COLLABMEM 和 LoCoMo 已有完整样板；
 - **6 个文学与影视条目**，*Memento* 和 Borges 的短篇 “Funes the Memorious” 已完成文化类样板；
 - **2 个人类记忆背景条目**，以及专题和工具页面。
 
-其余条目会明确标记为 **待完善**。待完善表示它已经有来源入口、收录理由和证据边界，但六问答案还没有逐项核实；页面不会把摘要扩写成事实。CloudMEM 和 HiSIGHT 作为此前讨论过的名字保留，但它们的 canonical identity 仍待确认。
+其余条目会明确标记为 **待完善**。待完善表示它已经有来源入口、收录理由和证据边界，但六问答案还没有逐项核实；页面不会把摘要扩写成事实。
 
 Research 和工程条目按来源质量、作者或维护团队可识别性、时效性和可复核性筛选。优先采用同行评议论文、会议论文集、官方文档和原作者仓库；只有预印本的条目会单独标明证据边界。列表按已知公开年份倒序，公开日期未说明的条目置后；顺序不是质量排名。
 
@@ -38,7 +38,7 @@ Research 和工程条目按来源质量、作者或维护团队可识别性、�
 - [`site/frame.html`](site/frame.html) 与 [`site/app.js`](site/app.js) 提供页面外壳和路由；[`index.html`](index.html) 是 GitHub Pages 的生成入口。
 - 旧版分类与方法、资源目录、七层 Harness 图解和[研究 × 工程对照报告](https://dongshuyan.github.io/awesome-harness-memory/report/index.html)仍然保留在“参考与工具”入口。它们各自有独立的证据范围；默认学习路径改为本教程。
 
-根目录的旧版结构化目录在 2026-11-06 版本中仍有 **137 项公共资源**。这个数字与上面的教程工作集分开统计，不表示行业总量、市场占比、性能结果或完整性承诺。
+根目录的旧版结构化目录以 2026-11-06 版本为基础，经 2026-11-12 身份纠正后有 **136 项公共资源**。这个数字与上面的教程工作集分开统计，不表示行业总量、市场占比、性能结果或完整性承诺。
 
 ## 本地预览与检查
 

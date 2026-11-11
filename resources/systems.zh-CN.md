@@ -1766,41 +1766,6 @@ MCP 官方参考服务器提供实体、关系和 observation（观察记录）�
 
 来源页面核对日期见条目；具体部署版本需另核。
 
-<a id="cloudmem"></a>
-
-### CloudMEM
-
-**待核线索 · 待核对象**
-
-用户原称尚不能唯一定位到项目；不擅自替换成 Claude-Mem。
-
-**值得看**：从原始来源继续阅读，并结合对应研究问题比较。
-
-**边界**：用户原称尚不能唯一定位到项目；不擅自替换成 Claude-Mem。
-
-**提供方式**：需按来源确认
-
-<details>
-<summary>七个视角下的已核描述</summary>
-
-| 视角 | 描述 |
-| --- | --- |
-| [谁在管理记忆](../docs/landscape.zh-CN.md#owner) | 未核；不能解释为不支持 |
-| [记住什么](../docs/landscape.zh-CN.md#content) | 未核；不能解释为不支持 |
-| [为谁保存，保留多久](../docs/landscape.zh-CN.md#scope) | 未核；不能解释为不支持 |
-| [如何承载与表示](../docs/landscape.zh-CN.md#form) | 未核；不能解释为不支持 |
-| [怎样形成和维护](../docs/landscape.zh-CN.md#operation) | 未核；不能解释为不支持 |
-| [怎样进入下一次行动](../docs/landscape.zh-CN.md#use) | 未核；不能解释为不支持 |
-| [怎样追溯与控制](../docs/landscape.zh-CN.md#governance) | 未核；不能解释为不支持 |
-
-</details>
-
-**原始资料**：名称未定位，不填造链接
-
-核对：2026-11-06 UTC。身份/机制未完成核对；不纳入已核系统计数。
-
-来源页面核对日期见条目；具体部署版本需另核。
-
 <a id="continue"></a>
 
 ### Continue
