@@ -22,7 +22,7 @@ The final comparison page is optional. It places selected entries side by side a
 The snapshot checked on **2026-11-12** contains:
 
 - **10 selected Research entries**, with 10 complete six-question analyses; four additional review leads remain visible as screened candidates;
-- **15 engineering entries**, with 13 complete six-question analyses;
+- **15 engineering entries**, with 15 complete six-question analyses;
 - **10 benchmarks**, with 10 complete six-question analyses;
 - **6 literature and screen entries**, with *Memento* and “Funes the Memorious” as complete cultural examples;
 - **2 human-memory background entries**, plus topic and tool pages.
