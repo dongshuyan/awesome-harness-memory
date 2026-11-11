@@ -2747,6 +2747,111 @@
       "year": "447b195344a2feaf995176446379e60632831f94 · 2026-08-31",
       "evidence": "语义judge提示词与offline lexical模式；模式不能混作原论文实验。",
       "checkedAt": "2026-11-12"
+    },
+    "character-v2": {
+      "label": "Agent Memory Characterization · v2论文",
+      "url": "https://arxiv.org/html/2606.06448v2",
+      "year": "2026-09-22 · v2",
+      "evidence": "§2四轴/四范式/七阶段，§3实验配置，§4成本/调度/增长，附录artifact；作者测量未复现。",
+      "checkedAt": "2026-11-12"
+    },
+    "character-meta-current": {
+      "label": "Agent Memory Characterization · 版本与身份",
+      "url": "https://arxiv.org/abs/2606.06448",
+      "year": "v1 2026-06-04；v2 2026-09-22",
+      "evidence": "标题、作者、首发与版本日期；未核正式同行评议发表。",
+      "checkedAt": "2026-11-12"
+    },
+    "character-artifact-current": {
+      "label": "Agent Memory Characterization · profiling artifact",
+      "url": "https://github.com/Tambe-Lab/agent-memory-profiling/blob/30a157b7b49f732ee4b961cb19d7f877cf475f81/README.md",
+      "year": "30a157b7b49f732ee4b961cb19d7f877cf475f81 · 2026-08-18",
+      "evidence": "阶段归因、API/硬件遥测、实验入口；不等于本教程运行通过。",
+      "checkedAt": "2026-11-12"
+    },
+    "claudemem-overview-current": {
+      "label": "Claude-Mem · 官方架构",
+      "url": "https://github.com/thedotmack/claude-mem/blob/858f47ffe0b8c52a019cf76b5cdc1897365d1f1a/docs/public/architecture/overview.mdx",
+      "year": "858f47ffe0b8c52a019cf76b5cdc1897365d1f1a · 2026-11-11",
+      "evidence": "hooks、worker、数据库与上下文路径；宣传性节省数字不作为效果证明。",
+      "checkedAt": "2026-11-12"
+    },
+    "claudemem-database-current": {
+      "label": "Claude-Mem · 存储结构",
+      "url": "https://github.com/thedotmack/claude-mem/blob/858f47ffe0b8c52a019cf76b5cdc1897365d1f1a/docs/public/architecture/database.mdx",
+      "year": "858f47ffe0b8c52a019cf76b5cdc1897365d1f1a · 2026-11-11",
+      "evidence": "observations/session_summaries/user_prompts/tool_uses；原始I/O上限与索引。",
+      "checkedAt": "2026-11-12"
+    },
+    "claudemem-search-current": {
+      "label": "Claude-Mem · 分层搜索",
+      "url": "https://github.com/thedotmack/claude-mem/blob/858f47ffe0b8c52a019cf76b5cdc1897365d1f1a/docs/public/usage/search-tools.mdx",
+      "year": "858f47ffe0b8c52a019cf76b5cdc1897365d1f1a · 2026-11-11",
+      "evidence": "search→timeline→get_observations，项目过滤，token大小估计非实测收益。",
+      "checkedAt": "2026-11-12"
+    },
+    "claudemem-config-current": {
+      "label": "Claude-Mem · 配置与范围",
+      "url": "https://github.com/thedotmack/claude-mem/blob/858f47ffe0b8c52a019cf76b5cdc1897365d1f1a/docs/public/configuration.mdx",
+      "year": "858f47ffe0b8c52a019cf76b5cdc1897365d1f1a · 2026-11-11",
+      "evidence": "provider、project scope、排除项目、跨项目设置、redaction与Cloud Sync边界。",
+      "checkedAt": "2026-11-12"
+    },
+    "claudemem-bridge-current": {
+      "label": "Claude-Mem · 原生记忆桥接",
+      "url": "https://github.com/thedotmack/claude-mem/blob/858f47ffe0b8c52a019cf76b5cdc1897365d1f1a/docs/native-memory-bridge.md",
+      "year": "858f47ffe0b8c52a019cf76b5cdc1897365d1f1a · 2026-11-11",
+      "evidence": "worker/server差异、save_memory、可选文件监听与历史快照。",
+      "checkedAt": "2026-11-12"
+    },
+    "claudemem-redaction-current": {
+      "label": "Claude-Mem · 脱敏范围",
+      "url": "https://github.com/thedotmack/claude-mem/blob/858f47ffe0b8c52a019cf76b5cdc1897365d1f1a/docs/public/usage/auto-redaction.mdx",
+      "year": "858f47ffe0b8c52a019cf76b5cdc1897365d1f1a · 2026-11-11",
+      "evidence": "默认关闭、模式匹配和server metadata例外；不能据此推导完整隐私保证。",
+      "checkedAt": "2026-11-12"
+    },
+    "claudemem-hooks-current": {
+      "label": "Claude-Mem · 生命周期钩子",
+      "url": "https://github.com/thedotmack/claude-mem/blob/858f47ffe0b8c52a019cf76b5cdc1897365d1f1a/docs/public/architecture/hooks.mdx",
+      "year": "858f47ffe0b8c52a019cf76b5cdc1897365d1f1a · 2026-11-11",
+      "evidence": "观察/摘要异步，SessionEnd标记完成而非删除，private处理。",
+      "checkedAt": "2026-11-12"
+    },
+    "claudemem-readme-current": {
+      "label": "Claude-Mem · 项目身份与运行模式",
+      "url": "https://github.com/thedotmack/claude-mem/blob/858f47ffe0b8c52a019cf76b5cdc1897365d1f1a/README.md",
+      "year": "858f47ffe0b8c52a019cf76b5cdc1897365d1f1a · 2026-11-11",
+      "evidence": "社区项目thedotmack/claude-mem、v15.17.1、local存储与可选cloud sync，非Anthropic原生功能。",
+      "checkedAt": "2026-11-12"
+    },
+    "utilmem-final-current": {
+      "label": "UTILMEM · EMNLP正式论文",
+      "url": "https://aclanthology.org/2026.emnlp-main.1639.pdf",
+      "year": "2026-10 · EMNLP主会",
+      "evidence": "§3合成/反事实筛选/干扰，§4协议与RS/NR/DR，§5干扰实验，§7局限，附录E/F裁判边界。",
+      "checkedAt": "2026-11-12"
+    },
+    "utilmem-venue-current": {
+      "label": "UTILMEM · 正式发表记录",
+      "url": "https://aclanthology.org/2026.emnlp-main.1639/",
+      "year": "2026-10-24至29 · EMNLP",
+      "evidence": "Peijun Qing、Fobo Shi、Soroush Vosoughi；主会37249–37272。",
+      "checkedAt": "2026-11-12"
+    },
+    "utilmem-release-current": {
+      "label": "UTILMEM · 发布状态",
+      "url": "https://github.com/peijunallin/UtilMem/blob/b7ebd4a1ba31379a67540f2b1c95ec48351f6d79/README.md",
+      "year": "b7ebd4a1ba31379a67540f2b1c95ec48351f6d79 · 2026-08-29",
+      "evidence": "仓库已给数据集入口；评测与构造代码标coming soon。不可声称评分代码已公开可复现。",
+      "checkedAt": "2026-11-12"
+    },
+    "utilmem-data-current": {
+      "label": "UTILMEM · 数据集",
+      "url": "https://huggingface.co/datasets/KrisQ/utilmem",
+      "year": "2026-11-12核查",
+      "evidence": "作者仓库指向的数据集；数据card及论文共同限定合成历史和用途。",
+      "checkedAt": "2026-11-12"
     }
   },
   "concepts": [
@@ -2814,18 +2919,68 @@
       {
         "id": "agent-memory-characterization",
         "title": "Agent Memory: Characterization and System Implications",
-        "date": "2026",
-        "summary": "从系统特征与构建、检索、生成成本讨论 Agent Memory。",
-        "why": "它把系统构建和使用成本带入 Memory 讨论，补充纯内容 taxonomy。",
-        "boundary": "arXiv 版本的轴与工程含义仍需逐节核实。",
-        "status": "pending",
+        "date": "2026-06-04 · 首发；2026-09-22 · v2",
+        "summary": "从系统开销研究记忆：同样回答一个问题，构建、检索和生成分别消耗多少时间、token和资源？论文提出构建/存储/检索/可变性四轴，比较十种系统，并研究持续写入时的新鲜度与延迟。",
+        "why": "它补上只读能力分数看不到的一面：写入可能昂贵，查询速度也会受历史增长和调度影响。读者可用六问理解机制，再将这些机制与资源成本联系起来。",
+        "boundary": "本页分析arXiv v2的系统研究，未核到正式同行评议发表。比较配置包含任务提示适配和不同摄入粒度；数字只适用于作者实验，不能作为当前产品排行榜。",
+        "status": "complete",
         "sources": [
-          "agent-memory-characterization"
+          "character-v2",
+          "character-meta-current",
+          "character-artifact-current"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
-        "canonicalUrl": "https://arxiv.org/abs/2606.06448",
-        "researchKind": "method"
+        "canonicalUrl": "https://arxiv.org/html/2606.06448v2",
+        "researchKind": "system-study",
+        "selectionEvidence": "作者列出Stanford、KU Leuven、MIT等机构，并公开profiling artifact、硬件/模型设置与阶段化测量。收录依据是可审查的方法与成本问题覆盖；机构身份不替代同行评议或复现。",
+        "limitations": "十种系统、两个任务套件和指定硬件不覆盖全部部署。作者承认无法完全苹果对苹果；例如Letta摄入粒度及工具次数受到调整。§4.6正文描述同步等待、异步陈旧，但Insight6概括存在不一致，本页以明确协议和正文因果为准，不把异步当万能解决方案。",
+        "next": "engineering",
+        "profile": {
+          "kind": "记忆系统工作负载与资源特征研究",
+          "authors": "Yasmine Omri、Ziyu Gan、Zachary Broveak、Robin Geens、Zexue He、Alex Pentland、Marian Verhelst、Tsachy Weissman、Thierry Tambe",
+          "venue": "arXiv v2，正式发表未核实",
+          "artifact": "十种系统的统一接口、阶段遥测与复现实验说明",
+          "version": "论文v2；artifact 30a157b7b49f732ee4b961cb19d7f877cf475f81；2026-11-12核查"
+        },
+        "questions": [
+          {
+            "answer": "它观察的内容来自交互流：对话、工具调用、文档、执行轨迹和反馈，经处理可成为原始片段、事实、摘要或结构化记录。论文没有再定义一套新的情景/语义内容分类，而是问保存这些内容需要什么工作。四个范式是长上下文、平面RAG、结构增强RAG、Agent控制流；四个比较轴则是构建、存储、检索、可变性，两组“四”不要混淆。",
+            "why": "同一事实可以原样保留，也可以先抽成短句或图关系。内容看起来相近，写入操作和后续开销却不同，正是本研究要解释的现象。",
+            "example": "教学例子：用户搬家信息可原样保留在对话、抽成“居住地=上海”，或形成带时间的关系。比较时先说明丢失/保留了哪些细节，再讨论花了多少构建资源。",
+            "trace": "《Agent Memory Characterization · v2论文》§2.1 Ingestion/Construction、§2.2与Table1。例子为机制对照。"
+          },
+          {
+            "answer": "研究范围覆盖原始prompt缓冲、倒排索引、向量索引、图与多种存储组合。存储载体决定可执行的检索操作、更新方式和磁盘占用；模型推理另消耗GPU内存和计算。论文分别记录持久状态占用与服务端硬件资源，不能把向量库大小直接当成模型显存需求。",
+            "why": "区分持久记忆和运行时资源，才能做容量规划。一次对话被编码为多种视图，可能同时增加索引大小和embedding计算量，而不是只有“存了几句话”的成本。",
+            "example": "教学例子：同一段历史既建实体图又建文本向量，会有多份索引表示。评估要同时看磁盘增长、向量调用量以及生成prompt长度，不能只数原始文档字节。",
+            "trace": "《Agent Memory Characterization · v2论文》§2.1 Storage、§3.3、§4.7；《Agent Memory Characterization · profiling artifact》What it measures。"
+          },
+          {
+            "answer": "论文主要关注一个用户跨会话累积状态，并进一步估算大量用户下的资源需求。MemoryAgentBench提供多类长历史任务，MemoryArena用于有跨会话依赖的连续任务。所谓fleet规模是把单用户曲线外推到更多用户的容量分析，不是已经运行十万用户的线上试验，也不是多租户权限研究。",
+            "why": "单用户历史增长和用户数量增长是两个因素。若每次写入都要读取大量旧记忆，长期总成本可能比初次导入时高得多；隔离与共享是否安全仍需其他证据。",
+            "example": "教学算例：若某配置每用户占10MB，一万个同规模用户约占100GB，尚未计复制、索引冗余和备份。这只是线性容量估算；实际吞吐、并发冲突和权限不能由乘法得出。",
+            "trace": "《Agent Memory Characterization · v2论文》§3.1、§4.7 Fleet projection；算例为教程构造，不是论文测量。"
+          },
+          {
+            "answer": "论文把执行拆为摄入、构建、存储、检索、prompt组装、生成、维护七阶段，并将主要开销归到构建/检索/生成。持续会话还要决定何时提交新记忆：同步等待保证后续依赖能看到已提交写入，但增加等待；异步允许更快接新请求，却可能读到旧状态。作者对MemoryArena时间轨迹按5秒会话间隔回放，属于受控调度模拟。",
+            "why": "会更新不代表更新赶得上下一次请求。生命周期问题因此包含“什么时候可读”，而不仅是有没有update API；评测若全部写完才查询，就会遮住这类延迟。",
+            "example": "教学例子：新地址写入要8秒，而5秒后用户就问配送地点。同步策略需等待，异步策略可能先答旧地址；可以另做优先写入或读取屏障，但论文并未证明任一种策略在所有负载都最优。",
+            "trace": "《Agent Memory Characterization · v2论文》§2.1、§4.6正文和Fig8；5秒为作者回放条件，8秒为教学设定。"
+          },
+          {
+            "answer": "记忆可直接保留在长上下文，也可经一次检索或多轮工具搜索选出，再序列化进回答prompt。研究把检索耗时与最终生成分开测量，记录各阶段模型/embedding请求、token和时延。查询时快，不代表构建便宜；少量查询未必足以摊薄一次昂贵整理。",
+            "why": "把“取回证据”和“模型回答”合成一个时间，会掩盖真正瓶颈。按阶段拆开后，才知道应该改索引、减少多轮搜索，还是缩短最终prompt。",
+            "example": "教学成本式：总成本≈构建成本＋查询次数×每次读取/生成成本。两个方案谁划算取决于查询次数；频繁查询稳定资料和持续写入但很少查询，可能需要不同设计。此式是简化解释，未纳入并发和维护成本。",
+            "trace": "《Agent Memory Characterization · v2论文》§2.1 Retrieval/Prompt assembly、§3.3、§4.5；《Agent Memory Characterization · profiling artifact》。"
+          },
+          {
+            "answer": "控制包括确定性处理、固定位置调用LLM，以及由Agent决定何时写入和搜索。后者执行路径可能随模型判断变化，需要关注工具调用次数、超时与尾部延迟。作者的实验适配已对Letta的本地模型配置施加工具次数上限；这是实验配置，不应当作这些产品原生默认。论文主要治理资源和执行边界，未提供隐私、删除或注入防护认证。",
+            "why": "同样的平均延迟可能掩盖少数请求长时间反复搜索。理解谁决定停止，才能区分代码设定的上限与模型在样本上恰好停止的行为。",
+            "example": "教学验收：记录平均值之外的高分位延迟，并检查达到次数上限时返回什么。让模型在十个例子里都及时停止，只能支持这些样本，不能证明未来请求的最坏成本已经受控。",
+            "trace": "《Agent Memory Characterization · v2论文》§3.1任务适配、§4.8；该验收是教程推论，未部署测试。"
+          }
+        ]
       },
       {
         "id": "a-mem",
@@ -3422,16 +3577,71 @@
         "id": "claude-mem",
         "title": "Claude-Mem",
         "date": "公开日期未说明",
-        "summary": "面向 Claude Code 的外部记忆插件，公开仓库提供实现入口。",
-        "why": "它展示插件如何把会话观察、摘要和检索接到 coding agent。",
-        "boundary": "第三方插件的安全、版本和数据保留需单独核验。",
-        "status": "pending",
+        "summary": "thedotmack/claude-mem是独立开源记忆项目：记录Agent工作过程，由观察模型整理经验，后续会话先读精简索引、再按需取细节。它可接入Claude Code等宿主，与Claude Code原生Memory是不同系统。",
+        "why": "它把自动记录、背景压缩、会话注入和主动检索组合起来，适合学习编码经验怎样跨会话复用，也能看清“本地数据库”与“是否调用外部模型”不是同一问题。",
+        "boundary": "以v15.17.1对应固定仓库快照为依据，主要讲本地worker路径。托管server模式在存储、搜索和写入接口上有差异，不能将本地SQLite结论推广到全部模式；未安装或运行上游服务。",
+        "status": "complete",
         "sources": [
-          "claude-mem"
+          "claudemem-overview-current",
+          "claudemem-database-current",
+          "claudemem-search-current",
+          "claudemem-config-current",
+          "claudemem-bridge-current",
+          "claudemem-redaction-current",
+          "claudemem-hooks-current",
+          "claudemem-readme-current"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
-        "canonicalUrl": "https://github.com/thedotmack/claude-mem"
+        "canonicalUrl": "https://github.com/thedotmack/claude-mem",
+        "selectionEvidence": "项目公开实现、数据库文档、钩子与搜索协议，能够核查具体行为。项目身份固定为thedotmack/claude-mem。社区维护身份不等于Anthropic官方背书，也不以star数作可靠性结论。",
+        "limitations": "异步观察可能延迟或漏记，压缩可能丢失细节；摘要不能代替当前代码验证。项目过滤不自动提供多用户授权。禁用Cloud Sync也不意味着观察模型调用在本机；provider和部署方式决定数据流向。正则脱敏有明确范围，未做安全实测。",
+        "next": "benchmarks",
+        "profile": {
+          "kind": "面向编码Agent的独立记忆插件/服务",
+          "authors": "Alex Newman（@thedotmack），项目作者署名",
+          "venue": "官方项目仓库，非Anthropic内置Memory",
+          "artifact": "worker、hooks、SQLite索引、搜索工具与可选桥接",
+          "version": "README v15.17.1；858f47ffe0b8c52a019cf76b5cdc1897365d1f1a；2026-11-12核查"
+        },
+        "questions": [
+          {
+            "answer": "核心产物是带标题、事实、叙述、概念和文件关联的observations，以及记录请求、调查、学习、完成项和下一步的session summaries。文档中的decision、bugfix、discovery等type是工作经验标签。数据库还保存用户prompt和部分原始工具I/O，不能把整个系统只描述为短摘要。手动记忆可保存偏好、纠正与经验。",
+            "why": "摘要帮助快速恢复任务，原始依据帮助检查摘要是否遗漏或误解。区分“曾经做了什么”和“现在仍应怎样做”，才能避免旧修复方法被当成永远有效的规则。",
+            "example": "教学例子：一次认证修复可记成bugfix，附相关文件和原因；下周代码改动后，读者应回看当前实现验证旧经验是否适用，不能只凭摘要断言故障已经解决。",
+            "trace": "《Claude-Mem · 存储结构》observations/session_summaries/tool_uses；《Claude-Mem · 原生记忆桥接》save_memory。"
+          },
+          {
+            "answer": "本地worker使用SQLite保存会话和记忆，observations与session summaries以FTS5建立全文索引；数据库文档的搜索章节说明user_prompts使用LIKE子串搜索。README另说明可选Chroma提供语义搜索。tool_uses保存被捕获的工具输入输出，文档说明单个输入/输出有64KB截断；它是工具正文索引，不等同完整会话transcript。托管server另有PostgreSQL搜索路径，所以“都在SQLite”只适用于所讲的本地模式。",
+            "why": "记录、索引、完整原始会话和压缩记忆各有边界。搜索命中了某个工具事件，也不能据此保证有未截断的全部输出可供恢复。",
+            "example": "教学例子：一个很长的构建日志可生成错误原因摘要，但工具正文可能被截断。需要精确堆栈时应检查截断标记与原始日志来源，不能让模型凭摘要补出缺失行。",
+            "trace": "《Claude-Mem · 官方架构》Database Layer；《Claude-Mem · 存储结构》tool_uses/Payload cap；《Claude-Mem · 分层搜索》hosted server说明。 LIKE依据为存储结构的FTS5 Full-Text Search节；Chroma依据为《Claude-Mem · 项目身份与运行模式》README。 存储文档user_prompts标题与搜索节措辞不一致，此处按搜索节和分层搜索行为说明；Chroma可关闭见分层搜索What query matches。"
+          },
+          {
+            "answer": "记录带project、session和来源等字段。本地SessionStart默认读取当前checkout项目，配置可改读所有未排除项目；项目别名、环境分组和worktree合并又会影响归属。搜索也支持显式project范围。因此跨会话复用不必等于跨所有项目共享；项目名称仍是组织/过滤信息，不是调用者身份的安全证明。",
+            "why": "两个仓库可能使用同名文件却采用不同约定。解释项目如何解析、何时扩大范围，才能判断新会话读到的经验是否属于当前工作。",
+            "example": "教学例子：A项目偏好pnpm、B项目仍用npm，查询时应检查命中的project及来源。把CLAUDE_MEM_CONTEXT_PROJECTS设为all会扩大启动上下文的项目集合，不能同时声称启动内容始终只来自当前仓库。",
+            "trace": "《Claude-Mem · 配置与范围》Core Settings、Project Names/Environments；《Claude-Mem · 分层搜索》project与timeline范围。"
+          },
+          {
+            "answer": "宿主钩子捕获用户请求与工具事件，worker异步生成观察和摘要；结束会话通常标记完成而非删除。可选原生笔记桥接监听显式配置目录：更新建立新的历史快照，删除源笔记不会同步删除归档。自动记录、后台加工与跨会话读取有时间差，不能认为工具调用刚完成时完整经验就已可用。",
+            "why": "生命周期既决定新信息何时成熟，也决定旧信息是否仍保留。文件系统里的“删了”与记忆归档里的“撤回了”可能不是同一动作。",
+            "example": "教学例子：用户删掉一份旧偏好笔记后，新会话仍可能通过桥接归档找到其历史快照。需要撤回时应核查记忆服务记录与同步副本，而非只确认源文件不存在；本教程没有执行删除。",
+            "trace": "《Claude-Mem · 生命周期钩子》observation/summary异步与SessionEnd；《Claude-Mem · 原生记忆桥接》note-folder bridge的快照与删除语义。"
+          },
+          {
+            "answer": "从项目的第二个会话起，可自动获得有限的历史索引；深入查找采用search取得候选ID、timeline了解前后背景，再get_observations读取选定细节。当前存储文档另描述get_tool_uses读取原始工具正文。可选原生记忆桥接只补入精简的观察索引，不自动取所有完整记录；本地worker与server可用接口不同。",
+            "why": "先看到标题、再读详情可以控制上下文，但少读是否损失证据仍须检查。索引行约为完整记录的一小部分，只是大小估计，不等于已证明召回率或端到端节省比例。",
+            "example": "教学流程：搜索“认证错误”，从时间线确认是当前分支的问题，再读取相关观察和必要的工具正文。若直接把全部历史塞入prompt，会失去按问题筛选的机会；若只读标题，又可能漏掉修复前提。",
+            "trace": "《Claude-Mem · 分层搜索》三步流程及大小估计限定；《Claude-Mem · 存储结构》tool_uses；《Claude-Mem · 原生记忆桥接》。 启动时机见《Claude-Mem · 项目身份与运行模式》How it works。"
+          },
+          {
+            "answer": "用户/开发者控制捕获范围、排除项目、provider、启动上下文和可选Cloud Sync。private标签和可选自动脱敏处理部分敏感内容；自动脱敏默认关闭，开启后仍受模式匹配与字段范围限制，文档明确server运行时部分metadata例外。本地持久化不代表所有处理本地执行，配置的观察模型仍可能接收内容。",
+            "why": "应同时检查保存在哪里、送给哪个模型、哪些内容被排除。单看数据库在本机，会漏掉外部provider和同步服务的数据路径；单看有脱敏开关，也不能证明任意秘密都会被识别。",
+            "example": "教学验收使用虚构标记测试：观察捕获、模型请求、数据库和后续检索各处是否按配置过滤，再检查源日志与云端副本。这里是建议的检查路径，未声称本教程已经验证隐私隔离。",
+            "trace": "《Claude-Mem · 配置与范围》provider/redaction/Cloud Sync；《Claude-Mem · 脱敏范围》How it works及metadata例外；《Claude-Mem · 项目身份与运行模式》。"
+          }
+        ]
       },
       {
         "id": "crewai",
@@ -4398,22 +4608,80 @@
       },
       {
         "id": "utilmem",
-        "title": "UTILMEM",
-        "date": "2026",
-        "summary": "近期 Memory utility 评测线索。",
-        "why": "可用于讨论有用性指标与六问设计层的差异。",
-        "boundary": "当前只保留论文入口和候选状态。",
-        "status": "pending",
+        "title": "UTILMEM · Evidence Utilization",
+        "date": "2026-10 · EMNLP主会",
+        "summary": "检验Agent能否把分散、隐含且夹杂干扰的会话证据整合成有依据的总结、分析或计划。评测重点从“找回一个事实”延伸到“找回后正确使用”，采用相对干净证据回答的评分。",
+        "why": "它能帮助读者区别检索命中与答案质量：完整证据可能已经取回，却被无关但相似的内容干扰，或在长回答里被错误整合。",
+        "boundary": "正式EMNLP 2026论文与作者发布页。数据集已给出，固定仓库的评测/构造代码仍为coming soon；本页按论文解释协议，未核实现等价性、未复现实验。涉及健康/财务的场景用于任务研究，不是专业建议有效性验证。",
+        "status": "complete",
         "sources": [
-          "s014"
+          "utilmem-final-current",
+          "utilmem-venue-current",
+          "utilmem-release-current",
+          "utilmem-data-current"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
         "canonicalUrl": "https://aclanthology.org/2026.emnlp-main.1639/",
         "coverage": [
           "content",
           "exposure"
-        ]
+        ],
+        "selectionEvidence": "正式主会论文公开构造、筛选、判分锚点与局限，研究问题是证据利用而非只按回忆准确率排名。代码未完成公开是可复核性缺口，应与正式发表身份同时呈现。",
+        "limitations": "合成历史和模型生成参考可能带共同偏差；两名裁判同属GPT系列，不能当跨模型家族独立证明。删证据筛选只验证随机抽到的移除路径，不证明每一条证据都必要或整个集合最小。相对oracle回答得分不等于人类最优答案或绝对正确率。",
+        "next": "culture",
+        "profile": {
+          "kind": "长期对话中的证据整合与干扰诊断",
+          "authors": "Peijun Qing、Fobo Shi、Soroush Vosoughi（Dartmouth、Wuhan University）",
+          "venue": "Proceedings of EMNLP 2026，主会",
+          "artifact": "1717个实例、五领域数据；评测/构造代码待发布",
+          "version": "正式论文；发布仓库b7ebd4a1ba31379a67540f2b1c95ec48351f6d79；2026-11-12核查"
+        },
+        "questions": [
+          {
+            "answer": "任务涉及学习、财务、心理健康、健身和文档分析，要求跨多个会话总结、分析或制定计划。论文关心四种困难：密集多会话推理、隐含相关性检索、长篇证据整合、相似干扰过滤。这是任务需求分类，不是四种存储类型，也不要求系统为每种困难单独建一个记忆库。",
+            "why": "如果题目只问一个日期，找到一句话就可能完成；生成完整计划则要同时保留多个约束并解释它们如何共同影响答案。内容覆盖因此决定在测什么能力。",
+            "example": "论文Figure1的健身情境需要膝盖康复、跑量与恢复限制，背部训练或其他伤情即使语义相近也可能无关。推荐下一周安排时要保留真正相关限制，不能把相似主题全部混入。",
+            "trace": "《UTILMEM · EMNLP正式论文》Figure1、§1、§3.1；情境是论文任务示例，不是健康建议。"
+          },
+          {
+            "answer": "一个实例由历史H、问题q和相关证据集E定义，历史还包含不相关干扰集D。实际系统读完整H并用自己的存储/检索；评测方保留E生成干净参考并评分。记忆后端可以保留原始片段、摘要或结构化事实，基准本身不规定内部载体。",
+            "why": "分清系统可见历史和评分方已知证据，才能避免oracle泄漏。E不是普通评测时额外给系统的答案提示，它用于建立对照条件。",
+            "example": "教学对照：系统只拿到多次训练对话和问题；裁判知道哪些会话真正支持膝盖恢复限制。若把相关会话清单直接给被测系统，就变成oracle条件，已经跳过了干扰检索难点。",
+            "trace": "《UTILMEM · EMNLP正式论文》§3 Problem Formulation、§4 Evaluation protocol。"
+          },
+          {
+            "answer": "每个历史包被构造成同一用户的多会话经历，构造阶段由LLM裁判剔除人物属性或经历互相矛盾的历史包，并从多主题资料合成。论文讨论五领域，不等于真实跟踪五类用户，也不以多租户访问为主要任务。时间用于组织历史与分散证据，不能据此推定已全面评测授权范围或跨用户共享。",
+            "why": "同一用户的资料需要连贯，否则答错可能来自数据矛盾。与此同时，一个合成persona可保持一致，并不能证明系统在真实多人环境里不会混用记忆。",
+            "example": "教学检查：同一个计划不应同时假定用户既是全职学生又处于互斥生活状态。构造阶段的人物一致性过滤可以减少这类问题；若想研究用户隔离，还需另造跨用户允许/禁止访问的测试。",
+            "trace": "《UTILMEM · EMNLP正式论文》§3.1 Persona consistency；多租户局限是按任务范围作出的判断。"
+          },
+          {
+            "answer": "构造流程先生成会话和候选问题，再逐步移除部分证据，要求两名裁判都判断回答质量在两次移除后依次下降，最后加入相似干扰并按时间组织。被测阶段主要是摄入完整历史再回答，未设置专门的删除API或遗忘传播验收。反事实删证据是数据筛选操作，不是让系统练习用户撤回。",
+            "why": "这一区分能避免把“实验者移除了输入”当成“系统学会遗忘”。筛选说明问题对所采样证据路径敏感，不能证明每条历史都不可缺少。",
+            "example": "教学例子：依次移去受伤情况和训练限制后，计划明显变差，可支持保留该问题。另一种移除顺序未测试时不能断言也会严格下降；更不能据此证明记忆库执行了物理删除。",
+            "trace": "《UTILMEM · EMNLP正式论文》§3.3公式4/5、§7与附录E。"
+          },
+          {
+            "answer": "被测系统从含干扰的H中检索并生成答案；同一生成器另只读相关E生成oracle参考。论文还在受控实验中固定相关证据、逐步增加干扰，以观察答案如何退化。零干扰k=0条件使用oracle答案的轻微改写作为归一化锚点，不是完全相同流程的一次重新检索/生成，解释曲线时须保留这个条件。",
+            "why": "检索召回全部相关证据也可能同时带入误导材料。对照证据、干扰与生成条件，才能区分“没找全”和“找到了却用错”；不能仅凭检索命中率判断最终计划可靠。",
+            "example": "教学例子：康复约束全在上下文，但大量相似训练建议使模型忽略禁止负重条件。可检查证据完整性和生成结果分别在哪里失败；这是诊断示例，未声称运行了论文系统。",
+            "trace": "《UTILMEM · EMNLP正式论文》§4协议、§5.3干扰实验及k=0限定；附录E.1 Causal isolation。"
+          },
+          {
+            "answer": "数据生成与参考答案由模型参与，评测用两名GPT系列裁判，参照相关证据E，将被测回答与仅基于E生成的oracle参考答案比较。裁判先判断事实忠实、完整性、无幻觉、语义等价和无依据推断等方面的严重度，再按锚点给1至10分，严重错误不能由其他优点简单抵消。裁判一致性支持评分稳定性的一部分，但不证明与人类判断一致或无共同偏差。",
+            "why": "开放计划可能有多种有效写法，不能把不同表达直接判错，也不能把流畅文本当成有依据。明确评分锚点与参考局限，比只给一个“模型觉得好”的分数更易审查。",
+            "example": "教学评分：一份计划结构完整却违反核心康复限制，应受到严重度约束，而不是靠格式和措辞加分补回。当前仓库未发布完整scorer，因此本页只解释论文规则，不声称代码逐项实现已核对。",
+            "trace": "《UTILMEM · EMNLP正式论文》§4、附录F rubric、§7；《UTILMEM · 发布状态》Release Status。"
+          }
+        ],
+        "evaluation": {
+          "abilities": "四类任务挑战是密集多会话推理、隐含相关性、长输出整合、相似干扰过滤；五个裁判子维度是评分依据，两者数量与含义不同。",
+          "taskProtocol": "1717个实例覆盖五领域。合成并筛查人物一致性；两裁判确认沿采样路径移除证据导致质量下降；再加入语义相近而意图无关的干扰。被测系统摄入全历史；oracle仅用相关证据。两个裁判评分取平均，固定仓库仍待发布评测代码。",
+          "metrics": "RS为每实例1至10锚点评分的平均；NR=(RS−1)/9×100；DR为实例分数≤6的比例。NR是相对协议锚点的归一化得分，不是回答正确率。教学算例：RS=7.3时NR=70；同样的NR可以来自不同失败分布，因此还应看DR和具体错误。",
+          "designMapping": "Q1解释任务与证据内容；Q2解释H/E/D及系统自由表示；Q3解释persona和会话组织；Q4解释构造/筛选而非系统删除；Q5是证据访问与使用的核心；Q6解释裁判与规则。六问组织理解，RS/NR/DR衡量结果，不能说三个指标覆盖了六种独立能力。",
+          "limitations": "参考是模型输出，非人类最优；同家族双裁判可能共享偏差。反事实筛选不证明全子集单调或最小证据。健康/财务题不构成专业有效性验证。未提供独立权限、物理删除或生产资源指标，不能称全面记忆认证。"
+        }
       },
       {
         "id": "longmemeval",
