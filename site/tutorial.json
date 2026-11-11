@@ -3,7 +3,12 @@
   "checkedAt": "2026-11-11",
   "title": "Agent Memory 教程",
   "intro": "从六个问题建立共同观察方法，再读 Research、工程、Benchmark 和文化类比。",
-  "comparisonCategories": ["research", "engineering", "benchmarks", "culture"],
+  "comparisonCategories": [
+    "research",
+    "engineering",
+    "benchmarks",
+    "culture"
+  ],
   "questions": [
     {
       "id": "content",
@@ -125,10 +130,10 @@
       "evidence": "研究框架论文；arXiv v3（2024-03）为 TMLR camera-ready；架构分类章节已核"
     },
     "survey": {
-      "label": "Memory in the Age of AI Agents · §4",
+      "label": "Memory in the Age of AI Agents · §4 Functions",
       "url": "https://arxiv.org/html/2512.13564v2#S4",
-      "year": "2025/2026",
-      "evidence": "arXiv 综述；v1/v2 元数据与分类章节已核"
+      "year": "2025-12-15 submitted；v2 revised 2026-01-13",
+      "evidence": "arXiv 预印本 v2；HTML §4 Functions 已核；不是同行评议标准"
     },
     "langchain": {
       "label": "LangChain · Memory overview",
@@ -149,16 +154,16 @@
       "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
     },
     "langgraph:0": {
-      "label": "LangGraph · 项目仓库",
+      "label": "LangGraph · 官方项目仓库",
       "url": "https://github.com/langchain-ai/langgraph",
-      "year": "",
-      "evidence": ""
+      "year": "2026-11-11 snapshot；HEAD 5ea88ecbcdb9fde713c3abd58850a5b7beaa24ec（commit 2026-11-11T04:29Z）",
+      "evidence": "官方 README 将 LangGraph 定义为构建有状态 Agent 的低层编排框架；本教程未运行仓库代码"
     },
     "langgraph:1": {
-      "label": "LangGraph · 记忆概念",
+      "label": "LangGraph · 官方 Memory 概念文档",
       "url": "https://docs.langchain.com/oss/python/concepts/memory",
-      "year": "",
-      "evidence": ""
+      "year": "2026-11-11 snapshot",
+      "evidence": "官方 Memory 概念文档：thread state/checkpoint、long-term namespace/store、hot path/background、profile/collection 与 get/search/put 示例已核"
     },
     "deep-agents:0": {
       "label": "Deep Agents · 项目仓库",
@@ -467,16 +472,16 @@
       "evidence": ""
     },
     "memoryagentbench:0": {
-      "label": "MemoryAgentBench · 仓库与评测说明",
+      "label": "MemoryAgentBench · 官方仓库 README 与代码",
       "url": "https://github.com/HUST-AI-HYZ/MemoryAgentBench",
-      "year": "",
-      "evidence": ""
+      "year": "2026-11-11 snapshot；HEAD 538026089d1a8a8eff05121d0db89b388f360eba（commit 2026-09-25T06:11Z）",
+      "evidence": "官方 README、指标表和运行入口已核；仓库显示 ICLR 2026 录用；本教程未运行评测"
     },
     "memoryagentbench:1": {
-      "label": "MemoryAgentBench · 论文",
-      "url": "https://arxiv.org/abs/2507.05257",
-      "year": "",
-      "evidence": ""
+      "label": "MemoryAgentBench · 论文 HTML / arXiv v4",
+      "url": "https://arxiv.org/html/2507.05257v4",
+      "year": "2025-07-07 submitted；v4 revised 2026-06-28；ICLR 2026",
+      "evidence": "论文摘要、§3、§3.3、§4、Appendix B/E/F/H/I/J 和复现说明已核；不把论文结果写成独立复现结果"
     },
     "the-housekeeper-and-the-professor:0": {
       "label": "The Housekeeper and the Professor · 出版方页面与节选",
@@ -1235,10 +1240,10 @@
       "evidence": ""
     },
     "survey-form": {
-      "label": "Memory in the Age of AI Agents · 表示形式 §3",
+      "label": "Memory in the Age of AI Agents · §3 Forms",
       "url": "https://arxiv.org/html/2512.13564v2#S3",
-      "year": "",
-      "evidence": ""
+      "year": "2025-12-15 submitted；v2 revised 2026-01-13",
+      "evidence": "arXiv 预印本 v2；HTML §3 Forms 已核"
     },
     "microsoft-memory": {
       "label": "Microsoft Multi-Agent Reference Architecture · Memory.md（2026-08）",
@@ -1295,10 +1300,10 @@
       "evidence": "arXiv 元数据与摘要已核；摘要明确列出承载形式、感觉/工作/情景/语义/程序性认知机制、Agent/User 主体与 218 篇样本范围；页面注明 accepted at TMLR with Survey Certification，具体出版信息待补"
     },
     "langgraph": {
-      "label": "项目仓库",
+      "label": "LangGraph · 官方项目仓库",
       "url": "https://github.com/langchain-ai/langgraph",
-      "year": "2026-11-02",
-      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+      "year": "2026-11-11 snapshot；HEAD 5ea88ecbcdb9fde713c3abd58850a5b7beaa24ec（commit 2026-11-11T04:29Z）",
+      "evidence": "官方 README 将 LangGraph 定义为构建有状态 Agent 的低层编排框架；本教程未运行仓库代码"
     },
     "deep-agents": {
       "label": "项目仓库",
@@ -1439,10 +1444,10 @@
       "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
     },
     "memoryagentbench": {
-      "label": "MemoryAgentBench paper / arXiv",
-      "url": "https://arxiv.org/abs/2507.05257",
-      "year": "arXiv 2025-07-07; ICLR 2026",
-      "evidence": "paper metadata and benchmark scope; code repository linked by the paper"
+      "label": "MemoryAgentBench · 论文与 arXiv v4",
+      "url": "https://arxiv.org/abs/2507.05257v4",
+      "year": "2025-07-07 submitted；v4 revised 2026-06-28；ICLR 2026",
+      "evidence": "论文摘要、§3、§4、Appendix B/E/I/J 和复现说明已核；不把论文结果写成独立复现结果"
     },
     "the-housekeeper-and-the-professor": {
       "label": "出版方页面与节选",
@@ -2097,6 +2102,12 @@
       "url": "https://www.comedy.co.uk/tv/black_mirror/episodes/1/3/",
       "year": "2011",
       "evidence": "Episode page identifies the series/episode, creators, broadcast date, and the fictional recording/replay premise used here as a cultural thought experiment."
+    },
+    "survey-dynamics": {
+      "label": "Memory in the Age of AI Agents · §5 Dynamics",
+      "url": "https://arxiv.org/html/2512.13564v2#S5",
+      "year": "2025-12-15 submitted；v2 revised 2026-01-13",
+      "evidence": "arXiv 预印本 v2；HTML §5 Dynamics 已核"
     }
   },
   "concepts": [
@@ -2196,19 +2207,68 @@
       {
         "id": "forms-functions-dynamics",
         "title": "Memory in the Age of AI Agents · Forms / Functions / Dynamics",
-        "date": "2025",
-        "summary": "以形式、功能和动态组织 Agent Memory 的综述框架。",
-        "why": "它直接示范同一系统可以从多个观察角度描述，适合和六问做结构对照。",
-        "boundary": "框架术语与教程六问不是一一等价，映射属于编者解释。",
-        "status": "pending",
+        "date": "2025-12-15 submitted；v2 revised 2026-01-13（arXiv preprint）",
+        "summary": "Yuyang Hu 等人的 Agent Memory 综述，用 Forms、Functions、Dynamics 三个观察镜头组织研究版图。",
+        "why": "它是本工作集里最适合展示“同一套 Memory 可以按不同观察角度描述”的综述之一：形式回答承载与表示，功能回答为什么需要记忆，动态回答怎样形成、演化和取回。它是 arXiv 综述，不被本教程当作唯一标准或同行评议共识。",
+        "boundary": "综述的三镜头是研究组织框架；它们与教程六问有交集但不一一等价，也没有替工程系统规定权限、删除或部署协议。",
+        "status": "complete",
         "sources": [
           "survey",
-          "survey-form"
+          "survey-form",
+          "survey-dynamics"
         ],
         "checkedAt": "2026-11-11",
         "realityNote": "",
-        "canonicalUrl": "https://arxiv.org/html/2512.13564v2#S4",
-        "researchKind": "survey"
+        "canonicalUrl": "https://arxiv.org/abs/2512.13564v2",
+        "researchKind": "survey",
+        "selectionEvidence": "arXiv 元数据（2025-12-15 submitted、2026-01-13 v2 revision）、v2 HTML §§2–5 和代表性表格已核。收录依据是它同时提供形式、功能与动态三条研究入口，并明确讨论与 RAG、Context Engineering 的边界；它仍是 arXiv 预印本，不能把“综述覆盖广”写成效果或标准化证明。",
+        "limitations": "没有在本教程中复现实验；综述中的方法、表格和前沿判断应回到各自原论文核查。它没有给出完整的生产权限、审计、租户隔离或删除证明协议。",
+        "next": "engineering",
+        "profile": {
+          "kind": "研究综述与分类框架",
+          "authors": "Yuyang Hu et al.",
+          "team": "论文作者团队；作者机构以 arXiv 元数据为准",
+          "venue": "arXiv preprint v2（2026-01-13 更新）",
+          "artifact": "原始论文 HTML §§2–5、分类图表与 §6 资源表；本教程未复现实验"
+        },
+        "questions": [
+          {
+            "answer": "这篇综述把“保存的是什么”按功能角色来回答：factual memory 保存交互、用户和环境的显式事实；experiential memory 保存任务执行中形成的案例、策略或技能；working memory 管理当前任务的活动工作区。这里的三类是综述的功能层，而不是把所有系统的记录强行归成三个数据库。例如，教学假设中同一段“用户昨天把部署回滚到 v2”的对话，可以留下一个事件记录，也可以进一步抽象成“回滚前先检查迁移”的策略；这是用该框架做的分析示例，不是论文原例。",
+            "trace": "来源事实：§4 将 factual、experiential、working 作为功能支柱，并在 experiential 表格中列出 case/strategy/skill。解释边界：这是作者的 why/function 视角；它不能替代 CoALA 的 working/long-term 层级，也不证明所有系统都实现三种独立模块。",
+            "why": "功能角色必须与承载形式分开，否则文本、图或参数会被误读成内容类别。",
+            "example": "教学假设（非论文原例）：同一条“回滚到 v2”的轨迹可以作为事件保存，也可以被抽象为回滚前检查迁移的策略。"
+          },
+          {
+            "answer": "综述把形式/承载单独放到 Forms：token-level memory 可以是平面记录、带关系的二维结构或层级结构；parametric memory 把信息吸收到模型权重或附加参数；latent memory 处于显式数据和固定权重之间，用向量或其他不可直接阅读的表示承载信息。一个事实因此可能以文本日志保存，也可能经过图结构、参数更新或 latent 表示保存；“事实”是内容角色，“token-level/parametric/latent”是承载视角。",
+            "trace": "来源事实：§3 的 token-level、parametric、latent 分类及 token-level 的 flat/planar/hierarchical 讨论。作者还明确把 Carrier/Form/Optimization 分开记录。解释边界：综述举的是研究方法，不是某个工程系统必须采用的物理数据库。",
+            "why": "综述把 Forms 单列，正是为了说明同一功能可以由显式 token、参数或 latent 表示承载。",
+            "example": "一个用户偏好可以是 JSON 文本、向量索引中的条目，或经过参数/latent 更新后的隐式能力；这些不是同一种可审计性。"
+          },
+          {
+            "answer": "综述的主要对象是 agent memory research，讨论的主体包括 Agent、用户和环境。它特别区分 agent memory 与 LLM memory、RAG、context engineering，并在功能部分区分 user factual memory 与 environment factual memory；同时把 shared memory for multi-agent systems 列为前沿方向。由此可以看出“服务谁、指向谁”会影响记忆的含义，但论文没有为生产系统给出 user、team、tenant 的权限拓扑。",
+            "trace": "来源事实：§2 的边界讨论、§4.1 的 user/environment factual memory、§7.5 的 shared memory frontier。未说明项：论文没有给出一套可部署的共享授权或租户隔离协议，故不把研究讨论写成工程能力。",
+            "why": "研究对象的主体和范围会改变记忆用途，但论文没有把研究层讨论变成生产授权协议。",
+            "example": "user factual memory 与 environment factual memory 指向不同对象；shared memory 则涉及多 Agent，但共享权限仍需工程系统定义。"
+          },
+          {
+            "answer": "动态视角把生命周期拆成 formation、evolution 和 retrieval。Formation 把交互轨迹转成更密集的知识单元；evolution 负责 consolidation、更新、冲突解决和 forgetting；retrieval 根据当前查询取回内容。比如系统可以先记录每次工具调用，再把多次成功轨迹反思成策略，随后在新任务开始时检索策略；这个例子说明“记下来、改变旧记忆、取出来”是不同阶段。",
+            "trace": "来源事实：§5 开头明确列出 formation/evolution/retrieval，并说明演化包括 consolidation、updating、forgetting。解释边界：这些是综述的过程抽象；具体 TTL、版本号、冲突优先级和物理删除仍需看具体方法。",
+            "why": "Formation、evolution、retrieval 分别回答“怎样产生”“怎样改变”“怎样被取回”，合并会看不出旧记忆如何失效。",
+            "example": "先记录工具调用，再通过反思形成策略，最后在新任务查询策略；三步分别对应形成、演化和暴露前的检索。"
+          },
+          {
+            "answer": "综述用一个 context-dependent retrieval operator 表示暴露路径：系统根据观察和查询生成检索信号，把文本片段或结构化摘要交给 LLM policy；检索可以只在任务开始发生，也可以间歇或持续发生。比如某个 Agent 在新任务开始时只取回与当前目标相关的经验摘要，而不是把全部历史放入上下文。这个模型回答了“记忆怎样进入调用”，但没有规定向量检索、图遍历、排序、截断或失败回退。",
+            "trace": "来源事实：§2 的 Memory Retrieval 与 Memory–Agent Coupling 公式/文字。解释边界：论文描述从记忆状态到策略输入的关系，不等于对每个系统的可观测调用链作了实现承诺。",
+            "why": "有记录不等于当前调用能看到，检索时机与注入路径必须单独说明。",
+            "example": "系统只在任务开始取回一次相关经验，后续步骤不再检索；这与每一步持续检索是不同设计。"
+          },
+          {
+            "answer": "这篇综述把 trustworthy memory、shared memory、privacy 和其他风险列为研究前沿，但没有把“谁可以读、谁可以改、怎样证明删除已传播”写成统一协议。因此对第六问的诚实回答是：研究问题被明确提出，工程治理细节仍未规定。读者可以据此继续追问来源、授权、审计、投毒、删除和资源预算，而不能因为综述列出 trustworthiness 就推断任一方法已经满足这些要求。",
+            "trace": "来源事实：§7.5–§7.7 将 multi-agent sharing 和 trustworthy memory 作为前沿。证据边界：没有访问控制、审计日志、删除证明或合规配置的统一规范；这里使用 not_specified，而不是“不支持”。",
+            "why": "trustworthy/shared memory 被列为前沿，只能证明问题重要，不能证明治理已经实现。",
+            "example": "读者应继续追问谁能读写、如何审计和如何删除，而不是把“trustworthy”标签当成权限保证。"
+          }
+        ]
       },
       {
         "id": "coala",
@@ -2541,17 +2601,65 @@
       {
         "id": "langgraph",
         "title": "LangGraph",
-        "date": "公开日期未说明",
-        "summary": "面向有状态 Agent 的编排框架，官方文档区分 thread state、persistence、checkpoints 和 memory。",
-        "why": "它是理解 Harness 如何把运行状态与跨会话 Memory 接在一起的代表性工程样本。",
-        "boundary": "官方文档已核；没有在本教程中运行或验证所有配置。",
-        "status": "pending",
+        "date": "公开日期未说明；2026-11-11 文档与仓库快照",
+        "summary": "LangChain 的低层 Agent 编排框架，官方 Memory 文档把 thread-scoped state/checkpoint 与跨会话 namespace/store 分开。",
+        "why": "它提供了一个清晰的工程样本：短期工作状态与长期记忆的边界、持久化接口、写入时机和节点内读取路径都在官方文档中给出，可用来观察“研究概念如何落成工程 API”。",
+        "boundary": "本条目只描述官方公开文档和仓库，不等于本教程已经运行了所有配置；具体后端、部署权限、版本行为和应用 schema 需要按目标项目单独核对。",
+        "status": "complete",
         "sources": [
-          "langgraph"
+          "langgraph:0",
+          "langgraph:1"
         ],
         "checkedAt": "2026-11-11",
         "realityNote": "",
-        "canonicalUrl": "https://github.com/langchain-ai/langgraph"
+        "canonicalUrl": "https://docs.langchain.com/oss/python/concepts/memory",
+        "selectionEvidence": "官方 README 将 LangGraph 定义为构建有状态 Agent 的低层编排框架；官方 Memory 概念文档明确写出 short-term/thread state、thread-scoped checkpoints、long-term namespaces/stores、hot-path/background 写入和 get/search/put 示例。收录依据是机制可定位，而不是用户规模或效果排名。",
+        "limitations": "没有运行当前仓库或部署；官方概念页没有完整规定权限、同意、审计、投毒、删除传播、租户隔离或成本 SLO。物理数据库和生产配置由应用选择。",
+        "next": "benchmarks",
+        "profile": {
+          "kind": "官方开源 Agent 编排框架 / Memory 与持久化原语",
+          "maintainer": "LangChain",
+          "artifact": "LangGraph 官方仓库 README 与 Python Memory 概念文档；本教程未运行代码",
+          "version": "2026-11-11 快照；仓库 HEAD 5ea88ecbcdb9fde713c3abd58850a5b7beaa24ec"
+        },
+        "questions": [
+          {
+            "answer": "LangGraph 的短期记忆不是一个固定内容类别，而是 Agent state：通常包括当前 thread 的消息历史，也可以包括上传文件、检索文档和生成的 artifact。长期记忆则是跨 session/thread 保存的 user-specific 或 application-level data；文档用 semantic facts、episodic experiences、procedural instructions 举例。比如一条消息可以留在 thread state 中，而“用户偏好简短回答”可以作为长期 JSON memory。",
+            "trace": "官方 Memory 概览和 short-term/long-term 小节明确列出 state 可包含的材料、跨线程长期数据和三种语义例子。文档没有要求应用必须采用某个统一 schema。",
+            "why": "消息、文件和长期事实都是内容，但它们的作用不同；先列出内容才能判断是否需要摘要、更新或检索。",
+            "example": "thread state 可保留当前对话和生成 artifact；长期 store 可保存“用户喜欢简短回答”的 JSON。"
+          },
+          {
+            "answer": "短期 state 通过 thread-scoped checkpoint 持久化，逻辑上与恢复一次 thread 的运行状态有关；长期 memory 以 JSON document 放进 Store，由 namespace 和 key 组织，Store 还可以按内容过滤或做 semantic search。官方示例用 InMemoryStore 演示，但同时提示生产环境应使用数据库后端。因此这里要把“checkpoint/store 这两个逻辑接口”和“实际数据库”分开：前者是文档承诺，后者是部署选择。",
+            "trace": "官方概览 lines 23–25、存储小节 lines 147–179，以及 `store.put/get/search` 示例。仓库 README 只证明它是框架，不证明某个后端在所有部署中都默认存在。",
+            "why": "同一内容可以由 checkpoint 保存状态、由 store 保存长期 JSON；把接口名当成认知类型会混淆逻辑位置和物理后端。",
+            "example": "官方 InMemoryStore 示例用 namespace/key 写入 JSON，生产环境可换 DB-backed store；这说明后端不是固定 taxonomy。"
+          },
+          {
+            "answer": "短期记忆按 thread 隔离；长期记忆可以跨不同会话和 thread，通过自定义 namespace 组织，namespace 常包含 user ID、org ID 或应用上下文。一个应用可以把同一用户的偏好放在 `(user_id, application_context)` 下，也可以把项目共享资料放到团队约定的 namespace。可是 namespace 命名本身不等于授权：谁能访问它、怎样做租户隔离，仍取决于应用和部署配置。",
+            "trace": "官方文档的 thread-scoped、cross-session/cross-thread 和 namespace 示例支持范围判断；文档没有在该页给出完整 auth/tenant policy，所以不扩写成安全能力。",
+            "why": "thread 与 namespace 解决“看哪一组数据”，不自动解决“谁有权看”。",
+            "example": "(user_id, application_context) 可以隔离用户偏好与应用上下文；项目共享 namespace 需要另外配置成员权限。"
+          },
+          {
+            "answer": "短期 state 在图被 invoke 或某个 step 完成时更新，并在每个 step 开始时读取。长期记忆有两种官方写法：在 hot path 中实时写入，或者由 background task 异步生成；文档还区分持续更新 profile 与向 collection 插入、更新、删除条目。比如一个节点可以从 conversation state 和旧 instructions 生成新 instructions，再 `store.put` 回去。冲突优先级、版本迁移、TTL 和物理删除并不是这页规定的统一协议。",
+            "trace": "官方概览、Writing memories、Profile/Collection 和 Procedural memory 示例；这些段落支持写入时机和更新模式，不支持所有实现都有同一套生命周期治理。",
+            "why": "更新时机直接影响延迟和新记忆何时可见，因此 hot path/background 必须分开。",
+            "example": "节点可以在响应前更新 instructions，也可以由后台任务异步生成 memory；两者在实时性和主链路延迟上不同。"
+          },
+          {
+            "answer": "调用开始时，图节点读取当前 state；需要长期记忆时，节点可以用 `store.get` 按 namespace/key 读取，或用 `store.search` 按 query/filter 找到候选，再把结果组装进 prompt。官方 procedural memory 示例展示了“读取 instructions → 用当前对话生成新 instructions → store.put → 后续 call_model 使用”的完整路径。因而“已经存储”与“本次调用真的看到了”是两回事；即使进入输入，也不能单凭接口证明它改变了输出或行动。框架提供接口，具体触发、排序、截断和注入由节点逻辑决定。",
+            "trace": "官方文档 lines 23–25、100–120、147–178 的读取和写入示例。未运行本项目，因此不把示例行为升级为本地复现实验。",
+            "why": "沿着节点的 get/search→prompt 路径，可以确认存储内容是否进入本次模型输入；它是否改变输出或行动，还需要运行 trace、对照实验或实际观察。",
+            "example": "call_model 读取 agent instructions，update_instructions 根据 conversation state 生成新版本并 store.put；保存和使用是两个动作。"
+          },
+          {
+            "answer": "LangGraph 文档公开了 state/checkpoint/store 等机制，但没有在 Memory 概念页规定完整的读写权限、用户同意、来源审计、投毒防护、删除证明或跨租户治理。实际控制通常来自应用代码、数据库和部署身份系统；例如一个应用可以限制某类节点调用某个 namespace，但这不是该概念页自动保证的能力。这里的“未说明”是文档边界，不是说 LangGraph 部署无法实现治理。",
+            "trace": "官方 Memory 文档与仓库 README 的公开范围；没有把 InMemoryStore 示例、namespace 命名或 persistence API 误读成权限/合规协议。",
+            "why": "框架原语不等于完整治理；把应用权限、数据库和部署身份混写成 LangGraph 自带能力会过度归因。",
+            "example": "应用可以限制节点访问某 namespace，但该授权逻辑不由 Memory 概念页自动提供。"
+          }
+        ]
       },
       {
         "id": "letta",
@@ -2710,23 +2818,79 @@
       },
       {
         "id": "memoryagentbench",
-        "title": "MemoryAgentBench",
-        "date": "2026",
-        "summary": "诊断 retrieval、test-time learning、long-range understanding 和 conflict resolution 的 Memory benchmark。",
-        "why": "它把多种长期 Memory 能力拆成诊断任务，适合和六问逐轴对照。",
-        "boundary": "当前 canonical URL 与版本仍需发布前补齐，不能把此条目当作已完成证据。",
-        "status": "pending",
+        "title": "MemoryAgentBench · Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions",
+        "date": "2025-07-07；ICLR 2026；论文 v4：2026-06-28",
+        "summary": "Hu、Wang、McAuley 提出的增量多轮 Memory benchmark，围绕 Accurate Retrieval、Test-Time Learning、Long-Range Understanding 和 Selective Forgetting 四类能力组织任务；官方仓库把最后一类称为 Conflict Resolution。",
+        "why": "它是 ICLR 2026 录用、论文和代码均公开的专门 Memory benchmark，明确把长上下文材料改造成增量多轮交互，并同时覆盖检索、测试时学习、长程理解和冲突/选择性遗忘。它适合展示“评测能力维度”和“教程六问”是两个不同视角。",
+        "boundary": "benchmark 测的是给定协议下的可观察结果和部分过程控制，不是某个系统内部 Memory ontology，也不是权限、审计、删除或成本的完整验收。本文未运行仓库评测，代码/模型/API 配置可能随版本变化。",
+        "status": "complete",
         "sources": [
-          "memoryagentbench"
+          "memoryagentbench:0",
+          "memoryagentbench:1"
         ],
         "checkedAt": "2026-11-11",
         "realityNote": "",
-        "canonicalUrl": "https://github.com/HUST-AI-HYZ/MemoryAgentBench",
+        "canonicalUrl": "https://arxiv.org/abs/2507.05257v4",
         "coverage": [
           "content",
           "lifecycle",
           "exposure"
-        ]
+        ],
+        "selectionEvidence": "论文元数据、ICLR 2026 录用信息、官方 README、指标表和公开运行入口已核。官方仓库在快照日 HEAD 为 5380260；本教程记录协议和证据边界，不把论文结果当作本地复现或跨 benchmark 排名。",
+        "limitations": "官方论文/README 的四类能力覆盖了记忆结果的重要切片，但不直接测试主体共享、权限、来源追溯、物理删除或投毒治理；论文附录有成本/延迟/GPU memory 的次级分析，但它们不是四项核心能力指标；不同 agent 配置、模型、judge、chunk size 和任务子集会影响结果。",
+        "next": "culture",
+        "profile": {
+          "kind": "专门的 LLM Agent Memory benchmark",
+          "authors": "Yuanzhe Hu、Yu Wang、Julian McAuley",
+          "venue": "The Fourteenth International Conference on Learning Representations (ICLR 2026); arXiv v4",
+          "artifact": "论文、官方代码仓库（含 README 指标表和运行入口）与 Hugging Face 数据入口；本教程未运行评测",
+          "version": "paper v4 updated 2026-06-28；repo HEAD 538026089d1a8a8eff05121d0db89b388f360eba"
+        },
+        "questions": [
+          {
+            "answer": "这里的“保存的是什么”要改写成“评测对象是什么”：benchmark 不保存一个统一 Memory store，而是把能力拆成四类结果。Accurate Retrieval 关注从长对话或文档中找到相关信息；Test-Time Learning 关注在交互中学会新的分类、偏好或任务知识；Long-Range Understanding 关注长距离摘要和推理；Selective Forgetting/Conflict Resolution 关注新旧事实冲突时能否使用更新信息。比如 EventQA 属于检索，FactConsolidation-SH/MH 用于冲突/选择性遗忘。",
+            "trace": "论文摘要、§3 和 Appendix B/Table 2 给出四类能力与任务构成；论文 v4 的摘要、§3 和 Appendix B 使用 Selective Forgetting；仓库 README 的 overview 使用 Conflict Resolution。它们是 evaluation categories，不能被写成 memory 内容 taxonomy。",
+            "why": "Benchmark 的第一问描述被测能力和内容类型，而不是假装它有一个内部 Memory schema。",
+            "example": "EventQA/LongMemEval 需要从历史中找事件或事实；FactConsolidation 需要处理新旧事实冲突。"
+          },
+          {
+            "answer": "被测 Memory 的载体由参测系统决定；benchmark 提供的是“增量多轮输入协议”：长文档、对话或事实被切成 context chunks，按交互顺序送给 agent，再在之后提出多个 query。被测系统可以是 full-context、RAG、外部 Memory module 或 tool-integrated agent，因此协议不强制一种文件、向量库、图或参数表示。官方 README 还明确采用“inject once, query multiple times”，让同一段输入支持后续多个问题。",
+            "trace": "论文摘要、§3.1、Table 2 和 README 的 LongMemEval overview 支持 chunking、multi-turn、agent family 和 inject-once/query-many 事实；协议与被测系统的内部 substrate 分开。",
+            "why": "协议固定输入顺序和查询方式，故可以比较不同内部载体，同时不把某种载体当作标准。",
+            "example": "同一组 chunks 可以交给 full-context、RAG 或 external-memory agent；差异来自系统实现和协议共同作用。"
+          },
+          {
+            "answer": "评测单位通常是一套能逐步接收 context 和 query 的 agent system 及一次 protocol run；系统内部可以包含多 Agent memory architecture（论文示例包括 MIRIX），范围是评测序列中的长期交互。表格把不同数据集和平均上下文长度列出来，但没有把团队共享、多个主体的可见性、tenant isolation 或 user consent 设计成核心变量。因此它能回答“在一段增量历史中，这个 agent 是否记住并使用信息”，不能回答“多 Agent 共享是否安全”。",
+            "trace": "论文摘要、§3.1、Appendix B 和 README 运行流程支持 agent system/incremental interaction 范围，且 §4.1/C.3 说明可评测包含 multi-agent memory architecture 的系统；跨 Agent 共享、可见性和租户治理没有进入核心任务定义，故标为 not_assessed。",
+            "why": "评测序列围绕一个 agent 的增量历史组织，无法由此推出多 Agent 共享、租户隔离或同意机制。",
+            "example": "一个序列里先注入历史再提出多个 query，测的是这个 agent 后续是否能用历史。"
+          },
+          {
+            "answer": "它通过后续查询间接观察生命周期：新信息到达后能否学会，长距离之后能否仍然理解，事实被更新或冲突后能否选择新的版本。实际协议是先逐块摄入并处理全部材料，再统一提出查询；Appendix H.1 将 acquisition 与 evaluation 分成两个阶段，并明确它不是 fully interleaved online learning。这个设计比一次性长文档 QA 更接近“先摄入、再使用、再检查更新/冲突结果”，但它不会直接打开系统日志检查写入、合并、TTL、物理删除或 rollback。一个 agent 回答错了，可能是没有写入、没有检索、注入失败、推理错误或冲突策略错误，benchmark 分数本身不能区分这些原因。",
+            "trace": "论文摘要与 Appendix B.1/B.2/B.3/B.4 的任务定义支持增量、长程和冲突观察；§3.3 与 Appendix H.1 说明先摄入后评估的两阶段协议；对内部日志/删除协议的限制是从黑盒评测边界推出，并明确标为未直接测量。",
+            "why": "增量、更新和冲突任务能观察生命周期结果，但黑盒分数不能定位写入、检索还是删除哪一步失败。",
+            "example": "新事实覆盖旧事实时答错，可能是未学习、检索错、注入错或冲突策略错；需要额外 trace 才能区分。"
+          },
+          {
+            "answer": "它主要看“信息最终有没有被有效取回并用对”：论文比较 context-based、RAG、external-memory 和 tool-integrated agents，并采用统一的 prompt/工具设置和受控的检索预算；chunk size 会随任务和方法变化（例如多数 AR/SF 任务为 512，部分外部记忆方法为 4096），多数检索结果使用 TopK=10，细节见论文 §4.1 与 Appendix F.3。指标按任务不同包括 substring_exact_match、exact_match、Recall@5、F1 或 LLM-as-judge；因此它既观察暴露后的任务结果，也保留了一些过程控制。可是黑盒结果不能证明每次调用内部到底检索了哪条记录、如何排序，或模型是否从其他输入捷径得到答案。",
+            "trace": "论文 §4.1/§4.2、Appendix F.3（chunk size/TopK）、lines 525–528 和官方 README 的 metrics table；指标字段和具体任务以 repo snapshot 为准，本教程没有运行验证。",
+            "why": "统一 prompts 和 tool access，并控制 TopK、chunk size 等检索预算，可以减少协议差异；具体值仍会随任务和方法变化，因此不能据分数证明内部调用链。",
+            "example": "README 的 metrics table 把 EventQA 记为 substring_exact_match、Movie Recommendation 记为 Recall@5；不同任务指标不能合成一个总分。"
+          },
+          {
+            "answer": "第六问的答案是“主要未评估”：协议没有把读写权限、同意、来源追溯、审计、投毒抵抗、物理删除、跨租户隔离或资源成本作为主指标。仓库的 API key、LLM judge 和运行配置属于复现条件，不等于治理评测。要覆盖教程六问，需要在 MemoryAgentBench 旁边增加权限错误、删除传播、来源可信度、投毒和成本/延迟测试，而不能用现有分数替代这些检查。",
+            "trace": "论文 §4、Appendix E、I、J、Reproducibility Statement 与 README metrics/quick setup 说明评测和运行范围；附录的成本/延迟分析与核心能力分类分开；未出现的治理维度以 not_assessed 记录，不写成系统没有这些能力。",
+            "why": "评测没有把治理作为主指标，所以应明确列出缺口并设计额外安全/隐私测试。",
+            "example": "可以另加“无权用户读取”“删除后仍被检索”“被投毒事实优先级”等任务，而不能用当前四类分数替代。"
+          }
+        ],
+        "evaluation": {
+          "abilities": "Accurate Retrieval；Test-Time Learning；Long-Range Understanding；Selective Forgetting（官方 README 对第四类使用 Conflict Resolution）",
+          "taskProtocol": "将已有长上下文/对话数据和新构造数据切成 context chunks，先按增量多轮交互摄入全部 context chunks，再进入查询阶段；采用 inject once, query multiple times 的设计；论文 Table 2 列出各类任务和平均长度。",
+          "metrics": "任务级指标包括 substring_exact_match、exact_match、Recall@5、F1 和 LLM-as-judge；官方 README 给出 category→dataset→metric→JSON field 映射。不同任务的数值不能直接合成教程排名。",
+          "designMapping": "主要覆盖 Q1 的评测内容/能力、Q4 的学习与冲突结果、Q5 的取回和使用（协议控制 prompt/工具与部分检索预算，但 chunk size/TopK 仍有任务和方法差异）；Q2 的内部载体、Q3 的跨 Agent 共享/可见性拓扑和 Q6 的治理不是直接测量维度。",
+          "limitations": "分数依赖模型、memory agent 配置、context/chunk size、TopK、judge、任务子集和运行环境；结果不能单独反推内部写入、检索、删除、权限或安全机制。"
+        }
       },
       {
         "id": "timl-membench",

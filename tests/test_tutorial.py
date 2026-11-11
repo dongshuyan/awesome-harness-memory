@@ -118,6 +118,26 @@ class TutorialContract(unittest.TestCase):
             if entry['status'] == 'pending':
                 self.assertTrue(entry.get('canonicalUrl'))
 
+    def test_first_batch_answers_include_rationale_and_examples(self):
+        expected = {
+            'forms-functions-dynamics',
+            'langgraph',
+            'memoryagentbench',
+        }
+        entries = [
+            entry
+            for rows in self.data['entries'].values()
+            for entry in rows
+            if entry.get('id') in expected
+        ]
+        self.assertEqual({entry['id'] for entry in entries}, expected)
+        for entry in entries:
+            self.assertEqual(entry['status'], 'complete')
+            self.assertEqual(len(entry['questions']), 6)
+            for answer in entry['questions']:
+                for field in ('answer', 'why', 'example', 'trace'):
+                    self.assertTrue(answer.get(field), (entry['id'], field))
+
 
 if __name__ == '__main__':
     unittest.main()
