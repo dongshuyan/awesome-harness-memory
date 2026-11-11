@@ -1103,7 +1103,7 @@
     },
     "memgpt:0": {
       "label": "MemGPT · 原始资料",
-      "url": "https://arxiv.org/abs/2310.08560",
+      "url": "https://arxiv.org/html/2310.08560v2",
       "year": "",
       "evidence": ""
     },
@@ -1324,10 +1324,10 @@
       "evidence": "当前 README 的 context graph、Graphiti/Zep 边界已读"
     },
     "google-agent-platform-memory-bank": {
-      "label": "官方概览",
+      "label": "Google Agent Platform Memory Bank · 官方概览",
       "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/scale/memory-bank",
-      "year": "2026-11-02",
-      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+      "year": "官方文档，2026-11-11 UTC 页面快照",
+      "evidence": "官方概览已核：managed persistent storage/retrieval、identity-scoped isolated collection、similarity search、scope/fact/name 示例、asynchronous generation、continuous event ingestion、multimodal understanding、ADK integration/VertexAiMemoryBankService、Example usage 的 Generate/Create/Retrieve 与 prompt 注入，以及 Model Armor、CMEK、VPC Service Controls、data residency 治理段落；未运行服务"
     },
     "google-adk": {
       "label": "项目仓库",
@@ -1438,10 +1438,10 @@
       "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
     },
     "collabmem": {
-      "label": "EMNLP 2026 论文",
+      "label": "COLLABMEM · EMNLP 2026 ACL Anthology 页面",
       "url": "https://aclanthology.org/2026.emnlp-main.1194/",
-      "year": "2026-11-02",
-      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+      "year": "EMNLP 2026；2026-10",
+      "evidence": "摘要、论文元数据、六项 competency 与数据规模已核；未运行评测"
     },
     "memoryagentbench": {
       "label": "MemoryAgentBench · 论文与 arXiv v4",
@@ -1960,10 +1960,16 @@
       "evidence": "论文身份与摘要已核；完整方法、实验及工件未完成审查，未复现"
     },
     "memgpt": {
-      "label": "原始资料",
+      "label": "MemGPT · arXiv HTML v2",
+      "url": "https://arxiv.org/html/2310.08560v2",
+      "year": "v2 2024-02-12",
+      "evidence": "标题页作者列表与正文 §§2.1–2.4、§3 已核；研究原型，未运行本教程复现"
+    },
+    "memgpt:abs": {
+      "label": "MemGPT · arXiv 元数据页",
       "url": "https://arxiv.org/abs/2310.08560",
-      "year": "2026-11-06 UTC",
-      "evidence": "论文身份与摘要已核；完整方法、实验及工件未完成审查，未复现"
+      "year": "v1 提交 2023-10-12；v2 修订 2024-02-12",
+      "evidence": "arXiv 元数据页给出 v1/v2 提交与修订日期；本页不替代 HTML 正文"
     },
     "voyager": {
       "label": "原始资料",
@@ -2108,6 +2114,60 @@
       "url": "https://arxiv.org/html/2512.13564v2#S5",
       "year": "2025-12-15 submitted；v2 revised 2026-01-13",
       "evidence": "arXiv 预印本 v2；HTML §5 Dynamics 已核"
+    },
+    "memgpt:artifact": {
+      "label": "MemGPT · 研究页面与实验工件入口",
+      "url": "https://research.memgpt.ai",
+      "year": "日期未核（不作为时间证据）",
+      "evidence": "论文链接的代码、数据与实验入口；本教程未执行工件"
+    },
+    "google-memory-bank:generate": {
+      "label": "Google Memory Bank · Generate memories",
+      "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/scale/memory-bank/generate-memories",
+      "year": "官方文档，2026-11-11 UTC 页面快照",
+      "evidence": "Extraction/Consolidation、GenerateMemories/CreateMemory、CREATED/UPDATED/DELETED、session-end/regular-interval and continuous-event triggers (volume/time), multimodal image/video/audio input, and the warning that sensitive/personal-data filtering is not infallible 已核；不等于本地复现"
+    },
+    "google-memory-bank:fetch": {
+      "label": "Google Memory Bank · Fetch memories",
+      "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/scale/memory-bank/fetch-memories",
+      "year": "官方文档，2026-11-11 UTC 页面快照",
+      "evidence": "RetrieveMemories/GetMemories、全量与相似度检索 API 入口已核；实际调用未运行"
+    },
+    "google-memory-bank:setup": {
+      "label": "Google Memory Bank · Setup",
+      "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/scale/memory-bank/setup",
+      "year": "官方文档，2026-11-11 UTC 页面快照",
+      "evidence": "Generation、retrieval、retention/TTL 与 revision retention 配置已核；TTL 页面明确说明过期后不可检索并删除，具体项目行为仍未在本教程运行验证"
+    },
+    "google-memory-bank:revisions": {
+      "label": "Google Memory Bank · Revisions",
+      "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/scale/memory-bank/revisions",
+      "year": "官方文档，2026-11-11 UTC 页面快照",
+      "evidence": "revision history 与 retention 配置说明已核"
+    },
+    "google-memory-bank:iam": {
+      "label": "Google Memory Bank · IAM conditions",
+      "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/scale/memory-bank/iam-conditions",
+      "year": "官方文档，2026-11-11 UTC 页面快照",
+      "evidence": "memoryViewer/memoryEditor/memoryUser 角色、scope/principal 读写限制入口已核；实际权限取决于项目配置"
+    },
+    "google-memory-bank:governance": {
+      "label": "Google Memory Bank · Governance and security",
+      "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/scale/memory-bank#governance",
+      "year": "官方文档，2026-11-11 UTC 页面快照",
+      "evidence": "官方概览 Governance 段落已核：Model Armor、adversarial testing、memory poisoning、CMEK、VPC Service Controls 与治理建议；本教程未部署验证"
+    },
+    "google-memory-bank:data-residency": {
+      "label": "Google Memory Bank · Data residency",
+      "url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/scale/memory-bank#data-residency",
+      "year": "官方文档，2026-11-11 UTC 页面快照",
+      "evidence": "官方概览 Data residency 段落已核：data residency、区域与隔离边界、RBAC/IAM、regional agent identity/service account 示例；是否满足要求取决于部署配置"
+    },
+    "collabmem:pdf": {
+      "label": "COLLABMEM · 论文 PDF",
+      "url": "https://aclanthology.org/2026.emnlp-main.1194.pdf",
+      "year": "EMNLP 2026",
+      "evidence": "作者元数据、正文 §§3.1–3.4、Table 1 competency rows、附录 Table 10、五类事件 FACT/CONTRADICTION/SENSITIVE/ROLE_SPECIFIC/DEPRECATION、matched memory-only harness、core/scaled/adversarial/compositional splits、gold audit 与 204-probe human verification 已核；摘要/PDF 报告 69.6% 仅属于论文协议；本教程未复现"
     }
   },
   "concepts": [
@@ -2356,18 +2416,69 @@
       },
       {
         "id": "memgpt",
-        "title": "MemGPT",
-        "date": "2023",
+        "title": "MemGPT · Towards LLMs as Operating Systems",
+        "date": "v1 提交 2023-10-12；v2 修订 2024-02-12",
         "researchKind": "method",
-        "summary": "把有限上下文与更大的外部存储组织成分层记忆，用 Agent 自主的读写操作管理信息。",
-        "why": "它把操作系统式的内存管理引入 LLM Agent，适合观察载体、生命周期与下一次调用的暴露路径如何配合。",
-        "boundary": "原始论文身份和摘要已核；本教程未复现实验，完整六问与实现版本待逐节补齐。",
-        "status": "pending",
+        "summary": "用操作系统式的虚拟上下文管理，把有限的主上下文与 recall、archival 等外部存储连接起来，让 Agent 自己决定何时读写和换入换出。",
+        "why": "它是分层上下文管理和自主 Memory 操作的代表性研究方法：论文把“存储层级、容量压力、函数调用、长期对话结果”放在同一条可追踪链路里，适合把六问完整走一遍。",
+        "boundary": "研究原型论文，不是当前产品的完整规格，也不是权限、删除或生产安全证明；实验结果是论文报告，本教程未复现。",
+        "status": "complete",
         "sources": [
-          "memgpt"
+          "memgpt",
+          "memgpt:abs",
+          "memgpt:artifact"
         ],
         "checkedAt": "2026-11-11",
-        "canonicalUrl": "https://arxiv.org/abs/2310.08560"
+        "realityNote": "",
+        "canonicalUrl": "https://arxiv.org/html/2310.08560v2",
+        "selectionEvidence": "arXiv HTML v2 的 §§2.1–2.4 逐项说明 main context、working context、FIFO、recall/archival storage、queue eviction、function calls、pagination 与 heartbeat；§3 给出多会话对话和文档分析实验。作者和 Berkeley/AI 研究团队可定位，论文与实验入口公开。",
+        "limitations": "论文把 recall storage 中被逐出的消息描述为 stored indefinitely，但没有给出通用 TTL、用户删除、访问控制、来源追溯或投毒防护协议；论文实验的模型、数据和部署配置不能直接外推到当前产品或所有部署。",
+        "next": "engineering",
+        "profile": {
+          "kind": "研究方法 / OS-inspired Agent Memory 原型",
+          "authors": "Charles Packer、Sarah Wooders、Kevin Lin、Vivian Fang、Shishir G. Patil、Ion Stoica、Joseph E. Gonzalez",
+          "team": "University of California, Berkeley；研究页面提供实验工件入口",
+          "venue": "arXiv 预印本 v2（2024-02-12）",
+          "artifact": "论文 HTML §§2–3 与 research.memgpt.ai 工件入口；本教程未运行代码或复现实验"
+        },
+        "questions": [
+          {
+            "answer": "MemGPT 不是按“事实/事件/技能”建立一棵统一内容树，而是先按上下文角色和存储层描述内容：system instructions 是静态控制说明；working context 保存对话中重要的用户事实、偏好和 persona 信息；FIFO queue 保存滚动消息、系统警告和函数输入输出；recall storage 保留消息历史；archival storage 保存任意长度的外部文本。这个设计把“要保留什么”与“当前是否能直接看到”分开。",
+            "why": "如果只说“它保存聊天记录”，读者会看不出为什么还要有 working context 和 archival storage。先按内容在决策中的角色拆开，才能理解哪些信息要常驻、哪些信息可以离开上下文后再取回。",
+            "example": "用户说“我下周要去夏威夷，喜欢安静的海滩”：偏好和人物信息可以整理进 working context；完整对话进入 recall；很长的资料文档放进 archival storage。",
+            "trace": "MemGPT HTML §2.1 说明 system instructions、working context、FIFO 的组成和用途；§2.2 说明 recall storage；§2 的 archival storage 段落说明任意长度文本。论文的分类是该方法的分层设计，不是跨系统通用 taxonomy。"
+          },
+          {
+            "answer": "它的主要载体是两层：main context，也就是实际送入 LLM 的 prompt tokens；external context，也就是固定窗口之外的 recall database 和 archival storage。main context 内又有 system instructions、固定大小的可读写 working context 和 FIFO queue。论文实验的 archival storage 使用 PostgreSQL/pgvector 做向量搜索，但这个后端是实验配置，不能写成 MemGPT 的唯一物理实现。",
+            "why": "“working context”既是概念上的工作区，也是 prompt 中的一段文本；“recall/archival”是外部存储。把逻辑层和实验后端分开，才能避免把数据库名称误当作 Memory 类型。",
+            "example": "一次检索可以先在 PostgreSQL/pgvector 中找候选，再把结果追加回 FIFO queue；LLM 只会看到被重新放入 main context 的文本。",
+            "trace": "§2 先区分 main context 与 external context；§2.1 说明 prompt 的三段；§3.2.1 说明 PostgreSQL、pgvector、HNSW 和 cosine similarity 是文档分析实验的配置。论文没有要求所有部署使用这些组件。"
+          },
+          {
+            "answer": "论文的主要主体是一个长期服务单个用户或 persona 的语言 Agent，也包含文档分析 Agent。对话实验围绕同一对 persona 的多次 session，目标是保持一致性和利用过去信息增强 engagement；文档实验则把 Wikipedia 文档放进 archival storage。论文没有为 team、tenant 或跨 Agent 共享定义访问拓扑。",
+            "why": "同一套“长期记忆”在个人对话和文档分析中服务的对象不同。明确主体后，读者不会把论文里的单 Agent 记忆误读成已经解决的团队共享和租户隔离。",
+            "example": "对话场景中，Agent 记住某个用户过去说过的偏好；文档场景中，Agent 检索 Wikipedia 文章。两者都用 archival storage，但主体和目标不同。",
+            "trace": "论文摘要和 §3.1 的 Multi-Session Chat/长期 persona 设定支持对话主体；§3.2 的 Wikipedia/NaturalQuestions-Open 支持文档主体。team、tenant、consent 与跨 Agent 共享在论文范围内未定义。"
+          },
+          {
+            "answer": "生命周期由“写入、容量压力、换出、摘要、再检索”组成。新消息和模型输出先写入 recall；接近 warning token count 时，queue manager 发出 memory-pressure 警告，让 Agent 把重要内容写进 working context 或 archival storage；达到 flush token count 时，队列被逐出并生成递归摘要，原消息仍保留在 recall 中。模型还可以通过函数调用主动编辑和检索。论文把 recall 中的消息描述为 indefinitely 保存，但没有通用 TTL、版本回滚或物理删除流程。",
+            "why": "这个问题的关键是区分“暂时离开上下文”和“真正遗忘”。MemGPT 的 eviction 解决容量，不等于删除；摘要解决当前窗口，不等于原始记录消失。",
+            "example": "对话变长时，系统先提醒 Agent 把“用户过敏信息”写入 working context；随后 flush FIFO。下次需要时再通过 recall function 搜索被逐出的原消息。",
+            "trace": "§2.2 描述 append、warning/flush token count、queue eviction、recursive summary 和 recall 持久化；§2.3 描述 self-directed edit/retrieval。论文没有给出 TTL、用户删除、冲突回滚或删除传播协议。"
+          },
+          {
+            "answer": "事实（论文架构）：外部内容必须被显式移入 main context，才能作为本次 LLM inference 的输入。MemGPT 用函数调用执行 recall/archival 搜索、把结果追加到队列，并用 pagination 避免一次检索撑爆上下文；request_heartbeat 和 function chaining 允许模型连续调用多个函数后再回答。因而“外部已经存着”与“本次调用实际看到了”是两个状态。",
+            "why": "Memory 是否影响行为，取决于暴露链路而不只取决于存储。这个例子把 retrieval、context injection 和后续推理分开，正好解释为什么第五问要单独问。",
+            "example": "用户问“上次旅行午餐吃了什么”：Agent 先用 recall function 搜索旧消息，分页取得候选，追加到 FIFO，再调用模型生成回答；如果不调用检索，archive 中的事实不会自动进入输入。",
+            "trace": "§2 的 main/external context 与显式移入规则、§2.2 的 retrieved messages appended to queue、§2.3 的 pagination、§2.4 的 heartbeat/function chaining 支持这条暴露路径。"
+          },
+          {
+            "answer": "论文没有规定完整的读写权限、用户同意、来源审计、投毒防护、跨租户隔离或删除证明。它把写入和检索控制交给模型生成的 function calls，并由 parser 校验参数、把运行错误反馈给模型；这说明方法有操作控制环，但不等于治理策略。尤其是自主管理和“stored indefinitely”可能带来需要额外治理的风险。",
+            "why": "研究原型常把“模型能否自己管理上下文”作为贡献，却没有同时解决生产系统的责任边界。把未说明项明确列出，能防止读者把 OS 比喻误读成安全规范。",
+            "example": "外部治理建议（非论文自带能力）：应用可以在外层增加只读工具、用户删除接口或审计日志，但这些不是论文自动提供的能力；仅凭 function schema 不能证明谁有权调用它。",
+            "trace": "§2.3 说明 parser、function schema 和 runtime error feedback；论文的架构与实验章节没有给出 IAM、consent、provenance、poisoning、retention 或 deletion protocol。因此标记为 not_specified，而不是“不支持”。"
+          }
+        ]
       },
       {
         "id": "voyager",
@@ -2543,17 +2654,71 @@
       {
         "id": "google-memory-bank",
         "title": "Google Agent Platform Memory Bank",
-        "date": "公开日期未说明",
-        "summary": "Google Cloud 托管的 Agent Memory 服务。",
-        "why": "它把写入、检索、范围和云资源配置暴露为工程接口。",
-        "boundary": "版本、区域、配额和安全配置需按云文档继续核对。",
-        "status": "pending",
+        "date": "核对快照 2026-11-11 UTC",
+        "summary": "Google Gemini Enterprise Agent Platform 的托管 Memory 服务：从 Sessions 或 Agent 事件提取、合并并保存长期记忆，再按 identity scope 做全量或相似度检索。",
+        "why": "它是工程端很完整的托管样本：官方文档同时写出记忆内容、identity scope、自动提取与合并、异步写入、检索、TTL、revision、IAM 和数据驻留边界，能把研究里的六问落到可配置 API 和治理责任上。",
+        "boundary": "本文只根据 Google Cloud 官方文档描述公开 API/配置语义；没有创建实例、调用服务或验证某个区域/版本的实际行为。治理建议不等于部署合规证明。",
+        "status": "complete",
         "sources": [
-          "google-agent-platform-memory-bank"
+          "google-agent-platform-memory-bank",
+          "google-memory-bank:generate",
+          "google-memory-bank:fetch",
+          "google-memory-bank:setup",
+          "google-memory-bank:revisions",
+          "google-memory-bank:iam",
+          "google-memory-bank:governance",
+          "google-memory-bank:data-residency"
         ],
         "checkedAt": "2026-11-11",
         "realityNote": "",
-        "canonicalUrl": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/scale/memory-bank"
+        "canonicalUrl": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/scale/memory-bank",
+        "selectionEvidence": "官方概览和配套页面明确说明 managed persistent store、identity-scoped isolation、similarity retrieval、GenerateMemories/CreateMemory、Extraction/Consolidation、TTL、revisions、IAM conditions、VertexAiMemoryBankService、poisoning 与 data residency。收录依据是公开机制和治理边界可定位，不是用户规模或效果排名。",
+        "limitations": "文档中的 IAM、TTL、revision 与区域控制需要结合具体项目、实例和版本配置；页面没有给出本教程可复现的性能数据，也不能从 feature list 推出物理删除传播、隐私合规或每个区域的默认行为。",
+        "next": "benchmarks",
+        "profile": {
+          "kind": "官方托管 Agent Memory 服务",
+          "maintainer": "Google Cloud / Gemini Enterprise Agent Platform",
+          "artifact": "官方 Memory Bank 概览、Generate/Fetch/Setup/Revisions/IAM 文档；本教程未创建实例或运行 API",
+          "version": "官方文档页面快照 2026-11-11 UTC；服务行为随区域、版本和项目配置变化"
+        },
+        "questions": [
+          {
+            "answer": "Memory Bank 的基本单位是带 scope 的长期记忆事实或洞见。官方示例把对话中的用户偏好、历史和关键细节抽取成独立、自包含的 memory；GenerateMemories 从 session events 或多模态内容中提取，CreateMemory 允许 Agent 直接写入。它不是把完整 transcript 原样当成唯一长期记忆，而是通过 extraction/consolidation 选择未来可能有价值的信息。Generate memories 页面还提醒，敏感或个人数据的过滤并非万无一失，不能把“自动抽取”当成隐私保证。",
+            "why": "先分清“事件来源”和“长期事实”，才能理解为什么 Sessions 负责保留交互历史，而 Memory Bank 负责生成可跨 session 使用的记忆。",
+            "example": "客服 Agent 从过去工单中抽取“用户使用企业版、偏好邮件通知”作为用户记忆；下一次会话可直接利用这些事实，而不是重新读完整工单。",
+            "trace": "官方概览与 Generate memories 页面说明 user facts、对未来交互有价值的信息、GenerateMemories/CreateMemory、extraction/consolidation；Generate 页面单独说明 multimodal image/video/audio input，以及敏感/个人数据过滤并非万无一失。具体 schema 和抽取质量取决于服务配置，不能由示例推断所有记忆都同样结构化。"
+          },
+          {
+            "answer": "载体是 Google 托管的持久化 Memory Bank store；公开文档展示 memory 的 scope、fact/name 等逻辑字段，并支持全量或 similarity search。文档没有公开底层数据库、embedding 模型或索引实现，因此应把“托管 store + retrieval API”当成工程接口，把实际物理后端标为未说明。",
+            "why": "工程接口和物理实现是两层。读者需要知道如何使用服务，也需要知道官方页面没有承诺某种数据库或向量结构。",
+            "example": "应用用 RetrieveMemories 做相似度检索，得到与当前用户和对话相关的 memory；开发者不需要直接管理底层索引，但也不能据此断言它一定使用某个向量数据库。",
+            "trace": "官方概览的 Managed storage and retrieval、Similarity search、Memory revisions 段落，以及 Fetch memories 页面支持逻辑接口；底层 backend/embedding schema 在公开页面中未说明。"
+          },
+          {
+            "answer": "范围以 identity scope 为核心。官方文档要求 Session 有 user ID，生成的 memory 映射到该 user；记忆按 identity scope 隔离，检索也按 specific identity 组织。工程配置示例可以用 scope、IAM principal/roles 和 regional instance 划分访问边界；这是部署层映射，不是 Memory Bank 默认共享语义。scope isolation 不等于完整授权：Google 还提供 IAM conditions 和专用角色控制哪些 principal 能读写哪些 scope。",
+            "why": "“这条记忆属于谁”与“谁有权访问”是两个问题。Memory Bank 同时给出 identity scope 和 IAM，正好说明业务范围与安全权限不能合并。",
+            "example": "配置示例（假设，不代表默认部署）：同一客服应用把每个客户的偏好存到对应 user scope，再用 IAM 条件把读写 principal 限制到目标 scope；跨区域隔离需按项目配置验证。",
+            "trace": "官方概览的 Data isolation across identities、Example usage 的 user ID、Governance 的 data residency/region/IAM 段落，以及 IAM conditions 页面支持范围与授权的分层。文档未证明某个部署已经正确配置这些策略。"
+          },
+          {
+            "answer": "生命周期包括事件摄入、抽取、合并、修订、检索和过期。Agent 可以在 session 结束、session 内定期调用，或通过 continuous events 按配置的 volume/time 条件触发 GenerateMemories，也可用 CreateMemory 直接写入；GenerateMemories 的响应示例把动作标为 CREATED、UPDATED 或 DELETED，Revisions 文档说明这些变更可以留下 revision。实例还可以配置 memory TTL 和 revision-history TTL；Setup 文档描述过期记忆不再可检索并会被删除，但本教程未验证物理删除传播和跨索引残留，版本冲突规则仍需看具体 API/服务保证。",
+            "why": "Memory Bank 的工程价值不只是“有个库”，而是把抽取、异步合并、可追溯修订和过期策略都纳入生命周期。把自动流程与可证明的删除边界分开，避免过度承诺。",
+            "example": "配置示例（推断）：一轮对话后后台任务把“用户住在 A 城”写入；新对话提供“用户住在 B 城”时，后台 consolidation 可能更新旧事实并留下 revision，具体冲突取舍以服务配置和文档保证为准；TTL 到期后服务按配置删除过期 memory。",
+            "trace": "官方概览 Example usage、Generate memories、Setup、Revisions 页面；Generate memories 页面明确列出 session 结束/定期调用、continuous events 按 volume/time 触发，以及 CREATED/UPDATED/DELETED；Setup 页面明确记录 TTL 到期后的不可检索和删除语义。文档功能说明不等于本地运行验证，跨索引残留和物理传播仍未在本教程验证。"
+          },
+          {
+            "answer": "官方 ADK 集成通过 VertexAiMemoryBankService，应用也可以用官方 API 或自定义 wrapper 调用 GenerateMemories/CreateMemory 和 RetrieveMemories。检索可以返回全部 memory，也可以按当前对话做 similarity search；应用随后把结果注入 prompt（这是应用集成示例，官方页面没有规定统一模板）。这个路径说明“存储完成”与“某次调用实际使用”仍是两件事：是否触发检索、如何排序、截断和解释由 Agent 集成决定。",
+            "why": "只有把 API 调用和 prompt 注入连起来，读者才能判断 Memory 是否真的影响了模型输入；托管服务不会替应用自动决定每次调用要用哪些事实。",
+            "example": "应用集成示例（推断）：ADK Agent 在收到新问题时按 user scope 检索相关偏好，把结果拼入 prompt；若应用没有调用 RetrieveMemories，即使 Memory Bank 中已有事实，本次调用也不会自动看到。",
+            "trace": "官方概览的 Agent integration 与 Example usage、Fetch memories 页面支持 VertexAiMemoryBankService、生成/检索/注入路径；页面没有规定所有框架都使用同一种触发和 prompt 模板。"
+          },
+          {
+            "answer": "Memory Bank 文档明确把 IAM conditions、`roles/aiplatform.memoryViewer` 与 `roles/aiplatform.memoryEditor` 角色、scope isolation、regional deployment、CMEK/VPC Service Controls 和 memory poisoning 风险放进治理讨论；它还建议用 Model Armor、adversarial testing/red teaming，并提醒部署者关注数据驻留和跨区域隔离。这些是产品配置和建议，不能直接写成“默认安全”或“已经合规”。是否满足数据驻留和跨区域隔离要求取决于具体部署配置，需要独立验证；用户同意、来源级 provenance、审计报表和删除后的全链路证明，公开概览没有完整统一协议。",
+            "why": "工程系统的治理必须回答谁能读写、如何防止错误事实和跨区域泄露。官方文档提供了控制面，但真正的安全结果取决于实例、IAM、模型和应用配置。",
+            "example": "IAM 页面列出 `roles/aiplatform.memoryViewer` 与 `roles/aiplatform.memoryEditor`；例如配置示例（建议，不代表默认配置）：给只读服务账号授予 memoryViewer、给写入服务账号授予 memoryEditor，并把它们绑定到同一区域；同时对恶意对话做 poisoning red-team。这样的配置仍需独立验证，不能只看文档就宣称合规。",
+            "trace": "官方概览的 Governance/Data residency、CMEK/VPC Service Controls 段落，以及 IAM conditions 页面；这些页面写的是控制项、建议、角色和配置语义，没有提供本教程部署的审计或合规证书。"
+          }
+        ]
       },
       {
         "id": "graphiti",
@@ -2740,23 +2905,81 @@
     "benchmarks": [
       {
         "id": "collabmem",
-        "title": "COLLABMEM",
-        "date": "2026",
-        "summary": "面向协作 Agent Memory 的评测与数据。",
-        "why": "它补充共享、协作和主体范围这组六问关注点。",
-        "boundary": "任务协议与可复现条件需继续核对。",
-        "status": "pending",
+        "title": "COLLABMEM · A Diagnostic Benchmark for Collaborative Memory Operations",
+        "date": "2026-10；EMNLP 2026",
+        "summary": "面向多 Agent 协作记忆的诊断 Benchmark，把共享、访问、路由、来源、冲突和保留拆成可定位的 probe。",
+        "why": "本教程把它作为多主体和治理侧的代表样本：它不仅问“能不能找回事实”，还问事实是否到达正确角色、对无权角色保持隐藏、携带正确来源并在更新/压缩后保持正确。",
+        "boundary": "Benchmark 的场景、gold event 和 memory-only harness 是诊断协议，不是生产权限系统或现实协作分布的完整模拟；论文报告的 TMS-GRAPH++ 分数只属于其协议和实现，本教程未运行。",
+        "status": "complete",
         "sources": [
-          "collabmem"
+          "collabmem",
+          "collabmem:pdf"
         ],
         "checkedAt": "2026-11-11",
         "realityNote": "",
         "canonicalUrl": "https://aclanthology.org/2026.emnlp-main.1194/",
         "coverage": [
+          "content",
+          "substrate",
           "scope",
-          "governance",
-          "exposure"
-        ]
+          "lifecycle",
+          "exposure",
+          "governance"
+        ],
+        "selectionEvidence": "ACL Anthology 记录 COLLABMEM 为 EMNLP 2026 论文；摘要给出 58 个手工场景/1,118 probes、174 场景/3,359 probes、六项 transactive-memory competencies 和 matched memory-only harness。正文 §§3.1–3.4、Table 1 与附录 Table 10 进一步给出 access matrix、provenance、conflict、retention、C6 的 stale value/update rationale、五类事件、core/scaled/adversarial/compositional splits 与 gold audit；摘要和 PDF 还报告 TMS-GRAPH++ 非 Oracle 平均分 69.6%。",
+        "limitations": "场景和事件由论文协议构造，受固定 trace、角色、answerer、judge 和 gold event 约束；不直接测用户同意、真实 IAM/法律合规、物理删除、成本、延迟或生产漂移。非 Oracle 分数不能直接当成跨系统排名。",
+        "next": "culture",
+        "profile": {
+          "kind": "多 Agent 协作 Memory 诊断 Benchmark",
+          "authors": "Shun Wu、Di Wu、XueYou Zhang、Kang Liu",
+          "venue": "EMNLP 2026（ACL Anthology，2026-10）",
+          "artifact": "ACL 论文、PDF 与待公开的数据/评测代码说明；本教程未运行官方 SDK 或复现结果"
+        },
+        "questions": [
+          {
+            "answer": "Benchmark 的第一问不是“它内部保存哪一种 Memory”，而是“这次 probe 要验证哪类记忆事实和协作操作”。论文用 FACT、CONTRADICTION、SENSITIVE、ROLE_SPECIFIC、DEPRECATION 这 5 类事件构造 value/evidence probes，并把结果组织为 C1 sharing、C2 consistency update、C3 access、C4 authority/routing、C5 conflict/provenance、C6 retention/compression 六项 transactive-memory competencies。",
+            "why": "Benchmark 若把能力维度误写成内容 taxonomy，就会让读者误以为 COLLABMEM规定了一个数据库结构。这里明确它测的是可观察的协作记忆行为。",
+            "example": "一个 ROLE_SPECIFIC 事实应该到达负责财务的 Agent，但不能暴露给普通客服 Agent；一个 DEPRECATION 事件应该让新值取代旧值，同时保留可追溯证据。",
+            "trace": "ACL 摘要和 PDF §3.1/§3.3 的 event types、probe 定义与 Table 1 C1–C6；论文把这些称为 competency/diagnostic operations，不是 Memory ontology。"
+          },
+          {
+            "answer": "COLLABMEM 对内部载体保持开放：参测 memory layer 可以是 buffers、vector stores、graphs、private/shared banks 或 tool-mediated retrieval。它通过 matched memory-only harness 固定 trace、target role、answerer、judge 和 gold event，让 answerer 只接触 memory layer 提供的上下文。这样比较的是协作操作是否正确，而不是哪种数据库天然更好。",
+            "why": "协作 Memory 的错误可能来自结构、权限或路由；如果 Benchmark 强制一种载体，结果就混入实现偏好，难以定位问题。",
+            "example": "同一组事件可以放进向量库或图结构；只要两者都能给目标 Agent 提供 memory-only context，就可以比较 C3 access 和 C5 provenance 的错误。",
+            "trace": "PDF §3.1 对 memory layer、buffers/vector/graph/private-shared banks 和 matched harness 的描述；论文未要求参测系统使用 TMS-GRAPH++，后者是论文报告的一个框架。"
+          },
+          {
+            "answer": "主体由 roles、access matrix A、target role 和 answerer 组成。每个事件带有应该可见的角色范围，probe 检查事实是否到达正确角色并对无权角色保持隐藏；因此它把“谁拥有/谁能看到”直接变成评测条件。可是 access matrix 是 Benchmark 的 gold 协议，不等于真实生产系统已经有 IAM、用户同意或租户隔离。",
+            "why": "多 Agent 记忆的关键区别是共享边界。单 Agent QA 只问答案对不对，无法发现事实被错误角色看到或没有路由到应答角色。",
+            "example": "事件 E 的 access matrix 允许 Agent-2 读取、禁止 Agent-3 读取；若 Agent-3 的回答包含 E，C3 会记录未授权泄露，即使答案文本本身正确。",
+            "trace": "PDF §3.1 对 scenario tuple（roles R、access matrix A、event schedule E、probe/query Q）和 target-role probe 的描述，以及 ACL 摘要对 visibility/access 的说明；真实 IAM、法律责任和 consent 不在核心协议中。"
+          },
+          {
+            "answer": "生命周期由有序事件、时间戳、supersession pointers 和压缩测试表达。C1 测共享，C2 测新信息更新旧信息，C4 测 authority/routing，C5 测 conflict/provenance，C6 测压缩后是否仍保留被取代的旧值及其解释价值，并能区分当前值与历史值。它能观察更新、冲突和压缩后的结果，但没有直接调用真实服务的 TTL、物理删除或 rollback API。",
+            "why": "协作记忆的错误常常不是“没存”，而是旧事实仍被当成当前事实，或压缩后丢掉了替代关系；把事件顺序和 retention 单独测出来才能定位这类失败。",
+            "example": "先写“项目负责人是 A”，再写带更高 authority 的“负责人改为 B”；正确系统应回答 B，并在需要时指出 A 已被 supersede。压缩后仍应保留 B、A 以及“为什么 B 取代 A”的来源或更新依据。",
+            "trace": "PDF §3.1/§3.2、Table 1、附录 Table 10 的 C1–C6 诊断语义，以及 ordered events/timestamps/supersession 与 compression 说明；Table 10 明确 C6 gold 要保留 stale value 和 update rationale。论文未把测试结果升级成真实删除或 TTL 保证。"
+          },
+          {
+            "answer": "它的暴露路径是受控的 memory-only query：固定 trace 产生事件，目标 role 发出 probe，memory layer 向 answerer 暴露应有的 evidence，judge 根据 gold event 判定并把错误定位到 sharing、access、routing、provenance、conflict 或 retention。它不测试完整 Agent planning、工具调用或长期对话中的自由检索，因此能诊断“正确证据是否给到正确角色”，不能单独证明真实任务行动正确。",
+            "why": "把 trace、target role、answerer 和 judge 固定，可以把协作 Memory 错误从后续推理和工具执行中隔离出来；代价是失去开放环境的全部复杂性。",
+            "example": "probe 只让目标 Agent 根据 memory context 判断当前负责人和来源；若 evidence 没到达、给错角色或来源冲突，诊断标签分别落在 sharing/access/provenance，而不是笼统记一个答错。",
+            "trace": "ACL 摘要和 PDF §3.1 对 matched memory-only harness、fixed trace/target role/answerer/judge/gold event 的描述；论文没有把该协议当成完整 Agent benchmark。"
+          },
+          {
+            "answer": "COLLABMEM 把治理相关行为放进核心能力：C3 访问控制、C4 authority/routing、C5 conflict/provenance、C6 retention/compression；场景还包含 SENSITIVE 和 ROLE_SPECIFIC 事件。数据由 gold audit 与 204-probe human verification 检查发布协议的一致性。它仍不测用户同意、真实 IAM、法律合规、物理删除、成本或延迟，因此它覆盖了一部分可诊断治理行为，仍需外部安全/隐私测试补足。",
+            "why": "相比只测 recall 的 Benchmark，这种设计能直接暴露共享和权限边界；同时必须说明它是协议级检查，不是生产合规认证。",
+            "example": "给无权角色安排一条敏感事实可以测试 C3 access；让低 authority 的旧值与新值发生冲突，则可分别观察 C4 authority/routing 和 C5 conflict/provenance；但要验证真实 API 的 IAM 和删除传播，还需要部署级测试。",
+            "trace": "PDF §§3.2–3.4 的 C3–C6、adversarial/compositional splits、gold audit 与 human verification；ACL 摘要的六项 competencies 和规模说明；未出现的 consent/legal/physical deletion 标为 not_assessed。"
+          }
+        ],
+        "evaluation": {
+          "abilities": "C1 Sharing；C2 Consistency Update；C3 Access Control；C4 Authority/Routing；C5 Conflict/Provenance；C6 Retention/Compression（论文的 transactive-memory competencies）",
+          "taskProtocol": "基于有序事件、角色集合、access matrix、target role 和 probe 构造 memory-only harness；固定 trace、answerer、judge 与 gold event，再用 core/scaled、adversarial 和 compositional split 诊断错误来源。",
+          "metrics": "论文报告 competency 级和 split 级诊断分数；ACL 摘要给出 58 个手工场景/1,118 probes、174 场景/3,359 probes，并报告 TMS-GRAPH++ 的非 Oracle 平均分 69.6%。另有 204-probe human verification；这些数值只属于论文协议，不能直接合成跨 Benchmark 排名。",
+          "designMapping": "直接覆盖 Q3 的主体/共享拓扑、Q4 的更新/冲突/保留、Q5 的证据暴露和 Q6 的访问/来源/权威治理；Q1 通过事件类型体现内容角色，Q2 只要求载体可提供 memory-only evidence，不评判具体数据库优劣。",
+          "limitations": "场景和 gold 由论文协议构造，结果依赖事件分布、role/access matrix、answerer/judge 与参测系统配置；不直接测用户同意、真实 IAM、物理删除、成本/延迟、自由规划或生产漂移。"
+        }
       },
       {
         "id": "mem-gallery",

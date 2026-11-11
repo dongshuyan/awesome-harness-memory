@@ -21,9 +21,9 @@
 
 截至 **2026-11-11** 的教程快照包含：
 
-- **10 个精选 Research**，CoALA 是第一个完整的六问样板；另有 4 个研究候选作为待筛线索保留在 Research 页面；
-- **17 个工程系统**，Claude Code 是第一个完整样板；
-- **10 个 Benchmark**，LongMemEval 是第一个完整样板；
+- **10 个精选 Research**，CoALA、Forms–Functions–Dynamics 和 MemGPT 已有完整的六问样板；另有 4 个研究候选作为待筛线索保留在 Research 页面；
+- **17 个工程系统**，Claude Code、LangGraph 和 Google Agent Platform Memory Bank 已有完整样板；
+- **10 个 Benchmark**，LongMemEval、MemoryAgentBench 和 COLLABMEM 已有完整样板；
 - **6 个文学与影视条目**，*Memento* 和 Borges 的短篇 “Funes the Memorious” 已完成文化类样板；
 - **2 个人类记忆背景条目**，以及专题和工具页面。
 

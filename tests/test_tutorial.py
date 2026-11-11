@@ -138,6 +138,26 @@ class TutorialContract(unittest.TestCase):
                 for field in ('answer', 'why', 'example', 'trace'):
                     self.assertTrue(answer.get(field), (entry['id'], field))
 
+    def test_second_batch_answers_include_rationale_and_examples(self):
+        expected = {
+            'memgpt',
+            'google-memory-bank',
+            'collabmem',
+        }
+        entries = [
+            entry
+            for rows in self.data['entries'].values()
+            for entry in rows
+            if entry.get('id') in expected
+        ]
+        self.assertEqual({entry['id'] for entry in entries}, expected)
+        for entry in entries:
+            self.assertEqual(entry['status'], 'complete')
+            self.assertEqual(len(entry['questions']), 6)
+            for answer in entry['questions']:
+                for field in ('answer', 'why', 'example', 'trace'):
+                    self.assertTrue(answer.get(field), (entry['id'], field))
+
 
 if __name__ == '__main__':
     unittest.main()
