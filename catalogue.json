@@ -1,14 +1,14 @@
 {
-  "checked_utc": "2026-11-06",
+  "checked_utc": "2026-11-07",
   "counts": {
-    "all": 137,
+    "all": 138,
     "statuses": {
-      "documented": 55,
+      "documented": 56,
       "reading": 47,
       "pending": 32,
       "historical": 3
     },
-    "systems_documented": 48
+    "systems_documented": 49
   },
   "resources": [
     {
@@ -4481,6 +4481,75 @@
       "support": "研究资料",
       "highlight": "从原始来源继续阅读，并结合对应研究问题比较。",
       "facts": {}
+    },
+    {
+      "id": "agent-qa",
+      "title": "agent-qa / memidex",
+      "kind": "QA Agent / Harness",
+      "group": "harness",
+      "summary": "自然语言 Web、Android 与 iOS 测试 Agent。memidex 将运行证据沉淀为持久应用知识，经检查后供后续测试复用。",
+      "highlight": "判定完成后才学习；候选事实与警示须有已验证步骤的完整证据才可晋升。可研究测试证据、记忆信任与后续行动之间的闭环。",
+      "limit": "CI 只提出候选，不自动晋升。文档标注的 v0.2 默认使用关键词与锚点检索；新工作区的索引与本地证据条件会影响知识供给。未运行验证。",
+      "support": "原生 memidex 文件记录、派生本地索引与证据检查",
+      "axes": [
+        "content",
+        "form",
+        "governance",
+        "operation",
+        "owner",
+        "scope",
+        "use"
+      ],
+      "facts": {
+        "owner": "运行环境管理学习与供给；人可确认、拒绝、遗忘及回滚",
+        "content": "应用事实、失败警示、可复用流程及人工 QA 规则",
+        "scope": "项目知识目录内按被测产品组织；跨工作区供给有本地索引和证据限制",
+        "form": "Markdown / JSON / JSONL 记录包；派生 SQLite 搜索索引与记录关系",
+        "operation": "判定后提炼候选，检查、确认、晋升或替换；CI 保留提案",
+        "use": "每个测试的分层简报、按条件提供的记忆工具及流程匹配",
+        "governance": "记录运行与步骤来源、结果日志和完整性哈希；支持人工纠正与回滚"
+      },
+      "types": [
+        "systems"
+      ],
+      "checked": "2026-11-07 UTC",
+      "status": "documented",
+      "sources": [
+        {
+          "label": "产品官网",
+          "url": "https://vostride.com"
+        },
+        {
+          "label": "memidex",
+          "url": "https://vostride.com/docs/agent-qa/memory"
+        },
+        {
+          "label": "记录结构",
+          "url": "https://vostride.com/docs/agent-qa/memory/records"
+        },
+        {
+          "label": "架构与索引",
+          "url": "https://vostride.com/docs/agent-qa/memory/architecture"
+        },
+        {
+          "label": "学习与晋升",
+          "url": "https://vostride.com/docs/agent-qa/memory/learning"
+        },
+        {
+          "label": "知识供给",
+          "url": "https://vostride.com/docs/agent-qa/memory/serving"
+        },
+        {
+          "label": "检查与纠正",
+          "url": "https://vostride.com/docs/agent-qa/memory/inspect"
+        }
+      ],
+      "verification": "已读官方文档相关段落；未运行 agent-qa，也未复现评测",
+      "versionNote": "核对 2026-11-07 的在线官方文档；部分搜索、作用域及跨工作区限制标为 v0.2，未审计所有发行版与文档的对应关系。",
+      "aliases": [
+        "memidex",
+        "vostride"
+      ]
     }
   ]
 }
