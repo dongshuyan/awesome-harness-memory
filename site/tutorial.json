@@ -2852,6 +2852,96 @@
       "year": "2026-11-12核查",
       "evidence": "作者仓库指向的数据集；数据card及论文共同限定合成历史和用途。",
       "checkedAt": "2026-11-12"
+    },
+    "foundation-v4-current": {
+      "label": "Foundation Agent Memory · v4综述",
+      "url": "https://arxiv.org/html/2602.06052v4",
+      "year": "2026-08-04 · v4；2026-11-12核查",
+      "evidence": "正文§3三轴/认知类型、§4操作与多Agent、§5策略、§7评测；文本事实高置信。作者所称正交/最小完备是分类主张，不当形式证明。"
+    },
+    "foundation-meta-current": {
+      "label": "Foundation Agent Memory · 版本记录",
+      "url": "https://arxiv.org/abs/2602.06052",
+      "year": "2026-11-12核查",
+      "evidence": "arXiv记录首发2026-01-14、v4 2026-08-04；comments声明TMLR及Survey Certification。OpenReview论坛校验页、API限流、PDF拒绝访问，未独立核最终评审记录。"
+    },
+    "foundation-project-current": {
+      "label": "Foundation Agent Memory · 作者项目",
+      "url": "https://github.com/AgentMemoryWorld/Awesome-Agent-Memory/blob/cd601e4fa066c7b717b3a027d492c7106d1ead4e/README.md",
+      "year": "固定commit；2026-11-12核查",
+      "evidence": "作者2026-07-23记录TMLR接收与Survey Certification Award，并链接论坛XycbogUAeJ；发表身份按作者报告归因，中等置信，非重复独立证据。"
+    },
+    "pi-session-current": {
+      "label": "Pi · 会话与上下文",
+      "url": "https://github.com/earendil-works/pi/blob/4b519d3bb19b57a368129b167a48da16e447d9f6/packages/coding-agent/docs/sessions.md",
+      "year": "固定commit；2026-11-12核查",
+      "evidence": "官方仓库文档，来源已固定。高置信于文档规定；未安装或运行上游，扩展行为取决于配置。"
+    },
+    "pi-format-current": {
+      "label": "Pi · 持久会话格式",
+      "url": "https://github.com/earendil-works/pi/blob/4b519d3bb19b57a368129b167a48da16e447d9f6/packages/coding-agent/docs/session-format.md",
+      "year": "固定commit；2026-11-12核查",
+      "evidence": "官方仓库文档，来源已固定。高置信于文档规定；未安装或运行上游，扩展行为取决于配置。"
+    },
+    "pi-compaction-current": {
+      "label": "Pi · 压缩与分支摘要",
+      "url": "https://github.com/earendil-works/pi/blob/4b519d3bb19b57a368129b167a48da16e447d9f6/packages/coding-agent/docs/compaction.md",
+      "year": "固定commit；2026-11-12核查",
+      "evidence": "官方仓库文档，来源已固定。高置信于文档规定；未安装或运行上游，扩展行为取决于配置。"
+    },
+    "pi-how-current": {
+      "label": "Pi · 请求构建与权限",
+      "url": "https://github.com/earendil-works/pi/blob/4b519d3bb19b57a368129b167a48da16e447d9f6/packages/coding-agent/docs/how-pi-works.md",
+      "year": "固定commit；2026-11-12核查",
+      "evidence": "官方仓库文档，来源已固定。高置信于文档规定；未安装或运行上游，扩展行为取决于配置。"
+    },
+    "pi-extensions-current": {
+      "label": "Pi · 扩展接口与信任",
+      "url": "https://github.com/earendil-works/pi/blob/4b519d3bb19b57a368129b167a48da16e447d9f6/packages/coding-agent/docs/extensions.md",
+      "year": "固定commit；2026-11-12核查",
+      "evidence": "官方仓库文档，来源已固定。高置信于文档规定；未安装或运行上游，扩展行为取决于配置。"
+    },
+    "pi-identity-current": {
+      "label": "Pi · 仓库身份",
+      "url": "https://github.com/earendil-works/pi",
+      "year": "2026-11-12核查",
+      "evidence": "GitHub仓库API确认旧badlogic/pi-mono指向earendil-works/pi；本页只分析coding-agent会话记忆。"
+    },
+    "memgallery-final-current": {
+      "label": "Mem-Gallery · ACL正式论文",
+      "url": "https://aclanthology.org/2026.acl-long.1892.pdf",
+      "year": "2026-07 · ACL；2026-11-12核查",
+      "evidence": "正式PDF已读，§3/4与附录A.4/A.5；正式版十二方法，不能混入arXiv v1十三方法。高置信于协议描述，未复现。"
+    },
+    "memgallery-venue-current": {
+      "label": "Mem-Gallery · ACL发表记录",
+      "url": "https://aclanthology.org/2026.acl-long.1892/",
+      "year": "2026-07；2026-11-12核查",
+      "evidence": "ACL 2026 Volume1 Long Papers，作者、页码与DOI；高置信。"
+    },
+    "memgallery-release-current": {
+      "label": "Mem-Gallery · 项目与数据入口",
+      "url": "https://github.com/YuanchenBei/Mem-Gallery/blob/a93959e1e978a6a7d77798ae92c2ffe41c538c62/README.md",
+      "year": "2026-01-31 · 固定commit；2026-11-12核查",
+      "evidence": "固定公开代码/文档；静态检查，高置信于所指代码行为，不声称与七月正式实验完全一致。"
+    },
+    "memgallery-run-current": {
+      "label": "Mem-Gallery · 摄入与生成代码",
+      "url": "https://github.com/YuanchenBei/Mem-Gallery/blob/a93959e1e978a6a7d77798ae92c2ffe41c538c62/benchmark/run/run_bench.py",
+      "year": "2026-01-31 · 固定commit；2026-11-12核查",
+      "evidence": "固定公开代码/文档；静态检查，高置信于所指代码行为，不声称与七月正式实验完全一致。"
+    },
+    "memgallery-eval-current": {
+      "label": "Mem-Gallery · 判分实现",
+      "url": "https://github.com/YuanchenBei/Mem-Gallery/blob/a93959e1e978a6a7d77798ae92c2ffe41c538c62/benchmark/memengine/evaluate/evaluation.py",
+      "year": "2026-01-31 · 固定commit；2026-11-12核查",
+      "evidence": "固定公开代码/文档；静态检查，高置信于所指代码行为，不声称与七月正式实验完全一致。"
+    },
+    "memgallery-judge-current": {
+      "label": "Mem-Gallery · 裁判提示",
+      "url": "https://github.com/YuanchenBei/Mem-Gallery/blob/a93959e1e978a6a7d77798ae92c2ffe41c538c62/benchmark/memengine/evaluate/llm_judge.txt",
+      "year": "2026-01-31 · 固定commit；2026-11-12核查",
+      "evidence": "固定公开代码/文档；静态检查，高置信于所指代码行为，不声称与七月正式实验完全一致。"
     }
   },
   "concepts": [
@@ -2903,18 +2993,68 @@
       {
         "id": "foundation-agent-memory",
         "title": "A Survey of Agent Memory in the Second Half",
-        "date": "2026",
-        "summary": "综述 Agent Memory 的承载形式、认知机制、主体和长期 Agent 问题。",
-        "why": "它覆盖面广，可用来观察研究圈如何把 substrate、memory mechanisms 与 Agent/User 角色放在同一讨论中。",
-        "boundary": "arXiv/综述证据；具体分类与出版信息仍需按版本核对。",
-        "status": "pending",
+        "date": "2026-01-14 · 首发；2026-08-04 · v4",
+        "summary": "用承载形式、认知机制、服务主体三个视角整理Agent Memory，再讨论操作、学习策略、多人协作和评估。适合把读过的具体方法放回一张较宽的研究地图。",
+        "why": "它让读者分别问“信息在哪里”“发挥什么作用”“为谁积累经验”，并把这些描述与读写、共享和优化策略联系起来。与本教程六问有关，但三轴分类与六问学习清单有不同目的。",
+        "boundary": "本页依据arXiv v4，完整标题为A Survey of Agent Memory in the Second Half: Towards Self-Evolving and Long-Horizon Agents；作者项目使用Rethinking Memory Mechanisms of Foundation Agents in the Second Half: A Survey，在2026-07-23新闻中声明TMLR接收、获Survey Certification Award。本次OpenReview跳转到校验页，未取得最终评审正文，因此发表与认证按作者报告标注，不声称独立核实。综述不是一个可运行的Memory产品。",
+        "status": "complete",
         "sources": [
-          "foundation-agent-taxonomy-arxiv"
+          "foundation-v4-current",
+          "foundation-meta-current",
+          "foundation-project-current"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
-        "canonicalUrl": "https://arxiv.org/abs/2602.06052",
-        "researchKind": "survey"
+        "canonicalUrl": "https://arxiv.org/html/2602.06052v4",
+        "researchKind": "survey",
+        "selectionEvidence": "公开长篇综述、详细章节和可追溯文献，作者项目明确记录发表声明。收录理由是三轴及后续操作/策略分析有助系统阅读，不以作者数量或机构声望替代论证。",
+        "limitations": "这是一种研究整理方式。文中“正交”“最小且架构完备”属于作者的框架主张，本教程未证明它们具有数学独立性或覆盖所有未来系统。内部/外部的寿命和可编辑性取决于具体实现；综述表格是概括，不能代替某产品的保证。",
+        "next": "engineering",
+        "profile": {
+          "kind": "多轴综述与系统设计讨论",
+          "authors": "Wei-Chieh Huang、Weizhi Zhang、Yueqing Liang等；完整作者名单见原文",
+          "venue": "作者2026-07-23新闻宣布TMLR接收及Survey Certification Award；本页读arXiv v4",
+          "artifact": "三轴分类、操作/优化策略分析、评测与应用文献索引",
+          "version": "arXiv v4（2026-08-04）；项目cd601e4fa066c7b717b3a027d492c7106d1ead4e；2026-11-12核查"
+        },
+        "questions": [
+          {
+            "answer": "认知机制轴描述信息的作用：sensory暂存感知输入，working维持当前任务状态；episodic保留带情境的经历，semantic保留事实与规律，procedural保留做事技能。Table2将前两者放在短期部分、后三者放在长期部分。这些是功能角色，不是五种互斥文件格式；同一系统能同时具有多个角色。",
+            "why": "先看角色，才能解释为何保存某条信息。若只看“都是文本”，就会把一次失败记录、从失败抽出的规则和执行规则的技能混在一起，也看不到它们如何转化。",
+            "example": "教学例子：调试日志是经历，归纳出的“该错误由旧配置触发”是事实，排查步骤是技能；本次正在核对哪个文件属于工作状态。它们可以都存在文本文件中，但在任务中的用途不同。",
+            "trace": "《Foundation Agent Memory · v4综述》§3.2、Table2、§3.2.1至3.2.5。例子为教程构造；不是认知分类的唯一标准。"
+          },
+          {
+            "answer": "承载形式轴区分外部记忆与模型内部状态。外部包括文本、向量索引、图与层次结构；内部包括权重、隐状态和KV缓存。权重可跨会话保留，运行时隐状态/KV通常随执行结束而释放；混合方案可同时使用多种载体。本页只转述分类，不将所有内部记忆都理解成训练后的知识。",
+            "why": "“存进了模型”可能指改权重，也可能只是当前推理的缓存，两者更新代价和保存时间不同。先定位载体，才能继续判断是否能编辑、如何迁移、下一次调用是否还能访问。",
+            "example": "教学例子：把偏好写入JSON后下次读取，和微调权重学到偏好，有不同的撤回路径；保留某轮KV又是第三种实现。不能因都叫memory就认为它们都有同样的跨会话持久性。",
+            "trace": "《Foundation Agent Memory · v4综述》§3.1.1/3.1.2、Table1。寿命为论文对常见实现的概括，特殊持久化实现须另核。"
+          },
+          {
+            "answer": "主体轴区分服务用户个性化的user-centric与积累Agent任务经验的agent-centric。论文明确二者是概念取向，并非互斥。另在§4.2区分私有、共享、混合存储，以及可叠加的协调控制层；“为了谁”和“谁能访问”是两个问题，不能从主体标签推出权限。",
+            "why": "一个偏好可能只适合某个用户，某次调试经验却可能供多任务复用。把优化目标与实际可见范围分开，才能讨论合理共享，也能避免把一般经验连同私人细节一起传播。",
+            "example": "教学例子：助手记住某位用户喜欢简短回复，同时维护通用排错流程。前者服务个性化，后者服务任务效率；流程是否可分享仍需检查是否含该用户的路径、日志或秘密。",
+            "trace": "《Foundation Agent Memory · v4综述》§3.3明确非互斥说明；§4.2.1 private/shared/hybrid/orchestrated。"
+          },
+          {
+            "answer": "单Agent操作包括存储与索引、加载与检索、更新与刷新、压缩与总结、遗忘与保留。论文还讨论把轨迹转成事实或技能的整理过程。它描述一组可组合操作，并未要求所有系统按固定五步串行执行，也没有给出通用保留期限或统一删除实现。",
+            "why": "记忆质量会随时间变化：同一条信息可先有用、后来过时，摘要也可能遗漏条件。生命周期问题因此要问触发条件、更新对象与保留后果，而不只问有没有数据库。",
+            "example": "教学流程：完成一次任务后保存轨迹，归纳常见错误，后来发现环境已改变便修订对应规则。若只压缩了prompt而原始日志仍在，属于改变读取内容，不足以证明数据已经删除。",
+            "trace": "《Foundation Agent Memory · v4综述》§4.1.1至4.1.5、§3.2有关经历整理与技能的讨论；具体流程是教学组合。"
+          },
+          {
+            "answer": "外部记忆通常先筛选、排序，再以文本或结构化片段进入当前上下文；内部权重或状态则在模型计算中发挥作用。多Agent还需决定给哪个角色提供哪些记录，论文将路由决策分为协调者、Agent主动请求与记忆驱动的匹配。是否存着和本次是否可见应分别回答。",
+            "why": "存储完整也可能取不到关键证据；取回后提供给错误角色同样无用。说明入口、选择条件和上下文预算，才能把存储覆盖不足与读取策略失败区分开。",
+            "example": "教学例子：规划Agent需要任务约束，执行Agent需要当前步骤和工具规则。共享库可以相同，但注入视图不同；一次失败应检查约束是否已经存在、是否被选中、是否传给实际执行者。",
+            "trace": "《Foundation Agent Memory · v4综述》§3.1、§4.1.2、§4.2.2三种路由；例子为机制解释。"
+          },
+          {
+            "answer": "论文把记忆策略的获得方式分为提示驱动、微调和强化学习：前者通过指令安排读写，后两者可让模型学会记忆决策。多Agent部分讨论写权限、冲突与隔离，未来方向讨论可信个性化。会优化记忆策略不等于已保证隐私安全；权限、来源可靠性和删除仍需具体系统证据。",
+            "why": "要分清“模型学会选择”和“系统允许执行”。一个策略即使在任务得分上更好，也可能保存多余个人信息或复用不可靠经验；训练奖励没有覆盖的风险不能由高分自动排除。",
+            "example": "教学验收：若训练奖励只计算任务完成，应额外检查敏感信息是否进入共享记忆、撤回后是否仍被读出。这些检查是本教程从控制边界推出的需求，不是综述已经完成的安全认证。",
+            "trace": "《Foundation Agent Memory · v4综述》§5.1至5.3、§4.2.3、§7、§9.4；验收建议为推论。"
+          }
+        ]
       },
       {
         "id": "agent-memory-characterization",
@@ -4181,18 +4321,71 @@
       },
       {
         "id": "pi",
-        "title": "Pi",
+        "title": "Pi · 会话树与上下文记忆",
         "date": "公开日期未说明",
-        "summary": "Pi coding agent/harness，公开仓库与 session 文档展示文件、上下文和工具路径。",
-        "why": "它补充独立服务之外的 Harness 端 Memory 组合。",
-        "boundary": "必须按 commit 核对，不能从仓库存在推出用户规模或性能。",
-        "status": "pending",
+        "summary": "Pi把对话保存为可分支的会话树，下一次调用只使用当前分支投影。压缩和分支摘要帮助长任务继续，原始历史仍可留在本地文件；扩展还能改变上下文与持久状态。",
+        "why": "它展示Harness里的记忆可以从会话记录和上下文管理起步，不必先引入独立向量服务。最值得理解的是：磁盘里的历史、选中的分支、真正发送给模型的内容是三个不同集合。 送入模型的内容还受压缩、context_edit与context钩子影响。",
+        "boundary": "官方仓库现为earendil-works/pi；以固定commit的coding-agent文档为准。讲内建会话/压缩与公开扩展接口，不将任意第三方记忆插件归为默认能力。未运行上游。",
+        "status": "complete",
         "sources": [
-          "pi"
+          "pi-session-current",
+          "pi-format-current",
+          "pi-compaction-current",
+          "pi-how-current",
+          "pi-extensions-current",
+          "pi-identity-current"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
-        "canonicalUrl": "https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/sessions.md"
+        "canonicalUrl": "https://github.com/earendil-works/pi",
+        "selectionEvidence": "会话文件格式、分支规则、压缩触发与扩展接口公开，能够把具体机制逐项核对。收录重在Harness场景的教学代表性，没有使用用户规模或性能排名作为证据。",
+        "limitations": "摘要可能遗漏，原始会话留存不意味着每轮都能自动取回全部历史；扩展可改变行为。目录分组和project trust不能当多租户访问隔离。导出/分享、模型provider和操作系统权限需要按实际部署检查。",
+        "next": "benchmarks",
+        "profile": {
+          "kind": "Coding Agent/Harness中的会话与上下文管理",
+          "authors": "Pi项目维护者（earendil-works/pi，原badlogic/pi-mono）",
+          "venue": "官方开源仓库与文档",
+          "artifact": "JSONL会话树、恢复/分支、compaction、扩展事件",
+          "version": "4b519d3bb19b57a368129b167a48da16e447d9f6（2026-11-11）；2026-11-12核查"
+        },
+        "questions": [
+          {
+            "answer": "会话记录用户消息、模型回应、工具调用与结果、模型切换、压缩等事件。摘要再保留目标、约束、进度、关键决定和后续步骤。上下文还包含发现的指令文件、工具定义和技能描述；这些来源中既有过去交互，也有人工编写的规则，不能全部解释成自动学出的经验。",
+            "why": "区分经历与指令，才能知道某条要求从何而来。任务摘要适合续做，但文件里的长期规范有另一套维护方式；把旧模型推断当项目规则会混淆权威。",
+            "example": "教学例子：会话里留下“尝试A失败”，摘要写成“下一步检查B”；项目规范另要求提交前测试。继续任务时需要两类信息，但失败经历不应自行升级为永久禁止A的规则。",
+            "trace": "《Pi · 会话与上下文》Manage conversation context；《Pi · 持久会话格式》Entry Types；《Pi · 压缩与分支摘要》Summary Format；《Pi · 请求构建与权限》Context。"
+          },
+          {
+            "answer": "持久会话采用JSONL，一行一个事件，以id/parentId连接成树。默认按工作目录分组保存在本地sessions目录，也可配置位置。运行时把当前分支重建成模型兼容消息；JSONL是持久记录，prompt是本次视图，不能用“都在上下文里”概括两者。",
+            "why": "分开承载层，能解释为什么压缩后模型忘了细节，文件中却仍有原文，恢复过程据此重建消息视图。默认路径并不等于服务级加密或访问控制承诺。",
+            "example": "教学例子：原会话有一万行日志，压缩后调用只带摘要和最近消息。排查摘要遗漏时可检查原JSONL，但模型不会因为文件存在就自动读完它，仍需恢复、查看或工具访问。",
+            "trace": "《Pi · 持久会话格式》File Location、Entry Base、CompactionEntry；《Pi · 请求构建与权限》Sessions。"
+          },
+          {
+            "answer": "一个session关联创建时的工作目录；续接、切换与fork的目录规则不同。/tree在同一个文件内选分支，/fork从过去消息创建新会话，/clone复制当前活动分支。模型获得当前分支，而非文件里所有平行分支；这属于任务历史组织，不是用户权限体系。 活动分支还会经过压缩、context_edit与扩展context钩子处理；context_edit只改后续调用视图，原始条目保留。",
+            "why": "同一项目中的不同尝试可能互相矛盾，若把所有分支都作为同时成立的历史，读者和模型都会困惑。明确当前路径与分叉关系，比只说“跨会话记忆”更准确。",
+            "example": "教学例子：分支A试过SQLite，分支B改用远端服务。切到B时不应把A的全部假设当现状；可以保留“为何放弃A”的分支摘要，但摘要仍需标明它来自另一条尝试。",
+            "trace": "《Pi · 会话与上下文》Continue or switch sessions、Choose how to branch；《Pi · 持久会话格式》parentSession和树结构。 《Pi · 持久会话格式》ContextEditEntry与Building LLM Context；《Pi · 扩展接口与信任》context。"
+          },
+          {
+            "answer": "默认自动保存；--no-session用于退出后不可恢复的临时会话。达到上下文阈值或手动/compact时，Pi生成结构化摘要、保存压缩条目，再用摘要加保留的近期消息构建后续请求。压缩不删除原会话事件；/tree还可给离开的分支生成摘要。会话可通过删除JSONL文件或/resume选择器移除；选择器在trash CLI可用时优先移到废纸篓，因此不能统一称为永久删除。两种操作都不证明导出、分享或外部记录已清除。",
+            "why": "上下文节省和数据清除的后果不同。前者改变后续模型看到什么，后者影响可恢复记录；若只检查prompt变短，就不能断言敏感历史已消失。",
+            "example": "教学例子：一次长调试被压缩后，旧命令输出不再逐字发送，但仍在原JSONL。若目的是撤回历史，应继续核对导出、分享和外部模型记录，而不把/compact当删除按钮。",
+            "trace": "《Pi · 会话与上下文》Manage conversation context/Control session storage；《Pi · 压缩与分支摘要》How It Works；《Pi · 持久会话格式》Deleting Sessions。"
+          },
+          {
+            "answer": "每次模型请求由活动分支、system prompt、上下文文件、工具和技能描述组成；完整技能说明按需加载。压缩后使用摘要与保留消息，扩展可进一步转换上下文或加入自定义消息。普通扩展持久数据不必自动进入模型上下文，必须有明确暴露路径。",
+            "why": "只有被转换成请求内容的信息才会直接参与当前回答。保存得丰富和读取得准确是两件事，插件有自己的状态也不意味着模型已经知道该状态。",
+            "example": "教学检查：扩展保存“上次构建失败”后，确认它是仅写进custom entry，还是另添加了模型可见消息。若前者没有读取/注入逻辑，新一轮回答不利用它是可解释的，不应误判为模型忽略了已提供证据。",
+            "trace": "《Pi · 请求构建与权限》Context；《Pi · 持久会话格式》CustomEntry/CustomMessageEntry；《Pi · 扩展接口与信任》appendEntry/sendMessage与context事件。"
+          },
+          {
+            "answer": "用户选择会话、分支、压缩设置和provider，扩展可取消或替换压缩、改写上下文。项目资源在信任决策后加载，但启用的工具和扩展使用Pi进程的操作系统权限。导出或分享可能包含提示、工具输出与文件内容，因此本地记录和后续传输需要分别理解。",
+            "why": "控制记忆不仅是让模型选择保留什么，还包括谁能改请求、读文件和发送记录。信任某个项目配置不代表它形成了独立租户边界，也不代表分享自动脱敏。",
+            "example": "教学例子：装入一个扩展前检查其来源与上下文钩子；分享会话前检查是否包含测试凭证或私有文件。这里是部署检查建议，本教程没有运行插件、分享会话或验证数据隔离。",
+            "trace": "《Pi · 请求构建与权限》Trust and permissions；《Pi · 扩展接口与信任》Security与project_trust；《Pi · 会话与上下文》Export or share a session。"
+          }
+        ]
       }
     ],
     "benchmarks": [
@@ -4276,22 +4469,84 @@
       },
       {
         "id": "mem-gallery",
-        "title": "Mem-Gallery",
-        "date": "2026",
-        "summary": "面向 Memory 机制比较的 benchmark/评测集合。",
-        "why": "可用来观察多种 Memory 结构和使用方式的覆盖。",
-        "boundary": "需要继续核对任务、指标和数据许可。",
-        "status": "pending",
+        "title": "Mem-Gallery · 多模态长期对话",
+        "date": "2026-07 · ACL主会；首发2026-01-07",
+        "summary": "把图像与文字一起放进跨会话记忆，检查事实检索、视觉寻找、学习新例子、推理、冲突处理和缺证据时拒答。重点是视觉线索能否在很久以后与文字经历正确关联。",
+        "why": "只测文本会漏掉图像保存与跨模态关联问题。它同时提供答案、检索和效率视角，适合观察“没保存图像”“没取回图像”“取回却没理解”三种失败。",
+        "boundary": "以ACL正式版为机制与实验设置依据，正式版比较12种方法；早期arXiv为13种。作者公开代码快照早于正式论文，其中裁判分值解析与论文五档规则不同，本页明确并列，不宣称原样运行即可复现正式结果。",
+        "status": "complete",
         "sources": [
-          "mem-gallery"
+          "memgallery-final-current",
+          "memgallery-venue-current",
+          "memgallery-release-current",
+          "memgallery-run-current",
+          "memgallery-eval-current",
+          "memgallery-judge-current"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
-        "canonicalUrl": "https://arxiv.org/abs/2601.03515",
+        "canonicalUrl": "https://aclanthology.org/2026.acl-long.1892/",
         "coverage": [
+          "content",
           "substrate",
+          "lifecycle",
           "exposure"
-        ]
+        ],
+        "selectionEvidence": "ACL 2026长文，公开对话数据入口、证据clue、运行代码及判分提示。收录理由是多模态长期记忆的具体任务和可审查协议；正式发表不消除合成数据与裁判偏差。",
+        "limitations": "对话经过模型辅助构造和人工审查，并非原样收集的长期真实用户流量。基线含统一化适配；文字基线获得图像caption。拒答得分不等于隐私授权，知识修订回答也不证明旧记录物理删除。旧代码与正式版不同，未完成实验复现。",
+        "next": "culture",
+        "profile": {
+          "kind": "图文跨会话记忆基准",
+          "authors": "Yuanchen Bei、Tianxin Wei、Xuying Ning、Yanjun Zhao、Zhining Liu、Xiao Lin、Yada Zhu、Hendrik Hamann、Jingrui He、Hanghang Tong",
+          "venue": "ACL 2026主会长文",
+          "artifact": "240个session、3962轮对话、1003张会话图像、1711组QA；运行与评测代码",
+          "version": "ACL正式PDF；公开代码a93959e1e978a6a7d77798ae92c2ffe41c538c62（早于正式版）；2026-11-12核查"
+        },
+        "questions": [
+          {
+            "answer": "内容是跨会话的图文经历与知识。三类功能各含三项任务：提取/适应测事实检索、视觉搜索、测试时学习；推理测时间、视觉和多实体；知识管理测知识修订、冲突识别和拒答。共九项任务，不能将它们当九种存储结构，也不能把测试时学习自动理解成更新模型权重。",
+            "why": "图像可能包含文字摘要没保留的外观特征；不同任务还要求把视觉身份与人物、时间和纠正信息联系起来。先理解问题需要哪种证据，才能判断失败发生在哪。",
+            "example": "论文Figure1先介绍人物和宠物，后来询问某张图对应谁的宠物、某次相遇日期，或纠正家人喜欢的犬种。这些题需要跨轮关联；只记住“谈过狗”远不足以作答。",
+            "trace": "《Mem-Gallery · ACL正式论文》Figure1、§3.3.1至3.3.3、附录A.3；这里概括论文示例。"
+          },
+          {
+            "answer": "评测数据把对话、图片信息、QA及答案线索分开组织；被测系统自行保存和检索记忆。正式实验的文字基线用GPT-5.1生成的caption，图文方法可保留原图；统一比较包含不同内部结构。caption是一种有损表示，得到caption不等于直接看到全部原图。",
+            "why": "要比较载体，必须说清给了模型什么。若文字系统拿到的是强模型生成的描述，最终分数包含caption质量的影响；不能简单归因于数据库是向量还是图。",
+            "example": "教学例子：caption只写“白狗在草地”，后来问题询问项圈上的字，缺失信息可能在摄入时就已丢失。即使检索准确返回了这条caption，生成器仍没有文字细节的依据。",
+            "trace": "《Mem-Gallery · ACL正式论文》§3.2、§4.1、附录A.4；《Mem-Gallery · 摄入与生成代码》memory_store区分图文与caption。"
+          },
+          {
+            "answer": "一个对话包含有时间间隔的多个session，人物设定与主题需要连贯，图像和事件可跨session引用。输入按对话组织，评测关注同一长期历史中的关系。它没有独立的多租户授权任务；出现多个人物不等于已测试多用户数据隔离。",
+            "why": "人物关系与访问范围容易混淆。问“哪位朋友养了这只狗”是在考关联推理；检验A账号能否看到B账号的私密图片，需要另设身份和权限条件。",
+            "example": "教学例子：同一对话提到Lena、Amy和Lucy，答错宠物归属属于实体关联失败。若要研究授权泄漏，应另造不同账号和禁止访问图片，并检查系统是否越界读取，不能把本题得分直接拿来回答。",
+            "trace": "《Mem-Gallery · ACL正式论文》§3.1.1、§3.2、附录A.2；身份权限未覆盖的判断依据任务协议范围。"
+          },
+          {
+            "answer": "对话轮次依时间顺序进入记忆，随着后续纠正出现，系统需回答最新有效知识。Knowledge Resolution检查纠正后的回答，Conflict Detection识别新陈述是否冲突；最终仍主要由QA行为判分，并不检查数据库是否真的删掉旧值或清理所有派生索引。",
+            "why": "知道新答案与完成内部维护并非同一观察。保留旧值及时间也可能合理，只要不会误用；若要验收物理删除，应增加存储检查和删除后的重复探测。",
+            "example": "论文Figure1里先前喜欢的犬种被后来的图文纠正，系统应按纠正信息回答。教学延伸：旧说法仍以历史事件留存可帮助解释变化，因此“答新值”不能证明旧记录已消失。",
+            "trace": "《Mem-Gallery · ACL正式论文》Figure1、§3.2、§3.3.3、附录A.5.3。"
+          },
+          {
+            "answer": "正式实验让方法从累积历史中选择上下文，再由共同的MLLM骨干回答；需要top-K检索的方法默认K=10。论文协议中，视觉搜索要求输出image_id，冲突题限定Yes/No，缺证据题限定Not mentioned。检索指标检查证据是否被取回，答案指标评价最终回答；二者结合案例分析才能提示“找到却没用对”，答案得分不能单独证明证据使用正确。",
+            "why": "统一骨干和格式减少部分差异，但检索、caption与记忆组织仍会影响结果。把检索命中和最终回答分开，才有机会定位“找到却不会用”的问题。",
+            "example": "教学算例：相关线索有2条，返回结果截断到K并去重后有5条、命中1条，则Recall=1/2、Precision=1/5、Hit=1。Hit满分仍可能漏掉另一条关键纠正，不能代表记忆已经完整或答案一定正确。",
+            "trace": "《Mem-Gallery · ACL正式论文》§4.1、附录A.5.2至A.5.4及Figure9；《Mem-Gallery · 判分实现》calculate_retrieval_metrics先截断到K再去重，以剩余条数作Precision分母。"
+          },
+          {
+            "answer": "评测者控制骨干、输入粒度、提示、检索预算及评分。正式论文报告F1、BLEU-1、EM和Qwen-2.5-72B-Instruct裁判，裁判五档是0/0.25/0.5/0.75/1。已公开旧代码的提示也要求五档，但parse_judge_response把分数归到0/0.5/1；复现时必须先选择一致协议，不能混报。",
+            "why": "规则本身决定分数含义。五档评分变三档会改变部分正确答案的平均得分；同名LLM-Judge也不能掩盖版本差异。裁判认可答案更不等于通过权限或安全测试。",
+            "example": "教学算例：裁判返回0.25，旧解析代码会转成0.5；返回0.75会转成1。这是静态代码可核的转换，不是本教程重新跑出的论文分数。若对外比较，应同时报告版本与解析方式。",
+            "trace": "《Mem-Gallery · ACL正式论文》§4.1.2、附录A.5.4/Figure10；《Mem-Gallery · 裁判提示》五档；《Mem-Gallery · 判分实现》parse_judge_response。"
+          }
+        ],
+        "evaluation": {
+          "abilities": "三功能、九子任务：提取与适应（FR/VS/TTL）、推理（TR/VR/MR）、知识管理（KR/CD/AR）。它们是可测能力，不是本教程六问的同义改名。",
+          "taskProtocol": "正式版240个session、3962轮、1003张会话图片、1711组带clue的QA；QA部分另含487张图。模型辅助构造并经人工审查。按轮累积、再检索/回答，固定骨干和温度0，涉及top-K时默认10；文字基线有caption。 公开run_bench.py默认写入result_debug/，evaluation.py从result/读取；使用时需对齐路径，本页未运行。",
+          "metrics": "答案：token F1、BLEU-1、规范化EM、五档LLM-Judge；检索：Recall/Precision/Hit；效率：记忆组织与检索时间及token等设置。五档来自正式论文，固定公开代码却将裁判分值映射成三档，不能视为同一scorer；这里未复现数字。",
+          "designMapping": "Q1说明模态与任务；Q2区分原图/caption/内部记忆；Q3说明跨会话范围；Q4讨论知识纠正的行为覆盖；Q5连接证据检索与答案；Q6解释配置、裁判和版本。六问组织分析，不能据六栏都有文字就说六个方向都得到独立指标验证。",
+          "limitations": "同一QA可牵涉多个环节，缺少可分离因果干预时不能精确归因。无多租户隔离、物理删除和生产可靠性认证。数据经过合成，基线有适配，公开代码早于正式版；论文效果仅在其条件下成立。"
+        }
       },
       {
         "id": "mem2actbench",
