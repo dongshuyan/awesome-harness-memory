@@ -124,10 +124,10 @@
   ],
   "sources": {
     "coala": {
-      "label": "CoALA · §4.1",
-      "url": "https://arxiv.org/html/2309.02427v3#S4.SS1",
-      "year": "2023 arXiv / 2024 TMLR",
-      "evidence": "研究框架论文；arXiv v3（2024-03）为 TMLR camera-ready；架构分类章节已核"
+      "label": "CoALA · 原始论文v3",
+      "url": "https://arxiv.org/html/2309.02427v3",
+      "year": "2024-03-15 · v3；2026-11-12核查",
+      "evidence": "§4.1层级、跨调用工作状态、权重与代码；§4.2多Agent外部交互。高置信；例子和部署建议另标为教程应用。"
     },
     "survey": {
       "label": "Memory in the Age of AI Agents · §4 Functions",
@@ -1406,10 +1406,10 @@
       "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
     },
     "longmemeval": {
-      "label": "LongMemEval paper / arXiv",
-      "url": "https://arxiv.org/abs/2410.10813",
-      "year": "arXiv v1 2024-10-14; ICLR 2025",
-      "evidence": "paper metadata, abstract, task abilities and public artifact statement"
+      "label": "LongMemEval · 原始论文v2",
+      "url": "https://arxiv.org/html/2410.10813v2",
+      "year": "2025-03-04 · v2；2026-11-12核查",
+      "evidence": "§3五能力/七题型/500题/问答与检索指标；§4–5设计与预算；A.4 judge。此v2不是2026 LongMemEval-V2。高置信。"
     },
     "agentpoison": {
       "label": "首版预印本",
@@ -1503,10 +1503,10 @@
       "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
     },
     "claude-code": {
-      "label": "功能原始来源",
+      "label": "Claude Code · Memory官方文档",
       "url": "https://code.claude.com/docs/en/memory",
-      "year": "2026-11-06 UTC",
-      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+      "year": "2026-11-12（UTC+8）· 文档快照",
+      "evidence": "官方文档事实，未运行验证；指令与auto memory分开，文本上下文不等于强制配置。高置信于公开声明。"
     },
     "claude-mem": {
       "label": "功能原始来源",
@@ -3182,6 +3182,108 @@
       "url": "https://github.com/langchain-ai/deepagents/blob/f2a6e02dc8e2dcb05885c5133b94102ccc79b794/libs/deepagents/deepagents/backends/filesystem.py",
       "year": "2026-11-12 · 核查快照",
       "evidence": "当前构造器virtual_mode默认True；提供路径校验但明确不提供进程隔离。在线页面称默认False的段落与此不同。高置信。"
+    },
+    "coala-meta-current": {
+      "label": "CoALA · 版本与作者",
+      "url": "https://arxiv.org/abs/2309.02427v3",
+      "year": "2023/2024；2026-11-12核查",
+      "evidence": "作者、v1/v3日期；Comments由作者标注TMLR camera-ready。未将OpenReview校验页当最终评审记录。高置信于元数据内容。"
+    },
+    "coala-retrieval-current": {
+      "label": "CoALA · 检索动作",
+      "url": "https://arxiv.org/html/2309.02427v3#S4.SS3",
+      "year": "2024 · v3；2026-11-12核查",
+      "evidence": "§4.3允许规则、稀疏、稠密等实现，举Voyager和Generative Agents；非统一检索器要求。高置信。"
+    },
+    "coala-learning-current": {
+      "label": "CoALA · 学习动作",
+      "url": "https://arxiv.org/html/2309.02427v3#S4.SS5",
+      "year": "2024 · v3；2026-11-12核查",
+      "evidence": "§4.5保存经历/知识、更新权重和程序；修改删除研究不足是论文时点判断。高置信。"
+    },
+    "coala-decision-current": {
+      "label": "CoALA · 决策循环",
+      "url": "https://arxiv.org/html/2309.02427v3#S4.SS6",
+      "year": "2024 · v3；2026-11-12核查",
+      "evidence": "提议、评估、选择、执行；设计者初始化与程序修改风险结合§4.1/4.5。高置信。"
+    },
+    "cc-instructions-current": {
+      "label": "Claude Code · 指令文件范围与加载",
+      "url": "https://code.claude.com/docs/en/memory#claude-md-files",
+      "year": "2026-11-12（UTC+8）· 文档快照",
+      "evidence": "组织/用户/项目/local，启动与按需加载、顺序串接、imports。高置信于公开声明。"
+    },
+    "cc-agents-current": {
+      "label": "Claude Code · AGENTS.md支持",
+      "url": "https://code.claude.com/docs/en/memory#agents-md",
+      "year": "2026-11-12（UTC+8）· 文档快照",
+      "evidence": "v2.1.277门槛、默认选择、Project instructions模式与不可用条件；版本更早不可泛化。高置信于公开声明。"
+    },
+    "cc-auto-current": {
+      "label": "Claude Code · Auto memory",
+      "url": "https://code.claude.com/docs/en/memory#auto-memory",
+      "year": "2026-11-12（UTC+8）· 文档快照",
+      "evidence": "四种笔记、目录、repo/worktree范围、局部默认开关、modified、retention排除及subagent/fork例外。高置信于公开声明。"
+    },
+    "cc-loading-current": {
+      "label": "Claude Code · 加载限额与排查",
+      "url": "https://code.claude.com/docs/en/memory#how-it-works",
+      "year": "2026-11-12（UTC+8）· 文档快照",
+      "evidence": "MEMORY.md先到200行/25KB限额，主题按需；CLAUDE.md启动4MiB跳过与user消息位置另见排查。高置信于公开声明。"
+    },
+    "cc-governance-current": {
+      "label": "Claude Code · 治理与执行边界",
+      "url": "https://code.claude.com/docs/en/memory#deploy-organization-wide-claude-md",
+      "year": "2026-11-12（UTC+8）· 文档快照",
+      "evidence": "受管设置技术执行与CLAUDE.md行为指导的对照；不能推出全副本删除或自动安全。高置信于公开声明。"
+    },
+    "lme-meta-current": {
+      "label": "LongMemEval · 版本与作者",
+      "url": "https://arxiv.org/abs/2410.10813v2",
+      "year": "2024/2025；2026-11-12核查",
+      "evidence": "六位作者、v1 2024-10-14、v2 2025-03-04，Comments列ICLR 2025。高置信于元数据。"
+    },
+    "lme-repo-current": {
+      "label": "LongMemEval · 官方仓库固定版本",
+      "url": "https://github.com/xiaowu0162/LongMemEval/blob/9e0b455f4ef0e2ab8f2e582289761153549043fc/README.md",
+      "year": "2026-11-12 · 固定源码核查",
+      "evidence": "版本9e0b455：数据格式、oracle、2025-09 cleaned、检索排除30道拒答、2026独立V2项目。高置信。"
+    },
+    "lme-qa-current": {
+      "label": "LongMemEval · 问答判分代码",
+      "url": "https://github.com/xiaowu0162/LongMemEval/blob/9e0b455f4ef0e2ab8f2e582289761153549043fc/src/evaluation/evaluate_qa.py",
+      "year": "2026-11-12 · 固定源码核查",
+      "evidence": "model_zoo指定gpt-4o-2024-08-06；按题型prompt，KU允许旧值伴随正确更新，时间差1容忍，偏好/拒答rubric。高置信。"
+    },
+    "lme-retrieval-current": {
+      "label": "LongMemEval · 检索指标代码",
+      "url": "https://github.com/xiaowu0162/LongMemEval/blob/9e0b455f4ef0e2ab8f2e582289761153549043fc/src/retrieval/eval_utils.py",
+      "year": "2026-11-12 · 固定源码核查",
+      "evidence": "evaluate_retrieval计算recall_any、recall_all及NDCG；turn2session转换。指标是代码观察，未运行数据集。高置信。"
+    },
+    "lme-print-current": {
+      "label": "LongMemEval · 检索汇总代码",
+      "url": "https://github.com/xiaowu0162/LongMemEval/blob/9e0b455f4ef0e2ab8f2e582289761153549043fc/src/evaluation/print_retrieval_metrics.py",
+      "year": "2026-11-12 · 固定源码核查",
+      "evidence": "排除_abs后聚合session/turn的recall_all与ndcg_any；需同时公开单位与k。高置信。"
+    },
+    "lme-data-current": {
+      "label": "LongMemEval · cleaned数据固定快照",
+      "url": "https://huggingface.co/datasets/xiaowu0162/longmemeval-cleaned/tree/98d7416c24c778c2fee6e6f3006e7a073259d48f",
+      "year": "2026-11-12 · 元数据快照",
+      "evidence": "官方数据仓库当前revision已固定；本批核验元数据与入口，未下载运行全部评测。高置信于版本身份，不作数据质量实测结论。"
+    },
+    "lme-project-current": {
+      "label": "LongMemEval · 作者项目页",
+      "url": "https://xiaowu0162.github.io/long-mem-eval/",
+      "year": "2026-11-12 · 页面核查",
+      "evidence": "作者单位、能力及任务设置；性能文字可能与论文版本有差异，本教程不混用其改进数字。高置信于署名。"
+    },
+    "coala-insights-current": {
+      "label": "CoALA · 设计建议与边界",
+      "url": "https://arxiv.org/html/2309.02427v3#S6",
+      "year": "2024 · v3；2026-11-12核查",
+      "evidence": "§6按模块定义读写动作的零售助理例子、动作空间安全；§7按可控制性/耦合讨论内部与外部边界。高置信。"
     }
   },
   "concepts": [
@@ -3499,43 +3601,60 @@
       {
         "id": "coala",
         "title": "CoALA",
-        "date": "2024",
-        "summary": "Cognitive Architectures for Language Agents，提出语言 Agent 的认知架构视角。",
+        "date": "2024-03-15",
+        "summary": "CoALA用记忆模块、内部动作和决策循环解释语言Agent如何积累并利用经验。它提供的是分析架构，具体系统仍需自行实现存储、检索和控制。",
         "why": "它明确展示 working memory 与长期 episodic/semantic/procedural memory 的层级关系，是理解“分类来自观察视角”的经典入口。",
         "boundary": "架构提案不等于产品实现或安全规范。",
         "status": "complete",
         "sources": [
-          "coala"
+          "coala",
+          "coala-meta-current",
+          "coala-retrieval-current",
+          "coala-learning-current",
+          "coala-decision-current",
+          "coala-insights-current"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
-        "selectionEvidence": "2023 arXiv、2024 TMLR camera-ready 的原始论文与章节已核；作者提出的是架构视角，不是行业统一标准。",
-        "limitations": "没有完整规定工程权限、删除、租户隔离或 benchmark 协议；四类不能被画成同层并列。",
+        "selectionEvidence": "作者的arXiv元数据将v3标为TMLR camera-ready；正文公开了Memory、Retrieval、Reasoning、Learning、Decision making各节及已有系统案例。收录重在可核查的架构解释，不以资历或名称代替机制证据。",
+        "limitations": "概念框架不等于可安装产品；没有统一规定租户隔离、保留期限、删除传播或安全评测。Working memory与长期三类记忆是不同层级；论文中的未研究判断只代表发表时点。",
         "next": "engineering",
         "questions": [
           {
-            "answer": "CoALA 把 Memory 作为语言 Agent 的信息存储模块。Working memory 是当前决策循环直接操作的短期工作区；long-term memory 再分为 episodic（经历）、semantic（事实或知识）和 procedural（做事方式或规则）三类。因此四个名称不是四个同层并列槽位，而是“working memory + long-term memory 下三类”的层级。论文还描述长期记忆经 retrieval 进入工作记忆，学习动作可以把新内容写回长期记忆。",
-            "trace": "CoALA §4.1 的 Memory 图和文字；论文明确把 working memory 与 long-term memory 分开，并在长期记忆下列出 episodic、semantic、procedural。retrieval 与 learning 的桥接关系见同节后续描述。"
+            "answer": "CoALA把Memory作为Agent跨调用保留信息的模块。Working memory是当前决策循环可直接操作的工作区，包含输入、当前目标、检索结果与中间推理；long-term memory下再分episodic（经历）、semantic（知识）和procedural（做事方式）。四个名称因此不是四个平级槽位。一次推理产生的文字，只有被写入长期模块后，才在该框架中成为相应的长期学习结果。",
+            "why": "这一区分同时回答“信息现在是否在手边”和“长期保存它有什么用”。若把工作记忆与三类长期记忆混在一层，就容易把“当前看到了旧经验”误读为“旧经验已经失去长期身份”。层级和信息流需要一起理解。",
+            "example": "教学例子：修复测试时，当前报错和目标在工作记忆；上周一次失败的处理过程是情景记忆；从多次失败归纳的依赖约束是语义知识；可执行的排查程序属于程序性记忆。旧过程被取回后，其副本也会进入当前工作区。",
+            "trace": "《CoALA · 原始论文v3》§4.1，尤其Working/Episodic/Semantic/Procedural四段；《CoALA · 学习动作》§4.5。例子是对原架构的教学应用，不是论文实验。"
           },
           {
-            "answer": "CoALA 更关心认知角色和信息存储层，没有把每类记忆绑定到一种物理数据库。工作记忆可以由当前输入、内部状态或上下文承载；长期记忆可以由外部模块承载，程序性记忆还可能体现在模型参数、Agent 代码或工具能力中。这里的分类不能被误读成“文件、向量库、图数据库”三选一，具体载体必须回到实现或方法论文核对。",
-            "trace": "论文的 Memory 模块以及对 external memory、model parameters、programs/tools 的讨论。论文给出的是架构层含义，未规定某个具体数据库或部署拓扑。"
+            "answer": "工作记忆是跨LLM调用保留的结构化状态，不限于一次prompt；每次调用只从中取一部分组织输入，再将输出解析回变量。长期记忆也不绑定某种数据库：episodic可保存轨迹，semantic可保存外部文本知识；procedural明确包括LLM权重中的隐含知识和Agent代码中的显式程序。工具的名称本身不等于记忆，执行或选择工具的程序才可能属于这一角色。",
+            "why": "认知角色与物理载体可以分别变化。同一段知识可用文本或向量索引组织；同一数据库也可保存事件和事实。CoALA因此能帮助比较实现，但不会替你决定数据库、序列化形式或重启后的持久性。",
+            "example": "教学例子：Python字典保存当前目标，SQLite保存过去轨迹，文档索引保存接口知识，代码实现测试工具调用。这是一个可能实现；换成另一种数据库并不自动改变四类角色。仅有Python字典也不能推出进程重启后仍保留。",
+            "trace": "《CoALA · 原始论文v3》§4.1 Working memory中的跨调用数据结构与输入/输出解析，Semantic的外部文本例子，Procedural的权重/代码定义。数据库组合为教学假设。"
           },
           {
-            "answer": "主要主体是单个语言 Agent 的认知架构：它描述该 Agent 如何在一个决策循环里读写自己的 Memory。论文的目标不是团队资料库或多租户服务，所以没有给出项目、用户、团队共享的完整拓扑，也没有定义谁拥有一条记忆。把这些缺口写出来，是理解 CoALA 边界的一部分。",
-            "trace": "论文摘要和 §4 将 CoALA 定义为 language agent 的 conceptual framework；共享主体、租户隔离和删除权并非该框架的完整目标。"
+            "answer": "分析单位是一个语言Agent及其工作记忆和长期模块，episodic可来自更早决策周期或任务经历。框架把与人或其他Agent对话放在外部交互中；§7又用可控制性与组件耦合讨论Agent边界，因此不排除多Agent场景。它给出概念上的范围判断，具体用户、项目、团队的所有权与共享协议仍需实现定义；接收另一个Agent的消息，不等于共用同一记忆库。",
+            "why": "主体决定经验从谁的角度记录，也决定哪些内容适合继续使用。如果不说明这点，团队共享事实和个人偏好就可能被装进同一模块，却被误认为框架已经处理了隔离。CoALA提供描述位置，部署范围仍需具体系统回答。",
+            "example": "教学例子：规划Agent把执行Agent返回的测试结果写成自己的经历，这可以沿CoALA的信息流解释；若两者直接共享一张轨迹表，就还要另定写入身份、可见范围和冲突规则，不能从“都是episodic”推出安全共享。",
+            "trace": "《CoALA · 原始论文v3》§4.1 Episodic；§4.2 Dialogue with humans or other agents。共享协议未规定的判断限于该框架公开定义，不是断言所有采用者都无隔离。《CoALA · 设计建议与边界》§7 Internal vs. external的controllability/coupling讨论。"
           },
           {
-            "answer": "长期记忆通过 retrieval action 进入 working memory，learning action 则可以把交互中的新信息、反馈或技能写回长期记忆。论文给出的是操作关系和架构位置，不是通用的 TTL、版本、冲突覆盖或删除传播协议。因此“能学习、能检索”不能直接推出“有完整生命周期管理”。",
-            "trace": "CoALA §4.1 及 Memory operations 的 retrieval/learning 描述；TTL、版本、冲突和删除协议在论文中未被定义，故标为未说明。"
+            "answer": "内部动作分工清楚：retrieval从长期记忆读到工作记忆；reasoning读写工作记忆；learning向长期记忆写入。学习既可保存经历或推导的知识，也可修改模型权重、提示或Agent代码。论文还明确指出修改与删除记忆研究不足，因此不能把“支持学习动作”直接等同于完整的冲突处理、遗忘和保留期协议。",
+            "why": "这条链把“想出来”“存下来”“下次还能取到”分开。一次反思若只留在当前上下文，作用范围就不同于写入长期知识；改程序又会改变今后动作本身，比保存一条经历影响更大。",
+            "example": "教学例子：测试失败后先在工作区分析原因，再保存失败轨迹，并把核实后的经验写入知识库。下次任务再检索它。若只是口头总结而未写入长期模块，就不能声称已经学会；若旧经验失效，撤回策略仍要由实现补足。",
+            "trace": "《CoALA · 检索动作》§4.3；论文§4.4 Reasoning actions；《CoALA · 学习动作》§4.5各写入类型及末段修改/删除讨论。"
           },
           {
-            "answer": "在 CoALA 的循环里，后续决策先选择 retrieval action，从长期记忆取回相关内容，再把它放入 working memory，供 reasoning 和 decision 使用。论文用这个 bridge 解释 Memory 怎样影响行动，但没有规定 embedding、排序、上下文预算或检索失败回退。回答这一问时要把架构路径和工程实现分开。",
-            "trace": "论文 §4.1 的 retrieval bridge 与 §4.3 Retrieval actions；具体索引、排序和注入策略不属于 CoALA taxonomy 的规定。"
+            "answer": "检索过程把长期内容转入工作记忆，再由当前决策选择其中相关变量组成LLM输入。论文允许规则、稀疏或稠密检索，并以Voyager的技能检索、Generative Agents的事件检索说明差异；这些是已有实现的例子，框架没有要求采用同一排序器。程序性记忆也可通过执行代码或模型权重发挥作用，不要求所有记忆都先变成检索文本。",
+            "why": "读这一问能追踪记忆到底在哪一步影响行动。存在存储并不保证内容被取回，取回也不保证选入这次输入；而程序性记忆可能直接定义动作。只画“数据库→prompt”会漏掉CoALA所包含的代码和参数路径。",
+            "example": "教学例子：修复任务取回一条相似失败记录，放入工作区，再和当前报错共同组织prompt；与此同时，代码中的“运行测试”程序负责执行动作。前者提供参考信息，后者提供做事方式，两者的作用路径不同。",
+            "trace": "《CoALA · 检索动作》§4.3及其中Voyager/Generative Agents例子；《CoALA · 原始论文v3》§4.1 Working/Procedural；《CoALA · 决策循环》§4.6 Execution。"
           },
           {
-            "answer": "CoALA 是概念框架和研究组织方式，不是访问控制或合规规范。它没有完整规定谁能读写、怎样审计来源、怎样抵抗投毒，以及用户要求删除后如何证明传播停止。这里的结论是“论文未规定这些治理机制”，不是“采用 CoALA 的系统一定没有这些能力”。",
-            "trace": "论文的研究范围、架构章节和讨论部分没有给出权限、审计、删除证明或投毒防护协议；工程治理需要另看系统文档和安全评测。"
+            "answer": "设计者初始化的程序性记忆组织提议、评估、选择和执行，决定何时检索、推理或写入。论文§6建议按模块定义读写动作，并举零售助理可写经历、只读商品知识和程序的例子；修改程序性记忆还可能引入错误或偏离设计意图。这些是控制结构与设计建议，不能当作已实现的身份认证、审计、投毒防护或删除证明。",
+            "why": "治理既要看模型如何作判断，也要看系统允许它改什么。记住一条失败经历，与改写负责权限判断的程序，不能使用相同风险假设。概念上的动作选择需要再落实为实际可执行接口和授权。",
+            "example": "论文的零售助理例子：可以把与客户的新交互写进episodic，但不应自行改商品库存或自己的代码，所以semantic和procedural设为只读。迁移到编码Agent时，可考虑自动追加经历、审批共享程序变更；后半部分是教程设计建议，不是CoALA自带实现。",
+            "trace": "《CoALA · 决策循环》§4.6 Proposal/Evaluation/Selection/Execution；《CoALA · 原始论文v3》§4.1 Procedural风险；《CoALA · 学习动作》§4.5 Updating agent code。《CoALA · 设计建议与边界》§6 Agent design的零售助理与读写权限例子，以及Safety of the action space。"
           }
         ],
         "canonicalUrl": "https://arxiv.org/html/2309.02427v3#S4.SS1",
@@ -3543,10 +3662,10 @@
           "kind": "研究框架论文",
           "authors": "Theodore R. Sumers, Shunyu Yao, Karthik Narasimhan, Thomas L. Griffiths",
           "team": "Princeton University",
-          "venue": "arXiv v3（2024）与 TMLR camera-ready（2024）",
-          "artifact": "原始论文与 HTML §4.1 Memory；本教程没有复现实验"
+          "venue": "作者标注TMLR camera-ready；arXiv v1 2023-09-05、v3 2024-03-15",
+          "artifact": "原始论文v3 §4.1–4.6与案例分析；未复现实验或声称存在统一CoALA产品"
         },
-        "researchKind": "method"
+        "researchKind": "framework"
       },
       {
         "id": "generative-agents",
@@ -3961,52 +4080,69 @@
       },
       {
         "id": "claude-code",
-        "title": "Claude Code",
+        "title": "Claude Code · 指令文件与自动记忆",
         "date": "公开日期未说明",
-        "summary": "Anthropic 的 coding agent，官方文档公开了 CLAUDE.md 与自动记忆机制。",
+        "summary": "Claude Code以指令文件保存长期约定，以auto memory保存从交互中整理的笔记；文件怎样加载、作用于哪个项目，以及能否限制实际操作，需要分别理解。",
         "why": "官方产品文档和仓库提供可定位的 Memory 说明，且直接面向真实 coding workflow。",
         "boundary": "记录的是文档声明和公开文件边界；未运行当前版本。",
         "status": "complete",
         "sources": [
-          "claude-code"
+          "claude-code",
+          "cc-instructions-current",
+          "cc-agents-current",
+          "cc-auto-current",
+          "cc-loading-current",
+          "cc-governance-current"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
-        "selectionEvidence": "官方 Memory 文档与仓库在 2026-11-11 可定位；纳入依据是公开机制清晰，不推断用户规模或效果。",
-        "limitations": "内部检索、缓存、审计、删除传播和团队隔离细节未完全公开；版本行为可能变化。",
+        "selectionEvidence": "Anthropic官方Memory文档公开了内容类型、文件范围、加载限额、开关和AGENTS.md版本条件。收录依据是机制可追溯；文档分析不代表本教程实测了客户端的全部行为。",
+        "limitations": "官方页面持续更新，以下按2026-11-12快照解释；AGENTS.md支持与配置存在版本条件。文本指令不保证执行，删除文件也不证明已加载上下文或其他副本立即清除。",
         "next": "benchmarks",
         "questions": [
           {
-            "answer": "官方文档把两种机制分开：CLAUDE.md 或 AGENTS.md 是人写的持久指令与规则，auto memory 是 Claude 根据纠正、偏好和项目上下文写下的 learnings 与 patterns。它们都可能影响后续 coding calls，但内容角色不同：前者主要规定“应该怎么做”，后者主要保存“已经学到什么”。原始会话历史不等于这两类持久 Memory。",
-            "trace": "Claude Code 官方 Memory 文档的 “CLAUDE.md vs auto memory” 表格与开头说明，明确列出写入主体、内容和使用场景。"
+            "answer": "官方区分人维护的持久指令和Claude自行写下的auto memory。CLAUDE.md主要规定项目约定、工作流与应遵循的规则；auto memory当前按user、feedback、project、reference四种笔记记录偏好、纠正、不能从代码推得的项目事项及外部信息位置。这四种是该产品的笔记类型，不是所有Memory的通用分类；原始会话记录也不是同一东西。",
+            "why": "先分清作者和用途，才能判断一条内容应该被当作约定还是需要核实的经验。用户明确认可的做法和模型自己推断的事实具有不同依据；自动保存并不会让推断天然正确。",
+            "example": "教学例子：团队统一的测试命令写进项目CLAUDE.md；用户说“解释改动时先说原因”可记为feedback；某项尚未写入代码的发布日期可记为project。可从源码直接读取的文件目录无需再当长期事实重复抄存。",
+            "trace": "《Claude Code · Memory官方文档》CLAUDE.md vs auto memory；《Claude Code · Auto memory》四种type、跳过可从代码推得的信息和已有指令。例子为教学展开。"
           },
           {
-            "answer": "可观察的承载包括项目、用户或组织级 Markdown 指令文件，以及按仓库维护的 auto memory 文件或目录。调用时，规则文件和自动记忆会作为上下文准备的一部分被读取；文档没有公开所有内部索引、缓存和选择实现。一个文件可以是权威记录，也可能只是给模型加载的文本，不能仅凭文件扩展名判断它的认知角色。",
-            "trace": "官方文档的文件层级、auto memory storage location 和加载说明；内部索引、缓存和完整注入策略没有在该页公开。"
+            "answer": "两种机制都使用可查看和编辑的Markdown。默认自动记忆目录为~/.claude/projects/<project>/memory/，其中MEMORY.md是索引，其他文件保存具体笔记；autoMemoryDirectory可改变位置。文件保留与模型输入分开：磁盘上保存很多笔记，不意味着它们全部进入每次调用，也不意味着模型权重因这些笔记发生更新。",
+            "why": "文件让内容与出处容易检查，也让迁移、备份和误删成为实际管理问题。理解“文件存储+按规则加载”，能解释为何磁盘中存在一项偏好，当前模型却未必看到它。这里无需假设一个文档未公开的向量数据库。",
+            "example": "教学例子：MEMORY.md只放“反馈：解释先说原因，见feedback_explanations.md”，详情在主题文件中。用户可以直接检查和修改两份文件；若要换电脑继续使用，需要自己处理迁移，官方默认不会跨设备同步这些文件。",
+            "trace": "《Claude Code · Auto memory》Storage location的默认路径、autoMemoryDirectory、索引/主题文件和machine-local说明；How it works的加载方式。未公开的内部实现不作推定。"
           },
           {
-            "answer": "范围至少分为用户级、项目级和组织级规则；auto memory 按仓库维护，并可跨 worktree 共享。项目约定可以进入版本控制并被团队共享，个人偏好通常留在用户环境；但文件可见性和团队权限还取决于实际文件系统、仓库和部署配置。跨会话持续不等于自动获得跨用户授权。",
-            "trace": "官方文档的 scope 表格和 auto memory scope 说明；权限、租户隔离和组织治理不能从目录层级单独推出。"
+            "answer": "指令范围有组织、用户、项目和本地项目四层：项目文件可随版本控制共享，CLAUDE.local.md用于个人项目约定。默认auto memory按git仓库分组，同仓库的子目录和worktree共用，且只在本机；仓库外则按项目根目录。主会话的auto memory通常不加载到subagent，其独立记忆目录需配置；继承父对话的fork是例外。",
+            "why": "目录的共享范围决定一条经验影响哪些任务。worktree隔离代码不等于隔离自动记忆，个人项目规则也不等于团队规则。自定义autoMemoryDirectory或项目目录名还能改变默认范围，因此必须结合实际配置理解。",
+            "example": "教学例子：同一仓库的两个worktree分别开发不同分支，却可能读取同一条自动笔记；保存“此分支临时禁用测试”就应写明条件，不能作为全仓库长期规则。团队必须遵守的约定则更适合可审查的项目文件。",
+            "trace": "《Claude Code · 指令文件范围与加载》Choose where to put CLAUDE.md files及worktree说明；《Claude Code · Auto memory》Storage location、subagent/fork例外。范围风险为上述默认行为的推论。"
           },
           {
-            "answer": "规则文件由人维护，也可以通过常规编辑流程更新；auto memory 会根据交互中的纠正、偏好和项目上下文积累学习。文档提供查看、审计和编辑入口，但没有把所有冲突合并、旧事实撤回、删除传播和保留期定义成公开协议。因此分析时要分别记录“谁写入”和“怎样停止继续影响”。",
-            "trace": "官方文档的 “When to add to CLAUDE.md”、auto memory audit/edit 与 troubleshooting 小节；未公开的冲突和删除语义保持为 not_specified。"
+            "answer": "规则由人或经指示的Claude编辑；auto memory由Claude判断哪些纠正或项目事项值得未来使用，并非每场会话都会写。用户可经/memory查看、编辑和删除。带YAML frontmatter的笔记被写入时，客户端记录modified时间；普通会话记录的cleanupPeriodDays清理不包含自动记忆文件，笔记会保留到人或Claude修改/删除。",
+            "why": "自动记忆是可修订的记录，不是对话逐字归档。记录时间能帮助核查新旧，却不能证明事实仍有效；关闭功能、删除文件和清除已经进入上下文的文字，也应作为不同操作理解。",
+            "example": "教学例子：用户原先要求长解释，后来改为简短回答。应检查对应feedback笔记是否更新以及索引是否仍指向旧内容；只把auto memory关掉，不应被当作已删除文件。若当前对话仍引用旧偏好，还要检查当前上下文。",
+            "trace": "《Claude Code · Auto memory》保存判断、modified字段、retention sweep排除、Audit and edit；《Claude Code · Memory官方文档》View and edit with /memory。关闭不等于删除及上下文检查为操作语义推论。"
           },
           {
-            "answer": "下一次调用通过启动时加载规则和自动记忆获得相关信息，也可以由 Agent 通过文件或工具主动查看。文档说明 auto memory 会加载一部分内容，不能据此说每个文件都会完整进入上下文；具体选择、截断、上下文预算和失败回退属于实现细节。写入文件、被读取、进入模型输入和改变行动是四个不同阶段。",
-            "trace": "官方文档的 session start、loading、first 200 lines or 25KB 等说明；这些事实支持“存在加载路径”，不支持对内部排序策略的推断。"
+            "answer": "启动时加载路径上的指令，子目录指令与带路径条件的规则按需加载；CLAUDE.md内容作为system之后的user消息提供。auto memory启动只加载MEMORY.md前200行或25KB，以先到者为准；主题文件由标准文件工具按需读取。这一限额只针对索引，启动加载的CLAUDE.md按文档另有4 MiB整文件跳过条件。AGENTS.md直接支持要求v2.1.277起且功能可用，默认仅在项目路径上没有CLAUDE.md、.claude/CLAUDE.md或CLAUDE.local.md时选择它；配置可改为两者都读。",
+            "why": "需要分清“文件允许访问”“自动加载”和“模型后来主动打开”。限额与文件选择规则能解释常见失效：内容超出索引首段，或本来期待加载AGENTS.md，却被项目路径上的另一份指令文件改变了选择。",
+            "example": "教学例子：一条重要偏好写在MEMORY.md第220行，可能不会在下次启动进入输入；可缩短索引并链接主题文件。若仓库同时存在CLAUDE.md与AGENTS.md，不应默认认为二者都已加载，可查/memory或/context all及当前Project instructions设置。",
+            "trace": "《Claude Code · 加载限额与排查》How it works、Claude is not following my CLAUDE.md；《Claude Code · AGENTS.md支持》默认选择表、版本与不可用条件。路径条件规则和子目录文件还有各自限额，勿套用索引的200行规则。"
           },
           {
-            "answer": "控制主体是 Claude Code 运行环境、用户和项目文件权限的组合。用户可以编辑或删除规则和自动记忆文件，但公开文档没有完整说明审计日志、跨租户共享、投毒防护、删除证明或组织级保留政策。这里应把“用户能改文件”与“系统能证明所有派生副本已停止影响”分开。",
-            "trace": "官方文档的文件编辑/审计入口与 scope 说明；未说明项不作支持或不支持判断。"
+            "answer": "用户能开关自动记忆、编辑内容和选择加载哪些指令；本地会话默认开启，文档所列自托管等环境有例外。关键边界是：CLAUDE.md和auto memory属于模型上下文，不能保证模型严格遵守；必须阻止的操作要用客户端权限、受管设置或适当hook落实。仓库提供的自动记忆目录还受workspace trust等设置约束，不能只靠一个目录名推断可读写。",
+            "why": "记忆会影响以后回答，但行为建议与技术限制的执行主体不同。写一句“不要读密钥”能表达要求，却不能替代读取权限；同样，可编辑文件也不代表有完整删除审计或所有派生副本的清除证明。",
+            "example": "教学验收：团队把测试规范放入CLAUDE.md，把必须禁止的路径放到实际权限策略中，再核对加载清单。用户撤回偏好时编辑/删除笔记并检查索引；如需证明旧内容不再影响后续请求，应另外检查会话状态与存储副本。本页没有把这些验收建议写成已实测保证。",
+            "trace": "《Claude Code · 治理与执行边界》CLAUDE.md vs auto memory、Deploy organization-wide CLAUDE.md的settings对照；《Claude Code · Auto memory》Enable or disable及Storage location的信任条件。"
           }
         ],
         "canonicalUrl": "https://code.claude.com/docs/en/memory",
         "profile": {
           "kind": "官方 coding agent / harness",
           "maintainer": "Anthropic",
-          "artifact": "官方 Memory 文档、CLAUDE.md/AGENTS.md 规则文件说明与 auto memory 说明；本教程没有运行当前版本",
-          "version": "文档版本未固定；页面按 2026-11-11 核对日期记录"
+          "artifact": "官方Memory文档的文件层级、auto memory、加载规则和故障排查；未运行上游Memory验证实验",
+          "version": "2026-11-12（UTC+8）官方页面快照；直接读取AGENTS.md要求v2.1.277或以后，另见不可用条件"
         }
       },
       {
@@ -5456,46 +5592,65 @@
       {
         "id": "longmemeval",
         "title": "LongMemEval",
-        "date": "2025",
-        "summary": "评估聊天助手长期交互中的信息提取、推理、时间变化、知识更新和 abstention。",
+        "date": "2025-03-04",
+        "summary": "LongMemEval用500个问题检查长期聊天中的提取、跨会话推理、时间推理、知识更新与拒答，并用检索指标帮助区分“没找到”和“没用好”。",
         "why": "任务定义清晰，是分析“结果能力”和“Memory 设计”差异的核心样板。",
         "boundary": "结果依赖模型、历史长度、任务子集、预算和评审协议；不做跨 benchmark 排名。",
         "status": "complete",
         "sources": [
-          "longmemeval"
+          "longmemeval",
+          "lme-meta-current",
+          "lme-repo-current",
+          "lme-qa-current",
+          "lme-retrieval-current",
+          "lme-print-current",
+          "lme-data-current",
+          "lme-project-current"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
-        "selectionEvidence": "论文身份、任务说明和公开入口可定位；纳入依据是长期交互与多类任务覆盖，不把得分当成系统完整性证明。",
-        "limitations": "不直接测权限、审计、物理删除、成本和内部检索路径；需要与其他 benchmark 组合。",
+        "selectionEvidence": "ICLR 2025论文与作者代码公开了题目构造、五类能力、证据位置标签和判分提示。它能将检索和回答分开检查，适合作为长期交互评测样板；不据此宣称对全部Memory机制覆盖完备。",
+        "limitations": "原论文为2410.10813 v2，不能与2026年的LongMemEval-V2混用。2025-09 cleaned数据需与旧版区分。问答正确或知识更新成功不证明权限隔离、真实删除或动作执行成功；本页未运行benchmark。",
         "next": "culture",
         "questions": [
           {
-            "answer": "LongMemEval 的任务围绕长期对话中的事实、偏好、事件和知识变化，测五类结果能力：信息提取、多会话推理、时间推理、知识更新和 abstention。它测的是系统能否在新问题中给出正确回答或承认不知道，不规定某一种 Memory taxonomy。",
-            "trace": "论文摘要和任务章节列出的五类能力、500 个问题与长期 user-assistant history 设置；内容类别是任务设计，不是系统内部 schema。"
+            "answer": "内容来自带时间戳的用户—助手历史，包括用户事实、偏好、事件和助手过去提供的信息。500题覆盖五类能力，但论文细化为七种题型：用户信息、助手信息、偏好、跨会话、知识更新、时间推理和拒答。代码的question_type只有前六种，拒答以question_id中的_abs标识；不能把这些题型误写成系统内部必须采用的记忆分类。",
+            "why": "能力说明“应完成什么”，内容与证据说明“凭什么完成”。只测试背出用户事实，会漏掉助手过去的建议、散落多次对话的证据和没有答案时的正确反应。五类能力与七种题型也不应混成两个相互冲突的计数。",
+            "example": "教学例子：问“你上次推荐的咖啡馆是哪家”需要保留助手侧信息；问“两次旅行共花了多少”需要合并会话；问一个历史从未提及的预订号应承认不知道。这些例子解释任务差异，不是新增或冒充数据集原题。",
+            "trace": "《LongMemEval · 原始论文v2》§3.2及Figure 1；《LongMemEval · 官方仓库固定版本》Dataset Format的question_type/_abs与has_answer字段。"
           },
           {
-            "answer": "Benchmark 的输入协议提供对话历史与查询，论文还把设计拆为 indexing、retrieval、reading 三阶段，但不把文件、向量库、图或参数记忆作为必须的控制变量。因此一个分数只能说明在给定协议下得到的结果，不能证明某种载体本身更好，也不能判断系统是否保留了可审计的权威记录。",
-            "trace": "论文摘要对三阶段设计的概括、数据输入和 baseline 设置；内部存储形式属于被测系统实现。"
+            "answer": "数据以JSON组织对话历史、时间戳、问题、答案和证据位置，不替被测系统规定数据库。论文另用indexing、retrieval、reading描述Memory流程，并比较session/round/摘要/事实等存储粒度、检索键和输入格式。S约115k tokens，M约500个session、1.5M tokens；oracle只给证据会话。它们是不同测试条件，不是三种Memory载体。",
+            "why": "数据格式、系统内部表示和测试规模是三个不同变量。把历史压成事实可能节省输入，却也可能丢掉需要回答的细节；论文的设计实验能检查这种取舍，但单个总分不能反推出某种数据库更优。",
+            "example": "教学例子：同一组对话分别按整场session和单轮问答建立索引。在相同模型与输入预算下比较，才能观察粒度的影响；若一个系统只读oracle证据，另一个要从百万token历史检索，二者分数就不是同条件结果。",
+            "trace": "《LongMemEval · 原始论文v2》§3.1–3.2、§4.1–4.2、§5.2；《LongMemEval · 官方仓库固定版本》Dataset Format和Running Memory System Experiments。"
           },
           {
-            "answer": "评测范围由对话历史、用户/助手交互和任务实例定义，主要面向单个助手的长期交互。题目可以包含用户偏好和时间变化，但没有把团队共享、租户隔离、不同主体的可见性或权限错误作为核心指标。",
-            "trace": "论文的数据构造和任务分类；协作共享与租户治理不在 LongMemEval 的核心协议中，故标为 not_assessed。"
+            "answer": "每个评测实例给出一位用户与助手的多次历史会话，之后在新的提问时点测试记忆。证据可分散在不同session，背景对话增加干扰；这是跨会话信息整合，不是多用户权限或多Agent共享协议测试。题目之间的历史应按各自实例处理，不能把一个实例的答案或证据标签当另一实例可用记忆。",
+            "why": "范围决定哪些信息是合法上下文，也影响成绩含义。“跨会话推理成功”说明系统能连接同一历史中的信息，不能进一步推出它能安全区分公司员工、客户或协作Agent。测试时还要防止实例之间串入记忆。",
+            "example": "教学例子：同一用户在周一报告预算、周五报告最终支出，合并两次会话回答差额属于该任务。若要验证Alice不能读Bob的预算，必须另设计身份与访问控制任务，不能把这里的多会话题当成隔离测试。",
+            "trace": "《LongMemEval · 原始论文v2》§3.1的历史序列定义、§3.2 History Compilation及附录A.2；《LongMemEval · 官方仓库固定版本》每个实例的haystack_session_ids与answer_session_ids。实例隔离是复现建议。"
           },
           {
-            "answer": "新信息、时间变化和知识更新任务让我们能观察部分生命周期结果，例如旧事实被新事实替换后是否回答正确；abstention 还可以观察系统是否避免无依据作答。它仍不直接验证写入日志、版本迁移、物理删除、删除传播或错误记忆的回滚路径。",
-            "trace": "论文对 temporal reasoning、knowledge updates 和 abstention 的任务说明；缺失的是实现层生命周期协议。"
+            "answer": "协议按时间提供历史，最后提问；knowledge-update检查能否采用更新后的事实，temporal-reasoning检查事件时间与会话时间。它评的是这些变化最终是否被正确回答，不强制被测系统覆盖旧记录、保留版本还是重新推理。判分脚本明确允许答案同时提及旧信息，只要给出的更新答案正确，因此通过知识更新题尤其不能证明旧值已被物理删除。",
+            "why": "更新后的行为与存储状态是不同观察对象。保留旧事实并正确识别新值，也可能通过；这能证明结果层的更新处理，却不足以证明撤回、遗忘或删除传播。需要删除保证时应另查存储状态或设计相应任务。",
+            "example": "教学例子：早期会话说用户住在波士顿，后来明确搬到西雅图。回答“以前在波士顿，现在住西雅图”可满足更新语义，但仍保留了旧地址。它与“用户要求忘记旧地址后，任何路径都不能再取回”是不同验收条件。",
+            "trace": "《LongMemEval · 原始论文v2》§3.1、§3.2 KU/TR、附录A.4；《LongMemEval · 问答判分代码》get_anscheck_prompt的knowledge-update分支直接允许旧信息与更新答案并存。"
           },
           {
-            "answer": "它观察系统在给定历史与查询下能否取回并使用相关信息，最终以回答或判断结果计分。论文的 indexing/retrieval/reading 分解帮助我们分析路径，但黑盒结果仍不能单独证明触发条件、排序、上下文注入位置或模型是否绕过 Memory 直接利用了其他输入。",
-            "trace": "论文摘要和评测协议对三阶段设计与任务输出的描述；内部调用链未被结果分数固定。"
+            "answer": "系统可采用全历史读取或先检索再回答；论文分别测回答正确性，以及公开检索结果时的Recall@k和NDCG@k。固定代码进一步区分recall_any（命中任一证据）和recall_all（取齐全部证据），并支持会话级与轮次级检查；30道拒答题没有有效答案位置，官方检索统计跳过它们。检索成功与阅读成功需要分别看。 轮次结果折算会话时，代码会扩大读取窗口，直到取得k个不同会话或遍历到末尾；两种单位下的@k不能直接等同。",
+            "why": "答案错误可能来自漏检索，也可能是证据已在输入中却被误解。多证据题只取回一条时，any命中仍可为1而all为0；只看前者会高估系统是否拿齐完成任务所需的信息。oracle条件能帮助分析阅读环节，但不是完整系统的真实表现。",
+            "example": "教学算例：一题需要会话A和B，前5条只包含A，则该题recall_any@5=1、recall_all@5=0。取齐后仍答错，应继续检查读入格式和推理；答对也不能仅凭结果断定实际用了正确证据，需结合检索日志。",
+            "trace": "《LongMemEval · 原始论文v2》§3.3、§4、§5.5；《LongMemEval · 检索指标代码》evaluate_retrieval及turn2session；《LongMemEval · 检索汇总代码》排除_abs与指标名称；官方仓库解释30道拒答题的排除理由。"
           },
           {
-            "answer": "权限、同意、来源追溯、审计、投毒、物理删除、成本和延迟不是 LongMemEval 的主要测量维度。因此它是长期 Memory 结果能力的切片，不能作为完整系统验收；要回答 Q6，需要额外的安全、隐私和治理测试。",
-            "trace": "论文任务和指标范围；这里明确记录未评估项，而不是把“没有测”解释成“系统没有”。"
+            "answer": "评测者控制数据版本、历史长度、模型、检索预算与判分器。论文用gpt-4o-2024-08-06按题型判yes/no，附录做了与人工的一致性检查；脚本对时间间隔题允许差1，对偏好题使用rubric，对拒答题检查是否识别信息不足。它不是权限/投毒/审计基准。官方2025-09清理过历史干扰，复现还需固定cleaned或原版，不能直接把不同版本的分数并排解释。",
+            "why": "分数由任务和判分规则共同决定。宽容的时间判分、不同的评审模型或清理后的历史都可能改变结果；“论文报告人工一致性较高”也不保证每条自动判分无误。治理问题应单列，而不是从问答分数补推。",
+            "example": "教学验收：记录数据commit、问题集合、reader、top-k或token预算、judge版本和提示；检查拒答与知识更新子集，并抽查临界答案。论文也比较输入token预算，但这不等于端到端延迟、云账单与存储成本都已衡量；后者要另行记录。",
+            "trace": "《LongMemEval · 原始论文v2》§3.3、§5.2、附录A.4/Table 6；《LongMemEval · 问答判分代码》model_zoo/get_anscheck_prompt；《LongMemEval · 官方仓库固定版本》2025-09 News；《LongMemEval · cleaned数据固定快照》。"
           }
         ],
-        "canonicalUrl": "https://arxiv.org/abs/2410.10813",
+        "canonicalUrl": "https://arxiv.org/html/2410.10813v2",
         "coverage": [
           "content",
           "lifecycle",
@@ -5505,14 +5660,16 @@
           "kind": "长期交互 Memory benchmark",
           "authors": "Di Wu, Hongwei Wang, Wenhao Yu, Yuwei Zhang, Kai-Wei Chang, Dong Yu",
           "venue": "ICLR 2025；arXiv v1 2024-10-14、v2 2025-03-04",
-          "artifact": "论文声明公开 benchmark 与代码；本教程没有运行评测或复现得分"
+          "artifact": "论文v2、官方代码及cleaned数据入口；未运行评测、未复现论文得分",
+          "team": "UCLA、Tencent AI Lab Seattle、UC San Diego（作者项目页列示）",
+          "version": "论文2025-03-04 v2；代码9e0b455f4ef0e2ab8f2e582289761153549043fc；cleaned数据98d7416c24c778c2fee6e6f3006e7a073259d48f"
         },
         "evaluation": {
-          "abilities": "information extraction、multi-session reasoning、temporal reasoning、knowledge updates、abstention 五类能力",
-          "taskProtocol": "500 个问题嵌入可扩展的 user-assistant 长期对话历史；系统根据历史和查询回答或选择 abstain",
-          "metrics": "论文报告问答/准确率结果，并讨论 indexing、retrieval、reading 三阶段；本教程不把论文分数转成跨系统排名",
-          "designMapping": "主要关联 Q1 内容、Q4 生命周期、Q5 暴露与使用；Q2 载体、Q3 共享拓扑、Q6 治理不由该 benchmark 直接测量",
-          "limitations": "任务结果依赖模型、历史长度、任务子集、检索预算、回答/评审协议和实现；分数不能反推出内部存储、权限或删除语义"
+          "abilities": "五类能力：信息提取、跨会话推理、时间推理、知识更新、拒答；论文对应七种题型，代码用六类question_type加_abs标识拒答。",
+          "taskProtocol": "500题；时间排序的用户—助手历史后提问。S约115k tokens；M约500会话/1.5M tokens；oracle仅证据会话。原论文v2与2025-09 cleaned数据、2026 LongMemEval-V2分别标识。",
+          "metrics": "问答由指定judge按题型判定；有检索输出时报告Recall@k、NDCG@k。代码区分recall_any/recall_all，会话级与轮次级；30道拒答题不进入检索指标。论文另比较不同输入token预算，不能据此推定全链路成本均已测量。 轮次折算会话时会扩大窗口至k个不同会话或结果末尾，须写清计数单位。",
+          "designMapping": "覆盖图的标记表示任务与该方向有关，非该轴已全部测完。Q1对应历史信息与题型；Q4对应知识更新/时间变化的结果；Q5可观察检索与回答。Q2有粒度、键和输入格式的设计实验，未直接测物理存储；Q3限定单用户跨会话而非共享权限；Q6明确评测控制与判分，不直接测系统治理。六问是分析入口，不是六项均获独立分数。 Q4标记只说明更新与时间变化相关，不证明删除或全生命周期覆盖。",
+          "limitations": "语料含模拟并经人工编辑的证据会话与背景干扰，不能直接代表全部真实用户分布。成绩受数据版本、模型、预算、题型和judge影响；更新成功不证明删除，拒答成功不证明安全，检索命中不保证正确使用证据。"
         }
       },
       {
