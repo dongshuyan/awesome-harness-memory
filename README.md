@@ -21,9 +21,9 @@ The final comparison page is optional. It places selected entries side by side a
 
 The snapshot checked on **2026-11-12** contains:
 
-- **10 selected Research entries**, with CoALA, Forms–Functions–Dynamics, MemGPT, and Generative Agents as complete six-question exemplars; four additional review leads remain visible as screened candidates;
-- **15 engineering entries**, with Claude Code, LangGraph, Google Agent Platform Memory Bank, and Mem0 as complete exemplars;
-- **10 benchmarks**, with LongMemEval, MemoryAgentBench, COLLABMEM, and LoCoMo as complete exemplars;
+- **10 selected Research entries**, with CoALA, Forms–Functions–Dynamics, MemGPT, Generative Agents, and A-Mem as complete six-question exemplars; four additional review leads remain visible as screened candidates;
+- **15 engineering entries**, with Claude Code, LangGraph, Google Agent Platform Memory Bank, Mem0, and Graphiti as complete exemplars;
+- **10 benchmarks**, with LongMemEval, MemoryAgentBench, COLLABMEM, LoCoMo, and MemBench as complete exemplars;
 - **6 literature and screen entries**, with *Memento* and “Funes the Memorious” as complete cultural examples;
 - **2 human-memory background entries**, plus topic and tool pages.
 

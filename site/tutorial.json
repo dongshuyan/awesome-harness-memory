@@ -376,10 +376,11 @@
       "evidence": ""
     },
     "a-mem:1": {
-      "label": "A-Mem · NeurIPS 2025 论文集",
+      "label": "A-Mem · NeurIPS 2025论文集",
       "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html",
-      "year": "",
-      "evidence": ""
+      "year": "2025 · NeurIPS",
+      "evidence": "正式会议元数据核对题名、作者、DOI与卷38；会议为NeurIPS 2025，页面citation_publication_date另标2026-04-23。会议年与页面记录的发布日期分开，不推断其中之一是错误。",
+      "checkedAt": "2026-11-12"
     },
     "longmemeval:0": {
       "label": "LongMemEval · 首版预印本与论文记录",
@@ -1319,10 +1320,11 @@
       "checkedAt": "2026-11-12"
     },
     "graphiti": {
-      "label": "仓库与文档",
-      "url": "https://github.com/getzep/graphiti",
-      "year": "2026-11-06 UTC",
-      "evidence": "当前 README 的 context graph、Graphiti/Zep 边界已读"
+      "label": "Graphiti · 官方README与产品边界",
+      "url": "https://github.com/getzep/graphiti/blob/ebef986a0b2360211b65751c111cacb4a7d790eb/README.md",
+      "year": "固定提交 2026-11-11",
+      "evidence": "官方定义、Graphiti/Zep区别、Reference MCP and REST servers安全边界已核。高置信维护者声明；性能与部署保证未测。",
+      "checkedAt": "2026-11-12"
     },
     "google-agent-platform-memory-bank": {
       "label": "Google Agent Platform Memory Bank · 官方概览",
@@ -1385,10 +1387,11 @@
       "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
     },
     "membench": {
-      "label": "首版预印本",
-      "url": "https://arxiv.org/abs/2506.21605",
-      "year": "2026-11-02",
-      "evidence": "沿用此前原始来源核对；未运行系统或复现评测"
+      "label": "MemBench · ACL Anthology正式记录",
+      "url": "https://aclanthology.org/2025.findings-acl.989/",
+      "year": "2025-07 · Findings of ACL",
+      "evidence": "正式元数据核对作者、Findings归属、页码与DOI；纠正原先只有预印本入口的记录。",
+      "checkedAt": "2026-11-12"
     },
     "memoryos": {
       "label": "首版预印本",
@@ -2275,6 +2278,104 @@
       "year": "代码快照 2024-08-13",
       "evidence": "f1_score / f1 / eval_question_answering；category5为拒答字符串判定。无context时recall默认1，不能解读为真实检索命中。",
       "checkedAt": "2026-11-12"
+    },
+    "a-mem-paper": {
+      "label": "A-Mem · NeurIPS正式论文",
+      "url": "https://papers.neurips.cc/paper_files/paper/2025/file/19909c36f51abc4856b4560aff3d36d6-Paper-Conference.pdf",
+      "year": "2025 · 正式版",
+      "evidence": "§3.1至3.4、图2与§4已读；笔记/链接/演化/检索为明确方法描述，作者实验未复现。图2示例已视读。",
+      "checkedAt": "2026-11-12"
+    },
+    "a-mem-evaluation": {
+      "label": "A-Mem · 作者实验仓库",
+      "url": "https://github.com/WujiangXu/A-mem/tree/f9a173dec325d84fcc97e7828775c7b241c33466",
+      "year": "固定提交 2026-10-28",
+      "evidence": "正式论文的WujiangXu/AgenticMemory入口重定向至此；README和仓库身份已核，未运行实验。",
+      "checkedAt": "2026-11-12"
+    },
+    "a-mem-library": {
+      "label": "A-Mem · 接入库与实验代码边界",
+      "url": "https://github.com/agiresearch/A-mem/blob/ceffb860f0712bbae97b184d440df62bc910ca8d/README.md",
+      "year": "固定提交 2025-12-12",
+      "evidence": "agiresearch组织下的接入库README明确另设实验代码。它不是独立复现证据，也不把README的生产表述视为本教程认证。",
+      "checkedAt": "2026-11-12"
+    },
+    "a-mem-library-code": {
+      "label": "A-Mem · 接入库检索源码",
+      "url": "https://github.com/agiresearch/A-mem/blob/ceffb860f0712bbae97b184d440df62bc910ca8d/agentic_memory/memory_system.py#L509",
+      "year": "固定提交 2025-12-12",
+      "evidence": "静态核对search_agentic：尝试扩展linked neighbors，但最终截断到k。仅支持实现边界说明，未执行检索。",
+      "checkedAt": "2026-11-12"
+    },
+    "graphiti-core": {
+      "label": "Graphiti · 写入检索与删除源码",
+      "url": "https://github.com/getzep/graphiti/blob/ebef986a0b2360211b65751c111cacb4a7d790eb/graphiti_core/graphiti.py",
+      "year": "固定提交 2026-11-11",
+      "evidence": "静态核对_resolve_request_scope、add_episode、search、remove_episode及摘要重建异常路径；未验证运行时或各数据库后端。",
+      "checkedAt": "2026-11-12"
+    },
+    "graphiti-nodes": {
+      "label": "Graphiti · 节点结构",
+      "url": "https://github.com/getzep/graphiti/blob/ebef986a0b2360211b65751c111cacb4a7d790eb/graphiti_core/nodes.py",
+      "year": "固定提交 2026-11-11",
+      "evidence": "EpisodicNode/EntityNode数据字段与来源连接已核；结构可见不等于内容真实。",
+      "checkedAt": "2026-11-12"
+    },
+    "graphiti-edges": {
+      "label": "Graphiti · 关系与时间字段",
+      "url": "https://github.com/getzep/graphiti/blob/ebef986a0b2360211b65751c111cacb4a7d790eb/graphiti_core/edges.py#L263",
+      "year": "固定提交 2026-11-11",
+      "evidence": "Edge与EntityEdge的fact、episodes、created_at、valid_at、invalid_at、expired_at字段；时间语义按代码描述解释。",
+      "checkedAt": "2026-11-12"
+    },
+    "graphiti-recipes": {
+      "label": "Graphiti · 检索配置",
+      "url": "https://github.com/getzep/graphiti/blob/ebef986a0b2360211b65751c111cacb4a7d790eb/graphiti_core/search/search_config_recipes.py",
+      "year": "固定提交 2026-11-11",
+      "evidence": "默认edge BM25+cosine+RRF；节点距离重排和含BFS的其他recipe分开核对，不声称每次查询都跑全部机制。",
+      "checkedAt": "2026-11-12"
+    },
+    "graphiti-filters": {
+      "label": "Graphiti · 时间与属性过滤",
+      "url": "https://github.com/getzep/graphiti/blob/ebef986a0b2360211b65751c111cacb4a7d790eb/graphiti_core/search/search_filters.py",
+      "year": "固定提交 2026-11-11",
+      "evidence": "SearchFilters四类日期过滤默认None；查询条件由调用者配置。静态源码事实，未运行历史查询。",
+      "checkedAt": "2026-11-12"
+    },
+    "graphiti-invalidation": {
+      "label": "Graphiti · 冲突与逻辑失效源码",
+      "url": "https://github.com/getzep/graphiti/blob/ebef986a0b2360211b65751c111cacb4a7d790eb/graphiti_core/utils/maintenance/edge_operations.py#L724",
+      "year": "固定提交 2026-11-11",
+      "evidence": "resolve_edge_contradictions与相邻失效处理设置invalid_at/expired_at；逻辑失效不等于物理删除。",
+      "checkedAt": "2026-11-12"
+    },
+    "membench-paper": {
+      "label": "MemBench · Findings正式论文",
+      "url": "https://aclanthology.org/2025.findings-acl.989.pdf",
+      "year": "2025-07 · 正式版",
+      "evidence": "§3数据构造与四指标、§4实验设置、图3、附录Table6/7及Limitations/Ethics已核；作者结果未复现。",
+      "checkedAt": "2026-11-12"
+    },
+    "membench-repo": {
+      "label": "MemBench · 作者仓库与数据入口",
+      "url": "https://github.com/import-myself/Membench/blob/f66d8d1028d3f68627d00f77a967b93fbb8694b6/README.md",
+      "year": "固定提交 2025-11-27",
+      "evidence": "作者README及仓库树核对四组数据与数据入口；没有下载/重计全部大文件，不据README宣称小型data2test包实际齐备。",
+      "checkedAt": "2026-11-12"
+    },
+    "membench-env": {
+      "label": "MemBench · 轨迹与评分环境",
+      "url": "https://github.com/import-myself/Membench/blob/f66d8d1028d3f68627d00f77a967b93fbb8694b6/benchmark/env/Membenenv.py",
+      "year": "固定提交 2025-11-27",
+      "evidence": "静态核对step、get_recall、step_cap；无memory_index键与键为None的评分行为不同，作者当前适配器总会带此键。未运行评测。",
+      "checkedAt": "2026-11-12"
+    },
+    "membench-agent": {
+      "label": "MemBench · Memory适配与计时源码",
+      "url": "https://github.com/import-myself/Membench/blob/f66d8d1028d3f68627d00f77a967b93fbb8694b6/benchmark/MembenchAgent.py",
+      "year": "固定提交 2025-11-27",
+      "evidence": "response保存user/agent、调用store/recall、计时、生成选择与retri的顺序已核；读写耗时不等于完整用户请求时间。",
+      "checkedAt": "2026-11-12"
     }
   },
   "concepts": [
@@ -2358,18 +2459,70 @@
       {
         "id": "a-mem",
         "title": "A-Mem",
-        "date": "2025",
-        "summary": "以动态链接和组织方式构建可演化的 Agent Memory。",
-        "why": "它展示记忆条目、关联和更新机制如何联合设计。",
-        "boundary": "NeurIPS 论文与预印本的实现细节需按版本核对。",
-        "status": "pending",
+        "date": "2025 · NeurIPS",
+        "status": "complete",
+        "summary": "让新记忆参与整理旧记忆：把交互做成带语义说明的笔记，为相关笔记建立链接，并随新信息调整旧笔记的描述。它研究的是记忆如何组织和演化。",
+        "why": "在理解保存原文、摘要和向量检索之后，A-Mem提供了另一个问题：新经验能否改变旧经验的组织方式？它有正式论文、明确的笔记结构和更新步骤，适合逐步拆解自组织记忆的设计。",
+        "boundary": "以NeurIPS 2025正式论文的§3与图2解释方法。论文实验仓库、作者另列的WujiangXu/A-mem-sys系统仓库和agiresearch接入库不是同一个交付物；论文报告的实验结果不能自动转成当前库或生产部署的效果保证。",
         "sources": [
-          "a-mem:1"
+          "a-mem:1",
+          "a-mem-paper",
+          "a-mem-evaluation",
+          "a-mem-library",
+          "a-mem-library-code"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
+        "researchKind": "method",
         "canonicalUrl": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html",
-        "researchKind": "method"
+        "selectionEvidence": "发表于NeurIPS 2025主会议，作者单位包括Rutgers University与AIOS Foundation，也有独立研究者。正式论文公开构建、链接、演化和检索步骤，并报告六种基础模型上的实验。这里的纳入依据是方法可检查、能补充记忆组织这一教学主题；实验效果是作者报告，本教程未复现。",
+        "limitations": "自动生成的标签、上下文和链接可能出错；连接相关经历不等于证明因果。论文没有给出适用于所有应用的权限、删除传播或审计保证。其LoCoMo实验设置按该论文自身版本理解，不与其他论文或后来发布集的规模、指标直接拼接。",
+        "next": "engineering",
+        "profile": {
+          "kind": "可演化的Agent Memory研究方法",
+          "authors": "Wujiang Xu、Zujie Liang、Kai Mei、Hang Gao、Juntao Tan、Yongfeng Zhang",
+          "venue": "NeurIPS 2025；DOI 10.52202/085713-0593",
+          "artifact": "正式论文、作者实验仓库，以及另行发布的接入库",
+          "version": "NeurIPS正式版；实验仓库f9a173dec325d84fcc97e7828775c7b241c33466；接入库ceffb860f0712bbae97b184d440df62bc910ca8d仅用于辨别实现边界"
+        },
+        "questions": [
+          {
+            "answer": "A-Mem保存交互内容，并为它补充可检索、可连接的语义说明。论文的一个memory note含原始内容、交互时间、关键词、标签、上下文描述、embedding和关联笔记。原文记录发生了什么，模型生成的关键词和上下文则帮助解释这段经历与什么问题有关。这些是同一条记忆的不同字段，并不是七种彼此独立的Memory。",
+            "why": "只保留一句原话时，后续问题可能换了说法，检索很难直接命中。补充语义说明能提供更多查找线索，但也引入了模型的解释，因此读者要分清原始记录与推断出来的描述。",
+            "example": "译述论文图2中的英文对话：先出现“实现同时使用内存和磁盘的缓存”，后来出现“生产环境内存占用高，想加入LRU淘汰”。这两段来自图中的实际示例，中文为概括译述。教程推演：第一条笔记既保留原始需求，也可以标记缓存主题；具体标签由模型生成，论文图示不等于本教程运行得到的输出。",
+            "trace": "《A-Mem · NeurIPS正式论文》§3.1式(1)至(3)列出字段与生成方式，图2给出缓存/LRU例子。字段与流程是论文明确描述；主题标签的具体措辞是教学推演。"
+          },
+          {
+            "answer": "主要载体是模型参数之外的结构化笔记集合。每条笔记有可读文本、向量和指向其他笔记的链接；论文把原文、关键词、标签、上下文一起编码成向量，用于相似度候选查找。链接另外表达笔记间的关联。图2的box是对一组相关记忆的概念性说明，同一笔记可以属于多个box，不是必须实现的物理文件夹。",
+            "why": "向量擅长找语义接近的候选，链接则保留已经识别出的关联。把两者分开看，就能理解为什么“已有向量库”还不等于实现了A-Mem，也不会把论文示意图的分组误读成固定的记忆分类。",
+            "example": "沿用缓存例子：向量可以把LRU请求与早期缓存需求找得很近，链接再记录这两条笔记有关。第一条笔记还可能关联磁盘存储问题，所以它不必只属于一个互斥目录。这里说明表示方式，不声称这些链接已经在某次实际运行中生成。",
+            "trace": "《A-Mem · NeurIPS正式论文》§3.1式(3)、§3.2及图2图注。正式论文不强制某个数据库品牌；《A-Mem · 接入库与实验代码边界》是另一实现入口，不能用其数据库选择反推论文唯一架构。"
+          },
+          {
+            "answer": "论文讨论的是Agent经历形成的历史记忆集合，以及当前交互如何从中找回相关笔记。笔记的主题关联可以跨越多次交互，但论文的note定义没有把用户、租户、项目授权规定成一套通用隔离协议。因此要分别回答“内容谈论谁”和“谁有权检索”；box和语义标签只能帮助组织，不能充当权限边界。",
+            "why": "两个用户都谈缓存时，笔记可能非常相似，却不应仅因相似就相互可见。研究方法解释了集合内部如何组织；把它接入多人产品时，还需要决定每个集合的归属和检索范围。",
+            "example": "教学例子：为项目A和项目B分别保留缓存设计记录。先按调用者的项目权限确定可检索集合，再在其中建立和查找笔记关联；跨项目共享必须另外授权。这个隔离方案是应用设计建议，A-Mem论文没有宣称自动实现它。",
+            "trace": "《A-Mem · NeurIPS正式论文》§3.1的集合M与note定义、§3.4的历史集合检索、图2的可重叠box。权限边界未由这些章节给出；项目隔离是基于其使用范围提出的工程推论。"
+          },
+          {
+            "answer": "写入分三步：先构建笔记，再用向量选出相关旧笔记并让LLM判断是否连边，最后判断旧笔记的上下文、关键词和标签是否需要更新。§3.3中演化后的笔记替换集合里的原笔记，所以一次写入可能改变既有记忆的组织方式。式(7)主要更新上下文、关键词和标签，链接建立另见§3.2；这不应理解为对所有事实自动纠错，或默认保留完整历史版本。",
+            "why": "新信息有时使旧经历呈现新的意义，而不仅是增加一条记录。例如后续问题揭示了早期设计的性能瓶颈。允许更新旧笔记能帮助后续查找，但也让错误解释有机会传播到旧记录，需要检查更新结果。",
+            "example": "教学推演：看到LRU请求后，系统可能把早期“缓存实现”的上下文补充为与内存压力相关，再建立两条笔记的关联。它不应因此把原始需求改写成“最开始就要求LRU”。这个反例帮助检查：更新的是解释，还是篡改了经历。",
+            "trace": "《A-Mem · NeurIPS正式论文》§3.2式(4)至(6)、§3.3式(7)及图2。旧note被演化版本替换是明确流程；自动纠错、不可篡改历史或完整删除保证不在该流程的证明范围内。"
+          },
+          {
+            "answer": "回答新问题时，系统先编码查询，再按余弦相似度找相关笔记，并把检索材料放入Agent的prompt。§3.4写的是top-k检索；图2图注进一步描述访问已链接的相关记忆。读者应把这理解为论文提出的取回路径，并在实际实现中核查邻居扩展和最终上下文预算，而不是认为只要建立链接，所有邻居都必然进入模型输入。",
+            "why": "笔记存得完整、链接建得丰富，都不保证当前问题拿到了必要信息。最终进入prompt的材料才直接影响这次调用；检索数量、关联扩展和截断规则决定了哪些历史真正暴露给模型。",
+            "example": "教学诊断：问“为什么后来加LRU”，理想材料同时包含早期缓存设计和后来的生产内存问题。如果只召回了LRU关键词，答案仍可能缺少原因。检查时依次看候选笔记、关联扩展结果、最终prompt，才能定位丢失发生在哪一步。",
+            "trace": "《A-Mem · NeurIPS正式论文》§3.4式(8)至(10)、图2图注；《A-Mem · 接入库检索源码》的search_agentic尝试加入邻居后仍截断到k，不能据函数名承诺邻居必然保留。该源码只作实现边界核查，不视为论文实验等价实现。"
+          },
+          {
+            "answer": "论文把构建语义描述、判断链接和更新旧描述交给LLM，同时由设计者规定提示模板、编码器和候选检索规则。因此“agentic”不意味着无人设定规则，而是部分记忆组织决策由模型完成。本页分析的§3方法与§4实验没有验证用户同意、恶意写入防护、人工审核或彻底删除，因此不能由这些实验推导相应治理保证。",
+            "why": "模型拥有修改记忆组织的能力后，错误就可能从一次输出变成以后反复引用的背景。理解谁决定写入、谁能改旧记录，才能设计检查、纠错和撤回流程；一篇方法论文的效果实验不能代替这些验证。",
+            "example": "教学例子：一段未经确认的对话声称“所有缓存都必须禁用”。应用若允许它改写其他笔记，后续建议可能持续受影响。可考虑保留原文与来源、审查重要更新并允许撤回；这些是应额外实现和评测的措施，不是论文已证明的保障。",
+            "trace": "《A-Mem · NeurIPS正式论文》§3.1至§3.3的LLM提示与演化步骤、§4实验范围；《A-Mem · NeurIPS 2025论文集》确认发表信息。治理建议由控制路径推导，未运行投毒、权限或删除实验。"
+          }
+        ]
       },
       {
         "id": "forms-functions-dynamics",
@@ -2870,16 +3023,69 @@
         "id": "graphiti",
         "title": "Graphiti",
         "date": "公开日期未说明",
-        "summary": "面向 Agent 的时序知识图系统，强调实体、关系、时间和混合检索。",
-        "why": "它是关系/时间事实与图载体的工程代表。",
-        "boundary": "图结构与事实正确性、因果性需要分别验证。",
-        "status": "pending",
+        "status": "complete",
+        "summary": "把持续到来的材料构造成有来源、有时间范围的实体关系图。Agent可以从图中取回相关事实；开发者负责把这个框架接入应用，并提供权限、存储和运行服务。",
+        "why": "它让读者看到，Memory不必只是一串对话或独立文本片段：事实之间的关系、事实何时成立、系统何时得知，都可以成为显式结构。源码公开了写入、检索和删除路径，便于核查图记忆的实际边界。",
+        "boundary": "本页解释getzep/graphiti固定提交的开源Python框架。Graphiti与托管Zep产品边界按官方README区分；Zep的服务保证、部署功能和性能不能直接算作Graphiti库的能力。",
         "sources": [
-          "graphiti"
+          "graphiti",
+          "graphiti-core",
+          "graphiti-nodes",
+          "graphiti-edges",
+          "graphiti-recipes",
+          "graphiti-filters",
+          "graphiti-invalidation"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
-        "canonicalUrl": "https://github.com/getzep/graphiti"
+        "canonicalUrl": "https://github.com/getzep/graphiti",
+        "selectionEvidence": "getzep官方仓库（源码版权署名Zep Software, Inc.）提供实体、事实、episode、时间字段以及写入/搜索/删除实现。该证据可以支持具体机制的解释；本教程没有运行图数据库或测量吞吐、延迟、准确率，不采用托管产品宣传替代开源框架验证。",
+        "limitations": "抽取与冲突判断依赖所选模型，来源链接不能证明事实本身正确。数据库、LLM、embedding和外层服务均需自行配置。参考MCP/REST服务器明确不提供身份认证、授权或prompt注入防护；分区ID和逻辑失效都不是完整安全或擦除保证。",
+        "next": "benchmarks",
+        "profile": {
+          "kind": "时序实体关系图框架，可作为Agent Memory组件",
+          "maintainer": "getzep（源码版权署名Zep Software, Inc.）",
+          "artifact": "graphiti-core Python库、参考服务器、官方README与固定提交源码",
+          "version": "ebef986a0b2360211b65751c111cacb4a7d790eb（提交日期2026-11-11）；2026-11-12只读核查，未运行服务"
+        },
+        "questions": [
+          {
+            "answer": "Graphiti把输入材料称为episode，再从中抽取实体和实体间的事实或关系。实体可以是人、产品、政策等，带有可更新的摘要；关系边保存可读事实，episode保留其来源。这个结构适合表示“谁与谁有什么关系、何时成立”。它没有要求所有应用使用一套情景/语义/程序性记忆分类，episode也不等于在认知意义上实现了完整情景记忆。",
+            "why": "把人物和关系显式分开，能沿同一实体连接来自不同会话的材料。与此同时，“原文说了什么”与“系统抽取出什么”属于不同层次；错误的实体合并或事实抽取仍可能让图产生误导。",
+            "example": "教学例子：“小林从5月1日起住在杭州”可以产生小林、杭州两个实体，以及居住关系，边再指向提供这句话的episode。若消息只是别人猜测，来源仍可追溯，但它不会因此自动变成已证实事实。",
+            "trace": "《Graphiti · 官方README与产品边界》的What is a Context Graph；《Graphiti · 节点结构》的EpisodicNode/EntityNode；《Graphiti · 关系与时间字段》的EntityEdge。上述是数据结构事实，例子为教程构造。"
+          },
+          {
+            "answer": "主体载体是外部图数据库中的节点和边，保存文本和向量，支持关键词与向量检索。EntityEdge的valid_at/invalid_at描述事实何时成立和停止成立，created_at/expired_at记录边的创建和被判失效的系统时间。两组时间可以不同；source episode又提供信息从哪里来的线索。开发者也可用Pydantic数据模型定义实体、关系的类型和字段。",
+            "why": "现实发生变化与系统收到通知往往不同步。如果只保留“最后更新时间”，就难以区分过去真实状态与当时系统掌握的状态；这两类问题需要不同时间字段和查询条件。",
+            "example": "教学假设：小林5月1日搬到杭州，系统5月3日才收到消息。可用valid_at表达5月1日，用created_at表达5月3日。“他5月2日住哪里”与“系统5月2日知道什么”不是同一查询。这里展示字段含义，不冒充一次真实抽取结果。",
+            "trace": "《Graphiti · 关系与时间字段》的Edge.created_at与EntityEdge.valid_at/invalid_at/expired_at；《Graphiti · 官方README与产品边界》的组件表与自定义类型说明。《Graphiti · 冲突与逻辑失效源码》第369行构造EntityEdge时设置created_at=utc_now()，支持系统时间解释。两种查询的区别是基于字段语义的教学推导，不承诺任意自然语言问句都会自动转成正确时间过滤。"
+          },
+          {
+            "answer": "写入episode时可传group_id，把它放入一个图分区；查询可用group_ids限制返回范围。分区如何对应用户、项目或组织，由应用决定；当group_id与当前数据库不同时，写入路径会取得相应的克隆驱动，实际隔离方式取决于后端。实体描述的是记忆谈论的对象，group_id描述数据组织范围，这两者不必相同。源码参数并不验证调用者是否有权访问某个分区，跨用户授权必须由外层服务完成。",
+            "why": "同名人物和相似事实可能出现在不同组织中。先确定允许使用哪一份图，再检索其中的关系，能防止把语义相关误当成可访问；把分区当作权限则会漏掉“谁能指定这个ID”的问题。",
+            "example": "教学流程：应用验证当前用户属于项目A → 在服务端确定A对应的group_id → 写入和搜索都使用该范围。不能仅接收客户端传来的任意group_id。若要共享公共资料，需要另定可访问的分区集合。",
+            "trace": "《Graphiti · 写入检索与删除源码》的_resolve_request_scope、add_episode(group_id)、search(group_ids)；《Graphiti · 官方README与产品边界》的Reference MCP and REST servers明确说明任意调用者可操作任意group_id。分区是机制，身份映射是应用责任。"
+          },
+          {
+            "answer": "add_episode从新材料抽取实体和关系，查找已有对象、处理重复与矛盾，再更新图。新事实使旧事实停止成立时，旧边可以被标记invalid_at/expired_at并保留，供历史查询使用。另有remove_episode：删除该来源独自支持的边和实体，保留仍有其他episode支持的边，并尝试重建受影响实体摘要。逻辑失效与删除来源是不同操作。",
+            "why": "用户改变地址后，系统既可能要回答当前位置，也可能要解释迁居历史。直接覆盖旧值会丢掉历史，完全不标记失效又容易取到过时信息。删除请求还要检查来源与派生事实的关系，不能只处理一段原文。",
+            "example": "教学推演：新消息说明小林5月起迁居杭州，系统可能结束旧“住上海”关系的有效区间，并增加杭州关系。若随后删除这条消息，代码会考虑该边是否还有别的来源支持；因此不能把删除一个episode说成图内所有相同事实都消失，更不能据此推断备份已经清除。",
+            "trace": "《Graphiti · 写入检索与删除源码》的add_episode、remove_episode；《Graphiti · 冲突与逻辑失效源码》的resolve_edge_contradictions。remove_episode重建摘要有异常处理，源码可见其尝试，未在本教程测试所有后端或失败条件。"
+          },
+          {
+            "answer": "应用显式调用search(query)，默认把关键词检索与向量相似度检索结合，再用RRF按两路各自的结果名次融合候选，返回相关EntityEdge。指定中心节点时可改用节点距离重排；高级检索recipe才包含其他组合，例如图遍历。时间条件通过SearchFilters指定，默认时间过滤字段为空。取回边之后，应用还需选择文本和时间信息，放入Agent的下一次模型输入。",
+            "why": "图里有时间字段，并不意味着每次搜索都自动只返回当前事实；图里有链接，也不意味着每次检索都执行遍历。看清默认流程、可选配置和prompt装配，才能判断某次回答究竟用了什么记忆。",
+            "example": "教学流程：“小林现在住哪里” → 确定允许访问的分区 → 配置当前有效事实的过滤条件 → 检索关系边 → 把事实与必要时间说明交给回答模型。若改问“去年住哪里”，应换相应时间条件；不能只换问句就假定数据库理解了历史范围。",
+            "trace": "《Graphiti · 写入检索与删除源码》的search；《Graphiti · 检索配置》的EDGE_HYBRID_SEARCH_RRF、EDGE_HYBRID_SEARCH_NODE_DISTANCE与包含广度优先图遍历的CROSS_ENCODER配置；《Graphiti · 时间与属性过滤》的SearchFilters。默认配置与返回结构按实际代码核查，示例集成流程未运行。"
+          },
+          {
+            "answer": "开发者选择模型、数据库、写入材料、抽取类型和检索范围，模型参与实体/关系抽取与冲突判断。官方README明确：参考MCP/REST服务器没有认证、授权和prompt注入防护；生产应用需要自己的服务层提供这些控制。episode来源和时间字段能辅助追溯，但不能单独保证输入可信、更新正确或所有副本可擦除。",
+            "why": "把框架接成工具接口后，谁能写入、读取和删除会直接影响长期记忆。若不检查调用者，知道一个分区名就可能够访问数据；若把未经确认的材料长期保存，错误也可能持续进入后续回答。",
+            "example": "教学检查：允许删除episode前核对身份和数据归属；若承诺彻底清除，再检查图中的派生信息、其他来源、日志和备份。部署方还应决定外部模型能接触哪些材料。这里列的是由公开边界推导出的部署要求，不是对某个Graphiti服务的安全认证。",
+            "trace": "《Graphiti · 官方README与产品边界》的Graphiti and Zep、Reference MCP and REST servers；《Graphiti · 写入检索与删除源码》的删除路径。参考服务器限制是维护者明确声明；部署建议与未验证范围已分开。"
+          }
+        ]
       },
       {
         "id": "hindsight",
@@ -3404,21 +3610,80 @@
       {
         "id": "membench",
         "title": "MemBench",
-        "date": "2025",
-        "summary": "研究 Memory 更新、检索和交互任务的 benchmark。",
-        "why": "可用于观察内容和生命周期结果如何被测量。",
-        "boundary": "公开材料仍需拆分具体指标与 baseline。",
-        "status": "pending",
+        "date": "2025-07 · Findings of ACL",
+        "status": "complete",
+        "summary": "把记事实、归纳偏好、证据召回和读写开销放进同一评测框架，并区分参与对话与只观察消息两种场景。历史按顺序输入，用问题检查记忆保留与使用的效果。",
+        "why": "它不仅问答案对不对，还把内容层次、输入场景与评测指标分开，适合学习如何设计Memory实验。读者可以同时看到任务覆盖的扩展，以及多选题、合成数据和计时范围带来的限制。",
+        "boundary": "采用Findings of ACL 2025正式版与作者仓库固定提交；Findings不写成ACL主会长文。论文的四项评测维度与本教程六问不是一一对应；本页映射说明它能提供哪些证据，不产生六个能力得分。",
         "sources": [
-          "membench"
+          "membench",
+          "membench-paper",
+          "membench-repo",
+          "membench-env",
+          "membench-agent"
         ],
-        "checkedAt": "2026-11-11",
+        "checkedAt": "2026-11-12",
         "realityNote": "",
-        "canonicalUrl": "https://arxiv.org/abs/2506.21605",
+        "canonicalUrl": "https://aclanthology.org/2025.findings-acl.989/",
         "coverage": [
           "content",
           "lifecycle",
           "exposure"
+        ],
+        "selectionEvidence": "Findings of ACL 2025正式论文，作者来自中国人民大学与华为诺亚方舟实验室；公开了任务构造、指标、基线比较和评分实现。事实/反思内容与参与/观察场景可分别检查，作者报告七种Memory机制的实验。本教程只核查论文与代码，没有下载重计全部发布数据或运行参评系统。",
+        "limitations": "数据围绕合成的用户/实体关系图和属性构造，偏好材料利用推荐数据生成，不能代表所有真实对话；附录表7列有Emotion定义，但正文实验主要讨论偏好，Limitations仍将情绪记忆列为待探索方向；不能据类别表就认定它已充分评估情绪记忆。参与场景中的Agent回复预先给定，不检验自主对话策略。多选正确率、检索召回和读写时间应分别报告，也不覆盖完整权限与删除治理。",
+        "next": "culture",
+        "profile": {
+          "kind": "多场景、多内容层次的Agent Memory评测",
+          "authors": "Haoran Tan、Zeyu Zhang、Chen Ma、Xu Chen、Quanyu Dai、Zhenhua Dong",
+          "venue": "Findings of ACL 2025；19336至19352；DOI 10.18653/v1/2025.findings-acl.989",
+          "artifact": "正式论文、合成数据生成流程、作者发布数据入口及评分代码",
+          "version": "ACL正式版；import-myself/Membench提交f66d8d1028d3f68627d00f77a967b93fbb8694b6；2026-11-12静态核查"
+        },
+        "evaluation": {
+          "abilities": "事实记忆包括属性查找、时间理解、知识更新、跨信息推理及回忆Agent预设回复；反思记忆要求从多次低层偏好表达归纳高层偏好。两者分别放入参与和观察场景，形成四类数据。",
+          "taskProtocol": "先构造用户与相关实体的关系图，再生成支持问题的证据对话和其他材料。参与场景保留用户话语与预设Agent回复；观察场景只接收消息。逐轮送入材料后提出含时间与选项的问题；容量实验在关键证据之后继续增加历史并检查正确率。噪声生成要求不与任务事实冲突。",
+          "metrics": "Memory Accuracy是多选字母与标准答案的一致率；Memory Recall按取回的唯一step ID与标准证据ID的交集大小，除以标准证据ID集合大小计算。Memory Capacity观察历史增长时的正确率曲线；§4.4报告特定配置下MemGPT与Self-Controlled Memory出现陡降，§3.4则保留其他机制未必有阈值的限定。Memory Efficiency报告读写耗时；代码分别计时store和recall，读计时不包含后续答题LLM调用或另一次retri，因此不是完整请求延迟。",
+          "designMapping": "Q1由事实/反思任务直接关联，Q4由顺序输入、知识更新题和容量压力直接关联，Q5由证据召回与答题使用关联。Q2主要是被比较Memory采用的表示条件；Q3是人物与参与/观察场景的组织方式。Q6没有相应的身份授权、同意撤回或彻底删除测试。矩阵为教程依据协议所作分析，不是作者声称六轴均衡覆盖。",
+          "limitations": "选择题降低了自由措辞评分的歧义，也限定了输出形式，不能直接代表开放问答或真实行动能力。未提供memory_index键时环境返回recall=None；键存在但值为None时get_recall返回0，两种情况须区分。硬件、模型、网络和实现影响耗时；比较时应保留配置及计时边界。"
+        },
+        "questions": [
+          {
+            "answer": "MemBench要求保留两层内容：factual memory是人物、事件、地点等可核对属性；正文重点评估的reflective memory是从多次具体表达归纳出的高层偏好，附录对情绪类的定义与实验覆盖还须分开看。它用事实查找、时间理解、知识更新、跨信息推理，以及回忆Agent自身回复的单/多会话题检查前者，用口味、电影或图书等偏好问题检查后者。这是任务需要的信息层次，不要求参评系统必须建两个同名存储区。",
+            "why": "记住“喜欢某道菜”与归纳“偏好某种口味”需要不同的信息加工。只测直接复述会遗漏归纳，只测总结又可能放过细节丢失；分别出题可以观察这两种表现是否一致。",
+            "example": "论文§3.3用多次喜欢不同菜品的表达说明口味偏好推断；图3还给出直接询问侄女公司名称的事实题。前者要组合证据，后者要准确保留具体名称。若教学中写成“喜欢甜食”，仍需足够一致的菜品证据，不能凭单次选择断言长期偏好。",
+            "trace": "《MemBench · Findings正式论文》§3.1、§3.3、图3及附录Table 6/7。事实与反思是作者定义的任务层次；对存储区的解释是教程对任务与实现的区分。"
+          },
+          {
+            "answer": "评测材料是按轨迹组织的消息、问题、选项、标准答案和证据位置；作者代码通过message_list与QA等字段读取它们。参评Memory可以保留完整历史、近期窗口、检索材料或其他摘要/管理结构，论文比较了不同机制。评测数据的JSON表示与被测系统的内部记忆表示是两回事，标准答案和证据位置属于评分端。",
+            "why": "把同一任务交给不同记忆机制，才能研究表示方式的影响。如果提前把正确答案或证据ID送进正常答题输入，测到的就不再是系统自己保存和找回信息的能力。",
+            "example": "教学对照：同一条活动更正轨迹，一种实现保留全部消息，另一种只索引抽取出的事实。在同一底模、问题和输入预算下比较答案与召回。QA.ground_truth和target_step_id留在评分端；若另设预先知道正确证据的对照（oracle），应单独标明。",
+            "trace": "《MemBench · 轨迹与评分环境》的load_dataset、step；《MemBench · Findings正式论文》§4.1的基线与输入过程；《MemBench · 作者仓库与数据入口》说明数据分组。控制变量与防泄漏要求是教程评测建议，未执行该对照。"
+          },
+          {
+            "answer": "数据围绕一个用户及其关联的人、事、物、地点组织，再区分participation与observation。参与场景里系统需要记住用户说的话和预先设定的Agent回复，例如曾推荐什么；观察场景只接受用户消息流，不参与对话行动。这个区分改变了哪些来源应进入记忆，但没有建立多个真实租户或多个自主Agent之间的权限评测。",
+            "why": "有些问题的答案来自系统自己曾经说过的话。只记录用户输入会让这些题缺少证据；但预设回复又排除了自主回复策略的影响，因此成绩不能直接证明系统在真实开放对话中能持续记住自己的行动。",
+            "example": "论文中的参与场景允许询问Agent之前推荐过的内容。教学反例：若只把用户发言写入Memory，推荐记录就丢了。实验接入时应按轨迹重置或隔离记忆，并保留说话人；这是配置要求，不等于已经通过跨用户隐私测试。",
+            "trace": "《MemBench · Findings正式论文》§3.1用户关系图、§3.2参与/观察定义、§4.1预设回复；《MemBench · Memory适配与计时源码》response对dict消息保存user与agent两侧内容。"
+          },
+          {
+            "answer": "材料按时间顺序逐轮送入，过去轮次只能通过Memory重新获得；其中知识更新题要求使用后来修正的事实。容量实验在证据出现后继续增加历史，观察正确率随记忆负担如何变化。§4.4在观察场景Sub-dataset 2、Qwen2.5-7B-Instruct配置的容量实验中报告MemGPT与Self-Controlled Memory出现陡降，作者认为可能与该配置的记忆保留上限有关；这是作者的观察与可能解释。§3.4同时指出其他机制未必出现阈值，检索机制还受召回有效性影响，不能把上述结果推广为所有系统的固定容量。它没有统一测试过期、删除和所有副本擦除。",
+            "why": "一次性读完整历史与逐轮维持记忆，对系统提出不同要求。更新题能检查旧值是否继续误导回答，容量曲线能暴露保留和检索在长历史下的退化；两者仍不能替代忘记或删除测试。",
+            "example": "论文图3的实际例子：活动原计划持续四天，后来改成一天，最终问题应按更正值回答。另加与该事实不冲突的噪声，是考察长历史压力；若加入恶意矛盾消息或要求删除旧值，则成为额外实验，不能算作原有噪声协议。",
+            "trace": "《MemBench · Findings正式论文》图3 Knowledge Update、§3.4 Capacity、§4.1顺序输入与无事实冲突的噪声、§4.4容量实验；《MemBench · 轨迹与评分环境》的step/step_cap。容量是行为曲线，不是数据库字节上限。"
+          },
+          {
+            "answer": "问题、当前时间和选项交给Agent后，适配层先调用Memory.recall得到上下文，再让答题模型选出答案。环境按选择字母是否等于ground_truth评分；若提供检索step ID，还计算证据召回。因此能分别观察“有没有取回证据”和“拿到材料后是否答对”。代码的读计时只包住recall，不包含答题LLM和另外的retri调用。",
+            "why": "答错可能发生在存储、检索或推理阶段。把召回与答案分开更有助于排查；同时读耗时的范围必须讲清，否则容易把局部检索时间误报成用户等待整个回答的时间。",
+            "example": "教学算例：标准证据是步骤2和7，系统返回2、2、9，去重后只命中一个证据，召回为1/2。即便猜对选项，也不能据此说证据完整。环境没收到memory_index键时recall为None；收到该键但值为None时返回0。作者当前适配器在答题时总带这个键，因此其retri返回None会被计为0，不能写成未计分。",
+            "trace": "《MemBench · 轨迹与评分环境》的get_recall、step；《MemBench · Memory适配与计时源码》的response先recall再构造prompt，随后另取retri。指标依据为《MemBench · Findings正式论文》§3.4。1/2是公式教学算例，不是参评成绩。"
+          },
+          {
+            "answer": "评测方控制数据生成、预设回复、噪声、选项与评分规则，参评方实现Memory并配置模型。公开协议没有把授权读取、用户同意、恶意写入或删除传播设为独立任务。论文还说明评测方法局限于结构化数据的记忆评估；附录表7虽列有Emotion定义，Limitations仍将情绪记忆列为待探索方向，不能据表格名称认定已有充分评测。数据来源和伦理声明是作者说明，不等于本教程独立验证了所有材料的使用权。",
+            "why": "能准确回答偏好问题的系统仍可能泄露别人的偏好。描述评测控制了什么、漏测了什么，可以避免把一个较全面的记忆任务集误当成生产安全认证，也便于设计后续互补评测。",
+            "example": "教学扩展：若想测试“用户B不得读取用户A的饮食偏好”，必须加入身份、访问策略和越权探针，并单列违规率；若测试撤回，还要说明哪些派生记忆应被移除。原MemBench的正确率与召回率不能替代这两类指标。",
+            "trace": "《MemBench · Findings正式论文》§3至§4、Limitations与Ethics Statement；《MemBench · 轨迹与评分环境》的实际评分字段。未覆盖项是依据这些公开协议做出的范围判断，不宣称参评Memory系统自身不具备治理能力。"
+          }
         ]
       },
       {
