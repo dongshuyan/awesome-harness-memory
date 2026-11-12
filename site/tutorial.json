@@ -98,7 +98,7 @@
       "sources": [
         "coala",
         "longmemeval",
-        "locomo",
+        "locomo-paper",
         "langgraph"
       ],
       "confidence": "medium — 这是跨研究、工程与评测资料归纳出的描述性工作集，不是来源规定的唯一 taxonomy。"
@@ -116,7 +116,7 @@
       "check": "能否判断一个“支持 Memory”的声明是否同时说明了权限和删除？",
       "sources": [
         "collabmem",
-        "agentpoison",
+        "minja-full",
         "google-agent-platform-memory-bank"
       ],
       "confidence": "medium — 这是跨研究、工程与评测资料归纳出的描述性工作集，不是来源规定的唯一 taxonomy。"
@@ -1157,16 +1157,16 @@
       "evidence": ""
     },
     "cortex-ai:0": {
-      "label": "Cortex AI · 候选原始入口（未确认等同用户所指）",
+      "label": "旧候选：Cortex-Desktop（与本目录cortex-ai不同）",
       "url": "https://github.com/Cortex-AI-IDE/Cortex-Desktop",
       "year": "",
-      "evidence": ""
+      "evidence": "保留旧候选入口；不支持jdomian/cortex-ai的机制描述。"
     },
     "cortex-ai:1": {
-      "label": "Cortex AI · 候选原始入口（未确认等同用户所指）",
+      "label": "cortex-ai · jdomian项目入口",
       "url": "https://github.com/jdomian/cortex-ai",
       "year": "",
-      "evidence": ""
+      "evidence": "本目录cortex-ai明确定位此项目；详见资源目录的架构/检索文档。"
     },
     "ai-memory:0": {
       "label": "ai-memory · 项目入口",
@@ -1278,10 +1278,11 @@
       "checkedAt": "2026-11-12"
     },
     "agent-memory-characterization": {
-      "label": "Agent Memory: Characterization and System Implications · arXiv",
-      "url": "https://arxiv.org/abs/2606.06448",
-      "year": "2026",
-      "evidence": "arXiv 摘要与元数据核对；系统型四轴与构建/检索/生成成本分析已确认，四轴细目待全文核查"
+      "label": "Agent Memory Characterization · v2论文",
+      "url": "https://arxiv.org/html/2606.06448v2",
+      "year": "2026-09-22 · v2",
+      "evidence": "§2四轴/四范式/七阶段，§3实验配置，§4成本/调度/增长，附录artifact；作者测量未复现。",
+      "checkedAt": "2026-11-12"
     },
     "graph-agent-memory": {
       "label": "Graph-based Agent Memory · v1全文",
@@ -1298,10 +1299,10 @@
       "evidence": "作者、Findings of ACL 2026、页码41622–41652；高置信。"
     },
     "foundation-agent-taxonomy-arxiv": {
-      "label": "A Survey of Agent Memory in the Second Half: Towards Self-Evolving and Long-Horizon Agents · arXiv:2602.06052",
-      "url": "https://arxiv.org/abs/2602.06052",
-      "year": "2026",
-      "evidence": "arXiv 元数据与摘要已核；摘要明确列出承载形式、感觉/工作/情景/语义/程序性认知机制、Agent/User 主体与 218 篇样本范围；页面注明 accepted at TMLR with Survey Certification，具体出版信息待补"
+      "label": "Foundation Agent Memory · v4综述",
+      "url": "https://arxiv.org/html/2602.06052v4",
+      "year": "2026-08-04 · v4；2026-11-12核查",
+      "evidence": "正文§3三轴/认知类型、§4操作与多Agent、§5策略、§7评测；文本事实高置信。作者所称正交/最小完备是分类主张，不当形式证明。"
     },
     "langgraph": {
       "label": "LangGraph · 官方项目仓库",
@@ -1554,16 +1555,18 @@
       "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
     },
     "qwen-code": {
-      "label": "功能原始来源",
+      "label": "Qwen Code · 功能原始来源",
       "url": "https://github.com/QwenLM/qwen-code",
-      "year": "2026-11-06 UTC",
-      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+      "year": "文档/资料快照",
+      "evidence": "已读原始资料相关章节：Memory页QWEN.md/Auto-memory/Where it is stored/Structured recall；Rules页paths机制。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。",
+      "checkedAt": "2026-11-12"
     },
     "cursor": {
-      "label": "功能原始来源",
+      "label": "Cursor Rules / AGENTS.md · 功能原始来源",
       "url": "https://cursor.com/docs/rules",
-      "year": "2026-11-06 UTC",
-      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+      "year": "文档/资料快照",
+      "evidence": "已读原始资料相关章节：官方Rules：How rules work、Project rules、Referencing files、Team Rules、AGENTS.md。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。",
+      "checkedAt": "2026-11-12"
     },
     "letta": {
       "label": "功能原始来源",
@@ -1614,10 +1617,11 @@
       "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
     },
     "strands": {
-      "label": "功能原始来源",
+      "label": "Strands Agents / Harness SDK · 功能原始来源",
       "url": "https://github.com/strands-agents/harness-sdk",
-      "year": "2026-11-06 UTC",
-      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+      "year": "文档/资料快照",
+      "evidence": "已读原始资料相关章节：Harness Give long-term memory全部小节；Checkpoints vs memory；Configuration。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。",
+      "checkedAt": "2026-11-12"
     },
     "anthropic-managed-memory": {
       "label": "功能原始来源",
@@ -1638,10 +1642,11 @@
       "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
     },
     "langmem": {
-      "label": "功能原始来源",
+      "label": "LangMem · 功能原始来源",
       "url": "https://github.com/langchain-ai/langmem",
-      "year": "2026-11-06 UTC",
-      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+      "year": "文档/资料快照",
+      "evidence": "已读原始资料相关章节：官方首页Creating an Agent/Key features；PR212状态API及正文。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。",
+      "checkedAt": "2026-11-12"
     },
     "memos": {
       "label": "功能原始来源",
@@ -1734,10 +1739,11 @@
       "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
     },
     "serena": {
-      "label": "功能原始来源",
+      "label": "Serena Memory · 功能原始来源",
       "url": "https://github.com/oraios/serena",
-      "year": "2026-11-06 UTC",
-      "evidence": "已读官方文档或项目 README 的相关段落；未验证运行效果"
+      "year": "文档/资料快照",
+      "evidence": "已读原始资料相关章节：Memories & Onboarding：Design Rationale、Global Memories、Ignoring Memories、Referencing Memories。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。",
+      "checkedAt": "2026-11-12"
     },
     "mcp-reference-memory": {
       "label": "功能原始来源",
@@ -1812,22 +1818,25 @@
       "evidence": "proceedings-abstract-and-metadata"
     },
     "s017": {
-      "label": "原始论文 / 出版页面",
+      "label": "LoCoMo-Conv · When Users Don’t Ask · 原始论文 / 出版页面",
       "url": "https://aclanthology.org/2026.findings-emnlp.1289/",
       "year": "Findings of EMNLP 2026; 2026",
-      "evidence": "proceedings-abstract-and-metadata"
+      "evidence": "已读原始资料相关章节：论文§3/§4、Table1/Table3及supportive_memory讨论。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。",
+      "checkedAt": "2026-11-12"
     },
     "s018": {
-      "label": "原始论文 / 出版页面",
+      "label": "RealMem · 原始论文 / 出版页面",
       "url": "https://aclanthology.org/2026.findings-acl.703/",
       "year": "Findings of ACL 2026; 2026",
-      "evidence": "proceedings-abstract-and-metadata"
+      "evidence": "已读原始资料相关章节：§3.1–3.3、§5 Table3/4、Limitations。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。",
+      "checkedAt": "2026-11-12"
     },
     "s020": {
-      "label": "原始论文 / 出版页面",
+      "label": "LightMem（Zhang等，ACL 2026） · 原始论文 / 出版页面",
       "url": "https://aclanthology.org/2026.acl-long.588/",
       "year": "ACL long paper; 2026",
-      "evidence": "proceedings-abstract-and-metadata"
+      "evidence": "已读原始资料相关章节：Lightweight LLM Agent Memory with Small Language Models §3.1–3.6、§4、§6。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。",
+      "checkedAt": "2026-11-12"
     },
     "s025": {
       "label": "原始论文 / 出版页面",
@@ -1860,10 +1869,11 @@
       "evidence": "abstract-and-metadata"
     },
     "s035": {
-      "label": "原始论文 / 出版页面",
+      "label": "Memory engram stability and flexibility · 原始论文 / 出版页面",
       "url": "https://www.nature.com/articles/s41386-024-01979-z",
       "year": "Neuropsychopharmacology review; online 2024-09-18, issue 2025-01",
-      "evidence": "crossref-metadata; publisher-body-unavailable"
+      "evidence": "已读PMC开放全文相关章节；Crossref支持出版日期。更正正文未核，不据此声称原研究不受影响。",
+      "checkedAt": "2026-11-12"
     },
     "s036": {
       "label": "原始论文 / 出版页面",
@@ -1878,22 +1888,25 @@
       "evidence": "abstract-and-metadata"
     },
     "s038": {
-      "label": "原始论文 / 出版页面",
+      "label": "Molecular Underpinnings of Memory Persistence and Forgetting · 原始论文 / 出版页面",
       "url": "https://pubmed.ncbi.nlm.nih.gov/40411122/",
       "year": "review, Journal of Neurochemistry; 2025-05",
-      "evidence": "abstract-and-metadata"
+      "evidence": "仅摘要与元数据已核；身份/摘要范围高置信，全文机制未核。",
+      "checkedAt": "2026-11-12"
     },
     "s039": {
-      "label": "原始论文 / 出版页面",
+      "label": "Human retrograde amnesia and memory consolidation · 原始论文 / 出版页面",
       "url": "https://pubmed.ncbi.nlm.nih.gov/39230835/",
       "year": "Psychonomic Bulletin & Review; online 2024-09-04, issue 2025-02",
-      "evidence": "abstract-and-metadata"
+      "evidence": "已读原始资料相关章节：开放全文Introduction、不同损伤证据与General discussion。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。",
+      "checkedAt": "2026-11-12"
     },
     "s040": {
-      "label": "原始论文 / 出版页面",
+      "label": "Coupled sleep rhythms for memory consolidation · 原始论文 / 出版页面",
       "url": "https://www.sciencedirect.com/science/article/pii/S1364661324000299",
       "year": "review, Trends in Cognitive Sciences; 2024-04",
-      "evidence": "search-lead; publisher access blocked"
+      "evidence": "已读原始资料相关章节：Trends in Cognitive Sciences 28(4),339–351；牛津全文节律耦合、TMR、Outstanding questions。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。",
+      "checkedAt": "2026-11-12"
     },
     "s042": {
       "label": "原始论文 / 出版页面",
@@ -1932,10 +1945,11 @@
       "evidence": "abstract-and-metadata"
     },
     "s048": {
-      "label": "原始论文 / 出版页面",
+      "label": "Expanded taxonomies of human memory · 原始论文 / 出版页面",
       "url": "https://pubmed.ncbi.nlm.nih.gov/42339427/",
-      "year": "Frontiers in Cognition; PubMed issue year 2024, electronic 2025-01-15",
-      "evidence": "abstract-and-metadata"
+      "year": "Frontiers in Cognition，卷年2024；电子发表2025-01-15",
+      "evidence": "已读原始资料相关章节：Expanded taxonomies of human memory全文Introduction与三次扩展；PMC front出版元数据。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。",
+      "checkedAt": "2026-11-12"
     },
     "s049": {
       "label": "原始论文 / 出版页面",
@@ -1944,28 +1958,32 @@
       "evidence": "abstract-and-metadata"
     },
     "s050": {
-      "label": "原始论文 / 出版页面",
+      "label": "Adaptive compression as a unifying framework for episodic and semantic memory · 原始论文 / 出版页面",
       "url": "https://www.nature.com/articles/s44159-025-00458-6",
       "year": "Nature Reviews Psychology; online 2025-06-05",
-      "evidence": "crossref-metadata; publisher-body-unavailable"
+      "evidence": "已读原始资料相关章节：Nature Reviews Psychology Perspective：The computational problem、Learning to remember、Remembering to learn。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。",
+      "checkedAt": "2026-11-12"
     },
     "s051": {
-      "label": "原始论文 / 出版页面",
+      "label": "A Survey on the Memory Mechanism of Large Language Model-based Agents · 原始论文 / 出版页面",
       "url": "https://doi.org/10.1145/3748302",
       "year": "ACM Transactions on Information Systems; online 2025-09-10, print 2025-11-30",
-      "evidence": "crossref-metadata"
+      "evidence": "已读原始资料相关章节：arXiv:2404.13501v1 §3–6；ACM DOI元数据。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。",
+      "checkedAt": "2026-11-12"
     },
     "memstrata": {
-      "label": "原始资料",
+      "label": "MemStrata · 原始资料",
       "url": "https://arxiv.org/abs/2610.05343",
-      "year": "2026-11-06 UTC",
-      "evidence": "论文身份与摘要已核；完整方法、实验及工件未完成审查，未复现"
+      "year": "文档/资料快照",
+      "evidence": "已读原始资料相关章节：v1 §3.1–3.3、§6、§8、§10。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。",
+      "checkedAt": "2026-11-12"
     },
     "longinus": {
-      "label": "原始资料",
+      "label": "LONGINUS · 原始资料",
       "url": "https://arxiv.org/abs/2611.03826",
-      "year": "2026-11-06 UTC",
-      "evidence": "论文身份与摘要已核；完整方法、实验及工件未完成审查，未复现"
+      "year": "文档/资料快照",
+      "evidence": "已读原始资料相关章节：v1 §2、§3.1–3.3、§4与Dataset/Model-side Limitations。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。",
+      "checkedAt": "2026-11-12"
     },
     "memgpt": {
       "label": "MemGPT · arXiv HTML v2",
@@ -1992,10 +2010,11 @@
       "evidence": "论文身份与摘要已核；完整方法、实验及工件未完成审查，未复现"
     },
     "4dmemory": {
-      "label": "原始资料",
-      "url": "https://arxiv.org/abs/2610.32332",
-      "year": "2026-11-06 UTC",
-      "evidence": "论文身份与摘要已核；完整方法、实验及工件未完成审查，未复现"
+      "label": "4DMemory · 所读v1全文",
+      "url": "https://arxiv.org/html/2610.32332v1",
+      "year": "arXiv:2610.32332v1；2026-10-23",
+      "evidence": "已读v1的§2.1、§2.4、§3与附录S3.2–S3.4、S5.1；机制和评测协议转述高置信，未运行工件或复现分数。",
+      "checkedAt": "2026-11-12"
     },
     "longsearcheval": {
       "label": "原始资料",
@@ -2010,10 +2029,11 @@
       "evidence": "论文身份与摘要已核；完整方法、实验及工件未完成审查，未复现"
     },
     "agent-workflow-memory": {
-      "label": "原始资料",
+      "label": "Agent Workflow Memory · 正式论文与作者信息",
       "url": "https://proceedings.mlr.press/v267/wang25bx.html",
-      "year": "2026-11-06 UTC",
-      "evidence": "论文身份与摘要已核；完整方法、实验及工件未完成审查，未复现"
+      "year": "ICML 2025；PMLR 267:63897–63911；Zora Zhiruo Wang、Jiayuan Mao、Daniel Fried、Graham Neubig",
+      "evidence": "已读ICML 2025正式PDF §2.1–2.3、Figure 1–3及实验设置；身份与机制高置信。README作为代码运行入口，未执行上游实验。",
+      "checkedAt": "2026-11-12"
     },
     "memtool": {
       "label": "原始资料",
@@ -2028,34 +2048,39 @@
       "evidence": "原始页面身份与摘要 / README 相关段落；未复现"
     },
     "cortex-ai": {
-      "label": "候选原始入口（未确认等同用户所指）",
-      "url": "https://github.com/Cortex-AI-IDE/Cortex-Desktop",
-      "year": "2026-11-06 UTC",
-      "evidence": "身份/机制未完成核对；不纳入已核系统计数"
+      "label": "Cortex AI（jdomian / cortex-recall） · 本条唯一采用的项目",
+      "url": "https://github.com/jdomian/cortex-ai",
+      "year": "文档/资料快照",
+      "evidence": "已读原始资料相关章节：jdomian/cortex-ai README What it does/How it works/v0.6.1 notes。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。",
+      "checkedAt": "2026-11-12"
     },
     "ai-memory": {
-      "label": "项目入口",
+      "label": "ai-memory · 项目入口",
       "url": "https://github.com/akitaonrails/ai-memory",
-      "year": "2026-11-06 UTC",
-      "evidence": "身份/机制未完成核对；不纳入已核系统计数"
+      "year": "文档/资料快照",
+      "evidence": "已读原始资料相关章节：ARCHITECTURE Purpose/Data flow/Steady-state loop；DATA_HANDLING Default与opt-in paths。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。",
+      "checkedAt": "2026-11-12"
     },
     "tencent-memory": {
-      "label": "项目入口",
+      "label": "TencentDB-Agent-Memory · 项目入口",
       "url": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
-      "year": "2026-11-06 UTC",
-      "evidence": "身份/机制未完成核对；不纳入已核系统计数"
+      "year": "文档/资料快照",
+      "evidence": "已读原始资料相关章节：v3接口文档卷一§1统一约定、§2 L0–L3数据面、session/add。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。",
+      "checkedAt": "2026-11-12"
     },
     "openhands": {
-      "label": "项目入口",
+      "label": "OpenHands Software Agent SDK · 项目入口",
       "url": "https://github.com/OpenHands/software-agent-sdk",
-      "year": "2026-11-06 UTC",
-      "evidence": "身份/机制未完成核对；不纳入已核系统计数"
+      "year": "文档/资料快照",
+      "evidence": "已读原始资料相关章节：SDK Persistent Memory：Opt in/Two Tiers/What Gets Injected；Context Condenser：How it Works/Setting Up。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。",
+      "checkedAt": "2026-11-12"
     },
     "continue": {
-      "label": "项目入口",
+      "label": "Continue · 项目入口",
       "url": "https://github.com/continuedev/continue",
-      "year": "2026-11-06 UTC",
-      "evidence": "身份/机制未完成核对；不纳入已核系统计数"
+      "year": "文档/资料快照",
+      "evidence": "已读原始资料相关章节：Continue官方Rules：How Rules Work/Where to Manage Rules。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。",
+      "checkedAt": "2026-11-12"
     },
     "autogen": {
       "label": "项目仓库",
@@ -2070,40 +2095,46 @@
       "evidence": "官方 README 与仓库元数据"
     },
     "earlier-30": {
-      "label": "待核来源线索",
+      "label": "Rethinking Memory Mechanisms survey · 旧OpenReview PDF线索（未取得全文）",
       "url": "https://openreview.net/pdf/98c3fad1f896d4e66146ed72688c024989748b71.pdf",
-      "year": "2026-11-02 UTC",
-      "evidence": "早期候选，未升级为已核资料"
+      "year": "文档/资料快照",
+      "evidence": "历史线索关系为中等置信；原PDF全文未核。已读arXiv研究另见主课，不作为独立重复证据。",
+      "checkedAt": "2026-11-12"
     },
     "earlier-33": {
-      "label": "待核来源线索",
+      "label": "MemGate · 原始来源",
       "url": "https://arxiv.org/abs/2606.06054",
-      "year": "2026-11-02 UTC",
-      "evidence": "早期候选，未升级为已核资料"
+      "year": "文档/资料快照",
+      "evidence": "已读原始资料相关章节：v1 §II-C、§III、§IV-A/B、§V。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。",
+      "checkedAt": "2026-11-12"
     },
     "earlier-41": {
-      "label": "待核来源线索",
+      "label": "ImplicitMemBench · 原始来源",
       "url": "https://aclanthology.org/2026.acl-long.1301.pdf",
-      "year": "2026-11-02 UTC",
-      "evidence": "早期候选，未升级为已核资料"
+      "year": "ACL 2026 long paper；2026.acl-long.1301",
+      "evidence": "已读原始资料相关章节：ACL全文Abstract、§3任务构造与首尝试评分协议。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。",
+      "checkedAt": "2026-11-12"
     },
     "earlier-48": {
-      "label": "待核来源线索",
+      "label": "The Truth of Fact, the Truth of Feeling · 原始来源",
       "url": "https://subterraneanpress.com/exhalation/",
-      "year": "2026-11-02 UTC",
-      "evidence": "早期候选，未升级为已核资料"
+      "year": "文档/资料快照",
+      "evidence": "已核出版社书目简介与Hugo官方记录；作品身份与出版信息高置信，教学类比中等置信；不声称完整核读小说。",
+      "checkedAt": "2026-11-12"
     },
     "earlier-59": {
-      "label": "待核来源线索",
+      "label": "Anthropic context engineering article · 原始来源",
       "url": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents",
-      "year": "2026-11-02 UTC",
-      "evidence": "早期候选，未升级为已核资料"
+      "year": "Anthropic工程文章，2025-09-29（非同行评议论文）",
+      "evidence": "已读原始资料相关章节：Effective context engineering：Just-in-time context、Compaction、Structured note-taking。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。",
+      "checkedAt": "2026-11-12"
     },
     "earlier-64": {
-      "label": "待核来源线索",
+      "label": "MINJA · 原始来源",
       "url": "https://arxiv.org/abs/2503.03704",
-      "year": "2026-11-02 UTC",
-      "evidence": "早期候选，未升级为已核资料"
+      "year": "文档/资料快照",
+      "evidence": "已读原始资料相关章节：v5 §3 Threat Model、§4方法、实验与局限。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。",
+      "checkedAt": "2026-11-12"
     },
     "the-entire-history-of-you": {
       "label": "The Entire History of You · BBFC release record",
@@ -2566,7 +2597,7 @@
       "label": "Hindsight · 数据库配置",
       "url": "https://github.com/vectorize-io/hindsight/blob/7cec128b8fdb0a696366d888e63be71fe1d52338/hindsight-docs/docs/developer/configuration.mdx",
       "year": "固定提交 7cec128b · 2026-11-11",
-      "evidence": "PostgreSQL默认、pg0和Oracle选项；访问快照对应固定提交。官方文档核查，未部署实测。",
+      "evidence": "固定配置文档：PostgreSQL默认、pg0和Oracle选项；HINDSIGHT_API_STORE_DOCUMENT_TEXT默认true，设false使documents.original_text为NULL、chunks.chunk_text为空。官方文档核查，未部署实测。",
       "checkedAt": "2026-11-12"
     },
     "hindsight-extensions-current": {
@@ -2783,7 +2814,7 @@
       "label": "Claude-Mem · 存储结构",
       "url": "https://github.com/thedotmack/claude-mem/blob/858f47ffe0b8c52a019cf76b5cdc1897365d1f1a/docs/public/architecture/database.mdx",
       "year": "858f47ffe0b8c52a019cf76b5cdc1897365d1f1a · 2026-11-11",
-      "evidence": "observations/session_summaries/user_prompts/tool_uses；原始I/O上限与索引。",
+      "evidence": "固定文档的tool_uses段与Payload cap说明：tool_input/tool_response截断于64 KB，content_hash按截断前原文计算；observations/session_summaries为FTS5，user_prompts用LIKE。文档事实，未运行。",
       "checkedAt": "2026-11-12"
     },
     "claudemem-search-current": {
@@ -3022,7 +3053,8 @@
       "label": "ADK · Memory接口",
       "url": "https://github.com/google/adk-python/blob/59b0dd63c32cc5dbf8475f1e0e555770aabaa6f0/src/google/adk/memory/base_memory_service.py",
       "year": "2026-11-12 · 核查快照",
-      "evidence": "BaseMemoryService：add_session_to_memory、search_memory；add_events_to_memory/add_memory/delete_memory可选实现，默认抛NotImplementedError。高置信。"
+      "evidence": "BaseMemoryService：add_session_to_memory、search_memory；add_events_to_memory/add_memory/delete_memory可选实现，默认抛NotImplementedError。高置信。",
+      "checkedAt": "2026-11-12"
     },
     "adk-inmemory-current": {
       "label": "ADK · 进程内Memory实现",
@@ -3076,7 +3108,8 @@
       "label": "OpenAI SDK · EncryptedSession",
       "url": "https://github.com/openai/openai-agents-python/blob/64fbde5d02b42ae5f9db668eb0184cdb3fc9d775/docs/sessions/encrypted_session.md",
       "year": "2026-11-12 · 核查快照",
-      "evidence": "可选Fernet封装、每session派生key、TTL过期跳过、持久密钥要求；不当默认加密或物理删除保证。高置信。"
+      "evidence": "官方文档Key management/TTL：可选Fernet封装、每session派生key、TTL过期跳过；更换encryption_key不重加密旧记录，旧数据仍需原key。不是默认加密或物理删除保证；固定文档高置信，未运行。",
+      "checkedAt": "2026-11-12"
     },
     "crew-doc-current": {
       "label": "CrewAI · 统一Memory指南",
@@ -3398,7 +3431,7 @@
       "url": "https://europepmc.org/articles/PMC11525749",
       "year": "2024 在线；2025 卷期",
       "checkedAt": "2026-11-12",
-      "evidence": "DOI 10.1038/s41386-024-01979-z；Europe PMC开放全文XML已读；区分综述中动物操控证据、人类证据和未解决问题。 DOI、作者与PMC身份均见XML front；关联2025更正针对期刊封面月份，未宣告机制内容更正。"
+      "evidence": "DOI 10.1038/s41386-024-01979-z；Europe PMC开放全文XML已读，作者与身份见XML front；区分综述中的动物操控证据、人类证据和未解决问题。关联更正记录已定位，但更正正文范围未核，不判断其是否影响机制结论。"
     },
     "human-retrograde-full": {
       "label": "Human retrograde amnesia and memory consolidation · 开放全文",
@@ -3408,11 +3441,11 @@
       "evidence": "DOI 10.3758/s13423-024-02567-4；公开全文对已发表患者资料再分析，提示不同损伤类型下巩固解释不一致。 作者Ketonis、McClelland、Parra、Radvansky及期刊/DOI可由XML front与Europe PMC元数据交叉核对。"
     },
     "human-engram-correction": {
-      "label": "Neuropsychopharmacology第50卷第1期日期更正",
+      "label": "Memory engram stability and flexibility · 关联更正记录",
       "url": "https://www.nature.com/articles/s41386-025-02087-2",
       "year": "2025-03-19",
       "checkedAt": "2026-11-12",
-      "evidence": "更正在线平台的封面月份为2025年1月；不是机制结论更正。"
+      "evidence": "已核对2025-03-19更正记录及卷期元数据，未取得可核读的更正正文；不推断其只涉及封面日期，也不判断是否影响机制结论。"
     },
     "extension-anatomy-meta": {
       "label": "Anatomy · 版本与作者",
@@ -3448,6 +3481,41 @@
       "year": "2026-03-08",
       "checkedAt": "2026-11-12",
       "evidence": "作者Pengfei Du、v1身份与提交日期；高置信。"
+    },
+    "context-engineering-full": {
+      "label": "Anthropic · Effective context engineering",
+      "url": "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents",
+      "year": "2025",
+      "evidence": "Just-in-time context、Compaction、Structured note-taking；官方工程建议，不是统一效果证明。",
+      "checkedAt": "2026-11-12"
+    },
+    "minja-full": {
+      "label": "MINJA · v5威胁模型",
+      "url": "https://arxiv.org/html/2503.03704v5",
+      "year": "v5 · 2026-02-12",
+      "evidence": "§3 Threat Model与§4：攻击者通过查询和输出观察诱导写入，不能直接修改记忆库或受害者查询；主威胁模型假设所有用户共享记忆库。只转述该管线的查询式记忆投毒风险，不推广到所有隔离系统。",
+      "checkedAt": "2026-11-12"
+    },
+    "memgate-full": {
+      "label": "MemGate · 查询条件化的记忆门控",
+      "url": "https://arxiv.org/html/2606.06054v1",
+      "year": "2026",
+      "evidence": "§IV-A/B连续门控与偏好目标；不是一般授权系统。",
+      "checkedAt": "2026-11-12"
+    },
+    "systems-cost-full": {
+      "label": "Agent Memory: Characterization and System Implications",
+      "url": "https://arxiv.org/html/2606.06448v2",
+      "year": "2026",
+      "evidence": "成本与生命周期分析；具体版本与实验范围见Research主课对应详情。",
+      "checkedAt": "2026-11-12"
+    },
+    "context-strands": {
+      "label": "Strands · Checkpoints vs memory",
+      "url": "https://strandsagents.com/docs/user-guide/harness/configure/checkpoints-and-memory/",
+      "year": "2026-11-12文档快照",
+      "evidence": "恢复运行与跨会话事实的范围不同；默认行为限于Harness文档。",
+      "checkedAt": "2026-11-12"
     }
   },
   "concepts": [
@@ -3456,42 +3524,91 @@
       "title": "Context / working set",
       "what": "当前一次调用实际收到的材料。",
       "confusion": "它可能来自 Memory，但不能推出跨调用持久化。",
-      "not": "不要把当前上下文当成长期 Memory。"
+      "not": "不要把当前上下文当成长期 Memory。",
+      "detail": "输入窗口是这次推理能直接访问的材料；其中可以混合新问题、历史消息、检索结果和工具输出。是否持久保留由窗口外的机制决定。",
+      "example": "教学例子：新调用只给“继续”，即使磁盘有项目笔记，模型也未必知道内容。把笔记检索并放入本次输入之后，才获得直接可见的材料。",
+      "check": "画出一次调用的实际输入，标出每段材料来自当前消息、历史还是外部读取。重启后再问谁负责重新组装。",
+      "sources": [
+        "context-engineering-full",
+        "pi-how-current"
+      ],
+      "confidence": "机制区分高；教学应用与类比中等。"
     },
     {
       "id": "session",
       "title": "Session history / transcript",
       "what": "可保存的原始对话或执行记录。",
       "confusion": "有历史不等于被选择、检索或有效使用。",
-      "not": "不要把完整日志当成已经形成的语义记忆。"
+      "not": "不要把完整日志当成已经形成的语义记忆。",
+      "detail": "历史记录保存发生过什么；摘要、事实抽取和偏好更新则决定哪些部分以何种形式继续可用。日志可以同时成为恢复依据与后续提取来源。",
+      "example": "教学例子：日志里既有“周五交付”也有“改为周一”。保存两句没有丢数据，却仍需要选择最新有效约束；只截取最近几句也可能丢掉改期的原因。",
+      "check": "分别检查原日志是否保存、模型实际收到哪些片段、派生摘要能否追溯到原消息。",
+      "sources": [
+        "pi-format-current",
+        "pi-compaction-current"
+      ],
+      "confidence": "机制区分高；教学应用与类比中等。"
     },
     {
       "id": "rag",
       "title": "RAG / external knowledge",
       "what": "从外部资料检索并注入当前调用的机制。",
       "confusion": "可检索资料不一定由 Agent 交互形成，也不自动有更新/删除语义。",
-      "not": "不要由“用了 RAG”推出它拥有长期个人 Memory。"
+      "not": "不要由“用了 RAG”推出它拥有长期个人 Memory。",
+      "detail": "RAG把检索结果带入生成过程。资料可以是外部手册，也可以是过去交互积累的记忆；检索机制与被检索内容的来源不是同一个问题。",
+      "example": "教学例子：同一个向量库，一部分放产品手册，一部分放用户后来修改的偏好。二者都可检索，但后者还需要归属、更正和撤回规则。",
+      "check": "先问资料从哪里来，再沿Q3/Q4/Q6检查范围、更新和授权；不能仅凭相似度搜索接口认定已经实现这些规则。",
+      "sources": [
+        "langgraph:1",
+        "context-engineering-full"
+      ],
+      "confidence": "机制区分高；教学应用与类比中等。"
     },
     {
       "id": "checkpoint",
       "title": "Checkpoint / state",
       "what": "恢复一次运行所需的状态、游标或检查点。",
       "confusion": "可恢复状态不一定有语义抽取、检索或遗忘机制。",
-      "not": "不要把 checkpoint 自动当成事实库。"
+      "not": "不要把 checkpoint 自动当成事实库。",
+      "detail": "检查点保存一次运行的状态，以便中断后恢复；跨会话记忆提供未来任务可复用的信息。两者可能都落盘，但恢复游标与查用户偏好是不同操作。",
+      "example": "教学例子：审批中的流程恢复时需要知道等待哪一个步骤；下一周新任务只需要上次确认的偏好，无需继续旧流程。",
+      "check": "列出保存的字段和恢复入口，做一次中断恢复；再用新线程查同一信息，确认范围是否不同。",
+      "sources": [
+        "langgraph:1",
+        "context-strands"
+      ],
+      "confidence": "机制区分高；教学应用与类比中等。"
     },
     {
       "id": "latent",
       "title": "Parameter / latent / KV",
       "what": "模型参数、隐状态或推理缓存中的保留信息。",
       "confusion": "它们的写入、控制、审计和删除方式与外部 Memory 不同。",
-      "not": "不要用外部文件的治理结论替代模型内部记忆的讨论。"
+      "not": "不要用外部文件的治理结论替代模型内部记忆的讨论。",
+      "detail": "参数记忆涉及模型权重；潜在状态和KV缓存可能保留本次推理中的计算信息。它们的寿命、编辑方式与删除保证都要按具体实现说明，不能只归成一个“模型内部”。",
+      "example": "教学例子：文件笔记更正后可立刻重新加载；已经写进模型参数的关联通常不能靠删除该文件保证消失。KV缓存的复用则首先关系到计算和上下文，而非可审计事实条目。",
+      "check": "记录信息在哪次训练或推理产生、何时失效、能否局部编辑与验证。把“未提供可审计删除”写成未知，不补造隐私保证。",
+      "sources": [
+        "survey",
+        "survey-form",
+        "survey-dynamics"
+      ],
+      "confidence": "机制区分高；教学应用与类比中等。"
     },
     {
       "id": "storage",
       "title": "Generic storage / log / cache",
       "what": "保存数据的通用设施。",
       "confusion": "存储机制本身不保证有内容角色、更新、授权或检索语义。",
-      "not": "不要把“有数据库”当成完整 Memory 设计。"
+      "not": "不要把“有数据库”当成完整 Memory 设计。",
+      "detail": "数据库、文件和缓存解决数据承载问题。一个Memory系统还要规定哪些内容值得保存、怎样更新、哪些调用可以取回，以及失败如何暴露。",
+      "example": "教学例子：SQLite表里存着“偏好pnpm”，只有当前用户过滤、有效版本选择和上下文组装都执行，下一次调用才可能看到它。本地实践会逐步显示这些环节。",
+      "check": "从一条输入沿写入、落盘、读取、进入调用走一遍；区分文件存在、检索返回和行为改变三种观察。",
+      "sources": [
+        "langgraph:1",
+        "context-strands"
+      ],
+      "confidence": "机制区分高；教学应用与类比中等。"
     }
   ],
   "entries": {
@@ -5285,7 +5402,7 @@
       {
         "id": "mem-gallery",
         "title": "Mem-Gallery · 多模态长期对话",
-        "date": "2026-07 · ACL主会；首发2026-01-07",
+        "date": "2026-01-07 · 首发；2026-07 · ACL主会",
         "summary": "把图像与文字一起放进跨会话记忆，检查事实检索、视觉寻找、学习新例子、推理、冲突处理和缺证据时拒答。重点是视觉线索能否在很久以后与文字经历正确关联。",
         "why": "只测文本会漏掉图像保存与跨模态关联问题。它同时提供答案、检索和效率视角，适合观察“没保存图像”“没取回图像”“取回却没理解”三种失败。",
         "boundary": "以ACL正式版为机制与实验设置依据，正式版比较12种方法；早期arXiv为13种。作者公开代码快照早于正式论文，其中裁判分值解析与论文五档规则不同，本页明确并列，不宣称原样运行即可复现正式结果。",
@@ -5359,7 +5476,7 @@
           "abilities": "三功能、九子任务：提取与适应（FR/VS/TTL）、推理（TR/VR/MR）、知识管理（KR/CD/AR）。它们是可测能力，不是本教程六问的同义改名。",
           "taskProtocol": "正式版240个session、3962轮、1003张会话图片、1711组带clue的QA；QA部分另含487张图。模型辅助构造并经人工审查。按轮累积、再检索/回答，固定骨干和温度0，涉及top-K时默认10；文字基线有caption。 公开run_bench.py默认写入result_debug/，evaluation.py从result/读取；使用时需对齐路径，本页未运行。",
           "metrics": "答案：token F1、BLEU-1、规范化EM、五档LLM-Judge；检索：Recall/Precision/Hit；效率：记忆组织与检索时间及token等设置。五档来自正式论文，固定公开代码却将裁判分值映射成三档，不能视为同一scorer；这里未复现数字。",
-          "designMapping": "Q1说明模态与任务；Q2区分原图/caption/内部记忆；Q3说明跨会话范围；Q4讨论知识纠正的行为覆盖；Q5连接证据检索与答案；Q6解释配置、裁判和版本。六问组织分析，不能据六栏都有文字就说六个方向都得到独立指标验证。",
+          "designMapping": "Q1说明模态与任务；Q2区分原图/caption/内部记忆；Q3说明跨会话范围；Q4讨论知识纠正的行为覆盖；Q5连接证据检索与答案；Q6解释配置、裁判和版本。六问组织分析，不能据六栏都有文字就说六个方向都得到独立指标验证。 覆盖图标记主要任务关联：Q3在此只是单用户跨会话范围说明，Q6是配置与判分边界说明；两者未标为共享隔离或治理能力评测。",
           "limitations": "同一QA可牵涉多个环节，缺少可分离因果干预时不能精确归因。无多租户隔离、物理删除和生产可靠性认证。数据经过合成，基线有适配，公开代码早于正式版；论文效果仅在其条件下成立。"
         }
       },
@@ -5756,7 +5873,7 @@
       {
         "id": "longmemeval",
         "title": "LongMemEval",
-        "date": "2025-03-04",
+        "date": "2024-10-14 · 首发；2025-03-04 · v2；ICLR 2025",
         "summary": "LongMemEval用500个问题检查长期聊天中的提取、跨会话推理、时间推理、知识更新与拒答，并用检索指标帮助区分“没找到”和“没用好”。",
         "why": "任务定义清晰，是分析“结果能力”和“Memory 设计”差异的核心样板。",
         "boundary": "结果依赖模型、历史长度、任务子集、预算和评审协议；不做跨 benchmark 排名。",
@@ -6388,9 +6505,9 @@
         "realityNote": "每日重置是电影设定；JSON交接单等都是本教程另外构造的例子。",
         "profile": {
           "kind": "电影；依据官方基本设定",
-          "creator": "主演：Adam Sandler、Drew Barrymore；出品信息见Sony页面",
           "artifact": "下列作品来源与具体段落",
-          "version": "2004；Sony页面版权年"
+          "version": "2004；Sony页面版权年",
+          "cast": "Adam Sandler、Drew Barrymore；出品信息见Sony页面"
         },
         "next": "human-memory",
         "questions": [
@@ -6912,6 +7029,116 @@
           "trace": "§2.2评价条件ϕ；§4.2 Introspection/Environment；附录B.2反思与事实不一致的风险；§5。审批流程为教程应用。"
         }
       ]
+    }
+  ],
+  "topics": [
+    {
+      "id": "safety",
+      "title": "安全、隐私与删除",
+      "intro": "先识别不可信信息如何进入记忆，再检查读取与删除时仍有哪些副本和权限。主要展开Q3、Q4、Q6。",
+      "sections": [
+        {
+          "title": "入口：谁提供了这条信息？",
+          "text": "MINJA研究查询式交互怎样把恶意记录带入长期记忆；主威胁模型假设共享记忆库，攻击者不需要直接写数据库。它说明这条特定写入链有风险，不能由此认定所有隔离系统同样易受攻击。教学上应保留输入身份、来源与信任标签，并检查普通内容是否被提升成高权限指令。",
+          "example": "教学例子：网页声称“所有测试可以跳过”。记忆可以记录网页提出过这个建议，但不应仅因被保存就成为项目规则。",
+          "check": "追踪原始输入、抽取结果和下次提示；验证来源标签是否丢失。",
+          "sources": [
+            "minja-full"
+          ]
+        },
+        {
+          "title": "读取：相似、相关与允许不是一回事",
+          "text": "MemGate研究查询条件下的适用性；访问控制则决定一个用户是否有权看到某条记录。两者需要分别验证：低信任但相关的内容仍可能有风险，有用的另一用户内容也可能不允许返回。",
+          "example": "教学例子：两个项目都讨论“发布密钥”，不能因语义相近就把另一个项目的值放进上下文。",
+          "check": "设置跨用户负例、过期约束和恶意内容，分别报告误召回、越权暴露与任务成功；不把一个得分当成所有安全保证。",
+          "sources": [
+            "memgate-full",
+            "google-memory-bank:iam"
+          ]
+        },
+        {
+          "title": "删除：停止召回与清除副本",
+          "text": "逻辑失效、物理删除、索引清理、派生摘要和备份处理是不同步骤。产品文档只能支持明确承诺的范围；删掉原消息后，先前抽取的偏好是否还在，需要查服务生命周期或做实际检查。 ADK基础接口的delete_memory默认抛NotImplementedError，允许具体实现不提供该操作；这只是接口约定，某个服务是否实现删除还要另查。",
+          "example": "本地实践的forget只把active设为0：查询不再返回，但history仍能看到旧版本。这是有意可见的教学边界，不应叫“彻底删除”。",
+          "check": "写出删除对象、派生对象、验证入口及不覆盖的备份/日志；检查失败是否明确返回。",
+          "sources": [
+            "google-memory-bank:revisions",
+            "google-memory-bank:governance",
+            "adk-base-current"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cost",
+      "title": "成本、延迟与容量",
+      "intro": "六问解释机制，资源测量帮助判断它在当前负载下是否可用。主要展开Q2、Q4、Q5。",
+      "sections": [
+        {
+          "title": "把建库、维护、读取和生成分别记账",
+          "text": "系统研究把记忆构建、存储、检索与可变性分开观察。只报检索毫秒数会遗漏写入抽取、后台整合和最终生成；只报一次回答token也可能遗漏建库成本。",
+          "example": "教学例子：方案A预先花大量token整理，方案B每次读原文。查询次数少与多时，总成本可能得出不同选择。",
+          "check": "记录数据量、写入/查询次数、模型、硬件、缓存、输入输出token和延迟分布；分开离线与在线费用。",
+          "sources": [
+            "systems-cost-full"
+          ]
+        },
+        {
+          "title": "压缩前先决定什么错误不可接受",
+          "text": "摘要减少长度，但可能丢来源、例外、时间关系和失败原因。把长上下文、无记忆、原文检索和摘要记忆作为受控基线，才能解释变化来自哪里。",
+          "example": "教学例子：“通常周五交付，法定假日顺延”若压成“周五交付”，短了却丢了关键条件。",
+          "check": "在固定预算下同时记录答案正确性、约束保留和证据可追溯；摘要越短不是越好。",
+          "sources": [
+            "context-engineering-full",
+            "systems-cost-full"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "evaluation",
+      "title": "从六问到可执行评测",
+      "intro": "六问是描述系统的视角。Benchmark通常测任务结果；要评价设计，必须把问题转成可观察任务、对照和指标。",
+      "sections": [
+        {
+          "title": "为每一问写一项可观测检查",
+          "text": "Q1检查需要的事实/经历/步骤是否保留；Q2检查结构化信息与来源能否正确读回；Q3检查跨会话与跨主体范围；Q4检查更正、过期与遗忘；Q5检查召回后是否改善任务；Q6检查授权、撤回和不可信输入。这里是评测设计建议，不是已发布的新Benchmark。",
+          "example": "教学例子：把同一截止日先改期再撤回，观察存储状态、检索输出和答案；同时用另一用户查询同一关键词。每一步捕捉不同故障。",
+          "check": "每轴指定任务、输入条件、期望行为、负例和指标，记录未测项目。不要只把数据集分成六栏就称完备。",
+          "sources": [
+            "longmemeval",
+            "memoryagentbench",
+            "collabmem:pdf"
+          ]
+        },
+        {
+          "title": "能力分数不证明内部实现",
+          "text": "LongMemEval等用问答探测能力；Mem2ActBench把记忆接到行动，COLLABMEM另看协作权限与冲突。相同答案可能由不同架构产生，所以不能单凭正确率反推出系统的存储方式或删除保证。",
+          "example": "教学例子：全文塞入上下文和检索三条笔记都答对同一个问题。要比较资源与长期更新，还需另做受控实验。",
+          "check": "报告分轴结果、底座、数据版本和预算；对随机方法重复试验。新基准价值来自有效任务与诊断能力，而非覆盖栏目的数量。",
+          "sources": [
+            "longmemeval",
+            "mem2actbench-paper",
+            "collabmem:pdf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practice",
+      "title": "工具与实践：一条记忆怎样进入下一次调用",
+      "intro": "运行仓库的Python标准库示例，直接观察跨连接保存、更新、范围过滤、过期和停止召回。无需API Key、模型下载或第三方依赖。",
+      "sections": [
+        {
+          "title": "先运行，再解释每一行",
+          "text": "在仓库根目录执行python3 examples/memory_lab.py。示例写入虚构项目偏好，关闭连接后重新打开数据库，再输出可供下一次调用使用的JSON材料；示例本身不调用LLM。",
+          "example": "首次值npm被更正为pnpm，读取只返回有效新值及correction-2来源；别的范围为空；forget之后检索为空但历史仍有两个版本。",
+          "check": "按实践文档修改过期时间和字符预算，预测结果后运行，再对照六问解释。",
+          "sources": []
+        }
+      ],
+      "guideUrl": "https://github.com/dongshuyan/awesome-harness-memory/blob/master/docs/practice.zh-CN.md",
+      "codeUrl": "https://github.com/dongshuyan/awesome-harness-memory/blob/master/examples/memory_lab.py"
     }
   ]
 }

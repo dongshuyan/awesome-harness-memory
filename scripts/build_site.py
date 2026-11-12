@@ -114,6 +114,19 @@ def validate_tutorial(tutorial):
         parsed = urlsplit(source.get('url', ''))
         if parsed.scheme != 'https' or not parsed.hostname:
             raise ValueError(f'Invalid tutorial source URL: {source_id}')
+    for concept in tutorial.get('concepts', []):
+        if any(not concept.get(field) for field in ('id', 'title', 'what', 'detail', 'example', 'check', 'sources')):
+            raise ValueError(f'Incomplete tutorial concept: {concept.get("id")}')
+        if not set(concept['sources']) <= set(sources):
+            raise ValueError(f'Unknown tutorial concept source: {concept["id"]}')
+    for topic in tutorial.get('topics', []):
+        if any(not topic.get(field) for field in ('id', 'title', 'intro', 'sections')):
+            raise ValueError(f'Incomplete tutorial topic: {topic.get("id")}')
+        for section in topic['sections']:
+            if any(not section.get(field) for field in ('title', 'text', 'example', 'check')):
+                raise ValueError(f'Incomplete tutorial topic section: {topic["id"]}')
+            if 'sources' not in section or not set(section['sources']) <= set(sources):
+                raise ValueError(f'Unknown tutorial topic source: {topic["id"]}')
     entries = tutorial.get('entries', {})
     all_ids = set()
     for category in ('research', 'engineering', 'benchmarks', 'culture', 'humanMemory', 'researchCandidates'):

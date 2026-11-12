@@ -1,3 +1,5 @@
+import copy
+import importlib.util
 import json
 import subprocess
 import unittest
@@ -23,6 +25,24 @@ class TutorialContract(unittest.TestCase):
             for field in ('title', 'what', 'why', 'how', 'example', 'evidence'):
                 self.assertTrue(question[field], (question['id'], field))
 
+    def test_supporting_lessons_reject_broken_sources_and_incomplete_steps(self):
+        spec = importlib.util.spec_from_file_location('build_site', ROOT / 'scripts/build_site.py')
+        builder = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(builder)
+        builder.validate_tutorial(self.data)
+        broken = copy.deepcopy(self.data)
+        broken['concepts'][0]['sources'] = ['nonexistent-source']
+        with self.assertRaisesRegex(ValueError, 'concept'):
+            builder.validate_tutorial(broken)
+        broken = copy.deepcopy(self.data)
+        broken['topics'][0]['sections'][0]['sources'] = ['nonexistent-source']
+        with self.assertRaisesRegex(ValueError, 'topic'):
+            builder.validate_tutorial(broken)
+        broken = copy.deepcopy(self.data)
+        del broken['topics'][0]['sections'][0]['check']
+        with self.assertRaisesRegex(ValueError, 'topic'):
+            builder.validate_tutorial(broken)
+
     def test_curated_lists_have_expected_scale(self):
         self.assertGreaterEqual(len(self.data['entries']['research']), 10)
         self.assertLessEqual(sum(e.get('researchKind') == 'survey' for e in self.data['entries']['research']), 2)
@@ -44,6 +64,22 @@ class TutorialContract(unittest.TestCase):
             self.assertTrue(entry.get('boundary'))
             self.assertTrue(entry.get('checkedAt'))
             self.assertTrue(set(entry.get('sources', [])) <= set(self.data['sources']))
+
+    def test_publication_order_uses_full_known_date_and_places_unknown_last(self):
+        script = r'''
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const ctx=vm.createContext({tutorial:{entries:{research:[
+{id:'older',date:'v1 2026-02-22; v2 2026-05-20',title:'A'},
+{id:'newer',date:'2026-03-08',title:'Z'},
+{id:'year-only',date:'2026',title:'B'},
+{id:'unknown',date:'not_specified',title:'C'}]}}});
+vm.runInContext(fs.readFileSync('site/tutorial.js','utf8'),ctx);
+assert.equal(ctx.tutorialSortedEntries('research').map(x=>x.id).join(','),'newer,older,year-only,unknown');
+ctx.tutorial.researchCandidates=ctx.tutorial.entries.research;
+ctx.tutorialEntryCard=(_,entry)=>'['+entry.id+']';
+assert(ctx.tutorialResearchCandidates().includes('[newer][older][year-only][unknown]'));
+'''
+        subprocess.run(['node', '-e', script], cwd=ROOT, check=True, capture_output=True, text=True)
 
     def test_extension_details_and_comparison_use_the_same_entries(self):
         # Exercise real renderer functions so extension links cannot lead to empty pages.

@@ -116,14 +116,22 @@ Leonard 难以保留近期经历，依赖照片、书面笔记和纹身来保存
 
 ### The Truth of Fact, the Truth of Feeling
 
-**待核线索 · 文学影视**
+**研究阅读入口 · 文学影视**
 
-早期候选已保留；原始来源、方法或发表状态尚未完成核对。
+Ted Chiang的《The Truth of Fact, the Truth of Feeling》以记忆与记录技术、读写和真相为问题。2013年秋首刊，后收入Exhalation；所链Subterranean书目为2020收录版，不是首刊年。
 
-**值得看**：从原始来源继续阅读，并结合对应研究问题比较。
+**值得看**：它让读者思考可查记录怎样改变自我叙事与对他人的判断，适合作为来源、证据和记忆关系的思想实验。
 
-**边界**：仍需原始证据审查，不因收在候选中而认可其结论。
+**边界**：本条依据出版简介和Hugo官方记录，不声称完整剧情核查；不将虚构技术当作工程效果证据。
 
-**原始资料**：[待核来源线索](https://subterraneanpress.com/exhalation/)
+**例子与问题**：教学问题：当保存的记录与某人的回忆相冲突，系统应展示证据和不确定性，而不是自动认定一个摘要等同全部真相。
 
-核对：2026-11-02 UTC。早期候选，未升级为已核资料。
+**阅读位置**：Subterranean/PRH书目简介；2014 Hugo官方提名列表
+
+**置信度**：原文支持的描述高；教学例子与迁移推论中等，效果未复现。
+
+**原始资料**：[原始来源](https://subterraneanpress.com/exhalation/) · [Hugo2014官方记录](https://www.thehugoawards.org/hugo-history/2014-hugo-awards/)
+
+核对：2026-11-12。已核出版社书目简介与Hugo官方记录；作品身份与出版信息高置信，教学类比中等置信；不声称完整核读小说。
+
+所读为Subterranean Press的2020年Exhalation收录版书目简介与2014 Hugo官方记录；首刊为Subterranean Magazine Fall 2013。未完整核读小说。

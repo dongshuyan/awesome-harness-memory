@@ -1,64 +1,73 @@
 # Repository structure
 
-[Home](../README.md) · [中文](../README.zh-CN.md) · [Interactive guide](https://dongshuyan.github.io/awesome-harness-memory/)
+[Tutorial](https://dongshuyan.com/awesome-harness-memory/) · [English](../README.md) · [中文](../README.zh-CN.md) · [Coverage](coverage.md)
 
-The main reading path is the Agent Memory tutorial: six questions → concept bridge → Research → engineering → benchmarks → literature and screen. The earlier landscape, catalogue, comparisons, and layered illustrations remain reference editions.
+The default edition is a tutorial: six questions → related concepts → Research → engineering → benchmarks → literature and film. Human-memory background, topics, local practice, and comparison support that path. Older maps and reports remain reference editions.
 
 ```text
 .
-├── README.md                 # English entry and scope
-├── README.zh-CN.md           # Chinese entry and scope
-├── index.html               # Current standalone Chinese navigator
-├── site/                    # Authoritative templates, UI, tutorial data and legacy topic mappings
-│   ├── tutorial.json         # Six-question course, entries, sources, status and visualization data
-│   └── tutorial.js           # Tutorial routes, detail pages, comparison and matrices
-├── scripts/build_site.py    # Generate HTML, guide and graph preview without dependencies
-├── catalogue.json           # Current public records, sources, and status
-├── .nojekyll                # Serve static files without Jekyll processing
-├── report/
-│   ├── index.html           # Published research × engineering report (preserved reference report with documented identity corrections)
-│   └── MANIFEST.json        # Version, source hash, counts, and evidence boundary for report/
-├── assets/                  # README images and real Harness graph data/UI
-├── scripts/build_harness_map.py # Embed graph data/UI and generate static preview
-├── tests/test_harness_map.py # Graph coverage, provenance and generation checks
+├── README.md / README.zh-CN.md    # English and Chinese course entry points
+├── index.html                   # Generated tutorial and reference navigator
+├── site/
+│   ├── tutorial.json            # Course, entries, sources, concepts, topics
+│   ├── tutorial.js              # Details, comparison and visualizations
+│   ├── app.js                   # Routing, state and catalogue rendering
+│   ├── knowledge.json / .js     # Earlier classification and mechanism views
+│   ├── navigation.json          # Earlier navigation data
+│   └── shell.html / frame.html  # Outer page and embedded application shell
+├── catalogue.json               # 136 reference records with evidence limits
+├── resources/*.zh-CN.md          # Corresponding Chinese reference descriptions
+├── resources/*.md                # Earlier English reference pages
+├── examples/memory_lab.py        # Standard-library SQLite teaching example
 ├── docs/
-│   ├── landscape.zh-CN.md    # Legacy taxonomy and method navigator
-│   ├── needs.zh-CN.md        # Routes from concrete needs
-│   ├── evaluation-guide.md  # English evaluation comparison guide
-│   └── research-questions.md
-├── resources/
-│   ├── systems.zh-CN.md      # Current systems and products
-│   ├── papers.zh-CN.md       # Current papers and methods
-│   ├── benchmarks.zh-CN.md   # Current evaluations
-│   ├── surveys.zh-CN.md      # Survey reading routes
-│   ├── human.zh-CN.md        # Human memory research
-│   ├── fiction.zh-CN.md      # Literature and screen analogies
-│   └── *.md                 # Earlier English reference pages
-└── explore/                 # Earlier bilingual concept map, 32 resources
+│   ├── coverage.md              # Completion and evidence limits
+│   ├── practice.zh-CN.md         # Walkthrough and expected output
+│   ├── landscape.zh-CN.md        # Generated earlier classification guide
+│   ├── needs.zh-CN.md            # Earlier routes from practical needs
+│   └── evaluation-guide.md      # Earlier evaluation comparison guide
+├── scripts/build_site.py        # Generate HTML, guide and graph preview
+├── scripts/build_harness_map.py # Graph-specific generator
+├── tests/                       # Data/build contracts, renderer/example behavior
+├── assets/                      # Reference diagrams and Harness graph data/UI
+├── report/                      # Preserved research × engineering report
+└── explore/                     # Earlier bilingual map with 32 reference records
 ```
 
-## Reading editions
+## Data ownership and reading editions
 
-The tutorial is the default learning edition. Its 2026-11-12 workset contains 10 selected Research entries, 15 engineering entries, 10 benchmarks, 6 literature/screen entries, and 2 human-memory background entries; four additional research leads remain visible as screened candidates. The sourced six-question analyses now cover 10 Research entries, 15 engineering entries, and 10 benchmarks. All selected technical entries have sourced six-question analyses; candidate leads and cultural/background entries retain their own completion status. The older navigator, expanded Chinese Markdown pages, and root `catalogue.json` share a separate 136-resource edition (identity-corrected on 2026-11-12), including 48 systems with documented basic functions. A resource status does not certify performance or safety.
+`site/tutorial.json` owns the current course. The 2026-11-12 edition has 10 Research core entries, four separate further readings, 15 engineering entries, 10 benchmarks, eight cultural works, and two human-memory lessons: **49 entries with six answers each**. It also contains six concept bridges and four topics, including local practice. Core Research contains at most two surveys. `researchCandidates` is the retained data key for the four completed further readings; their visible label describes their reviewed status.
 
-`explore/` preserves the earlier concept-and-relationship map and its 32-resource English/Chinese catalogue. Its `build_catalog.py` reads the earlier English resource pages and writes only `explore/catalog.js`; it does not update the root catalogue or latest navigator. Follow [its maintenance notes](../explore/README.md#maintain-the-content) when changing that edition.
+`catalogue.json` owns the 136-record reference collection. Its statuses and reading depth are separate from the course's `complete` state: 65 documented records, 66 reading entries, and five historical records; 58 systems have documented basic descriptions. Counts do not certify safety, effectiveness, full-text auditing, or replication. See [coverage](coverage.md) and individual records.
 
-The legacy learning guide has nine editorial questions and separately sourced memory taxonomies. The tutorial's six questions are a newer course structure and do not claim that the older nine labels are invalid. The seven-layer diagram remains a selected evidence projection, rather than a complete measurement of the tutorial questions. It uses 21 real Harness / Agent profiles (including three labeled historical projects). `assets/harness-map.json` owns those property claims, configuration conditions, and source references. Profiles link to root catalogue IDs; a documented component may have a more specific display name. Missing claims remain unknown. The broader resource directory retains memory services, plugins, and general frameworks.
+`resources/*.zh-CN.md` contains the corresponding catalogue descriptions. Preserve ID anchors and synchronize affected blocks when changing a record. These pages are not generated by `build_site.py`.
 
-After editing `site/`, the root catalogue, graph data or graph UI, run `python3 scripts/build_site.py`. It embeds the full catalogue, legacy topic data, tutorial data and graph into `index.html`, and generates `docs/landscape.zh-CN.md` and `assets/memory-layers.svg`. These generated files should not be edited directly. `build_harness_map.py` remains the graph-specific builder used by the site build. Run with `--check` to detect stale generated files, and run `python3 -m unittest discover -s tests -v` for the data contract. The static preview deliberately shows six objects and three perspectives; the interactive graph contains all profiles. Tutorial data is checked separately for six-question order, one complete technical sample per category, source provenance, pending states, real culture entries, and visualization descriptions.
+`site/knowledge.json` and `site/navigation.json` retain the earlier nine-question editorial navigator and separately sourced classification trees. `assets/harness-map.json` owns the seven-property graph and its claims, sources, and configuration conditions: 21 Harness/Agent profiles, including three labeled historical projects. This graph is an evidence projection, not a complete measurement of the six questions.
 
-## Publishing and maintenance
+`report/` preserves the earlier research × engineering comparison report, with its own manifest and documented identity corrections. Its counts are not current tutorial counts. `explore/` preserves a separate 32-record bilingual map. Its `build_catalog.py` reads the earlier English resource pages and only writes `explore/catalog.js`; see [its maintenance notes](../explore/README.md#maintain-the-content).
 
-GitHub Pages serves the `master` branch at `/` with `.nojekyll`; `index.html` is the entry point. No package install is required. Run the standard-library Python site builder before publishing changes. The standalone page contains its catalogue; it uses pinned CDN scripts for interface utilities. Its original-source links open through the outer page while the inner frame remains sandboxed.
+## Build and verify
 
-Before publishing a content update, keep `catalogue.json`, the rendered catalogue in `index.html`, and the corresponding Markdown entries consistent. Check local links, evidence labels, counts, JavaScript syntax, source-link navigation, and the affected interactions. The public site does not perform new research or run benchmarks.
+Edit authoritative data and UI sources, then run:
 
-Run a local server from the repository root:
+```sh
+python3 scripts/build_site.py
+python3 scripts/build_site.py --check
+python3 -m unittest discover -s tests -v
+node --check site/app.js
+node --check site/tutorial.js
+python3 examples/memory_lab.py
+```
+
+The builder and example use the Python standard library; renderer tests also require Node.js, with no npm dependencies. The build embeds the catalogue, course, earlier topic data, and graph into `index.html`. It also generates `docs/landscape.zh-CN.md` and `assets/memory-layers.svg`. Do not edit those outputs directly.
+
+Tests check provenance, complete six-question answers, benchmark evaluation fields, unique IDs, preserved references, generated-file consistency, comparison discovery, known-date ordering, and local example behavior. They cannot establish whether a paper's claims are scientifically correct. Inspect changed content, source links, hash routes, and affected interactions in a browser as well.
+
+## Preview and publish
 
 ```sh
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-Open `http://127.0.0.1:8000/`. For a deployed revision, verify the Pages build commit matches the pushed commit and inspect the live page.
+Open `http://127.0.0.1:8000/`. GitHub Pages serves `master` at `/`, with `.nojekyll` and the custom-domain URL above. The page embeds its content and uses pinned CDN scripts for interface utilities. Source links open through the outer page while the embedded application remains sandboxed.
 
-Only public descriptions, references, and interface files belong in this tree. Private research plans, source receipts, internal assessments, and review records remain outside it.
+Before publishing, synchronize data, Markdown, README counts, and generated files; inspect the full diff and complete independent content review. After pushing, verify the remote commit, Pages build, and live page. Keep private source snapshots, review transcripts, credentials, and unpublished material outside this repository.

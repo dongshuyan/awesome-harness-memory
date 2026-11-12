@@ -57,7 +57,7 @@ class ReportContract(unittest.TestCase):
         return value
 
     def test_readmes_expose_the_public_report_without_private_paths(self):
-        expected = "https://dongshuyan.github.io/awesome-harness-memory/report/index.html"
+        expected = "https://dongshuyan.com/awesome-harness-memory/report/index.html"
         for name in ("README.md", "README.zh-CN.md"):
             content = (ROOT / name).read_text(encoding="utf-8")
             self.assertIn(expected, content)

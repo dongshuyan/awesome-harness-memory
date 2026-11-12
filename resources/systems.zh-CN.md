@@ -2,7 +2,7 @@
 
 基础资料已核表示文档支持这里的功能说明；未运行系统，也不是成熟度或安全认证。待核线索与历史资料单列。
 
-[返回 README](../README.zh-CN.md) · [七问全景](../docs/landscape.zh-CN.md)
+[返回 README](../README.zh-CN.md) · [旧版分类与方法参考](../docs/landscape.zh-CN.md)
 
 ## Harness 与编码 / 个人 Agent
 
@@ -21,7 +21,7 @@
 **提供方式**：原生历史与摘要；恢复需配置
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -56,7 +56,7 @@
 **提供方式**：原生自动记忆＋指令文件
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -91,7 +91,7 @@
 **提供方式**：配置与提示约定
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -126,7 +126,7 @@
 **提供方式**：按文档及应用配置
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -161,7 +161,7 @@
 **提供方式**：第三方 MCP 接入，默认关闭
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -196,7 +196,7 @@
 **提供方式**：原生上下文文件
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -231,7 +231,7 @@
 **提供方式**：原生笔记/会话搜索/技能；部分外部集成可选
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -266,7 +266,7 @@
 **提供方式**：原生记忆与 MemFS；云端/同步可选
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -301,7 +301,7 @@
 **提供方式**：原生可选功能＋指令文件
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -336,7 +336,7 @@
 **提供方式**：原生工作区文件＋可配置记忆搜索
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -371,7 +371,7 @@
 **提供方式**：会话/上下文机制；V2 规范证据
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -406,7 +406,7 @@
 **提供方式**：原生会话与压缩；其他记忆由扩展决定
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -426,6 +426,129 @@
 
 核对时仓库默认分支；发行标签 v1.5.0。文档与发行版对应关系未完整审计。
 
+<a id="qwen-code"></a>
+
+### Qwen Code
+
+**基础资料已核 · Coding Harness**
+
+Qwen Code把人工QWEN.md与自动积累的Markdown笔记分开：前者作为会话指令加载，后者保存偏好、反馈、项目背景和引用，后台整理后供未来会话读取。结构化召回和团队共享需按配置核对。
+
+**值得看**：适合观察同一种文件表示如何支持人工约束、自动提取和按需召回三种控制方式。
+
+**边界**：自动记忆是best-effort；索引预算可能省略条目但不删除原文件。linked worktree各有自己的自动记忆目录，不能假定整个仓库所有工作树自动共享。
+
+**提供方式**：人工规则＋默认自动记忆；结构化召回和团队共享按配置
+
+<details>
+<summary>资料属性（旧版导航字段，与六问主课分别组织）</summary>
+
+| 视角 | 描述 |
+| --- | --- |
+| 谁在管理记忆 | 人编写规则，后台Agent抽取与整理 |
+| 记住什么 | 人工规则；用户反馈、偏好与项目知识 |
+| 为谁保存、在哪些范围使用 | 用户、项目、个人项目及可选团队范围；工作树隔离需留意 |
+| 承载与表示 | QWEN.md；MEMORY.md索引与主题Markdown |
+| 形成和维护 | 自动抽取、后台整理、手工编辑/forget；结构化召回需启用 |
+| 进入后续行动 | 会话加载；可选相关子树注入与search_memory |
+| 追溯与控制 | 保存/整理可分别关闭；pinned对后台工具有边界，主Agent的/dream门控不同 |
+
+</details>
+
+**例子与问题**：教学例子：把固定测试命令写进项目QWEN.md；某次调试的新发现进入主题笔记。新会话可先读索引，再按需读详情。
+
+**阅读位置**：Memory页QWEN.md/Auto-memory/Where it is stored/Structured recall；Rules页paths机制
+
+**置信度**：原文支持的描述高；教学例子与迁移推论中等，效果未复现。
+
+**原始资料**：[功能原始来源](https://github.com/QwenLM/qwen-code) · [Memory官方文档](https://qwenlm.github.io/qwen-code-docs/en/users/features/memory/) · [Rules官方文档](https://qwenlm.github.io/qwen-code-docs/en/users/features/rules/)
+
+核对：2026-11-12。已读原始资料相关章节：Memory页QWEN.md/Auto-memory/Where it is stored/Structured recall；Rules页paths机制。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。
+
+2026-11-12所链官方文档/仓库快照；未安装发行版或核对部署运行。 本条按所链文档/分支快照阅读，未固定发行版号或提交SHA。
+
+<a id="cursor"></a>
+
+### Cursor Rules / AGENTS.md
+
+**基础资料已核 · Coding Harness**
+
+Cursor Rules通过项目规则文件、用户规则和团队规则把持续指导带入Agent上下文。项目规则可始终应用、匹配文件、由Agent按描述选择或由用户显式提及；AGENTS.md提供较简单的文件约定。
+
+**值得看**：展示指令型记忆的触发范围与控制方式，不必把它解释成自动学习出的用户画像。
+
+**边界**：本条依据当前Rules页；没有用旧Memories路由推出独立自动记忆服务。规则中的@文件引用由工具按需读取，不保证全文自动内联；规则不是唯一安全控制。
+
+**提供方式**：Rules/AGENTS.md持续指导
+
+<details>
+<summary>资料属性（旧版导航字段，与六问主课分别组织）</summary>
+
+| 视角 | 描述 |
+| --- | --- |
+| 谁在管理记忆 | 用户/团队选择规则及应用模式 |
+| 记住什么 | 代码规范、流程和用户偏好指令 |
+| 为谁保存、在哪些范围使用 | 团队、项目、用户及目录/文件匹配范围 |
+| 承载与表示 | 规则文本与项目规则文件；AGENTS.md |
+| 形成和维护 | 人维护或请求Agent创建规则 |
+| 进入后续行动 | 常驻、文件匹配、智能选择或手动@触发 |
+| 追溯与控制 | 团队配置与规则优先关系；不能替代执行权限和安全边界 |
+
+</details>
+
+**例子与问题**：根据Rules页四类规则例子改写：tsx规则随匹配文件应用，迁移规则可手动@提及；是否被选中和实际遵守仍须分别检查。
+
+**阅读位置**：官方Rules：How rules work、Project rules、Referencing files、Team Rules、AGENTS.md；例子见Project rules表与Auto-attached by file pattern/Manual only via @-mention
+
+**置信度**：原文支持的描述高；教学例子与迁移推论中等，效果未复现。
+
+**原始资料**：[功能原始来源](https://cursor.com/docs/rules)
+
+核对：2026-11-12。已读原始资料相关章节：官方Rules：How rules work、Project rules、Referencing files、Team Rules、AGENTS.md。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。
+
+2026-11-12所链官方文档/仓库快照；未安装发行版或核对部署运行。 本条按所链文档/分支快照阅读，未固定发行版号或提交SHA。
+
+<a id="continue"></a>
+
+### Continue
+
+**基础资料已核 · Coding Harness**
+
+Continue Rules把项目规范存入.continue/rules文件，并在Agent、Chat和Edit模式中应用。它是持续指导的接口，适合讲清人工规则怎样跨调用保留。
+
+**值得看**：规则可随项目版本化，团队能审阅指导内容。把它纳入宽口径Memory，不必虚构一个自动用户画像模块。
+
+**边界**：所读Rules页支持规则目录与应用模式，未提供通用自动抽取、巩固、遗忘或删除传播契约；这些未知不解释为整个产品不支持。
+
+**提供方式**：项目规则；其他自动记忆机制未核
+
+<details>
+<summary>资料属性（旧版导航字段，与六问主课分别组织）</summary>
+
+| 视角 | 描述 |
+| --- | --- |
+| 谁在管理记忆 | 项目维护者与使用者 |
+| 记住什么 | 项目与组织编码规则 |
+| 为谁保存、在哪些范围使用 | 项目规则；组织规则可在项目落地 |
+| 承载与表示 | .continue/rules文件 |
+| 形成和维护 | 人编辑、版本控制；自动巩固未核 |
+| 进入后续行动 | Agent/Chat/Edit模式应用规则 |
+| 追溯与控制 | 规则本身不是运行权限；访问隔离/删除传播另核 |
+
+</details>
+
+**例子与问题**：Rules页的项目例子是修改数据库后生成migrations；教学检查：规则是否被加载，与migration是否正确应分别验证。
+
+**阅读位置**：Continue官方Rules：How Rules Work/Where to Manage Rules；例子见Where to Manage Rules：Local Rules
+
+**置信度**：原文支持的描述高；教学例子与迁移推论中等，效果未复现。
+
+**原始资料**：[项目入口](https://github.com/continuedev/continue) · [Rules官方文档](https://docs.continue.dev/customize/rules)
+
+核对：2026-11-12。已读原始资料相关章节：Continue官方Rules：How Rules Work/Where to Manage Rules。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。
+
+2026-11-12所链官方文档/仓库快照；未安装发行版或核对部署运行。 本条按所链文档/分支快照阅读，未固定发行版号或提交SHA。
+
 ## Agent 框架
 
 <a id="agno"></a>
@@ -443,7 +566,7 @@
 **提供方式**：框架记忆组件
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -478,7 +601,7 @@
 **提供方式**：框架模块
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -513,7 +636,7 @@
 **提供方式**：按文档及应用配置
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -548,7 +671,7 @@ Agent 框架，分别提供会话状态管理与记忆服务。Agent 可通过 l
 **提供方式**：按文档及应用配置
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -583,7 +706,7 @@ Agent 框架，分别提供会话状态管理与记忆服务。Agent 可通过 l
 **提供方式**：按文档及应用配置
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -618,7 +741,7 @@ Agent 框架，分别提供会话状态管理与记忆服务。Agent 可通过 l
 **提供方式**：平台与 SDK；部署方式影响能力
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -653,7 +776,7 @@ Agent 框架，分别提供会话状态管理与记忆服务。Agent 可通过 l
 **提供方式**：可配置组件
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -688,7 +811,7 @@ Agent 框架，分别提供会话状态管理与记忆服务。Agent 可通过 l
 **提供方式**：框架可配置组件
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -723,7 +846,7 @@ Agent 框架，分别提供会话状态管理与记忆服务。Agent 可通过 l
 **提供方式**：框架组件，按应用配置
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -758,7 +881,7 @@ Agent 框架，分别提供会话状态管理与记忆服务。Agent 可通过 l
 **提供方式**：按文档及应用配置
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -793,7 +916,7 @@ Agent 框架，分别提供会话状态管理与记忆服务。Agent 可通过 l
 **提供方式**：可选 Harness 能力
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -813,6 +936,88 @@ Agent 框架，分别提供会话状态管理与记忆服务。Agent 可通过 l
 
 核对时仓库默认分支；发行标签 未核。文档与发行版对应关系未完整审计。
 
+<a id="strands"></a>
+
+### Strands Agents / Harness SDK
+
+**基础资料已核 · Agent Harness SDK**
+
+Strands Harness默认将长期事实蒸馏成文件，在用户新一轮发言前检索并注入上下文，另提供search_memory按需读取。会话检查点负责恢复运行，长期记忆独立于会话保存。
+
+**值得看**：它把“后台何时写”和“模型何时看到”分开，且允许换存储后端而保留管理策略。
+
+**边界**：本条只描述Strands Harness默认策略，不能推广到所有SDK配置。短任务结束前应shutdown刷新待写记忆；注入不是每次工具返回都发生。
+
+**提供方式**：默认文件记忆；可替换store/manager
+
+<details>
+<summary>资料属性（旧版导航字段，与六问主课分别组织）</summary>
+
+| 视角 | 描述 |
+| --- | --- |
+| 谁在管理记忆 | 默认memory manager；允许完整替换 |
+| 记住什么 | 跨会话的持久事实 |
+| 为谁保存、在哪些范围使用 | 不依赖session；generalist delegate共享store但只读 |
+| 承载与表示 | 默认./.agent/memory文件；可替换store |
+| 形成和维护 | 后台每若干轮抽取；shutdown刷新 |
+| 进入后续行动 | 用户轮次前检索注入；search_memory按需召回 |
+| 追溯与控制 | 可关闭；默认无写工具；替换manager后默认策略不再自动适用 |
+
+</details>
+
+**例子与问题**：官方例子：使用async with管理Harness，退出时刷新未写内容；教学例子中，第二会话读取长期偏好并不要求恢复第一会话检查点。
+
+**阅读位置**：Harness Give long-term memory全部小节；Checkpoints vs memory；Configuration
+
+**置信度**：原文支持的描述高；教学例子与迁移推论中等，效果未复现。
+
+**原始资料**：[功能原始来源](https://github.com/strands-agents/harness-sdk) · [Harness长期记忆](https://strandsagents.com/docs/user-guide/harness/configure/memory/) · [检查点与记忆](https://strandsagents.com/docs/user-guide/harness/configure/checkpoints-and-memory/)
+
+核对：2026-11-12。已读原始资料相关章节：Harness Give long-term memory全部小节；Checkpoints vs memory；Configuration。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。
+
+2026-11-12所链官方文档/仓库快照；未安装发行版或核对部署运行。 本条按所链文档/分支快照阅读，未固定发行版号或提交SHA。
+
+<a id="openhands"></a>
+
+### OpenHands Software Agent SDK
+
+**基础资料已核 · 软件Agent SDK**
+
+OpenHands SDK的持久记忆是可选的用户/项目两层Markdown索引，启用后会话开始把MEMORY.md放入系统提示；daily logs由Agent按需读。Condenser则在当前对话过长时保留近期内容并摘要较早内容。
+
+**值得看**：两种机制分别解决跨会话知识和当前上下文长度问题；可以一起使用，但不能把一次压缩等同于长期持久化。
+
+**边界**：load_memory默认关闭；索引有字符预算、读取失败best-effort。记忆按未验证内容包装，这是一项防护提示，不证明能阻止所有提示注入。
+
+**提供方式**：持久记忆需load_memory=True；condenser独立配置
+
+<details>
+<summary>资料属性（旧版导航字段，与六问主课分别组织）</summary>
+
+| 视角 | 描述 |
+| --- | --- |
+| 谁在管理记忆 | 调用方配置；Agent写文件；condenser处理历史 |
+| 记住什么 | 持久项目知识/用户偏好；当前对话摘要 |
+| 为谁保存、在哪些范围使用 | 用户跨项目、工作区项目；压缩属于当前会话 |
+| 承载与表示 | 用户与项目MEMORY.md、daily logs；condenser摘要 |
+| 形成和维护 | 启用后读索引；Agent维护笔记；阈值触发摘要 |
+| 进入后续行动 | 会话开始注入索引，日志按需工具读取 |
+| 追溯与控制 | 默认关闭；UNTRUSTED_CONTENT边界；文件权限和实际拒绝能力另验 |
+
+</details>
+
+**例子与问题**：根据官方Ready-to-run Example两会话流程改写：第一会话写项目记忆，第二会话重新读磁盘索引；daily logs不自动注入。
+
+**阅读位置**：SDK Persistent Memory：Opt in/Two Tiers/What Gets Injected；Context Condenser：How it Works/Setting Up；例子见Persistent Memory：The Two Tiers与Ready-to-run Example
+
+**置信度**：原文支持的描述高；教学例子与迁移推论中等，效果未复现。
+
+**原始资料**：[项目入口](https://github.com/OpenHands/software-agent-sdk) · [持久记忆](https://docs.openhands.dev/sdk/guides/persistent-memory) · [上下文压缩](https://docs.openhands.dev/sdk/guides/context-condenser)
+
+核对：2026-11-12。已读原始资料相关章节：SDK Persistent Memory：Opt in/Two Tiers/What Gets Injected；Context Condenser：How it Works/Setting Up。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。
+
+2026-11-12所链官方文档/仓库快照；未安装发行版或核对部署运行。 本条按所链文档/分支快照阅读，未固定发行版号或提交SHA。
+
 ## 独立记忆层与工具
 
 <a id="basic-memory"></a>
@@ -830,7 +1035,7 @@ Agent 框架，分别提供会话状态管理与记忆服务。Agent 可通过 l
 **提供方式**：MCP / 本地笔记；云端可选
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -865,7 +1070,7 @@ Agent 框架，分别提供会话状态管理与记忆服务。Agent 可通过 l
 **提供方式**：第三方插件；本地/托管配置不同
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -900,7 +1105,7 @@ Agent 框架，分别提供会话状态管理与记忆服务。Agent 可通过 l
 **提供方式**：自托管平台与工具接口
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -935,7 +1140,7 @@ Agent 框架，分别提供会话状态管理与记忆服务。Agent 可通过 l
 **提供方式**：本地工具 / MCP；同步可选
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -970,7 +1175,7 @@ Agent 框架，分别提供会话状态管理与记忆服务。Agent 可通过 l
 **提供方式**：库与本地运行时
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -1005,7 +1210,7 @@ Agent 框架，分别提供会话状态管理与记忆服务。Agent 可通过 l
 **提供方式**：图构建库；外围服务自建
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -1040,7 +1245,7 @@ Agent 框架，分别提供会话状态管理与记忆服务。Agent 可通过 l
 **提供方式**：独立服务与宿主集成
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -1075,7 +1280,7 @@ Agent 框架，分别提供会话状态管理与记忆服务。Agent 可通过 l
 **提供方式**：服务、SDK 与宿主集成
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -1110,7 +1315,7 @@ MCP 官方参考服务器提供实体、关系和 observation（观察记录）�
 **提供方式**：参考 MCP 服务器
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -1145,7 +1350,7 @@ MCP 官方参考服务器提供实体、关系和 observation（观察记录）�
 **提供方式**：SDK 与托管服务需区分
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -1180,7 +1385,7 @@ MCP 官方参考服务器提供实体、关系和 observation（观察记录）�
 **提供方式**：用户记忆服务
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -1215,7 +1420,7 @@ MCP 官方参考服务器提供实体、关系和 observation（观察记录）�
 **提供方式**：SDK 注册与服务配置
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -1250,7 +1455,7 @@ MCP 官方参考服务器提供实体、关系和 observation（观察记录）�
 **提供方式**：独立项目记忆 / MCP / 插件
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -1285,7 +1490,7 @@ MCP 官方参考服务器提供实体、关系和 observation（观察记录）�
 **提供方式**：独立记忆系统及集成
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -1320,7 +1525,7 @@ MCP 官方参考服务器提供实体、关系和 observation（观察记录）�
 **提供方式**：插件、CLI 与 API
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -1355,7 +1560,7 @@ MCP 官方参考服务器提供实体、关系和 observation（观察记录）�
 **提供方式**：文件记忆与宿主适配
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -1390,7 +1595,7 @@ MCP 官方参考服务器提供实体、关系和 observation（观察记录）�
 **提供方式**：上下文数据库与 API
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -1425,7 +1630,7 @@ MCP 官方参考服务器提供实体、关系和 observation（观察记录）�
 **提供方式**：记忆库与工作区集成
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -1460,7 +1665,7 @@ MCP 官方参考服务器提供实体、关系和 observation（观察记录）�
 **提供方式**：服务、API 与可选插件
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -1480,6 +1685,129 @@ MCP 官方参考服务器提供实体、关系和 observation（观察记录）�
 
 核对时仓库默认分支；发行标签 未核。文档与发行版对应关系未完整审计。
 
+<a id="langmem"></a>
+
+### LangMem
+
+**基础资料已核 · 记忆管理库**
+
+LangMem提供提取/更新记忆的核心接口、运行中的管理/搜索工具，以及后台抽取和巩固组件。命名空间与存储后端由应用决定；文档的InMemoryStore示例在进程重启后不保留数据。
+
+**值得看**：用同一个偏好例子分清提取能力、工具调用、命名空间和磁盘持久化，避免把库接口当成已部署记忆服务。
+
+**边界**：官方示例是应用集成方式，非可用性保证。PR #212在2026-11-12 API快照仍open，报告同步写入/删除异常传播问题；未据此验证所有版本受影响。
+
+**提供方式**：需应用接入模型与存储
+
+<details>
+<summary>资料属性（旧版导航字段，与六问主课分别组织）</summary>
+
+| 视角 | 描述 |
+| --- | --- |
+| 谁在管理记忆 | 工具调用Agent或后台manager |
+| 记住什么 | 对话抽取知识与行为提示 |
+| 为谁保存、在哪些范围使用 | 应用指定namespace |
+| 承载与表示 | 结构化记忆条目；BaseStore及可选数据库 |
+| 形成和维护 | 抽取、合并、更新、搜索；后台与热路径 |
+| 进入后续行动 | 工具返回或应用预检索后组织上下文 |
+| 追溯与控制 | 后端和应用授权；错误传播需按发行版验证 |
+
+</details>
+
+**例子与问题**：根据官方Creating an Agent示例改写先存偏好dark mode，再问照明偏好；示例同时明确InMemoryStore重启会丢失。
+
+**阅读位置**：官方首页Creating an Agent/Key features；PR212状态API及正文；例子见Creating an Agent代码与其下InMemoryStore说明
+
+**置信度**：原文支持的描述高；教学例子与迁移推论中等，效果未复现。
+
+**原始资料**：[功能原始来源](https://github.com/langchain-ai/langmem) · [PR212：同步持久化错误传播（2026-11-12仍open）](https://github.com/langchain-ai/langmem/pull/212) · [LangMem接口与示例](https://langchain-ai.github.io/langmem/) · [身份/日期元数据（核对2026-11-12）](https://api.github.com/repos/langchain-ai/langmem/pulls/212)
+
+核对：2026-11-12。已读原始资料相关章节：官方首页Creating an Agent/Key features；PR212状态API及正文。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。
+
+2026-11-12所链官方文档/仓库快照；未安装发行版或核对部署运行。 本条按所链文档/分支快照阅读，未固定发行版号或提交SHA。
+
+<a id="cortex-ai"></a>
+
+### Cortex AI（jdomian / cortex-recall）
+
+**基础资料已核 · 本地记忆库**
+
+本条明确指jdomian/cortex-ai（包名cortex-recall），是本地记忆库：身份、召回、外部知识、修正规则等层面配合语义检索与维护任务。它与Cortex-AI-IDE/Cortex-Desktop是不同项目。
+
+**值得看**：同名项目必须用维护者和仓库区分；也适合练习检查README标题与实际结构是否一致。
+
+**边界**：README自称four-layer但表格另列L5 Pattern Detection；这里保留这一不一致，不强行归成四层。脑式架构和效果属于作者描述，未作神经科学或性能验证。
+
+**提供方式**：cortex-recall；默认本地CPU与可扩展后端
+
+<details>
+<summary>资料属性（旧版导航字段，与六问主课分别组织）</summary>
+
+| 视角 | 描述 |
+| --- | --- |
+| 谁在管理记忆 | 调用方与周期维护任务 |
+| 记住什么 | 身份规则、事件召回、参考知识、修正模式 |
+| 为谁保存、在哪些范围使用 | 本地palace、wing/room主题；租户隔离未核 |
+| 承载与表示 | 默认本地ChromaDB向量库和SQLite知识图；后端可扩展 |
+| 形成和维护 | 添加、搜索、短期日志、Dream整理与衰减 |
+| 进入后续行动 | 身份常驻、召回按需；具体接入由客户端决定 |
+| 追溯与控制 | 本条未核权限/删除传播；本地运行不自动等于安全 |
+
+</details>
+
+**例子与问题**：教学例子：纠正一次命名约定，先保存反馈，再看周期维护是否提炼为规则；不能从保存了反馈直接推出已改变后续行为。
+
+**阅读位置**：jdomian/cortex-ai README What it does/How it works/v0.6.1 notes
+
+**置信度**：原文支持的描述高；教学例子与迁移推论中等，效果未复现。
+
+**原始资料**：[本条唯一采用的项目](https://github.com/jdomian/cortex-ai)
+
+核对：2026-11-12。已读原始资料相关章节：jdomian/cortex-ai README What it does/How it works/v0.6.1 notes。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。
+
+2026-11-12所链官方文档/仓库快照；未安装发行版或核对部署运行。 README包含v0.6.1更新说明及four-layer/L5表述差异。 本条按所链文档/分支快照阅读，未固定发行版号或提交SHA。
+
+<a id="ai-memory"></a>
+
+### ai-memory
+
+**基础资料已核 · 跨编码客户端记忆服务**
+
+akitaonrails/ai-memory是跨编码客户端的记忆服务：通过生命周期事件接收观察，将Markdown wiki作为权威内容，SQLite作为搜索、会话、交接和审计索引；可选向量与模型辅助整理。
+
+**值得看**：适合检查跨宿主连续性如何依赖事件接入、项目范围、索引和交接，而不只是一个共享文本文件。
+
+**边界**：Data Handling明确v1没有静态加密，默认依赖OS权限；默认本地embedding可首次下载模型，开启云提供方或重建索引可能外发已有内容。不能称“所有配置始终离线”。
+
+**提供方式**：本地服务、hooks与MCP；外部provider可选
+
+<details>
+<summary>资料属性（旧版导航字段，与六问主课分别组织）</summary>
+
+| 视角 | 描述 |
+| --- | --- |
+| 谁在管理记忆 | 宿主hooks、服务管理器、可选模型与人工审批 |
+| 记住什么 | 观察、会话交接、wiki知识与审计记录 |
+| 为谁保存、在哪些范围使用 | 项目与scope过滤；跨客户端共享同一服务 |
+| 承载与表示 | Git版本化Markdown权威内容＋SQLite派生索引；可选向量 |
+| 形成和维护 | 事件接收、编译、搜索、巩固、衰减与清理 |
+| 进入后续行动 | 会话开始交接；MCP检索和页面读取 |
+| 追溯与控制 | 访问范围与写入审计；默认无静态加密；外发取决于provider配置 |
+
+</details>
+
+**例子与问题**：教学例子：在同一项目换客户端时，交接内容从记录与wiki组装；切换为云embedding前应检查历史重建会发送哪些数据。
+
+**阅读位置**：ARCHITECTURE Purpose/Data flow/Steady-state loop；DATA_HANDLING Default与opt-in paths
+
+**置信度**：原文支持的描述高；教学例子与迁移推论中等，效果未复现。
+
+**原始资料**：[项目入口](https://github.com/akitaonrails/ai-memory) · [架构与数据流](https://github.com/akitaonrails/ai-memory/blob/main/docs/ARCHITECTURE.md) · [数据处理边界](https://github.com/akitaonrails/ai-memory/blob/main/DATA_HANDLING.md)
+
+核对：2026-11-12。已读原始资料相关章节：ARCHITECTURE Purpose/Data flow/Steady-state loop；DATA_HANDLING Default与opt-in paths。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。
+
+2026-11-12所链官方文档/仓库快照；未安装发行版或核对部署运行。 DATA_HANDLING明确讨论v1无静态加密。 本条按所链文档/分支快照阅读，未固定发行版号或提交SHA。
+
 ## 托管记忆服务
 
 <a id="amazon-bedrock-agentcore-memory"></a>
@@ -1497,7 +1825,7 @@ MCP 官方参考服务器提供实体、关系和 observation（观察记录）�
 **提供方式**：按文档及应用配置
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -1532,7 +1860,7 @@ MCP 官方参考服务器提供实体、关系和 observation（观察记录）�
 **提供方式**：托管服务
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -1567,7 +1895,7 @@ MCP 官方参考服务器提供实体、关系和 observation（观察记录）�
 **提供方式**：按文档及应用配置
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -1602,7 +1930,7 @@ MCP 官方参考服务器提供实体、关系和 observation（观察记录）�
 **提供方式**：当前 README 为托管服务入口
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -1637,7 +1965,7 @@ MCP 官方参考服务器提供实体、关系和 observation（观察记录）�
 **提供方式**：服务；Graphiti 为相关组件
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -1657,6 +1985,47 @@ MCP 官方参考服务器提供实体、关系和 observation（观察记录）�
 
 核对来源页面；精确发行版本、许可和依赖安全性未完整审计。
 
+<a id="tencent-memory"></a>
+
+### TencentDB-Agent-Memory
+
+**基础资料已核 · MemoryCore服务**
+
+TencentDB-Agent-Memory的当前feat/server_team分支把MemoryCore组织为原始对话、记忆原子、场景文件和核心人格，并提供查询、搜索、更新、删除和会话接入接口。
+
+**值得看**：中文一手API文档能把层级名称落实为具体输入、输出和隔离条件，适合对照抽象分类与真实服务契约。
+
+**边界**：本条是开发分支文档，不当成全部稳定发布保证。文档指出删除接口信任网关/实例、不做用户级鉴权；team/agent/user默认桶与session/add的Header例外需单独处理。
+
+**提供方式**：feat/server_team开发分支API；不代表稳定发布承诺
+
+<details>
+<summary>资料属性（旧版导航字段，与六问主课分别组织）</summary>
+
+| 视角 | 描述 |
+| --- | --- |
+| 谁在管理记忆 | 服务与应用调用方；不是每个Agent都有全权 |
+| 记住什么 | L0对话；L1 episodic/persona/instruction；L2场景；L3核心人格 |
+| 为谁保存、在哪些范围使用 | 实例＋team/agent/user/task；缺省可能回到default桶 |
+| 承载与表示 | MemoryCore分层对象与RPC接口 |
+| 形成和维护 | conversation/atomic/scenario/core的查询、搜索、更新与删除 |
+| 进入后续行动 | search/query、chat-memory与memory-prompt接口 |
+| 追溯与控制 | 网关Bearer与实例Header；删除未做用户级鉴权，前端/服务端责任需另核 |
+
+</details>
+
+**例子与问题**：API示例的atomic记录是“下周一发版”；教学检查：atomic/update的version是字符串，query/search为数字，调用方需分别处理。
+
+**阅读位置**：v3接口文档卷一§1统一约定、§2 L0–L3数据面、session/add；例子见v3 atomic/query示例及atomic/update版本类型注释
+
+**置信度**：原文支持的描述高；教学例子与迁移推论中等，效果未复现。
+
+**原始资料**：[项目入口](https://github.com/TencentCloud/TencentDB-Agent-Memory) · [MemoryCore v3 API（分支快照）](https://github.com/TencentCloud/TencentDB-Agent-Memory/blob/feat/server_team/MemoryCore/v3-api-memorycore-doc.md)
+
+核对：2026-11-12。已读原始资料相关章节：v3接口文档卷一§1统一约定、§2 L0–L3数据面、session/add。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。
+
+2026-11-12 feat/server_team分支MemoryCore/v3-api-memorycore-doc.md快照；API契约限于该文档。 本条按所链文档/分支快照阅读，未固定发行版号或提交SHA。
+
 ## 个人助手产品
 
 <a id="chatgpt-memory"></a>
@@ -1674,7 +2043,7 @@ MCP 官方参考服务器提供实体、关系和 observation（观察记录）�
 **提供方式**：产品内置；可用性依账户、地区与工作区
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -1694,392 +2063,51 @@ MCP 官方参考服务器提供实体、关系和 observation（观察记录）�
 
 核对来源页面；精确发行版本、许可和依赖安全性未完整审计。
 
-## 待核线索
 
-<a id="ai-memory"></a>
 
-### ai-memory
 
-**待核线索 · 待核对象**
 
-官方仓库身份与 README 已读，跨宿主交接机制与信任边界尚未充分核对。
-
-**值得看**：从原始来源继续阅读，并结合对应研究问题比较。
-
-**边界**：官方仓库身份与 README 已读，跨宿主交接机制与信任边界尚未充分核对。
-
-**提供方式**：需按来源确认
-
-<details>
-<summary>七个视角下的已核描述</summary>
-
-| 视角 | 描述 |
-| --- | --- |
-| [谁在管理记忆](../docs/landscape.zh-CN.md#owner) | 未核；不能解释为不支持 |
-| [记住什么](../docs/landscape.zh-CN.md#content) | 未核；不能解释为不支持 |
-| [为谁保存，保留多久](../docs/landscape.zh-CN.md#scope) | 未核；不能解释为不支持 |
-| [如何承载与表示](../docs/landscape.zh-CN.md#form) | 未核；不能解释为不支持 |
-| [怎样形成和维护](../docs/landscape.zh-CN.md#operation) | 未核；不能解释为不支持 |
-| [怎样进入下一次行动](../docs/landscape.zh-CN.md#use) | 未核；不能解释为不支持 |
-| [怎样追溯与控制](../docs/landscape.zh-CN.md#governance) | 未核；不能解释为不支持 |
-
-</details>
-
-**原始资料**：[项目入口](https://github.com/akitaonrails/ai-memory)
-
-核对：2026-11-06 UTC。身份/机制未完成核对；不纳入已核系统计数。
-
-来源页面核对日期见条目；具体部署版本需另核。
-
-<a id="api-harness"></a>
-
-### API Harness
-
-**待核线索 · 待核对象**
-
-名称既可指通用做法，也可能是某个具体项目；不能自动改成 Pi 或 Agents SDK。
-
-**值得看**：从原始来源继续阅读，并结合对应研究问题比较。
-
-**边界**：名称既可指通用做法，也可能是某个具体项目；不能自动改成 Pi 或 Agents SDK。
-
-**提供方式**：需按来源确认
-
-<details>
-<summary>七个视角下的已核描述</summary>
-
-| 视角 | 描述 |
-| --- | --- |
-| [谁在管理记忆](../docs/landscape.zh-CN.md#owner) | 未核；不能解释为不支持 |
-| [记住什么](../docs/landscape.zh-CN.md#content) | 未核；不能解释为不支持 |
-| [为谁保存，保留多久](../docs/landscape.zh-CN.md#scope) | 未核；不能解释为不支持 |
-| [如何承载与表示](../docs/landscape.zh-CN.md#form) | 未核；不能解释为不支持 |
-| [怎样形成和维护](../docs/landscape.zh-CN.md#operation) | 未核；不能解释为不支持 |
-| [怎样进入下一次行动](../docs/landscape.zh-CN.md#use) | 未核；不能解释为不支持 |
-| [怎样追溯与控制](../docs/landscape.zh-CN.md#governance) | 未核；不能解释为不支持 |
-
-</details>
-
-**原始资料**：名称未定位，不填造链接
-
-核对：2026-11-06 UTC。身份/机制未完成核对；不纳入已核系统计数。
-
-来源页面核对日期见条目；具体部署版本需另核。
-
-<a id="continue"></a>
-
-### Continue
-
-**待核线索 · 待核对象**
-
-编码工具身份已确认；本轮 README 不足以支持独立记忆管理机制，留待核对。
-
-**值得看**：从原始来源继续阅读，并结合对应研究问题比较。
-
-**边界**：编码工具身份已确认；本轮 README 不足以支持独立记忆管理机制，留待核对。
-
-**提供方式**：需按来源确认
-
-<details>
-<summary>七个视角下的已核描述</summary>
-
-| 视角 | 描述 |
-| --- | --- |
-| [谁在管理记忆](../docs/landscape.zh-CN.md#owner) | 未核；不能解释为不支持 |
-| [记住什么](../docs/landscape.zh-CN.md#content) | 未核；不能解释为不支持 |
-| [为谁保存，保留多久](../docs/landscape.zh-CN.md#scope) | 未核；不能解释为不支持 |
-| [如何承载与表示](../docs/landscape.zh-CN.md#form) | 未核；不能解释为不支持 |
-| [怎样形成和维护](../docs/landscape.zh-CN.md#operation) | 未核；不能解释为不支持 |
-| [怎样进入下一次行动](../docs/landscape.zh-CN.md#use) | 未核；不能解释为不支持 |
-| [怎样追溯与控制](../docs/landscape.zh-CN.md#governance) | 未核；不能解释为不支持 |
-
-</details>
-
-**原始资料**：[项目入口](https://github.com/continuedev/continue)
-
-核对：2026-11-06 UTC。身份/机制未完成核对；不纳入已核系统计数。
-
-来源页面核对日期见条目；具体部署版本需另核。
-
-<a id="cortex-ai"></a>
-
-### Cortex AI
-
-**待核线索 · 待核对象**
-
-存在多个同名对象，尚不能确定此前所指。候选分别为 IDE、四层记忆库等，不能混合能力。
-
-**值得看**：从原始来源继续阅读，并结合对应研究问题比较。
-
-**边界**：存在多个同名对象，尚不能确定此前所指。候选分别为 IDE、四层记忆库等，不能混合能力。
-
-**提供方式**：需按来源确认
-
-<details>
-<summary>七个视角下的已核描述</summary>
-
-| 视角 | 描述 |
-| --- | --- |
-| [谁在管理记忆](../docs/landscape.zh-CN.md#owner) | 未核；不能解释为不支持 |
-| [记住什么](../docs/landscape.zh-CN.md#content) | 未核；不能解释为不支持 |
-| [为谁保存，保留多久](../docs/landscape.zh-CN.md#scope) | 未核；不能解释为不支持 |
-| [如何承载与表示](../docs/landscape.zh-CN.md#form) | 未核；不能解释为不支持 |
-| [怎样形成和维护](../docs/landscape.zh-CN.md#operation) | 未核；不能解释为不支持 |
-| [怎样进入下一次行动](../docs/landscape.zh-CN.md#use) | 未核；不能解释为不支持 |
-| [怎样追溯与控制](../docs/landscape.zh-CN.md#governance) | 未核；不能解释为不支持 |
-
-</details>
-
-**原始资料**：[候选原始入口（未确认等同用户所指）](https://github.com/Cortex-AI-IDE/Cortex-Desktop) · [候选原始入口（未确认等同用户所指）](https://github.com/jdomian/cortex-ai)
-
-核对：2026-11-06 UTC。身份/机制未完成核对；不纳入已核系统计数。
-
-来源页面核对日期见条目；具体部署版本需另核。
-
-<a id="cursor"></a>
-
-### Cursor Rules / Memories
-
-**待核线索 · Coding Agent**
-
-当前官方 Rules 文档是持久项目指令的入口；旧 Memories 页面已跳转到文档首页。
-
-**值得看**：保留规则型上下文与历史自动记忆资料的区别。
-
-**边界**：当前自动 Memories 的可用性与机制本轮未确认；不能用旧搜索摘要作为现行功能证明。
-
-**提供方式**：规则机制；自动记忆待核
-
-<details>
-<summary>七个视角下的已核描述</summary>
-
-| 视角 | 描述 |
-| --- | --- |
-| [谁在管理记忆](../docs/landscape.zh-CN.md#owner) | 未核；不能解释为不支持 |
-| [记住什么](../docs/landscape.zh-CN.md#content) | 未核；不能解释为不支持 |
-| [为谁保存，保留多久](../docs/landscape.zh-CN.md#scope) | 未核；不能解释为不支持 |
-| [如何承载与表示](../docs/landscape.zh-CN.md#form) | 未核；不能解释为不支持 |
-| [怎样形成和维护](../docs/landscape.zh-CN.md#operation) | 未核；不能解释为不支持 |
-| [怎样进入下一次行动](../docs/landscape.zh-CN.md#use) | 未核；不能解释为不支持 |
-| [怎样追溯与控制](../docs/landscape.zh-CN.md#governance) | 未核；不能解释为不支持 |
-
-</details>
-
-**原始资料**：[功能原始来源](https://cursor.com/docs/rules)
-
-核对：2026-11-06 UTC。已读官方文档或项目 README 的相关段落；未验证运行效果。
-
-核对来源页面；精确发行版本、许可和依赖安全性未完整审计。
-
-<a id="langmem"></a>
-
-### LangMem
-
-**待核线索 · 记忆管理工具库**
-
-提供对话信息抽取、对话中记录/搜索工具，以及后台抽取、巩固和更新能力。核心接口可配不同存储。
-
-**值得看**：让执行中写入和后台整理成为可分别选择的路径。
-
-**边界**：PR #212 仍在处理同步 MemoryStoreManager.invoke 的写/删异常传播问题；本轮未复现，不能泛化到所有接口。
-
-**提供方式**：工具库，需存储与调度集成
-
-<details>
-<summary>七个视角下的已核描述</summary>
-
-| 视角 | 描述 |
-| --- | --- |
-| [谁在管理记忆](../docs/landscape.zh-CN.md#owner) | Agent 工具与后台管理器 |
-| [记住什么](../docs/landscape.zh-CN.md#content) | 对话提取信息、行为提示 |
-| [为谁保存，保留多久](../docs/landscape.zh-CN.md#scope) | 由存储命名空间决定 |
-| [如何承载与表示](../docs/landscape.zh-CN.md#form) | 未核；不能解释为不支持 |
-| [怎样形成和维护](../docs/landscape.zh-CN.md#operation) | 抽取、巩固、更新、记录与搜索 |
-| [怎样进入下一次行动](../docs/landscape.zh-CN.md#use) | 执行中或后台管理 |
-| [怎样追溯与控制](../docs/landscape.zh-CN.md#governance) | 未核；不能解释为不支持 |
-
-</details>
-
-**原始资料**：[功能原始来源](https://github.com/langchain-ai/langmem) · [同步写入异常 PR（核对时仍 Open）](https://github.com/langchain-ai/langmem/pull/212)
-
-核对：2026-11-06 UTC。已读官方文档或项目 README 的相关段落；未验证运行效果。
-
-核对时仓库默认分支；发行标签 未核。文档与发行版对应关系未完整审计。
-
-<a id="openhands"></a>
-
-### OpenHands Software Agent SDK
-
-**待核线索 · 待核对象**
-
-SDK 的工作区、conversation 和代码能力已确认；本轮 condenser 路由失效，持久记忆与压缩边界仍需补查。
-
-**值得看**：从原始来源继续阅读，并结合对应研究问题比较。
-
-**边界**：SDK 的工作区、conversation 和代码能力已确认；本轮 condenser 路由失效，持久记忆与压缩边界仍需补查。
-
-**提供方式**：需按来源确认
-
-<details>
-<summary>七个视角下的已核描述</summary>
-
-| 视角 | 描述 |
-| --- | --- |
-| [谁在管理记忆](../docs/landscape.zh-CN.md#owner) | 未核；不能解释为不支持 |
-| [记住什么](../docs/landscape.zh-CN.md#content) | 未核；不能解释为不支持 |
-| [为谁保存，保留多久](../docs/landscape.zh-CN.md#scope) | 未核；不能解释为不支持 |
-| [如何承载与表示](../docs/landscape.zh-CN.md#form) | 未核；不能解释为不支持 |
-| [怎样形成和维护](../docs/landscape.zh-CN.md#operation) | 未核；不能解释为不支持 |
-| [怎样进入下一次行动](../docs/landscape.zh-CN.md#use) | 未核；不能解释为不支持 |
-| [怎样追溯与控制](../docs/landscape.zh-CN.md#governance) | 未核；不能解释为不支持 |
-
-</details>
-
-**原始资料**：[项目入口](https://github.com/OpenHands/software-agent-sdk)
-
-核对：2026-11-06 UTC。身份/机制未完成核对；不纳入已核系统计数。
-
-来源页面核对日期见条目；具体部署版本需另核。
-
-<a id="qwen-code"></a>
-
-### Qwen Code
-
-**待核线索 · Coding Harness**
-
-官方 README 列出 Auto-Memory、Auto-Skills、会话管理和多 Agent 能力。
-
-**值得看**：作为编码 Harness 中自动记忆与技能协作的补充调查入口。
-
-**边界**：本轮只确认功能入口，尚未核清 Auto-Memory 的写入策略、存储范围与删除语义。
-
-**提供方式**：官方列明原生功能；实现细节待核
-
-<details>
-<summary>七个视角下的已核描述</summary>
-
-| 视角 | 描述 |
-| --- | --- |
-| [谁在管理记忆](../docs/landscape.zh-CN.md#owner) | 未核；不能解释为不支持 |
-| [记住什么](../docs/landscape.zh-CN.md#content) | 未核；不能解释为不支持 |
-| [为谁保存，保留多久](../docs/landscape.zh-CN.md#scope) | 未核；不能解释为不支持 |
-| [如何承载与表示](../docs/landscape.zh-CN.md#form) | 未核；不能解释为不支持 |
-| [怎样形成和维护](../docs/landscape.zh-CN.md#operation) | 未核；不能解释为不支持 |
-| [怎样进入下一次行动](../docs/landscape.zh-CN.md#use) | 未核；不能解释为不支持 |
-| [怎样追溯与控制](../docs/landscape.zh-CN.md#governance) | 未核；不能解释为不支持 |
-
-</details>
-
-**原始资料**：[功能原始来源](https://github.com/QwenLM/qwen-code)
-
-核对：2026-11-06 UTC。已读官方文档或项目 README 的相关段落；未验证运行效果。
-
-核对来源页面；精确发行版本、许可和依赖安全性未完整审计。
 
 <a id="serena"></a>
 
 ### Serena Memory
 
-**待核线索 · 编码工具中的记忆组件**
+**基础资料已核 · 编码工具集的记忆功能**
 
-Serena 是编码工具集，其 README 单独提供 Memory Management，用于长期工作流中跨会话、用户和项目保存知识。
+Serena把记忆保存在人可读Markdown文件中。启动时提供可用名称列表，Agent按名称和mem:引用决定读取；项目记忆可随代码版本化，全局记忆跨项目共享。
 
-**值得看**：是“工具套件含记忆组件”的例子，不需要把整套编码功能都当成记忆系统。
+**值得看**：它展示显式索引与渐进读取：获得文件名和获得文件内容是两步，系统不替Agent自动注入记忆正文。
 
-**边界**：本轮确认了组件定位；细粒度写入策略、存储后端和安全边界还未展开。
+**边界**：read_only/ignored规则限制记忆工具；忽略文件仍可能经通用read_file读取，因此不是文件系统安全隔离。README的脑式类比或用户反馈不作为性能证据。
 
-**提供方式**：工具集中的可关闭记忆组件
+**提供方式**：Markdown记忆与工具接口
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段，与六问主课分别组织）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
-| [谁在管理记忆](../docs/landscape.zh-CN.md#owner) | 未核；不能解释为不支持 |
-| [记住什么](../docs/landscape.zh-CN.md#content) | 未核；不能解释为不支持 |
-| [为谁保存，保留多久](../docs/landscape.zh-CN.md#scope) | 未核；不能解释为不支持 |
-| [如何承载与表示](../docs/landscape.zh-CN.md#form) | 未核；不能解释为不支持 |
-| [怎样形成和维护](../docs/landscape.zh-CN.md#operation) | 未核；不能解释为不支持 |
-| [怎样进入下一次行动](../docs/landscape.zh-CN.md#use) | 未核；不能解释为不支持 |
-| [怎样追溯与控制](../docs/landscape.zh-CN.md#governance) | 未核；不能解释为不支持 |
+| 谁在管理记忆 | 人和Agent；用户提示合适时更新 |
+| 记住什么 | 项目知识、流程及个人跨项目笔记 |
+| 为谁保存、在哪些范围使用 | 项目/全局；主题子目录 |
+| 承载与表示 | .serena/memories/与~/.serena/memories/global/中的Markdown |
+| 形成和维护 | 工具读写、重命名、引用完整性检查 |
+| 进入后续行动 | 启动名称列表；模型选择读正文并沿引用读取 |
+| 追溯与控制 | 只读和忽略模式；不能等同OS权限隔离 |
 
 </details>
 
-**原始资料**：[功能原始来源](https://github.com/oraios/serena)
+**例子与问题**：根据官方Referencing Memories段落改写：mem:auth/login引用主题；rename_memory更新可写引用，只读文件中的旧引用由check报告。
 
-核对：2026-11-06 UTC。已读官方文档或项目 README 的相关段落；未验证运行效果。
+**阅读位置**：Memories & Onboarding：Design Rationale、Global Memories、Ignoring Memories、Referencing Memories；例子见Referencing Memories from Other Memories
 
-核对来源页面；精确发行版本、许可和依赖安全性未完整审计。
+**置信度**：原文支持的描述高；教学例子与迁移推论中等，效果未复现。
 
-<a id="strands"></a>
+**原始资料**：[功能原始来源](https://github.com/oraios/serena) · [Memories & Onboarding](https://github.com/oraios/serena/blob/main/docs/02-usage/045_memories.md)
 
-### Strands Agents / Harness SDK
+核对：2026-11-12。已读原始资料相关章节：Memories & Onboarding：Design Rationale、Global Memories、Ignoring Memories、Referencing Memories。事实转述置信度高，适用性判断中等；未运行上游系统或复现实验。
 
-**待核线索 · Agent Framework / Harness**
-
-当前仓库把 Harness 与 Python/TypeScript SDK 放在同一代码库，提供 memory、sessions 和 context management 的独立入口。
-
-**值得看**：适合研究完整 Harness 默认组合与自行组装 Agent loop 的差异。
-
-**边界**：本轮核对到组件入口；各记忆提供方、默认策略与跨会话存储细节尚待补查。
-
-**提供方式**：Harness 组合及 SDK 组件
-
-<details>
-<summary>七个视角下的已核描述</summary>
-
-| 视角 | 描述 |
-| --- | --- |
-| [谁在管理记忆](../docs/landscape.zh-CN.md#owner) | 未核；不能解释为不支持 |
-| [记住什么](../docs/landscape.zh-CN.md#content) | 未核；不能解释为不支持 |
-| [为谁保存，保留多久](../docs/landscape.zh-CN.md#scope) | 未核；不能解释为不支持 |
-| [如何承载与表示](../docs/landscape.zh-CN.md#form) | 未核；不能解释为不支持 |
-| [怎样形成和维护](../docs/landscape.zh-CN.md#operation) | 未核；不能解释为不支持 |
-| [怎样进入下一次行动](../docs/landscape.zh-CN.md#use) | 未核；不能解释为不支持 |
-| [怎样追溯与控制](../docs/landscape.zh-CN.md#governance) | 未核；不能解释为不支持 |
-
-</details>
-
-**原始资料**：[功能原始来源](https://github.com/strands-agents/harness-sdk)
-
-核对：2026-11-06 UTC。已读官方文档或项目 README 的相关段落；未验证运行效果。
-
-核对时仓库默认分支；发行标签 未核。文档与发行版对应关系未完整审计。
-
-<a id="tencent-memory"></a>
-
-### TencentDB-Agent-Memory
-
-**待核线索 · 待核对象**
-
-官方仓库身份已核；Team Memory Beta 的接口、保留策略和部署边界待进一步核对。
-
-**值得看**：从原始来源继续阅读，并结合对应研究问题比较。
-
-**边界**：官方仓库身份已核；Team Memory Beta 的接口、保留策略和部署边界待进一步核对。
-
-**提供方式**：需按来源确认
-
-<details>
-<summary>七个视角下的已核描述</summary>
-
-| 视角 | 描述 |
-| --- | --- |
-| [谁在管理记忆](../docs/landscape.zh-CN.md#owner) | 未核；不能解释为不支持 |
-| [记住什么](../docs/landscape.zh-CN.md#content) | 未核；不能解释为不支持 |
-| [为谁保存，保留多久](../docs/landscape.zh-CN.md#scope) | 未核；不能解释为不支持 |
-| [如何承载与表示](../docs/landscape.zh-CN.md#form) | 未核；不能解释为不支持 |
-| [怎样形成和维护](../docs/landscape.zh-CN.md#operation) | 未核；不能解释为不支持 |
-| [怎样进入下一次行动](../docs/landscape.zh-CN.md#use) | 未核；不能解释为不支持 |
-| [怎样追溯与控制](../docs/landscape.zh-CN.md#governance) | 未核；不能解释为不支持 |
-
-</details>
-
-**原始资料**：[项目入口](https://github.com/TencentCloud/TencentDB-Agent-Memory)
-
-核对：2026-11-06 UTC。身份/机制未完成核对；不纳入已核系统计数。
-
-来源页面核对日期见条目；具体部署版本需另核。
+2026-11-12所链官方文档/仓库快照；未安装发行版或核对部署运行。 本条按所链文档/分支快照阅读，未固定发行版号或提交SHA。
 
 ## 历史资料
 
@@ -2098,7 +2126,7 @@ README 已有退休/归档转向 Microsoft Agent Framework 的说明；API 的 a
 **提供方式**：需按来源确认
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -2133,7 +2161,7 @@ README 已有退休/归档转向 Microsoft Agent Framework 的说明；API 的 a
 **提供方式**：需按来源确认
 
 <details>
-<summary>七个视角下的已核描述</summary>
+<summary>资料属性（旧版导航字段）</summary>
 
 | 视角 | 描述 |
 | --- | --- |
@@ -2152,3 +2180,44 @@ README 已有退休/归档转向 Microsoft Agent Framework 的说明；API 的 a
 核对：2026-11-06 UTC。官方 README 与仓库元数据。
 
 来源页面核对日期见条目；具体部署版本需另核。
+
+<a id="api-harness"></a>
+
+### API Harness（未定位的历史线索）
+
+**历史资料 · 未定位的历史名称**
+
+API Harness目前无法从原名称唯一定位为一个具名Memory产品。它可能只是通用工程术语；现有线索不足以归给Pi、OpenAI Agents SDK或其他项目。
+
+**值得看**：保留原ID与歧义说明，防止历史链接被悄悄重定向到一个无关系统。
+
+**边界**：从活动系统比较中排除；没有声称此类产品不存在。如补充准确仓库或维护者，可重新核验。
+
+**提供方式**：不进入活动系统比较
+
+<details>
+<summary>资料属性（旧版导航字段，与六问主课分别组织）</summary>
+
+| 视角 | 描述 |
+| --- | --- |
+| 谁在管理记忆 | 原资料未核清；不等于不支持。 |
+| 记住什么 | 原资料未核清；不等于不支持。 |
+| 为谁保存、在哪些范围使用 | 原资料未核清；不等于不支持。 |
+| 承载与表示 | 原资料未核清；不等于不支持。 |
+| 形成和维护 | 原资料未核清；不等于不支持。 |
+| 进入后续行动 | 原资料未核清；不等于不支持。 |
+| 追溯与控制 | 原资料未核清；不等于不支持。 |
+
+</details>
+
+**例子与问题**：身份核查例子：只有一个通用名称时，不用相似名字替代，也不填写猜测出来的机制。
+
+**阅读位置**：对原名和Memory组合的定向检索未找到唯一对应；原记录无来源URL
+
+**置信度**：身份未定位，低；不为历史名称猜造产品。
+
+**原始资料**：原名称尚未唯一定位，不填写猜测链接。
+
+核对：2026-11-12。已完成有限身份检索；未能唯一定位，身份置信度低。不是已核实系统。
+
+2026-11-12所链官方文档/仓库快照；未安装发行版或核对部署运行。

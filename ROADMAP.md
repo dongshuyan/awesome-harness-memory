@@ -1,15 +1,19 @@
-# Research rounds
+# Course scope and maintenance
 
-[Home](README.md) · [Open questions](docs/research-questions.md)
+[Start learning](https://dongshuyan.com/awesome-harness-memory/) · [Coverage](docs/coverage.md) · [Contributing](CONTRIBUTING.md)
 
-Each round should leave a readable repository. A round may add a few resources, correct a description, improve navigation, or retire an outdated entry. Coverage alone is not a reason to keep an unhelpful resource.
+The 2026-11-12 edition completes the selected course: the six-question lesson and its argument, six concept bridges, 10 Research core entries, four further readings, 15 engineering entries, 10 benchmarks, eight cultural works, two human-memory background lessons, and topics with a runnable local example. Detailed entries explain each question with rationale, examples, and source locations.
 
-| Round | Work | Reader-visible result |
+The broader catalogue is a reference collection with its own reading depth and historical records. Completion of the course does not mean that every referenced work has been fully audited, every product has been run, or the field has been exhausted. See the explicit limitations in the coverage document and individual entries.
+
+## Ongoing maintenance
+
+| Trigger | Update | Verification |
 | --- | --- | --- |
-| Initial edition | Read primary sources across systems, papers, evaluation, and fiction | Short examples, a paper timeline, two ways to browse, and explicit open questions |
-| Mechanisms | Trace representative implementations and version differences; compare terminology in context | Better descriptions and a sourced comparison of what systems actually do |
-| Evaluation | Read benchmark protocols, controls, failure cases, and cost accounting | Guidance on which evaluations answer which questions |
-| Synthesis | Test alternative navigation and diagram designs against the collected evidence | A proposed map and concise entry format, revised where examples do not fit |
-| Continued curation | Discover new work; revisit source changes, maintenance, corrections, and reader needs | Small reviewed updates and removal or revision of stale entries |
+| A paper is revised, published, or corrected | Revisit affected claims and preserve version distinctions | Inspect the primary version and revise its source trace |
+| A product changes memory behavior | Update affected lifecycle, exposure, scope, or governance answers | Check official documentation/code; do not imply a runtime test unless performed |
+| A new work answers a missing learning question | Add or replace a curated entry, with a reason for inclusion | Complete six answers and independent review before publication |
+| A source becomes unavailable or an identity remains ambiguous | Add a reliable alternate source or retain a clear evidence limit | Do not infer content from a successful HTTP response or a similar name |
+| A reader cannot follow an explanation | Improve the example, prerequisite, or transition | Verify that facts, conditions, and evidence strength survive the rewrite |
 
-The current edition adds a [published knowledge navigator](https://dongshuyan.github.io/awesome-harness-memory/), expanded Chinese reference pages, and a layered design illustration. The next rounds can overlap where evidence is independent. Taxonomy, diagrams, entry fields, and the update schedule remain open; automated ingestion and a shared benchmark leaderboard remain future possibilities rather than current features.
+Potential future work includes learner studies of the six-question path, controlled runs of selected upstream systems, and new evaluation tasks where existing benchmarks miss a material failure. These are possible research directions, not completed experiments or promises of a universal benchmark. A useful benchmark needs valid tasks, controls, and diagnostic metrics; six populated columns alone do not establish completeness.
