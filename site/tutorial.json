@@ -3284,6 +3284,132 @@
       "url": "https://arxiv.org/html/2309.02427v3#S6",
       "year": "2024 · v3；2026-11-12核查",
       "evidence": "§6按模块定义读写动作的零售助理例子、动作空间安全；§7按可控制性/耦合讨论内部与外部边界。高置信。"
+    },
+    "culture-severance": {
+      "label": "Severance · Apple 官方简介与演职员",
+      "url": "https://www.apple.com/tv-pr/originals/severance/",
+      "year": "2022 起播；当前页为第二季",
+      "evidence": "官方简介直接说明员工的工作与私人生活记忆被分隔；当前第二季日期不是第一季首播日期。设定事实置信度高，AI 类比为编者推论。",
+      "checkedAt": "2026-11-12"
+    },
+    "culture-housekeeper": {
+      "label": "博士の愛した数式 · Macmillan 正文节选与书目",
+      "url": "https://us.macmillan.com/books/9781250375971/thehousekeeperandtheprofessor/",
+      "year": "原作 2003；英译 2009；所链版本 2025",
+      "evidence": "Read Excerpt 中嫂子解释旧数学知识与80分钟新记忆；版权行分别列原作和英译年份。Book Details 描述每天重新相识。已通过网页阅读工具读取正文。",
+      "checkedAt": "2026-11-12"
+    },
+    "culture-memento": {
+      "label": "Memento · Metropolitan Films 发行方简介",
+      "url": "https://metrofilms.com/film/memento/",
+      "year": "2000 作品；发行页信息另列",
+      "evidence": "Synopsis 明确提到照片、卡片笔记与纹身；影片身份、导演见 Informations techniques。简介并不支持完整剧情或可信度协议。",
+      "checkedAt": "2026-11-12"
+    },
+    "culture-funes": {
+      "label": "Funes · MIT Press Reader 的署名导读与原文节选",
+      "url": "https://thereader.mitpress.mit.edu/borges-memory-funes-the-memorious/",
+      "year": "1942 首刊；1944 收入 Ficciones",
+      "evidence": "Rodrigo Quian Quiroga 的书籍节选，含西班牙文及英译原文；支持异常细节记忆与睡眠困扰前提。不把导读当完整原作。网页工具读到正文。",
+      "checkedAt": "2026-11-12"
+    },
+    "culture-police": {
+      "label": "The Memory Police · Penguin Random House 出版方介绍",
+      "url": "https://www.penguinrandomhouse.com/books/252774/the-memory-police-by-yoko-ogawa/",
+      "year": "1994原作；所链英文电子书/有声书2019、平装2020",
+      "evidence": "About the Book 支持物品消失、部分人仍记得、警察压制、作家藏起编辑及写作保存过去；不解释神经或技术删除机制。",
+      "checkedAt": "2026-11-12"
+    },
+    "culture-history": {
+      "label": "The Entire History of You · BBFC Season 1, Episode 3",
+      "url": "https://www.bbfc.co.uk/release/black-mirror-q29sbgvjdglvbjpwwc00mdi0njc",
+      "year": "制作年 2011；此发行审查记录 2012",
+      "evidence": "同页汇总多季：引用 Season 1 的 The Entire History Of You，不能把顶端 Bandersnatch 的内容提示归给本集。身份置信度高。",
+      "checkedAt": "2026-11-12"
+    },
+    "culture-history-plot": {
+      "label": "The Entire History of You · British Comedy Guide 单集资料",
+      "url": "https://www.comedy.co.uk/tv/black_mirror/episodes/1/3/",
+      "year": "2011",
+      "evidence": "单集简介、演职员与官方宣传文字描述记忆植入物记录所见所闻；属于可核作品资料，不能作为脑科学事实。",
+      "checkedAt": "2026-11-12"
+    },
+    "culture-severance-premiere": {
+      "label": "Apple · 第一季首播公告",
+      "url": "https://www.apple.com/tv-pr/news/2021/12/apple-tv-unveils-teaser-trailer-for-new-workplace-thriller-severance-from-director-and-executive-producer-ben-stiller-and-sets-global-premiere-date-for-february-18-2022/",
+      "year": "公告2021；首播2022",
+      "evidence": "原公告支持首播年和Dan Erickson创剧身份。",
+      "checkedAt": "2026-11-12"
+    },
+    "culture-police-original": {
+      "label": "講談社 · 密やかな結晶 原版书目",
+      "url": "https://www.kodansha.co.jp/book/products/0000175842",
+      "year": "1994",
+      "evidence": "原版书目列作者小川洋子、发行日1994-01-26及ISBN9784062058438；不与英译版日期混用。",
+      "checkedAt": "2026-11-12"
+    },
+    "culture-fifty": {
+      "label": "50 First Dates · Sony Pictures 官方简介",
+      "url": "https://www.sonypictures.com/movies/50firstdates",
+      "year": "2004",
+      "evidence": "ABOUT与版权年支持电影身份、Lucy每夜失去当天记忆的虚构前提；没有据此声称存在相同临床规律。",
+      "checkedAt": "2026-11-12"
+    },
+    "culture-truth": {
+      "label": "The Best of Subterranean · 出版方目录与故事简介",
+      "url": "https://subterraneanpress.com/best-of-subterranean/",
+      "year": "2017 选集",
+      "evidence": "出版社选集目录确认作品身份；简介讨论双叙事、技术与读写。阅读范围限于该简介和目录，不据此复述完整情节。",
+      "checkedAt": "2026-11-12"
+    },
+    "culture-truth-edition": {
+      "label": "Exhalation · Subterranean Press 版本与目录",
+      "url": "https://subterraneanpress.com/exhalation/",
+      "year": "该出版社版本2020",
+      "evidence": "目录确认收录作品，简介描述记者思考技术如何改变对真相的理解；此再版年不替代原作年。",
+      "checkedAt": "2026-11-12"
+    },
+    "culture-truth-date": {
+      "label": "2014 Hugo Awards · Best Novelette 提名记录",
+      "url": "https://www.thehugoawards.org/hugo-history/2014-hugo-awards/",
+      "year": "记录2014；作品来源Subterranean Fall 2013",
+      "checkedAt": "2026-11-12",
+      "evidence": "奖项官方记录用于核对作品作者与2013首刊信息；不以提名证明教学类比或算法价值。"
+    },
+    "human-squire-full": {
+      "label": "Squire 2004 · Memory systems of the brain（作者实验室全文）",
+      "url": "https://whoville.ucsd.edu/PDFs/384_Squire_%20NeurobiolLearnMem2004.pdf",
+      "year": "2004",
+      "checkedAt": "2026-11-12",
+      "evidence": "作者实验室目录与论文首页身份吻合；阅读pp.171–175和Fig.1。综述汇总人类患者与动物研究，不是本仓库复现实验。"
+    },
+    "human-sleep-full": {
+      "label": "Staresina 2024 · Coupled sleep rhythms（牛津开放全文）",
+      "url": "https://ora.ox.ac.uk/objects/uuid%3A38f35409-3343-483d-9ea5-e040c2a13f11/files/s47429b950",
+      "year": "2024",
+      "checkedAt": "2026-11-12",
+      "evidence": "Trends in Cognitive Sciences 28(4), 339–351；DOI 10.1016/j.tics.2024.02.002；读巩固、三种节律、TMR、Outstanding questions。"
+    },
+    "human-engram-full": {
+      "label": "Memory engram stability and flexibility · 开放全文",
+      "url": "https://europepmc.org/articles/PMC11525749",
+      "year": "2024 在线；2025 卷期",
+      "checkedAt": "2026-11-12",
+      "evidence": "DOI 10.1038/s41386-024-01979-z；Europe PMC开放全文XML已读；区分综述中动物操控证据、人类证据和未解决问题。 DOI、作者与PMC身份均见XML front；关联2025更正针对期刊封面月份，未宣告机制内容更正。"
+    },
+    "human-retrograde-full": {
+      "label": "Human retrograde amnesia and memory consolidation · 开放全文",
+      "url": "https://europepmc.org/articles/PMC11835974",
+      "year": "2024 在线；2025 卷期",
+      "checkedAt": "2026-11-12",
+      "evidence": "DOI 10.3758/s13423-024-02567-4；公开全文对已发表患者资料再分析，提示不同损伤类型下巩固解释不一致。 作者Ketonis、McClelland、Parra、Radvansky及期刊/DOI可由XML front与Europe PMC元数据交叉核对。"
+    },
+    "human-engram-correction": {
+      "label": "Neuropsychopharmacology第50卷第1期日期更正",
+      "url": "https://www.nature.com/articles/s41386-025-02087-2",
+      "year": "2025-03-19",
+      "checkedAt": "2026-11-12",
+      "evidence": "更正在线平台的封面月份为2025年1月；不是机制结论更正。"
     }
   },
   "concepts": [
@@ -5833,196 +5959,631 @@
     "culture": [
       {
         "id": "severance",
-        "title": "Severance",
+        "title": "Severance（人生切割术）",
         "date": "2022",
-        "summary": "影视作品以记忆隔离设定讨论同一主体在不同工作/生活空间的记忆边界。",
-        "why": "它帮助读者思考范围、主体和隔离拓扑。",
-        "boundary": "此条目暂作文化线索，正式页面需补权威作品来源和剧情范围。",
-        "status": "pending",
-        "sources": [
-          "severance"
-        ],
-        "checkedAt": "2026-11-11",
-        "realityNote": "真实作品条目；页面只作类比/思想实验，不作为 Research、工程或评测证据。",
-        "canonicalUrl": "https://www.apple.com/tv-pr/originals/severance/"
-      },
-      {
-        "id": "the-entire-history-of-you",
-        "title": "The Entire History of You",
-        "date": "2011",
-        "summary": "Black Mirror 单集设定可回放全部人生影像，放大记忆可见性与隐私冲突。",
-        "why": "它把无限可回放、审计和遗忘权变成易理解的思想实验。",
-        "boundary": "BBFC 与 British Comedy Guide 支持作品身份和设定摘要；影视设定不等于真实可行技术或安全结论。",
-        "status": "pending",
-        "sources": [
-          "the-entire-history-of-you",
-          "the-entire-history-of-you-plot"
-        ],
-        "checkedAt": "2026-11-11",
-        "realityNote": "真实作品条目；页面只作类比/思想实验，不作为 Research、工程或评测证据。",
-        "canonicalUrl": "https://www.bbfc.co.uk/release/black-mirror-q29sbgvjdglvbjpwwc00mdi0njc",
-        "profile": {
-          "kind": "电视剧集（Black Mirror S1E3，2011）",
-          "creator": "Jesse Armstrong（编剧）；Brian Welsh（导演）",
-          "artifact": "BBFC release record；本页只做文化类比"
-        }
-      },
-      {
-        "id": "the-housekeeper-and-the-professor",
-        "title": "The Housekeeper and the Professor",
-        "date": "2003",
-        "summary": "小说中的数学教授只能保留约 80 分钟的新记忆，依靠便签和关系维持生活。",
-        "why": "它提供“固定上下文 + 外部 Memory + 人际关系”的温和思想实验。",
-        "boundary": "作品设定只作类比；具体书目信息和版权安全引用需继续补。",
-        "status": "pending",
-        "sources": [
-          "the-housekeeper-and-the-professor"
-        ],
-        "checkedAt": "2026-11-11",
-        "realityNote": "真实作品条目；页面只作类比/思想实验，不作为 Research、工程或评测证据。",
-        "canonicalUrl": "https://us.macmillan.com/books/9781250375971/thehousekeeperandtheprofessor/"
-      },
-      {
-        "id": "memento",
-        "title": "Memento",
-        "date": "2000",
-        "summary": "电影中的主人公无法稳定形成新的长期记忆，依靠外部笔记、照片和线索继续行动。",
-        "why": "它把“外部记录、上下文限制、信任和篡改”变成直观的思想实验。",
-        "boundary": "虚构设定不证明人类认知机制、模型能力或工程安全性。",
+        "summary": "员工的工作经历与私人生活的记忆被人为分隔。切换生活场景后，能够接触的过去也不同。这个前提适合观察“信息仍存在，却不向当前身份开放”的情形。",
+        "why": "它把 Q3 的作用范围与 Q6 的控制权放到同一个故事中，帮助读者分清隔离、遗忘和删除。",
+        "boundary": "只据官方简介讨论记忆分隔，不扩写具体剧情、分隔手术的具体机制或完整权限制度；不将工作场景记忆等同于 working memory。",
         "status": "complete",
         "sources": [
-          "memento"
+          "culture-severance",
+          "culture-severance-premiere"
         ],
-        "checkedAt": "2026-11-11",
-        "realityNote": "真实作品条目；页面只作类比/思想实验，不作为 Research、工程或评测证据。",
-        "selectionEvidence": "作品身份和官方/影片资料入口可定位；此处只作为文化类比。",
-        "limitations": "不提供科学或工程性能证据；剧情设定不能直接转成架构结论。",
+        "checkedAt": "2026-11-12",
+        "realityNote": "工作经历是生活场景标签，不等于认知科学的working memory。",
+        "canonicalUrl": "https://www.apple.com/tv-pr/originals/severance/",
+        "limitations": "分隔说明可访问范围；具体形成、恢复与删除规则需要更多剧情或另设工程条件。",
+        "selectionEvidence": "Apple剧集页与首播新闻确认作品设定、创剧者及2022首播日期。",
+        "profile": {
+          "kind": "电视剧；本文只讨论官方简介中的基本设定",
+          "creator": "Dan Erickson（创剧）；Apple TV 剧集",
+          "artifact": "下列作品来源与具体段落",
+          "version": "第一季于2022-02-18首播；来源为Apple 2021-12-16预告"
+        },
         "next": "human-memory",
         "questions": [
           {
-            "answer": "外部笔记、照片和纹身承载事件线索与身份事实。",
-            "trace": "影片设定的剧情梗概；类比问题而非实验事实。"
+            "answer": "作品讨论的是工作经历与私人经历的可访问性。把这两组经历看作内容域，可以观察同一人形成的资料为何不一定同时可用；“工作”在此是场景标签，并不是认知科学 working memory 的术语。",
+            "why": "先说明记住的内容，才能避免把工作场景的分隔误读为 working memory，也就是当前任务中暂时使用的信息。",
+            "example": "教学假设：助理知道公司项目进度，却不能在私人旅行规划中引用这段信息。内容没变，允许使用的任务变了。",
+            "trace": "Apple 简介：memories between their work and personal lives。内容域与 working memory 的区分为术语说明，例子为编者构造。"
           },
           {
-            "answer": "纸条、照片和纹身是外部载体；它们不是模型内部记忆。",
-            "trace": "作品设定；仅用于说明 substrate 直觉。"
+            "answer": "官方简介把分隔归于虚构的手术。它没有给出可检验的存储格式、索引或物理隔离协议，因此不能把设定直接画成两个数据库。",
+            "why": "载体问题允许回答“作品没有说明”。这样才能保留类比的用处，同时避免给虚构机制补上技术细节。",
+            "example": "教学假设：可以用两个目录，也可以用同库的访问过滤模拟隔离；两种实现是否同样可靠，要由真实测试决定。",
+            "trace": "Apple 简介的 severance procedure；数据库两种方案均为教学假设，非作品实现。"
           },
           {
-            "answer": "记忆服务于主人公的行动，谁能写入或篡改线索决定了信任范围。",
-            "trace": "剧情冲突；不等于真实权限模型。"
+            "answer": "官方设定区分工作与个人生活两个记忆范围，由这一设定可以理解为同一人具有不同的记忆访问范围。对 Agent 的启发是先列清用户、项目和角色，再问哪些记忆允许跨范围共享。",
+            "why": "“属于同一个人”不足以推出“每个运行场景都能读取”。归属和可见范围需要分别说明。",
+            "example": "教学假设：同一用户在项目甲写入客户偏好，项目乙默认看不到；显式授权共享后才开放。",
+            "trace": "Apple 基本设定；用户/项目的映射是编者类比，不主张作品存在软件式命名空间。"
           },
           {
-            "answer": "无法形成新长期记忆使遗忘成为持续约束，线索需要被重复维护。",
-            "trace": "故事设定；不外推到人类或 Agent 的生理/算法事实。"
+            "answer": "在这个类比里，离开一个场景后无法访问某段过去，不足以证明过去已经被擦除。官方简介主要支持分隔，而没有给出所有记忆形成、恢复和删除规则。",
+            "why": "生命周期需要区分“暂时不可见”和“内容不再保留”，否则会把权限变化误写成遗忘策略。",
+            "example": "教学假设：关闭检索过滤后又能找到旧记录，说明原先是访问受限；只有验证各副本已删除，才可报告删除完成。",
+            "trace": "Apple 描述分隔与 barrier；过滤/副本例子是工程练习，不是剧情事实。"
           },
           {
-            "answer": "每次行动都依赖何时读取、如何排列和解释外部线索。",
-            "trace": "影片叙事结构；思想实验。"
+            "answer": "故事让当前所处生活场景决定可以接触哪段经历。对应到教程，关键是读取时的上下文怎样选择可用信息，而不是仅列出总共保存了多少。",
+            "why": "信息可保存、可被某身份访问、实际进入此次决策，是三个不同条件。",
+            "example": "教学假设：一次调用虽然携带同一 user_id，但还需要 project_id；遗漏后者可能把别的项目资料送进上下文。",
+            "trace": "Apple 工作/个人分隔前提；user_id/project_id 是编者的说明性示例。"
           },
           {
-            "answer": "谁写下记录、谁篡改记录、主人公如何审计来源，构成治理类比。",
-            "trace": "剧情设定；不提供安全结论。"
+            "answer": "“谁决定分隔、谁能跨过边界”是这部作品引出的治理问题。官方简介称这一实验受到质疑；具体授权、同意与纠错制度不能从这段简介中补全。",
+            "why": "技术上能隔离，并不能回答使用者是否理解、同意或能撤销这种安排。",
+            "example": "教学假设：个人助理新增团队共享功能时，应让用户看到共享范围，并验证撤销后后续检索确实停止。",
+            "trace": "Apple 简介中实验受到质疑的叙述；撤销授权为教学设计问题，非影片提供的安全方案。"
+          }
+        ]
+      },
+      {
+        "id": "the-entire-history-of-you",
+        "title": "The Entire History of You（你的全部历史）",
+        "date": "2011",
+        "summary": "Black Mirror 的这一集设想一种记录所见所闻的记忆植入物。可反复回看的记录，让“保存得更多”与“如何使用这些记录”产生张力。",
+        "why": "它适合讨论原始记录、回放、解释与隐私之间的关系；单集身份和设定都有可定位来源。",
+        "boundary": "BBFC 同页还列出其他单集；本文只引用第一季第三集身份。剧情依据 BCG 的单集介绍，不推断植入物真实可行或全部数据治理细节。",
+        "status": "complete",
+        "sources": [
+          "culture-history",
+          "culture-history-plot"
+        ],
+        "checkedAt": "2026-11-12",
+        "realityNote": "本页讨论Black Mirror第一季第三集，不把BBFC同页其他集数混入。",
+        "canonicalUrl": "https://www.bbfc.co.uk/release/black-mirror-q29sbgvjdglvbjpwwc00mdi0njc",
+        "profile": {
+          "kind": "Black Mirror 第一季第三集",
+          "creator": "Jesse Armstrong（编剧）；Brian Welsh（导演）",
+          "artifact": "下列作品来源与具体段落",
+          "version": "Black Mirror第一季第三集，2011；日期、编导见BCG单集页"
+        },
+        "limitations": "可回放记录让解释、分享与隐私成为问题；设备容量、完整性和删除协议仍不能从单集简介推出。",
+        "selectionEvidence": "BCG第一季第三集资料给出基本设定与编导；BBFC记录用于核对单集身份。",
+        "next": "human-memory",
+        "questions": [
+          {
+            "answer": "设定保存的是所见所闻等经历记录，并不等于已经整理好的事实或可靠判断。完整片段仍需要解释，观看者可能从同一材料形成不同理解。",
+            "why": "Q1 区分原始观察与摘要结论，避免把“全部记录”直接称为“全部真相”。",
+            "example": "教学假设：一次会议的录音保留了原话，但要回答最终决定是什么，仍需核对后续确认与撤回。",
+            "trace": "BCG 单集简介的 records everything they do, see or hear；会议例子为编者构造。"
+          },
+          {
+            "answer": "作品设定提供可回放的植入记录设备，未给出格式、容量、加密或存储后端。设备的可见功能可以讨论，内部实现不能据此补全。",
+            "why": "Q2 要分清产品体验与技术保证：能回放不自动意味着不可篡改、可迁移或无限保存。",
+            "example": "教学假设：演示一个回放按钮，只能证明某个示例可读取；存储上限和数据完整性需要另外验证。",
+            "trace": "BCG 的 memory implant 与回看描述；工程保证的区分为教学分析。"
+          },
+          {
+            "answer": "被记录的是个人经历，但一次经历通常包含他人的言语和行为。设备归属与记录涉及的人，并不是同一范围。",
+            "why": "Q3 让读者识别记忆的主体、内容中涉及的人，以及允许分享的对象。",
+            "example": "教学假设：个人会议助理录下三位同事的讨论，所有者能读取不等于可以向全公司公开。",
+            "trace": "单集的个人经历记录前提；参与者与共享范围是编者的隐私类比。"
+          },
+          {
+            "answer": "故事前提强调持续记录与重放，现有资料未定义保留期限和删除传播。由此可以讨论过期和撤回，却不能把“看得见过去”解释成永久不可删除。",
+            "why": "Q4 需要核实实际规则，不能从作品的戏剧性描述推出完整的数据生命周期。",
+            "example": "教学假设：保留期30天的系统还要说明导出、备份与摘要是否遵守同一期限。",
+            "trace": "BCG 简介；30天与副本清理均为虚构工程示例，不是剧情规则。"
+          },
+          {
+            "answer": "回放让旧经历重新成为当前判断的材料。选择哪一段、用什么问题观看，仍会影响解释；检索成功与判断正确不能等同。",
+            "why": "Q5 既要看取回机制，也要看当前任务是否拿到了必要上下文。",
+            "example": "教学假设：只取一句批评而漏掉之后的澄清，会保留准确文字却产生片面理解；应测试上下文完整性。",
+            "trace": "BCG 回看记录的基本设定；片段偏置为教学思想实验。"
+          },
+          {
+            "answer": "持续记录和回放引出的治理问题包括同意、共享、纠正和停止记录。单集介绍没有给出一套可直接部署的隐私制度，本页只把这些作为设计提问。",
+            "why": "记录能力更强，会增加需要说明的控制边界，不能用“全部记住”代替使用者的选择。",
+            "example": "教学假设：会议助理提供暂停、可见的录制状态和删除反馈，再分别验证这些控制实际作用于哪些副本。",
+            "trace": "作品记录设定来自 BCG；控制清单为编者推论。BBFC 仅用于身份、制作年与单集定位。"
+          }
+        ]
+      },
+      {
+        "id": "the-housekeeper-and-the-professor",
+        "title": "The Housekeeper and the Professor（博士的爱情算式）",
+        "date": "2003",
+        "summary": "小川洋子的小说把近期记忆限制为80分钟，同时让教授保有较早的数学知识。一次相处结束后，下一次怎样重新建立理解，成为故事的持续问题。",
+        "why": "它适合帮助初学者区分近期上下文、长期知识与外部交接，且出版社提供可读原文节选。",
+        "boundary": "80分钟是小说设定，不是健忘症的临床规律，也不等同于模型 context window。所链新版出版日为2025，原作年按节选版权行为2003。",
+        "status": "complete",
+        "sources": [
+          "culture-housekeeper"
+        ],
+        "checkedAt": "2026-11-12",
+        "realityNote": "80分钟是小说设定，不是人类遗忘的统一时间常数。",
+        "canonicalUrl": "https://us.macmillan.com/books/9781250375971/thehousekeeperandtheprofessor/",
+        "limitations": "外部线索是否足以恢复当前任务，需要读者另外设计检验；80分钟不能直接换算成token预算。",
+        "selectionEvidence": "Macmillan原文节选呈现80分钟设定和保留的数学知识；版权行区分原作、英译与再版。",
+        "profile": {
+          "kind": "小说；以出版社节选与简介为阅读范围",
+          "creator": "小川洋子；Stephen Snyder 英译",
+          "artifact": "下列作品来源与具体段落",
+          "version": "日文原作2003；Stephen Snyder英译2009；所链再版2025"
+        },
+        "next": "human-memory",
+        "questions": [
+          {
+            "answer": "教授仍会数学，却无法长久记住新的相处经历。知识与新近事件在故事中有不同的保持条件，所以不能把“记忆有限”理解为所有能力同时消失。",
+            "why": "Q1 要先区分内容：知道一个定理，与记得今天见过谁，是不同的回答。",
+            "example": "教学假设：新开的模型调用仍会写 Python，却不知道上一轮把函数改成了什么；前者来自已有知识，后者需要交接。",
+            "trace": "Macmillan Read Excerpt：1975之前的知识、旧定理与昨晚晚餐对照；模型例子为类比。"
+          },
+          {
+            "answer": "节选用80分钟录像带比喻近期记忆，属于人物解释，不能当成神经存储模型。对 Agent 而言，真正的载体仍须查上下文、文件或数据库，不能仅凭这个比喻判定。",
+            "why": "明确比喻的边界，可以借它理解容量限制，而不把时间长度错误换算成 token 数。",
+            "example": "教学假设：一个上下文能保留几轮对话取决于长度；80分钟与8,000 token没有可由小说推出的换算关系。",
+            "trace": "Read Excerpt 的 eighty-minute videotape；token 对照是编者澄清。"
+          },
+          {
+            "answer": "教授与管家对共同经历的记忆不对称。一个人的近期记录失效，并不意味着另一个人也忘了；共同生活中的知识分布在不同参与者之间。",
+            "why": "这让 Q3 从“存在哪儿”进一步走向“谁知道什么”，适合思考交接方与接收方掌握的信息差。",
+            "example": "教学假设：用户记得上次的项目约定，新会话的助理不知道；助理应请求或读取交接材料，不能假装已共享同一段历史。",
+            "trace": "Macmillan Book Details 每天重新介绍相识；双方不对称及交接要求为教学推论。"
+          },
+          {
+            "answer": "故事中近期经历持续受80分钟限制，较早知识则保留。这里的核心是不同内容有不同保持期，不能概括成每天把整个人的所有记忆清空。",
+            "why": "生命周期分析要逐类回答，才能决定什么需要及时转存，以及转存后如何检查。",
+            "example": "教学假设：任务中间结果进入短期状态，确认过的项目约定写入长期笔记；到会话结束时分别检查两者。",
+            "trace": "Read Excerpt 与 Book Details 的时间设定；分层笔记为教学例子。"
+          },
+          {
+            "answer": "出版社简介写到教授与管家每天重新相识。类比到后续调用，交接必须在需要行动之前发生，且内容要足以恢复任务，而不只是堆积历史。",
+            "why": "保存一份介绍与在恰当时刻读到介绍，是两件事；这正是 Q5 要追问的链路。",
+            "example": "教学假设：交接单只写“已经讨论过”不能恢复任务；写清目标、已确认决定与下一步，才可让新会话继续。",
+            "trace": "Book Details 的每晨相识；交接单是编者构造，非原作引用。"
+          },
+          {
+            "answer": "作品提供关系与信任的情境，没有定义工程式读写权限。读者可以据此追问：依赖别人提供过去时，如何确认来源、纠正误记，并尊重当事人的选择？",
+            "why": "外部帮助能补充记忆，也让记录者承担解释责任；这是一项值得单独评估的设计条件。",
+            "example": "教学假设：助理读取交接单时显示作者和更新时间；冲突时向用户确认，而不把未署名摘要当成不可修改的事实。",
+            "trace": "出版社简介支持人物关系前提；来源标注和纠错流程为教学假设，不是小说证明的规范。"
+          }
+        ]
+      },
+      {
+        "id": "memento",
+        "title": "Memento（记忆碎片）",
+        "date": "2000",
+        "summary": "Leonard 难以保留近期经历，靠照片、卡片与纹身保存调查线索。这个设定让外部记录如何接续行动、如何被解释成为可见的问题。",
+        "why": "适合把“记录存在”与“记录可信、当前适用”分开讨论；发行方简介直接说明所用载体。",
+        "boundary": "仅以发行方简介为剧情依据，不推断完整情节、医学诊断或记忆持续的统一时长。页内工程例子均为编者构造。",
+        "status": "complete",
+        "sources": [
+          "culture-memento"
+        ],
+        "checkedAt": "2026-11-12",
+        "realityNote": "依据发行方简介讨论外部提示，不提供失忆症的临床解释。",
+        "selectionEvidence": "Metro Films发行页确认2000影片、导演与照片/卡片/纹身载体，并区分法国发行记录。",
+        "limitations": "留下记录还需确认来源和语境。工程对应实验应检查错误记录能否被发现和修正。",
+        "next": "human-memory",
+        "questions": [
+          {
+            "answer": "外部记录保存的是人物、事件和调查判断。照片本身是一份观察材料，旁边的说明则可能是一项解释；两者不应默认具有相同可信度。",
+            "why": "Q1 不仅问有没有信息，还问它是观察、推断还是行动指令。",
+            "example": "教学假设：“文件测试失败”是观察，“原因是依赖过旧”是推断；如果两句都作为事实保存，后续会话可能沿错方向排查。",
+            "trace": "Metropolitan Films Synopsis 列出照片、卡片和调查信息；事实/推断划分是编者分析。"
+          },
+          {
+            "answer": "照片、纸面卡片与纹身都把信息留在头脑之外，但修改成本、携带方式与可读性不同。作品没有给出数据库或自动检索实现。",
+            "why": "同一内容换一种载体，会改变它何时可读、能否修改及怎样保留来源。",
+            "example": "教学假设：把同一个项目约定写进临时聊天与版本控制文件，跨会话可见性不同；不能只按文本内容判断是否会被再次使用。",
+            "trace": "Synopsis 的 photographies、fiches、tatouages；工程例子为类比。"
+          },
+          {
+            "answer": "这些材料服务于主人公的个人行动。个人使用范围本身，并不证明只有本人能接触或影响材料；官方简介没有完整说明他人的写入权。",
+            "why": "把“为谁保存”与“谁能修改”分开，才能避免从个人笔记推断访问隔离。",
+            "example": "教学假设：标为个人记忆的共享文件夹仍可能被同事写入，实际权限需要另查。",
+            "trace": "发行简介的主人公调查前提；他人修改权限在当前来源中未说明。"
+          },
+          {
+            "answer": "持续丢失近期经历，使记录承担跨时刻交接的作用。载体可以保留，而记录中的判断也可能过时；文本持久化不等于结论永久有效。",
+            "why": "Q4 需要同时看物理保存和语义更新，不能用“还在文件里”代替“现在仍可信”。",
+            "example": "教学假设：昨天认定的故障原因今天被新日志否定，应保留纠正关系，而不是让两个相反结论并列成为当前事实。",
+            "trace": "Synopsis 的即时失忆与外部线索；纠正关系为工程思想实验。"
+          },
+          {
+            "answer": "故事把读取外部线索放在继续调查之前。能否行动仍取决于选到哪条记录、怎样解读、是否有足够背景，而不只取决于记录数量。",
+            "why": "Q5 连接保存与使用，也允许检视一个看似完整的档案为何仍可能误导行动。",
+            "example": "教学假设：检索返回旧决策却漏掉后来的撤销通知，即使命中原文，也会把后续调用引向错误动作。",
+            "trace": "Synopsis 描述查阅照片与记录；旧决策检索例子为编者构造。"
+          },
+          {
+            "answer": "外部载体能帮助主人公继续行动，也使“记录由谁写、能否相信”成为值得追问的问题。发行方简介支持载体的存在；具体操控情节不在本页讨论范围。",
+            "why": "写得醒目或难以擦掉，不代表来源可靠；持久性与可信性是不同属性。",
+            "example": "教学假设：自动记忆保存一项推断时，附原始消息链接与置信度，并允许用户更正，避免摘要获得不应有的权威。",
+            "trace": "发行方的载体前提；来源、置信度和更正是教学设计问题，非作品提供的安全协议。"
           }
         ],
         "canonicalUrl": "https://metrofilms.com/film/memento/",
         "profile": {
-          "kind": "电影（2000）",
-          "creator": "Christopher Nolan（导演/编剧）",
-          "artifact": "BFI film record；本页只做文化类比"
+          "kind": "电影；仅使用发行方基本设定",
+          "creator": "Christopher Nolan（导演）",
+          "artifact": "下列作品来源与具体段落",
+          "version": "影片2000；所链法国发行方列视频发行2001-07-11、影院再映2023-07-12及DVD/蓝光2023-07-22"
         }
       },
       {
         "id": "the-memory-police",
-        "title": "The Memory Police",
+        "title": "The Memory Police（秘密结晶）",
         "date": "1994",
-        "summary": "小说描写记忆与物品被系统性抹除、禁谈和遗忘的社会。",
-        "why": "它适合提出删除、治理、集体记忆和权力边界问题。",
-        "boundary": "文学设定不提供工程或政治事实证明。",
-        "status": "pending",
-        "sources": [
-          "the-memory-police"
-        ],
-        "checkedAt": "2026-11-11",
-        "realityNote": "真实作品条目；页面只作类比/思想实验，不作为 Research、工程或评测证据。",
-        "canonicalUrl": "https://www.penguinrandomhouse.com/books/252774/the-memory-police-by-yoko-ogawa/"
-      },
-      {
-        "id": "funes-the-memorious",
-        "title": "Funes the Memorious",
-        "date": "1942",
-        "summary": "博尔赫斯短篇小说中的 Funes 几乎无法遗忘，细节的无限保留反而妨碍抽象和概念化。",
-        "why": "它把容量、遗忘、压缩、抽象和优先级这些工程问题变成极端思想实验。",
-        "boundary": "文学设定不等于人类记忆科学结果，也不直接给出 Agent 设计答案。",
+        "summary": "岛上的物品不断消失，多数居民对这些消失浑然不觉，少数仍记得的人受到记忆警察威胁。作家与编辑尝试通过写作保留过去。",
+        "why": "它让个体记忆、共享叙述与外部权力同时出现，适合讨论遗忘与被强制抹除的区别。",
+        "boundary": "作品的超现实设定不构成现实社会、神经科学或技术删除的因果证明；不以剧情替代具体权限、隐私或保留政策。",
         "status": "complete",
         "sources": [
-          "funes-the-memorious"
+          "culture-police",
+          "culture-police-original"
         ],
-        "checkedAt": "2026-11-11",
-        "realityNote": "真实作品条目；页面只作类比/思想实验，不作为 Research、工程或评测证据。",
-        "selectionEvidence": "Jorge Luis Borges 作品身份和可靠作品介绍入口可定位；页面只做类比。",
-        "limitations": "当前使用二手作品介绍；后续可补充更权威书目资料和版权安全的短摘述。",
+        "checkedAt": "2026-11-12",
+        "realityNote": "超现实情节用于思考记忆控制权，不作为现实制度或生理机制的因果证据。",
+        "canonicalUrl": "https://www.penguinrandomhouse.com/books/252774/the-memory-police-by-yoko-ogawa/",
+        "limitations": "社会性抹除的文学设定可生成治理问题，但不能证明软件删除是否彻底；后者要查具体副本和派生数据。",
+        "selectionEvidence": "讲谈社核对1994原作；PRH简介和版本记录提供消失设定、英译及2019/2020发行信息。",
+        "profile": {
+          "kind": "小说；依据出版方内容简介",
+          "creator": "小川洋子；Stephen Snyder 英译",
+          "artifact": "下列作品来源与具体段落",
+          "version": "日文原作1994；所链PRH页的英文电子书/有声书2019，平装2020"
+        },
         "next": "human-memory",
         "questions": [
           {
-            "answer": "几乎所有细节都被保留，故事由此提出“哪些内容值得成为可复用经验”的问题。",
-            "trace": "作品设定的概述；不是认知实验。"
+            "answer": "被威胁的既是物品相关记忆，也是讲述过去的能力。写作在简介中成为保存过去的方式；存留物品和存留关于物品的意义，可以分开观察。",
+            "why": "Q1 让读者说明保留对象：是一份实体档案、某项事实，还是一群人的共同叙述。",
+            "example": "教学假设：保留旧文件却删掉文件来源和背景，可能留下字节，却使后续使用者无法理解它。",
+            "trace": "PRH About the Book 的物品消失、少数人记得与写作段落；文件例子为类比。"
           },
           {
-            "answer": "无限细节是设定层面的表示与容量问题，不等于真实存储能无限扩张。",
-            "trace": "小说设定；用于说明 representation/capacity 张力。"
+            "answer": "简介能确认人的记忆与文字记录两种承载，但没有交代超现实消失的物理过程。工程读者可据此区分载体与含义，不能借小说解释数据擦除。",
+            "why": "Q2 要求指出能查到的承载；对未说明的机制保持空白，比提供貌似精确的虚构流程更有用。",
+            "example": "教学假设：同一事件可以存在笔记、数据库和备份里，删除其中一个载体未必删除其他副本。",
+            "trace": "出版方的写作前提；副本传播是编者提出的工程对照。"
           },
           {
-            "answer": "主体难以把细节压缩成共享概念，提示范围和抽象层级之间的张力。",
-            "trace": "作品主题的类比解释。"
+            "answer": "多数居民与少数仍记得的人处境不同，说明个体保存与集体可用的叙述并不一致。个人知道某件事，也不代表它能被安全地共享。",
+            "why": "Q3 除了问谁拥有记忆，也问共享会影响谁；不能把社会范围简化成单个个人。",
+            "example": "教学假设：团队文档含有某成员的私密经历，团队需要的信息与个人允许共享的信息并不总是相同。",
+            "trace": "出版方简介中 inhabitants 与 those few able to recall 的对照；团队场景为教学假设。"
           },
           {
-            "answer": "缺少遗忘和压缩会让检索和容量成本持续增长。",
-            "trace": "思想实验推论，不是实测成本。"
+            "answer": "消失、遗忘与写作保留构成故事的时间过程。简介并未说明一个精确的删除协议，所以只能据此提出“撤回是否彻底、保留是否正当”的问题。",
+            "why": "生命周期既可能包含技术清理，也可能包含人为保留；二者的目的和后果要分别描述。",
+            "example": "教学假设：用户撤回一条偏好后，当前表已更新，但旧摘要仍引用它；测试需覆盖后续读取而非只查主表。",
+            "trace": "PRH 简介中的持续消失与保存过去；摘要撤回是工程例子。"
           },
           {
-            "answer": "如果每个细节都可被暴露，后续调用如何选择相关信息成为核心问题。",
-            "trace": "从设定推导出的教学问题。"
+            "answer": "文字让未能直接经历或记住过去的人拥有另一条接触过去的路径，但记录仍需被读取、解释和信任。简介不证明写作能恢复所有已失去的信息。",
+            "why": "Q5 把“留下一份材料”和“让后来的人理解它”连接起来，同时保留信息损失的可能。",
+            "example": "教学假设：新 Agent 读取档案时，同时得到时间、作者与适用范围，才能判断记录怎样帮助当前任务。",
+            "trace": "出版方写作保存过去的前提；读取所需元数据为编者类比。"
           },
           {
-            "answer": "谁决定保留、删除和抽象，类比治理与控制。",
-            "trace": "从设定推导出的教学问题，不是工程规范。"
+            "answer": "记忆警察的强制力量是作品明确提供的治理冲突。它提示读者关注谁有权决定什么可记、什么必须忘，而不把删除一概描述成有益维护。",
+            "why": "同一个删除动作，在用户主动撤回和他人强制压制两种条件下，意义不同。",
+            "example": "教学假设：系统管理者的删除权限应有说明与记录；个人提出的数据撤回请求，也应有可检查的执行结果。",
+            "trace": "PRH 简介明确说明记忆警察压制仍记得的人；权限与审计设计是教学推论。"
+          }
+        ]
+      },
+      {
+        "id": "funes-the-memorious",
+        "title": "Funes the Memorious（博闻强记的富内斯）",
+        "date": "1942",
+        "summary": "Borges 短篇中的 Funes 能记住异乎寻常的细节。MIT Press 的署名导读保留了原文节选，适合由此追问：记住更多，是否就更容易找到相关信息或形成概括？",
+        "why": "它提供“极多细节”的反面思考入口，帮助读者分别讨论保留、选择和抽象，而不把最大容量当作唯一目标。",
+        "boundary": "基于 MIT Press 导读及其所引原文，不声称通读全部小说；“抽象、检索成本、团队共享”的工程关联均是教学提问，不是文学实验结论。",
+        "status": "complete",
+        "sources": [
+          "culture-funes"
+        ],
+        "checkedAt": "2026-11-12",
+        "realityNote": "依据导读和节选形成问题，不将人物能力当成可实现的存储方案。",
+        "selectionEvidence": "MIT Press署名导读提供作品年份及原文节选，支持人物异常细节记忆这一阅读前提。",
+        "limitations": "导读不提供真实检索成本或AI实验。保留、概括与抽象的取舍需要在具体任务中比较。",
+        "next": "human-memory",
+        "questions": [
+          {
+            "answer": "节选突出的是视觉场景、形状等大量具体细节。由此前提可提出一个教学问题：系统保存原始经历后，是否还需要提取与任务相关的事实或概括？",
+            "why": "事件档案与可复用结论有不同用途；不能因为细节齐全就假定已经生成后一种内容。",
+            "example": "教学假设：保存一万条报错日志，仍未等于总结出“此版本需要更新依赖”的可靠结论。",
+            "trace": "MIT Press 导读中云、葡萄藤等原文节选；日志与概括是编者提出的类比。"
+          },
+          {
+            "answer": "作品设定的是一个人的异常记忆能力，并没有提供可测量的编码方案。把它类比成逐字档案，可以讨论容量代价，但不能计算真实大脑或数据库的容量。",
+            "why": "Q2 要求可核的表示和载体信息；文学中的“什么都记得”不能替代这些参数。",
+            "example": "教学假设：比较完整日志与摘要所占字节，并另测遗漏信息；这是可以运行的工程实验，数值必须来自实验。",
+            "trace": "导读对 unlimited capacity 的设定介绍；字节实验为教学构造。"
+          },
+          {
+            "answer": "记忆首先属于 Funes 的个人经历；他人能听到怎样的描述，是另一个传播问题。个人保有大量细节，并不等于这些细节已变成团队共享知识。",
+            "why": "Q3 帮助区分个人可访问的信息和其他参与者实际获得的信息。",
+            "example": "教学假设：一个 Agent 私有的运行轨迹，只有在选择、解释并授权发布后才成为另一个 Agent 的可用材料。",
+            "trace": "导读的个人角色前提；团队共享流程为编者类比，非原作机制。"
+          },
+          {
+            "answer": "导读把难以遗忘与睡眠困扰联系起来。对工程的启发是检视保留、压缩与过期各自的目标；不能从故事直接推出“遗忘越多越好”。",
+            "why": "删除可能减轻检索负担，也可能丢掉关键证据；Q4 必须结合任务评价取舍。",
+            "example": "教学假设：删除重复日志后检索更快，但必须复测少见故障是否仍能找到，而不是只报告存储节省。",
+            "trace": "MIT Press 导读关于失眠与无法忘记的段落；速度与覆盖率需真实测量，本文不报数值。"
+          },
+          {
+            "answer": "保留大量细节之后，仍要决定当前问题需要哪一段。这里把“可回忆”与“回答得有用”分开，是教学上的问题设置，不是对角色性能的测量。",
+            "why": "Q5 关注选择与呈现：把全部档案放进上下文，不能自动保证模型抓住相关部分。",
+            "example": "教学假设：询问当前软件版本时，应返回最近确认的版本及依据；返回所有历史版本会额外制造解释负担。",
+            "trace": "异常细节记忆来自导读；版本检索是编者设计的反例。"
+          },
+          {
+            "answer": "这份节选没有定义谁能修改或删除 Funes 的记忆，因此 Q6 的作品答案是“没有相应制度说明”。它引出的工程问题是使用者能否主动更正和停止保留。",
+            "why": "一套通用问题清单也应容纳“不适用”或“未说明”，不能为了填满六格而编造治理机制。",
+            "example": "教学假设：若助理只提供永久保存按钮，却没有更正入口，就应把这一限制写出来，而非用容量优势掩盖。",
+            "trace": "当前导读与节选的证据范围；更正功能属于教学假设。"
           }
         ],
         "canonicalUrl": "https://thereader.mitpress.mit.edu/borges-memory-funes-the-memorious/",
         "profile": {
-          "kind": "短篇小说（1942）",
-          "creator": "Jorge Luis Borges",
-          "artifact": "MIT Press Reader discussion；本页只做文化类比"
+          "kind": "短篇小说；依据署名导读与其中原文节选",
+          "creator": "Jorge Luis Borges；所引导读作者 Rodrigo Quian Quiroga",
+          "artifact": "下列作品来源与具体段落",
+          "version": "1942首刊；1944收入Ficciones；此处依据MIT Press署名导读与所引节选"
         }
+      },
+      {
+        "id": "50-first-dates",
+        "title": "50 First Dates（初恋50次）",
+        "date": "2004",
+        "summary": "Sony 的电影简介设定 Lucy 每晚失去当天的记忆，Henry 因而需要每天重新建立关系。这正好提供“一段互动结束后，下一段如何继续”的思想实验。",
+        "why": "对应初学者常问的会话重启问题，并与80分钟记忆的小说形成可读对照；两者都是虚构情境。",
+        "status": "complete",
+        "checkedAt": "2026-11-12",
+        "sources": [
+          "culture-fifty"
+        ],
+        "canonicalUrl": "https://www.sonypictures.com/movies/50firstdates",
+        "boundary": "以Sony官方简介中的每日记忆重置为讨论范围，不复述其他情节。",
+        "limitations": "每日交接的教学实验要独立定义内容、载体和授权。电影的关系前提不提供可部署的协议。",
+        "selectionEvidence": "Sony官方ABOUT确认每日记忆重置、主要人物与2004版权年；未据主演信息推断导演。",
+        "realityNote": "每日重置是电影设定；JSON交接单等都是本教程另外构造的例子。",
+        "profile": {
+          "kind": "电影；依据官方基本设定",
+          "creator": "主演：Adam Sandler、Drew Barrymore；出品信息见Sony页面",
+          "artifact": "下列作品来源与具体段落",
+          "version": "2004；Sony页面版权年"
+        },
+        "next": "human-memory",
+        "questions": [
+          {
+            "answer": "官方简介把丢失范围限定为当天的记忆。教学上可以由此追问：一段新经历不能延续，是否就等于所有知识归零？这是一项比较问题，不能从简介推定角色全部认知能力。",
+            "why": "Q1需要说清丢失了哪类内容，不能笼统地把记忆重置等同于所有知识归零。",
+            "example": "教学假设：助理新会话仍会计算，却不知道你昨天确认的出发日期；它需要恢复的是这项约定。",
+            "trace": "Sony ABOUT：every night all memory of her day is erased；Agent例子为编者构造。"
+          },
+          {
+            "answer": "官方简介没有交代可用于交接的具体载体。可以另设一个外部交接单来练习Q2，但不要把练习中的文件或设备当成影片场景。",
+            "why": "把例子标成教学假设，既能解释载体怎样支持下一次使用，也能保留作品设定与工程设计的区别。",
+            "example": "教学假设：把当天已确认的决定写入JSON文件，下一次运行再读；这是我们设计的练习，不是对影片场面的描述。",
+            "trace": "Sony简介的证据范围；JSON交接单为教学构造。"
+          },
+          {
+            "answer": "Lucy与Henry对之前互动的记忆不对称，所以“我们昨天谈过”并不代表双方都能使用同一段过去。",
+            "why": "Q3提醒我们逐个参与者确认已知内容和可见范围，而不假定共享上下文。",
+            "example": "教学假设：用户掌握上一轮任务结果，新的Agent进程没有；开始行动前应读取被授权的交接信息。",
+            "trace": "Sony ABOUT 描述次日Lucy不认识Henry；Agent进程类比为编者解释。"
+          },
+          {
+            "answer": "每夜丢失当天记忆是这部电影的设定边界。把它对应到会话结束，能帮助讨论何时保存交接信息；不能据此声称真实人类记忆按日清零。",
+            "why": "Q4需要一个明确的状态变化时点，才知道哪些写入必须在这个时点之前完成。",
+            "example": "教学假设：进程退出之前写入当前任务、已验证结果与下一步；只写“已完成一半”不足以重新开始。",
+            "trace": "Sony ABOUT的时间前提；进程和交接字段是教学例子。"
+          },
+          {
+            "answer": "每天重新建立联系，提示读者关注下一轮怎样获得足够背景。需要呈现的是帮助当前行动的信息，不必机械重放全部历史。",
+            "why": "Q5让“保存了”进一步变成“接收者何时、如何读到”。",
+            "example": "教学假设：启动时先展示当前目标和最近确认的状态，详细日志按需打开；再检查是否漏掉关键约束。",
+            "trace": "官方简介描述Henry每天重新相处；具体呈现方案为编者假设。"
+          },
+          {
+            "answer": "信息不对称带来信任与自主选择的问题。电影简介没有提供授权规则，因此不能直接从浪漫剧情推出助理可以替用户保留或决定一切。",
+            "why": "Q6要求独立说明谁提供交接、谁能纠正，以及接收者是否能拒绝沿用。",
+            "example": "教学假设：交接单标明由谁写、何时确认；用户可以拒绝一项旧决定，再保存更正后的版本。",
+            "trace": "关系前提来自Sony；来源标注与可拒绝性是本教程提出的工程设计条件。"
+          }
+        ]
+      },
+      {
+        "id": "truth-of-fact-feeling",
+        "title": "The Truth of Fact, the Truth of Feeling（事实的真相，情感的真相）",
+        "date": "2013",
+        "summary": "Ted Chiang 的故事用记者和年轻人的两条叙事讨论技术与读写。出版社的另一份简介把它联系到真相观念。这里据这些主题思考记录方式如何影响人解释过去，不复述完整情节。",
+        "why": "它把“保存准确记录”与“人如何理解记录”连接起来，补充单纯讨论容量、检索和遗忘的视角。",
+        "status": "complete",
+        "checkedAt": "2026-11-12",
+        "sources": [
+          "culture-truth",
+          "culture-truth-edition",
+          "culture-truth-date"
+        ],
+        "canonicalUrl": "https://subterraneanpress.com/best-of-subterranean/",
+        "boundary": "讨论依据为出版社简介与目录，另以Hugo官方记录核对2013首刊年；不涉及故事内的系统实现细节或故事结局。",
+        "limitations": "主题导读能帮助提出记录与解释的问题，无法给出故事内系统的技术细节；工程设计应另找一手实现。",
+        "selectionEvidence": "两份Subterranean Press简介分别支持技术/读写与真相主题；Hugo官方记录核对2013年秋首刊。",
+        "realityNote": "以出版社主题简介作思想实验，不补述完整情节或结局。",
+        "profile": {
+          "kind": "小说；根据出版方简介与目录作有限阅读",
+          "creator": "Ted Chiang",
+          "artifact": "下列作品来源与具体段落",
+          "version": "2013年秋刊于Subterranean；Hugo 2014官方提名记录可核"
+        },
+        "next": "human-memory",
+        "questions": [
+          {
+            "answer": "The Best of Subterranean简介强调技术与读写；Exhalation简介强调技术怎样影响人对真相的理解。由此可提出教学问题：发生过的记录与当事人对记录的解释应如何区分？",
+            "why": "Q1既要识别原始材料，也要识别解释、观点或修订，避免把主观总结作为唯一事实保存。",
+            "example": "教学假设：会后摘要写“大家同意”，原始记录中却有保留意见；两种内容应保留各自来源。",
+            "trace": "The Best of Subterranean作品简介：技术与读写；Exhalation作品简介：技术与真相。会议情境是编者构造。"
+          },
+          {
+            "answer": "故事把技术与读写能力放在一起。记录所用的介质会影响保存和传播，但出版社简介没有给出设备格式或算法，不能补写成具体架构。",
+            "why": "Q2允许我们讨论媒介变化，同时把实际实现细节留待可靠来源。",
+            "example": "教学假设：一项口头约定变成可检索的书面记录后更容易复查，但解释它仍需要时间与语境。",
+            "trace": "The Best of Subterranean简介中的technology and literacy；口头/书面对照为教学假设。"
+          },
+          {
+            "answer": "两条叙事让不同人的知识与解释成为问题，而不只关注一个存储器。工程读者可继续追问：一份记录涉及哪些人，谁能够看到或更正它？",
+            "why": "Q3帮助识别记录的主体与接收者；把个人经历写下来并不会自动变成大家认可的共享知识。",
+            "example": "教学假设：团队摘要允许各参与者标注异议，系统保留是谁提出、何时提出，而非强制合并成一个口径。",
+            "trace": "The Best of Subterranean的双叙事简介；团队异议机制是教学例子。"
+          },
+          {
+            "answer": "本页将“对过去的解释可能改变”作为阅读问题，不能把出版社的简述扩写为具体修改或删除机制。实际Memory系统还要区分旧记录、当前解释与后来的更正。",
+            "why": "Q4可以揭示更新的对象到底是原始材料，还是从材料得到的结论。",
+            "example": "教学假设：保留会议原话，同时为旧摘要追加“此结论后来被撤回”；不要静默覆盖到无法追溯。",
+            "trace": "Exhalation简介关于技术与真相；版本化更正为编者思想实验。"
+          },
+          {
+            "answer": "记录存在之后，读者仍需选择、阅读与解释。关于技术如何影响真相的故事，使我们能够问：检索返回的内容为何值得作为当前判断的依据？",
+            "why": "Q5不仅关心命中了什么，也关心是否提供了足以解释它的上下文。",
+            "example": "教学假设：一次查询同时返回原记录、后来更正和各自日期，让模型看到变化链路，而不是只看一句最相似的旧摘要。",
+            "trace": "两份出版社简介支持讨论主题；查询例子为教学构造。"
+          },
+          {
+            "answer": "“由谁解释过去”是这一条目引出的控制问题。故事简介不提供工程授权制度；系统需要另外说明对记录的访问、质疑和修订途径。",
+            "why": "Q6防止记录系统把自己的摘要变成无法挑战的权威，也让解释责任保持可见。",
+            "example": "教学假设：对存在争议的个人资料，允许本人提出更正，保留争议状态，避免自动把一方判断当作定论。",
+            "trace": "Exhalation简介关于技术与真相；可质疑与修订流程是编者提出的设计问题。"
+          }
+        ]
       }
     ],
     "humanMemory": [
       {
         "id": "forgetting-and-consolidation",
-        "title": "Forgetting and consolidation",
+        "title": "巩固与遗忘：保存后还会发生什么？",
         "date": "2025",
-        "status": "pending",
-        "summary": "遗忘、巩固和长期保持的研究背景。",
-        "why": "帮助理解生命周期和更新问题。",
-        "boundary": "背景资料不等于工程策略。",
+        "status": "complete",
+        "checkedAt": "2026-11-12",
+        "summary": "记忆形成之后仍会变化。睡眠巩固、重新激活、更新与遗忘研究帮助我们区分保持内容、改变表示和能否取回。本课读开放综述与患者资料再分析，重点说明哪些概念能启发工程问题，哪些不能直接迁移。",
+        "why": "补足“写入一次就永远原样保存”的直觉，并解释为什么读不到与彻底擦除不能简单等同。",
+        "boundary": "不同研究涉及人类与动物、不同任务及时间尺度；机制结论必须保留研究条件，不能直接形成临床建议或Agent最佳策略。",
         "sources": [
-          "s037",
-          "s040"
+          "human-sleep-full",
+          "human-engram-full",
+          "human-retrograde-full",
+          "human-engram-correction"
         ],
-        "checkedAt": "2026-11-11"
+        "canonicalUrl": "https://ora.ox.ac.uk/objects/uuid%3A38f35409-3343-483d-9ea5-e040c2a13f11/files/s47429b950",
+        "selectionEvidence": "睡眠综述有牛津作者公开全文；engram综述和逆行性遗忘再分析有Europe PMC全文。三者同时保留巩固解释及限制，避免只挑有利类比。",
+        "limitations": "本课不把睡眠等同于后台摘要任务，也不把动物中的痕迹重激活等同于可恢复所有被删除的数据。研究尚不能推出普适保留期限、完美删除或最优压缩比。",
+        "next": "topics",
+        "profile": {
+          "kind": "人类记忆背景课；综述与再分析",
+          "authors": "Bernhard P. Staresina；Yosif Zaki、Denise J. Cai；P. P. Ketonis 等（各来源作者分别列出）",
+          "venue": "Trends in Cognitive Sciences 2024；Neuropsychopharmacology与Psychonomic Bulletin & Review 2024/2025",
+          "artifact": "三份开放全文，章节和证据条件逐问列出"
+        },
+        "questions": [
+          {
+            "answer": "这些研究关心经历留下的记忆痕迹，以及之后能否保持或重新表达。痕迹并非文件中的原样副本；巩固和更新还可能改变内容的组织与表达方式。",
+            "why": "Q1必须说明我们研究的是行为上能回忆的内容、神经活动模式，还是对这些现象的解释模型。三者不是同一种观测。",
+            "example": "教学对照：一次任务的原始轨迹与后来的经验摘要都涉及同一经历，却保留不同信息；需要分别检查具体保留了什么。",
+            "trace": "Staresina 2024 p.339编码/巩固/提取；engram综述Abstract及Memory consolidation/Memory updating章节。工程摘要为类比。"
+          },
+          {
+            "answer": "神经科学材料讨论神经元群、连接及跨脑区活动，而不是显式键值表。睡眠综述区分突触层面的变化和系统层面的重新组织，两种尺度不应被压成一次“写磁盘”。",
+            "why": "Q2帮助把表示变化与载体变化分开，也提醒我们不要把脑区与软件模块逐个配对。",
+            "example": "教学假设：把日志压缩成摘要与把文件搬到另一硬盘是两种操作；同样不能用“搬运”一词代替巩固研究的全部机制。",
+            "trace": "Staresina 2024 pp.339–340关于synaptic/systems consolidation；engram综述Consolidation段落。"
+          },
+          {
+            "answer": "这些来源主要研究个体内部记忆系统及其相互作用，证据还跨越人类与动物。它们没有测量Agent团队间的共享策略；跨脑区协作与跨租户共享不能视为同一件事。",
+            "why": "先限定主体与实验对象，才能判断结论能否用于当前问题。尤其不能把动物中的干预结果直接泛化为人类通用规律。",
+            "example": "阅读练习：遇到“刺激后记忆恢复”的表述，先查对象是小鼠还是人、任务是什么、观察的是行为还是主观回忆，再讨论工程启发。",
+            "trace": "engram综述Memory recall/Forgetting中动物标记与激活实验；Staresina各人类/啮齿类研究的条件。"
+          },
+          {
+            "answer": "巩固、更新和遗忘可能发生在不同时间尺度。研究仍对较早记忆是否持续依赖特定脑区有分歧；较旧并不自动意味着更稳定。遗忘也不能一律解释为痕迹已彻底消失。",
+            "why": "Q4需要报告变化条件和反例。只有“经历了时间”不足以推导一条统一的生命周期。",
+            "example": "文献对照：逆行性遗忘再分析发现，标准的时间梯度解释只符合部分资料；因此不能用“越老越安全”设计Agent的自动清理规则。",
+            "trace": "engram综述Systems consolidation与Forgetting；Ketonis等全文Results/Discussion，作者分析限于特定创伤患者，不包含所有神经退行性情况。"
+          },
+          {
+            "answer": "提取依赖线索与当前状态。engram综述回顾了动物实验：自然条件下不表达的记忆，在特定实验激活下仍可表现。因此一次取回失败不能单独证明不存在任何痕迹。",
+            "why": "这为“未命中”和“已删除”提供清楚的概念区分，但工程上必须用自己的存储与检索测试来验证。",
+            "example": "教学假设：向量检索没有找到一条记录，原始文件却仍在。要验证删除，需要查文件、索引、摘要和备份，不能只运行一次查询。",
+            "trace": "engram综述Forgetting关于潜伏痕迹与动物激活研究；文件/索引例子属于工程反例，不是脑科学结论。"
+          },
+          {
+            "answer": "研究者通过任务、线索、记录或实验干预来观察机制，这与产品用户的授权和撤回权不同。睡眠综述仍列出未解决问题，不能据此承诺可精确控制某段记忆的保留与删除。",
+            "why": "Q6同时提醒我们检查可控性的证据：观察相关活动与证明能够安全、可靠地控制系统，是不同强度的结论。",
+            "example": "教学假设：系统能定时压缩记忆，只说明存在后台动作；是否忠实保留重要信息、是否遵守用户删除请求，仍需两套检查。",
+            "trace": "Staresina 2024 TMR讨论与Outstanding questions；engram综述干预研究及结论边界。用户权利例子是编者分析。"
+          }
+        ]
       },
       {
         "id": "human-memory-systems",
-        "title": "Human memory systems overview",
+        "title": "人类多记忆系统：这些术语从哪里来？",
         "date": "2004",
-        "status": "pending",
-        "summary": "人类记忆系统、工作记忆、情景/语义/程序性术语的背景入口。",
-        "why": "为教程里的术语提供认知科学背景。",
-        "boundary": "人类认知分类不能直接证明 Agent 架构。",
+        "status": "complete",
+        "checkedAt": "2026-11-12",
+        "summary": "情景、语义和程序性这些词有认知科学背景。Squire 的综述说明：人类记忆分类的依据包括不同任务的表现、损伤后的能力分离，以及相应脑结构。借用名称时，也要看证据和解释对象是否相同。",
+        "why": "用一个有实验脉络的经典来源解释术语，而不把大脑结构直接当成 Agent 的软件蓝图。",
+        "boundary": "经典综述帮助理解分类逻辑，不是最新神经科学全景；所述患者与动物研究均由综述转述，本仓库未复现。",
         "sources": [
-          "s046"
+          "human-squire-full"
         ],
-        "checkedAt": "2026-11-11"
+        "canonicalUrl": "https://whoville.ucsd.edu/PDFs/384_Squire_%20NeurobiolLearnMem2004.pdf",
+        "selectionEvidence": "论文身份、作者实验室全文与Fig.1可核。它用记忆表现的分离解释分类理由，比只翻译术语更适合这门背景课。来源所述事实置信度高；迁移到AI的启发属于有条件类比。",
+        "limitations": "六问中的主体和治理在这里有适用边界：该论文研究个体脑系统，不提供多租户共享、授权API或可验证数据删除。工作记忆也不能直接塞进Fig.1的长期记忆分类。",
+        "next": "topics",
+        "profile": {
+          "kind": "人类记忆背景课；基于经典综述",
+          "authors": "Larry R. Squire",
+          "venue": "Neurobiology of Learning and Memory 82 (2004), 171–177",
+          "artifact": "作者实验室公开PDF；DOI 10.1016/j.nlm.2004.06.005"
+        },
+        "questions": [
+          {
+            "answer": "文章首先区分可有意识回想的陈述性记忆与一组非陈述性系统。陈述性包含事件与事实；非陈述性还包含技能/习惯、启动等，不能统统缩成“程序性”。Fig.1针对长期记忆，工作记忆不在同一级清单中。",
+            "why": "这里的分类目的，是解释哪些学习与表现可以彼此分离，而不是给每段信息分配一个唯一文件夹。",
+            "example": "综述回顾：H.M.可以逐日改善镜像描画技能，却不记得之前练过。这是“表现有所学习”与“能回想训练事件”的区别。",
+            "trace": "Squire 2004 pp.171–173（H.M.与分类发展）、Fig.1及p.174（episodic/semantic）；H.M.实验为综述所引Milner 1962，本文不声称复核原始数据。"
+          },
+          {
+            "answer": "文章把系统同时联系到功能和脑结构，例如内侧颞叶对陈述性记忆的重要性，以及不同非陈述性能力涉及的结构。它没有把一个脑区描述为存放某种文本记录的专用硬盘。",
+            "why": "Q2 在脑科学里要用神经组织与活动回答，在工程里则可用文件、向量和参数回答；同名分类不能证明同一实现。",
+            "example": "教学对照：把Agent的事件日志命名为“hippocampus”，并没有证明它具有海马的学习机制。需要回到实际写入和读取过程。",
+            "trace": "Squire Fig.1图注及p.175关于系统同时包含structure/function的论述；Agent名称例子为编者构造。"
+          },
+          {
+            "answer": "此文观察的是一个个体内部多个系统如何共同支持行为，也比较不同受试者与物种的证据。它没有讨论多人共享记忆库或组织权限，因此这些软件式范围不能从论文中推出。",
+            "why": "先说明研究对象是谁，才能判断“系统间独立”指的是实验中的能力分离，还是工程的访问隔离。",
+            "example": "综述以同一经历同时形成事件记忆和恐惧反应说明多系统并行；这不是两个Agent各持一份数据库的意思。",
+            "trace": "Squire p.174：systems operate in parallel及同一经历的例子；p.175比较人类与动物学习策略。"
+          },
+          {
+            "answer": "文章强调不同系统的学习规律：有些信息能在一次事件中形成，有些技能或习惯依赖逐渐积累。它并未给出统一保留期、过期时间或删除指令。",
+            "why": "Q4 的要点是查形成与变化规律，而不是假定所有被称为记忆的东西都经历相同流程。",
+            "example": "教学假设：记录一次工具失败，与通过多次反馈学到稳定流程，是不同的形成条件；Agent中是否需要分开实现仍须实验。",
+            "trace": "Squire p.174关于single event与gradually extract common elements的对照；工程例子是类比。"
+          },
+          {
+            "answer": "记忆可以通过有意识回想表现出来，也可以通过任务表现显露。综述指出，改变任务指令就可能改变观察到的能力，因此“答不出来”不总等于“没有任何学习”。",
+            "why": "这解释了为什么读取方式与评测任务都重要：我们观察到的是某种条件下的表现。",
+            "example": "文中词干任务里，“说出首先想到的词”和“回忆先前见过的词”是不同要求。类比到Agent，问答测试和动作任务也不能互相代替。",
+            "trace": "Squire p.172词干补全及启动效应讨论；Agent任务映射为编者推论。"
+          },
+          {
+            "answer": "人类大脑不是带管理员读写API的存储服务。本文用损伤、训练与任务条件研究记忆系统，没有提供用户权限、来源审计或删除承诺；Q6这篇综述不涉及这些工程治理问题，应明确写出。",
+            "why": "通用问题清单的价值也在于标出适用边界，避免借一个神经科学名词替产品权限设计背书。",
+            "example": "教学对照：即使产品称其存储为“情景记忆”，谁可访问仍要查产品权限文档，不能从这篇脑科学综述得到答案。",
+            "trace": "Squire 论文研究范围与p.175结构/功能讨论；治理适用边界是本教程的分析。"
+          }
+        ]
       }
     ]
   },
