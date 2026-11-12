@@ -1,4 +1,5 @@
 import json
+import subprocess
 import unittest
 from pathlib import Path
 
@@ -35,10 +36,31 @@ class TutorialContract(unittest.TestCase):
         self.assertGreaterEqual(len(candidates), 1)
         for entry in candidates:
             self.assertNotIn(entry['id'], selected)
-            self.assertEqual(entry.get('status'), 'pending')
+            self.assertEqual(entry.get('status'), 'complete')
+            self.assertEqual(len(entry.get('questions', [])), 6)
+            for answer in entry['questions']:
+                for field in ('answer', 'why', 'example', 'trace'):
+                    self.assertTrue(answer.get(field), (entry['id'], field))
             self.assertTrue(entry.get('boundary'))
             self.assertTrue(entry.get('checkedAt'))
             self.assertTrue(set(entry.get('sources', [])) <= set(self.data['sources']))
+
+    def test_extension_details_and_comparison_use_the_same_entries(self):
+        # Exercise real renderer functions so extension links cannot lead to empty pages.
+        script = r'''
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const tutorial=JSON.parse(fs.readFileSync('site/tutorial.json','utf8'));
+const ctx=vm.createContext({tutorial,esc:String,crumbs:()=>'',state:{tutorialCompare:[]},tutorialComparisonCategories:tutorial.comparisonCategories});
+vm.runInContext(fs.readFileSync('site/tutorial.js','utf8'),ctx);
+for (const entry of tutorial.researchCandidates) {
+  assert.equal(ctx.tutorialEntryBy('research',entry.id).id,entry.id);
+  assert(ctx.tutorialReadings('research').some(e=>e.id===entry.id));
+  assert(ctx.tutorialCompare().includes('data-tutorial-compare="'+entry.id+'"'));
+}
+assert.equal(ctx.tutorialCounts().research.total,tutorial.entries.research.length);
+assert.equal(ctx.tutorialEntryBy('research','nonexistent'),null);
+'''
+        subprocess.run(['node', '-e', script], cwd=ROOT, check=True, capture_output=True, text=True)
 
     def test_each_category_has_complete_sample_and_all_entries_are_named(self):
         for category in ('research', 'engineering', 'benchmarks'):

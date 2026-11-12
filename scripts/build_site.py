@@ -115,17 +115,22 @@ def validate_tutorial(tutorial):
         if parsed.scheme != 'https' or not parsed.hostname:
             raise ValueError(f'Invalid tutorial source URL: {source_id}')
     entries = tutorial.get('entries', {})
-    for category in ('research', 'engineering', 'benchmarks', 'culture'):
-        rows = entries.get(category, [])
+    all_ids = set()
+    for category in ('research', 'engineering', 'benchmarks', 'culture', 'humanMemory', 'researchCandidates'):
+        if category == 'researchCandidates':
+            rows = tutorial.get('researchCandidates', [])
+        else:
+            rows = entries.get(category, [])
         if len(rows) < 1:
             raise ValueError(f'Tutorial category is empty: {category}')
         if category in ('research', 'engineering', 'benchmarks') and sum(row.get('status') == 'complete' for row in rows) < 1:
             raise ValueError(f'Tutorial category needs at least one complete sample: {category}')
         ids = set()
         for row in rows:
-            if row.get('id') in ids:
+            if row.get('id') in all_ids:
                 raise ValueError(f'Duplicate tutorial entry: {row.get("id")}')
             ids.add(row.get('id'))
+            all_ids.add(row.get('id'))
             if not row.get('checkedAt') or not set(row.get('sources', [])) <= set(sources):
                 raise ValueError(f'Incomplete tutorial entry provenance: {row.get("id")}')
             if row.get('status') == 'complete':
@@ -142,7 +147,7 @@ def validate_tutorial(tutorial):
                     if not required_evaluation <= set(evaluation) or any(not str(evaluation[field]).strip() for field in required_evaluation):
                         raise ValueError(f'Complete benchmark is missing evaluation fields: {row.get("id")}')
                 for answer in row['questions']:
-                    if not answer.get('answer') or not answer.get('trace'):
+                    if any(not answer.get(field) for field in ('answer', 'why', 'example', 'trace')):
                         raise ValueError(f'Incomplete tutorial answer: {row.get("id")}')
             if category == 'culture' and not row.get('realityNote'):
                 raise ValueError(f'Culture entry needs a reality note: {row.get("id")}')
