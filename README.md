@@ -33,11 +33,11 @@ For example, a project's deadline changes from Friday to Monday. Saving both sta
 | 05 | [Benchmarks](https://dongshuyan.com/awesome-harness-memory/#tutorial/benchmarks) | Examine tasks, protocols, metrics, and their relationship to the six questions |
 | 06 | [Literature and film](https://dongshuyan.com/awesome-harness-memory/#tutorial/culture) | Explore forgetting, external records, identity, and sharing through real works, with analogies clearly labeled |
 
-Every detailed entry begins with identity, authors or maintainers, dates, primary links, and reasons for inclusion. Each of the six answers then explains **the mechanism, its rationale, a concrete example, and the source location**. Research, engineering, and benchmarks have separate entry pages and individual detail pages. An optional [comparison tool](https://dongshuyan.com/awesome-harness-memory/#tutorial/compare) displays existing answers side by side.
+Every detailed entry begins with identity, authors or maintainers, verified affiliations where available, dates, primary links, and reasons for inclusion. Each of the six answers then explains **the mechanism, its rationale, a concrete example, and the source location**. Research, engineering, and benchmarks have separate entry pages and individual detail pages. An optional [comparison tool](https://dongshuyan.com/awesome-harness-memory/#tutorial/compare) displays existing answers side by side.
 
 ## Examples in the course
 
-As of **2026-11-12**, the workset contains the following detailed entries. Each entry records its own source-check date. Known public dates determine ordering; there is no quality ranking.
+As of **2026-11-14**, the workset contains the following detailed entries. Each entry records its own source-check date. Known public dates determine ordering; there is no quality ranking.
 
 | Category | Detailed entries | Starting points |
 | --- | ---: | --- |
@@ -64,12 +64,6 @@ python3 examples/memory_lab.py
 ```
 
 The [practice guide](docs/practice.zh-CN.md) explains the expected output. The example does not call a model; its tests do not reproduce any upstream product's effectiveness.
-
-## Explore the reference collection
-
-The [interactive catalogue](https://dongshuyan.com/awesome-harness-memory/#library) retains **136 reference records**, counted separately from the 49 detailed lessons. These records include short descriptions, sources, reading scope, and historical leads. The count does not mean that all 136 works received a full-text audit or experimental replication. [Coverage notes](docs/coverage.md) identify unresolved identity and abstract-only references.
-
-Browse the current Chinese reference pages for [systems](resources/systems.zh-CN.md), [papers](resources/papers.zh-CN.md), [benchmarks](resources/benchmarks.zh-CN.md), [surveys](resources/surveys.zh-CN.md), [human memory](resources/human.zh-CN.md), and [fiction](resources/fiction.zh-CN.md). Earlier classification maps, the nine-question navigator, the seven-property visualization, and the [research × engineering report](https://dongshuyan.com/awesome-harness-memory/report/index.html) remain historical reference editions. The six-question tutorial is the default course.
 
 ## Preview and contribute
 

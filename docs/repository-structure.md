@@ -1,66 +1,52 @@
 # Repository structure
 
-[Tutorial](https://dongshuyan.com/awesome-harness-memory/) · [English](../README.md) · [中文](../README.zh-CN.md) · [Coverage](coverage.md)
-
-The default edition is a tutorial: six questions → related concepts → Research → engineering → benchmarks → literature and film. Human-memory background, topics, local practice, and comparison support that path. Older maps and reports remain reference editions.
+The public site is a Chinese Agent Memory course. Its main path is six questions → related concepts → Research → engineering → Benchmark → literature and film. Human-memory background, topics, local practice, and optional comparison support that path.
 
 ```text
 .
-├── README.md / README.zh-CN.md    # English and Chinese course entry points
-├── index.html                   # Generated tutorial and reference navigator
+├── README.md / README.zh-CN.md   # English and Chinese course entry points
+├── index.html                   # Generated, self-contained course
 ├── site/
-│   ├── tutorial.json            # Course, entries, sources, concepts, topics
-│   ├── tutorial.js              # Details, comparison and visualizations
-│   ├── app.js                   # Routing, state and catalogue rendering
-│   ├── knowledge.json / .js     # Earlier classification and mechanism views
-│   ├── navigation.json          # Earlier navigation data
-│   └── shell.html / frame.html  # Outer page and embedded application shell
-├── catalogue.json               # 136 reference records with evidence limits
-├── resources/*.zh-CN.md          # Corresponding Chinese reference descriptions
-├── resources/*.md                # Earlier English reference pages
-├── examples/memory_lab.py        # Standard-library SQLite teaching example
+│   ├── tutorial.json            # Lessons, entries, examples, sources and topics
+│   ├── tutorial.js              # Chapter and detail renderers
+│   ├── tutorial.css             # Reading layout and responsive styles
+│   ├── routes.js                # Shareable chapter, section and comparison URLs
+│   ├── app.js                   # Navigation, focus and comparison interactions
+│   └── frame.html               # Document, course navigation and content slots
+├── examples/memory_lab.py       # Standard-library SQLite teaching example
 ├── docs/
-│   ├── coverage.md              # Completion and evidence limits
-│   ├── practice.zh-CN.md         # Walkthrough and expected output
-│   ├── landscape.zh-CN.md        # Generated earlier classification guide
-│   ├── needs.zh-CN.md            # Earlier routes from practical needs
-│   └── evaluation-guide.md      # Earlier evaluation comparison guide
-├── scripts/build_site.py        # Generate HTML, guide and graph preview
-├── scripts/build_harness_map.py # Graph-specific generator
-├── tests/                       # Data/build contracts, renderer/example behavior
-├── assets/                      # Reference diagrams and Harness graph data/UI
-├── report/                      # Preserved research × engineering report
-└── explore/                     # Earlier bilingual map with 32 reference records
+│   ├── coverage.md              # Course scope and evidence limits
+│   ├── practice.zh-CN.md        # Walkthrough and expected output
+│   └── repository-structure.md
+├── scripts/build_site.py        # Validate data and generate index.html
+└── tests/                      # Data, route, renderer and example behavior
 ```
 
-## Data ownership and reading editions
+## Content ownership
 
-`site/tutorial.json` owns the current course. The 2026-11-12 edition has 10 Research core entries, four separate further readings, 15 engineering entries, 10 benchmarks, eight cultural works, and two human-memory lessons: **49 entries with six answers each**. It also contains six concept bridges and four topics, including local practice. Core Research contains at most two surveys. `researchCandidates` is the retained data key for the four completed further readings; their visible label describes their reviewed status.
+`site/tutorial.json` is the authoritative course content. It contains 10 Research core entries, four further readings, 15 engineering entries, 10 benchmarks, eight cultural works, and two human-memory lessons: **49 entries with six answers each**. Six concept sections and four practical topics support the main path. The Research core includes at most two surveys; `researchCandidates` is the internal key for the four further readings.
 
-`catalogue.json` owns the 136-record reference collection. Its statuses and reading depth are separate from the course's `complete` state: 65 documented records, 66 reading entries, and five historical records; 58 systems have documented basic descriptions. Counts do not certify safety, effectiveness, full-text auditing, or replication. See [coverage](coverage.md) and individual records.
+Each answer contains `answer`, `why`, `example`, and `trace`. Technical answers also list `sources` IDs for direct references. Blank lines in `example` form paragraphs. An optional `caseStudy` connects the six examples; `profile.affiliation` and `affiliationSources` record verified author institutions. Dates distinguish first publication, reading version, and source checks. The internal `status` field helps validate the data and is not shown to readers.
 
-`resources/*.zh-CN.md` contains the corresponding catalogue descriptions. Preserve ID anchors and synchronize affected blocks when changing a record. These pages are not generated by `build_site.py`.
-
-`site/knowledge.json` and `site/navigation.json` retain the earlier nine-question editorial navigator and separately sourced classification trees. `assets/harness-map.json` owns the seven-property graph and its claims, sources, and configuration conditions: 21 Harness/Agent profiles, including three labeled historical projects. This graph is an evidence projection, not a complete measurement of the six questions.
-
-`report/` preserves the earlier research × engineering comparison report, with its own manifest and documented identity corrections. Its counts are not current tutorial counts. `explore/` preserves a separate 32-record bilingual map. Its `build_catalog.py` reads the earlier English resource pages and only writes `explore/catalog.js`; see [its maintenance notes](../explore/README.md#maintain-the-content).
+The browser reads only course content. It presents single-column lists and continuous detail pages, with a section directory and expandable source notes. The Benchmark page retains a readable relation table; it does not claim that describing a direction establishes a tested capability. Comparison displays the existing answers without generating scores.
 
 ## Build and verify
 
-Edit authoritative data and UI sources, then run:
+Edit the sources, then regenerate the public page:
 
 ```sh
 python3 scripts/build_site.py
 python3 scripts/build_site.py --check
 python3 -m unittest discover -s tests -v
+node --check site/routes.js
 node --check site/app.js
 node --check site/tutorial.js
 python3 examples/memory_lab.py
 ```
 
-The builder and example use the Python standard library; renderer tests also require Node.js, with no npm dependencies. The build embeds the catalogue, course, earlier topic data, and graph into `index.html`. It also generates `docs/landscape.zh-CN.md` and `assets/memory-layers.svg`. Do not edit those outputs directly.
+The builder and example use the Python standard library. Renderer tests require Node.js; there are no npm dependencies. The builder embeds course data, CSS and JavaScript into `index.html`. Do not edit that output directly. The site has no external scripts, font downloads or embedded application frame.
 
-Tests check provenance, complete six-question answers, benchmark evaluation fields, unique IDs, preserved references, generated-file consistency, comparison discovery, known-date ordering, and local example behavior. They cannot establish whether a paper's claims are scientifically correct. Inspect changed content, source links, hash routes, and affected interactions in a browser as well.
+Tests check source references, six-question completeness, unique identities, dates, generated-file consistency, routes, comparison discovery, answer ordering and local example behavior. They do not establish scientific correctness. Check changed passages against primary sources and inspect desktop/mobile reading, keyboard navigation and history in a browser.
 
 ## Preview and publish
 
@@ -68,6 +54,6 @@ Tests check provenance, complete six-question answers, benchmark evaluation fiel
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-Open `http://127.0.0.1:8000/`. GitHub Pages serves `master` at `/`, with `.nojekyll` and the custom-domain URL above. The page embeds its content and uses pinned CDN scripts for interface utilities. Source links open through the outer page while the embedded application remains sandboxed.
+Open `http://127.0.0.1:8000/`. GitHub Pages serves `master` at `/` with `.nojekyll`, at [the course URL](https://dongshuyan.com/awesome-harness-memory/).
 
-Before publishing, synchronize data, Markdown, README counts, and generated files; inspect the full diff and complete independent content review. After pushing, verify the remote commit, Pages build, and live page. Keep private source snapshots, review transcripts, credentials, and unpublished material outside this repository.
+Before publishing, check the complete diff, data and source links, synchronized README content, and independent review. After pushing, verify the remote commit, Pages build and live course. Keep private source snapshots and review transcripts outside the repository. Retired catalogues, maps and reports remain available in Git history rather than the current site.

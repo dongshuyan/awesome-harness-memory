@@ -2,9 +2,7 @@
 
 [Start learning](https://dongshuyan.com/awesome-harness-memory/) · [Coverage](docs/coverage.md) · [Contributing](CONTRIBUTING.md)
 
-The 2026-11-12 edition completes the selected course: the six-question lesson and its argument, six concept bridges, 10 Research core entries, four further readings, 15 engineering entries, 10 benchmarks, eight cultural works, two human-memory background lessons, and topics with a runnable local example. Detailed entries explain each question with rationale, examples, and source locations.
-
-The broader catalogue is a reference collection with its own reading depth and historical records. Completion of the course does not mean that every referenced work has been fully audited, every product has been run, or the field has been exhausted. See the explicit limitations in the coverage document and individual entries.
+The course covers: the six-question lesson and its argument, six concept bridges, 10 Research core entries, four further readings, 15 engineering entries, 10 benchmarks, eight cultural works, two human-memory background lessons, and topics with a runnable local example. Detailed entries explain each question with rationale, examples, and source locations.
 
 ## Ongoing maintenance
 

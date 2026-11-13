@@ -7,25 +7,23 @@ A contribution should help a reader explain a memory mechanism, evaluate a claim
 ## Choose the right place
 
 - `site/tutorial.json`: the six-question lesson, detailed research/engineering/benchmark entries, cultural analogies, human-memory background, concepts, and topics.
-- `catalogue.json`: the broader reference collection. Brief, scoped entries are valid; do not label an abstract-only reading as a full-text audit.
-- `resources/*.zh-CN.md`: reference descriptions corresponding to catalogue records. Keep the ID anchors and content synchronized.
 - `examples/` and `docs/practice.zh-CN.md`: runnable teaching examples and their assumptions. Prefer small local examples with no paid service requirement.
-- `report/`, `explore/`, and the older classification views: preserved reference editions. Correct material errors and label their scope; do not silently rewrite historical analyses as current course claims.
 
 ## Detailed entry requirements
 
 Keep the existing six-question order: content, substrate, scope, lifecycle, exposure, governance. A complete entry needs identity, public date, checked date, original URL, selection evidence, sources, limitations, and a next reading step. Research core entries include at most two surveys; additional reviewed surveys belong in the separate further-reading list.
 
-Each question contains four fields:
+Each question contains the following fields:
 
 | Field | Required content |
 | --- | --- |
 | `answer` | Explain the mechanism or state explicitly what the source does not specify |
 | `why` | Explain why this answer follows from the design and matters to the reader |
 | `example` | Give a concrete example; identify whether it comes from the source, paraphrases it, or is constructed for teaching |
+| `sources` | List the registered source IDs supporting this answer; link to the relevant section or code location where possible |
 | `trace` | Point to the source, version, section, figure, API, or code location supporting the answer |
 
-A one-line label is not a complete explanation. Length should follow the mechanism's complexity; repeated disclaimers cannot substitute for evidence. Use `pending` honestly if a future entry is not ready. Set `complete` only after all six answers and identity/evidence fields are checked.
+Examples should follow the information through a concrete situation: input, storage or transformation, and later use. Use paragraphs rather than a string of labels. An optional `caseStudy` introduces a scenario shared by the six questions. Add `profile.affiliation` only when `affiliationSources` identifies a paper author block or official source. A one-line label is not a complete explanation. Length should follow the mechanism's complexity; repeated disclaimers cannot substitute for evidence. Use `pending` honestly if a future entry is not ready. Set `complete` only after all six answers and identity/evidence fields are checked.
 
 Benchmark entries additionally describe abilities, task protocol, metrics, the design-to-evaluation mapping, and limitations. A capability score does not identify a storage architecture or establish an authorization guarantee. Keep separate metrics when they answer different questions.
 

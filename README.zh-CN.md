@@ -33,11 +33,11 @@
 | 05 | [Benchmark](https://dongshuyan.com/awesome-harness-memory/#tutorial/benchmarks) | 看任务、协议与指标分别测到了什么，怎样与六问对应 |
 | 06 | [文学与影视](https://dongshuyan.com/awesome-harness-memory/#tutorial/culture) | 用真实作品思考遗忘、外部记录、身份与共享；明确区分作品事实和工程类比 |
 
-每个详解条目先交代身份、作者或维护者、时间、原始入口和收录理由，再逐问解释**答案、为什么、具体例子与溯源**。Research、工程和Benchmark各有入口页与独立详情页，读完后可以用[比较工具](https://dongshuyan.com/awesome-harness-memory/#tutorial/compare)并排查看已有答案。
+每个详解条目先交代身份、作者或维护者、可核对的作者机构、时间、原始入口和收录理由，再逐问解释**答案、为什么、具体例子与溯源**。Research、工程和Benchmark各有入口页与独立详情页，读完后可以用[比较工具](https://dongshuyan.com/awesome-harness-memory/#tutorial/compare)并排查看已有答案。
 
 ## 课程中的实例
 
-截至2026-11-12，详解工作集如下；各条目的具体核对日期单独记录。列表按已知公开日期排序，不给方法或团队排名。
+截至2026-11-14，详解工作集如下；各条目的具体核对日期单独记录。列表按已知公开日期排序，不给方法或团队排名。
 
 | 类别 | 详解数量 | 可以从这里开始 |
 | --- | ---: | --- |
@@ -64,12 +64,6 @@ python3 examples/memory_lab.py
 ```
 
 [实践步骤与预期输出](docs/practice.zh-CN.md)会说明每行结果与六问的关系。示例不调用模型；测试通过不代表任何上游产品的效果被复现。
-
-## 继续查资料
-
-[交互资源目录](https://dongshuyan.com/awesome-harness-memory/#library)保留 **136 条参考记录**，与49个详解条目分开统计。目录包含简要介绍、来源、阅读范围和历史线索，不表示136篇都做了全文审计或效果复现。[覆盖说明](docs/coverage.md)列出仍无法确认的身份与摘要级来源。
-
-也可直接读[系统](resources/systems.zh-CN.md)、[论文](resources/papers.zh-CN.md)、[评测](resources/benchmarks.zh-CN.md)、[综述](resources/surveys.zh-CN.md)、[人类记忆](resources/human.zh-CN.md)和[文艺](resources/fiction.zh-CN.md)目录。旧版分类地图、九问题导航、七属性图解与[研究×工程报告](https://dongshuyan.com/awesome-harness-memory/report/index.html)保留为历史参考，默认课程使用六问路径。
 
 ## 本地预览与贡献
 

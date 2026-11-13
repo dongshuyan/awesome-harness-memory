@@ -1,118 +1,102 @@
-
-(()=>{
+(() => {
 'use strict';
-const root=document.getElementById('memory-navigator');
-const catalogue=JSON.parse(document.getElementById('catalogue-data').textContent);
-const resources=catalogue.resources;
-const labels={systems:'系统与产品',papers:'论文与方法',benchmarks:'Benchmark',surveys:'综述',human:'人类记忆',fiction:'文学与影视'};
-const kinds=Object.fromEntries(resources.map(r=>[r.id,r.kind]));
-const knowledge=JSON.parse(document.getElementById('knowledge-data').textContent);
-const tutorial=JSON.parse(document.getElementById('tutorial-data').textContent);
-const navigation=JSON.parse(document.getElementById('navigation-data').textContent);
-const axes=navigation.legacyAxes;
-const needs=navigation.needs;
-const evaluations=navigation.evaluations;
-const map=Object.fromEntries(resources.map(r=>[r.id,r]));
-const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const cleanQuery=v=>String(v??'').trim().toLocaleLowerCase();
-const first=s=>String(s).replace(/^《[^》]+》[。]?/,'').trim().split('。')[0]+'。';
-const tagHtml=r=>r.types.map(t=>`<span class="kn-tag">${esc(labels[t])}</span>`).join('');
-const axisBy=id=>axes.find(a=>a.id===id);
-const statusNames={documented:'基础资料已核',reading:'研究阅读入口',pending:'待核线索',historical:'历史资料'};
-const groupNames={harness:'Harness 与编码 / 个人 Agent',framework:'Agent 框架',memory:'独立记忆层与工具',service:'托管记忆服务',product:'个人助手产品',unresolved:'身份或机制待核',historical:'历史系统'};
-const validViews=['home','legacy-home','topic','needs','library','resource','evaluation','extensions','compare','layers','about','tutorial-home','tutorial-lesson','tutorial-concepts','tutorial-research','tutorial-engineering','tutorial-benchmarks','tutorial-culture','tutorial-human','tutorial-topics','tutorial-compare','tutorial-detail','not-found'];
-const defaultTutorialCompare=['coala','claude-code','longmemeval'];
-const tutorialComparisonCategories=tutorial.comparisonCategories||['research','engineering','benchmarks','culture'];
-const saved=window.openai?.widgetState?.privateContent;
-const contentIds=()=>new Set((knowledge.contentIndex?.groups||[]).flatMap(g=>g.items||[]));
-const normalizeContentId=value=>{const ids=contentIds();if(ids.has(value))return value;return ({working:'working-context',longterm:'facts',episodic:'events',semantic:'facts',procedural:'procedures',factual:'facts',experiential:'experience'}[value]&&ids.has(({working:'working-context',longterm:'facts',episodic:'events',semantic:'facts',procedural:'procedures',factual:'facts',experiential:'experience'}[value])))?({working:'working-context',longterm:'facts',episodic:'events',semantic:'facts',procedural:'procedures',factual:'facts',experiential:'experience'}[value]):'working-context';};
-const frameworkId=value=>knowledge.frameworks?.[value]?value:'coala';
-const decodeRoutePart=value=>{try{return decodeURIComponent(value);}catch{return value;}};
-function routeState(hash){
- const raw=String(hash||'').replace(/^#/,'');
- if(!raw)return {view:'home'};
- const [path,queryString='']=raw.split('?');
- if(path==='tutorial'||path==='tutorial/home')return {view:'tutorial-home'};
- if(path.startsWith('tutorial/')){
-  const parts=path.split('/').filter(Boolean).map(decodeRoutePart);
-  const section=parts[1]||'home';
-  const viewBySection={lesson:'tutorial-lesson',concepts:'tutorial-concepts',research:'tutorial-research',engineering:'tutorial-engineering',benchmarks:'tutorial-benchmarks',culture:'tutorial-culture','human-memory':'tutorial-human',human:'tutorial-human',topics:'tutorial-topics',compare:'tutorial-compare'};
-  if(section==='detail'&&parts.length===4&&['research','engineering','benchmarks','culture','humanMemory'].includes(parts[2]))return {view:'tutorial-detail',tutorialCategory:parts[2],tutorialEntry:parts[3]};
-  if(viewBySection[section]&&parts.length===2){
-   if(section==='compare'&&queryString.includes('ids=')){
-    const ids=new URLSearchParams(queryString).get('ids')||'';
-    return {view:viewBySection[section],tutorialCompare:ids?ids.split(',').map(decodeRoutePart).filter(Boolean):[]};
-   }
-   return {view:viewBySection[section]};
-  }
- }
- if(validViews.includes(raw))return {view:raw};
- return {view:'not-found',routePath:`#${raw}`};
+const tutorial = JSON.parse(document.getElementById('tutorial-data').textContent);
+const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const tutorialComparisonCategories = tutorial.comparisonCategories;
+const main = document.getElementById('course-main');
+const sidebar = document.getElementById('course-nav');
+const menu = document.getElementById('menu-toggle');
+const toc = document.getElementById('page-toc');
+const validIds = new Set(tutorialComparisonCategories.flatMap(c => tutorialReadings(c).map(e => e.id)));
+function normalize(s) {
+  const selected = Array.isArray(s.tutorialCompare) ? s.tutorialCompare : DEFAULT_COMPARISON_IDS;
+  return {...s, tutorialCompare:[...new Set(selected)].filter(id => validIds.has(id))};
 }
-function routeHash(s){
- if(s.view==='home')return '';
- if(s.view==='not-found')return s.routePath||'';
- if(s.view==='tutorial-detail')return `#tutorial/detail/${encodeURIComponent(s.tutorialCategory)}/${encodeURIComponent(s.tutorialEntry)}`;
- if(s.view==='tutorial-compare')return `#tutorial/compare?ids=${(s.tutorialCompare||[]).map(encodeURIComponent).join(',')}`;
- if(s.view.startsWith('tutorial-')){const section=s.view.slice('tutorial-'.length)==='human'?'human-memory':s.view.slice('tutorial-'.length);return `#tutorial/${section}`;}
- return `#${s.view}`;
+let state = normalize(routeState(location.hash));
+function crumbs(label, category) {
+  return `<nav class="breadcrumb" aria-label="当前位置"><a href="#tutorial">教程</a><span>/</span>${category ? `<a href="${tutorialCategoryRoute(category)}">${esc(tutorialCategoryLabel(category))}</a><span>/</span>` : ''}<span>${esc(label)}</span></nav>`;
 }
-function writeRoute(){
- if(window.parent!==window)window.parent.postMessage({type:'codex-route-write',hash:routeHash(state)},'*');
-}
-const normal=s=>{const framework=frameworkId(s?.framework);const categoryIds=frameworkCategoryIds(framework);const legacyTerm=knowledge.terms[s?.term]?s.term:'';const requestedCategory=s?.frameworkCategory||(framework==='engineering-terms'?legacyTerm:'');const tutorialCategories=['research','engineering','benchmarks','culture','humanMemory'];const tutorialCategory=tutorialCategories.includes(s?.tutorialCategory)?s.tutorialCategory:'research';const tutorialEntry=tutorialEntryBy(tutorialCategory,s?.tutorialEntry)?.id||'';const validTutorialIds=new Set(tutorialComparisonCategories.flatMap(category=>tutorialReadings(category).map(e=>e.id)));const tutorialCompare=Array.isArray(s?.tutorialCompare)?[...new Set(s.tutorialCompare.filter(id=>validTutorialIds.has(id)))]:defaultTutorialCompare.filter(id=>validTutorialIds.has(id));return {status:['all',...Object.keys(statusNames)].includes(s?.status)?s.status:'all',group:['all',...Object.keys(groupNames)].includes(s?.group)?s.group:'all',compareGroup:['all',...Object.keys(groupNames)].includes(s?.compareGroup)?s.compareGroup:'all',compareAxes:Array.isArray(s?.compareAxes)?[...new Set(s.compareAxes.filter(a=>axisBy(a)))]:['owner','content','scope'],tutorialCompare,view:validViews.includes(s?.view)?s.view:'home',routePath:typeof s?.routePath==='string'?s.routePath:'',topic:topicBy(s?.topic).id,framework,memoryType:normalizeContentId(s?.memoryType),frameworkCategory:categoryIds.includes(requestedCategory)?requestedCategory:(categoryIds[0]||''),categoryOpen:typeof s?.categoryOpen==='boolean'?s.categoryOpen:false,term:legacyTerm,method:typeof s?.method==='string'?s.method:'',resource:map[s?.resource]?s.resource:'langgraph',kind:['all',...Object.keys(labels)].includes(s?.kind)?s.kind:'all',query:typeof s?.query==='string'?s.query.slice(0,150):'',from:['home','topic','needs','library','evaluation','extensions','compare','layers'].includes(s?.from)?s.from:'home',tutorialCategory,tutorialEntry};};
-let state=normal({...saved,...routeState(window.__tutorialInitialRoute||window.location.hash)}),trail=[];
-const main=root.querySelector('#kn-main');
-function save(){if(window.openai?.setWidgetState)window.openai.setWidgetState({modelContent:{view:state.view,topic:state.view==='topic'?topicBy(state.topic).title:null,resource:state.view==='resource'?map[state.resource].title:null,category:state.kind,query:state.query},privateContent:state}).catch(()=>{});}
-function announce(text){root.querySelector('#kn-live').textContent=text;}
-function crumbs(label){return `<div class="kn-breadcrumb"><button type="button" data-go="tutorial-home">课程首页</button><span aria-hidden="true">/</span><span>${esc(label)}</span></div>`;}
-function refs(ids){return `<div class="kn-related">${ids.map(id=>{const r=map[id];return r?`<button type="button" data-resource="${esc(id)}">${esc(r.title)}<span>${esc(kinds[id]||labels[r.types[0]])} →</span></button>`:'';}).join('')}</div>`;}
-function axisLinks(ids){return `<div class="kn-actions">${[...new Set(ids.flatMap(id=>navigation.projectionTopics[id]||[topicBy(id).id]))].map(id=>`<button type="button" class="kn-btn" data-topic="${esc(id)}">${esc(topicBy(id).title)} →</button>`).join('')}</div>`;}
-function renderNeeds(){return `${crumbs('按需查找')}<h1>从你想解决的问题出发。</h1><p class="kn-lead">先找到相关方向，再看代表资料。这些是阅读路线，不保证某个系统开箱即用地解决全部需求。</p><div class="kn-cases">${needs.map(n=>`<article class="kn-case"><h2>${esc(n.title)}</h2><p>${esc(n.text)}</p>${axisLinks(n.axes)}${refs(n.refs)}<p>可接着看这些评测：</p>${refs(n.bench)}</article>`).join('')}</div>`;}
-function renderEvaluation(){return `${crumbs('评测与证据')}<h1>记忆有没有用，要看测的是什么。</h1><p class="kn-lead">Benchmark（评测基准）本身也是研究对象。先判断它测哪些能力、用了什么任务，再看报告的结果。</p><div class="kn-eval-list">${evaluations.map(e=>`<article><h2>${esc(e.title)}</h2><p>${esc(e.text)}</p>${refs(e.refs)}<div class="kn-actions"><button type="button" class="kn-text-btn" data-topic="${e.axis}">回到相关概念：${axisBy(e.axis).name} →</button></div></article>`).join('')}</div><div class="kn-protocol"><h3>比较结果前，先对齐条件</h3><p>任务与数据版本、模型、输入与检索预算、写入方式、评分方法、时间和费用。问答分数不能直接当成工具执行成功率。</p><details><summary>生活例子：为什么两张成绩单不能直接比较？</summary><p>一位同学做开卷题，另一位做闭卷题，即使都写着“90 分”，也不能只看数字判断谁掌握得更好。评测任务、提供的信息和计算开销同样需要说明。</p></details></div><div class="kn-actions"><button type="button" class="kn-btn" data-kind="benchmarks">浏览目录中的全部评测 →</button><button type="button" class="kn-btn" data-go="compare">查看系统资料的比较方式 →</button></div><p class="kn-note">本页整理评测目标与条件，没有运行 Benchmark，也不提供统一排行榜。</p>`;}
-function statusTag(r){return `<span class="kn-tag kn-status-${esc(r.status)}">${esc(statusNames[r.status])}</span>`;}
-function coverageText(){const n=s=>resources.filter(r=>r.status===s).length;return `${resources.length} 项独立条目：${n('documented')} 项基础资料已核、${n('reading')} 项研究阅读入口、${n('pending')} 项待核、${n('historical')} 项历史资料。其中 ${resources.filter(r=>r.types.includes('systems')&&r.status==='documented').length} 个系统的基础功能有原始资料支持。`;}
-function resourceRows(items){return items.map(r=>`<article class="kn-resource"><h3><button type="button" data-resource="${esc(r.id)}">${esc(r.title)} →</button></h3><div class="kn-tags">${statusTag(r)}${tagHtml(r)}</div><p>${esc(first(r.summary))}</p></article>`).join('');}
-function filteredResources(){const q=cleanQuery(state.query);return resources.filter(r=>(state.kind==='all'||r.types.includes(state.kind))&&(state.status==='all'||r.status===state.status)&&(state.group==='all'||r.group===state.group)&&(!q||cleanQuery([r.title,r.summary,r.highlight,r.kind,...r.aliases,...r.types.map(t=>labels[t])].join(' ')).includes(q)));}
-function libraryList(){const list=filteredResources();return `<p class="kn-count">当前 ${list.length} 项 / 目录共 ${resources.length} 项。类型可重叠，顺序不代表排名。</p><div class="kn-section">${list.length?resourceRows(list):'<div class="kn-empty"><h2>当前条件没有匹配项</h2><p>这只说明本轮目录没有找到，不表示这样的方案不存在。也可以查看待核线索。</p><button type="button" class="kn-btn" data-clear>清除检索条件</button></div>'}</div>`;}
-function options(values,current){return Object.entries(values).map(([v,t])=>`<option value="${v}" ${current===v?'selected':''}>${esc(t)}</option>`).join('');}
-function renderLibrary(){return `${crumbs('资源目录')}<h1>找到值得继续读的资料。</h1><p class="kn-lead">功能、亮点与限制放在一起看，再进入论文、仓库或官方文档。</p><p class="kn-note">${coverageText()} 资源核对至 ${esc(catalogue.checked_utc)}；旧版分类说明更新于 ${esc(knowledge.checked)}。未运行这些系统或复现评测。</p><div class="kn-filter"><label>按名称、别名或内容查找<input id="kn-search" type="search" maxlength="150" placeholder="例如：PI、ClaudeMem、Codex、用户偏好" value="${esc(state.query)}"></label><label class="kn-type-select">资源类型<select id="kn-type">${options({all:'全部类型',...labels},state.kind)}</select></label><label class="kn-type-select">资料状态<select id="kn-status">${options({all:'全部状态',...statusNames},state.status)}</select></label><label class="kn-type-select">系统类别<select id="kn-group">${options({all:'不限系统类别',...groupNames},state.group)}</select></label></div><h2 class="kn-sr">匹配的资源</h2><div id="kn-library-results">${libraryList()}</div>`;}
-function renderResource(){const r=map[state.resource];const related=axes.filter(a=>r.axes.includes(a.id)||a.methods.some(m=>m[4].includes(r.id))||a.eval.includes(r.id));return `<div class="kn-breadcrumb"><button type="button" data-back>← 返回上一页</button><span aria-hidden="true">/</span><span>资源详情</span></div><div>${statusTag(r)}${tagHtml(r)}</div><h1>${esc(r.title)}</h1><p class="kn-lead">${esc(r.kind)}</p><div class="kn-detail-body"><h2>${r.types.includes('fiction')?'作品设定':'它做什么'}</h2><p>${esc(r.summary)}</p><h2>值得看的地方</h2><p>${esc(r.highlight)}</p><h2>使用与阅读边界</h2><p>${esc(r.limit)}</p>${r.types.includes('systems')?`<p><strong>提供方式：</strong>${esc(r.support)}</p><details><summary>展开原始资料中的属性描述</summary><dl class="kn-facts">${axes.map(a=>`<dt><button type="button" class="kn-text-btn" data-topic="${a.id}">${esc(a.name)}</button></dt><dd>${esc(r.facts[a.id]||'尚未核清；不能据此判断支持或不支持。')}</dd>`).join('')}</dl></details>`:''}${r.analogy?`<h2>它启发了什么问题？</h2><p>${esc(r.analogy)}</p><p class="kn-note">编者类比，不是科学或工程效果证据。</p>`:''}${r.review?`<h2>例子与核对依据</h2><p>${esc(r.review.example)}</p><p><strong>阅读位置：</strong>${esc(r.review.location)}</p><p class="kn-note"><strong>置信度：</strong>${esc(r.review.confidence)}</p>`:''}<h2>从原始来源继续</h2>${r.sources.length?`<ul class="kn-sources">${r.sources.map(s=>`<li><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)} ↗</a><small>${esc(new URL(s.url).hostname)}</small></li>`).join('')}</ul>`:'<p>名称尚未唯一定位，目前不填造项目链接。</p>'}<p class="kn-note">核对日期：${esc(r.checked)}。${esc(r.verification)}</p>${r.publication?`<p class="kn-note">发表信息：${esc(r.publication)}</p>`:''}${r.versionNote?`<details><summary>版本与证据范围</summary><p>${esc(r.versionNote)}</p></details>`:''}</div>${related.length?`<section class="kn-section"><h2>相关分类与方法</h2>${axisLinks(related.map(a=>a.id))}<p class="kn-note">阅读关联不表示实现了该方向的全部方法。</p></section>`:''}<div class="kn-actions"><button type="button" class="kn-btn" data-go="library">浏览全部资源 →</button>${r.types.includes('systems')?'<button type="button" class="kn-btn" data-go="compare">进一步比较系统 →</button>':''}</div>`;}
-function renderExtensions(){return `${crumbs('人类记忆与文艺')}<h1>把记忆放到更广的视野里。</h1><p class="kn-lead">人类记忆按科学问题阅读，文学影视按设定与启发阅读。与 AI 的联系需要单独论证。</p><section class="kn-section"><h2>认知现象与关键脑机制</h2><p class="kn-note">涵盖记忆系统、痕迹、巩固、遗忘和前瞻记忆。逐条标注全文、相关章节或摘要范围；作者提出的扩展分类不当作公认分类。</p>${resourceRows(resources.filter(r=>r.types.includes('human')))}</section><section class="kn-section"><h2>文学与影视</h2><p class="kn-note">设定和编者类比不作为工程效果证据。每项可进入作品原始介绍。</p>${resourceRows(resources.filter(r=>r.types.includes('fiction')))}</section>`;}
-function compareTable(){const rows=resources.filter(r=>r.types.includes('systems')&&r.status==='documented'&&(state.compareGroup==='all'||r.group===state.compareGroup));const chosen=axes.filter(a=>state.compareAxes.includes(a.id));return `<p class="kn-count">${rows.length} 个系统 · ${chosen.length} 个视角。每格为原始资料所支持的描述；“未核”不等于不支持。</p>${chosen.length?`<div class="kn-table-wrap"><table><caption class="kn-sr">系统的文档属性对照；不是性能排名</caption><thead><tr><th scope="col">系统 / 提供方式</th>${chosen.map(a=>`<th scope="col"><button type="button" class="kn-text-btn" data-topic="${a.id}">${esc(a.name)}</button></th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr><th scope="row"><button type="button" class="kn-text-btn" data-resource="${r.id}">${esc(r.title)} ↗</button><small>${esc(r.support)}</small></th>${chosen.map(a=>`<td>${esc(r.facts[a.id]||'未核')}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`:'<p class="kn-empty">请至少选择一个视角；系统类别选择已保留。</p>'}`;}
-function renderCompare(){return `${crumbs('系统比较')}<h1>看不同系统如何组合记忆能力。</h1><p class="kn-note">这里保留原始资料中的七组组合属性；“范围与期限”“表示与存储”等尚未逐系统拆核，不能把它们直接视为九个学习专题的独立能力声明。</p><p class="kn-lead">一次展开多个视角，查看真实文档描述。更完整的功能、限制和来源放在系统详情里；本页不把功能数量当成质量分数。</p><div class="kn-filter"><label>系统类别<select id="kn-compare-group">${options({all:'全部已核系统',...Object.fromEntries(Object.entries(groupNames).filter(([g])=>resources.some(r=>r.status==='documented'&&r.group===g)))},state.compareGroup)}</select></label></div><fieldset class="kn-axis-select"><legend>同时查看哪些视角</legend>${axes.map(a=>`<label><input type="checkbox" data-compare-axis="${a.id}" ${state.compareAxes.includes(a.id)?'checked':''}>${esc(a.name)}</label>`).join('')}</fieldset><div id="kn-compare-results">${compareTable()}</div><div class="kn-actions"><button type="button" class="kn-btn" data-go="layers">查看 Harness / Agent 记忆切片 →</button><button type="button" class="kn-btn" data-status-filter="pending">查看待核对象 →</button></div><p class="kn-note">立体图仅比较 Harness 与 Agent；独立记忆层、插件和框架继续保留在本目录。图中逐格附依据，未核属性显示问号。</p>`;}
-function renderLayers(){const graph={dimensions:navigation.graphDimensions};return `${crumbs('图解探索')}<h1>比较真实 Harness / Agent 的记忆组合。</h1><p class="kn-lead">使用七组已有证据的属性切片比较真实对象。这是系统资料的选定投影，与学习导航的九个问题分别组织。勾选多个对象和维度、调整角度与间距，再点击格子查看条件与来源。独立记忆服务、插件和纯框架不作为这张图的主体。</p><details><summary>图中的七组属性，对应哪些学习专题？</summary>${graph.dimensions.map(a=>`<div class="kn-projection-row"><strong>${esc(a.name)}</strong><div class="kn-actions">${navigation.graphTopics[a.id].map(id=>`<button type="button" class="kn-btn" data-topic="${esc(id)}">${esc(topicBy(id).title)} →</button>`).join('')}</div></div>`).join('')}<p class="kn-note">图中只展示已有逐格来源的属性，未覆盖全部理论分类。合并属性在专题中拆开解释；不据此补造系统能力。</p></details><div class="kn-actions"><button type="button" class="kn-btn" data-go="compare">查看完整系统目录与说明 →</button></div>`;}
-function renderAbout(){return `${crumbs('来源与收录说明')}<h1>让入口有依据，也让边界看得见。</h1><div class="kn-detail-body"><h2>本轮覆盖</h2><p>${coverageText()}</p><p>资源目录核对至 ${esc(catalogue.checked_utc)}，旧版分类说明更新于 ${esc(knowledge.checked)}，结合此前目录、候选池、中文报告、用户提名和补充系统核对；不声称穷尽全部记忆系统。</p><h2>四种状态怎么读</h2><ul><li>基础资料已核：读过可定位的原始文档、README 或作品介绍，支持这里的基础说明；不代表运行验证或安全认证。</li><li>研究阅读入口：论文身份、摘要或相关章节已核，完整方法和实验还需继续阅读。</li><li>待核线索：名称、当前机制、证据深度或已知问题仍需查清，不计入已核系统。</li><li>历史资料：有参考价值，但不作为当前维护方案推荐。</li></ul><h2>分类与图解</h2><p>九个问题是编者阅读导航；分类树明确标出研究来源，不是唯一分类。资料共同出现不表示存在实际数据流。立体切片展示真实 Harness 与 Agent，按属性标注公开资料依据和配置条件；没有依据的格子保留问号。</p><h2>占比和效果</h2><p>精选目录不能代表研究或商业市场分布。比例统计还需要可复现的采样范围、时间、检索式、分母和重叠规则。本轮没有运行 Benchmark，也没有生成统一效果排名。</p><h2>README 与交互页</h2><p>README 与当前六问教程采用同一学习路径，提供各类详解、专题实践和参考资料入口。旧版导航与图解仍可查阅，在线课程由 GitHub Pages 提供。</p></div>`;}
-function renderNotFound(){return `${crumbs('页面不存在')}<div class="kn-empty"><h1>找不到这个课程页面</h1><p>链接 <code>${esc(state.routePath||'')}</code> 没有对应的课程章节或条目。页面不会默默跳到另一个对象。</p><div class="kn-actions"><button type="button" class="kn-btn kn-tutorial-primary" data-go="tutorial-home">回到课程首页 →</button><button type="button" class="kn-btn" data-go="tutorial-research">浏览 Research →</button></div></div>`;}
-
-/*__KNOWLEDGE_RENDERERS__*/
 /*__TUTORIAL_RENDERERS__*/
-const renderers={home:tutorialHome,'legacy-home':renderLegacyHome,topic:renderTopic,needs:renderNeeds,library:renderLibrary,resource:renderResource,evaluation:renderEvaluation,extensions:renderExtensions,compare:renderCompare,layers:renderLayers,about:renderAbout,'tutorial-home':tutorialHome,'tutorial-lesson':tutorialLesson,'tutorial-concepts':tutorialConcepts,'tutorial-research':()=>tutorialIndex('research'),'tutorial-engineering':()=>tutorialIndex('engineering'),'tutorial-benchmarks':()=>tutorialIndex('benchmarks'),'tutorial-culture':()=>tutorialIndex('culture'),'tutorial-human':()=>tutorialIndex('humanMemory'),'tutorial-topics':tutorialTopics,'tutorial-compare':tutorialCompare,'tutorial-detail':tutorialDetail,'not-found':renderNotFound};
-function render(){main.innerHTML=renderers[state.view]();root.querySelector("#kn-layers-host").hidden=state.view!=="layers";const active=state.view==='home'?'home':state.view==='tutorial-home'?'home':state.view==='tutorial-detail'?`tutorial-${state.tutorialCategory==='humanMemory'?'human':state.tutorialCategory}`:state.view.startsWith('tutorial-')?state.view:(state.view==='topic'?'topic':state.view==='resource'?(state.from==='topic'?'topic':state.from):state.view);root.querySelectorAll('.kn-nav button').forEach(b=>{if(b.dataset.go===active)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});}
-function go(view,extra={}){trail.push({...state});if(trail.length>30)trail.shift();state=normal({...state,...extra,view});render();save();writeRoute();announce(main.querySelector('h1')?.textContent||'页面已更新');const selector=extra.topic?null:extra.frameworkCategory?'.kn-framework-category summary[aria-current=true]':Object.hasOwn(extra,'term')?(extra.term?'.kn-framework-category summary[aria-current=true]':null):extra.framework?'.kn-framework-card[aria-pressed=true]':extra.memoryType?'.kn-content-card[aria-pressed=true]':extra.method?'.kn-method-nav [aria-current=true]':null;const target=selector?main.querySelector(selector):main.querySelector('h1');if(target&&!selector)target.setAttribute('tabindex','-1');target?.focus({preventScroll:true});if(selector)target?.scrollIntoView({block:'nearest',behavior:'instant'});else root.scrollIntoView({block:'start',behavior:'instant'});}
-root.addEventListener('click',event=>{const summary=event.target.closest('summary[data-framework-category]');if(summary&&root.contains(summary)){event.preventDefault();const category=summary.dataset.frameworkCategory;const opening=!(state.frameworkCategory===category&&state.categoryOpen);go('topic',{frameworkCategory:category,categoryOpen:opening,term:''});return;}const b=event.target.closest('button');if(!b||!root.contains(b))return;
- if(b.dataset.tutorialEntry){const [category,id]=b.dataset.tutorialEntry.split(':');go('tutorial-detail',{tutorialCategory:category,tutorialEntry:id});return;}
- if(b.dataset.tutorialAddToCompare){const [category,id]=b.dataset.tutorialAddToCompare.split(':');const valid=tutorialEntryBy(category,id);if(valid){go('tutorial-compare',{tutorialCompare:[...new Set([...state.tutorialCompare,id])]});}return;}
- if(b.dataset.tutorialCategory){go(`tutorial-${b.dataset.tutorialCategory}`,{tutorialCategory:b.dataset.tutorialCategory});return;}
- if(b.dataset.framework){go('topic',{framework:b.dataset.framework,frameworkCategory:frameworkCategoryIds(b.dataset.framework)[0]||'',categoryOpen:false,term:''});return;}
- if(b.dataset.frameworkCategory){go('topic',{frameworkCategory:b.dataset.frameworkCategory,categoryOpen:true,term:''});return;}
- if(b.dataset.contentType){go('topic',{memoryType:b.dataset.contentType});return;}
- if(b.dataset.type){go('topic',{memoryType:normalizeContentId(b.dataset.type)});return;}
- if(b.dataset.term){go('topic',{framework:'engineering-terms',frameworkCategory:b.dataset.term,categoryOpen:true,term:b.dataset.term});return;}
- if(b.hasAttribute('data-term-clear')){go('topic',{term:''});return;}
- if(b.dataset.method){go('topic',{method:b.dataset.method});return;}
- if(b.hasAttribute('data-back')){state=trail.pop()||normal({...state,view:state.from});render();save();writeRoute();const target=main.querySelector('.kn-breadcrumb button')||root.querySelector('.kn-nav button[aria-current=page]');target?.focus({preventScroll:true});main.scrollIntoView({block:'start',behavior:'instant'});return;}
- if(b.hasAttribute('data-clear')){state.query='';state.kind='all';state.status='all';state.group='all';render();save();announce(`已清除条件，当前 ${resources.length} 项资源`);root.querySelector('#kn-search').focus({preventScroll:true});return;}
- if(b.dataset.topic){go('topic',{topic:b.dataset.topic,method:'',term:'',frameworkCategory:state.frameworkCategory});return;}
- if(b.dataset.resource){go('resource',{resource:b.dataset.resource,from:state.view});return;}
- if(b.dataset.kind){go('library',{kind:b.dataset.kind,query:'',group:'all',status:'all'});return;}
- if(b.dataset.statusFilter){go('library',{status:b.dataset.statusFilter,kind:'all',group:'all',query:''});return;}
- if(b.dataset.go)go(b.dataset.go);
+function notFound() {
+  return `${crumbs('页面不存在')}<h1>找不到这个课程页面</h1><p>链接 <code>${esc(state.routePath || '')}</code> 没有对应的章节。请从课程目录选择要读的内容。</p><a href="#tutorial">回到课程首页 →</a>`;
+}
+const renderers = {
+  'tutorial-home':tutorialHome, 'tutorial-lesson':tutorialLesson,
+  'tutorial-concepts':tutorialConcepts, 'tutorial-research':() => tutorialIndex('research'),
+  'tutorial-engineering':() => tutorialIndex('engineering'), 'tutorial-benchmarks':() => tutorialIndex('benchmarks'),
+  'tutorial-culture':() => tutorialIndex('culture'), 'tutorial-human':() => tutorialIndex('humanMemory'),
+  'tutorial-topics':tutorialTopics, 'tutorial-compare':tutorialCompare,
+  'tutorial-about':tutorialAbout, 'tutorial-detail':tutorialDetail, 'not-found':notFound
+};
+function render({focus = true, selectedId = '', openGroups = []} = {}) {
+  main.innerHTML = (renderers[state.view] || notFound)();
+  const active = state.view === 'tutorial-detail' ? (state.tutorialCategory === 'humanMemory' ? 'human' : state.tutorialCategory) : state.view.replace(/^tutorial-/, '');
+  sidebar.querySelectorAll('[data-nav]').forEach(a => {
+    if (a.dataset.nav === active) a.setAttribute('aria-current','page');
+    else a.removeAttribute('aria-current');
+  });
+  const sections = [...main.querySelectorAll('section[id]')].map(section => ({id:section.id, title:section.querySelector('h2')?.textContent})).filter(s => s.title);
+  toc.innerHTML = sections.length ? `<p>本页内容</p>${sections.map(s => `<a href="${routeHash({...state, section:s.id})}">${esc(s.title)}</a>`).join('')}` : '';
+  const title = main.querySelector('h1');
+  const pageTitle = title?.textContent || 'Agent Memory 教程';
+  document.title = pageTitle === 'Agent Memory 教程' ? pageTitle : `${pageTitle} · Agent Memory 教程`;
+  document.getElementById('course-announcement').textContent = title?.textContent || '页面已更新';
+  if (selectedId) {
+    main.querySelectorAll('details[data-compare-group]').forEach(d => {d.open = openGroups.includes(d.dataset.compareGroup);});
+    [...main.querySelectorAll('[data-tutorial-compare]')].find(el => el.dataset.tutorialCompare === selectedId)?.focus({preventScroll:true});
+    return;
+  }
+  sidebar.classList.remove('is-open');
+  menu.setAttribute('aria-expanded','false');
+  if (!focus && !state.section) return;
+  requestAnimationFrame(() => {
+    const section = state.section && document.getElementById(state.section);
+    const target = section && main.contains(section) ? section : title;
+    if (!target) return;
+    target.setAttribute('tabindex','-1');
+    target.focus({preventScroll:true});
+    if (target === title) window.scrollTo({top:0, behavior:'instant'});
+    else target.scrollIntoView({block:'start', behavior:'instant'});
+  });
+}
+function navigate(next, options) {
+  state = normalize(next);
+  const hash = routeHash(state);
+  if (hash !== location.hash) history.pushState(null, '', hash);
+  render(options);
+}
+function restoreLocation() {
+  const next = normalize({...state, section:'', ...routeState(location.hash)});
+  if (JSON.stringify(next) !== JSON.stringify(state)) {state = next; render();}
+}
+// A history traversal can emit both events; render the resulting state once.
+window.addEventListener('hashchange', restoreLocation);
+window.addEventListener('popstate', restoreLocation);
+menu.addEventListener('click', () => {
+  const open = sidebar.classList.toggle('is-open');
+  menu.setAttribute('aria-expanded', String(open));
 });
-root.addEventListener('input',event=>{if(event.target.id==='kn-search'){state.query=event.target.value.slice(0,150);root.querySelector('#kn-library-results').innerHTML=libraryList();announce(`当前找到 ${filteredResources().length} 项资源`);}});
-root.addEventListener('change',event=>{const fields={'kn-type':'kind','kn-status':'status','kn-group':'group'};if(event.target.dataset.tutorialCompare){const id=event.target.dataset.tutorialCompare;state.tutorialCompare=event.target.checked?[...new Set([...state.tutorialCompare,id])]:state.tutorialCompare.filter(x=>x!==id);render();save();writeRoute();[...root.querySelectorAll('[data-tutorial-compare]')].find(input=>input.dataset.tutorialCompare===id)?.focus({preventScroll:true});announce(`比较对象已更新：${state.tutorialCompare.length} 个`);return;}if(fields[event.target.id]){state[fields[event.target.id]]=event.target.value;root.querySelector('#kn-library-results').innerHTML=libraryList();announce(`当前找到 ${filteredResources().length} 项资源`);save();}else if(event.target.dataset.compareAxis){const a=event.target.dataset.compareAxis;state.compareAxes=event.target.checked?[...new Set([...state.compareAxes,a])]:state.compareAxes.filter(x=>x!==a);root.querySelector('#kn-compare-results').innerHTML=compareTable();save();}else if(event.target.id==='kn-compare-group'){state.compareGroup=event.target.value;root.querySelector('#kn-compare-results').innerHTML=compareTable();save();}else if(event.target.id==='kn-search')save();});
-function syncExternalRoute(hash){const parsed=String(hash||'')?routeState(hash):{view:'home'};const next=normal({...state,...parsed});if(JSON.stringify(next)===JSON.stringify(state))return;state=next;trail=[];render();announce(main.querySelector('h1')?.textContent||'页面已更新');}
-window.addEventListener('codex-route-change',event=>syncExternalRoute(event.detail?.hash));
-window.addEventListener('openai:set_globals',event=>{const incoming=event.detail?.globals?.widgetState?.privateContent;if(incoming){const next=normal(incoming);if(JSON.stringify(next)===JSON.stringify(state))return;state=next;trail=[];render();}});
-render();
+sidebar.addEventListener('click', event => {
+  const link = event.target.closest('a[href]');
+  if (!link) return;
+  if (sidebar.classList.contains('is-open') && link.hash === location.hash) menu.focus();
+  sidebar.classList.remove('is-open');
+  menu.setAttribute('aria-expanded','false');
+});
+document.querySelector('.skip-link').addEventListener('click', event => {event.preventDefault(); main.focus();});
+main.addEventListener('click', event => {
+  const button = event.target.closest('[data-tutorial-add-to-compare]');
+  if (!button) return;
+  const [category, id] = button.dataset.tutorialAddToCompare.split(':');
+  if (!tutorialEntryBy(category,id)) return;
+  navigate({...state, view:'tutorial-compare', section:'', tutorialCompare:[...state.tutorialCompare,id]});
+});
+main.addEventListener('change', event => {
+  const id = event.target.dataset.tutorialCompare;
+  if (!id || !validIds.has(id)) return;
+  const openGroups = [...main.querySelectorAll('details[data-compare-group][open]')].map(d => d.dataset.compareGroup);
+  const selected = event.target.checked ? [...state.tutorialCompare,id] : state.tutorialCompare.filter(x => x !== id);
+  navigate({...state, tutorialCompare:selected}, {selectedId:id, openGroups});
+});
+render({focus:false});
 })();

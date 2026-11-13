@@ -138,27 +138,25 @@ assert.equal(ctx.tutorialEntryBy('research','nonexistent'),null);
                 self.assertTrue(entry.get('canonicalUrl'))
                 self.assertEqual(len(entry.get('questions', [])), 6)
 
-    def test_visualizations_have_explanations_and_no_rankings(self):
-        self.assertGreaterEqual(len(self.data['visualizations']), 3)
-        for viz in self.data['visualizations']:
-            for field in ('id', 'title', 'purpose', 'note'):
-                self.assertTrue(viz.get(field), (viz.get('id'), field))
+    def test_course_does_not_rank_systems(self):
         # Retrieval rerankers are mechanisms, not cross-system rankings.
         self.assertNotRegex(json.dumps(self.data).lower(), r'\b(?:rank|ranking|rankings|leaderboard)\b')
 
     def test_every_detail_comparison_button_has_a_visible_picker_entry(self):
-        source = (ROOT / 'site/tutorial.js').read_text()
-        self.assertIn(
-            "tutorialComparisonCategories.includes(category)?",
-            source,
-            'detail pages must only offer comparison for categories in the picker',
-        )
-        self.assertIn(
-            'for(const category of tutorialComparisonCategories)',
-            source,
-            'the picker must use the same category allowlist as detail pages',
-        )
-        self.assertNotIn('category of [\'research\',\'engineering\',\'benchmarks\',\'culture\']', source)
+        script = r'''
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const tutorial=JSON.parse(fs.readFileSync('site/tutorial.json','utf8'));
+const ctx=vm.createContext({tutorial,esc:String,crumbs:()=>'',state:{tutorialCompare:[]},tutorialComparisonCategories:tutorial.comparisonCategories});
+vm.runInContext(fs.readFileSync('site/tutorial.js','utf8'),ctx);
+const picker=ctx.tutorialCompare();
+for (const category of Object.keys(tutorial.entries)) for (const entry of ctx.tutorialReadings(category)) {
+  ctx.state.tutorialCategory=category;ctx.state.tutorialEntry=entry.id;
+  const button=ctx.tutorialDetail().includes('data-tutorial-add-to-compare="'+category+':'+entry.id+'"');
+  assert.equal(button,tutorial.comparisonCategories.includes(category),entry.id);
+  if (button) assert(picker.includes('data-tutorial-compare="'+entry.id+'"'),entry.id);
+}
+'''
+        subprocess.run(['node', '-e', script], cwd=ROOT, check=True, capture_output=True, text=True)
 
     def test_engineering_dates_are_explicit(self):
         for entry in self.data['entries']['engineering']:
@@ -181,9 +179,6 @@ assert.equal(ctx.tutorialEntryBy('research','nonexistent'),null);
             ('hindsight', 'https://github.com/vectorize-io/hindsight'),
         ):
             self.assertEqual(entries[entry_id]['canonicalUrl'], repository)
-        catalogue = json.loads((ROOT / 'catalogue.json').read_text())
-        self.assertNotIn('cloudmem', {entry['id'] for entry in catalogue['resources']})
-        self.assertNotIn('cloudmem', (ROOT / 'report/index.html').read_text().lower())
 
     def test_third_batch_has_six_sourced_explanations(self):
         for category, entry_id in (
