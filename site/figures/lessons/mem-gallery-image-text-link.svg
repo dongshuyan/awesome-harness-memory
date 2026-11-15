@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="867" viewBox="0 0 736 867" role="img" aria-labelledby="title desc">
+<title id="title">颜色答对，还要找对照片</title><desc id="desc">同一图文历史分别经过文字描述或多模态记忆路径，模型回答颜色或图片编号；评分端另持有标准答案与证据进行检查。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="867" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">颜色答对，还要找对照片</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">照片与编号为自拟；输入和输出条件据原文</tspan>
+</text>
+<rect x="28" y="106" width="330" height="159" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">原始图文历史</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">图01：红色背包</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">图02：蓝色背包</tspan>
+</text>
+<text x="46" y="225.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">3月6日：改带蓝色</tspan>
+</text>
+<rect x="378" y="106" width="330" height="159" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="396" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">文字记忆条件</tspan>
+</text>
+<text x="396" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">保存文字描述与编号</tspan>
+</text>
+<text x="396" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">描述可能遗漏视觉细节</tspan>
+</text>
+<rect x="28" y="289" width="330" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="321" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">多模态记忆条件</tspan>
+</text>
+<text x="46" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">可保留原图及对应信息</tspan>
+</text>
+<text x="46" y="379.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">仍需检索与处理图像</tspan>
+</text>
+<rect x="378" y="289" width="330" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="396" y="321" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">按题目生成输出</tspan>
+</text>
+<text x="396" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">颜色题：蓝色</tspan>
+</text>
+<text x="396" y="379.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">本例预期：找图题：demo_img_02</tspan>
+</text>
+<rect x="28" y="443" width="330" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="475" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">评分端标准</tspan>
+</text>
+<text x="46" y="504.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">答案、图像编号、证据线索</tspan>
+</text>
+<text x="46" y="533.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">不提前提供给答题者</tspan>
+</text>
+<rect x="378" y="443" width="330" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="396" y="475" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">分开检查结果</tspan>
+</text>
+<text x="396" y="504.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">证据是否命中</tspan>
+</text>
+<text x="396" y="533.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">输出是否符合该题要求</tspan>
+</text>
+<path d="M361,138 L375,138" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="609" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">原始图文历史 → 文字记忆条件：文字适配条件</tspan>
+</text>
+<path d="M193.0,268 L193.0,286" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="647.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">原始图文历史 → 多模态记忆条件：图文适配条件</tspan>
+</text>
+<path d="M543.0,268 L543.0,286" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="685.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">文字记忆条件 → 按题目生成输出：条件一的记忆上下文</tspan>
+</text>
+<path d="M361,321 L375,321" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="723.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">多模态记忆条件 → 按题目生成输出：条件二的记忆上下文</tspan>
+</text>
+<path d="M543.0,422 L543.0,440" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="761.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">按题目生成输出 → 分开检查结果：提交答案与检索记录</tspan>
+</text>
+<path d="M361,475 L375,475" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="799.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">评分端标准 → 分开检查结果：提供标准</tspan>
+</text>
+<text x="28" y="837.0" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">两种条件分别运行；仅回答“蓝色”不能证明检索到原图。</tspan>
+</text>
+</g></svg>

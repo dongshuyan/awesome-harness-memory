@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="762" viewBox="0 0 736 762" role="img" aria-labelledby="title desc">
+<title id="title">从两次经历归纳条件</title><desc id="desc">周一和周四的超时分别产生单次反思，两条反思及其经历通过比较形成有条件的候选策略；原始记录可以保留，候选策略还要接受新任务检验。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="762" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">从两次经历归纳条件</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">教学过程；不是论文实验结果</tspan>
+</text>
+<rect x="28" y="106" width="330" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">周一轨迹</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">导出超时，重试无效</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">检查发现服务不可用</tspan>
+</text>
+<rect x="378" y="106" width="330" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="396" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">周四轨迹</tspan>
+</text>
+<text x="396" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">导出超时，服务正常</tspan>
+</text>
+<text x="396" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">日志显示连接资源耗尽</tspan>
+</text>
+<rect x="28" y="260" width="330" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="292" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">周一反思</tspan>
+</text>
+<text x="46" y="321.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">本次应先核实服务状态</tspan>
+</text>
+<text x="46" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">仍是一条具体经历的纠错</tspan>
+</text>
+<rect x="378" y="260" width="330" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="396" y="292" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">周四反思</tspan>
+</text>
+<text x="396" y="321.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">服务正常还需继续排查</tspan>
+</text>
+<text x="396" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">本次证据指向连接资源</tspan>
+</text>
+<rect x="28" y="414" width="680" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="446" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">跨经历候选策略</tspan>
+</text>
+<text x="46" y="475.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">先区分条件，再选择检查</tspan>
+</text>
+<text x="46" y="504.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">新故障可能要求扩充分支</tspan>
+</text>
+<path d="M193.0,239 L193.0,257" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="580" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">周一轨迹 → 周一反思：按反馈评价一次经历</tspan>
+</text>
+<path d="M543.0,239 L543.0,257" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="618.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">周四轨迹 → 周四反思：按反馈评价一次经历</tspan>
+</text>
+<path d="M193.0,393 L193.0,411" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="656.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">周一反思 → 跨经历候选策略：比较共同点与差异</tspan>
+</text>
+<path d="M543.0,393 L543.0,411" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="694.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">周四反思 → 跨经历候选策略：比较共同点与差异</tspan>
+</text>
+<text x="28" y="732.0" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">原始记录可保留；抽象不保证对新任务有效。</tspan>
+</text>
+</g></svg>

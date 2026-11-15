@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="724" viewBox="0 0 736 724" role="img" aria-labelledby="title desc">
+<title id="title">当前记忆与修订历史分开看</title><desc id="desc">同一scope的新材料触发抽取；服务读取同范围既有memory参与合并。处理分别指向当前memory与启用时的修订历史。当前状态与变更历史各有读取和保留语义。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="724" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">当前记忆与修订历史分开看</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">来源规定的机制；小周或项目事件为教学假设</tspan>
+</text>
+<rect x="28" y="106" width="680" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">同一 scope 的材料</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">原记录：住苏州</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">新消息：已搬到杭州</tspan>
+</text>
+<rect x="28" y="260" width="680" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="292" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">抽取与合并</tspan>
+</text>
+<text x="46" y="321.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">抽取新材料，并读取同范围已有 memory 合并</tspan>
+</text>
+<text x="46" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">判断新增、更新或删除；实际动作以返回结果为准</tspan>
+</text>
+<rect x="28" y="414" width="330" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="446" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">当前 memory</tspan>
+</text>
+<text x="46" y="475.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">供后续按 scope 检索</tspan>
+</text>
+<text x="46" y="504.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">假设更正为杭州</tspan>
+</text>
+<rect x="378" y="414" width="330" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="396" y="446" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">修订历史</tspan>
+</text>
+<text x="396" y="475.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">启用时保存变化版本</tspan>
+</text>
+<text x="396" y="504.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">保留期限另有配置</tspan>
+</text>
+<path d="M368.0,239 L368.0,257" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="580" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">同一 scope 的材料 → 抽取与合并：调用或配置触发生成</tspan>
+</text>
+<path d="M193.0,393 L193.0,411" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="618.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">抽取与合并 → 当前 memory：执行相应变更动作</tspan>
+</text>
+<path d="M543.0,393 L543.0,411" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="656.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">抽取与合并 → 修订历史：启用修订时记录变更</tspan>
+</text>
+<text x="28" y="694.0" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">删除当前记忆不等于修订立即消失；检索结果仍需由应用送入模型。</tspan>
+</text>
+</g></svg>

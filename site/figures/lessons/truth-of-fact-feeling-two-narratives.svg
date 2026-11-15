@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="302" viewBox="0 0 736 302" role="img" aria-labelledby="title desc">
+<title id="title">两条叙事，共同追问记录与理解</title><desc id="desc">左列是记者叙事，右列是年轻人叙事，两者在技术与读写主题下形成对照。图没有连线，不暗示人物相遇、共享材料或使用相同设备。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="302" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">两条叙事，共同追问记录与理解</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">据出版社主题简介；不是完整情节图</tspan>
+</text>
+<rect x="28" y="106" width="330" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">记者的叙事</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">技术与读写的影响</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">技术怎样塑造真相观念</tspan>
+</text>
+<rect x="378" y="106" width="330" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="396" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">年轻人的叙事</tspan>
+</text>
+<text x="396" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">同样受到技术与读写影响</tspan>
+</text>
+<text x="396" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">与记者叙事构成对照</tspan>
+</text>
+<text x="28" y="272" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">并列不表示两人相遇、共享资料或采用同一设备；具体过程仍需原作支持。</tspan>
+</text>
+</g></svg>

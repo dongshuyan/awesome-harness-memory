@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="724" viewBox="0 0 736 724" role="img" aria-labelledby="title desc">
+<title id="title">ADK的三条输入路径</title><desc id="desc">第一行是模型发query后得到工具结果；第二行是每次模型请求前自动搜索并添加临时user文本；第三行是state变量替换指令占位符。它们不是先后必须经过的三个步骤。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="724" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">ADK的三条输入路径</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">按固定Python源码绘制；三路不互相替代</tspan>
+</text>
+<rect x="28" y="106" width="330" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">模型选择主动查询</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">调用load_memory</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">提供query</tspan>
+</text>
+<rect x="378" y="106" width="330" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="396" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">主动工具结果</tspan>
+</text>
+<text x="396" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">搜索当前用户Memory</tspan>
+</text>
+<text x="396" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">结果经工具返回</tspan>
+</text>
+<rect x="28" y="260" width="330" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="292" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">每次模型请求前</tspan>
+</text>
+<text x="46" y="321.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">preload自动取用户文本</tspan>
+</text>
+<text x="46" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">搜索失败：警告并跳过</tspan>
+</text>
+<rect x="378" y="260" width="330" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="396" y="292" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">临时user内容</tspan>
+</text>
+<text x="396" y="321.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">只加入可用文本结果</tspan>
+</text>
+<text x="396" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">无结果不注入</tspan>
+</text>
+<rect x="28" y="414" width="330" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="446" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">指令中的状态占位符</tspan>
+</text>
+<text x="46" y="475.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">例如{key}</tspan>
+</text>
+<text x="46" y="504.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">读取Session state</tspan>
+</text>
+<rect x="378" y="414" width="330" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="396" y="446" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">替换后的Agent指令</tspan>
+</text>
+<text x="396" y="475.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">状态值直接填入</tspan>
+</text>
+<text x="396" y="504.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">不经Memory搜索</tspan>
+</text>
+<path d="M361,138 L375,138" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="580" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">模型选择主动查询 → 主动工具结果：主动调用后返回</tspan>
+</text>
+<path d="M361,292 L375,292" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="618.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">每次模型请求前 → 临时user内容：有可用文本时加入</tspan>
+</text>
+<path d="M361,446 L375,446" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="656.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">指令中的状态占位符 → 替换后的Agent指令：模板替换</tspan>
+</text>
+<text x="28" y="694.0" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">load_memory需模型调用；preload自动执行；状态存在不保证检索库有副本。</tspan>
+</text>
+</g></svg>

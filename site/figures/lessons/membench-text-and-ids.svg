@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="1213" viewBox="0 0 736 1213" role="img" aria-labelledby="title desc">
+<title id="title">答题文本与证据编号两条路径</title><desc id="desc">问题经recall得到文本，文本只交给左侧答题模型；虚线表示答案生成后，适配层按同一问题和时间调用右侧retri。答案和编号各自向下评分；底部金标准仅连接两个评分框。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="1213" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">答题文本与证据编号两条路径</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">依据固定适配与评分代码</tspan>
+</text>
+<rect x="28" y="106" width="680" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">问题、时间、选项</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">标准答案不在此处</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">记忆已按历史建立</tspan>
+</text>
+<rect x="28" y="260" width="680" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="292" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">recall返回文本</tspan>
+</text>
+<text x="46" y="321.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">交给答题模型</tspan>
+</text>
+<text x="46" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">read_time仅计此调用</tspan>
+</text>
+<rect x="28" y="414" width="330" height="159" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="446" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">模型选答案</tspan>
+</text>
+<text x="46" y="475.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">例如B项“B楼”</tspan>
+</text>
+<text x="46" y="504.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">将所选字母送往答案评分</tspan>
+</text>
+<rect x="378" y="414" width="330" height="159" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="396" y="446" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">适配层再调用 retri</tspan>
+</text>
+<text x="396" y="475.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">时间：答案生成之后</tspan>
+</text>
+<text x="396" y="504.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">输入：同一问题与时间</tspan>
+</text>
+<text x="396" y="533.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">输出：证据编号</tspan>
+</text>
+<rect x="28" y="597" width="330" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="629" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">答案正确率</tspan>
+</text>
+<text x="46" y="658.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">对照标准选项字母</tspan>
+</text>
+<rect x="378" y="597" width="330" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="396" y="629" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">证据召回率</tspan>
+</text>
+<text x="396" y="658.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">对照标准证据编号</tspan>
+</text>
+<text x="396" y="687.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">计算去重集合覆盖率</tspan>
+</text>
+<rect x="28" y="751" width="680" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="783" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">评分端金标准</tspan>
+</text>
+<text x="46" y="812.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">正确选项</tspan>
+</text>
+<text x="46" y="841.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">target_step_id</tspan>
+</text>
+<path d="M368.0,239 L368.0,257" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="917" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">问题、时间、选项 → recall返回文本：按问题与时间查询</tspan>
+</text>
+<path d="M193.0,393 L193.0,411" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="955.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">recall返回文本 → 模型选答案：文本交给答题模型</tspan>
+</text>
+<path d="M361,446 L375,446" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)" stroke-dasharray="5 4"/>
+<text x="28" y="993.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">模型选答案 → 适配层再调用 retri：虚线仅表示答案生成后另行调用，不传答案内容</tspan>
+</text>
+<path d="M193.0,576 L193.0,594" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="1031.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">模型选答案 → 答案正确率：提交所选字母</tspan>
+</text>
+<path d="M543.0,576 L543.0,594" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="1069.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">适配层再调用 retri → 证据召回率：提交证据编号</tspan>
+</text>
+<path d="M193.0,748 L193.0,730" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="1107.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">评分端金标准 → 答案正确率：正确选项</tspan>
+</text>
+<path d="M543.0,748 L543.0,730" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="1145.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">评分端金标准 → 证据召回率：标准证据编号</tspan>
+</text>
+<text x="28" y="1183.0" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">虚线只表示调用先后。金标准仅用于评分；编号命中不保证答题模型读到了对应文本。</tspan>
+</text>
+</g></svg>

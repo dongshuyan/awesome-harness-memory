@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="456" viewBox="0 0 736 456" role="img" aria-labelledby="title desc">
+<title id="title">一条策略，三种说明</title><desc id="desc">策略升级前核对数据结构变化，在形式上是可编辑文字，在功能上指导下一次升级，在动态上由失败形成并可修订、检索。三个描述并列成立。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="456" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">一条策略，三种说明</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">教学策略：升级前核对数据结构变化</tspan>
+</text>
+<rect x="28" y="106" width="330" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">形式：怎样承载</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">可编辑的显式文字</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">也可带图中关系</tspan>
+</text>
+<rect x="378" y="106" width="330" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="396" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">功能：帮助什么</tspan>
+</text>
+<text x="396" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">指导下一次升级</tspan>
+</text>
+<text x="396" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">属于经验中的策略</tspan>
+</text>
+<rect x="28" y="260" width="330" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="292" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">动态：怎样变化</tspan>
+</text>
+<text x="46" y="321.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">从失败中形成</tspan>
+</text>
+<text x="46" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">经新证据修订并取回</tspan>
+</text>
+<text x="28" y="426" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">三个镜头并列；不是三个数据库，也不是性能等级。</tspan>
+</text>
+</g></svg>

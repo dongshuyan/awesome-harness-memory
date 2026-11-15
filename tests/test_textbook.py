@@ -3,6 +3,7 @@ import importlib.util
 import copy
 import subprocess
 import unittest
+import tempfile
 from pathlib import Path
 
 
@@ -64,7 +65,11 @@ for(const category of Object.keys(tutorial.entries)) for(const entry of ctx.tuto
   for(let i=0;i<6;i++) {
     const question=esc(tutorial.questions[i].title);
     assert(html.includes(question),entry.id+' question '+i);
-    assert(html.indexOf(esc(entry.questions[i].answer))<html.indexOf(esc(entry.questions[i].why)),entry.id+' answer order '+i);
+    const answer=entry.questions[i];
+    const answerAt=html.indexOf(esc(answer.answer));
+    const explanation=answer.sections ? '<h3>'+esc(answer.sections[0].title)+'</h3>' : esc(answer.why);
+    assert(answerAt>=0 && html.indexOf(explanation)>answerAt,entry.id+' answer order '+i);
+    if(answer.sections) for(const section of answer.sections) assert(html.includes('<h3>'+esc(section.title)+'</h3>'));
   }
   assert(!html.includes('为什么这样回答'));
   assert(!html.includes('<dt>状态</dt>'));
@@ -76,13 +81,60 @@ const sample=ctx.tutorialParagraphs('第一段。\n\n第二段含<script>。');
 assert.equal((sample.match(/<p>/g)||[]).length,2);
 assert(!sample.includes('<script>'));
 assert(sample.includes('&lt;script&gt;'));
+const detailed=ctx.tutorialBlocks([{type:'details',title:'More <script>',blocks:[
+  {type:'p',text:'One <script>\n\nTwo'},
+  {type:'table',caption:'Data',headers:['Name','Value'],rows:[['A','<img onerror=alert(1)>']]}
+]}]);
+assert(!detailed.includes('<script>'));
+assert(!detailed.includes('<img onerror'));
+assert(detailed.includes('&lt;img onerror=alert(1)&gt;'));
+assert.equal((detailed.match(/<p>/g)||[]).length,2);
 ''')
+
+    def test_lesson_blocks_reject_unknown_types_missing_assets_and_bad_sources(self):
+        data = json.loads((ROOT / 'site/tutorial.json').read_text())
+        def blocks(entry):
+            for answer in entry['questions']:
+                for section in answer.get('sections', []):
+                    yield from section['blocks']
+        original = next(e for e in data['entries']['research'] if e['id'] == 'a-mem')
+        for failure in ('unknown-type', 'missing-file', 'unsafe-path', 'unknown-source'):
+            broken = copy.deepcopy(original)
+            figure = next(b for b in blocks(broken) if b['type'] == 'figure')
+            if failure == 'unknown-type':
+                figure['type'] = 'unrecognized'
+            elif failure == 'missing-file':
+                figure['src'] = 'site/figures/pilot/missing.svg'
+            elif failure == 'unsafe-path':
+                figure['src'] = '../private/image.svg'
+            else:
+                figure['sources'] = ['nonexistent-source']
+            with self.subTest(failure=failure), self.assertRaises(ValueError):
+                for block in blocks(broken):
+                    builder.validate_blocks([block], data['sources'], 'sample')
 
     def test_embedded_data_cannot_terminate_its_script_element(self):
         value = {'example': '</script><script>alert(1)</script>\u2028 & 中文'}
         embedded = builder.script_json(value)
         self.assertNotIn('</script', embedded)
         self.assertEqual(json.loads(embedded), value)
+
+    def test_course_figures_accept_both_collections_but_not_adjacent_files(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            block = {'type': 'figure', 'alt': 'A diagram', 'caption': 'A caption',
+                     'credit': 'Original teaching diagram', 'sources': ['source'],
+                     'width': 736, 'height': 400}
+            for collection in ('pilot', 'lessons'):
+                image = root / 'site/figures' / collection / 'example.svg'
+                image.parent.mkdir(parents=True, exist_ok=True)
+                image.write_text('<svg/>')
+                builder.validate_blocks([{**block, 'src': image.relative_to(root).as_posix()}],
+                                        {'source': {}}, 'example', root)
+            for path in ('site/figures/lessons/../pilot/example.svg',
+                         'site/figures/lessons/example.svg?other=1'):
+                with self.assertRaises(ValueError):
+                    builder.validate_blocks([{**block, 'src': path}], {'source': {}}, 'example', root)
 
     def test_sources_reject_active_urls_and_unregistered_citations(self):
         data = json.loads((ROOT / 'site/tutorial.json').read_text())

@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="1319" viewBox="0 0 736 1319" role="img" aria-labelledby="title desc">
+<title id="title">当前看见与窗口外保存</title><desc id="desc">内容根节点分为主上下文与外部上下文。主上下文包含系统说明、working context 和FIFO队列；外部上下文包含消息历史recall与长文本archival。主上下文直接可见，外部内容需显式取回。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="1319" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">当前看见与窗口外保存</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">原创架构示意；文字内容采用教学案例</tspan>
+</text>
+<rect x="28" y="106" width="680" height="101" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">MemGPT 的两层内容</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">按本次模型调用是否可见区分</tspan>
+</text>
+<path d="M50,207 L50,251" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<path d="M50,251 L72,251" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<rect x="72" y="227" width="636" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="90" y="259" font-size="20" font-weight="600" fill="#243735">
+<tspan x="90" dy="0">主上下文</tspan>
+</text>
+<text x="90" y="288.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="90" dy="0">实际送入模型的输入</tspan>
+</text>
+<text x="90" y="317.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="90" dy="0">容量有限</tspan>
+</text>
+<path d="M94,357 L94,401" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<path d="M94,401 L116,401" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<rect x="116" y="377" width="592" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="134" y="409" font-size="20" font-weight="600" fill="#243735">
+<tspan x="134" dy="0">系统说明</tspan>
+</text>
+<text x="134" y="438.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="134" dy="0">静态只读</tspan>
+</text>
+<text x="134" y="467.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="134" dy="0">函数与控制用法</tspan>
+</text>
+<path d="M94,357 L94,551" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<path d="M94,551 L116,551" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<rect x="116" y="527" width="592" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="134" y="559" font-size="20" font-weight="600" fill="#243735">
+<tspan x="134" dy="0">working context</tspan>
+</text>
+<text x="134" y="588.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="134" dy="0">固定大小可读写区</tspan>
+</text>
+<text x="134" y="617.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="134" dy="0">如：小林偏爱安静</tspan>
+</text>
+<path d="M94,357 L94,701" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<path d="M94,701 L116,701" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<rect x="116" y="677" width="592" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="134" y="709" font-size="20" font-weight="600" fill="#243735">
+<tspan x="134" dy="0">FIFO 队列</tspan>
+</text>
+<text x="134" y="738.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="134" dy="0">滚动消息、函数结果</tspan>
+</text>
+<text x="134" y="767.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="134" dy="0">包含递归摘要</tspan>
+</text>
+<path d="M50,207 L50,851" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<path d="M50,851 L72,851" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<rect x="72" y="827" width="636" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="90" y="859" font-size="20" font-weight="600" fill="#243735">
+<tspan x="90" dy="0">外部上下文</tspan>
+</text>
+<text x="90" y="888.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="90" dy="0">本次窗口之外的内容</tspan>
+</text>
+<text x="90" y="917.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="90" dy="0">需显式取回才能用于推理</tspan>
+</text>
+<path d="M94,957 L94,1001" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<path d="M94,1001 L116,1001" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<rect x="116" y="977" width="592" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="134" y="1009" font-size="20" font-weight="600" fill="#243735">
+<tspan x="134" dy="0">recall storage</tspan>
+</text>
+<text x="134" y="1038.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="134" dy="0">保存消息历史</tspan>
+</text>
+<text x="134" y="1067.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="134" dy="0">如：第一周的原话</tspan>
+</text>
+<path d="M94,957 L94,1151" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<path d="M94,1151 L116,1151" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<rect x="116" y="1127" width="592" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="134" y="1159" font-size="20" font-weight="600" fill="#243735">
+<tspan x="134" dy="0">archival storage</tspan>
+</text>
+<text x="134" y="1188.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="134" dy="0">保存较长文本资料</tspan>
+</text>
+<text x="134" y="1217.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="134" dy="0">如：导入的旅行说明</tspan>
+</text>
+<text x="28" y="1289" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">图示是逻辑层级；论文使用的数据库后端不是所有实现的强制配置。</tspan>
+</text>
+</g></svg>

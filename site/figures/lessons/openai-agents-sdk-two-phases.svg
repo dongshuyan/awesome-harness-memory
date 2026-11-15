@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="1136" viewBox="0 0 736 1136" role="img" aria-labelledby="title desc">
+<title id="title">经验文件在何时形成</title><desc id="desc">多个run的轨迹先累积。sandbox session关闭后，先生成对话摘要和原始提取，再按layout整合成MEMORY.md及memory_summary.md。后续运行需恢复完整目录才能使用。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="1136" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">经验文件在何时形成</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">官方流程重绘；陈禾的两轮交互为教学假设</tspan>
+</text>
+<circle cx="42" cy="131" r="6" fill="#235f55"/>
+<rect x="68" y="106" width="640" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="86" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="86" dy="0">第一轮与第二轮run</tspan>
+</text>
+<text x="86" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="86" dy="0">每轮结束追加轨迹</tspan>
+</text>
+<text x="86" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="86" dy="0">同一ID累积一段对话</tspan>
+</text>
+<path d="M368,246 L368,286" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="270" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">关闭工作区会话后</tspan>
+</text>
+<circle cx="42" cy="325" r="6" fill="#235f55"/>
+<path d="M42,131 L42,319" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<rect x="68" y="300" width="640" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="86" y="332" font-size="20" font-weight="600" fill="#243735">
+<tspan x="86" dy="0">sandbox session关闭</tspan>
+</text>
+<text x="86" y="361.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="86" dy="0">开始处理累计对话</tspan>
+</text>
+<text x="86" y="390.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="86" dy="0">回答结束≠整理完成</tspan>
+</text>
+<path d="M368,440 L368,480" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="464" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">提取累计对话</tspan>
+</text>
+<circle cx="42" cy="519" r="6" fill="#235f55"/>
+<path d="M42,325 L42,513" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<rect x="68" y="494" width="640" height="159" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="86" y="526" font-size="20" font-weight="600" fill="#243735">
+<tspan x="86" dy="0">第一阶段：提取</tspan>
+</text>
+<text x="86" y="555.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="86" dy="0">对话摘要＋原始笔记</tspan>
+</text>
+<text x="86" y="584.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="86" dy="0">省略特定消息内容</tspan>
+</text>
+<text x="86" y="613.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="86" dy="0">超长保留开头和结尾</tspan>
+</text>
+<path d="M368,663 L368,703" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="687" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">提供整理材料</tspan>
+</text>
+<circle cx="42" cy="742" r="6" fill="#235f55"/>
+<path d="M42,519 L42,736" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<rect x="68" y="717" width="640" height="159" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="86" y="749" font-size="20" font-weight="600" fill="#243735">
+<tspan x="86" dy="0">第二阶段：整合</tspan>
+</text>
+<text x="86" y="778.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="86" dy="0">按layout合并原始记忆</tspan>
+</text>
+<text x="86" y="807.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="86" dy="0">生成索引与总摘要</tspan>
+</text>
+<text x="86" y="836.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="86" dy="0">超上限优先保留近期</tspan>
+</text>
+<path d="M368,886 L368,926" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="910" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">目录保留且被恢复</tspan>
+</text>
+<circle cx="42" cy="965" r="6" fill="#235f55"/>
+<path d="M42,742 L42,959" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<rect x="68" y="940" width="640" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="86" y="972" font-size="20" font-weight="600" fill="#243735">
+<tspan x="86" dy="0">后续运行可复用</tspan>
+</text>
+<text x="86" y="1001.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="86" dy="0">先保留并恢复记忆目录</tspan>
+</text>
+<text x="86" y="1030.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="86" dy="0">再进入读取流程</tspan>
+</text>
+<text x="28" y="1106" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">SDK Session历史另有保存路径；此图不表示关闭sandbox会删除对话历史。</tspan>
+</text>
+</g></svg>

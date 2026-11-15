@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="456" viewBox="0 0 736 456" role="img" aria-labelledby="title desc">
+<title id="title">同一条记录的三个观察角度</title><desc id="desc">同一条借阅表依赖读者表的记录，可以在认知作用上属于语义记忆，在载体上是模型外文本和检索索引，在服务目标上帮助 Agent 处理后续迁移；这些标签不决定共享权限。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="456" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">同一条记录的三个观察角度</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">教学假设：借阅表依赖读者表</tspan>
+</text>
+<rect x="28" y="106" width="330" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">认知作用</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">语义记忆</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">回答：已知什么关系？</tspan>
+</text>
+<rect x="378" y="106" width="330" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="396" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">承载形式</tspan>
+</text>
+<text x="396" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">模型外的文本记录</tspan>
+</text>
+<text x="396" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">向量索引帮助定位</tspan>
+</text>
+<rect x="28" y="260" width="330" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="292" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">服务主体</tspan>
+</text>
+<text x="46" y="321.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">帮助后续迁移任务</tspan>
+</text>
+<text x="46" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">主要为 Agent 积累</tspan>
+</text>
+<text x="28" y="426" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">三个视角同时成立；共享权限须另查。</tspan>
+</text>
+</g></svg>

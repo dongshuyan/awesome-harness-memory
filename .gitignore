@@ -6,3 +6,6 @@ research-private/
 *.private.*
 
 __pycache__/
+
+# Local papers, pinned source checkouts, and datasets used while writing lessons.
+.study-sources/

@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="1059" viewBox="0 0 736 1059" role="img" aria-labelledby="title desc">
+<title id="title">实际回答与参考回答分开生成</title><desc id="desc">左列完整历史经过被测记忆系统生成实际回答；右列干净证据经过同配置生成器产生参考回答。两份回答分别接入下方裁判，干净证据另沿右侧外缘只接裁判，不进入左列作答。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="1059" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">实际回答与参考回答分开生成</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">协议据正式论文；复习情境为自拟</tspan>
+</text>
+<rect x="28" y="106" width="330" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">完整历史H</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">相关辅导证据E</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">相似但无关的聊天D</tspan>
+</text>
+<rect x="378" y="106" width="330" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="396" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">评测方的干净证据E</tspan>
+</text>
+<text x="396" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">薄弱点、作业要求、时间</tspan>
+</text>
+<text x="396" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">单独用于参考与评分</tspan>
+</text>
+<rect x="28" y="260" width="330" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="292" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">被测记忆系统</tspan>
+</text>
+<text x="46" y="321.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">自行存储、检索</tspan>
+</text>
+<text x="46" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">可能漏证据或带入干扰</tspan>
+</text>
+<rect x="378" y="260" width="330" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="396" y="292" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">参考生成分支</tspan>
+</text>
+<text x="396" y="321.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">与左列相同的生成器和解码配置</tspan>
+</text>
+<text x="396" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">只读干净证据 E 与问题</tspan>
+</text>
+<rect x="28" y="414" width="330" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="446" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">实际回答</tspan>
+</text>
+<text x="46" y="475.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">用系统返回的上下文</tspan>
+</text>
+<text x="46" y="504.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">生成复习与作业计划</tspan>
+</text>
+<rect x="378" y="414" width="330" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="396" y="446" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">参考回答</tspan>
+</text>
+<text x="396" y="475.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">用干净证据生成的对照回答</tspan>
+</text>
+<text x="396" y="504.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">协议将参考分固定为 10</tspan>
+</text>
+<rect x="28" y="568" width="680" height="159" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="600" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">两位模型裁判</tspan>
+</text>
+<text x="46" y="629.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">读取E、问题和两份回答</tspan>
+</text>
+<text x="46" y="658.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">比较依据、完整性等</tspan>
+</text>
+<text x="46" y="687.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">分数是相对协议参考</tspan>
+</text>
+<path d="M193.0,239 L193.0,257" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="763" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">完整历史H → 被测记忆系统：输入完整历史</tspan>
+</text>
+<path d="M193.0,393 L193.0,411" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="801.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">被测记忆系统 → 实际回答：返回上下文供生成</tspan>
+</text>
+<path d="M543.0,239 L543.0,257" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="839.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">评测方的干净证据E → 参考生成分支：仅参考分支读取干净证据</tspan>
+</text>
+<path d="M543.0,393 L543.0,411" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="877.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">参考生成分支 → 参考回答：生成参考回答</tspan>
+</text>
+<path d="M193.0,547 L193.0,565" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="915.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">实际回答 → 两位模型裁判：提交被测回答</tspan>
+</text>
+<path d="M543.0,547 L543.0,565" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="953.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">参考回答 → 两位模型裁判：提交参考回答</tspan>
+</text>
+<path d="M708,171.0 H724 V647.5 H710" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="991.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">评测方的干净证据E → 两位模型裁判：沿右侧外缘向裁判提供事实依据</tspan>
+</text>
+<text x="28" y="1029.0" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">E不额外送给普通被测系统；参考是模型输出，不是人类最优答案。</tspan>
+</text>
+</g></svg>

@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="999" viewBox="0 0 736 999" role="img" aria-labelledby="title desc">
+<title id="title">证据条件怎样影响参数输出</title><desc id="desc">上方列出无检索、普通检索和oracle三组替代条件，每次只用一组生成调用；下方模型输出和独立参考调用分别接入评分。oracle提供标准支持记忆，参考调用只给评分。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="999" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">证据条件怎样影响参数输出</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">实验条件据论文；查票值为自拟</tspan>
+</text>
+<rect x="28" y="106" width="680" height="159" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">输入条件：三组分别运行，每次只采用一种</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">① 无检索：不给检索证据</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">② 普通检索：提供检索到的历史片段</tspan>
+</text>
+<text x="46" y="225.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">③ oracle：直接提供标准支持记忆</tspan>
+</text>
+<rect x="28" y="289" width="680" height="159" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="321" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">根据本组输入生成调用</tspan>
+</text>
+<text x="46" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">三组都给：当前请求与正确工具定义</tspan>
+</text>
+<text x="46" y="379.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">只有所选条件的证据进入本次调用</tspan>
+</text>
+<text x="46" y="408.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">本例预期：杭州→苏州；4月10日；预算800元</tspan>
+</text>
+<rect x="28" y="472" width="330" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="504" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">模型生成的调用</tspan>
+</text>
+<text x="46" y="533.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">实际输出的工具与参数</tspan>
+</text>
+<text x="46" y="562.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">可能漏掉目的地更正</tspan>
+</text>
+<rect x="378" y="472" width="330" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="396" y="504" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">评分端参考调用</tspan>
+</text>
+<text x="396" y="533.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">标准工具与参数</tspan>
+</text>
+<text x="396" y="562.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">不交给作答模型</tspan>
+</text>
+<rect x="28" y="626" width="680" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="658" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">比较调用输出</tspan>
+</text>
+<text x="46" y="687.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">按声明的匹配指标评分</tspan>
+</text>
+<text x="46" y="716.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">匹配成功尚不代表真实执行成功</tspan>
+</text>
+<path d="M368.0,268 L368.0,286" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="792" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">输入条件：三组分别运行，每次只采用一种 → 根据本组输入生成调用：本次仅采用一种证据</tspan>
+<tspan x="28" dy="25.6">条件</tspan>
+</text>
+<path d="M193.0,451 L193.0,469" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="855.6" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">根据本组输入生成调用 → 模型生成的调用：生成待评测调用</tspan>
+</text>
+<path d="M193.0,605 L193.0,623" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="893.6" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">模型生成的调用 → 比较调用输出：提交模型输出</tspan>
+</text>
+<path d="M543.0,605 L543.0,623" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="931.6" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">评分端参考调用 → 比较调用输出：提供评分标准</tspan>
+</text>
+<text x="28" y="969.6" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">三种条件分别运行；oracle给标准记忆，不给参考调用。</tspan>
+</text>
+</g></svg>

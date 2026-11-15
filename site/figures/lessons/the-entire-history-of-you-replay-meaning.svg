@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="839" viewBox="0 0 736 839" role="img" aria-labelledby="title desc">
+<title id="title">可回放，仍需要解释</title><desc id="desc">过去的个人经历被记录，后来通过回看再次可见，观看者再形成当前判断。图明确记录不是已证明的意图，看过材料也不保证理解完整。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="839" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">可回放，仍需要解释</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">依据作品前提拆分阅读关系，不是设备算法图</tspan>
+</text>
+<rect x="28" y="106" width="680" height="101" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">经历发生时</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">个人所做、所见、所闻</tspan>
+</text>
+<path d="M368,213 L368,253" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="237" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">设定中的记录能力</tspan>
+</text>
+<rect x="28" y="267" width="680" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="299" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">记录留下</tspan>
+</text>
+<text x="46" y="328.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">旧经历可再次接触</tspan>
+</text>
+<text x="46" y="357.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">不是已经证明的意图</tspan>
+</text>
+<path d="M368,403 L368,443" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="427" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">使过去再次可见</tspan>
+</text>
+<rect x="28" y="457" width="680" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="489" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">后来回看</tspan>
+</text>
+<text x="46" y="518.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">带着当前问题观看</tspan>
+</text>
+<text x="46" y="547.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">注意所需语境</tspan>
+</text>
+<path d="M368,593 L368,633" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="617" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">观看者解释材料</tspan>
+</text>
+<rect x="28" y="647" width="680" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="679" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">形成判断</tspan>
+</text>
+<text x="46" y="708.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">材料需要解释</tspan>
+</text>
+<text x="46" y="737.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">看过不保证理解完整</tspan>
+</text>
+<text x="28" y="809" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">图中因果仅到“提供材料”；判断可靠性仍取决于证据和语境。</tspan>
+</text>
+</g></svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="740" viewBox="0 0 736 740" role="img" aria-labelledby="title desc">
+<title id="title">A2  新记录怎样影响旧笔记</title><desc id="desc">先有每天练琴的N1；N2记录隔天练的决定；模型判断关联后可能更新N1的解释字段，原文及时间不改。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#586b67"/></marker></defs>
+<rect width="736" height="740" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="24" y="35" font-size="24" fill="#243735" font-weight="600">
+<tspan x="24" dy="0">A2  新记录怎样影响旧笔记</tspan>
+</text>
+<text x="24" y="64" font-size="16" fill="#586b67" font-weight="400">
+<tspan x="24" dy="0">教学示意 · 人物、日期与结果为假设</tspan>
+</text>
+<rect x="24" y="91" width="688" height="136" rx="3" fill="#ffffff" stroke="#cdd5cf" stroke-width="1.3"/>
+<text x="42" y="122" font-size="20" fill="#243735" font-weight="600">
+<tspan x="42" dy="0">01  已有 N1</tspan>
+</text>
+<text x="42" y="157" font-size="18" fill="#243735" font-weight="400">
+<tspan x="42" dy="0">原文：“打算每天练半小时。”    时间：3 月 1 日</tspan>
+</text>
+<text x="42" y="191" font-size="18" fill="#243735" font-weight="400">
+<tspan x="42" dy="0">上下文：“开始建立练琴习惯”</tspan>
+</text>
+<line x1="368" y1="230" x2="368" y2="259" stroke="#586b67" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="24" y="269" width="688" height="157" rx="3" fill="#eff3f7" stroke="#cdd5cf" stroke-width="1.3"/>
+<text x="42" y="301" font-size="20" fill="#243735" font-weight="600">
+<tspan x="42" dy="0">02  写入 N2，找到候选 N1</tspan>
+</text>
+<text x="42" y="337" font-size="18" fill="#243735" font-weight="400">
+<tspan x="42" dy="0">3 月 5 日：“这几天手指疼，我决定改成隔天练。”</tspan>
+</text>
+<text x="42" y="374" font-size="18" fill="#365e7c" font-weight="400">
+<tspan x="42" dy="0">假设模型判断两条记录有关，建立 N2 → N1 的链接。</tspan>
+</text>
+<text x="42" y="407" font-size="16" fill="#586b67" font-weight="400">
+<tspan x="42" dy="0">这里记录小林的决定，不做原因诊断。</tspan>
+</text>
+<line x1="368" y1="430" x2="368" y2="459" stroke="#586b67" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="24" y="469" width="688" height="218" rx="3" fill="#edf4ef" stroke="#cdd5cf" stroke-width="1.3"/>
+<text x="42" y="501" font-size="20" fill="#243735" font-weight="600">
+<tspan x="42" dy="0">03  N1 的说明可能更新；N2 也留在集合里</tspan>
+</text>
+<text x="42" y="539" font-size="18" fill="#243735" font-weight="400">
+<tspan x="42" dy="0">N1 原文与时间：仍保留最初的计划及其日期。</tspan>
+</text>
+<rect x="40" y="561" width="650" height="103" rx="3" fill="#fff" stroke="#235f55" stroke-width="1.3" stroke-dasharray="5 4"/>
+<text x="54" y="591" font-size="18" fill="#235f55" font-weight="600">
+<tspan x="54" dy="0">更新的部分：上下文、关键词、标签</tspan>
+</text>
+<text x="54" y="623" font-size="18" fill="#243735" font-weight="400">
+<tspan x="54" dy="0">上下文示例：“练琴习惯；近期有练习调整记录”</tspan>
+</text>
+<text x="54" y="648" font-size="16" fill="#586b67" font-weight="400">
+<tspan x="54" dy="0">虚线框只标出可演化的说明，不表示额外历史副本。</tspan>
+</text>
+<text x="24" y="717" font-size="16" fill="#586b67" font-weight="400">
+<tspan x="24" dy="0">写入会改变记忆的组织方式；是否发生、是否正确，需要检查结果。</tspan>
+</text>
+</g></svg>

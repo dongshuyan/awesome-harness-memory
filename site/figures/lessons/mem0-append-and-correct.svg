@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="866" viewBox="0 0 736 866" role="img" aria-labelledby="title desc">
+<title id="title">新城市写入后旧城市仍可能在</title><desc id="desc">3 月的苏州记录与 4 月 add 抽取的杭州记录可能并存。应用若要撤回旧事实，需要另行定位并更新或删除，或定义明确的时效处理；设置过期不等于按 ID 无法读取。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="866" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">新城市写入后旧城市仍可能在</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">来源规定的机制；小周或项目事件为教学假设</tspan>
+</text>
+<rect x="28" y="106" width="680" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">3 月的记录 m1</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">小周住苏州</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">已进入当前记忆存储</tspan>
+</text>
+<rect x="28" y="256" width="680" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="288" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">4 月的新消息</tspan>
+</text>
+<text x="46" y="317.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">我已搬到杭州</tspan>
+</text>
+<text x="46" y="346.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">调用 add</tspan>
+</text>
+<path d="M368,392 L368,432" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="416" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">抽取后追加新记录</tspan>
+</text>
+<rect x="28" y="446" width="680" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="478" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">追加后的可能状态</tspan>
+</text>
+<text x="46" y="507.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">m1：苏州仍在</tspan>
+</text>
+<text x="46" y="536.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">m2：新增杭州事实</tspan>
+</text>
+<path d="M368,582 L368,622" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="606" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">应用需要定义冲突处理</tspan>
+</text>
+<rect x="28" y="636" width="680" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="668" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">应用处理旧事实</tspan>
+</text>
+<text x="46" y="697.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">定位旧记录后显式更新或删除</tspan>
+</text>
+<text x="46" y="726.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">也可另设清楚的时效策略</tspan>
+</text>
+<path d="M28,171.0 H12 V511.0 H26" stroke="#365e7c" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="798" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">3 月的记录 m1 → 追加后的可能状态：原记录不会因新消息自动撤回</tspan>
+</text>
+<text x="28" y="836.0" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">示例记录是可能结果；过期默认隐藏但仍可按 ID 读取。</tspan>
+</text>
+</g></svg>

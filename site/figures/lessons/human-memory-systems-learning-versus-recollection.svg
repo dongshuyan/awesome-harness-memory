@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="829" viewBox="0 0 736 829" role="img" aria-labelledby="title desc">
+<title id="title">能进步，也可能不记得练过</title><desc id="desc">H.M.经过数天镜画练习，一种测量检查是否回忆练习，另一种观察任务是否进步。回忆缺失与表现改善并存，成为多系统解释的部分证据。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="829" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">能进步，也可能不记得练过</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">Squire综述转述H.M.；未复核原实验数据</tspan>
+</text>
+<rect x="28" y="106" width="330" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">数天镜画练习</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">手眼协调学习任务</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">研究对象：遗忘患者H.M.</tspan>
+</text>
+<rect x="378" y="106" width="330" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="396" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">询问练习经历</tspan>
+</text>
+<text x="396" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">是否记得以前练过</tspan>
+</text>
+<text x="396" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">综述报告：没有相应回忆</tspan>
+</text>
+<rect x="28" y="260" width="330" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="292" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">观察镜画表现</tspan>
+</text>
+<text x="46" y="321.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">再次完成任务</tspan>
+</text>
+<text x="46" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">综述报告：表现能够改善</tspan>
+</text>
+<rect x="378" y="260" width="330" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="396" y="292" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">能力出现分离</tspan>
+</text>
+<text x="396" y="321.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">经历回忆与任务学习</tspan>
+</text>
+<text x="396" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">不能合成单一“有无记忆”</tspan>
+</text>
+<rect x="28" y="414" width="330" height="159" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="446" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">结合更多证据分类</tspan>
+</text>
+<text x="46" y="475.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">其他任务、患者与动物</tspan>
+</text>
+<text x="46" y="504.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">神经结构和功能证据</tspan>
+</text>
+<text x="46" y="533.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">建立多系统解释</tspan>
+</text>
+<path d="M361,138 L375,138" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="609" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">数天镜画练习 → 询问练习经历：用回忆测验观察</tspan>
+</text>
+<path d="M193.0,239 L193.0,257" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="647.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">数天镜画练习 → 观察镜画表现：用任务表现观察</tspan>
+</text>
+<path d="M543.0,239 L543.0,257" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="685.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">询问练习经历 → 能力出现分离：回忆受损</tspan>
+</text>
+<path d="M361,292 L375,292" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="723.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">观察镜画表现 → 能力出现分离：学习仍可表现</tspan>
+</text>
+<path d="M376,325.0 H372 V493.5 H360" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="761.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">能力出现分离 → 结合更多证据分类：作为分类证据之一</tspan>
+</text>
+<text x="28" y="799.0" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">一个镜画案例不独自证明完整分类；非陈述性也不只包含程序技能。</tspan>
+</text>
+</g></svg>

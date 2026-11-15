@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="331" viewBox="0 0 736 331" role="img" aria-labelledby="title desc">
+<title id="title">同一座岛，不同的过去可用性</title><desc id="desc">左侧是对消失不再察觉的多数居民，右侧是仍能回忆却受到记忆警察威胁的少数人。两组对照说明个人记得不等于社会中能安全共享过去。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="331" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">同一座岛，不同的过去可用性</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">据出版方简介作原创人物处境对照</tspan>
+</text>
+<rect x="28" y="106" width="330" height="159" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">多数居民</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">对物品消失不再察觉</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">过去不再同样可被谈起</tspan>
+</text>
+<rect x="378" y="106" width="330" height="159" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="396" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">少数仍记得的人</tspan>
+</text>
+<text x="396" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">能够回忆失去的物品</tspan>
+</text>
+<text x="396" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">受到记忆警察威胁</tspan>
+</text>
+<text x="396" y="225.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">记得不等于能安全分享</tspan>
+</text>
+<text x="28" y="301" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">比较记忆保持与公开处境；不解释物品为何消失，也不保证写作恢复全部过去。</tspan>
+</text>
+</g></svg>

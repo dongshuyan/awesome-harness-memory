@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Build the self-contained Agent Memory course from its authoritative sources."""
+"""Build the Agent Memory course HTML from its authoritative sources."""
 import argparse
 import json
+import re
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -21,7 +22,43 @@ def script_json(value):
             .replace('\u2028', '\\u2028').replace('\u2029', '\\u2029'))
 
 
-def validate_tutorial(tutorial):
+def validate_blocks(blocks, sources, label, root=ROOT):
+    if not isinstance(blocks, list):
+        raise ValueError(f'Invalid lesson blocks: {label}')
+    for block in blocks:
+        kind = block.get('type')
+        if kind in {'p', 'quote', 'code'}:
+            if not isinstance(block.get('text'), str) or not block['text'].strip():
+                raise ValueError(f'Empty lesson text: {label}')
+        elif kind == 'steps':
+            if not block.get('items') or any(not isinstance(x, str) or not x.strip() for x in block['items']):
+                raise ValueError(f'Invalid lesson steps: {label}')
+        elif kind == 'table':
+            if not block.get('caption') or not block.get('headers') or not block.get('rows'):
+                raise ValueError(f'Incomplete lesson table: {label}')
+            if any(len(row) != len(block['headers']) for row in block['rows']):
+                raise ValueError(f'Uneven lesson table: {label}')
+            if any(not isinstance(cell, str) for row in [block['headers'], *block['rows']] for cell in row):
+                raise ValueError(f'Invalid lesson table text: {label}')
+        elif kind == 'figure':
+            src = block.get('src', '')
+            if not re.fullmatch(r'site/figures/(?:pilot|lessons)/[a-z0-9-]+\.(?:svg|png|jpg)', src) or not (root / src).is_file():
+                raise ValueError(f'Missing or invalid lesson figure: {label}: {src}')
+            if any(not isinstance(block.get(k), str) or not block[k].strip() for k in ('alt', 'caption', 'credit')):
+                raise ValueError(f'Incomplete lesson figure attribution: {label}')
+            if any(type(block.get(k)) is not int or block[k] <= 0 for k in ('width', 'height')):
+                raise ValueError(f'Invalid lesson figure dimensions: {label}')
+            if not block.get('sources') or not set(block['sources']) <= set(sources):
+                raise ValueError(f'Unknown lesson figure source: {label}')
+        elif kind == 'details':
+            if not block.get('title'):
+                raise ValueError(f'Missing lesson disclosure title: {label}')
+            validate_blocks(block.get('blocks'), sources, label, root)
+        else:
+            raise ValueError(f'Unknown lesson block type: {label}: {kind}')
+
+
+def validate_tutorial(tutorial, root=ROOT):
     if tutorial.get('version') != 1:
         raise ValueError('Unsupported tutorial data version')
     questions = tutorial.get('questions', [])
@@ -67,6 +104,9 @@ def validate_tutorial(tutorial):
             if row.get('id') in all_ids:
                 raise ValueError(f'Duplicate tutorial entry: {row.get("id")}')
             all_ids.add(row.get('id'))
+            for field in ('openingBlocks', 'recapBlocks'):
+                if field in row:
+                    validate_blocks(row[field], sources, row['id'], root)
             validate_url(row.get('canonicalUrl', ''), row.get('id'))
             if not row.get('checkedAt') or not set(row.get('sources', [])) <= set(sources):
                 raise ValueError(f'Incomplete tutorial entry provenance: {row.get("id")}')
@@ -87,6 +127,13 @@ def validate_tutorial(tutorial):
                     if not required_evaluation <= set(evaluation) or any(not str(evaluation[field]).strip() for field in required_evaluation):
                         raise ValueError(f'Complete benchmark is missing evaluation fields: {row.get("id")}')
                 for answer in row['questions']:
+                    if 'sections' in answer:
+                        if not answer['sections']:
+                            raise ValueError(f'Empty lesson sections: {row["id"]}')
+                        for section in answer['sections']:
+                            if not section.get('title') or not section.get('blocks'):
+                                raise ValueError(f'Incomplete lesson section: {row["id"]}')
+                            validate_blocks(section['blocks'], sources, row['id'], root)
                     if any(not answer.get(field) for field in ('answer', 'why', 'example', 'trace')):
                         raise ValueError(f'Incomplete tutorial answer: {row.get("id")}')
                     if 'sources' in answer and not set(answer['sources']) <= set(sources):
@@ -97,7 +144,7 @@ def validate_tutorial(tutorial):
 
 def generated_files(root=ROOT):
     tutorial = json.loads((root / 'site/tutorial.json').read_text())
-    validate_tutorial(tutorial)
+    validate_tutorial(tutorial, root)
     template = (root / 'site/frame.html').read_text()
     css = (root / 'site/tutorial.css').read_text()
     app = (root / 'site/app.js').read_text().replace(

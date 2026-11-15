@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="620" viewBox="0 0 736 620" role="img" aria-labelledby="title desc">
+<title id="title">G2  发生时间，与系统获知时间</title><desc id="desc">现实在5月1日搬家，系统5月3日才写入；旧关系的invalid_at和expired_at分别表示不同时间。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#586b67"/></marker></defs>
+<rect width="736" height="620" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="24" y="35" font-size="24" fill="#243735" font-weight="600">
+<tspan x="24" dy="0">G2  发生时间，与系统获知时间</tspan>
+</text>
+<text x="24" y="64" font-size="16" fill="#586b67" font-weight="400">
+<tspan x="24" dy="0">教学示意 · 人物、日期与结果为假设</tspan>
+</text>
+<line x1="260" y1="105" x2="260" y2="369" stroke="#cdd5cf" stroke-width="1" stroke-dasharray="3 5"/>
+<text x="244" y="96" font-size="17" fill="#586b67" font-weight="400">
+<tspan x="244" dy="0">5/1</tspan>
+</text>
+<line x1="426" y1="105" x2="426" y2="369" stroke="#cdd5cf" stroke-width="1" stroke-dasharray="3 5"/>
+<text x="410" y="96" font-size="17" fill="#586b67" font-weight="400">
+<tspan x="410" dy="0">5/2</tspan>
+</text>
+<line x1="616" y1="105" x2="616" y2="369" stroke="#cdd5cf" stroke-width="1" stroke-dasharray="3 5"/>
+<text x="600" y="96" font-size="17" fill="#586b67" font-weight="400">
+<tspan x="600" dy="0">5/3</tspan>
+</text>
+<text x="24" y="129" font-size="19" fill="#243735" font-weight="600">
+<tspan x="24" dy="0">事实时间</tspan>
+</text>
+<line x1="96" y1="178" x2="257" y2="178" stroke="#8a5d28" stroke-width="5"/>
+<line x1="261" y1="178" x2="700" y2="178" stroke="#235f55" stroke-width="5"/>
+<text x="120" y="162" font-size="18" fill="#8a5d28" font-weight="400">
+<tspan x="120" dy="0">住上海</tspan>
+</text>
+<text x="431" y="162" font-size="18" fill="#235f55" font-weight="400">
+<tspan x="431" dy="0">住杭州</tspan>
+</text>
+<text x="274" y="211" font-size="17" fill="#235f55" font-weight="400">
+<tspan x="274" dy="0">搬家已发生</tspan>
+</text>
+<text x="24" y="271" font-size="19" fill="#243735" font-weight="600">
+<tspan x="24" dy="0">系统记录时间</tspan>
+</text>
+<line x1="96" y1="314" x2="614" y2="314" stroke="#8a5d28" stroke-width="5"/>
+<line x1="618" y1="343" x2="700" y2="343" stroke="#235f55" stroke-width="5"/>
+<text x="132" y="300" font-size="18" fill="#8a5d28" font-weight="400">
+<tspan x="132" dy="0">旧上海记录还未被标记失效</tspan>
+</text>
+<text x="408" y="363" font-size="17" fill="#235f55" font-weight="400">
+<tspan x="408" dy="0">5/3：处理搬家消息</tspan>
+</text>
+<rect x="24" y="395" width="334" height="171" rx="3" fill="#f5f2e9" stroke="#cdd5cf" stroke-width="1.3"/>
+<rect x="378" y="395" width="334" height="171" rx="3" fill="#edf4ef" stroke="#cdd5cf" stroke-width="1.3"/>
+<text x="40" y="426" font-size="20" fill="#8a5d28" font-weight="600">
+<tspan x="40" dy="0">旧的上海关系</tspan>
+</text>
+<text x="40" y="461" font-size="18" fill="#243735" font-weight="400">
+<tspan x="40" dy="0">事实结束：5/1</tspan>
+</text>
+<text x="40" y="484" font-size="16" fill="#586b67" font-weight="400">
+<tspan x="40" dy="0">invalid_at</tspan>
+</text>
+<text x="40" y="521" font-size="18" fill="#243735" font-weight="400">
+<tspan x="40" dy="0">系统标失效：5/3</tspan>
+</text>
+<text x="40" y="544" font-size="16" fill="#586b67" font-weight="400">
+<tspan x="40" dy="0">expired_at</tspan>
+</text>
+<text x="394" y="426" font-size="20" fill="#235f55" font-weight="600">
+<tspan x="394" dy="0">新的杭州关系</tspan>
+</text>
+<text x="394" y="461" font-size="18" fill="#243735" font-weight="400">
+<tspan x="394" dy="0">事实开始：5/1</tspan>
+</text>
+<text x="394" y="484" font-size="16" fill="#586b67" font-weight="400">
+<tspan x="394" dy="0">valid_at</tspan>
+</text>
+<text x="394" y="521" font-size="18" fill="#243735" font-weight="400">
+<tspan x="394" dy="0">关系创建：5/3</tspan>
+</text>
+<text x="394" y="544" font-size="16" fill="#586b67" font-weight="400">
+<tspan x="394" dy="0">created_at</tspan>
+</text>
+<text x="24" y="596" font-size="16" fill="#586b67" font-weight="400">
+<tspan x="24" dy="0">本例前提：5/3 识别出两条关系相互替代，并完成写入与更新。</tspan>
+</text>
+</g></svg>

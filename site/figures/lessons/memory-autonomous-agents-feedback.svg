@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="1058" viewBox="0 0 736 1058" role="img" aria-labelledby="title desc">
+<title id="title">一次结果怎样影响下一次行动</title><desc id="desc">周一甲项目记录被周四任务选取一般检查步骤，结合乙项目要求执行并获得反馈，写入管理修订过宽规则，留下供下一轮读取的有条件状态。错误归纳也可能沿这条链传播。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="1058" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">一次结果怎样影响下一次行动</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">教学情境：两个项目的版本要求不同</tspan>
+</text>
+<rect x="28" y="106" width="680" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">周一留下记录</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">甲：匹配版本后测试通过</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">保留项目条件</tspan>
+</text>
+<path d="M368,242 L368,282" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="266" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">选择可迁移部分</tspan>
+</text>
+<rect x="28" y="296" width="680" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="328" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">周四读取经验</tspan>
+</text>
+<text x="46" y="357.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">选择先核对版本的步骤</tspan>
+</text>
+<text x="46" y="386.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">另查乙的项目要求</tspan>
+</text>
+<path d="M368,432 L368,472" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="456" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">与当前证据一起决策</tspan>
+</text>
+<rect x="28" y="486" width="680" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="518" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">执行并观察</tspan>
+</text>
+<text x="46" y="547.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">按乙的要求检查</tspan>
+</text>
+<text x="46" y="576.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">获得本次测试结果</tspan>
+</text>
+<path d="M368,622 L368,662" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="646" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">把结果作为反馈</tspan>
+</text>
+<rect x="28" y="676" width="680" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="708" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">写入与管理</tspan>
+</text>
+<text x="46" y="737.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">保留结果与适用范围</tspan>
+</text>
+<text x="46" y="766.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">修订过宽的旧建议</tspan>
+</text>
+<path d="M368,812 L368,852" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="836" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">更新后续读取内容</tspan>
+</text>
+<rect x="28" y="866" width="680" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="898" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">下一轮可用状态</tspan>
+</text>
+<text x="46" y="927.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">甲乙事实分别保留</tspan>
+</text>
+<text x="46" y="956.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">通用步骤仍需检验</tspan>
+</text>
+<text x="28" y="1028" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">反馈闭环不保证越用越准；错误写入也会传播。</tspan>
+</text>
+</g></svg>

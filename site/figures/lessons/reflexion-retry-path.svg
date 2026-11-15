@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="1116" viewBox="0 0 736 1116" role="img" aria-labelledby="title desc">
+<title id="title">一次失败怎样影响下一次尝试</title><desc id="desc">第一次厨房搜索失败后，评价器和反思模型读取轨迹，生成检查未搜橱柜的建议。重置同一任务时，新轨迹从头开始而选定经验保留；第二次通过提示读入经验，再检查动作和目标。模型权重没有因此更新。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="1116" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">一次失败怎样影响下一次尝试</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">原创教学示意；同一个虚拟厨房任务</tspan>
+</text>
+<rect x="28" y="106" width="680" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">第一次尝试</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">反复检查空冰箱</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">本轮步数用尽</tspan>
+</text>
+<path d="M368,242 L368,282" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="266" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">过程和结果作为输入</tspan>
+</text>
+<rect x="28" y="296" width="680" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="328" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">评价与反思</tspan>
+</text>
+<text x="46" y="357.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">评价：目标未完成</tspan>
+</text>
+<text x="46" y="386.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">结合轨迹分析遗漏</tspan>
+</text>
+<path d="M368,432 L368,472" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="456" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">生成并保存建议</tspan>
+</text>
+<rect x="28" y="486" width="680" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="518" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">文字经验</tspan>
+</text>
+<text x="46" y="547.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">下次检查未搜的橱柜</tspan>
+</text>
+<text x="46" y="576.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">建议可能判断错误</tspan>
+</text>
+<path d="M368,622 L368,662" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="646" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">跨尝试保留</tspan>
+</text>
+<rect x="28" y="676" width="680" height="159" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="708" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">重置同一任务</tspan>
+</text>
+<text x="46" y="737.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">新建本轮轨迹</tspan>
+</text>
+<text x="46" y="766.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">保留选定的旧经验</tspan>
+</text>
+<text x="46" y="795.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">不更新模型权重</tspan>
+</text>
+<path d="M368,841 L368,881" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="865" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">进入下一轮输入</tspan>
+</text>
+<rect x="28" y="895" width="680" height="159" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="927" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">第二次尝试</tspan>
+</text>
+<text x="46" y="956.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">把经验放进提示</tspan>
+</text>
+<text x="46" y="985.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">观察动作是否改变</tspan>
+</text>
+<text x="46" y="1014.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">再检查完整任务目标</tspan>
+</text>
+<text x="28" y="1086" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">图示是失败后的分支；成功或达到预算时按任务协议停止，建议本身不是正确性证明。</tspan>
+</text>
+</g></svg>

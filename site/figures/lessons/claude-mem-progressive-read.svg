@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="1058" viewBox="0 0 736 1058" role="img" aria-labelledby="title desc">
+<title id="title">从历史线索读到核对材料</title><desc id="desc">下一会话获得精简线索；需要时先 search 候选，再 timeline 看时间背景，最后 get_observations 读选中全文。需要核对工具输出时，可在支持的运行模式继续获取工具正文，但正文有截断限制。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="1058" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">从历史线索读到核对材料</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">官方文档机制；小林的内容为假设示例</tspan>
+</text>
+<rect x="28" y="106" width="680" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">下一项目会话</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">支持注入的宿主提供精简索引</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">例如“修过日期分隔符”</tspan>
+</text>
+<path d="M368,242 L368,282" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="266" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">线索不足时主动查询</tspan>
+</text>
+<rect x="28" y="296" width="680" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="328" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">search</tspan>
+</text>
+<text x="46" y="357.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">按当前问题找候选</tspan>
+</text>
+<text x="46" y="386.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">先看 ID、标题和日期</tspan>
+</text>
+<path d="M368,432 L368,472" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="456" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">选择值得追查的候选</tspan>
+</text>
+<rect x="28" y="486" width="680" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="518" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">timeline</tspan>
+</text>
+<text x="46" y="547.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">查看候选前后发生的事</tspan>
+</text>
+<text x="46" y="576.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">判断是不是同一次修复</tspan>
+</text>
+<path d="M368,622 L368,662" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="646" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">筛选后取回完整观察</tspan>
+</text>
+<rect x="28" y="676" width="680" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="708" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">get_observations</tspan>
+</text>
+<text x="46" y="737.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">读取选中观察的全文</tspan>
+</text>
+<text x="46" y="766.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">仍是加工后的记录</tspan>
+</text>
+<path d="M368,812 L368,852" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="836" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">需要原始证据且运行模式支持</tspan>
+</text>
+<rect x="28" y="866" width="680" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="898" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">可选工具正文读取</tspan>
+</text>
+<text x="46" y="927.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">需要核对实际测试输出时</tspan>
+</text>
+<text x="46" y="956.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">检查 get_tool_uses 支持情况</tspan>
+</text>
+<text x="28" y="1028" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">工具正文有捕获与截断边界；完整观察不等于完整原始会话。</tspan>
+</text>
+</g></svg>

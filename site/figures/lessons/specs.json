@@ -1,0 +1,3787 @@
+[
+  {
+    "id": "generative-agents-reflection-path",
+    "entryId": "generative-agents",
+    "questionIndex": 3,
+    "goal": "解释反思由问题和取回的证据生成，随后才可能参与计划；推断与已发生事件不同。",
+    "layout": "flow",
+    "title": "经历怎样成为下一次计划",
+    "subtitle": "原创教学示意；阿青的情境为假设",
+    "nodes": [
+      {
+        "title": "已有经历",
+        "lines": [
+          "周一、周二讨论研究",
+          "其他日常事件也在积累"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "反思被触发",
+        "lines": [
+          "累计重要性超过阈值",
+          "从近期记录提出问题"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "按问题找证据",
+        "lines": [
+          "谁有共同研究兴趣？",
+          "取回交谈及相关反思"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "写回反思",
+        "lines": [
+          "与 Maria 有共同兴趣",
+          "保留所引用的记录",
+          "这是推断，不是确认"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "制定邀请计划",
+        "lines": [
+          "若本次规划取用了反思",
+          "拟定邀请时间与地点",
+          "计划不代表已经实施"
+        ],
+        "kind": "current"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "满足触发条件"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "以问题检索"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "依据材料归纳"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "label": "后续规划可能取用"
+      }
+    ],
+    "footer": "观察、反思和计划都可保存；反思成立与计划执行仍需分别检查。",
+    "sources": [
+      "generative-agents"
+    ],
+    "caption": "反思不是从一句话直接跳到行动。系统先提出问题、检索证据，再把推断写回，供未来规划选择。",
+    "alt": "流程从阿青的交谈与其他经历开始。累计重要性满足条件后提出问题，按问题取回证据，形成带引用的反思；后续规划若取用该反思，才可能形成邀请安排。反思是推断，安排也尚未执行。"
+  },
+  {
+    "id": "reflexion-retry-path",
+    "entryId": "reflexion",
+    "questionIndex": 3,
+    "goal": "解释失败过程怎样变成保留下来的文字建议，以及重置本轮状态时仍可保留经验。",
+    "layout": "flow",
+    "title": "一次失败怎样影响下一次尝试",
+    "subtitle": "原创教学示意；同一个虚拟厨房任务",
+    "nodes": [
+      {
+        "title": "第一次尝试",
+        "lines": [
+          "反复检查空冰箱",
+          "本轮步数用尽"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "评价与反思",
+        "lines": [
+          "评价：目标未完成",
+          "结合轨迹分析遗漏"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "文字经验",
+        "lines": [
+          "下次检查未搜的橱柜",
+          "建议可能判断错误"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "重置同一任务",
+        "lines": [
+          "新建本轮轨迹",
+          "保留选定的旧经验",
+          "不更新模型权重"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "第二次尝试",
+        "lines": [
+          "把经验放进提示",
+          "观察动作是否改变",
+          "再检查完整任务目标"
+        ],
+        "kind": "current"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "过程和结果作为输入"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "生成并保存建议"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "跨尝试保留"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "label": "进入下一轮输入"
+      }
+    ],
+    "footer": "图示是失败后的分支；成功或达到预算时按任务协议停止，建议本身不是正确性证明。",
+    "sources": [
+      "reflexion-final",
+      "reflexion-alf"
+    ],
+    "caption": "反思保留下来的是下一次可以尝试的策略；重试仍要用新观察和评价确认结果。",
+    "alt": "第一次厨房搜索失败后，评价器和反思模型读取轨迹，生成检查未搜橱柜的建议。重置同一任务时，新轨迹从头开始而选定经验保留；第二次通过提示读入经验，再检查动作和目标。模型权重没有因此更新。"
+  },
+  {
+    "id": "memgpt-context-levels",
+    "entryId": "memgpt",
+    "questionIndex": 1,
+    "goal": "以可见性区分主上下文与外部存储，解释三段prompt和两类外部保存位置。",
+    "layout": "hierarchy",
+    "title": "当前看见与窗口外保存",
+    "subtitle": "原创架构示意；文字内容采用教学案例",
+    "nodes": [
+      {
+        "title": "MemGPT 的两层内容",
+        "lines": [
+          "按本次模型调用是否可见区分"
+        ],
+        "kind": "control",
+        "parent": null
+      },
+      {
+        "title": "主上下文",
+        "lines": [
+          "实际送入模型的输入",
+          "容量有限"
+        ],
+        "kind": "current",
+        "parent": 0
+      },
+      {
+        "title": "系统说明",
+        "lines": [
+          "静态只读",
+          "函数与控制用法"
+        ],
+        "kind": "control",
+        "parent": 1
+      },
+      {
+        "title": "working context",
+        "lines": [
+          "固定大小可读写区",
+          "如：小林偏爱安静"
+        ],
+        "kind": "current",
+        "parent": 1
+      },
+      {
+        "title": "FIFO 队列",
+        "lines": [
+          "滚动消息、函数结果",
+          "包含递归摘要"
+        ],
+        "kind": "current",
+        "parent": 1
+      },
+      {
+        "title": "外部上下文",
+        "lines": [
+          "本次窗口之外的内容",
+          "需显式取回才能用于推理"
+        ],
+        "kind": "record",
+        "parent": 0
+      },
+      {
+        "title": "recall storage",
+        "lines": [
+          "保存消息历史",
+          "如：第一周的原话"
+        ],
+        "kind": "record",
+        "parent": 5
+      },
+      {
+        "title": "archival storage",
+        "lines": [
+          "保存较长文本资料",
+          "如：导入的旅行说明"
+        ],
+        "kind": "record",
+        "parent": 5
+      }
+    ],
+    "connections": [],
+    "footer": "图示是逻辑层级；论文使用的数据库后端不是所有实现的强制配置。",
+    "sources": [
+      "memgpt"
+    ],
+    "caption": "working context 本身就在模型输入内；recall 和 archival 的内容则必须先取回。",
+    "alt": "内容根节点分为主上下文与外部上下文。主上下文包含系统说明、working context 和FIFO队列；外部上下文包含消息历史recall与长文本archival。主上下文直接可见，外部内容需显式取回。"
+  },
+  {
+    "id": "memgpt-retrieval-path",
+    "entryId": "memgpt",
+    "questionIndex": 4,
+    "goal": "展示外部保存如何经函数结果成为下一次推理输入，以及heartbeat只控制继续执行。",
+    "layout": "flow",
+    "title": "旧资料怎样重新进入输入",
+    "subtitle": "原创教学示意；未运行小林的查询",
+    "nodes": [
+      {
+        "title": "当前问题",
+        "lines": [
+          "最初选了哪里？",
+          "资料中的取消说明是什么？"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "生成搜索调用",
+        "lines": [
+          "分别查询历史与资料",
+          "函数解析后执行"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "分批返回文字",
+        "lines": [
+          "recall 原话",
+          "archival 候选段落"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "结果加入队列",
+        "lines": [
+          "进入下一次主上下文",
+          "模型现在才可读到结果"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "继续处理或回答",
+        "lines": [
+          "需要更多内容时继续搜索",
+          "材料足够时组织回答"
+        ],
+        "kind": "control"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "决定需要查什么"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "按页返回结果"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "追加函数输出"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "label": "heartbeat 可立即继续"
+      }
+    ],
+    "footer": "分页有助控制输入长度；模型仍可能用错查询或过早停止。",
+    "sources": [
+      "memgpt"
+    ],
+    "caption": "外部记录不会因被保存就自动进入本轮推理，访问路径需要经过调用、返回与输入组装。",
+    "alt": "当前问题引发recall和archival搜索，函数分批返回文字并追加到FIFO队列，使下一次推理读到结果。heartbeat可让模型立即继续处理，再决定继续搜索还是回答。"
+  },
+  {
+    "id": "voyager-two-use-paths",
+    "entryId": "voyager",
+    "questionIndex": 4,
+    "goal": "区分技能的检索子集进入模型提示与整个现有程序库支持执行这两条路径。",
+    "layout": "flow",
+    "title": "技能如何参与生成与执行",
+    "subtitle": "原创教学示意；依据论文与固定代码",
+    "nodes": [
+      {
+        "title": "已有技能库",
+        "lines": [
+          "代码＋用途说明",
+          "保存当前名称到程序的映射"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "当前检索需求",
+        "lines": [
+          "任务建议＋环境信息",
+          "如：先准备石铲"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "相关技能子集",
+        "lines": [
+          "最多五个，库小时更少",
+          "取出对应代码"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "行动模型",
+        "lines": [
+          "读相关代码和当前状态",
+          "生成或组合新程序"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "执行环境",
+        "lines": [
+          "运行新生成程序",
+          "另获已有程序库与控制原语"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "反馈与任务检查",
+        "lines": [
+          "环境变化、运行错误",
+          "critic 判断是否完成"
+        ],
+        "kind": "record"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 2,
+        "label": "按用途说明选择"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "提供查询"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "代码加入提示"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "label": "提交新程序"
+      },
+      {
+        "from": 0,
+        "to": 4,
+        "label": "现有程序库供调用"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "label": "返回执行结果"
+      }
+    ],
+    "footer": "最多五个是检索子集限制，不是执行器函数数量上限；运行成功仍须检查。",
+    "sources": [
+      "voyager-paper",
+      "voyager-skills",
+      "voyager-runtime"
+    ],
+    "caption": "同一技能既可作为模型编程的参考，也可作为执行时被调用的函数；两条路径不能混为一次检索。",
+    "alt": "已有技能库与任务查询共同选出最多五个相关技能，代码进入行动模型，模型生成新程序后交给执行环境。技能库还沿另一条路径将现有程序与基础原语提供给执行环境。执行结果再交给critic检查。"
+  },
+  {
+    "id": "memorybank-record-summary-profile",
+    "entryId": "memorybank",
+    "questionIndex": 0,
+    "goal": "展示原对话分别派生事件摘要和用户画像，避免把二者当作同等的用户原话。",
+    "layout": "flow",
+    "title": "同一对话的两条归纳路线",
+    "subtitle": "原创教学示意；小周的事件为假设",
+    "nodes": [
+      {
+        "title": "带时间的原对话",
+        "lines": [
+          "周一：面试前紧张",
+          "周三：面试已经通过"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "每日事件摘要",
+        "lines": [
+          "归纳当天发生什么",
+          "保留关键事件与日期"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "全局事件摘要",
+        "lines": [
+          "串联多天的进展",
+          "摘要可能遗漏细节"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "每日用户画像",
+        "lines": [
+          "推测情绪与性格",
+          "属于模型解释"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "全局用户画像",
+        "lines": [
+          "综合多天的画像",
+          "不是用户确认或诊断"
+        ],
+        "kind": "derived"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "概括事件"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "跨日合并"
+      },
+      {
+        "from": 0,
+        "to": 3,
+        "label": "推测用户特点"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "label": "跨日归纳"
+      }
+    ],
+    "footer": "分支表达不同归纳目标；派生文本不因被保存就与原话同等可靠。",
+    "sources": [
+      "memorybank-v3",
+      "memorybank-summary-code"
+    ],
+    "caption": "事件摘要回答发生了什么，画像尝试理解用户特点；两者都应保留与原对话的证据差别。",
+    "alt": "带日期的原对话分出两条路线，一条生成每日事件摘要并合并为全局事件摘要，另一条生成每日用户画像并合并为全局画像。摘要可能遗漏细节，画像属于模型推断。"
+  },
+  {
+    "id": "memorybank-formula-difference",
+    "entryId": "memorybank",
+    "questionIndex": 3,
+    "goal": "用相同t与S变化直接比较论文与代码公式，显示强度影响方向相反。",
+    "layout": "split",
+    "title": "强度增加时，两式方向相反",
+    "subtitle": "可复算教学算例；固定 t=5，S 从1增到2",
+    "nodes": [
+      {
+        "title": "论文公式",
+        "lines": [
+          "R = exp(−t/S)",
+          "0.0067 → 0.0821",
+          "S 增加，保留率升高"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "固定代码的等价式",
+        "lines": [
+          "R = exp(−t×S/5)",
+          "0.3679 → 0.1353",
+          "S 增加，该值反而降低"
+        ],
+        "kind": "record"
+      }
+    ],
+    "connections": [],
+    "footer": "固定时间只比较公式；真实回忆还会重置 t，不能把此算例当作完整运行结果。",
+    "sources": [
+      "memorybank-v3",
+      "memorybank-forget-code"
+    ],
+    "caption": "代码中的除以5再乘S，与论文中的除以S不同。两者在相同时间下随强度变化的方向相反。",
+    "alt": "左右对照：t固定为5且S由1增加到2时，论文exp(-t/S)的结果由约0.0067升至0.0821，固定代码等价式exp(-t*S/5)由约0.3679降至0.1353。该对照不模拟回忆时重置t。"
+  },
+  {
+    "id": "coala-memory-hierarchy",
+    "entryId": "coala",
+    "questionIndex": 0,
+    "goal": "正确呈现working与long-term并列，以及episodic/semantic/procedural属于long-term的下级。",
+    "layout": "hierarchy",
+    "title": "CoALA 的记忆层级",
+    "subtitle": "原创架构示意；测试修复内容为教学假设",
+    "nodes": [
+      {
+        "title": "Agent 的记忆模块",
+        "lines": [
+          "按当前状态与长期作用区分"
+        ],
+        "kind": "control",
+        "parent": null
+      },
+      {
+        "title": "工作记忆",
+        "lines": [
+          "当前目标与报错",
+          "检索结果、中间判断",
+          "可跨模型调用保留"
+        ],
+        "kind": "current",
+        "parent": 0
+      },
+      {
+        "title": "长期记忆",
+        "lines": [
+          "保留供以后使用的内容",
+          "下分经历、知识、做事方式"
+        ],
+        "kind": "record",
+        "parent": 0
+      },
+      {
+        "title": "经历 episodic",
+        "lines": [
+          "上周的失败与修复轨迹",
+          "记录当时发生过什么"
+        ],
+        "kind": "record",
+        "parent": 2
+      },
+      {
+        "title": "知识 semantic",
+        "lines": [
+          "本项目的缓存规则",
+          "表达对世界或自身的知识"
+        ],
+        "kind": "record",
+        "parent": 2
+      },
+      {
+        "title": "做事方式 procedural",
+        "lines": [
+          "模型权重中的隐含知识",
+          "代码中的显式程序"
+        ],
+        "kind": "control",
+        "parent": 2
+      }
+    ],
+    "connections": [],
+    "footer": "这是层级，不是四个平级槽位；长期记录取回后，其副本可进入工作区。",
+    "sources": [
+      "coala"
+    ],
+    "caption": "工作记忆描述当前决策可用的状态，长期记忆的下级则按经历、知识和做事方式区分。",
+    "alt": "Agent记忆模块下，工作记忆与长期记忆是并列分支。工作记忆包含当前目标、报错和检索结果；长期记忆下有episodic经历、semantic知识、procedural做事方式三个子类。程序性记忆包含模型权重和Agent代码。"
+  },
+  {
+    "id": "foundation-agent-memory-three-lenses",
+    "entryId": "foundation-agent-memory",
+    "questionIndex": 1,
+    "goal": "说明同一事实可同时按作用、载体和主体描述，三轴不是流水线。",
+    "layout": "split",
+    "title": "同一条记录的三个观察角度",
+    "subtitle": "教学假设：借阅表依赖读者表",
+    "nodes": [
+      {
+        "title": "认知作用",
+        "lines": [
+          "语义记忆",
+          "回答：已知什么关系？"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "承载形式",
+        "lines": [
+          "模型外的文本记录",
+          "向量索引帮助定位"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "服务主体",
+        "lines": [
+          "帮助后续迁移任务",
+          "主要为 Agent 积累"
+        ],
+        "kind": "current"
+      }
+    ],
+    "connections": [],
+    "footer": "三个视角同时成立；共享权限须另查。",
+    "sources": [
+      "foundation-v4-current"
+    ],
+    "caption": "按 §3 三轴对同一教学记录作并列分析，不表示先后步骤，也不要求三个独立数据库。",
+    "alt": "同一条借阅表依赖读者表的记录，可以在认知作用上属于语义记忆，在载体上是模型外文本和检索索引，在服务目标上帮助 Agent 处理后续迁移；这些标签不决定共享权限。"
+  },
+  {
+    "id": "forms-functions-dynamics-three-views",
+    "entryId": "forms-functions-dynamics",
+    "questionIndex": 1,
+    "goal": "让新手对同一条策略分别回答形式、功能、动态，避免把三镜头画成演化等级。",
+    "layout": "split",
+    "title": "一条策略，三种说明",
+    "subtitle": "教学策略：升级前核对数据结构变化",
+    "nodes": [
+      {
+        "title": "形式：怎样承载",
+        "lines": [
+          "可编辑的显式文字",
+          "也可带图中关系"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "功能：帮助什么",
+        "lines": [
+          "指导下一次升级",
+          "属于经验中的策略"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "动态：怎样变化",
+        "lines": [
+          "从失败中形成",
+          "经新证据修订并取回"
+        ],
+        "kind": "current"
+      }
+    ],
+    "connections": [],
+    "footer": "三个镜头并列；不是三个数据库，也不是性能等级。",
+    "sources": [
+      "survey-form",
+      "survey",
+      "survey-dynamics"
+    ],
+    "caption": "同一教学策略同时具有形式、功能与动态描述，图中没有表示先后或优劣的箭头。",
+    "alt": "策略升级前核对数据结构变化，在形式上是可编辑文字，在功能上指导下一次升级，在动态上由失败形成并可修订、检索。三个描述并列成立。"
+  },
+  {
+    "id": "agent-memory-characterization-freshness",
+    "entryId": "agent-memory-characterization",
+    "questionIndex": 3,
+    "goal": "解释依赖查询早于写入提交时，同步等待和异步陈旧的区别，并区分新鲜与正确回答。",
+    "layout": "split",
+    "title": "第5秒提问，写入尚未完成",
+    "subtitle": "教学时间线：0秒接收，8秒提交",
+    "nodes": [
+      {
+        "title": "等待先前写入",
+        "lines": [
+          "5秒：查询到来并等待",
+          "8秒：提交后读取",
+          "新地址有机会被选入"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "提前读取已提交状态",
+        "lines": [
+          "5秒：先用已提交记忆",
+          "可能仍读到旧地址",
+          "8秒：新地址才提交"
+        ],
+        "kind": "current"
+      }
+    ],
+    "connections": [],
+    "footer": "时间为教学设定；可读到新地址仍不保证答对。",
+    "sources": [
+      "character-v2"
+    ],
+    "caption": "按论文 §4.6 正文的调度含义解释两种可见状态。两栏是替代方案，不是先后阶段；8秒不是论文测量。",
+    "alt": "写入从0秒开始到8秒提交，查询在5秒到来。等待策略到提交后读取，提前读取策略在5秒可能仍只能读旧地址。新状态可见仍需后续正确检索和生成。"
+  },
+  {
+    "id": "anatomy-agentic-memory-evidence",
+    "entryId": "anatomy-agentic-memory",
+    "questionIndex": 4,
+    "goal": "用同一问答解释语义相关与足以支持当前决定之间的区别，避免暗示图必然成功。",
+    "layout": "split",
+    "title": "相关证据还要保住更正",
+    "subtitle": "教学问题：最后批准的交付日是哪天？",
+    "nodes": [
+      {
+        "title": "只取到最初计划",
+        "lines": [
+          "第一周：周五交材料",
+          "主题相关，但缺少更正",
+          "可能据旧计划作答"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "同时取得确认更改",
+        "lines": [
+          "周三确认：改到下周一",
+          "保留决定时间与来源",
+          "具备回答当前日期的依据"
+        ],
+        "kind": "current"
+      }
+    ],
+    "connections": [],
+    "footer": "文本或图都可能命中或遗漏；结构名称不保证结果。",
+    "sources": [
+      "anatomy-agentic-memory"
+    ],
+    "caption": "并列的是两种证据状态，不是两种结构的实测性能。最新消息也需确认为已批准的更改。",
+    "alt": "只取到第一周周五计划会缺少后续更正，同时取得周三确认改到下周一才具备当前答案依据。两种状态都可能发生在文本或图记忆中。"
+  },
+  {
+    "id": "storage-experience-abstraction",
+    "entryId": "storage-experience",
+    "questionIndex": 0,
+    "goal": "展示单次纠错与跨轨迹归纳所需的输入不同，不能把三阶段画成性能阶梯。",
+    "layout": "split",
+    "title": "从两次经历归纳条件",
+    "subtitle": "教学过程；不是论文实验结果",
+    "nodes": [
+      {
+        "title": "周一轨迹",
+        "lines": [
+          "导出超时，重试无效",
+          "检查发现服务不可用"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "周四轨迹",
+        "lines": [
+          "导出超时，服务正常",
+          "日志显示连接资源耗尽"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "周一反思",
+        "lines": [
+          "本次应先核实服务状态",
+          "仍是一条具体经历的纠错"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "周四反思",
+        "lines": [
+          "服务正常还需继续排查",
+          "本次证据指向连接资源"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "跨经历候选策略",
+        "lines": [
+          "先区分条件，再选择检查",
+          "新故障可能要求扩充分支"
+        ],
+        "kind": "derived",
+        "span": 2
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 2,
+        "label": "按反馈评价一次经历"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "label": "按反馈评价一次经历"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "label": "比较共同点与差异"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "label": "比较共同点与差异"
+      }
+    ],
+    "footer": "原始记录可保留；抽象不保证对新任务有效。",
+    "sources": [
+      "extension-storage-full"
+    ],
+    "caption": "箭头表示这套教学设计中的加工关系。框架允许阶段共存，并不规定每个系统必须按此流程实现。",
+    "alt": "周一和周四的超时分别产生单次反思，两条反思及其经历通过比较形成有条件的候选策略；原始记录可以保留，候选策略还要接受新任务检验。"
+  },
+  {
+    "id": "memory-autonomous-agents-feedback",
+    "entryId": "memory-autonomous-agents",
+    "questionIndex": 3,
+    "goal": "解释记忆和行动的反馈关系，以及为什么错误归纳会影响下一轮而非自动自我修复。",
+    "layout": "flow",
+    "title": "一次结果怎样影响下一次行动",
+    "subtitle": "教学情境：两个项目的版本要求不同",
+    "nodes": [
+      {
+        "title": "周一留下记录",
+        "lines": [
+          "甲：匹配版本后测试通过",
+          "保留项目条件"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "周四读取经验",
+        "lines": [
+          "选择先核对版本的步骤",
+          "另查乙的项目要求"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "执行并观察",
+        "lines": [
+          "按乙的要求检查",
+          "获得本次测试结果"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "写入与管理",
+        "lines": [
+          "保留结果与适用范围",
+          "修订过宽的旧建议"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "下一轮可用状态",
+        "lines": [
+          "甲乙事实分别保留",
+          "通用步骤仍需检验"
+        ],
+        "kind": "derived"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "选择可迁移部分"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "与当前证据一起决策"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "把结果作为反馈"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "label": "更新后续读取内容"
+      }
+    ],
+    "footer": "反馈闭环不保证越用越准；错误写入也会传播。",
+    "sources": [
+      "extension-autonomous-full"
+    ],
+    "caption": "图示本例的一轮反馈；下一任务会从更新后的状态重新读取。它不代表论文交付了一套可运行系统。",
+    "alt": "周一甲项目记录被周四任务选取一般检查步骤，结合乙项目要求执行并获得反馈，写入管理修订过宽规则，留下供下一轮读取的有条件状态。错误归纳也可能沿这条链传播。"
+  },
+  {
+    "id": "graph-agent-memory-two-times",
+    "entryId": "graph-agent-memory",
+    "questionIndex": 1,
+    "goal": "区分有效时间与记录时间，让事后历史和当时所知两类查询都有明确含义。",
+    "layout": "split",
+    "title": "事情何时变，系统何时知",
+    "subtitle": "教学设定：周一改期，周三补录",
+    "nodes": [
+      {
+        "title": "有效时间看事件",
+        "lines": [
+          "周一：预约改到周五",
+          "事后回看周二",
+          "当时有效安排已是周五"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "记录时间看所知",
+        "lines": [
+          "周三：更改才被记录",
+          "限制为周二已有证据",
+          "仍只有原周二安排"
+        ],
+        "kind": "record"
+      }
+    ],
+    "connections": [],
+    "footer": "事后答案依赖补录可信；两个时间不能合成一个。",
+    "sources": [
+      "graph-agent-memory"
+    ],
+    "caption": "两栏对同一变更使用不同时间条件。它们不是矛盾结论，也不是所有图数据库的默认能力。",
+    "alt": "事件在周一把预约改成周五，但系统周三才记录。按有效时间事后查周二，可知当时已改到周五；按记录时间查系统周二所知，仍只有原周二安排。"
+  },
+  {
+    "id": "graph-agent-memory-retrieval-path",
+    "entryId": "graph-agent-memory",
+    "questionIndex": 4,
+    "goal": "展示原因问答如何依次定位事件、沿有来源的关系取证，再把证据交给模型，而非沿任意邻接边推因果。",
+    "layout": "flow",
+    "title": "沿关系取回原因证据",
+    "subtitle": "教学查询：第一次为什么改期？",
+    "nodes": [
+      {
+        "title": "确定目标工单",
+        "lines": [
+          "当前客户：小林",
+          "目标：第一次改期"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "定位周一事件",
+        "lines": [
+          "原周二预约改到周五",
+          "保留生效与记录时间"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "取回原因及来源",
+        "lines": [
+          "客服报告服务 X 故障",
+          "取回原话和出处"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "组织有归因的回答",
+        "lines": [
+          "按客服记录说明原因",
+          "缺证据时保留不确定性"
+        ],
+        "kind": "derived"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "限定客户与事件"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "沿有出处的原因关系"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "将证据提供给模型"
+      }
+    ],
+    "footer": "同时发生不证明因果；相连记录仍受访问范围限制。",
+    "sources": [
+      "graph-agent-memory"
+    ],
+    "caption": "箭头表示本例的检索与使用过程，原因以客服报告归因，不表示已独立证明因果。",
+    "alt": "先锁定小林的工单和首次改期事件，再沿有出处的原因关系读取客服原话，最后向模型提供时间和来源，组织带归因的回答；普通相邻节点不足以证明原因。"
+  },
+  {
+    "id": "langgraph-two-stores",
+    "entryId": "langgraph",
+    "questionIndex": 1,
+    "goal": "区分线程工作状态的检查点与跨线程长期Store，说明逻辑接口不等于物理数据库。",
+    "layout": "split",
+    "title": "两类资料，两条保存路径",
+    "subtitle": "按官方概念绘制；林溪资料为教学假设",
+    "nodes": [
+      {
+        "title": "线程A的state",
+        "lines": [
+          "草稿、消息、修改进度",
+          "用于继续同一篇稿"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "线程检查点",
+        "lines": [
+          "按thread保存状态",
+          "恢复依实际checkpointer"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "跨任务偏好",
+        "lines": [
+          "默认先给短版",
+          "应用选择保存为JSON"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "长期Store",
+        "lines": [
+          "namespace＋key定位",
+          "可供多个线程读取"
+        ],
+        "kind": "derived"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "保存工作状态"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "应用写入长期记录"
+      }
+    ],
+    "footer": "两条路径的物理后端分别配置；内存实现不等于跨重启持久。",
+    "sources": [
+      "langgraph:1"
+    ],
+    "caption": "上行恢复一段对话的工作现场，下行保存可供其他对话读取的资料；共享哪份偏好仍由应用决定。",
+    "alt": "两组并列路径：线程A的草稿与消息进入线程检查点；用户长期偏好作为JSON写入Store，按namespace和key定位。两者都需检查实际后端。"
+  },
+  {
+    "id": "google-adk-three-paths",
+    "entryId": "google-adk",
+    "questionIndex": 4,
+    "goal": "比较主动工具、自动预加载与state模板三种进入模型输入的方式。",
+    "layout": "split",
+    "title": "ADK的三条输入路径",
+    "subtitle": "按固定Python源码绘制；三路不互相替代",
+    "nodes": [
+      {
+        "title": "模型选择主动查询",
+        "lines": [
+          "调用load_memory",
+          "提供query"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "主动工具结果",
+        "lines": [
+          "搜索当前用户Memory",
+          "结果经工具返回"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "每次模型请求前",
+        "lines": [
+          "preload自动取用户文本",
+          "搜索失败：警告并跳过"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "临时user内容",
+        "lines": [
+          "只加入可用文本结果",
+          "无结果不注入"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "指令中的状态占位符",
+        "lines": [
+          "例如{key}",
+          "读取Session state"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "替换后的Agent指令",
+        "lines": [
+          "状态值直接填入",
+          "不经Memory搜索"
+        ],
+        "kind": "derived"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "主动调用后返回"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "有可用文本时加入"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "label": "模板替换"
+      }
+    ],
+    "footer": "load_memory需模型调用；preload自动执行；状态存在不保证检索库有副本。",
+    "sources": [
+      "adk-load-current",
+      "adk-preload-current",
+      "adk-state-current"
+    ],
+    "caption": "三行按相同维度对照触发方式和结果位置。自动预加载失败后继续回答，不表示历史为空。",
+    "alt": "第一行是模型发query后得到工具结果；第二行是每次模型请求前自动搜索并添加临时user文本；第三行是state变量替换指令占位符。它们不是先后必须经过的三个步骤。"
+  },
+  {
+    "id": "openai-agents-sdk-two-phases",
+    "entryId": "openai-agents-sdk",
+    "questionIndex": 3,
+    "goal": "显示run结束与sandbox session关闭两个时间点，以及经验提取和整合的先后关系。",
+    "layout": "timeline",
+    "title": "经验文件在何时形成",
+    "subtitle": "官方流程重绘；陈禾的两轮交互为教学假设",
+    "nodes": [
+      {
+        "title": "第一轮与第二轮run",
+        "lines": [
+          "每轮结束追加轨迹",
+          "同一ID累积一段对话"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "sandbox session关闭",
+        "lines": [
+          "开始处理累计对话",
+          "回答结束≠整理完成"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "第一阶段：提取",
+        "lines": [
+          "对话摘要＋原始笔记",
+          "省略特定消息内容",
+          "超长保留开头和结尾"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "第二阶段：整合",
+        "lines": [
+          "按layout合并原始记忆",
+          "生成索引与总摘要",
+          "超上限优先保留近期"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "后续运行可复用",
+        "lines": [
+          "先保留并恢复记忆目录",
+          "再进入读取流程"
+        ],
+        "kind": "record"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "关闭工作区会话后"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "提取累计对话"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "提供整理材料"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "label": "目录保留且被恢复"
+      }
+    ],
+    "footer": "SDK Session历史另有保存路径；此图不表示关闭sandbox会删除对话历史。",
+    "sources": [
+      "oas-memory-current",
+      "oas-sessions-current"
+    ],
+    "caption": "经验生成不是每次回答结束就已经完成；最终能否复用，还受目录恢复和读取路径约束。",
+    "alt": "多个run的轨迹先累积。sandbox session关闭后，先生成对话摘要和原始提取，再按layout整合成MEMORY.md及memory_summary.md。后续运行需恢复完整目录才能使用。"
+  },
+  {
+    "id": "openai-agents-sdk-two-read-paths",
+    "entryId": "openai-agents-sdk",
+    "questionIndex": 4,
+    "goal": "对照会话历史自动拼接与文件经验分层读取，保留裁剪不等于删除。",
+    "layout": "split",
+    "title": "历史重放与经验读取",
+    "subtitle": "固定版本的常规读取路径",
+    "nodes": [
+      {
+        "title": "Session历史",
+        "lines": [
+          "Runner运行前取回",
+          "可限制条数或裁剪视图"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "历史＋本轮输入",
+        "lines": [
+          "默认历史在前",
+          "裁剪不重写旧存储"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "memory_summary.md",
+        "lines": [
+          "运行开始自动注入",
+          "进入developer prompt"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "MEMORY.md索引",
+        "lines": [
+          "任务相关时用Shell搜索",
+          "并非每次全文重放"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "任务轨迹摘要",
+        "lines": [
+          "需要细节时打开",
+          "核对原条件与结果"
+        ],
+        "kind": "derived"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "本轮合并"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "相关时继续查"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "label": "需要依据时打开"
+      }
+    ],
+    "footer": "会话库与经验目录分别保留；存储存在不证明本次已读取或采用。",
+    "sources": [
+      "oas-sessions-current",
+      "oas-memory-current"
+    ],
+    "caption": "上路提供当前对话历史，下路先给经验概览再按需查细节。两条路径的内容和读取触发不同。",
+    "alt": "Session历史自动取回后与当前输入合并，可只暴露部分历史；经验读取先把memory_summary.md注入developer，再条件性搜索索引与读取轨迹摘要。"
+  },
+  {
+    "id": "crewai-recall-paths",
+    "entryId": "crewai",
+    "questionIndex": 4,
+    "goal": "区分Agent任务自动召回与主动RecallMemoryTool，解释返回上限属于调用入口。",
+    "layout": "split",
+    "title": "CrewAI的两种召回入口",
+    "subtitle": "71d6811源码；数量是每条调用路径的上限",
+    "nodes": [
+      {
+        "title": "Agent开始执行任务",
+        "lines": [
+          "query取task.description",
+          "自动调用recall"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "自动接入任务输入",
+        "lines": [
+          "最多5条",
+          "使用默认deep",
+          "格式化追加task prompt"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "Agent主动调用工具",
+        "lines": [
+          "RecallMemoryTool",
+          "可以提供多个query"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "作为工具结果返回",
+        "lines": [
+          "每个query最多20条",
+          "合并时按记录ID去重",
+          "不是整次工具最多20条"
+        ],
+        "kind": "derived"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "任务接入代码执行"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "逐个query召回"
+      }
+    ],
+    "footer": "返回上限不保证有这么多结果；分数用于排序，不是事实正确概率。",
+    "sources": [
+      "crew-agent-current",
+      "crew-tools-current",
+      "crew-core-current"
+    ],
+    "caption": "相同recall能力在不同入口被调用，条数和结果进入模型的位置不同；独立程序还需自行组织输入。",
+    "alt": "两行并列：任务描述触发自动recall，最多5条追加task prompt；主动工具逐个query召回，每个最多20条，去重格式化后作为工具结果。"
+  },
+  {
+    "id": "deep-agents-backend-routes",
+    "entryId": "deep-agents",
+    "questionIndex": 1,
+    "goal": "展示文件形式与保存介质分离，并显示路由剥前缀与Store持久性条件。",
+    "layout": "split",
+    "title": "同一文件接口，不同保存位置",
+    "subtitle": "按固定源码绘制；路径为教学配置",
+    "nodes": [
+      {
+        "title": "临时工作文件",
+        "lines": [
+          "Agent路径：/notes.txt",
+          "默认路径路由"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "StateBackend",
+        "lines": [
+          "进入图的files状态",
+          "主要服务当前线程",
+          "跨运行恢复需实际配置"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "个人偏好文件",
+        "lines": [
+          "/memories/下的偏好文件",
+          "匹配/memories/路由"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "StoreBackend",
+        "lines": [
+          "后端key：/preferences.md",
+          "再按namespace定位",
+          "持久性依实际Store"
+        ],
+        "kind": "derived"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "默认路由"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "剥去挂载前缀后转发"
+      }
+    ],
+    "footer": "Composite负责路由；文件路径与跨线程可见性均不能证明跨重启持久。",
+    "sources": [
+      "da-state-current",
+      "da-store-current",
+      "da-composite-current",
+      "da-graph-current"
+    ],
+    "caption": "Agent看到的路径可来自同一文件接口，实际资料却进入不同后端；每份资料需要单独确认恢复条件。",
+    "alt": "一组路径把notes.txt留在图状态；另一组把/memories/preferences.md交给Store，先剥去/memories/，再以用户namespace和/preferences.md定位。"
+  },
+  {
+    "id": "deep-agents-memory-skills",
+    "entryId": "deep-agents",
+    "questionIndex": 4,
+    "goal": "比较Memory全文注入与skills常规渐进披露，同时解释缓存及不同覆盖规则。",
+    "layout": "split",
+    "title": "背景文件与技能的可见粒度",
+    "subtitle": "左：背景文件加载；右：常规技能按需读取",
+    "nodes": [
+      {
+        "title": "Memory来源文件",
+        "lines": [
+          "按sources顺序读取",
+          "多个来源全文串接"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "技能来源目录",
+        "lines": [
+          "提取名称、描述等",
+          "后来源覆盖同名skill"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "memory_contents状态",
+        "lines": [
+          "已有则跳过重读",
+          "HTML注释注入前过滤"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "技能目录状态",
+        "lines": [
+          "缓存skills_metadata",
+          "刷新需显式清空为None"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "system中的背景内容",
+        "lines": [
+          "默认自动追加",
+          "system_prompt=None时不追加"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "相关skill的完整指令",
+        "lines": [
+          "常规路径按需读取",
+          "目录可见≠全文已读"
+        ],
+        "kind": "current"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 2,
+        "label": "未加载时读取"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "label": "默认配置下拼接"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "label": "未加载或要求刷新"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "label": "任务相关时打开"
+      }
+    ],
+    "footer": "文件已修改不等于状态已刷新；全文串接与同名技能覆盖是不同规则。",
+    "sources": [
+      "da-memory-current",
+      "da-skills-current"
+    ],
+    "caption": "左列把Memory背景全文加入system，右列先给技能目录再按需读指令。两路均需核查本次实际使用的状态。",
+    "alt": "Memory文件按序加载到memory_contents，再默认追加system；技能先生成缓存目录，后来源同名覆盖，模型在相关任务时读取完整SKILL.md。已有状态可能跳过重新加载。"
+  },
+  {
+    "id": "claude-code-read-paths",
+    "entryId": "claude-code",
+    "questionIndex": 4,
+    "goal": "区分指令自动加载、索引自动加载和主题笔记按需读取。",
+    "layout": "split",
+    "title": "同一约定的两条读取路径",
+    "subtitle": "官方文档机制；小林的内容为假设示例",
+    "nodes": [
+      {
+        "title": "项目指令",
+        "lines": [
+          "按实际配置选择文件",
+          "满足位置和加载条件"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "自动记忆索引",
+        "lines": [
+          "MEMORY.md 启动首段",
+          "前 200 行或 25KB 先到者"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "启动时模型可读的内容",
+        "lines": [
+          "已加载的项目指令＋索引首段",
+          "索引提供主题笔记的查找线索"
+        ],
+        "kind": "current",
+        "span": 2
+      },
+      {
+        "title": "需要细节时读取主题笔记",
+        "lines": [
+          "模型调用文件工具",
+          "取回被选中笔记的正文"
+        ],
+        "kind": "control",
+        "span": 2
+      },
+      {
+        "title": "后续模型调用",
+        "lines": [
+          "先前上下文＋工具返回内容",
+          "模型现在可以结合具体笔记回答"
+        ],
+        "kind": "current",
+        "span": 2
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 2,
+        "label": "满足指令加载条件"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "启动时加载索引首段"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "仅在需要更多细节时调用文件工具"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "label": "工具返回所选笔记正文"
+      }
+    ],
+    "footer": "文件存在不等于已读；文本指导仍不等于工具权限。",
+    "sources": [
+      "cc-loading-current",
+      "cc-agents-current"
+    ],
+    "caption": "启动时先提供指令和索引；需要细节时，再由模型调用文件工具读取主题正文。后一步并非每轮必做。",
+    "alt": "项目指令和自动记忆索引分别进入启动输入。索引只提供查找线索；模型在需要时调用文件工具读取主题笔记，工具返回正文再进入后续调用。"
+  },
+  {
+    "id": "claude-mem-progressive-read",
+    "entryId": "claude-mem",
+    "questionIndex": 4,
+    "goal": "说明精简启动上下文与主动分层检索，并区分完整观察和工具原文。",
+    "layout": "flow",
+    "title": "从历史线索读到核对材料",
+    "subtitle": "官方文档机制；小林的内容为假设示例",
+    "nodes": [
+      {
+        "title": "下一项目会话",
+        "lines": [
+          "支持注入的宿主提供精简索引",
+          "例如“修过日期分隔符”"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "search",
+        "lines": [
+          "按当前问题找候选",
+          "先看 ID、标题和日期"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "timeline",
+        "lines": [
+          "查看候选前后发生的事",
+          "判断是不是同一次修复"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "get_observations",
+        "lines": [
+          "读取选中观察的全文",
+          "仍是加工后的记录"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "可选工具正文读取",
+        "lines": [
+          "需要核对实际测试输出时",
+          "检查 get_tool_uses 支持情况"
+        ],
+        "kind": "record"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "线索不足时主动查询"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "选择值得追查的候选"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "筛选后取回完整观察"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "label": "需要原始证据且运行模式支持"
+      }
+    ],
+    "footer": "工具正文有捕获与截断边界；完整观察不等于完整原始会话。",
+    "sources": [
+      "claudemem-search-current",
+      "claudemem-database-current",
+      "claudemem-readme-current"
+    ],
+    "caption": "箭头表示一次可能的逐步查询。模型每步判断还需读取什么；启动上下文并不会预先装入全部历史。",
+    "alt": "下一会话获得精简线索；需要时先 search 候选，再 timeline 看时间背景，最后 get_observations 读选中全文。需要核对工具输出时，可在支持的运行模式继续获取工具正文，但正文有截断限制。"
+  },
+  {
+    "id": "openclaw-context-routes",
+    "entryId": "openclaw",
+    "questionIndex": 4,
+    "goal": "解释自动核心上下文、按需历史读取和注入副本截断的区别。",
+    "layout": "split",
+    "title": "文件保留与本轮注入",
+    "subtitle": "官方文档机制；小林的内容为假设示例",
+    "nodes": [
+      {
+        "title": "核心文件",
+        "lines": [
+          "USER.md / MEMORY.md",
+          "候选长期背景"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "较早的日记",
+        "lines": [
+          "保留当时细节",
+          "本图展示按需读取"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "来源检查与预算选择",
+        "lines": [
+          "符合资格的内容才注入",
+          "只缩短本次注入副本"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "按需文件读取",
+        "lines": [
+          "memory_search 找片段",
+          "memory_get 读行段"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "模型本轮能读到的上下文",
+        "lines": [
+          "合格核心副本＋实际工具返回内容",
+          "预算截断不删除磁盘原文"
+        ],
+        "kind": "current",
+        "span": 2
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 2,
+        "label": "检查会话和来源资格"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "label": "需要较早细节时检索并读取"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "label": "按预算注入核心副本"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "label": "返回被选中的内容"
+      }
+    ],
+    "footer": "裸 /new 或 /reset 另会加载今昨日记；会话命中要走会话工具。",
+    "sources": [
+      "openclaw-memory-current",
+      "openclaw-search-current"
+    ],
+    "caption": "左列展示核心文件注入，右列展示较早日记按需读取；两种路径最终都须把具体内容交给模型。磁盘原文不因预算截断而删除。",
+    "alt": "核心文件经来源检查与预算选择形成注入副本；较早日记在需要时经搜索和行段读取返回。两条并行通道分别进入本轮上下文，没有把旧日记画为无条件加载。"
+  },
+  {
+    "id": "openclaw-flush-boundary",
+    "entryId": "openclaw",
+    "questionIndex": 3,
+    "goal": "说明压缩前保存可能跳过或失败，不能把压缩成功当作持久写入成功。",
+    "layout": "flow",
+    "title": "压缩前保存是一次机会",
+    "subtitle": "官方文档机制；小林的内容为假设示例",
+    "nodes": [
+      {
+        "title": "长对话准备压缩",
+        "lines": [
+          "还有未写出的导入线索"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "压缩前保存轮次",
+        "lines": [
+          "默认提醒整理重要上下文",
+          "Memory Core 需可写工作区"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "日记写入",
+        "lines": [
+          "只追加新内容",
+          "成功后才有持久记录"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "对话压缩",
+        "lines": [
+          "生成继续对话用的摘要",
+          "保存轮次可跳过或失败"
+        ],
+        "kind": "derived"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "开启且符合执行条件"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "实际写入成功"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "label": "保存轮次结束后继续"
+      },
+      {
+        "from": 0,
+        "to": 3,
+        "label": "保存被跳过时也可压缩"
+      }
+    ],
+    "footer": "压缩完成不能证明日记写入成功；其他记忆插件可使用自己的保存工具。",
+    "sources": [
+      "openclaw-memory-current"
+    ],
+    "caption": "两条分支把“有一次保存机会”与“确实写入磁盘”分开。需要保留的线索应核对写入结果。",
+    "alt": "长对话达到压缩条件后，可先执行默认保存轮次；可写且实际写入成功才产生新日记。保存被跳过或失败时压缩仍可能继续，因此压缩后的摘要不能证明持久保存已经完成。"
+  },
+  {
+    "id": "pi-branch-projection",
+    "entryId": "pi",
+    "questionIndex": 2,
+    "goal": "展示文件保留两条尝试而模型请求沿当前分支重建，不把分支当互斥文件。",
+    "layout": "flow",
+    "title": "同一会话树只延续选中分支",
+    "subtitle": "官方文档机制；小林的内容为假设示例",
+    "nodes": [
+      {
+        "title": "共同起点",
+        "lines": [
+          "读取 CSV 与目标说明"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "尝试 A",
+        "lines": [
+          "修改日期转换后仍失败",
+          "保留在会话文件中"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "尝试 B",
+        "lines": [
+          "回到起点检查编码",
+          "选为当前继续位置"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "本次请求视图",
+        "lines": [
+          "沿当前分支重建",
+          "压缩后用摘要和保留消息"
+        ],
+        "kind": "current"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "第一次尝试"
+      },
+      {
+        "from": 0,
+        "to": 2,
+        "label": "回到旧节点再试另一条路"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "当前选择 B；按活动路径构造"
+      }
+    ],
+    "footer": "A 不会自动与 B 全文合并；切换时的分支摘要可另行保留相关信息。",
+    "sources": [
+      "pi-format-current",
+      "pi-compaction-current",
+      "pi-session-current"
+    ],
+    "caption": "A、B 都是假设尝试；分叉边表示事件的父子接续，下方表示当前请求的派生视图。压缩和 context_edit 不等于删除原始事件。",
+    "alt": "共同起点分别接到失败尝试 A 和后续尝试 B。两条分支都能留在同一 JSONL 文件；选择 B 后请求沿 B 的活动路径重建，必要时使用压缩摘要及保留消息，A 不会自动全文混入。"
+  },
+  {
+    "id": "mem0-append-and-correct",
+    "entryId": "mem0",
+    "questionIndex": 3,
+    "goal": "用状态变化解释追加写入与撤回旧事实是两项操作。",
+    "layout": "flow",
+    "title": "新城市写入后旧城市仍可能在",
+    "subtitle": "来源规定的机制；小周或项目事件为教学假设",
+    "nodes": [
+      {
+        "title": "3 月的记录 m1",
+        "lines": [
+          "小周住苏州",
+          "已进入当前记忆存储"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "4 月的新消息",
+        "lines": [
+          "我已搬到杭州",
+          "调用 add"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "追加后的可能状态",
+        "lines": [
+          "m1：苏州仍在",
+          "m2：新增杭州事实"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "应用处理旧事实",
+        "lines": [
+          "定位旧记录后显式更新或删除",
+          "也可另设清楚的时效策略"
+        ],
+        "kind": "control"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 2,
+        "label": "原记录不会因新消息自动撤回"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "抽取后追加新记录"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "应用需要定义冲突处理"
+      }
+    ],
+    "footer": "示例记录是可能结果；过期默认隐藏但仍可按 ID 读取。",
+    "sources": [
+      "mem0-add",
+      "mem0-core",
+      "mem0-history"
+    ],
+    "caption": "新旧事实可能同时存在。先检查记录状态和应用的更正策略，再判断搜索结果；相似度本身不负责宣布哪个城市已失效。",
+    "alt": "3 月的苏州记录与 4 月 add 抽取的杭州记录可能并存。应用若要撤回旧事实，需要另行定位并更新或删除，或定义明确的时效处理；设置过期不等于按 ID 无法读取。"
+  },
+  {
+    "id": "mem0-search-to-input",
+    "entryId": "mem0",
+    "questionIndex": 4,
+    "goal": "说明 Memory 库与使用它的应用分别承担检索、选择和 prompt 装配。",
+    "layout": "flow",
+    "title": "搜到事实之后还要组织输入",
+    "subtitle": "来源规定的机制；小周或项目事件为教学假设",
+    "nodes": [
+      {
+        "title": "应用确认用户范围",
+        "lines": [
+          "从登录身份确定 user_id",
+          "使用当前版本的 filters"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "Mem0 search",
+        "lines": [
+          "范围内取得并排列候选",
+          "返回 results 及元数据"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "应用选择有效事实",
+        "lines": [
+          "核对城市变化与时间",
+          "控制条数和上下文位置"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "下一次模型调用",
+        "lines": [
+          "问题：下周从哪里出发",
+          "加入选定的杭州事实"
+        ],
+        "kind": "current"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "主动发起查询"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "返回可读记录"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "实际装入请求"
+      }
+    ],
+    "footer": "user_id 是范围字段；身份授权由外层应用核对。",
+    "sources": [
+      "mem0-core",
+      "mem0-quickstart"
+    ],
+    "caption": "图表示应用集成的示例路线，不是 Mem0 自动替所有 Agent 改写提示词。候选正确但未进入请求，仍不能帮助这次回答。",
+    "alt": "应用先确定并授权用户范围，再调用 Mem0 search；取回结果后选择当前有效事实并装入下一次模型输入。检索返回与模型实际读到是不同步骤。"
+  },
+  {
+    "id": "hindsight-recall-reflect",
+    "entryId": "hindsight",
+    "questionIndex": 4,
+    "goal": "区分 recall 的材料返回和 reflect 的服务内回答，避免误把二者视为前后强制步骤。",
+    "layout": "split",
+    "title": "同一批记忆的两种读取结果",
+    "subtitle": "来源规定的机制；小周或项目事件为教学假设",
+    "nodes": [
+      {
+        "title": "bank 内的证据",
+        "lines": [
+          "原事实与相关实体、时间",
+          "综合观察与预存的反思结果"
+        ],
+        "kind": "record",
+        "span": 2
+      },
+      {
+        "title": "调用 recall",
+        "lines": [
+          "四路查找后融合、重排",
+          "按预算返回记忆材料"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "调用 reflect",
+        "lines": [
+          "服务内部主动收集证据",
+          "陈旧观察回查当前事实"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "应用自己的模型调用",
+        "lines": [
+          "应用选择证据和组织输入",
+          "继续自己的推理流程"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "服务返回综合回答",
+        "lines": [
+          "含实际使用的来源",
+          "仍要核对引用是否支持结论"
+        ],
+        "kind": "derived"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "为材料查询提供证据"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "label": "由调用方继续使用"
+      },
+      {
+        "from": 0,
+        "to": 2,
+        "label": "为服务内回答收集证据"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "label": "综合证据并生成回答"
+      }
+    ],
+    "footer": "recall 与 reflect 是两种接口目标；decision model 可改变 reflect 内部编排。",
+    "sources": [
+      "hindsight-recall-current",
+      "hindsight-reflect-current",
+      "hindsight-observations-current"
+    ],
+    "caption": "从同一 bank 出发，左列通过 recall 取回材料，由应用继续调用自己的模型；右列通过 reflect 由服务收集证据并返回综合回答。两条路径是接口选择，不要求同时执行。",
+    "alt": "共用bank的证据分别连接recall和reflect。recall下接应用自己的模型调用；reflect下接服务返回的综合回答。四条独立连线保持两种返回结果和责任边界。"
+  },
+  {
+    "id": "letta-shared-sync",
+    "entryId": "letta",
+    "questionIndex": 2,
+    "goal": "把共享仓库编辑、远程同步、另一个 checkout 和实际读取分成可检查步骤。",
+    "layout": "flow",
+    "title": "共享文件怎样到达另一位 Agent",
+    "subtitle": "来源规定的机制；小周或项目事件为教学假设",
+    "nodes": [
+      {
+        "title": "Agent A 的共享工作副本",
+        "lines": [
+          "把旧构建命令改成新命令",
+          "先是本地文件变化"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "共享 Git 远端",
+        "lines": [
+          "提交并成功推送新版本",
+          "仓库属于组织"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "Agent B 的工作副本",
+        "lines": [
+          "获得远端的新提交",
+          "拥有文件仍不等于读过正文"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "B 的下一次任务输入",
+        "lines": [
+          "提示词有仓库路径和文件线索",
+          "按需读取新命令正文"
+        ],
+        "kind": "current"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "提交并推送；核对实际成功"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "拉取或同步到本地"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "文件工具实际读取后提供内容"
+      }
+    ],
+    "footer": "官方共享仓库面向 Cloud Agent；共享正文不自动全量常驻提示词。",
+    "sources": [
+      "letta-shared-current",
+      "letta-sdk-memory",
+      "letta-root-prompt"
+    ],
+    "caption": "同步执行者可随运行环境而不同，图强调必须核查提交和推送结果。正在进行的模型请求不会因稍后同步而被倒改。",
+    "alt": "A 先改本地共享 checkout，再把提交推送到组织共享远端。B 需获取新提交，并通过文件线索实际读取正文，才能把新命令用于后续任务；仓库共享不意味着所有现有请求即时更新。"
+  },
+  {
+    "id": "agentcore-memory-event-to-record",
+    "entryId": "agentcore-memory",
+    "questionIndex": 3,
+    "goal": "区分原始事件成功、策略启动条件、异步处理和可检索长期记录。",
+    "layout": "flow",
+    "title": "事件成功不代表长期记录就绪",
+    "subtitle": "来源规定的机制；小周或项目事件为教学假设",
+    "nodes": [
+      {
+        "title": "CreateEvent 成功",
+        "lines": [
+          "小周说已搬到杭州",
+          "原始事件已保存"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "检查长期策略条件",
+        "lines": [
+          "已配置目标策略",
+          "所需 namespace 变量齐全"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "后台提取与合并",
+        "lines": [
+          "按策略处理材料",
+          "完成时间晚于事件写入"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "长期记录可读取",
+        "lines": [
+          "用适当范围检索或读取",
+          "应用再组织模型输入"
+        ],
+        "kind": "current"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "写入后按配置判断"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "条件满足才启动"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "实际生成相应记录后"
+      }
+    ],
+    "footer": "缺少策略所需变量时：事件仍成功，该策略的长期提取不启动。",
+    "sources": [
+      "ac-types-current",
+      "ac-create-current",
+      "ac-namespaces-current"
+    ],
+    "caption": "先确认处理是否启动，再判断是否只是在等待。event 与长期 record 各有保留与删除接口；一次写入成功不能代表整条路径完成。",
+    "alt": "CreateEvent 把原始事件持久保存。配置了长期策略且所需 namespace 变量齐全时，后台才进入相应提取和合并；生成后才能取回长期记录。缺少所需变量的事件仍会保存，但该策略不会启动提取。"
+  },
+  {
+    "id": "google-memory-bank-current-revision",
+    "entryId": "google-memory-bank",
+    "questionIndex": 3,
+    "goal": "用城市更正说明抽取合并改变当前记录，而修订和保留期限另行管理。",
+    "layout": "split",
+    "title": "当前记忆与修订历史分开看",
+    "subtitle": "来源规定的机制；小周或项目事件为教学假设",
+    "nodes": [
+      {
+        "title": "同一 scope 的材料",
+        "lines": [
+          "原记录：住苏州",
+          "新消息：已搬到杭州"
+        ],
+        "kind": "record",
+        "span": 2
+      },
+      {
+        "title": "抽取与合并",
+        "lines": [
+          "抽取新材料，并读取同范围已有 memory 合并",
+          "判断新增、更新或删除；实际动作以返回结果为准"
+        ],
+        "kind": "control",
+        "span": 2
+      },
+      {
+        "title": "当前 memory",
+        "lines": [
+          "供后续按 scope 检索",
+          "假设更正为杭州"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "修订历史",
+        "lines": [
+          "启用时保存变化版本",
+          "保留期限另有配置"
+        ],
+        "kind": "record"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "调用或配置触发生成"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "执行相应变更动作"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "label": "启用修订时记录变更"
+      }
+    ],
+    "footer": "删除当前记忆不等于修订立即消失；检索结果仍需由应用送入模型。",
+    "sources": [
+      "google-memory-bank:generate",
+      "google-memory-bank:revisions",
+      "google-memory-bank:setup",
+      "google-memory-bank:fetch"
+    ],
+    "caption": "下方两列分别表示当前状态与修订历史，不是必须依次读取的步骤。TTL、删除恢复窗口与修订保留应按具体配置和操作分别理解。",
+    "alt": "同一scope的新材料触发抽取；服务读取同范围既有memory参与合并。处理分别指向当前memory与启用时的修订历史。当前状态与变更历史各有读取和保留语义。"
+  },
+  {
+    "id": "collabmem-role-evidence-score",
+    "entryId": "collabmem",
+    "questionIndex": 4,
+    "goal": "展示角色、权限、来源和时间共同约束记忆提供的证据，评分标准不流入答题者",
+    "layout": "flow",
+    "title": "按角色取证，再核对回答",
+    "subtitle": "协议据论文；活动安排为自拟",
+    "nodes": [
+      {
+        "title": "同一事件序列",
+        "lines": [
+          "周一：A厅",
+          "周二：小陈正式更正B厅",
+          "周三：非负责人误传A厅"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "记忆层与角色规则",
+        "lines": [
+          "本次目标：接待助手",
+          "厅号可见；门禁不可见",
+          "更正依据权威与替代关系"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "实际提供的上下文",
+        "lines": [
+          "应支持当前B厅",
+          "可能遗漏、过时或越界"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "固定答题模型",
+        "lines": [
+          "依据收到的材料回答",
+          "严格协议还要求来源/更新"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "评分端标准",
+        "lines": [
+          "当前值与角色可见范围",
+          "权威来源、替代关系",
+          "历史值与理由按题目要求"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "裁判与诊断",
+        "lines": [
+          "核对答案及证据要求",
+          "区分共享/访问/来源等问题"
+        ],
+        "kind": "control"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "按序摄入"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "针对角色取回"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "作为答题上下文"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "label": "提交输出"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "label": "提供评分依据"
+      }
+    ],
+    "footer": "较晚的非权威误传不自动覆盖正式更正；标准只用于评分。",
+    "sources": [
+      "collabmem:pdf"
+    ],
+    "caption": "同一事件必须按角色和来源规则解释。图中“实际上下文”保留出错可能，不能先把正确证据当成系统已获得的输入。",
+    "alt": "三条活动事件进入记忆层。接待角色只能读取许可材料，当前值按权威及替代关系确定。实际取出的上下文给固定答题者，输出再与评分端标准比较。"
+  },
+  {
+    "id": "mem-gallery-image-text-link",
+    "entryId": "mem-gallery",
+    "questionIndex": 4,
+    "goal": "说明颜色、图片编号和当前选择是三种须关联的信息，区分系统路径与评分证据",
+    "layout": "split",
+    "title": "颜色答对，还要找对照片",
+    "subtitle": "照片与编号为自拟；输入和输出条件据原文",
+    "nodes": [
+      {
+        "title": "原始图文历史",
+        "lines": [
+          "图01：红色背包",
+          "图02：蓝色背包",
+          "3月6日：改带蓝色"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "文字记忆条件",
+        "lines": [
+          "保存文字描述与编号",
+          "描述可能遗漏视觉细节"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "多模态记忆条件",
+        "lines": [
+          "可保留原图及对应信息",
+          "仍需检索与处理图像"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "按题目生成输出",
+        "lines": [
+          "颜色题：蓝色",
+          "本例预期：找图题：demo_img_02"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "评分端标准",
+        "lines": [
+          "答案、图像编号、证据线索",
+          "不提前提供给答题者"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "分开检查结果",
+        "lines": [
+          "证据是否命中",
+          "输出是否符合该题要求"
+        ],
+        "kind": "control"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "文字适配条件"
+      },
+      {
+        "from": 0,
+        "to": 2,
+        "label": "图文适配条件"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "label": "条件一的记忆上下文"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "条件二的记忆上下文"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "label": "提交答案与检索记录"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "label": "提供标准"
+      }
+    ],
+    "footer": "两种条件分别运行；仅回答“蓝色”不能证明检索到原图。",
+    "sources": [
+      "memgallery-final-current",
+      "memgallery-run-current",
+      "memgallery-eval-current"
+    ],
+    "caption": "文字与多模态条件提供不同观察机会。无论哪种条件，当前选择和照片身份都需要保持关联。",
+    "alt": "同一图文历史分别经过文字描述或多模态记忆路径，模型回答颜色或图片编号；评分端另持有标准答案与证据进行检查。"
+  },
+  {
+    "id": "timl-membench-two-tracks",
+    "entryId": "timl-membench",
+    "questionIndex": 1,
+    "goal": "区分准备好的记忆池与原始摄入，显示标准状态只在评分端",
+    "layout": "split",
+    "title": "两条轨道从不同起点开始",
+    "subtitle": "输入边界据官方schema与协议",
+    "nodes": [
+      {
+        "title": "准备好的记忆池",
+        "lines": [
+          "本样本候选记忆",
+          "问题；不含答案键"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "记忆池轨道",
+        "lines": [
+          "选择或检索候选项",
+          "生成答案与返回编号"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "原始会话",
+        "lines": [
+          "周一地址与晚间偏好",
+          "周三撤回地址使用"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "原始摄入轨道",
+        "lines": [
+          "先重置，再按时间摄入",
+          "自建记忆后作答",
+          "可看题型和指标标签"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "评分端专用材料",
+        "lines": [
+          "预期行为与标准答案",
+          "禁用片段与标准状态",
+          "来源证据标注"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "按各轨协议评分",
+        "lines": [
+          "记忆池：答案与检索",
+          "原始轨：治理行为诊断"
+        ],
+        "kind": "control"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "提供准备好的证据"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "自行建立记忆"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "label": "提交本轨输出"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "label": "提交本轨输出"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "label": "提供评分依据"
+      }
+    ],
+    "footer": "准备好的记忆池轨道不检查如何从原话创建记忆。",
+    "sources": [
+      "timl-schema-current",
+      "timl-protocol-current"
+    ],
+    "caption": "两条轨道分开运行、分开报告。原始会话轨道不能提前获得评分端状态账本或禁用内容。",
+    "alt": "准备好的候选记忆进入记忆池轨道；原始对话进入先重置后摄入的原始轨道。两轨分别输出，标准状态与预期行为仅进入评分端。"
+  },
+  {
+    "id": "utilmem-system-and-reference",
+    "entryId": "utilmem",
+    "questionIndex": 1,
+    "goal": "显示实际回答和干净证据参考的独立生成路径，避免将E误画为系统额外输入",
+    "layout": "split",
+    "title": "实际回答与参考回答分开生成",
+    "subtitle": "协议据正式论文；复习情境为自拟",
+    "nodes": [
+      {
+        "title": "完整历史H",
+        "lines": [
+          "相关辅导证据E",
+          "相似但无关的聊天D"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "评测方的干净证据E",
+        "lines": [
+          "薄弱点、作业要求、时间",
+          "单独用于参考与评分"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "被测记忆系统",
+        "lines": [
+          "自行存储、检索",
+          "可能漏证据或带入干扰"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "参考生成分支",
+        "lines": [
+          "与左列相同的生成器和解码配置",
+          "只读干净证据 E 与问题"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "实际回答",
+        "lines": [
+          "用系统返回的上下文",
+          "生成复习与作业计划"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "参考回答",
+        "lines": [
+          "用干净证据生成的对照回答",
+          "协议将参考分固定为 10"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "两位模型裁判",
+        "lines": [
+          "读取E、问题和两份回答",
+          "比较依据、完整性等",
+          "分数是相对协议参考"
+        ],
+        "kind": "control",
+        "span": 2
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 2,
+        "label": "输入完整历史"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "label": "返回上下文供生成"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "label": "仅参考分支读取干净证据"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "label": "生成参考回答"
+      },
+      {
+        "from": 4,
+        "to": 6,
+        "label": "提交被测回答"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "label": "提交参考回答"
+      },
+      {
+        "from": 1,
+        "to": 6,
+        "label": "沿右侧外缘向裁判提供事实依据"
+      }
+    ],
+    "footer": "E不额外送给普通被测系统；参考是模型输出，不是人类最优答案。",
+    "sources": [
+      "utilmem-final-current"
+    ],
+    "caption": "图中的干净证据分支服务于评测，不能与系统的普通检索输入合并。两份回答使用相同生成器配置，比较的是所获上下文的影响。",
+    "alt": "左列完整历史经过被测记忆系统生成实际回答；右列干净证据经过同配置生成器产生参考回答。两份回答分别接入下方裁判，干净证据另沿右侧外缘只接裁判，不进入左列作答。"
+  },
+  {
+    "id": "forgetting-and-consolidation-recall-conditions",
+    "entryId": "forgetting-and-consolidation",
+    "questionIndex": 4,
+    "goal": "用具体假设对照说明行为表现受提取条件影响，不能直接推断所有痕迹消失",
+    "layout": "split",
+    "title": "同一学习经历，两种提取条件",
+    "subtitle": "日常假设；不是实验结果或脑内状态诊断",
+    "nodes": [
+      {
+        "title": "周一学习路线",
+        "lines": [
+          "钟楼→小桥→东门",
+          "未测量神经状态"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "周二直接询问",
+        "lines": [
+          "没有额外提示",
+          "假设：一时说不出"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "周二给出线索",
+        "lines": [
+          "提示“经过小桥”",
+          "假设：说出部分路段"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "比较两种表现",
+        "lines": [
+          "变化的是测试条件与表现",
+          "不能证明全部内容完好",
+          "也不能断言痕迹全消失"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "研究需要补充证据",
+        "lines": [
+          "最初是否学会",
+          "后来经历和测试条件",
+          "必要时结合神经测量"
+        ],
+        "kind": "control"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "在一种条件下测试"
+      },
+      {
+        "from": 0,
+        "to": 2,
+        "label": "在另一条件下测试"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "label": "记录无提示表现"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "记录有提示表现"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "label": "限定结论并继续检验"
+      }
+    ],
+    "footer": "动物实验对潜伏痕迹的支持有特定对象与干预条件，不能由此诊断小林。",
+    "sources": [
+      "human-engram-full",
+      "human-sleep-full"
+    ],
+    "caption": "图只展示推理边界：改变线索可能改变表现。综述中的动物激活实验是另有条件的实证材料，不是这位假设人物的测量。",
+    "alt": "周一同一段路线学习，在周二分别以无提示和有小桥提示方式询问，假设表现不同。比较只支持提取条件与表现相关，痕迹状态需要额外证据。"
+  },
+  {
+    "id": "human-memory-systems-learning-versus-recollection",
+    "entryId": "human-memory-systems",
+    "questionIndex": 0,
+    "goal": "从H.M.镜画观察理解任务学习与有意识回忆的分离",
+    "layout": "split",
+    "title": "能进步，也可能不记得练过",
+    "subtitle": "Squire综述转述H.M.；未复核原实验数据",
+    "nodes": [
+      {
+        "title": "数天镜画练习",
+        "lines": [
+          "手眼协调学习任务",
+          "研究对象：遗忘患者H.M."
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "询问练习经历",
+        "lines": [
+          "是否记得以前练过",
+          "综述报告：没有相应回忆"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "观察镜画表现",
+        "lines": [
+          "再次完成任务",
+          "综述报告：表现能够改善"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "能力出现分离",
+        "lines": [
+          "经历回忆与任务学习",
+          "不能合成单一“有无记忆”"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "结合更多证据分类",
+        "lines": [
+          "其他任务、患者与动物",
+          "神经结构和功能证据",
+          "建立多系统解释"
+        ],
+        "kind": "control"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "用回忆测验观察"
+      },
+      {
+        "from": 0,
+        "to": 2,
+        "label": "用任务表现观察"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "label": "回忆受损"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "学习仍可表现"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "label": "作为分类证据之一"
+      }
+    ],
+    "footer": "一个镜画案例不独自证明完整分类；非陈述性也不只包含程序技能。",
+    "sources": [
+      "human-squire-full"
+    ],
+    "caption": "两项观测针对同一训练经历，却不必同步变化。Squire将这类能力分离与其他实验及神经证据联系起来解释记忆系统。",
+    "alt": "H.M.经过数天镜画练习，一种测量检查是否回忆练习，另一种观察任务是否进步。回忆缺失与表现改善并存，成为多系统解释的部分证据。"
+  },
+  {
+    "id": "memoryagentbench-acquire-query-score",
+    "entryId": "memoryagentbench",
+    "questionIndex": 3,
+    "goal": "区分增量摄入与统一查询两个阶段，并隔离评分金标准",
+    "layout": "flow",
+    "title": "先摄入，再统一查询",
+    "subtitle": "协议据论文；柜码与日期为自拟",
+    "nodes": [
+      {
+        "title": "按顺序输入",
+        "lines": [
+          "周一：柜码314",
+          "周二：无关聊天",
+          "周三：更新为628"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "完成摄入",
+        "lines": [
+          "系统自行维护记忆",
+          "此时尚未统一提问"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "后续多个问题",
+        "lines": [
+          "当前柜码？",
+          "其他历史问题？"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "被测输出",
+        "lines": [
+          "按任务产生答案",
+          "本例预期为628"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "评分端金标准",
+        "lines": [
+          "任务标准答案或判据",
+          "不送入正常作答路径"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "任务评分",
+        "lines": [
+          "比较输出与标准",
+          "不同任务使用不同指标"
+        ],
+        "kind": "control"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "逐块处理"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "摄入结束后"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "依据所得记忆作答"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "label": "提交输出"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "label": "提供评分依据"
+      }
+    ],
+    "footer": "不把该协议画成查询之间持续插入更新的完整在线循环。",
+    "sources": [
+      "memoryagentbench:1",
+      "memoryagentbench:0"
+    ],
+    "caption": "两个阶段之间有明确边界：所有材料先处理完，之后才统一查询。标准答案只进入评分端。",
+    "alt": "周一旧码、周二聊天、周三更新依次进入系统；完成摄入后才提出多个问题。模型答案和评分端标准在评分处汇合。"
+  },
+  {
+    "id": "locomo-inputs-versus-gold",
+    "entryId": "locomo",
+    "questionIndex": 1,
+    "goal": "把可检索的对话表示与评分材料分开",
+    "layout": "flow",
+    "title": "系统材料与评分材料",
+    "subtitle": "字段用途据原文；陶艺情境为自拟",
+    "nodes": [
+      {
+        "title": "允许的历史材料",
+        "lines": [
+          "原对话",
+          "相应条件下的观察/会话摘要"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "被测系统",
+        "lines": [
+          "按人物与日期查找",
+          "生成答案或事件总结"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "本例输出",
+        "lines": [
+          "作品：杯子",
+          "先计划，后完成"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "评分端材料",
+        "lines": [
+          "QA答案与证据编号",
+          "事件总结金标准"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "按任务评分",
+        "lines": [
+          "核对答案或总结",
+          "有检索记录时核对证据"
+        ],
+        "kind": "control"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "提供或检索"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "生成"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "label": "提交结果"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "label": "提供标准"
+      }
+    ],
+    "footer": "event_summary 属于金标准；它不进入普通历史输入路径。",
+    "sources": [
+      "locomo-readme",
+      "locomo-paper",
+      "locomo-eval"
+    ],
+    "caption": "相近的“摘要”名称不代表相同用途。输入表示服务于作答，标准事件总结服务于判分。",
+    "alt": "历史对话及允许的派生表示进入被测系统，系统输出交给评分；QA标准与事件总结金标准仅连接评分端。"
+  },
+  {
+    "id": "membench-text-and-ids",
+    "entryId": "membench",
+    "questionIndex": 4,
+    "goal": "说明recall文本路径和retri编号路径不能未经检查就视为同一证据",
+    "layout": "split",
+    "title": "答题文本与证据编号两条路径",
+    "subtitle": "依据固定适配与评分代码",
+    "nodes": [
+      {
+        "title": "问题、时间、选项",
+        "lines": [
+          "标准答案不在此处",
+          "记忆已按历史建立"
+        ],
+        "kind": "record",
+        "span": 2
+      },
+      {
+        "title": "recall返回文本",
+        "lines": [
+          "交给答题模型",
+          "read_time仅计此调用"
+        ],
+        "kind": "derived",
+        "span": 2
+      },
+      {
+        "title": "模型选答案",
+        "lines": [
+          "例如B项“B楼”",
+          "将所选字母送往答案评分"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "适配层再调用 retri",
+        "lines": [
+          "时间：答案生成之后",
+          "输入：同一问题与时间",
+          "输出：证据编号"
+        ],
+        "kind": "derived"
+      },
+      {
+        "title": "答案正确率",
+        "lines": [
+          "对照标准选项字母"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "证据召回率",
+        "lines": [
+          "对照标准证据编号",
+          "计算去重集合覆盖率"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "评分端金标准",
+        "lines": [
+          "正确选项",
+          "target_step_id"
+        ],
+        "kind": "control",
+        "span": 2
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "按问题与时间查询"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "文本交给答题模型"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "虚线仅表示答案生成后另行调用，不传答案内容",
+        "kind": "control"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "label": "提交所选字母"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "label": "提交证据编号"
+      },
+      {
+        "from": 6,
+        "to": 4,
+        "label": "正确选项"
+      },
+      {
+        "from": 6,
+        "to": 5,
+        "label": "标准证据编号"
+      }
+    ],
+    "footer": "虚线只表示调用先后。金标准仅用于评分；编号命中不保证答题模型读到了对应文本。",
+    "sources": [
+      "membench-agent",
+      "membench-env"
+    ],
+    "caption": "代码中的两次调用产生不同类型输出：文本用于回答，编号用于证据评分。两个指标须结合实际文本解释。",
+    "alt": "问题经recall得到文本，文本只交给左侧答题模型；虚线表示答案生成后，适配层按同一问题和时间调用右侧retri。答案和编号各自向下评分；底部金标准仅连接两个评分框。"
+  },
+  {
+    "id": "memora-criteria-score",
+    "entryId": "memora",
+    "questionIndex": 5,
+    "goal": "用具体判据解释FAMA奖励和惩罚的来源，并保持标准只在评分端",
+    "layout": "split",
+    "title": "一份回答，两组评分判据",
+    "subtitle": "餐饮例子与分数为自拟；公式据官方实现",
+    "nodes": [
+      {
+        "title": "模型可读历史",
+        "lines": [
+          "3月2日：原安排",
+          "3月20日：偏好更正"
+        ],
+        "kind": "record",
+        "span": 2
+      },
+      {
+        "title": "当前回答",
+        "lines": [
+          "保留目的地、日期、预算",
+          "遗漏安静环境",
+          "排除火锅，却推荐辣菜"
+        ],
+        "kind": "current",
+        "span": 2
+      },
+      {
+        "title": "评分端：有效信息判据",
+        "lines": [
+          "四条应提及，满足三条",
+          "MPA＝3/4"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "评分端：失效信息判据",
+        "lines": [
+          "两条应排除，满足一条",
+          "FAA＝1/2"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "合成分数",
+        "lines": [
+          "λ＝2/6＝1/3",
+          "FAMA＝7/12≈0.583"
+        ],
+        "kind": "control",
+        "span": 2
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "按当前请求作答"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "按有效判据核对"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "label": "按失效判据核对"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "label": "有效信息得分"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "label": "旧信息惩罚"
+      }
+    ],
+    "footer": "评分判据在输出后使用；FAA不测底层记录是否被擦除。",
+    "sources": [
+      "memora-final",
+      "memora-eval-current",
+      "memora-data-current",
+      "memora-scoring-current"
+    ],
+    "caption": "同一回答可能记住多数当前事实，却仍沿用旧偏好。合成分数不能替代逐条错误检查。",
+    "alt": "模型读取历史并作答；评分端检查四条有效信息和两条失效信息，分别得到3/4与1/2，再以1/3权重计算FAMA为7/12。"
+  },
+  {
+    "id": "mem2actbench-evidence-conditions",
+    "entryId": "mem2actbench",
+    "questionIndex": 4,
+    "goal": "区分普通证据条件、oracle对照与参考调用，解释主实验的工具已给定",
+    "layout": "split",
+    "title": "证据条件怎样影响参数输出",
+    "subtitle": "实验条件据论文；查票值为自拟",
+    "nodes": [
+      {
+        "title": "输入条件：三组分别运行，每次只采用一种",
+        "lines": [
+          "① 无检索：不给检索证据",
+          "② 普通检索：提供检索到的历史片段",
+          "③ oracle：直接提供标准支持记忆"
+        ],
+        "kind": "record",
+        "span": 2
+      },
+      {
+        "title": "根据本组输入生成调用",
+        "lines": [
+          "三组都给：当前请求与正确工具定义",
+          "只有所选条件的证据进入本次调用",
+          "本例预期：杭州→苏州；4月10日；预算800元"
+        ],
+        "kind": "derived",
+        "span": 2
+      },
+      {
+        "title": "模型生成的调用",
+        "lines": [
+          "实际输出的工具与参数",
+          "可能漏掉目的地更正"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "评分端参考调用",
+        "lines": [
+          "标准工具与参数",
+          "不交给作答模型"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "比较调用输出",
+        "lines": [
+          "按声明的匹配指标评分",
+          "匹配成功尚不代表真实执行成功"
+        ],
+        "kind": "control",
+        "span": 2
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "本次仅采用一种证据条件"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "生成待评测调用"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "label": "提交模型输出"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "label": "提供评分标准"
+      }
+    ],
+    "footer": "三种条件分别运行；oracle给标准记忆，不给参考调用。",
+    "sources": [
+      "mem2actbench-paper"
+    ],
+    "caption": "三种输入条件用于定位检索与参数生成的困难。主实验先给定工具，选择干扰工具另有实验。",
+    "alt": "上方列出无检索、普通检索和oracle三组替代条件，每次只用一组生成调用；下方模型输出和独立参考调用分别接入评分。oracle提供标准支持记忆，参考调用只给评分。"
+  },
+  {
+    "id": "severance-access-scope",
+    "entryId": "severance",
+    "questionIndex": 2,
+    "goal": "让读者分清同一人的经历归属与不同处境中的可访问范围。",
+    "layout": "split",
+    "title": "同一人，两种可访问范围",
+    "subtitle": "据官方基本设定作原创示意，不是手术结构图",
+    "nodes": [
+      {
+        "title": "工作处境",
+        "lines": [
+          "Mark 的工作经历",
+          "与私人经历分隔",
+          "此图不表示已删除另一侧"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "私人生活处境",
+        "lines": [
+          "Mark 的私人经历",
+          "与工作经历分隔",
+          "同属一人不等于处处可见"
+        ],
+        "kind": "current"
+      }
+    ],
+    "connections": [],
+    "footer": "比较维度是可访问范围；没有据此规定物理存储、恢复或删除方式。",
+    "sources": [
+      "culture-severance"
+    ],
+    "caption": "并排的两个范围说明同一人的不同处境可依赖不同过去，不能读成两块数据库。",
+    "alt": "左侧为Mark在工作处境中可用的工作经历，右侧为私人生活处境中的私人经历。两侧属于同一人，却被设定分隔；图不声称另一侧已被删除，也不表现手术结构。"
+  },
+  {
+    "id": "the-entire-history-of-you-replay-meaning",
+    "entryId": "the-entire-history-of-you",
+    "questionIndex": 4,
+    "goal": "区分经历记录、回看和当前解释，避免把可重放直接等同全部真相。",
+    "layout": "flow",
+    "title": "可回放，仍需要解释",
+    "subtitle": "依据作品前提拆分阅读关系，不是设备算法图",
+    "nodes": [
+      {
+        "title": "经历发生时",
+        "lines": [
+          "个人所做、所见、所闻"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "记录留下",
+        "lines": [
+          "旧经历可再次接触",
+          "不是已经证明的意图"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "后来回看",
+        "lines": [
+          "带着当前问题观看",
+          "注意所需语境"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "形成判断",
+        "lines": [
+          "材料需要解释",
+          "看过不保证理解完整"
+        ],
+        "kind": "derived"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "设定中的记录能力"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "使过去再次可见"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "观看者解释材料"
+      }
+    ],
+    "footer": "图中因果仅到“提供材料”；判断可靠性仍取决于证据和语境。",
+    "sources": [
+      "culture-history-plot"
+    ],
+    "caption": "回放把过去带进现在，之后仍需判断这段材料能支持什么。",
+    "alt": "过去的个人经历被记录，后来通过回看再次可见，观看者再形成当前判断。图明确记录不是已证明的意图，看过材料也不保证理解完整。"
+  },
+  {
+    "id": "the-housekeeper-and-the-professor-content-times",
+    "entryId": "the-housekeeper-and-the-professor",
+    "questionIndex": 0,
+    "goal": "用内容对照解释旧数学知识与近期相处经历为何可有不同保持条件。",
+    "layout": "split",
+    "title": "旧知识与新经历并非一同消失",
+    "subtitle": "据出版社节选的小说设定，不是医学分类图",
+    "nodes": [
+      {
+        "title": "较早的知识",
+        "lines": [
+          "记忆停在1975年的设定",
+          "数学知识仍可用于交流",
+          "能做不等于记得本次相处"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "新近的经历",
+        "lines": [
+          "受80分钟保持限制",
+          "次日可能需重新相识",
+          "发生过不等于后来可回忆"
+        ],
+        "kind": "current"
+      }
+    ],
+    "connections": [],
+    "footer": "比较的是故事中的内容保持条件；80分钟不是人类遗忘的统一规律。",
+    "sources": [
+      "culture-housekeeper"
+    ],
+    "caption": "教授仍可利用旧知识参与新交流，但这次交流本身未必能成为长期保留的近期经历。",
+    "alt": "左侧为仍能使用的旧数学知识，右侧为受到80分钟限制的新近相处经历。两侧没有流程箭头，强调能力保留与当次经历保留是不同条件。"
+  },
+  {
+    "id": "memento-external-clue",
+    "entryId": "memento",
+    "questionIndex": 4,
+    "goal": "解释外部材料如何接续调查，并保留读取与判断之间的区别。",
+    "layout": "flow",
+    "title": "线索留下，判断仍需重建",
+    "subtitle": "据发行方基本设定拆分，不复述完整剧情",
+    "nodes": [
+      {
+        "title": "调查中的经历与理解",
+        "lines": [
+          "当时得到的线索",
+          "观察与判断应区分"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "外部材料",
+        "lines": [
+          "照片、卡片、纹身",
+          "材料可以跨时刻保留"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "后来重新接触",
+        "lines": [
+          "看见提示与片段",
+          "原背景未必全部在场"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "继续调查",
+        "lines": [
+          "解释材料后采取行动",
+          "持久不等于已经核实"
+        ],
+        "kind": "derived"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "留下可见提示"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "再次查看"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "理解后影响行动"
+      }
+    ],
+    "footer": "图示表达外部提示的作用，不替材料证明来源、正确性或当前适用性。",
+    "sources": [
+      "culture-memento"
+    ],
+    "caption": "外部载体跨过记忆间断，后来仍需要把材料与当前问题联系起来。",
+    "alt": "调查中获得的经历和理解留下照片、卡片或纹身，后来重新看到这些材料，再解释并继续调查。图强调材料的持久性不等于判断已经核实。"
+  },
+  {
+    "id": "the-memory-police-unequal-past",
+    "entryId": "the-memory-police",
+    "questionIndex": 2,
+    "goal": "对照同一岛上多数人与少数回忆者的不同处境，说明个体记忆不等于集体可安全共享。",
+    "layout": "split",
+    "title": "同一座岛，不同的过去可用性",
+    "subtitle": "据出版方简介作原创人物处境对照",
+    "nodes": [
+      {
+        "title": "多数居民",
+        "lines": [
+          "对物品消失不再察觉",
+          "过去不再同样可被谈起"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "少数仍记得的人",
+        "lines": [
+          "能够回忆失去的物品",
+          "受到记忆警察威胁",
+          "记得不等于能安全分享"
+        ],
+        "kind": "record"
+      }
+    ],
+    "connections": [],
+    "footer": "比较记忆保持与公开处境；不解释物品为何消失，也不保证写作恢复全部过去。",
+    "sources": [
+      "culture-police"
+    ],
+    "caption": "过去是否仍可回忆，与回忆能否被安全表达，是两条不同边界。",
+    "alt": "左侧是对消失不再察觉的多数居民，右侧是仍能回忆却受到记忆警察威胁的少数人。两组对照说明个人记得不等于社会中能安全共享过去。"
+  },
+  {
+    "id": "funes-the-memorious-three-questions",
+    "entryId": "funes-the-memorious",
+    "questionIndex": 4,
+    "goal": "把保存丰富细节与选择、概括分开评价，避免把容量直接等同有用回答。",
+    "layout": "split",
+    "title": "保留、选择与概括分别问",
+    "subtitle": "节选提供细节记忆前提；其余是教程提问",
+    "nodes": [
+      {
+        "title": "保留",
+        "lines": [
+          "哪些细节还在？",
+          "关注材料的留存范围"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "选择",
+        "lines": [
+          "这次需要哪些？",
+          "关注材料与问题的关系"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "概括",
+        "lines": [
+          "能得出什么结论？",
+          "关注条件与证据强度"
+        ],
+        "kind": "derived"
+      }
+    ],
+    "connections": [],
+    "footer": "三者是并列评价问题，不是小说中的算法，也不构成性能测试结果。",
+    "sources": [
+      "culture-funes"
+    ],
+    "caption": "异常细节记忆开启一个问题，却不能独自回答选择与概括是否恰当。",
+    "alt": "三个并列区域分别问哪些材料被保留、哪些与当前问题相关、哪些概括能由证据支持。没有流程箭头，强调它们是可分别评价的问题。"
+  },
+  {
+    "id": "50-first-dates-day-boundary",
+    "entryId": "50-first-dates",
+    "questionIndex": 3,
+    "goal": "用官方简介的时间关系解释跨日接续与双方记忆不对称。",
+    "layout": "timeline",
+    "title": "同一次相遇，两种次日背景",
+    "subtitle": "据Sony基本设定；不添加电影道具或情节",
+    "nodes": [
+      {
+        "title": "相遇当天",
+        "lines": [
+          "Henry 与 Lucy 相处投缘",
+          "互动由两人共同经历"
+        ],
+        "kind": "record"
+      },
+      {
+        "title": "夜间边界",
+        "lines": [
+          "Lucy 失去当天记忆",
+          "这是电影的虚构前提"
+        ],
+        "kind": "control"
+      },
+      {
+        "title": "次日相见",
+        "lines": [
+          "Lucy 表现得不认识他",
+          "Henry 希望继续联系"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "重新建立联系",
+        "lines": [
+          "Henry 每天再次尝试",
+          "接续不是双方自动记起"
+        ],
+        "kind": "current"
+      }
+    ],
+    "connections": [
+      {
+        "from": 0,
+        "to": 1,
+        "label": "时间进入夜间"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "label": "昨日背景未同样延续"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "label": "相处需要重新开始"
+      }
+    ],
+    "footer": "失去当天经历不等于全部知识归零；该图不是人类记忆规律或恢复协议。",
+    "sources": [
+      "culture-fifty"
+    ],
+    "caption": "共同发生过的互动没有自动变成双方次日都可用的背景。",
+    "alt": "时间从两人初遇相处，经过Lucy夜间失去当天记忆，到次日她不认识Henry，Henry因而每天重新尝试建立联系。图不代表全部知识被清空，也没有添加交接设备。"
+  },
+  {
+    "id": "truth-of-fact-feeling-two-narratives",
+    "entryId": "truth-of-fact-feeling",
+    "questionIndex": 2,
+    "goal": "正确表现出版社支持的双叙事对照，区分主题关联与人物间的数据流。",
+    "layout": "split",
+    "title": "两条叙事，共同追问记录与理解",
+    "subtitle": "据出版社主题简介；不是完整情节图",
+    "nodes": [
+      {
+        "title": "记者的叙事",
+        "lines": [
+          "技术与读写的影响",
+          "技术怎样塑造真相观念"
+        ],
+        "kind": "current"
+      },
+      {
+        "title": "年轻人的叙事",
+        "lines": [
+          "同样受到技术与读写影响",
+          "与记者叙事构成对照"
+        ],
+        "kind": "current"
+      }
+    ],
+    "connections": [],
+    "footer": "并列不表示两人相遇、共享资料或采用同一设备；具体过程仍需原作支持。",
+    "sources": [
+      "culture-truth",
+      "culture-truth-edition"
+    ],
+    "caption": "图只保留出版社明确给出的叙事与主题关系，不把两条线改造成共同的系统流程。",
+    "alt": "左列是记者叙事，右列是年轻人叙事，两者在技术与读写主题下形成对照。图没有连线，不暗示人物相遇、共享材料或使用相同设备。"
+  }
+]

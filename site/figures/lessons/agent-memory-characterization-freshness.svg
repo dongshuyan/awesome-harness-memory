@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="331" viewBox="0 0 736 331" role="img" aria-labelledby="title desc">
+<title id="title">第5秒提问，写入尚未完成</title><desc id="desc">写入从0秒开始到8秒提交，查询在5秒到来。等待策略到提交后读取，提前读取策略在5秒可能仍只能读旧地址。新状态可见仍需后续正确检索和生成。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="331" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">第5秒提问，写入尚未完成</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">教学时间线：0秒接收，8秒提交</tspan>
+</text>
+<rect x="28" y="106" width="330" height="159" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">等待先前写入</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">5秒：查询到来并等待</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">8秒：提交后读取</tspan>
+</text>
+<text x="46" y="225.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">新地址有机会被选入</tspan>
+</text>
+<rect x="378" y="106" width="330" height="159" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="396" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">提前读取已提交状态</tspan>
+</text>
+<text x="396" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">5秒：先用已提交记忆</tspan>
+</text>
+<text x="396" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">可能仍读到旧地址</tspan>
+</text>
+<text x="396" y="225.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">8秒：新地址才提交</tspan>
+</text>
+<text x="28" y="301" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">时间为教学设定；可读到新地址仍不保证答对。</tspan>
+</text>
+</g></svg>

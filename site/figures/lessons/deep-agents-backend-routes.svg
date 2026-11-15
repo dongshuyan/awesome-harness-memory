@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="590" viewBox="0 0 736 590" role="img" aria-labelledby="title desc">
+<title id="title">同一文件接口，不同保存位置</title><desc id="desc">一组路径把notes.txt留在图状态；另一组把/memories/preferences.md交给Store，先剥去/memories/，再以用户namespace和/preferences.md定位。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="590" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">同一文件接口，不同保存位置</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">按固定源码绘制；路径为教学配置</tspan>
+</text>
+<rect x="28" y="106" width="330" height="159" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">临时工作文件</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">Agent路径：/notes.txt</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">默认路径路由</tspan>
+</text>
+<rect x="378" y="106" width="330" height="159" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="396" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">StateBackend</tspan>
+</text>
+<text x="396" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">进入图的files状态</tspan>
+</text>
+<text x="396" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">主要服务当前线程</tspan>
+</text>
+<text x="396" y="225.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">跨运行恢复需实际配置</tspan>
+</text>
+<rect x="28" y="289" width="330" height="159" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="321" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">个人偏好文件</tspan>
+</text>
+<text x="46" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">/memories/下的偏好文件</tspan>
+</text>
+<text x="46" y="379.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">匹配/memories/路由</tspan>
+</text>
+<rect x="378" y="289" width="330" height="159" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="396" y="321" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">StoreBackend</tspan>
+</text>
+<text x="396" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">后端key：/preferences.md</tspan>
+</text>
+<text x="396" y="379.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">再按namespace定位</tspan>
+</text>
+<text x="396" y="408.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">持久性依实际Store</tspan>
+</text>
+<path d="M361,138 L375,138" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="484" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">临时工作文件 → StateBackend：默认路由</tspan>
+</text>
+<path d="M361,321 L375,321" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="522.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">个人偏好文件 → StoreBackend：剥去挂载前缀后转发</tspan>
+</text>
+<text x="28" y="560.0" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">Composite负责路由；文件路径与跨线程可见性均不能证明跨重启持久。</tspan>
+</text>
+</g></svg>

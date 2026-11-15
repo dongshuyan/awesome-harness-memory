@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="762" viewBox="0 0 736 762" role="img" aria-labelledby="title desc">
+<title id="title">文件保留与本轮注入</title><desc id="desc">核心文件经来源检查与预算选择形成注入副本；较早日记在需要时经搜索和行段读取返回。两条并行通道分别进入本轮上下文，没有把旧日记画为无条件加载。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="762" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">文件保留与本轮注入</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">官方文档机制；小林的内容为假设示例</tspan>
+</text>
+<rect x="28" y="106" width="330" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">核心文件</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">USER.md / MEMORY.md</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">候选长期背景</tspan>
+</text>
+<rect x="378" y="106" width="330" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="396" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">较早的日记</tspan>
+</text>
+<text x="396" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">保留当时细节</tspan>
+</text>
+<text x="396" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">本图展示按需读取</tspan>
+</text>
+<rect x="28" y="260" width="330" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="292" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">来源检查与预算选择</tspan>
+</text>
+<text x="46" y="321.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">符合资格的内容才注入</tspan>
+</text>
+<text x="46" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">只缩短本次注入副本</tspan>
+</text>
+<rect x="378" y="260" width="330" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="396" y="292" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">按需文件读取</tspan>
+</text>
+<text x="396" y="321.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">memory_search 找片段</tspan>
+</text>
+<text x="396" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">memory_get 读行段</tspan>
+</text>
+<rect x="28" y="414" width="680" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="446" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">模型本轮能读到的上下文</tspan>
+</text>
+<text x="46" y="475.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">合格核心副本＋实际工具返回内容</tspan>
+</text>
+<text x="46" y="504.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">预算截断不删除磁盘原文</tspan>
+</text>
+<path d="M193.0,239 L193.0,257" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="580" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">核心文件 → 来源检查与预算选择：检查会话和来源资格</tspan>
+</text>
+<path d="M543.0,239 L543.0,257" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="618.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">较早的日记 → 按需文件读取：需要较早细节时检索并读取</tspan>
+</text>
+<path d="M193.0,393 L193.0,411" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="656.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">来源检查与预算选择 → 模型本轮能读到的上下文：按预算注入核心副本</tspan>
+</text>
+<path d="M543.0,393 L543.0,411" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="694.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">按需文件读取 → 模型本轮能读到的上下文：返回被选中的内容</tspan>
+</text>
+<text x="28" y="732.0" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">裸 /new 或 /reset 另会加载今昨日记；会话命中要走会话工具。</tspan>
+</text>
+</g></svg>

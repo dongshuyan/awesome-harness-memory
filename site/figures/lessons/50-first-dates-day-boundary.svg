@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="884" viewBox="0 0 736 884" role="img" aria-labelledby="title desc">
+<title id="title">同一次相遇，两种次日背景</title><desc id="desc">时间从两人初遇相处，经过Lucy夜间失去当天记忆，到次日她不认识Henry，Henry因而每天重新尝试建立联系。图不代表全部知识被清空，也没有添加交接设备。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="884" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">同一次相遇，两种次日背景</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">据Sony基本设定；不添加电影道具或情节</tspan>
+</text>
+<circle cx="42" cy="131" r="6" fill="#235f55"/>
+<rect x="68" y="106" width="640" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="86" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="86" dy="0">相遇当天</tspan>
+</text>
+<text x="86" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="86" dy="0">Henry 与 Lucy 相处投缘</tspan>
+</text>
+<text x="86" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="86" dy="0">互动由两人共同经历</tspan>
+</text>
+<path d="M368,246 L368,286" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="270" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">时间进入夜间</tspan>
+</text>
+<circle cx="42" cy="325" r="6" fill="#235f55"/>
+<path d="M42,131 L42,319" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<rect x="68" y="300" width="640" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="86" y="332" font-size="20" font-weight="600" fill="#243735">
+<tspan x="86" dy="0">夜间边界</tspan>
+</text>
+<text x="86" y="361.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="86" dy="0">Lucy 失去当天记忆</tspan>
+</text>
+<text x="86" y="390.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="86" dy="0">这是电影的虚构前提</tspan>
+</text>
+<path d="M368,440 L368,480" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="464" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">昨日背景未同样延续</tspan>
+</text>
+<circle cx="42" cy="519" r="6" fill="#235f55"/>
+<path d="M42,325 L42,513" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<rect x="68" y="494" width="640" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="86" y="526" font-size="20" font-weight="600" fill="#243735">
+<tspan x="86" dy="0">次日相见</tspan>
+</text>
+<text x="86" y="555.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="86" dy="0">Lucy 表现得不认识他</tspan>
+</text>
+<text x="86" y="584.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="86" dy="0">Henry 希望继续联系</tspan>
+</text>
+<path d="M368,634 L368,674" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="658" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">相处需要重新开始</tspan>
+</text>
+<circle cx="42" cy="713" r="6" fill="#235f55"/>
+<path d="M42,519 L42,707" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<rect x="68" y="688" width="640" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="86" y="720" font-size="20" font-weight="600" fill="#243735">
+<tspan x="86" dy="0">重新建立联系</tspan>
+</text>
+<text x="86" y="749.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="86" dy="0">Henry 每天再次尝试</tspan>
+</text>
+<text x="86" y="778.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="86" dy="0">接续不是双方自动记起</tspan>
+</text>
+<text x="28" y="854" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">失去当天经历不等于全部知识归零；该图不是人类记忆规律或恢复协议。</tspan>
+</text>
+</g></svg>

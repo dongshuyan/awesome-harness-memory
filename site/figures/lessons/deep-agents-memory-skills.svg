@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="762" viewBox="0 0 736 762" role="img" aria-labelledby="title desc">
+<title id="title">背景文件与技能的可见粒度</title><desc id="desc">Memory文件按序加载到memory_contents，再默认追加system；技能先生成缓存目录，后来源同名覆盖，模型在相关任务时读取完整SKILL.md。已有状态可能跳过重新加载。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="762" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">背景文件与技能的可见粒度</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">左：背景文件加载；右：常规技能按需读取</tspan>
+</text>
+<rect x="28" y="106" width="330" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">Memory来源文件</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">按sources顺序读取</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">多个来源全文串接</tspan>
+</text>
+<rect x="378" y="106" width="330" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="396" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">技能来源目录</tspan>
+</text>
+<text x="396" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">提取名称、描述等</tspan>
+</text>
+<text x="396" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">后来源覆盖同名skill</tspan>
+</text>
+<rect x="28" y="260" width="330" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="292" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">memory_contents状态</tspan>
+</text>
+<text x="46" y="321.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">已有则跳过重读</tspan>
+</text>
+<text x="46" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">HTML注释注入前过滤</tspan>
+</text>
+<rect x="378" y="260" width="330" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="396" y="292" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">技能目录状态</tspan>
+</text>
+<text x="396" y="321.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">缓存skills_metadata</tspan>
+</text>
+<text x="396" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">刷新需显式清空为None</tspan>
+</text>
+<rect x="28" y="414" width="330" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="446" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">system中的背景内容</tspan>
+</text>
+<text x="46" y="475.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">默认自动追加</tspan>
+</text>
+<text x="46" y="504.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">system_prompt=None时不追加</tspan>
+</text>
+<rect x="378" y="414" width="330" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="396" y="446" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">相关skill的完整指令</tspan>
+</text>
+<text x="396" y="475.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">常规路径按需读取</tspan>
+</text>
+<text x="396" y="504.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">目录可见≠全文已读</tspan>
+</text>
+<path d="M193.0,239 L193.0,257" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="580" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">Memory来源文件 → memory_contents状态：未加载时读取</tspan>
+</text>
+<path d="M193.0,393 L193.0,411" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="618.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">memory_contents状态 → system中的背景内容：默认配置下拼接</tspan>
+</text>
+<path d="M543.0,239 L543.0,257" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="656.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">技能来源目录 → 技能目录状态：未加载或要求刷新</tspan>
+</text>
+<path d="M543.0,393 L543.0,411" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="694.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">技能目录状态 → 相关skill的完整指令：任务相关时打开</tspan>
+</text>
+<text x="28" y="732.0" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">文件已修改不等于状态已刷新；全文串接与同名技能覆盖是不同规则。</tspan>
+</text>
+</g></svg>

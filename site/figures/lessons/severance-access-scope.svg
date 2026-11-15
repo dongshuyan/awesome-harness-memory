@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="331" viewBox="0 0 736 331" role="img" aria-labelledby="title desc">
+<title id="title">同一人，两种可访问范围</title><desc id="desc">左侧为Mark在工作处境中可用的工作经历，右侧为私人生活处境中的私人经历。两侧属于同一人，却被设定分隔；图不声称另一侧已被删除，也不表现手术结构。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="331" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">同一人，两种可访问范围</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">据官方基本设定作原创示意，不是手术结构图</tspan>
+</text>
+<rect x="28" y="106" width="330" height="159" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">工作处境</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">Mark 的工作经历</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">与私人经历分隔</tspan>
+</text>
+<text x="46" y="225.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">此图不表示已删除另一侧</tspan>
+</text>
+<rect x="378" y="106" width="330" height="159" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="396" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">私人生活处境</tspan>
+</text>
+<text x="396" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">Mark 的私人经历</tspan>
+</text>
+<text x="396" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">与工作经历分隔</tspan>
+</text>
+<text x="396" y="225.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">同属一人不等于处处可见</tspan>
+</text>
+<text x="28" y="301" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">比较维度是可访问范围；没有据此规定物理存储、恢复或删除方式。</tspan>
+</text>
+</g></svg>

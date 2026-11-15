@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="837" viewBox="0 0 736 837" role="img" aria-labelledby="title desc">
+<title id="title">同一会话树只延续选中分支</title><desc id="desc">共同起点分别接到失败尝试 A 和后续尝试 B。两条分支都能留在同一 JSONL 文件；选择 B 后请求沿 B 的活动路径重建，必要时使用压缩摘要及保留消息，A 不会自动全文混入。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="837" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">同一会话树只延续选中分支</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">官方文档机制；小林的内容为假设示例</tspan>
+</text>
+<rect x="28" y="106" width="680" height="101" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">共同起点</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">读取 CSV 与目标说明</tspan>
+</text>
+<path d="M368,213 L368,253" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="237" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">第一次尝试</tspan>
+</text>
+<rect x="28" y="267" width="680" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="299" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">尝试 A</tspan>
+</text>
+<text x="46" y="328.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">修改日期转换后仍失败</tspan>
+</text>
+<text x="46" y="357.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">保留在会话文件中</tspan>
+</text>
+<rect x="28" y="417" width="680" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="449" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">尝试 B</tspan>
+</text>
+<text x="46" y="478.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">回到起点检查编码</tspan>
+</text>
+<text x="46" y="507.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">选为当前继续位置</tspan>
+</text>
+<path d="M368,553 L368,593" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="577" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">当前选择 B；按活动路径构造</tspan>
+</text>
+<rect x="28" y="607" width="680" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="639" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">本次请求视图</tspan>
+</text>
+<text x="46" y="668.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">沿当前分支重建</tspan>
+</text>
+<text x="46" y="697.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">压缩后用摘要和保留消息</tspan>
+</text>
+<path d="M28,156.5 H12 V482.0 H26" stroke="#365e7c" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="769" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">共同起点 → 尝试 B：回到旧节点再试另一条路</tspan>
+</text>
+<text x="28" y="807.0" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">A 不会自动与 B 全文合并；切换时的分支摘要可另行保留相关信息。</tspan>
+</text>
+</g></svg>

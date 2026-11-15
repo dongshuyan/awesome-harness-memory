@@ -118,3 +118,26 @@ code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.9em}
 @media(max-width:760px){.book-layout{display:block;padding:1.5rem 1.25rem 3rem}.book-header{padding:1rem 1.25rem}.book-brand{display:block;font-size:1rem}.book-brand span{display:block;font-size:.7rem;margin-top:.15rem}.header-links{gap:.75rem;font-size:.75rem}#menu-toggle{display:block;font-size:.78rem;padding:.4rem .6rem}.book-sidebar{display:none;position:static;max-height:none;border-bottom:1px solid var(--rule);margin-bottom:2rem;padding-bottom:1rem}.book-sidebar.is-open{display:block}.page-toc{display:none}.reader{max-width:100%;font-size:1rem}.reader h1{font-size:1.8rem}.reader h2{font-size:1.25rem}.lead{font-size:1.05rem}.metadata>div{grid-template-columns:5.5rem minmax(0,1fr);gap:.5rem}.example{padding-left:1rem}.example p{font-size:.97rem}.entry-row h2{font-size:1.2rem}.book-footer{padding:1.25rem}.course-path{margin:1.5rem 0!important}.course-path li{grid-template-columns:2rem minmax(0,1fr)}.course-path a{font-size:1.05rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 @media print{.book-header,.book-sidebar,.book-footer,.actions,.breadcrumb,.skip-link{display:none}.book-layout{display:block;padding:0}.reader{max-width:none;color:#000}body{background:#fff}.source-details{display:block}.table-scroll{overflow:visible}}
+
+/* Detailed lessons keep the book's reading width and typography. */
+.answer-part{margin:1.75rem 0}
+.case-dialogue{margin:1.25rem 0;padding:.25rem 0 .25rem 1.2rem;border-left:2px solid var(--accent)}
+.case-dialogue p{margin:.55rem 0}
+.lesson-steps li{padding-left:.3rem;margin:.9rem 0}
+.lesson-steps li p{margin:.3rem 0}
+.lesson-table{font-size:.9rem;min-width:34rem}
+.lesson-table caption{text-align:left;font-weight:550;padding:0 0 .7rem;color:var(--ink)}
+.lesson-table th:first-child{width:23%}
+.lesson-figure{margin:2rem 0;padding:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.figure-hint{display:none;color:var(--muted);font-size:.8rem}
+.figure-scroll{overflow-x:auto;max-width:100%;background:#fdfcf9;overscroll-behavior-x:contain}
+.lesson-figure img{display:block;width:100%;height:auto;min-width:36rem}
+.lesson-figure figcaption{font-size:.87rem;line-height:1.75;padding:1rem 0;color:var(--ink)}
+.figure-credit{display:block;color:var(--muted);font-size:.8rem;margin:.45rem 0}
+.lesson-figure .source-inline{font-size:.78rem;margin-top:.5rem}
+.deep-reading{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:.7rem 0;margin:1.5rem 0;font-size:.94rem}
+.deep-reading summary{cursor:pointer;color:var(--accent);font-weight:500}
+.deep-reading[open]>summary{margin-bottom:1rem}
+.deep-reading .deep-reading{margin:1rem 0}
+@media(max-width:760px){.figure-hint{display:block}.lesson-figure figcaption{font-size:.86rem}.lesson-figure{margin:1.5rem 0}.case-dialogue{padding-left:1rem}}
+@media print{.figure-scroll{overflow:visible}.lesson-figure img{min-width:0}.deep-reading{break-inside:avoid}}

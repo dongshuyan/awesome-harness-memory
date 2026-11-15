@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="1056" viewBox="0 0 736 1056" role="img" aria-labelledby="title desc">
+<title id="title">同一对话的两条归纳路线</title><desc id="desc">带日期的原对话分出两条路线，一条生成每日事件摘要并合并为全局事件摘要，另一条生成每日用户画像并合并为全局画像。摘要可能遗漏细节，画像属于模型推断。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="1056" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">同一对话的两条归纳路线</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">原创教学示意；小周的事件为假设</tspan>
+</text>
+<rect x="28" y="106" width="680" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">带时间的原对话</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">周一：面试前紧张</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">周三：面试已经通过</tspan>
+</text>
+<path d="M368,242 L368,282" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="266" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">概括事件</tspan>
+</text>
+<rect x="28" y="296" width="680" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="328" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">每日事件摘要</tspan>
+</text>
+<text x="46" y="357.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">归纳当天发生什么</tspan>
+</text>
+<text x="46" y="386.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">保留关键事件与日期</tspan>
+</text>
+<path d="M368,432 L368,472" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="456" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">跨日合并</tspan>
+</text>
+<rect x="28" y="486" width="680" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="518" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">全局事件摘要</tspan>
+</text>
+<text x="46" y="547.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">串联多天的进展</tspan>
+</text>
+<text x="46" y="576.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">摘要可能遗漏细节</tspan>
+</text>
+<rect x="28" y="636" width="680" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="668" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">每日用户画像</tspan>
+</text>
+<text x="46" y="697.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">推测情绪与性格</tspan>
+</text>
+<text x="46" y="726.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">属于模型解释</tspan>
+</text>
+<path d="M368,772 L368,812" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="796" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">跨日归纳</tspan>
+</text>
+<rect x="28" y="826" width="680" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="858" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">全局用户画像</tspan>
+</text>
+<text x="46" y="887.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">综合多天的画像</tspan>
+</text>
+<text x="46" y="916.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">不是用户确认或诊断</tspan>
+</text>
+<path d="M28,171.0 H12 V701.0 H26" stroke="#365e7c" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="988" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">带时间的原对话 → 每日用户画像：推测用户特点</tspan>
+</text>
+<text x="28" y="1026.0" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">分支表达不同归纳目标；派生文本不因被保存就与原话同等可靠。</tspan>
+</text>
+</g></svg>

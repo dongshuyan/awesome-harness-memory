@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="868" viewBox="0 0 736 868" role="img" aria-labelledby="title desc">
+<title id="title">搜到事实之后还要组织输入</title><desc id="desc">应用先确定并授权用户范围，再调用 Mem0 search；取回结果后选择当前有效事实并装入下一次模型输入。检索返回与模型实际读到是不同步骤。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="868" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">搜到事实之后还要组织输入</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">来源规定的机制；小周或项目事件为教学假设</tspan>
+</text>
+<rect x="28" y="106" width="680" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">应用确认用户范围</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">从登录身份确定 user_id</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">使用当前版本的 filters</tspan>
+</text>
+<path d="M368,242 L368,282" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="266" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">主动发起查询</tspan>
+</text>
+<rect x="28" y="296" width="680" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="328" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">Mem0 search</tspan>
+</text>
+<text x="46" y="357.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">范围内取得并排列候选</tspan>
+</text>
+<text x="46" y="386.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">返回 results 及元数据</tspan>
+</text>
+<path d="M368,432 L368,472" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="456" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">返回可读记录</tspan>
+</text>
+<rect x="28" y="486" width="680" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="518" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">应用选择有效事实</tspan>
+</text>
+<text x="46" y="547.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">核对城市变化与时间</tspan>
+</text>
+<text x="46" y="576.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">控制条数和上下文位置</tspan>
+</text>
+<path d="M368,622 L368,662" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="646" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">实际装入请求</tspan>
+</text>
+<rect x="28" y="676" width="680" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="708" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">下一次模型调用</tspan>
+</text>
+<text x="46" y="737.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">问题：下周从哪里出发</tspan>
+</text>
+<text x="46" y="766.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">加入选定的杭州事实</tspan>
+</text>
+<text x="28" y="838" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">user_id 是范围字段；身份授权由外层应用核对。</tspan>
+</text>
+</g></svg>

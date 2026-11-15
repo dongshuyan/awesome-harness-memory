@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="858" viewBox="0 0 736 858" role="img" aria-labelledby="title desc">
+<title id="title">同一学习经历，两种提取条件</title><desc id="desc">周一同一段路线学习，在周二分别以无提示和有小桥提示方式询问，假设表现不同。比较只支持提取条件与表现相关，痕迹状态需要额外证据。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="858" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">同一学习经历，两种提取条件</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">日常假设；不是实验结果或脑内状态诊断</tspan>
+</text>
+<rect x="28" y="106" width="330" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">周一学习路线</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">钟楼→小桥→东门</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">未测量神经状态</tspan>
+</text>
+<rect x="378" y="106" width="330" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="396" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">周二直接询问</tspan>
+</text>
+<text x="396" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">没有额外提示</tspan>
+</text>
+<text x="396" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">假设：一时说不出</tspan>
+</text>
+<rect x="28" y="260" width="330" height="159" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="292" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">周二给出线索</tspan>
+</text>
+<text x="46" y="321.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">提示“经过小桥”</tspan>
+</text>
+<text x="46" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">假设：说出部分路段</tspan>
+</text>
+<rect x="378" y="260" width="330" height="159" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="396" y="292" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">比较两种表现</tspan>
+</text>
+<text x="396" y="321.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">变化的是测试条件与表现</tspan>
+</text>
+<text x="396" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">不能证明全部内容完好</tspan>
+</text>
+<text x="396" y="379.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">也不能断言痕迹全消失</tspan>
+</text>
+<rect x="28" y="443" width="330" height="159" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="475" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">研究需要补充证据</tspan>
+</text>
+<text x="46" y="504.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">最初是否学会</tspan>
+</text>
+<text x="46" y="533.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">后来经历和测试条件</tspan>
+</text>
+<text x="46" y="562.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">必要时结合神经测量</tspan>
+</text>
+<path d="M361,138 L375,138" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="638" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">周一学习路线 → 周二直接询问：在一种条件下测试</tspan>
+</text>
+<path d="M193.0,239 L193.0,257" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="676.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">周一学习路线 → 周二给出线索：在另一条件下测试</tspan>
+</text>
+<path d="M543.0,239 L543.0,257" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="714.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">周二直接询问 → 比较两种表现：记录无提示表现</tspan>
+</text>
+<path d="M361,292 L375,292" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="752.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">周二给出线索 → 比较两种表现：记录有提示表现</tspan>
+</text>
+<path d="M376,339.5 H372 V522.5 H360" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="790.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">比较两种表现 → 研究需要补充证据：限定结论并继续检验</tspan>
+</text>
+<text x="28" y="828.0" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">动物实验对潜伏痕迹的支持有特定对象与干预条件，不能由此诊断小林。</tspan>
+</text>
+</g></svg>

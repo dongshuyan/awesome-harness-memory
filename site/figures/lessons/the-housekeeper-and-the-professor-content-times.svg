@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="331" viewBox="0 0 736 331" role="img" aria-labelledby="title desc">
+<title id="title">旧知识与新经历并非一同消失</title><desc id="desc">左侧为仍能使用的旧数学知识，右侧为受到80分钟限制的新近相处经历。两侧没有流程箭头，强调能力保留与当次经历保留是不同条件。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="331" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">旧知识与新经历并非一同消失</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">据出版社节选的小说设定，不是医学分类图</tspan>
+</text>
+<rect x="28" y="106" width="330" height="159" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">较早的知识</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">记忆停在1975年的设定</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">数学知识仍可用于交流</tspan>
+</text>
+<text x="46" y="225.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">能做不等于记得本次相处</tspan>
+</text>
+<rect x="378" y="106" width="330" height="159" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="396" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">新近的经历</tspan>
+</text>
+<text x="396" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">受80分钟保持限制</tspan>
+</text>
+<text x="396" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">次日可能需重新相识</tspan>
+</text>
+<text x="396" y="225.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">发生过不等于后来可回忆</tspan>
+</text>
+<text x="28" y="301" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">比较的是故事中的内容保持条件；80分钟不是人类遗忘的统一规律。</tspan>
+</text>
+</g></svg>

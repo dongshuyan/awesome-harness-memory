@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="532" viewBox="0 0 736 532" role="img" aria-labelledby="title desc">
+<title id="title">两类资料，两条保存路径</title><desc id="desc">两组并列路径：线程A的草稿与消息进入线程检查点；用户长期偏好作为JSON写入Store，按namespace和key定位。两者都需检查实际后端。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="532" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">两类资料，两条保存路径</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">按官方概念绘制；林溪资料为教学假设</tspan>
+</text>
+<rect x="28" y="106" width="330" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">线程A的state</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">草稿、消息、修改进度</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">用于继续同一篇稿</tspan>
+</text>
+<rect x="378" y="106" width="330" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="396" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">线程检查点</tspan>
+</text>
+<text x="396" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">按thread保存状态</tspan>
+</text>
+<text x="396" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">恢复依实际checkpointer</tspan>
+</text>
+<rect x="28" y="260" width="330" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="292" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">跨任务偏好</tspan>
+</text>
+<text x="46" y="321.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">默认先给短版</tspan>
+</text>
+<text x="46" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">应用选择保存为JSON</tspan>
+</text>
+<rect x="378" y="260" width="330" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="396" y="292" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">长期Store</tspan>
+</text>
+<text x="396" y="321.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">namespace＋key定位</tspan>
+</text>
+<text x="396" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">可供多个线程读取</tspan>
+</text>
+<path d="M361,138 L375,138" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="426" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">线程A的state → 线程检查点：保存工作状态</tspan>
+</text>
+<path d="M361,292 L375,292" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="464.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">跨任务偏好 → 长期Store：应用写入长期记录</tspan>
+</text>
+<text x="28" y="502.0" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">两条路径的物理后端分别配置；内存实现不等于跨重启持久。</tspan>
+</text>
+</g></svg>

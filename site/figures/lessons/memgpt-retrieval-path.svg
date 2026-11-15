@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="1058" viewBox="0 0 736 1058" role="img" aria-labelledby="title desc">
+<title id="title">旧资料怎样重新进入输入</title><desc id="desc">当前问题引发recall和archival搜索，函数分批返回文字并追加到FIFO队列，使下一次推理读到结果。heartbeat可让模型立即继续处理，再决定继续搜索还是回答。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="1058" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">旧资料怎样重新进入输入</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">原创教学示意；未运行小林的查询</tspan>
+</text>
+<rect x="28" y="106" width="680" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">当前问题</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">最初选了哪里？</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">资料中的取消说明是什么？</tspan>
+</text>
+<path d="M368,242 L368,282" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="266" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">决定需要查什么</tspan>
+</text>
+<rect x="28" y="296" width="680" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="328" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">生成搜索调用</tspan>
+</text>
+<text x="46" y="357.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">分别查询历史与资料</tspan>
+</text>
+<text x="46" y="386.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">函数解析后执行</tspan>
+</text>
+<path d="M368,432 L368,472" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="456" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">按页返回结果</tspan>
+</text>
+<rect x="28" y="486" width="680" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="518" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">分批返回文字</tspan>
+</text>
+<text x="46" y="547.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">recall 原话</tspan>
+</text>
+<text x="46" y="576.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">archival 候选段落</tspan>
+</text>
+<path d="M368,622 L368,662" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="646" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">追加函数输出</tspan>
+</text>
+<rect x="28" y="676" width="680" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="708" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">结果加入队列</tspan>
+</text>
+<text x="46" y="737.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">进入下一次主上下文</tspan>
+</text>
+<text x="46" y="766.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">模型现在才可读到结果</tspan>
+</text>
+<path d="M368,812 L368,852" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="836" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">heartbeat 可立即继续</tspan>
+</text>
+<rect x="28" y="866" width="680" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="898" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">继续处理或回答</tspan>
+</text>
+<text x="46" y="927.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">需要更多内容时继续搜索</tspan>
+</text>
+<text x="46" y="956.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">材料足够时组织回答</tspan>
+</text>
+<text x="28" y="1028" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">分页有助控制输入长度；模型仍可能用错查询或过早停止。</tspan>
+</text>
+</g></svg>

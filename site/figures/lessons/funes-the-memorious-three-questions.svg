@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="456" viewBox="0 0 736 456" role="img" aria-labelledby="title desc">
+<title id="title">保留、选择与概括分别问</title><desc id="desc">三个并列区域分别问哪些材料被保留、哪些与当前问题相关、哪些概括能由证据支持。没有流程箭头，强调它们是可分别评价的问题。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="456" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">保留、选择与概括分别问</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">节选提供细节记忆前提；其余是教程提问</tspan>
+</text>
+<rect x="28" y="106" width="330" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">保留</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">哪些细节还在？</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">关注材料的留存范围</tspan>
+</text>
+<rect x="378" y="106" width="330" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="396" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">选择</tspan>
+</text>
+<text x="396" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">这次需要哪些？</tspan>
+</text>
+<text x="396" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">关注材料与问题的关系</tspan>
+</text>
+<rect x="28" y="260" width="330" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="292" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">概括</tspan>
+</text>
+<text x="46" y="321.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">能得出什么结论？</tspan>
+</text>
+<text x="46" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">关注条件与证据强度</tspan>
+</text>
+<text x="28" y="426" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">三者是并列评价问题，不是小说中的算法，也不构成性能测试结果。</tspan>
+</text>
+</g></svg>

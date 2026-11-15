@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="983" viewBox="0 0 736 983" role="img" aria-labelledby="title desc">
+<title id="title">一份回答，两组评分判据</title><desc id="desc">模型读取历史并作答；评分端检查四条有效信息和两条失效信息，分别得到3/4与1/2，再以1/3权重计算FAMA为7/12。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="983" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">一份回答，两组评分判据</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">餐饮例子与分数为自拟；公式据官方实现</tspan>
+</text>
+<rect x="28" y="106" width="680" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">模型可读历史</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">3月2日：原安排</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">3月20日：偏好更正</tspan>
+</text>
+<rect x="28" y="260" width="680" height="159" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="292" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">当前回答</tspan>
+</text>
+<text x="46" y="321.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">保留目的地、日期、预算</tspan>
+</text>
+<text x="46" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">遗漏安静环境</tspan>
+</text>
+<text x="46" y="379.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">排除火锅，却推荐辣菜</tspan>
+</text>
+<rect x="28" y="443" width="330" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="475" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">评分端：有效信息判据</tspan>
+</text>
+<text x="46" y="504.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">四条应提及，满足三条</tspan>
+</text>
+<text x="46" y="533.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">MPA＝3/4</tspan>
+</text>
+<rect x="378" y="443" width="330" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="396" y="475" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">评分端：失效信息判据</tspan>
+</text>
+<text x="396" y="504.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">两条应排除，满足一条</tspan>
+</text>
+<text x="396" y="533.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">FAA＝1/2</tspan>
+</text>
+<rect x="28" y="597" width="680" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="629" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">合成分数</tspan>
+</text>
+<text x="46" y="658.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">λ＝2/6＝1/3</tspan>
+</text>
+<text x="46" y="687.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">FAMA＝7/12≈0.583</tspan>
+</text>
+<path d="M368.0,239 L368.0,257" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="763" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">模型可读历史 → 当前回答：按当前请求作答</tspan>
+</text>
+<path d="M193.0,422 L193.0,440" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="801.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">当前回答 → 评分端：有效信息判据：按有效判据核对</tspan>
+</text>
+<path d="M543.0,422 L543.0,440" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="839.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">当前回答 → 评分端：失效信息判据：按失效判据核对</tspan>
+</text>
+<path d="M193.0,576 L193.0,594" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="877.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">评分端：有效信息判据 → 合成分数：有效信息得分</tspan>
+</text>
+<path d="M543.0,576 L543.0,594" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="915.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">评分端：失效信息判据 → 合成分数：旧信息惩罚</tspan>
+</text>
+<text x="28" y="953.0" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">评分判据在输出后使用；FAA不测底层记录是否被擦除。</tspan>
+</text>
+</g></svg>

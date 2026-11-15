@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="1333" viewBox="0 0 736 1333" role="img" aria-labelledby="title desc">
+<title id="title">按角色取证，再核对回答</title><desc id="desc">三条活动事件进入记忆层。接待角色只能读取许可材料，当前值按权威及替代关系确定。实际取出的上下文给固定答题者，输出再与评分端标准比较。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="1333" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">按角色取证，再核对回答</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">协议据论文；活动安排为自拟</tspan>
+</text>
+<rect x="28" y="106" width="680" height="159" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">同一事件序列</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">周一：A厅</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">周二：小陈正式更正B厅</tspan>
+</text>
+<text x="46" y="225.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">周三：非负责人误传A厅</tspan>
+</text>
+<path d="M368,271 L368,311" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="295" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">按序摄入</tspan>
+</text>
+<rect x="28" y="325" width="680" height="159" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="357" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">记忆层与角色规则</tspan>
+</text>
+<text x="46" y="386.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">本次目标：接待助手</tspan>
+</text>
+<text x="46" y="415.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">厅号可见；门禁不可见</tspan>
+</text>
+<text x="46" y="444.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">更正依据权威与替代关系</tspan>
+</text>
+<path d="M368,490 L368,530" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="514" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">针对角色取回</tspan>
+</text>
+<rect x="28" y="544" width="680" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="576" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">实际提供的上下文</tspan>
+</text>
+<text x="46" y="605.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">应支持当前B厅</tspan>
+</text>
+<text x="46" y="634.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">可能遗漏、过时或越界</tspan>
+</text>
+<path d="M368,680 L368,720" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="704" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">作为答题上下文</tspan>
+</text>
+<rect x="28" y="734" width="680" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="766" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">固定答题模型</tspan>
+</text>
+<text x="46" y="795.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">依据收到的材料回答</tspan>
+</text>
+<text x="46" y="824.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">严格协议还要求来源/更新</tspan>
+</text>
+<rect x="28" y="884" width="680" height="159" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="916" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">评分端标准</tspan>
+</text>
+<text x="46" y="945.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">当前值与角色可见范围</tspan>
+</text>
+<text x="46" y="974.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">权威来源、替代关系</tspan>
+</text>
+<text x="46" y="1003.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">历史值与理由按题目要求</tspan>
+</text>
+<path d="M368,1049 L368,1089" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="1073" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">提供评分依据</tspan>
+</text>
+<rect x="28" y="1103" width="680" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="1135" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">裁判与诊断</tspan>
+</text>
+<text x="46" y="1164.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">核对答案及证据要求</tspan>
+</text>
+<text x="46" y="1193.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">区分共享/访问/来源等问题</tspan>
+</text>
+<path d="M28,799.0 H12 V1168.0 H26" stroke="#365e7c" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="1265" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">固定答题模型 → 裁判与诊断：提交输出</tspan>
+</text>
+<text x="28" y="1303.0" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">较晚的非权威误传不自动覆盖正式更正；标准只用于评分。</tspan>
+</text>
+</g></svg>

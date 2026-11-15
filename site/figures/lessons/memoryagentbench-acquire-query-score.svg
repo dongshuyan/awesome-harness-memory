@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="1275" viewBox="0 0 736 1275" role="img" aria-labelledby="title desc">
+<title id="title">先摄入，再统一查询</title><desc id="desc">周一旧码、周二聊天、周三更新依次进入系统；完成摄入后才提出多个问题。模型答案和评分端标准在评分处汇合。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="1275" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">先摄入，再统一查询</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">协议据论文；柜码与日期为自拟</tspan>
+</text>
+<rect x="28" y="106" width="680" height="159" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">按顺序输入</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">周一：柜码314</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">周二：无关聊天</tspan>
+</text>
+<text x="46" y="225.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">周三：更新为628</tspan>
+</text>
+<path d="M368,271 L368,311" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="295" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">逐块处理</tspan>
+</text>
+<rect x="28" y="325" width="680" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="357" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">完成摄入</tspan>
+</text>
+<text x="46" y="386.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">系统自行维护记忆</tspan>
+</text>
+<text x="46" y="415.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">此时尚未统一提问</tspan>
+</text>
+<path d="M368,461 L368,501" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="485" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">摄入结束后</tspan>
+</text>
+<rect x="28" y="515" width="680" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="547" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">后续多个问题</tspan>
+</text>
+<text x="46" y="576.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">当前柜码？</tspan>
+</text>
+<text x="46" y="605.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">其他历史问题？</tspan>
+</text>
+<path d="M368,651 L368,691" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="675" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">依据所得记忆作答</tspan>
+</text>
+<rect x="28" y="705" width="680" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="737" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">被测输出</tspan>
+</text>
+<text x="46" y="766.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">按任务产生答案</tspan>
+</text>
+<text x="46" y="795.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">本例预期为628</tspan>
+</text>
+<rect x="28" y="855" width="680" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="887" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">评分端金标准</tspan>
+</text>
+<text x="46" y="916.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">任务标准答案或判据</tspan>
+</text>
+<text x="46" y="945.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">不送入正常作答路径</tspan>
+</text>
+<path d="M368,991 L368,1031" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="1015" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">提供评分依据</tspan>
+</text>
+<rect x="28" y="1045" width="680" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="1077" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">任务评分</tspan>
+</text>
+<text x="46" y="1106.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">比较输出与标准</tspan>
+</text>
+<text x="46" y="1135.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">不同任务使用不同指标</tspan>
+</text>
+<path d="M28,770.0 H12 V1110.0 H26" stroke="#365e7c" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="1207" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">被测输出 → 任务评分：提交输出</tspan>
+</text>
+<text x="28" y="1245.0" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">不把该协议画成查询之间持续插入更新的完整在线循环。</tspan>
+</text>
+</g></svg>

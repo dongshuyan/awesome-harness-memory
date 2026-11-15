@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="1284" viewBox="0 0 736 1284" role="img" aria-labelledby="title desc">
+<title id="title">技能如何参与生成与执行</title><desc id="desc">已有技能库与任务查询共同选出最多五个相关技能，代码进入行动模型，模型生成新程序后交给执行环境。技能库还沿另一条路径将现有程序与基础原语提供给执行环境。执行结果再交给critic检查。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="1284" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">技能如何参与生成与执行</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">原创教学示意；依据论文与固定代码</tspan>
+</text>
+<rect x="28" y="106" width="680" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">已有技能库</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">代码＋用途说明</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">保存当前名称到程序的映射</tspan>
+</text>
+<rect x="28" y="256" width="680" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="288" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">当前检索需求</tspan>
+</text>
+<text x="46" y="317.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">任务建议＋环境信息</tspan>
+</text>
+<text x="46" y="346.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">如：先准备石铲</tspan>
+</text>
+<path d="M368,392 L368,432" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="416" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">提供查询</tspan>
+</text>
+<rect x="28" y="446" width="680" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="478" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">相关技能子集</tspan>
+</text>
+<text x="46" y="507.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">最多五个，库小时更少</tspan>
+</text>
+<text x="46" y="536.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">取出对应代码</tspan>
+</text>
+<path d="M368,582 L368,622" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="606" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">代码加入提示</tspan>
+</text>
+<rect x="28" y="636" width="680" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="668" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">行动模型</tspan>
+</text>
+<text x="46" y="697.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">读相关代码和当前状态</tspan>
+</text>
+<text x="46" y="726.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">生成或组合新程序</tspan>
+</text>
+<path d="M368,772 L368,812" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="796" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">提交新程序</tspan>
+</text>
+<rect x="28" y="826" width="680" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="858" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">执行环境</tspan>
+</text>
+<text x="46" y="887.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">运行新生成程序</tspan>
+</text>
+<text x="46" y="916.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">另获已有程序库与控制原语</tspan>
+</text>
+<path d="M368,962 L368,1002" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="986" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">返回执行结果</tspan>
+</text>
+<rect x="28" y="1016" width="680" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="1048" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">反馈与任务检查</tspan>
+</text>
+<text x="46" y="1077.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">环境变化、运行错误</tspan>
+</text>
+<text x="46" y="1106.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">critic 判断是否完成</tspan>
+</text>
+<path d="M28,171.0 H12 V511.0 H26" stroke="#365e7c" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="1178" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">已有技能库 → 相关技能子集：按用途说明选择</tspan>
+</text>
+<path d="M28,171.0 H12 V891.0 H26" stroke="#365e7c" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="1216.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">已有技能库 → 执行环境：现有程序库供调用</tspan>
+</text>
+<text x="28" y="1254.0" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">最多五个是检索子集限制，不是执行器函数数量上限；运行成功仍须检查。</tspan>
+</text>
+</g></svg>

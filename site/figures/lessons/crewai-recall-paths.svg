@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="590" viewBox="0 0 736 590" role="img" aria-labelledby="title desc">
+<title id="title">CrewAI的两种召回入口</title><desc id="desc">两行并列：任务描述触发自动recall，最多5条追加task prompt；主动工具逐个query召回，每个最多20条，去重格式化后作为工具结果。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="590" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">CrewAI的两种召回入口</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">71d6811源码；数量是每条调用路径的上限</tspan>
+</text>
+<rect x="28" y="106" width="330" height="159" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">Agent开始执行任务</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">query取task.description</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">自动调用recall</tspan>
+</text>
+<rect x="378" y="106" width="330" height="159" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="396" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">自动接入任务输入</tspan>
+</text>
+<text x="396" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">最多5条</tspan>
+</text>
+<text x="396" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">使用默认deep</tspan>
+</text>
+<text x="396" y="225.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">格式化追加task prompt</tspan>
+</text>
+<rect x="28" y="289" width="330" height="159" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="321" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">Agent主动调用工具</tspan>
+</text>
+<text x="46" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">RecallMemoryTool</tspan>
+</text>
+<text x="46" y="379.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">可以提供多个query</tspan>
+</text>
+<rect x="378" y="289" width="330" height="159" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="396" y="321" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">作为工具结果返回</tspan>
+</text>
+<text x="396" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">每个query最多20条</tspan>
+</text>
+<text x="396" y="379.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">合并时按记录ID去重</tspan>
+</text>
+<text x="396" y="408.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">不是整次工具最多20条</tspan>
+</text>
+<path d="M361,138 L375,138" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="484" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">Agent开始执行任务 → 自动接入任务输入：任务接入代码执行</tspan>
+</text>
+<path d="M361,321 L375,321" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="522.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">Agent主动调用工具 → 作为工具结果返回：逐个query召回</tspan>
+</text>
+<text x="28" y="560.0" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">返回上限不保证有这么多结果；分数用于排序，不是事实正确概率。</tspan>
+</text>
+</g></svg>

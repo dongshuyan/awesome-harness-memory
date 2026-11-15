@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="875" viewBox="0 0 736 875" role="img" aria-labelledby="title desc">
+<title id="title">压缩前保存是一次机会</title><desc id="desc">长对话达到压缩条件后，可先执行默认保存轮次；可写且实际写入成功才产生新日记。保存被跳过或失败时压缩仍可能继续，因此压缩后的摘要不能证明持久保存已经完成。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="875" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">压缩前保存是一次机会</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">官方文档机制；小林的内容为假设示例</tspan>
+</text>
+<rect x="28" y="106" width="680" height="101" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">长对话准备压缩</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">还有未写出的导入线索</tspan>
+</text>
+<path d="M368,213 L368,253" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="237" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">开启且符合执行条件</tspan>
+</text>
+<rect x="28" y="267" width="680" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="299" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">压缩前保存轮次</tspan>
+</text>
+<text x="46" y="328.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">默认提醒整理重要上下文</tspan>
+</text>
+<text x="46" y="357.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">Memory Core 需可写工作区</tspan>
+</text>
+<path d="M368,403 L368,443" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="427" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">实际写入成功</tspan>
+</text>
+<rect x="28" y="457" width="680" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="489" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">日记写入</tspan>
+</text>
+<text x="46" y="518.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">只追加新内容</tspan>
+</text>
+<text x="46" y="547.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">成功后才有持久记录</tspan>
+</text>
+<rect x="28" y="607" width="680" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="639" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">对话压缩</tspan>
+</text>
+<text x="46" y="668.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">生成继续对话用的摘要</tspan>
+</text>
+<text x="46" y="697.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">保存轮次可跳过或失败</tspan>
+</text>
+<path d="M28,332.0 H6.0 V672.0 H26" stroke="#365e7c" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="769" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">压缩前保存轮次 → 对话压缩：保存轮次结束后继续</tspan>
+</text>
+<path d="M28,156.5 H22.0 V672.0 H26" stroke="#365e7c" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="807.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">长对话准备压缩 → 对话压缩：保存被跳过时也可压缩</tspan>
+</text>
+<text x="28" y="845.0" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">压缩完成不能证明日记写入成功；其他记忆插件可使用自己的保存工具。</tspan>
+</text>
+</g></svg>

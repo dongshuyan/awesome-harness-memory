@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="1116" viewBox="0 0 736 1116" role="img" aria-labelledby="title desc">
+<title id="title">经历怎样成为下一次计划</title><desc id="desc">流程从阿青的交谈与其他经历开始。累计重要性满足条件后提出问题，按问题取回证据，形成带引用的反思；后续规划若取用该反思，才可能形成邀请安排。反思是推断，安排也尚未执行。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="1116" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">经历怎样成为下一次计划</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">原创教学示意；阿青的情境为假设</tspan>
+</text>
+<rect x="28" y="106" width="680" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">已有经历</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">周一、周二讨论研究</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">其他日常事件也在积累</tspan>
+</text>
+<path d="M368,242 L368,282" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="266" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">满足触发条件</tspan>
+</text>
+<rect x="28" y="296" width="680" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="328" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">反思被触发</tspan>
+</text>
+<text x="46" y="357.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">累计重要性超过阈值</tspan>
+</text>
+<text x="46" y="386.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">从近期记录提出问题</tspan>
+</text>
+<path d="M368,432 L368,472" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="456" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">以问题检索</tspan>
+</text>
+<rect x="28" y="486" width="680" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="518" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">按问题找证据</tspan>
+</text>
+<text x="46" y="547.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">谁有共同研究兴趣？</tspan>
+</text>
+<text x="46" y="576.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">取回交谈及相关反思</tspan>
+</text>
+<path d="M368,622 L368,662" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="646" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">依据材料归纳</tspan>
+</text>
+<rect x="28" y="676" width="680" height="159" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="708" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">写回反思</tspan>
+</text>
+<text x="46" y="737.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">与 Maria 有共同兴趣</tspan>
+</text>
+<text x="46" y="766.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">保留所引用的记录</tspan>
+</text>
+<text x="46" y="795.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">这是推断，不是确认</tspan>
+</text>
+<path d="M368,841 L368,881" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="865" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">后续规划可能取用</tspan>
+</text>
+<rect x="28" y="895" width="680" height="159" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="927" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">制定邀请计划</tspan>
+</text>
+<text x="46" y="956.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">若本次规划取用了反思</tspan>
+</text>
+<text x="46" y="985.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">拟定邀请时间与地点</tspan>
+</text>
+<text x="46" y="1014.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">计划不代表已经实施</tspan>
+</text>
+<text x="28" y="1086" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">观察、反思和计划都可保存；反思成立与计划执行仍需分别检查。</tspan>
+</text>
+</g></svg>

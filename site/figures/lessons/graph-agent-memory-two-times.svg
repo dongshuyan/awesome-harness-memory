@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="331" viewBox="0 0 736 331" role="img" aria-labelledby="title desc">
+<title id="title">事情何时变，系统何时知</title><desc id="desc">事件在周一把预约改成周五，但系统周三才记录。按有效时间事后查周二，可知当时已改到周五；按记录时间查系统周二所知，仍只有原周二安排。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="331" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">事情何时变，系统何时知</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">教学设定：周一改期，周三补录</tspan>
+</text>
+<rect x="28" y="106" width="330" height="159" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">有效时间看事件</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">周一：预约改到周五</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">事后回看周二</tspan>
+</text>
+<text x="46" y="225.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">当时有效安排已是周五</tspan>
+</text>
+<rect x="378" y="106" width="330" height="159" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="396" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">记录时间看所知</tspan>
+</text>
+<text x="396" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">周三：更改才被记录</tspan>
+</text>
+<text x="396" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">限制为周二已有证据</tspan>
+</text>
+<text x="396" y="225.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">仍只有原周二安排</tspan>
+</text>
+<text x="28" y="301" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">事后答案依赖补录可信；两个时间不能合成一个。</tspan>
+</text>
+</g></svg>

@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="620" viewBox="0 0 736 620" role="img" aria-labelledby="title desc">
+<title id="title">L1  找到一条，与找齐全部</title><desc id="desc">两次旅行总花费需证据会话A和B。前五条结果只命中A，因此any为1，all为0。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#586b67"/></marker></defs>
+<rect width="736" height="620" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="24" y="35" font-size="24" fill="#243735" font-weight="600">
+<tspan x="24" dy="0">L1  找到一条，与找齐全部</tspan>
+</text>
+<text x="24" y="64" font-size="16" fill="#586b67" font-weight="400">
+<tspan x="24" dy="0">教学示意 · 人物、日期与结果为假设</tspan>
+</text>
+<text x="24" y="104" font-size="17" fill="#243735" font-weight="400">
+<tspan x="24" dy="0">问题：两次旅行总花费？   所需证据：A（600元）和 B（900元）</tspan>
+</text>
+<rect x="24" y="128" width="688" height="43" rx="3" fill="#fff" stroke="#cdd5cf" stroke-width="1.3"/>
+<text x="42" y="157" font-size="18" fill="#586b67" font-weight="400">
+<tspan x="42" dy="0">1</tspan>
+</text>
+<text x="92" y="157" font-size="18" fill="#243735" font-weight="400">
+<tspan x="92" dy="0">其他会话</tspan>
+</text>
+<text x="458" y="157" font-size="16" fill="#586b67" font-weight="400">
+<tspan x="458" dy="0">没有本题所需金额</tspan>
+</text>
+<rect x="24" y="176" width="688" height="43" rx="3" fill="#edf4ef" stroke="#235f55" stroke-width="1.3"/>
+<text x="42" y="205" font-size="18" fill="#586b67" font-weight="400">
+<tspan x="42" dy="0">2</tspan>
+</text>
+<text x="92" y="205" font-size="18" fill="#235f55" font-weight="600">
+<tspan x="92" dy="0">会话 A · 苏州 600 元</tspan>
+</text>
+<text x="458" y="205" font-size="16" fill="#586b67" font-weight="400">
+<tspan x="458" dy="0">证据 · 命中</tspan>
+</text>
+<rect x="24" y="224" width="688" height="43" rx="3" fill="#fff" stroke="#cdd5cf" stroke-width="1.3"/>
+<text x="42" y="253" font-size="18" fill="#586b67" font-weight="400">
+<tspan x="42" dy="0">3</tspan>
+</text>
+<text x="92" y="253" font-size="18" fill="#243735" font-weight="400">
+<tspan x="92" dy="0">其他会话</tspan>
+</text>
+<text x="458" y="253" font-size="16" fill="#586b67" font-weight="400">
+<tspan x="458" dy="0">没有本题所需金额</tspan>
+</text>
+<rect x="24" y="272" width="688" height="43" rx="3" fill="#fff" stroke="#cdd5cf" stroke-width="1.3"/>
+<text x="42" y="301" font-size="18" fill="#586b67" font-weight="400">
+<tspan x="42" dy="0">4</tspan>
+</text>
+<text x="92" y="301" font-size="18" fill="#243735" font-weight="400">
+<tspan x="92" dy="0">其他会话</tspan>
+</text>
+<text x="458" y="301" font-size="16" fill="#586b67" font-weight="400">
+<tspan x="458" dy="0">没有本题所需金额</tspan>
+</text>
+<rect x="24" y="320" width="688" height="43" rx="3" fill="#fff" stroke="#cdd5cf" stroke-width="1.3"/>
+<text x="42" y="349" font-size="18" fill="#586b67" font-weight="400">
+<tspan x="42" dy="0">5</tspan>
+</text>
+<text x="92" y="349" font-size="18" fill="#243735" font-weight="400">
+<tspan x="92" dy="0">其他会话</tspan>
+</text>
+<text x="458" y="349" font-size="16" fill="#586b67" font-weight="400">
+<tspan x="458" dy="0">没有本题所需金额</tspan>
+</text>
+<rect x="24" y="391" width="688" height="65" rx="3" fill="#f5f2e9" stroke="#cdd5cf" stroke-width="1.3"/>
+<text x="42" y="419" font-size="19" fill="#8a5d28" font-weight="600">
+<tspan x="42" dy="0">会话 B · 杭州 900 元</tspan>
+</text>
+<text x="42" y="444" font-size="16" fill="#586b67" font-weight="400">
+<tspan x="42" dy="0">也是必需证据，但没有进入这次前 5 条。</tspan>
+</text>
+<rect x="24" y="482" width="334" height="88" rx="3" fill="#edf4ef" stroke="#cdd5cf" stroke-width="1.3"/>
+<rect x="378" y="482" width="334" height="88" rx="3" fill="#f5f2e9" stroke="#cdd5cf" stroke-width="1.3"/>
+<text x="40" y="513" font-size="19" fill="#235f55" font-weight="600">
+<tspan x="40" dy="0">至少找到一条？ 是</tspan>
+</text>
+<text x="40" y="547" font-size="20" fill="#235f55" font-weight="400">
+<tspan x="40" dy="0">recall_any@5 = 1</tspan>
+</text>
+<text x="394" y="513" font-size="19" fill="#8a5d28" font-weight="600">
+<tspan x="394" dy="0">所需证据取齐？ 否</tspan>
+</text>
+<text x="394" y="547" font-size="20" fill="#8a5d28" font-weight="400">
+<tspan x="394" dy="0">recall_all@5 = 0</tspan>
+</text>
+<text x="24" y="600" font-size="16" fill="#586b67" font-weight="400">
+<tspan x="24" dy="0">这是单题的手算示例，按会话计数；不是任何系统的实测成绩。</tspan>
+</text>
+</g></svg>

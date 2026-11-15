@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="1056" viewBox="0 0 736 1056" role="img" aria-labelledby="title desc">
+<title id="title">系统材料与评分材料</title><desc id="desc">历史对话及允许的派生表示进入被测系统，系统输出交给评分；QA标准与事件总结金标准仅连接评分端。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="1056" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">系统材料与评分材料</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">字段用途据原文；陶艺情境为自拟</tspan>
+</text>
+<rect x="28" y="106" width="680" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">允许的历史材料</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">原对话</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">相应条件下的观察/会话摘要</tspan>
+</text>
+<path d="M368,242 L368,282" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="266" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">提供或检索</tspan>
+</text>
+<rect x="28" y="296" width="680" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="46" y="328" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">被测系统</tspan>
+</text>
+<text x="46" y="357.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">按人物与日期查找</tspan>
+</text>
+<text x="46" y="386.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">生成答案或事件总结</tspan>
+</text>
+<path d="M368,432 L368,472" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="456" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">生成</tspan>
+</text>
+<rect x="28" y="486" width="680" height="130" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="46" y="518" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">本例输出</tspan>
+</text>
+<text x="46" y="547.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">作品：杯子</tspan>
+</text>
+<text x="46" y="576.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">先计划，后完成</tspan>
+</text>
+<rect x="28" y="636" width="680" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="668" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">评分端材料</tspan>
+</text>
+<text x="46" y="697.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">QA答案与证据编号</tspan>
+</text>
+<text x="46" y="726.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">事件总结金标准</tspan>
+</text>
+<path d="M368,772 L368,812" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="390" y="796" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="390" dy="0">提供标准</tspan>
+</text>
+<rect x="28" y="826" width="680" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="858" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">按任务评分</tspan>
+</text>
+<text x="46" y="887.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">核对答案或总结</tspan>
+</text>
+<text x="46" y="916.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">有检索记录时核对证据</tspan>
+</text>
+<path d="M28,551.0 H12 V891.0 H26" stroke="#365e7c" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="988" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">本例输出 → 按任务评分：提交结果</tspan>
+</text>
+<text x="28" y="1026.0" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">event_summary 属于金标准；它不进入普通历史输入路径。</tspan>
+</text>
+</g></svg>

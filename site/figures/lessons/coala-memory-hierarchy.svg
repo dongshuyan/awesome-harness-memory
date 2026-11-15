@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="1048" viewBox="0 0 736 1048" role="img" aria-labelledby="title desc">
+<title id="title">CoALA 的记忆层级</title><desc id="desc">Agent记忆模块下，工作记忆与长期记忆是并列分支。工作记忆包含当前目标、报错和检索结果；长期记忆下有episodic经历、semantic知识、procedural做事方式三个子类。程序性记忆包含模型权重和Agent代码。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="1048" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">CoALA 的记忆层级</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">原创架构示意；测试修复内容为教学假设</tspan>
+</text>
+<rect x="28" y="106" width="680" height="101" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">Agent 的记忆模块</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">按当前状态与长期作用区分</tspan>
+</text>
+<path d="M50,207 L50,251" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<path d="M50,251 L72,251" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<rect x="72" y="227" width="636" height="159" rx="3" fill="#edf4ef" stroke="#c8d1ca"/>
+<text x="90" y="259" font-size="20" font-weight="600" fill="#243735">
+<tspan x="90" dy="0">工作记忆</tspan>
+</text>
+<text x="90" y="288.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="90" dy="0">当前目标与报错</tspan>
+</text>
+<text x="90" y="317.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="90" dy="0">检索结果、中间判断</tspan>
+</text>
+<text x="90" y="346.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="90" dy="0">可跨模型调用保留</tspan>
+</text>
+<path d="M50,207 L50,430" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<path d="M50,430 L72,430" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<rect x="72" y="406" width="636" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="90" y="438" font-size="20" font-weight="600" fill="#243735">
+<tspan x="90" dy="0">长期记忆</tspan>
+</text>
+<text x="90" y="467.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="90" dy="0">保留供以后使用的内容</tspan>
+</text>
+<text x="90" y="496.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="90" dy="0">下分经历、知识、做事方式</tspan>
+</text>
+<path d="M94,536 L94,580" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<path d="M94,580 L116,580" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<rect x="116" y="556" width="592" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="134" y="588" font-size="20" font-weight="600" fill="#243735">
+<tspan x="134" dy="0">经历 episodic</tspan>
+</text>
+<text x="134" y="617.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="134" dy="0">上周的失败与修复轨迹</tspan>
+</text>
+<text x="134" y="646.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="134" dy="0">记录当时发生过什么</tspan>
+</text>
+<path d="M94,536 L94,730" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<path d="M94,730 L116,730" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<rect x="116" y="706" width="592" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="134" y="738" font-size="20" font-weight="600" fill="#243735">
+<tspan x="134" dy="0">知识 semantic</tspan>
+</text>
+<text x="134" y="767.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="134" dy="0">本项目的缓存规则</tspan>
+</text>
+<text x="134" y="796.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="134" dy="0">表达对世界或自身的知识</tspan>
+</text>
+<path d="M94,536 L94,880" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<path d="M94,880 L116,880" stroke="#798b85" stroke-width="1.6" fill="none"/>
+<rect x="116" y="856" width="592" height="130" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="134" y="888" font-size="20" font-weight="600" fill="#243735">
+<tspan x="134" dy="0">做事方式 procedural</tspan>
+</text>
+<text x="134" y="917.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="134" dy="0">模型权重中的隐含知识</tspan>
+</text>
+<text x="134" y="946.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="134" dy="0">代码中的显式程序</tspan>
+</text>
+<text x="28" y="1018" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">这是层级，不是四个平级槽位；长期记录取回后，其副本可进入工作区。</tspan>
+</text>
+</g></svg>

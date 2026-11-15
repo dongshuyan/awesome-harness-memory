@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="858" viewBox="0 0 736 858" role="img" aria-labelledby="title desc">
+<title id="title">两条轨道从不同起点开始</title><desc id="desc">准备好的候选记忆进入记忆池轨道；原始对话进入先重置后摄入的原始轨道。两轨分别输出，标准状态与预期行为仅进入评分端。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#798b85"/></marker></defs>
+<rect width="736" height="858" fill="#fdfcf9"/>
+<g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="28" y="38" font-size="24" font-weight="600" fill="#243735">
+<tspan x="28" dy="0">两条轨道从不同起点开始</tspan>
+</text>
+<text x="28" y="68" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">输入边界据官方schema与协议</tspan>
+</text>
+<rect x="28" y="106" width="330" height="130" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">准备好的记忆池</tspan>
+</text>
+<text x="46" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">本样本候选记忆</tspan>
+</text>
+<text x="46" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">问题；不含答案键</tspan>
+</text>
+<rect x="378" y="106" width="330" height="130" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="396" y="138" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">记忆池轨道</tspan>
+</text>
+<text x="396" y="167.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">选择或检索候选项</tspan>
+</text>
+<text x="396" y="196.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">生成答案与返回编号</tspan>
+</text>
+<rect x="28" y="260" width="330" height="159" rx="3" fill="#f4f1e8" stroke="#c8d1ca"/>
+<text x="46" y="292" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">原始会话</tspan>
+</text>
+<text x="46" y="321.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">周一地址与晚间偏好</tspan>
+</text>
+<text x="46" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">周三撤回地址使用</tspan>
+</text>
+<rect x="378" y="260" width="330" height="159" rx="3" fill="#edf3f8" stroke="#c8d1ca"/>
+<text x="396" y="292" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">原始摄入轨道</tspan>
+</text>
+<text x="396" y="321.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">先重置，再按时间摄入</tspan>
+</text>
+<text x="396" y="350.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">自建记忆后作答</tspan>
+</text>
+<text x="396" y="379.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">可看题型和指标标签</tspan>
+</text>
+<rect x="28" y="443" width="330" height="159" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="46" y="475" font-size="20" font-weight="600" fill="#243735">
+<tspan x="46" dy="0">评分端专用材料</tspan>
+</text>
+<text x="46" y="504.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">预期行为与标准答案</tspan>
+</text>
+<text x="46" y="533.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">禁用片段与标准状态</tspan>
+</text>
+<text x="46" y="562.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="46" dy="0">来源证据标注</tspan>
+</text>
+<rect x="378" y="443" width="330" height="159" rx="3" fill="#f4eee7" stroke="#c8d1ca"/>
+<text x="396" y="475" font-size="20" font-weight="600" fill="#243735">
+<tspan x="396" dy="0">按各轨协议评分</tspan>
+</text>
+<text x="396" y="504.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">记忆池：答案与检索</tspan>
+</text>
+<text x="396" y="533.0" font-size="18" font-weight="400" fill="#243735">
+<tspan x="396" dy="0">原始轨：治理行为诊断</tspan>
+</text>
+<path d="M361,138 L375,138" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="638" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">准备好的记忆池 → 记忆池轨道：提供准备好的证据</tspan>
+</text>
+<path d="M361,292 L375,292" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="676.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">原始会话 → 原始摄入轨道：自行建立记忆</tspan>
+</text>
+<path d="M708,171.0 H724 V522.5 H710" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="714.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">记忆池轨道 → 按各轨协议评分：提交本轨输出</tspan>
+</text>
+<path d="M543.0,422 L543.0,440" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="752.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">原始摄入轨道 → 按各轨协议评分：提交本轨输出</tspan>
+</text>
+<path d="M361,475 L375,475" stroke="#798b85" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+<text x="28" y="790.0" font-size="16" font-weight="400" fill="#365e7c">
+<tspan x="28" dy="0">评分端专用材料 → 按各轨协议评分：提供评分依据</tspan>
+</text>
+<text x="28" y="828.0" font-size="16" font-weight="400" fill="#586b67">
+<tspan x="28" dy="0">准备好的记忆池轨道不检查如何从原话创建记忆。</tspan>
+</text>
+</g></svg>
